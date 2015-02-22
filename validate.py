@@ -1,13 +1,12 @@
-import math
+import datetime, math
 from errors import EquationError, InputError
 
 class Validator(object):
     
     def __init__(self):
-        self.gender = {"male": ["male", "m", "boy", "man", 1],
+        self.genders = {"male": ["male", "m", "boy", "man", 1],
                        "female": ["female", "f", "girl", "woman", 0]}
-    
-    @staticmethod
+        
     def number(self, value):
         if isinstance(value, int) or isinstance(value, float) and value > 0:
             valid = True
@@ -23,18 +22,26 @@ class Validator(object):
         return valid
     
     def male(self,value):
-        if value.lower() in self.gender['male']:
+        if value.lower() in self.genders['male']:
             valid =  True
         else:
             valid = False
         return valid
     
     def female(self, value):
-        if value.lower() in self.gender['female']:
+        if value.lower() in self.genders['female']:
             valid =  True
         else:
             valid = False
         return valid
+    
+    def date(self, value):
+        if isinstance(value, datetime) or isinstance(value, date):
+            valid =  True
+        else:
+            valid = False
+        
+validate = Validator()
             
         
          
