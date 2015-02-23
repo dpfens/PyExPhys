@@ -1,6 +1,5 @@
 import math
 from validate import validate
-from errors import EquationError, InputError
 
 class Strength(object):
     def __init__(self, age, weight,**kwargs):

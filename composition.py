@@ -11,7 +11,7 @@ class Composition(object):
         self.weight = float(weight)
         self.height = float(height)
         
-    def net_caloric_cost(self, mets):
+    def net_cal_cost(self, mets):
         data = mets * 3.5 * (self.weight/200)
         return data                
     
@@ -46,7 +46,7 @@ class Composition(object):
     # rv is Residual Volume in mL
     # gv is Volume of air in gastrointestinal tract (GV) (default: 100mL)
      
-    def body_volume(self, uww, rv, gv, **kwargs):
+    def body_vol(self, uww, rv, gv, **kwargs):
         water_density = kwargs.get('water_density',999.97)
         uww = float(uww)
         rv = float(rv)
@@ -84,7 +84,8 @@ class Man_Composition(Adult_Composition):
         }
         return data
     
-    def bmi_to_body_fat(self, bmi):
+    # BMI to body fat %
+    def bmi_to_bf(self, bmi):
         bmi = float(bmi)
         data = ((1.20*bmi) - (0.23*self.age) - (10.8) - 5.4) / 100
         return data
@@ -177,7 +178,7 @@ class Woman_Composition(Adult_Composition):
         }
         return data
     
-    def bmi_to_body_fat(self, bmi):
+    def bmi_to_bf(self, bmi):
         bmi = float(bmi)
         data = ((1.20*bmi) - (0.23*self.age) - 5.4) / 100
         return data
@@ -280,7 +281,7 @@ class Boy_Composition(Child_Composition):
         data = (0.735*sum) + 1.0
         return data
     
-    def bmi_to_body_fat(self, bmi):
+    def bmi_to_bf(self, bmi):
         bmi = float(bmi)
         data =  ((1.51*bmi) - (0.70*self.age) - (3.6) + 1.4) / 100,
         return data
@@ -320,7 +321,7 @@ class Girl_Composition(Child_Composition):
         data = (0.610*sum) + 5.1
         return data
     
-    def bmi_to_body_fat(self, bmi):
+    def bmi_to_bf(self, bmi):
         bmi = float(bmi)
         data = ((1.51*bmi) - (0.70*self.age) + 1.4) / 100
         return data

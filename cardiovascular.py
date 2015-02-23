@@ -14,14 +14,14 @@ class Cardiovascular(object):
     # Cooper (1968)
     # distance expected in meters
     @staticmethod
-    def twelve_minute_vo2(distance):
+    def twelve_min_vo2(distance):
         return 0.0268*distance - 11.3
             
     # 15 minute run test
     # Balke (1963)
     # distance expected in meters
     @staticmethod
-    def fifteen_minute_vo2(distance):
+    def fifteen_min_vo2(distance):
         return 0.0178*distance + 9.6
                                     
         
@@ -94,18 +94,6 @@ class Cardiovascular(object):
         rest = float(rest)
         data = max - rest
         return data
-                            
-    
-    # Target VO2 based on HR and VO2max
-    # max = VO2max in mL/kg/min or METs
-    # rest = VO2rest in mL/kg/min or METs
-    # 1 MET = 3.5 mL/kg/min
-    @staticmethod
-    def vo2_target_vo2(intensity,max, rest):
-        vo2_r = max - rest
-        data = (intensity * vo2_r) + vo2_rest
-        return data
-    
     
     # Target VO2 
     # intensity as relative exercise percentself.age (e.g. 10% = 0.10)
@@ -122,7 +110,7 @@ class Cardiovascular(object):
         return data
                             
     # HR Max
-    def heart_rate_max(self):
+    def hr_max(self):
         data = 208.0 - (0.7 * self.age)
         return data
                             
@@ -133,7 +121,7 @@ class Cardiovascular(object):
     # max is maximum heart rate
     # max and rest must be of same unit type
     @staticmethod
-    def target_heart_rate(intensity, rest, max):
+    def target_hr(intensity, rest, max):
         intensity = float(intensity)
         rest = float(rest)
         max = float(max)
@@ -168,7 +156,7 @@ class Adult_Cardiovascular(Cardiovascular):
     # single workload (900kgm/min or 150W) for 5 minutes
     # measure workload after 5 minutes
     @staticmethod
-    def fox_cycle_ergometry_vo2max(hr5):
+    def fox_ergometry_vo2max(hr5):
         return 6300.0-(19.26*hr5)
     
     
@@ -197,7 +185,7 @@ class Man_Cardiovascular(Adult_Cardiovascular):
         # 1.5 mile run/walk
     # George et al. (1993)    
     # time in minutes
-    def mile_half_wr_vo2(self, time, hr=None):
+    def mile_half_vo2(self, time, hr=None):
         gender = 1.0
         data = {}
         # George et al. (1993)
@@ -238,7 +226,7 @@ class Man_Cardiovascular(Adult_Cardiovascular):
     
     
     # Submaximal protocols for VO2max calculation
-    def treadmill_run_submax(self, sm1, hr1, sm2=None, hr2=None, **kwargs):
+    def treadmill_submax_vo2(self, sm1, hr1, sm2=None, hr2=None, **kwargs):
         hrmax = kwargs.get('hrmax', self.heart_rate_max())
         if sm2 and hr2:
             # Treadmill VO2 Max (MultiStage Model)
@@ -320,7 +308,7 @@ class Woman_Cardiovascular(Adult_Cardiovascular):
         # 1.5 mile run/walk
     # George et al. (1993)    
     # time in minutes
-    def mile_half_wr_vo2(self, time, hr=None):
+    def mile_half_vo2(self, time, hr=None):
         gender = 0.0
         data = {}
         # George et al. (1993)
@@ -362,7 +350,7 @@ class Woman_Cardiovascular(Adult_Cardiovascular):
     
     
     # Submaximal protocols for VO2max calculation
-    def treadmill_run_submax(self, sm1, hr1, sm2=None, hr2=None, **kwargs):
+    def treadmill_submax_vo2(self, sm1, hr1, sm2=None, hr2=None, **kwargs):
         hrmax = kwargs.get('hrmax', self.heart_rate_max())
         if sm2 and hr2:
             # Treadmill VO2 Max (MultiStage Model)
@@ -438,7 +426,7 @@ class Boy_Cardiovascular(Child_Cardiovascular):
     # 1.5 mile run/walk
     # George et al. (1993)    
     # time in minutes
-    def mile_half_wr_vo2(self, time, hr=None):
+    def mile_half_vo2(self, time, hr=None):
         gender = 1.0
         
         # George et al. (1993)
@@ -466,7 +454,7 @@ class Boy_Cardiovascular(Child_Cardiovascular):
     # Cureton et al. (1995)
     # for gender field, 1 for male, 0 for female
     # time in minutes
-    def mile_run_walk_vo2(time, bmi):
+    def mile_vo2(time, bmi):
         if self.age >= 8 and self.age <= 17:
             return 108.94 - (8.41 * time) + 0.34 * math.pow(time,2) + 0.21*(self.age*1.0) - (0.84*bmi)
         
@@ -491,7 +479,7 @@ class Girl_Cardiovascular(Child_Cardiovascular):
     # 1.5 mile run/walk
     # George et al. (1993)    
     # time in minutes
-    def mile_half_wr_vo2(self, time, hr=None):
+    def mile_half_vo2(self, time, hr=None):
         gender = 0.0
         
         # George et al. (1993)
@@ -519,7 +507,7 @@ class Girl_Cardiovascular(Child_Cardiovascular):
     # Cureton et al. (1995)
     # for gender field, 1 for male, 0 for female
     # time in minutes
-    def mile_run_walk_vo2(time, bmi):
+    def mile_vo2(time, bmi):
         if self.age >= 8 and self.age <= 17:
             return 108.94 - (8.41 * time) + 0.34 * math.pow(time,2) + 0.21*(self.age) - (0.84*bmi)
     
