@@ -19,7 +19,10 @@ class Composition(object):
     @staticmethod
     def db_to_bf(bd):
         bd = float(bd)
-        data = {"Brozek": ((4.570/bd)-4.142) , "Siri": ((495/bd)-450)}
+        data = {
+            "Brozek": (4.570/bd)-4.142,
+            "Siri": (4.95/bd)-4.50
+        }
         return data    
     
                     
@@ -47,10 +50,10 @@ class Composition(object):
     # gv is Volume of air in gastrointestinal tract (GV) (default: 100mL)
      
     def body_vol(self, uww, rv, gv, **kwargs):
-        water_density = kwargs.get('water_density',999.97)
+        water_density = kwargs.get('water_density',1)
         uww = float(uww)
         rv = float(rv)
-        gv = float(gv) or 100
+        gv = float(gv) or 0.1
         data = ((self.weight - uww)/ waterdensity) - (rv - gv)
         return data    
     
@@ -75,18 +78,23 @@ class Man_Composition(Adult_Composition):
     def skinfold_db(self, sum):
         sum = float(sum)
         data = {
+            # Jackson and Pollock (1978)
             "black_hispanic": 1.112 - (0.00043499*sum) + (0.00000055*Math.pow(sum, 2)) - (0.00028826*self.age),
+            # Jackson and Pollock (1978)
             "white": 1.10938 - (0.0008267*sum) + (0.0000016*Math.pow(sum, 2)) - (0.0002574*self.age),
+            # Jackson and Pollock (1978)
+            "athlete": 1.112 - (0.00043499*sum) + (0.00000055*Math.pow(sum, 2)) - (0.00028826*self.age),
+            # Evans et al. (2005)
             "collegiate_athlete": {
-                "black": 8.997 - (0.2468*sum) - (6.343 * 1) - (1.998),
-                "white": 8.997 - (0.2468*sum) - (6.343 * 1),
+                "black": 8.997 + (0.2468*sum) - (6.343 * 1) - (1.998),
+                "white": 8.997 + (0.2468*sum) - (6.343 * 1),
             },
         }
         return data
     
     # BMI to body fat %
-    def bmi_to_bf(self, bmi):
-        bmi = float(bmi)
+    def bmi_to_bf(self):
+        bmi = (self.weight/Math.pow(self.height/100, 2));
         data = ((1.20*bmi) - (0.23*self.age) - (10.8) - 5.4) / 100
         return data
     
@@ -168,18 +176,22 @@ class Woman_Composition(Adult_Composition):
     def skinfold_db(self, sum):
         sum = float(sum)
         data = {
+            # Jackson et al. (1980)
             "black_hispanic": 1.0970 - (0.00046971*sum) + (0.00000056*Math.pow(sum, 2)) - (0.00012828*self.age),
+            # Jackson et al. (1980)
             "white_anorexic": 1.0994921 - (0.0009929*sum) + (0.0000023*Math.pow(sum, 2)) - (0.00001392*self.age),
+            # Jackson et al. (1980)
             "athlete": 1.096095 - (0.0006952*sum) + (0.0000011*Math.pow(sum, 2)) - (0.0000714*self.age),
+            # Evans et al. (2005)
             "collegiate_athlete": {
-                "black": 8.997 - (0.2468*sum) - (1.998),
-                "white": 8.997 - (0.2468*sum),
+                "black": 8.997 + (0.2468*sum) - (1.998),
+                "white": 8.997 + (0.2468*sum),
             },
         }
         return data
     
-    def bmi_to_bf(self, bmi):
-        bmi = float(bmi)
+    def bmi_to_bf(self):
+        bmi = (self.weight/Math.pow(self.height/100, 2))
         data = ((1.20*bmi) - (0.23*self.age) - 5.4) / 100
         return data
     
@@ -281,8 +293,8 @@ class Boy_Composition(Child_Composition):
         data = (0.735*sum) + 1.0
         return data
     
-    def bmi_to_bf(self, bmi):
-        bmi = float(bmi)
+    def bmi_to_bf(self):
+        bmi = (self.weight/Math.pow(self.height/100, 2))
         data =  ((1.51*bmi) - (0.70*self.age) - (3.6) + 1.4) / 100,
         return data
     
@@ -321,8 +333,8 @@ class Girl_Composition(Child_Composition):
         data = (0.610*sum) + 5.1
         return data
     
-    def bmi_to_bf(self, bmi):
-        bmi = float(bmi)
+    def bmi_to_bf(self):
+        bmi = (self.weight/Math.pow(self.height/100, 2))
         data = ((1.51*bmi) - (0.70*self.age) + 1.4) / 100
         return data
     

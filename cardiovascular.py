@@ -56,20 +56,17 @@ class Cardiovascular(object):
     # Leg Ergometry Gross VO2
     # work rate in kgm / min 1 Watt = 6 kgm / min
     # body mass in kilograms 1 kg = 2.2 lb
-    @staticmethod 
-    def leg_ergometry_vo2(work, mass):
+    def leg_ergometry_vo2(self, work):
         work = float(work)
-        mass = float(mass)
+        mass = self.weight
         return 1.8 * work/mass + 3.5
                             
     # Arm Ergometry Gross VO2
     # work rate in kgm / min 1 Watt = 6 kgm / min
     # body mass in kilograms 1 kg = 2.2 lb
-    @staticmethod 
-    def arm_ergometry_vo2(work, mass, **kwargs):
-        force = kwargs.get('force', Nones)
+    def arm_ergometry_vo2(self, work):
         work = float(work)
-        mass = float(mass)
+        mass = self.weight
         return 3.0 * work/mass
                             
     # Stepping Gross VO2
@@ -454,7 +451,8 @@ class Boy_Cardiovascular(Child_Cardiovascular):
     # Cureton et al. (1995)
     # for gender field, 1 for male, 0 for female
     # time in minutes
-    def mile_vo2(time, bmi):
+    def mile_vo2(self, time):
+        bmi = (self.weight/Math.pow(self.height/100, 2))
         if self.age >= 8 and self.age <= 17:
             return 108.94 - (8.41 * time) + 0.34 * math.pow(time,2) + 0.21*(self.age*1.0) - (0.84*bmi)
         
@@ -507,7 +505,8 @@ class Girl_Cardiovascular(Child_Cardiovascular):
     # Cureton et al. (1995)
     # for gender field, 1 for male, 0 for female
     # time in minutes
-    def mile_vo2(time, bmi):
+    def mile_vo2(self, time):
+        bmi = (self.weight/Math.pow(self.height/100, 2))
         if self.age >= 8 and self.age <= 17:
             return 108.94 - (8.41 * time) + 0.34 * math.pow(time,2) + 0.21*(self.age) - (0.84*bmi)
     
