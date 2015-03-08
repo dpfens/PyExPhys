@@ -2,11 +2,12 @@ class Error(Exception):
     pass
 
 class InputError(Error):
-    def __init__(self, value):
+    def __init__(self, value, expected_type):
         self.value = value
+        self.type = expected_type
     
     def __str__(self):
-        return rep(self.value)
+        return rep("%s must be type %s" % self.value, self.type)
     
 class EquationError(Error):
     def __init__(selfvalue):
