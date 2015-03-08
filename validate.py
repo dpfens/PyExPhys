@@ -36,10 +36,11 @@ class Validator(object):
         return valid
     
     def date(self, value):
-        if isinstance(value, datetime) or isinstance(value, date):
+        if isinstance(value, datetime.datetime) or isinstance(value, datetime.date):
             valid =  True
         else:
             valid = False
+        return valid
         
 validate = Validator()
             
