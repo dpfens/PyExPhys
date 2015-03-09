@@ -1,0 +1,519 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono|Open+Sans|Open+Sans+Condensed:300);
+
+* {
+	-webkit-transition: color 300ms, background-color 300ms;
+    transition: color 300ms,  background-color 300ms;
+}
+
+/************************* General Element Styles **************************/
+
+body {
+	margin: 0;
+}
+
+
+.inner-container {
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Open Sans Condensed';
+}
+
+h1{
+	letter-spacing: 0.05rem;
+	font-size: 1.5rem;
+}
+
+h2.sub-title {
+	text-align: center;
+}
+
+p, li {
+	font-family: 'Open Sans';
+}
+
+p, article li {
+	font-size: 0.80rem; 
+}
+
+a.cta {
+    background-color: #29ABE2;
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Open Sans Condensed';
+    font-size: 1.5rem; 
+    padding: 1rem;
+    text-align: center;
+}
+
+button {
+	padding: 0.5rem;
+}
+
+body > section {
+	padding: 3rem 0 0 0;
+}
+
+article {
+	margin: 0 0 0 16rem;
+}
+
+/************************* Message Styles ***********************************/
+
+.error {
+    color: #FF0000;
+}
+
+.warning {
+    color: #FFFF00;
+}
+
+.success {
+    color: #00FF00;
+}
+
+/************************* Header Styles ***********************************/
+
+header {
+	background: -webkit-linear-gradient(#FFFFFF, #DDDDDD); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#FFFFFF, #DDDDDD); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#FFFFFF, #DDDDDD); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#FFFFFF, #DDDDDD); /* Standard syntax */
+	overflow: auto;
+	position: fixed;
+	width: 100%;
+}
+
+header * {
+	color: #999;
+}
+
+header #logo {
+	float: left;
+	height: 2rem;
+	margin: 0.5rem 0;
+}
+
+header ul {
+	float: left;
+	list-style-type: none;
+	margin: 0;
+}
+
+header li {
+	float: left;
+}
+
+header li a {
+	display: block;
+	font-size: 0.85rem;
+	padding: 1rem;
+	text-decoration: none;
+}
+
+header li a:hover {
+	color: #000;
+}
+
+/************************* Splash Styles **************************/
+
+div.splash {
+	color: #FFFFFF;
+	background: -moz-linear-gradient(top,  #FFFFFF 0%, #DDDDDD 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#DDDDDD));
+	background: -webkit-linear-gradient(top,  #FFFFFF 0%,#DDDDDD 100%);
+	background: -o-linear-gradient(top,  #FFFFFF 0%,#DDDDDD 100%);
+	background: -ms-linear-gradient(top,  #FFFFFF 0%,#DDDDDD 100%);
+	background: linear-gradient(to bottom,  #FFFFFF 0%,#DDDDDD 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#DDDDDD',GradientType=0 );
+	height:50%;
+	max-height: 25rem;
+}
+
+div.splash h1 {
+	color: #333;
+	position: relative;
+	left: 12rem;
+	bottom: 8rem;
+}
+
+div.splash p {
+	font-size: 1.1rem;
+	position: relative;
+	bottom: 8rem;
+}
+
+div.splash button, div.splash a {
+	background-color: rgba(30, 30,30, 1.0);
+	color: #FFF;
+	font-size: 1rem;
+	padding: 0.5rem;
+	text-decoration: none;
+}
+
+div.splash button:hover, div.splash a:hover {
+	background-color: rgba(40,40,40,1.0);
+}
+
+/************************* Aside Styles **************************/
+
+aside {
+	position: fixed;
+	top: 3.25rem;
+	bottom: 0;
+	overflow: auto;
+	width: 15rem;
+}
+
+aside span.module {
+	font-family: 'Open Sans Condensed';
+	font-size: 1.3rem;	
+}
+
+aside ul {
+	padding: 1rem;
+}
+
+aside li {
+	cursor: pointer;
+	padding: 0.25rem 0;
+	list-style-type: none;
+}
+
+aside h2 a {
+	color: #33A960;
+}
+
+aside li a {
+	color: #29ABE2;
+}
+
+/************************* Inline Styles **************************/
+
+div.row {
+	overflow:hidden;
+	width: 60rem;
+}
+
+div.cell-3 {
+	float: left;
+	height: 10rem;
+	margin: 0.625rem;
+	width: 18.75rem;
+}
+
+div.cell-3 h2 {
+	text-align: center;
+}
+
+div.main.list {
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 1rem; /* Chrome, Safari, Opera */
+    -moz-column-gap: 1rem; /* Firefox */
+    column-gap: 1rem;
+}
+
+
+div.list-item {
+	height: 10rem;
+	width:29rem;
+	margin: 0.5rem;
+}
+
+div.list-item img, div.list-item svg {
+	width: 6rem;
+}
+
+div.list-item div.content {
+	display: inline-block;
+	width: 22rem; 
+}
+
+/************************* Form Styles **************************/
+
+form label {
+	display: inline-block;
+	text-align: right;
+	width: 5rem;
+}
+
+form input, form select {
+	text-align: left;
+}
+
+/************************* Code Sample Styles **************************/
+
+code, pre {
+	background-color: #333;
+	color: #CCC;
+    display: inline-block;;
+	font-family: 'Ubuntu Mono';
+	width: 44rem;
+}
+
+code {
+	overflow:auto;
+    padding: 0.5rem;
+}
+
+var {
+	color: #29ABE2;
+}
+
+kbd {
+	color: #FFFF99;
+}
+
+samp {
+	color: #FFF;
+}
+
+
+/************************* Index Styles **************************/
+
+div.index-quickstart {
+	background-color: #EEEEEE;
+}
+
+/************************* Demo Specific Styles **************************/
+
+div.demo-menu {
+	display: block;
+	margin: 1rem auto;
+	width: 10rem;
+}
+
+div.demo-menu button:nth-child(odd) {
+	border: none;
+	webkit-border-top-left-radius: 2rem;
+	-webkit-border-bottom-left-radius: 2rem;
+	-moz-border-radius-topleft: 2rem;
+	-moz-border-radius-bottomleft: 2rem;
+	border-top-left-radius: 2rem;
+	border-bottom-left-radius: 2rem;
+	margin-right: -2px;
+}
+
+div.demo-menu button:nth-child(even) {
+	border: none;
+	-webkit-border-top-right-radius: 2rem;
+	-webkit-border-bottom-right-radius: 2rem;
+	-moz-border-radius-topright: 2rem;
+	-moz-border-radius-bottomright: 2rem;
+	border-top-right-radius: 2rem;
+	border-bottom-right-radius: 2rem;
+}
+
+div.specs {
+	float: right;
+	border: 2px solid #333;
+	width: 15rem;
+}
+
+div.specs * {
+	margin-left: 1rem;
+}
+
+
+/****************************** Doc Styles ***************************************/
+
+.method-type {
+	font-size: 1rem;
+}
+
+
+/****************************** Angular-Specific ***************************************/
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+
+.ng-enter,
+.ng-leave,
+.ng-move {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.ng-enter,
+.ng-move {
+  opacity: 0;
+  overflow: hidden;
+  -webkit-animation: 0.5s slide-right;
+  -moz-animation: 0.5s slide-right;
+  -o-animation: 0.5s slide-right;
+  animation: 0.5s slide-right;
+}
+
+.ng-move.ng-move-active,
+.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.ng-leave {
+  opacity: 1;
+  overflow: hidden;
+  -webkit-animation: 0.5s slide-left;
+  -moz-animation: 0.5s slide-left;
+  -o-animation: 0.5s slide-left;
+  animation: 0.5s slide-left;
+}
+
+.ng-leave.ng-leave-active {
+  opacity: 0;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.view-container {
+position: relative;
+}
+
+div.drop-down.ng-enter {
+	-webkit-animation: 0.3s slide-down;
+	-moz-animation: 0.3s slide-down;
+	-o-animation: 0.3s slide-down;
+	animation: 0.3s slide-down;
+	z-index: 100;
+}
+
+div.drop-down.ng-leave {
+	-webkit-animation: 0.3s slide-up;
+	-moz-animation: 0.3s slide-up;
+	-o-animation: 0.3s slide-up;
+	animation: 0.3s slide-up;
+}
+
+.view-frame.ng-enter, .view-frame.ng-leave {
+position: absolute;
+left: 0;
+right: 0;
+}
+
+.ng-enter {
+-webkit-animation: 0.5s slide-right;
+-moz-animation: 0.5s slide-right;
+-o-animation: 0.5s slide-right;
+animation: 0.5s slide-right;
+}
+
+.ng-leave {
+-webkit-animation: 0.5s slide-left;
+-moz-animation: 0.5s slide-left;
+-o-animation: 0.5s slide-left;
+animation: 0.5s slide-left;
+}
+
+@keyframes fade-in {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+@-webkit-keyframes fade-in {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes fade-out {
+from { opacity: 1; }
+to { opacity: 0; }
+}
+@-moz-keyframes fade-out {
+from { opacity: 1; }
+to { opacity: 0; }
+}
+@-webkit-keyframes fade-out {
+from { opacity: 1; }
+to { opacity: 0; }
+}
+
+
+@keyframes slide-right {
+	from {
+        left: -3rem; 
+	}
+	to {
+		left:0; 
+	}
+}
+@-moz-keyframes slide-right {
+	from {
+        left: -3rem; 
+	}
+	to {
+		left:0; 
+	}
+}
+@-webkit-keyframes slide-right {
+	from {
+        left: -3rem; 
+	}
+	to {
+		left:0; 
+	}
+}
+
+@keyframes slide-left {
+	from {
+		left:0;
+	}
+	to {
+        left: -3rem; 
+	}
+}
+@-moz-keyframes slide-left {
+	from {
+		left:0;
+	}
+	to {
+        left: -3rem; 
+	}
+}
+@-webkit-keyframes slide-left {
+	from {
+		left:0;
+	}
+	to {
+        left: -3rem; 
+	}
+}
+
+
+/****************************** Footer Styles ***************************************/
+
+footer {
+    background: -webkit-linear-gradient(#000, #222); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#000, #222); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#000, #222); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#000, #222); /* Standard syntax */
+    color: #FFF;
+	overflow: auto;
+	width: 100%;
+}
+
+footer div.center {
+    font-family: 'Open Sans';
+    text-align: center;
+}
+
+
+footer div.center a {
+    color: #CCC;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+footer div.center a:hover {
+    color: #FFF;
+}
