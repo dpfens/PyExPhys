@@ -221,7 +221,6 @@ div.main.list {
 div.list-item {
 	height: 10rem;
 	width:29rem;
-	margin: 0.5rem;
 }
 
 div.list-item img, div.list-item svg {
@@ -231,6 +230,10 @@ div.list-item img, div.list-item svg {
 div.list-item div.content {
 	display: inline-block;
 	width: 22rem; 
+}
+
+#flexibility-icon, #strength-icon {
+	transform: translateY(1rem);
 }
 
 /************************* Form Styles **************************/
