@@ -504,7 +504,6 @@ footer {
 	background: -moz-linear-gradient(#000, #222); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(#000, #222); /* Standard syntax */
     color: #FFF;
-	overflow: auto;
 	width: 100%;
 }
 
