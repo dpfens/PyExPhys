@@ -194,14 +194,14 @@ aside li a {
 
 div.row {
 	overflow:hidden;
-	width: 60rem;
 }
 
 div.cell-3 {
 	float: left;
 	height: 10rem;
-	margin: 0.625rem;
-	width: 18.75rem;
+	margin: 1%;
+	min-width: 15rem;
+	width: 31%;
 }
 
 div.cell-3 h2 {
@@ -220,16 +220,17 @@ div.main.list {
 
 div.list-item {
 	height: 10rem;
-	width:29rem;
+	min-width: 25rem;
+	width:100%;
 }
 
 div.list-item img, div.list-item svg {
-	width: 6rem;
+	width: 22%;
 }
 
 div.list-item div.content {
 	display: inline-block;
-	width: 22rem; 
+	width: 75%; 
 }
 
 #flexibility-icon, #strength-icon {
@@ -253,14 +254,14 @@ form input, form select {
 code, pre {
 	background-color: #333;
 	color: #CCC;
-    display: inline-block;;
+    	display: inline-block;;
 	font-family: 'Ubuntu Mono';
-	width: 44rem;
+	min-width: 40rem;
 }
 
 code {
 	overflow:auto;
-    padding: 0.5rem;
+    	padding: 1%;
 }
 
 var {
