@@ -1,10 +1,18 @@
 import math
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 from validate import validate
 
 class Strength(object):
-    def __init__(self, age, weight,**kwargs):
-            self.age = float(age)
-            self.weight = float(weight)
+    def __init__(self, dateofbirth, weight,**kwargs):
+        self.dob = dateofbirth
+        self.weight = float(weight)
+    
+    def get_age(self):
+        now = datetime.now()
+        delta = relativedelta(now,self.dob)
+        time = delta.years + float(delta.months/12.0)
+        return time
 
     muscle_balance_ratios = {
         "hip": 1.0,
@@ -58,8 +66,8 @@ class Strength(object):
     
 class Adult_Strength(Strength):
     
-    def __init__(self, age, weight,**kwargs):
-        self.age = float(age)
+    def __init__(self, dateofbirth, weight,**kwargs):
+        self.dob = dateofbirth
         self.weight = float(weight)
     
     #  gender-specific 1-RM Formula for Younger adults (22 - 36 years old)
@@ -77,24 +85,25 @@ class Adult_Strength(Strength):
     
 
 class Man_Strength(Adult_Strength):
-    def __init__(self,age, weight,**kwargs):
-        self.age = float(age)
+    def __init__(self,dateofbirth, weight,**kwargs):
+        self.dob = dateofbirth
         self.weight = float(weight)
     
 class Woman_Strength(Adult_Strength):
-    def __init__(self,age, weight,**kwargs):
-        self.age = float(age)
+    def __init__(self,dateofbirth, weight,**kwargs):
+        self.dob = dateofbirth
         self.weight = float(weight)
         
     # Middle Age (40-50 years old) & Older adult (60-70 years old) 1-RM
     # Kuramoto & Payne (1995)
     def female_rep_max(self, reps, weight):
+        age = self.get_age()
         reps = float(reps)
         weight = float(weight)
-        if (self.age >= 40 and self.age <= 50):
-            data = (1.06 * weight) + (0.58 * reps) - (0.20 * self.age) - 3.41
-        elif(self.age >= 60 and self.age <= 70):
-            data = (0.92 * weight) + (0.79 * reps) - (0.20 * self.age) - 3.73
+        if (age >= 40 and age <= 50):
+            data = (1.06 * weight) + (0.58 * reps) - (0.20 * age) - 3.41
+        elif(age >= 60 and age <= 70):
+            data = (0.92 * weight) + (0.79 * reps) - (0.20 * age) - 3.73
         return data
     
     @staticmethod
@@ -103,16 +112,16 @@ class Woman_Strength(Adult_Strength):
         return data
     
 class Child_Strength(Strength):
-    def __init__(self, age, weight,**kwargs):
-        self.age = float(age)
+    def __init__(self, dateofbirth, weight,**kwargs):
+        self.dob = dateofbirth
         self.weight = float(weight)
     
 class Boy_Strength(Child_Strength):
-    def __init__(self, age, weight,**kwargs):
-        self.age = float(age)
+    def __init__(self, dateofbirth, weight,**kwargs):
+        self.dob = dateofbirth
         self.weight = float(weight)
     
 class Girl_Strength(Child_Strength):
-    def __init__(self, age, weight,**kwargs):
-        self.age = float(age)
+    def __init__(self, dateofbirth, weight,**kwargs):
+        self.dob = dateofbirth
         self.weight = float(weight)

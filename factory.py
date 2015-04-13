@@ -1,10 +1,7 @@
-from abc import ABCMeta, abstractmethod
 from models import *
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 from validate import validate
-
-person_objects = {"person": Person, "adult": Adult, "man": Man, "woman": Woman, "child": Child, "boy": Boy, "girl": Girl}
 
 class Person_Factory(object):
     def create(self, name, gender, date_of_birth, height=1, weight=1, race=None):

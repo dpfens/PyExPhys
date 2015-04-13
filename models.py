@@ -1,5 +1,3 @@
-import mets
-from abc import ABCMeta, abstractmethod
 from cardiovascular import *
 from composition import *
 from strength import *
@@ -9,6 +7,9 @@ from validate import validate
 
 class Person(object):
     
+    # Height specified in meters
+    # Weight specified in kilograms
+    # Race specified as string (optional)
     def __init__(self, name, dateofbirth, height=1, weight=1, race=None):
         if validate.date(dateofbirth):
             self.name = name
@@ -16,9 +17,9 @@ class Person(object):
             self.height= height
             self.weight = weight
             self.race = race
-            self.strength = Strength(self.get_age(), weight)
-            self.cardio = Cardiovascular(self.get_age(), weight, height)
-            self.composition = Composition(self.get_age(), weight, height)
+            self.strength = Strength(self.dob, weight)
+            self.cardio = Cardiovascular(self.dob, weight, height)
+            self.composition = Composition(self.dob, weight, height)
         else:
             raise TypeError("date of birth must be a Date or DateTime object")
     
@@ -32,25 +33,25 @@ class Person(object):
 class Adult(Person):
     def __init__(self, name, dateofbirth, height=1, weight=1, race=None):
         super(Adult, self).__init__(name, dateofbirth, height, weight, race)
-        self.cardio = Adult_Cardiovascular(self.get_age(), weight, height)
-        self.composition = Adult_Composition(self.get_age(), weight, height)
-        self.strength = Adult_Strength(self.get_age(), weight)
+        self.cardio = Adult_Cardiovascular(self.dob, weight, height)
+        self.composition = Adult_Composition(self.dob, weight, height)
+        self.strength = Adult_Strength(self.dob, weight)
 
 
 class Man(Adult):
     def __init__(self, name, dateofbirth, height=1, weight=1, race=None):
         super(Man, self).__init__(name, dateofbirth, height, weight, race)
-        self.cardio = Man_Cardiovascular(self.get_age(), weight, height)
-        self.composition = Man_Composition(self.get_age(), weight, height)
-        self.strength = Man_Strength(self.get_age(), weight)
+        self.cardio = Man_Cardiovascular(self.dob, weight, height)
+        self.composition = Man_Composition(self.dob, weight, height)
+        self.strength = Man_Strength(self.dob, weight)
     
     
 class Woman(Adult):
     def __init__(self, name, dateofbirth, height=1, weight=1, race=None):
         super(Woman, self).__init__(name, dateofbirth, height, weight, race)
-        self.cardio = Woman_Cardiovascular(self.get_age(), weight, height)
-        self.composition = Woman_Composition(self.get_age(), weight, height)
-        self.strength = Woman_Strength(self.get_age(), weight)
+        self.cardio = Woman_Cardiovascular(self.dob, weight, height)
+        self.composition = Woman_Composition(self.dob, weight, height)
+        self.strength = Woman_Strength(self.dob, weight)
         
 
 
@@ -58,20 +59,20 @@ class Woman(Adult):
 class Child(Person):
     def __init__(self, name, dateofbirth, height=1, weight=1, race=None):
         super(Child, self).__init__(name, dateofbirth, height, weight, race)
-        self.cardio = Child_Cardiovascular(self.get_age(), weight, height)
-        self.composition = Child_Composition(self.get_age(), weight, height)
-        self.strength = Child_Strength(self.get_age(), weight)
+        self.cardio = Child_Cardiovascular(self.dob, weight, height)
+        self.composition = Child_Composition(self.dob, weight, height)
+        self.strength = Child_Strength(self.dob, weight)
     
 class Boy(Child):
     def __init__(self, name, dateofbirth, height=1, weight=1, race=None):
         super(Boy, self).__init__(name, dateofbirth, height, weight, race)
-        self.cardio = Boy_Cardiovascular(self.get_age(), weight, height)
-        self.composition = Boy_Composition(self.get_age(), weight, height)
-        self.strength = Boy_Strength(self.get_age(), weight)
+        self.cardio = Boy_Cardiovascular(self.dob, weight, height)
+        self.composition = Boy_Composition(self.dob, weight, height)
+        self.strength = Boy_Strength(self.dob, weight)
 
 class Girl(Child):
     def __init__(self, name, dateofbirth, height=1, weight=1, race=None):
         super(Girl, self).__init__(name, dateofbirth, height, weight, race)
-        self.cardio = Girl_Cardiovascular( self.get_age(), weight, height)
-        self.composition = Girl_Composition( self.get_age(), weight, height)
-        self.strength = Girl_Strength(self.get_age(), weight)
+        self.cardio = Girl_Cardiovascular( self.dob, weight, height)
+        self.composition = Girl_Composition( self.dob, weight, height)
+        self.strength = Girl_Strength(self.dob, weight)

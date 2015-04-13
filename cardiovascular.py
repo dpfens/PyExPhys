@@ -1,14 +1,22 @@
 import math
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 from errors import EquationError, InputError
 from validate import validate
 
 class Cardiovascular(object):
     
-    def __init__(self, age, weight, height, **kwargs):
+    def __init__(self, dateofbirth, weight, height, **kwargs):
         # set Decimal precision
-        self.age = age
+        self.dob = dateofbirth
         self.weight = float(weight)
         self.height= float(height)
+    
+    def get_age(self):
+        now = datetime.now()
+        delta = relativedelta(now,self.dob)
+        time = delta.years + float(delta.months/12.0)
+        return time
     
     # 12 minute Run Test
     # Cooper (1968)
@@ -93,7 +101,7 @@ class Cardiovascular(object):
         return data
     
     # Target VO2 
-    # intensity as relative exercise percentself.age (e.g. 10% = 0.10)
+    # intensity as relative exercise percentage (e.g. 10% = 0.10)
     # reserve is Reserve VO2
     # rest is Resting VO2
     # reserve and rest must be of same unit type (METs or mL/kg/min)
@@ -108,11 +116,11 @@ class Cardiovascular(object):
                             
     # HR Max
     def hr_max(self):
-        data = 208.0 - (0.7 * self.age)
+        data = 208.0 - (0.7 * self.get_age())
         return data
                             
     # Target Heart Rate
-    # intensity as relative exercise percentself.age (e.g. 10% = 0.10)
+    # intensity as relative exercise percentage (e.g. 10% = 0.10)
     # ACSM (2010) recommendation using 40% to 85% Hear Rate Reserve (HRR) for intensity
     # rest is resting heart rate
     # max is maximum heart rate
@@ -167,7 +175,8 @@ class Man_Cardiovascular(Adult_Cardiovascular):
     # heart rate (hr) in bpm
     def treadmill_walk_vo2max(self, speed, hr):
         gender = 1.0
-        data = 15.1+(21.8*speed)-(0.327*hr)-(0.263*self.age)+( 0.00504*(hr*self.age) )+(5.48*gender)
+        age = self.get_age()
+        data = 15.1+(21.8*speed)-(0.327*hr)-(0.263*age)+( 0.00504*(hr*age) )+(5.48*gender)
         return data
     
     #  1 Mile Walk Test
@@ -176,7 +185,8 @@ class Man_Cardiovascular(Adult_Cardiovascular):
     # time in minutes
     def mile_walk_vo2(self, time, hr):
         gender = 1.0
-        return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*gender - 3.2649*time - 0.1565*hr
+        age = self.get_age()
+        return 132.853 - 0.0769*self.weight - 0.3877*age + 6.315*gender - 3.2649*time - 0.1565*hr
     
     
         # 1.5 mile run/walk
@@ -271,10 +281,11 @@ class Man_Cardiovascular(Adult_Cardiovascular):
     # age in years
     # bsa in meters squared ( body surface area for females) or kilograms (body mass for males)
     def residual_volume(self):
+        age = self.get_age()
         data = {
-            "Berglund": (0.0115*self.age) + (0.019* self.height) - 2.24,
-            "Boren": (0.022*self.age) + (0.0198*self.height) - (0.015*self.weight) - 1.54,
-            "Goldman": (0.017*self.age) + (0.027*self.height) - 3.477,
+            "Berglund": (0.0115*age) + (0.019* self.height) - 2.24,
+            "Boren": (0.022*age) + (0.0198*self.height) - (0.015*self.weight) - 1.54,
+            "Goldman": (0.017*age) + (0.027*self.height) - 3.477,
         }
         return data  
     
@@ -289,7 +300,8 @@ class Woman_Cardiovascular(Adult_Cardiovascular):
     # heart rate (hr) in bpm
     def treadmill_walk_vo2max(self, speed, hr):
         gender = 0.0
-        data = 15.1+(21.8*speed)-(0.327*hr)-(0.263*self.age)+( 0.00504*(hr*self.age) )+(5.48*gender)
+        age = self.get_age()
+        data = 15.1+(21.8*speed)-(0.327*hr)-(0.263*age)+( 0.00504*(hr*age) )+(5.48*gender)
         return data
     
     
@@ -299,7 +311,8 @@ class Woman_Cardiovascular(Adult_Cardiovascular):
     # time in minutes
     def mile_walk_vo2(self, time, hr):
         gender = 0.0
-        return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*gender - 3.2649*time - 0.1565*hr
+        age = self.get_age()
+        return 132.853 - 0.0769*self.weight - 0.3877*age + 6.315*gender - 3.2649*time - 0.1565*hr
     
     
         # 1.5 mile run/walk
@@ -307,6 +320,7 @@ class Woman_Cardiovascular(Adult_Cardiovascular):
     # time in minutes
     def mile_half_vo2(self, time, hr=None):
         gender = 0.0
+        
         data = {}
         # George et al. (1993)
         data['george'] = 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*gender)
@@ -393,13 +407,14 @@ class Woman_Cardiovascular(Adult_Cardiovascular):
     # age in years
     # bsa in meters squared ( body surface area for females) or kilograms (body mass for males)
     def residual_volume(self, bsa=None):
+        age = self.get_age()
         data = {
-            "Berglund": (0.0115*self.age) + (0.019* self.height) - 2.24,
-            "Black": (0.021*self.age) + (0.023*self.height) - 2.978,
-            "Goldman": (0.017*self.age) + (0.027*self.height) - 3.477,
+            "Berglund": (0.0115*age) + (0.019* self.height) - 2.24,
+            "Black": (0.021*age) + (0.023*self.height) - 2.978,
+            "Goldman": (0.017*age) + (0.027*self.height) - 3.477,
         }
         if bsa:
-            data["Obrien"]= (0.03*self.age) + (0.0387*self.height) - (0.73*bsa) - 4.78
+            data["Obrien"]= (0.03*age) + (0.0387*self.height) - (0.73*bsa) - 4.78
         return data  
     
     
@@ -412,8 +427,9 @@ class Child_Cardiovascular(Cardiovascular):
     # Children 8-19 years old)
     def shuttle_run_vo2(speed):
         speed = float(speed)
-        if self.age >= 8.0 and self.age<= 19.0:
-            data = 31.025 + (3.238*speed) - (3.248*self.age) + 0.1536*(self.age*speed)
+        age = self.get_age()
+        if age >= 8.0 and age<= 19.0:
+            data = 31.025 + (3.238*speed) - (3.248*age) + 0.1536*(age*speed)
         else:
             raise EquationError('age must be between 8 and 19 (years)')
         return data
@@ -452,9 +468,10 @@ class Boy_Cardiovascular(Child_Cardiovascular):
     # for gender field, 1 for male, 0 for female
     # time in minutes
     def mile_vo2(self, time):
-        bmi = (self.weight/Math.pow(self.height/100, 2))
-        if self.age >= 8 and self.age <= 17:
-            return 108.94 - (8.41 * time) + 0.34 * math.pow(time,2) + 0.21*(self.age*1.0) - (0.84*bmi)
+        bmi = (self.weight/math.pow(self.height/100, 2))
+        age = self.get_age()
+        if age >= 8 and age <= 17:
+            return 108.94 - (8.41 * time) + 0.34 * math.pow(time,2) + 0.21*(age*1.0) - (0.84*bmi)
         
     
     # Tidal Volume (TV = IC - IRV) 
@@ -464,10 +481,11 @@ class Boy_Cardiovascular(Child_Cardiovascular):
     # age in years
     # bsa in meters squared ( body surface area for females) or kilograms (body mass for males)
     def residual_volume(self):
+        age = self.get_age()
         data = {
-            "Berglund": (0.0115*self.age) + (0.019* self.height) - 2.24,
-            "Boren": (0.022*self.age) + (0.0198*self.height) - (0.015*self.weight) - 1.54,
-            "Goldman": (0.017*self.age) + (0.027*self.height) - 3.477,
+            "Berglund": (0.0115*age) + (0.019* self.height) - 2.24,
+            "Boren": (0.022*age) + (0.0198*self.height) - (0.015*self.weight) - 1.54,
+            "Goldman": (0.017*age) + (0.027*self.height) - 3.477,
         }
         return data  
 
@@ -506,9 +524,10 @@ class Girl_Cardiovascular(Child_Cardiovascular):
     # for gender field, 1 for male, 0 for female
     # time in minutes
     def mile_vo2(self, time):
-        bmi = (self.weight/Math.pow(self.height/100, 2))
-        if self.age >= 8 and self.age <= 17:
-            return 108.94 - (8.41 * time) + 0.34 * math.pow(time,2) + 0.21*(self.age) - (0.84*bmi)
+        bmi = (self.weight/math.pow(self.height/100, 2))
+        age = self.get_age()
+        if age >= 8 and age <= 17:
+            return 108.94 - (8.41 * time) + 0.34 * math.pow(time,2) + 0.21*(age) - (0.84*bmi)
     
     
     # Tidal Volume (TV = IC - IRV) 
@@ -518,11 +537,12 @@ class Girl_Cardiovascular(Child_Cardiovascular):
     # age in years
     # bsa in meters squared ( body surface area for females) or kilograms (body mass for males)
     def residual_volume(self, bsa=None):
+        age = self.get_age()
         data = {
-            "Berglund": (0.0115*self.age) + (0.019* self.height) - 2.24,
-            "Black": (0.021*self.age) + (0.023*self.height) - 2.978,
-            "Goldman": (0.017*self.age) + (0.027*self.height) - 3.477,
+            "Berglund": (0.0115*age) + (0.019* self.height) - 2.24,
+            "Black": (0.021*age) + (0.023*self.height) - 2.978,
+            "Goldman": (0.017*age) + (0.027*self.height) - 3.477,
         }
         if bsa:
-            data["Obrien"]= (0.03*self.age) + (0.0387*self.height) - (0.73*bsa) - 4.78
+            data["Obrien"]= (0.03*age) + (0.0387*self.height) - (0.73*bsa) - 4.78
         return data  
