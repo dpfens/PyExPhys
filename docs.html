@@ -141,7 +141,7 @@
 					<li ng-repeat="method in methodList">{{method}}</li>
 				</ul>
 				
-				<prism language="python" code="module.example"></prism>
+				<prism language="python" code="{{module.example}}"></prism>
 			</article>
 			
 			<article ng-controller="methodController" ng-if="method" class="view-container">
@@ -158,7 +158,7 @@
 					</ul>
 				</div>
 				
-				<prism language="python" code="method.example"><prism>
+				<prism language="python" code="{{method.example}}"><prism>
 				
 			</article>
 			

@@ -4,17 +4,17 @@ app.directive('prism', [function() {
     return {
         restrict: 'E',
         scope: {
-        	code: '=',
+        	code: '@',
         	language: '@'
         },
-        template: '<pre><code class="language-{{language}}">{{ code }}</code></pre>',
+        template: '<pre><code class="language-{{language}}" ng-bind="code">{{ code }}</code></pre>',
         replace: true,
-        link: function ($scope, element, attrs) {
+        link: function (scope, element, attrs) {
             element.ready(function() {
-                Prism.highlightElement(element[0]);
+                Prism.highlightElement(element.find("code")[0]);
             });
-            $scope.$watch('code', function(v) {
-            	if(v) {
+            scope.$watch('code', function(v,o) {
+            	if(v!==o) {
             		Prism.highlightElement(element.find("code")[0]);
             	}
 			});
