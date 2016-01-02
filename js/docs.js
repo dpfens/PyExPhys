@@ -1,13 +1,26 @@
 var app = angular.module('docsApp', ['ngSanitize', "ngAnimate"]);
 
+app.directive('prism', [function() {
+    return {
+        restrict: 'A',
+        link: function ($scope, element, attrs) {
+            element.ready(function() {
+                Prism.highlightElement(element[0]);
+            });
+            setInterval(function() { Prism.highlightElement(element[0]) },2000);
+        }
+    } 
+}]
+);
+
 app.service("docsService", [  function() {
 	var docs = [
 {
 	 name: "Person_Factory",
 	 description: "",
 	 arguments: [],
-	 example: '// create instance of Factory\nfactory = Person_Factory()'+
-	 '\n\n// create Persons\nfactory.create("male", datetime(1990, 3,17), 54, 154) &ltMan instance 0x236467&gt',
+	 example: '# create instance of Factory\nfactory = Person_Factory()'+
+	 '\n\n# create Persons\nfactory.create("male", datetime(1990, 3,17), 54, 154) &ltMan instance 0x236467&gt',
 	 methods: [{
 		 name: "get_age",
 		 arguments: [{
@@ -17,8 +30,8 @@ app.service("docsService", [  function() {
 		 val: "years",
 		 description: "",
 		 equations: [],
-		 example: '// create instance of Factory\nfactory = Person_Factory()'+
-		 '\n\n// get age from a date\nfactory.get_age(datetime(1990,3,17))24.96',
+		 example: '# create instance of Factory\nfactory = Person_Factory()'+
+		 '\n\n# get age from a date\nfactory.get_age(datetime(1990,3,17))24.96',
 	 },
 	 {
 		 name: "create",
@@ -53,8 +66,8 @@ app.service("docsService", [  function() {
 		 description: "",
 		 equations: [
 		 ],
-		 example: '// create instance of Factory\nfactory = Person_Factory()'+
-		 '\n\n// create Persons\nfactory.create(Person_Factory("male", datetime(1990, 3,17), 54, 154)) Man instance #&lt0x236467#&gt',
+		 example: '# create instance of Factory\nfactory = Person_Factory()'+
+		 '\n\n# create Persons\nfactory.create(Person_Factory("male", datetime(1990, 3,17), 54, 154)) Man instance #&lt0x236467#&gt',
 	 }
 	 ],
 	},
@@ -82,17 +95,17 @@ app.service("docsService", [  function() {
 			 name: "race",
 			 units: "string"
 		 }],
-		 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-		 '\n\n// call methods from Person\nme.get_age() 24.96'+
-		 '\nme.cardio.get_age() 24.96',
+		 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+		 '\n\n# call methods from Person\nme.get_age() # 24.96'+
+		 '\nme.cardio.get_age() # 24.96',
 		 methods: [{
 			 name: "get_age",
 			 arguments: [],
 			 val: "years",
 			 description: "",
 			 equations: [],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call get_age from Person\nme.get_age() 24.96',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call get_age from Person\nme.get_age() # 24.96',
 		 },
 		 {
 			 name: "bmiToBodyFat",
@@ -111,8 +124,8 @@ app.service("docsService", [  function() {
 					source: ""
 				}
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call bmiToBodyFat from Person\nme.bmiToBodyFat() {\nchild: 0.2496275022760703,\nadult: 0.13499907862776397 }',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call bmiToBodyFat from Person\nme.bmiToBodyFat() {\nchild: 0.2496275022760703,\nadult: 0.13499907862776397 }',
 		 },
 		 {
 			 name: "bodySurfaceArea",
@@ -161,8 +174,8 @@ app.service("docsService", [  function() {
 					source: ""
 				},
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call bodySurfaceArea from Person\nme.bmiToBodyFat() \n{ Boyd: 2.045653492421787,\nCosteff: 1.5486111111111112,\nDuBois: 1.8308664274017985,\nFujimoto: 1.4725455220642767,\nGehanGeorge: 1.5368390922502115,\nHaycock: 1.5268447264673155,\nMosteller: 1.5198684153570663,\nTakahira: 1.5206120160598762\n}',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call bodySurfaceArea from Person\nme.bmiToBodyFat() \n{ Boyd: 2.045653492421787,\nCosteff: 1.5486111111111112,\nDuBois: 1.8308664274017985,\nFujimoto: 1.4725455220642767,\nGehanGeorge: 1.5368390922502115,\nHaycock: 1.5268447264673155,\nMosteller: 1.5198684153570663,\nTakahira: 1.5206120160598762\n}',
 		 },
 		 {
 			 name: "bodyVolume",
@@ -197,8 +210,8 @@ app.service("docsService", [  function() {
 					source: ""
 				}
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call bodyVolume from Person\nme.bodyVolume() 2.7',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call bodyVolume from Person\nme.bodyVolume() # 2.7',
 		 },
 		 {
 			 name: "dbToBodyFat",
@@ -220,8 +233,8 @@ app.service("docsService", [  function() {
 			 		source: ""
 			 	}
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call dbToBodyFat from Person\nme.dbToBodyFat(1.0054) {\nBrozek: 0.4034545454545455,\nSiri: 0.4234135667396064\n}',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call dbToBodyFat from Person\nme.dbToBodyFat(1.0054) {\nBrozek: 0.4034545454545455,\nSiri: 0.4234135667396064\n}',
 		 },
 		 {
 			 name: "dbAtTLCNS",
@@ -243,8 +256,8 @@ app.service("docsService", [  function() {
 			 		source: ""
 			 	},
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call dbAtTLCNS from Person\nme.dbAtTLCNS(1.0054) 0.9919476599999999',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call dbAtTLCNS from Person\nme.dbAtTLCNS(1.0054) # 0.9919476599999999',
 		 },
 		 {
 			 name: "netCaloricCost",
@@ -266,8 +279,8 @@ app.service("docsService", [  function() {
 			 		source: ""
 			 	},
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call netCaloricCost from Person\nme.netCaloricCost(300) 283.5',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call netCaloricCost from Person\nme.netCaloricCost(300) # 283.5',
 		 },
 		 {
 			 name: "predictedTEE",
@@ -296,8 +309,8 @@ app.service("docsService", [  function() {
 			 		source: ""
 			 	},
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call predictedTEE from Person\nme.predictedTEE() {\nsedentary: 2115.226775083932,\nlow: 2301.148775083932,\nactive: 2537.7767750839316,\nveryactive: 2926.5227750839317\n}',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call predictedTEE from Person\nme.predictedTEE() {\nsedentary: 2115.226775083932,\nlow: 2301.148775083932,\nactive: 2537.7767750839316,\nveryactive: 2926.5227750839317\n}',
 		 },
 		 {
 			 name: "restingMetabolicRate",
@@ -316,8 +329,8 @@ app.service("docsService", [  function() {
 			 		source: ""
 			 	},
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call restingMetabolicRate from Person\nme.restingMetabolicRate() {\nHarris-Benedict: 1411.5651693627854,\nMifflin: 1384.619133866011\n}',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call restingMetabolicRate from Person\nme.restingMetabolicRate() {\nHarris-Benedict: 1411.5651693627854,\nMifflin: 1384.619133866011\n}',
 		 },
 		 {
 			 name: "skinfoldDb",
@@ -349,8 +362,8 @@ app.service("docsService", [  function() {
 			 		source: ""
 			 	},
 			 ],
-			 example: '// create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call skinfoldDb from Person\nme.skinfoldDb() {\nathlete: 1.1048321172156006,\nblack: 1.1048321172156006,\nchild: 1,\ncollegiateathlete: {\n\tblack: 0.6559999999999999,\n\twhite: 2.654 },\nwhite: 1.1029794830059514 }',
+			 example: '# create instance of Person\nvar me = Person("John Doe", "male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call skinfoldDb from Person\nme.skinfoldDb() {\nathlete: 1.1048321172156006,\nblack: 1.1048321172156006,\nchild: 1,\ncollegiateathlete: {\n\tblack: 0.6559999999999999,\n\twhite: 2.654 },\nwhite: 1.1029794830059514 }',
 		 },
 		 ],
 		},
@@ -378,16 +391,16 @@ app.service("docsService", [  function() {
 				 name: "race",
 				 units: "string"
 			 }],
-			 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-			 '\n\n// call method from instance of Cardiovascular\nmycardio.get_age() 24.96',
+			 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+			 '\n\n# call method from instance of Cardiovascular\nmycardio.get_age() # 24.96',
 			 methods: [{
 				 name: "get_age",
 				 arguments: [],
 				 val: "years",
 				 description: "",
 				 equations: [],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call get_age from instance of Cardiovascular\nmycardio.get_age() 24.96',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call get_age from instance of Cardiovascular\nmycardio.get_age() # 24.96',
 			 },
 			 {
 				 name: "fatFreeMass",
@@ -417,8 +430,8 @@ app.service("docsService", [  function() {
 						source: ""
 					}
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call fatFreeMass from instance of Cardiovascular\nmycardio.fatFreeMass(1000,3) {\nadult: {\n\taverage: 30.807956114636898,\n\tlean: 34.76353038022957,\n\tobese: 26.852381849044228 }\nathlete: 44.214175999999995 }',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call fatFreeMass from instance of Cardiovascular\nmycardio.fatFreeMass(1000,3) {\nadult: {\n\taverage: 30.807956114636898,\n\tlean: 34.76353038022957,\n\tobese: 26.852381849044228 }\nathlete: 44.214175999999995 }',
 			 },
 			 {
 				 name: "fieldTestsV02Max",
@@ -482,8 +495,8 @@ app.service("docsService", [  function() {
 						source: "McArdle et al. (1972)"
 					},
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call fieldTestsV02Max from instance of Cardiovascular\nmycardio.fieldTestsV02Max(30, 50, 140, 9) {\nFifteenMinuteTest: 10.49,\nMileHalf: [-0.006400000000007289, 38.532000000000004],\nTwelveMinuteTest: -9.96,\nmileRunWalk: 167.85996125929756,\nmileSteady: 21.533599999999996,\nmileWalk: 5.517826152501623,\nshuttle: 13.776866985058128 }',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call fieldTestsV02Max from instance of Cardiovascular\nmycardio.fieldTestsV02Max(30, 50, 140, 9) {\nFifteenMinuteTest: 10.49,\nMileHalf: [-0.006400000000007289, 38.532000000000004],\nTwelveMinuteTest: -9.96,\nmileRunWalk: 167.85996125929756,\nmileSteady: 21.533599999999996,\nmileWalk: 5.517826152501623,\nshuttle: 13.776866985058128 }',
 			 },
 			 {
 				 name: "popV02Max",
@@ -534,8 +547,8 @@ app.service("docsService", [  function() {
 						source: "McConnell and Clark (1987)"
 					}
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call popV02Max from instance of Cardiovascular\nmycardio.popV02Max(20,30,40) {\nfemale: {\n\tbalke: 32.82,\n\tbruce: 83.69999999999999 },\nmale: {\n\tbalke: 43.87,\n\tbruce: 0.23000000000000265,\n\tnaughton: 35.800000000000004 },\nelderlycardiac: 54.185 }',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call popV02Max from instance of Cardiovascular\nmycardio.popV02Max(20,30,40) {\nfemale: {\n\tbalke: 32.82,\n\tbruce: 83.69999999999999 },\nmale: {\n\tbalke: 43.87,\n\tbruce: 0.23000000000000265,\n\tnaughton: 35.800000000000004 },\nelderlycardiac: 54.185 }',
 			 },
 			 {
 				 name: "walkingVO2",
@@ -556,8 +569,8 @@ app.service("docsService", [  function() {
 				 		source: ""
 				 	},
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call walkingVO2 from instance of Cardiovascular\nmycardio.walkingVO2(100,0.2) 46',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call walkingVO2 from instance of Cardiovascular\nmycardio.walkingVO2(100,0.2) # 46',
 			 },
 			 {
 				 name: "runningVO2",
@@ -578,8 +591,8 @@ app.service("docsService", [  function() {
 				 		source: ""
 				 	},
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call walkingVO2 from instance of Cardiovascular\nmycardio.walkingVO2(200,0.2) 76',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call walkingVO2 from instance of Cardiovascular\nmycardio.walkingVO2(200,0.2) # 76',
 			 },
 			 {
 				 name: "legErgometryVO2",
@@ -596,8 +609,8 @@ app.service("docsService", [  function() {
 				 		source: ""
 				 	},
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call legErgometryVO2 from instance of Cardiovascular\nmycardio.legErgometryVO2(1234) 44.633333333333',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call legErgometryVO2 from instance of Cardiovascular\nmycardio.legErgometryVO2(1234) # 44.633333333333',
 			 },
 			 {
 				 name: "armErgometryVO2",
@@ -614,8 +627,8 @@ app.service("docsService", [  function() {
 				 		source: ""
 				 	},
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call armErgometryVO2 from instance of Cardiovascular\nmycardio.armErgometryVO2(800) 44.444444444444',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call armErgometryVO2 from instance of Cardiovascular\nmycardio.armErgometryVO2(800) # 44.444444444444',
 			 },
 			 {
 				 name: "steppingVO2",
@@ -636,8 +649,8 @@ app.service("docsService", [  function() {
 				 		source: ""
 				 	},
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call steppingVO2 from instance of Cardiovascular\nmycardio.steppingVO2(50,0.3) 45.910000000000004',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call steppingVO2 from instance of Cardiovascular\nmycardio.steppingVO2(50,0.3) # 45.910000000000004',
 			 },
 			 {
 				 name: "vO2Reserve",
@@ -658,8 +671,8 @@ app.service("docsService", [  function() {
 				 		source: ""
 				 	},
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call vO2Reserve from instance of Cardiovascular\nmycardio.vO2Reserve(300,189) 111',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call vO2Reserve from instance of Cardiovascular\nmycardio.vO2Reserve(300,189) # 111',
 			 },
 			 {
 				 name: "targetVO2",
@@ -685,8 +698,8 @@ app.service("docsService", [  function() {
 				 		source: ""
 				 	},
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call targetVO2 from instance of Cardiovascular\nmycardio.targetVO2(.80,300,189) 88.8',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call targetVO2 from instance of Cardiovascular\nmycardio.targetVO2(.80,300,189) # 88.8',
 			 },
 			 {
 				 name: "heartRateMax",
@@ -696,8 +709,8 @@ app.service("docsService", [  function() {
 				 equations: [{
 					 val: "208 - (0.7 * age)",
 				 }],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call heartRateMax from instance of Cardiovascular\nmycardio.heartRateMax() 190.528',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call heartRateMax from instance of Cardiovascular\nmycardio.heartRateMax() # 190.528',
 			 },
 			 {
 				 name: "stairMasterMets",
@@ -711,8 +724,8 @@ app.service("docsService", [  function() {
 				 equations: [{
 					 val: "0.556 + 7.45 * setting",
 				 }],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call stairMasterMets from instance of Cardiovascular\nmycardio.stairMasterMets(56) 417.756',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call stairMasterMets from instance of Cardiovascular\nmycardio.stairMasterMets(56) # 417.756',
 			 },
 			 {
 				 name: "residualVolume",
@@ -750,8 +763,8 @@ app.service("docsService", [  function() {
 				    	 source: ""
 				     },
 				 ],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call residualVolume from instance of Cardiovascular\nmycardio.residualVolume(56) {\nBerglund: 0.9719603859433432,\nBoren: 1.246254651369875,\nGoldman: 1.1037240487858129 }',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call residualVolume from instance of Cardiovascular\nmycardio.residualVolume(56) {\nBerglund: 0.9719603859433432,\nBoren: 1.246254651369875,\nGoldman: 1.1037240487858129 }',
 			 },
 			 {
 				 name: "targetHeartRate",
@@ -773,8 +786,8 @@ app.service("docsService", [  function() {
 				 equations: [{
 					 val: "(intensity * (max - rest)) + rest",
 				 }],
-				 example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call targetHeartRate from instance of Cardiovascular\nmycardio.targetHeartRate(.8,290.528,78) 120.50559999999999',
+				 example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call targetHeartRate from instance of Cardiovascular\nmycardio.targetHeartRate(.8,290.528,78) # 120.50559999999999',
 			 },
 			 {
 				 name: "totalLungCapacity",
@@ -794,8 +807,8 @@ app.service("docsService", [  function() {
 			    	 val: "residual volumev + vital capacity",
 			    	 source: ""
 			     },],
-			     example: '// create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call totalLungCapacity from instance of Cardiovascular\nmycardio.totalLungCapacity(1300, 4700) 6000',
+			     example: '# create instance of Cardiovascular\nvar mycardio = Cardiovascular("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call totalLungCapacity from instance of Cardiovascular\nmycardio.totalLungCapacity(1300, 4700) # 6000',
 			 },
 			 ],
 			},
@@ -823,17 +836,17 @@ app.service("docsService", [  function() {
 					 name: "race",
 					 units: "string"
 				 }],
-				 example: '// create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
-				 '\n\n// call methods from Muscle\nmuscles.get_age() 24.96'+
-				 '\nme.muscles.get_age() 24.96',
+				 example: '# create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
+				 '\n\n# call methods from Muscle\nmuscles.get_age() # 24.96'+
+				 '\nme.muscles.get_age() # 24.96',
 				 methods: [{
 					 name: "get_age",
 					 arguments: [],
 					 val: "years",
 					 description: "",
 					 equations: [],
-					 example: '// create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
-					 '\n\n// call get_age from Muscle\nmuscles.get_age() 24.96',
+					 example: '# create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
+					 '\n\n# call get_age from Muscle\nmuscles.get_age() # 24.96',
 				 },
 				 {
 					 name: "isMuscleBalanced",
@@ -854,8 +867,8 @@ app.service("docsService", [  function() {
 					 description: "",
 					 equations: [
 					 ],
-					 example: '// create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
-					 '\n\n// call isMuscleBalanced from Muscle\nmuscles.isMuscleBalanced("hip", 50, 60) false',
+					 example: '# create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
+					 '\n\n# call isMuscleBalanced from Muscle\nmuscles.isMuscleBalanced("hip", 50, 60) false',
 				 },
 				 {
 					 name: "fatigueRepMaximum",
@@ -878,8 +891,8 @@ app.service("docsService", [  function() {
 							source: ""
 						},
 					 ],
-					 example: '// create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
-					 '\n\n// call fatigueRepMaximum from Muscle\nmuscles.fatigueRepMaximum(10, 95) 126.70045345425446',
+					 example: '# create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
+					 '\n\n# call fatigueRepMaximum from Muscle\nmuscles.fatigueRepMaximum(10, 95) # 126.70045345425446',
 				 },
 				 {
 					 name: "femaleRepMax",
@@ -906,8 +919,8 @@ app.service("docsService", [  function() {
 							source: "Kuramoto & Payne (1995)"
 						},
 					 ],
-					 example: '// create instance of Muscle\nvar muscles = Muscle("female", datetime.datetime(1990,3,17), 54, 154)'+
-					 '\n\n// returns 0 is less than 40 or over 70\nmuscles.femaleRepMax(10, 95) 0',
+					 example: '# create instance of Muscle\nvar muscles = Muscle("female", datetime.datetime(1990,3,17), 54, 154)'+
+					 '\n\n# returns 0 is less than 40 or over 70\nmuscles.femaleRepMax(10, 95) # 0',
 				 },
 				 {
 					 name: "twoSetMaximum",
@@ -936,8 +949,8 @@ app.service("docsService", [  function() {
 					 		source: ""
 					 	},
 					 ],
-					 example: '// create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
-					 '\n\n// call twoSetMaximum from Muscle\nmuscles.twoSetMaximum(12,85,7,90) 96',
+					 example: '# create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
+					 '\n\n# call twoSetMaximum from Muscle\nmuscles.twoSetMaximum(12,85,7,90) # 96',
 				 },
 				 {
 					 name: "YMCAUpperBodyRepMax",
@@ -958,8 +971,8 @@ app.service("docsService", [  function() {
 					 		source: "Kim, Mayhew, and Peterson (2002)"
 					 	},
 					 ],
-					 example: '// create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
-					 '\n\n// call YMCAUpperBodyRepMax from Muscle\nmuscles.YMCAUpperBodyRepMax(55) 123.15',
+					 example: '# create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
+					 '\n\n# call YMCAUpperBodyRepMax from Muscle\nmuscles.YMCAUpperBodyRepMax(55) # 123.15',
 				 },
 				 {
 					 name: "relativeStrength",
@@ -975,8 +988,8 @@ app.service("docsService", [  function() {
 					 		val: "rm / weight",
 					 	},
 					 ],
-					 example: '// create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
-					 '\n\n// call relativeStrength from Muscle\nmuscles.relativeStrength(40) 0.7407407407407407',
+					 example: '# create instance of Muscle\nvar muscles = Muscle("male", datetime.datetime(1990,3,17), 54, 154)'+
+					 '\n\n# call relativeStrength from Muscle\nmuscles.relativeStrength(40) # 0.7407407407407407',
 				 },
 				 ],
 				}
@@ -1027,6 +1040,7 @@ app.controller('overviewController', ['$scope','docsService', function($scope, d
 		$scope.index = false;
 		$scope.module = d;
 		$scope.method = false;
+		Prism.highlightAll();
 	});
 	
 	$scope.$on('showMethod', function(e,d) {
@@ -1064,6 +1078,7 @@ app.controller('indexController', ['$scope','docsService', function($scope, docs
         var method = docsService.getMethod(module, method);
 		$scope.$emit('showMethod', method);
 	}
+	
 }]);
 
 app.controller('moduleController', ['$scope', function($scope) {
@@ -1086,4 +1101,5 @@ app.controller('methodController', ['$scope', function($scope) {
 			$scope.argumentsList = $scope.method.arguments.map(function(v) { return (v.units)? v.name+' ('+v.units+')' : v.name;});
 		}
 	});
+
 }]);
