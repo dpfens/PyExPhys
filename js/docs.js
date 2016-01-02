@@ -2,16 +2,25 @@ var app = angular.module('docsApp', ['ngSanitize', "ngAnimate"]);
 
 app.directive('prism', [function() {
     return {
-        restrict: 'A',
+        restrict: 'E',
+        scope: {
+        	code: '=',
+        	language: '@'
+        },
+        template: '<pre><code class="language-{{language}}">{{ code }}</code></pre>',
+        replace: true,
         link: function ($scope, element, attrs) {
             element.ready(function() {
                 Prism.highlightElement(element[0]);
             });
-            setInterval(function() { Prism.highlightElement(element[0]) },2000);
+            $scope.$watch('code', function(v) {
+            	if(v) {
+            		Prism.highlightElement(element.find("code")[0]);
+            	}
+			});
         }
     } 
-}]
-);
+}]);
 
 app.service("docsService", [  function() {
 	var docs = [
