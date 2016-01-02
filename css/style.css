@@ -251,33 +251,6 @@ form input, form select {
 	text-align: left;
 }
 
-/************************* Code Sample Styles **************************/
-
-code, pre {
-	background-color: #333;
-	color: #CCC;
-    	display: inline-block;;
-	font-family: 'Ubuntu Mono';
-}
-
-code {
-	overflow:auto;
-    	padding: 1%;
-}
-
-var {
-	color: #29ABE2;
-}
-
-kbd {
-	color: #FFFF99;
-}
-
-samp {
-	color: #FFF;
-}
-
-
 /************************* Index Styles **************************/
 
 div.index-quickstart {
