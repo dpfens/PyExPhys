@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/prism.css">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	</head>
 	
@@ -434,21 +435,21 @@
 						<li><p>Get Started!</p></li>
 					</ol>
                 
-                	<pre><code>
- <kbd>// create an instance of the Person_Factory</kbd>
- <var>factory</var> = Person_Factory();
+                	<pre><code class="language-python">
+# create an instance of the Person_Factory
+factory = Person_Factory();
   
- <kbd>// create an instance of datetime as my date of birth</kbd>
- <var>dob</var> = datetime.datetime(1990,3,17);
+# create an instance of datetime as my date of birth
+dob = datetime.datetime(1990,3,17);
  
- <kbd>// create a Person instance or subclass of Person</kbd>
- <var>me</var> = factory.create("John Doe", "male", dob, 54, 154)
+# create a Person instance or subclass of Person
+me = factory.create("John Doe", "male", dob, 54, 154)
 	
- <kbd>// execute a method from Person</kbd>
- me.predicted_tee()['active'];  <samp>// 2537.0212935729905 (kcal)</samp>
+# execute a method from Person
+me.predicted_tee()['active'];  # 2537.0212935729905 (kcal)
 	
- <kbd>// or from one of its components</kbd>
- me.cardio.heart_rate_max();  <samp>// 190.538 (bpm)</samp>
+# or from one of its components
+me.cardio.heart_rate_max();  # 190.538 (bpm)
                 	</code></pre>
 				</div>
 			</div>
@@ -465,7 +466,7 @@
 	</footer>
 	
 	</body>
-	
+	<script src="js/libs/prism.js"></script>
 	<script src="js/libs/angular.min.js" ></script>
 	<script src="js/libs/angular-route.min.js" ></script>
 	<script src="js/libs/angular-animate.min.js" ></script>
