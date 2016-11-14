@@ -4,7 +4,19 @@ PyFit is a [Cython](http://cython.readthedocs.io/en/latest/index.html) library o
 
 ## Resources
 - [Website](dpfens.github.io/PyFit)
-- [Wiki](https://github.com/dpfens/PyFit/wiki)
+- [Home](https://github.com/dpfens/PyFit/wiki)
+- [Enums](https://github.com/dpfens/PyFit/wiki/Enums)
+- [Balance](https://github.com/dpfens/PyFit/wiki/Balance)
+- [Cardio](https://github.com/dpfens/PyFit/wiki/Cardio)
+- [Composition](https://github.com/dpfens/PyFit/wiki/Composition)
+- [Convert](https://github.com/dpfens/PyFit/wiki/Convert)
+- [METs](https://github.com/dpfens/PyFit/wiki/Mets)
+- [Model](https://github.com/dpfens/PyFit/wiki/Model)
+- [Sport](https://github.com/dpfens/PyFit/wiki/Sport)
+- [Strength](https://github.com/dpfens/PyFit/wiki/Strength)
+- [Test Protocols](https://github.com/dpfens/PyFit/wiki/Test Protocols)
+- [API Reference](https://github.com/dpfens/PyFit/wiki/API)
+- [Equations](https://github.com/dpfens/PyFit/wiki/Equations)
 
 ## Installing
 Download the [latest release](https://github.com/dpfens/PyFit/archive/v2.0.zip).  Install the library using the `setup.py` script:
