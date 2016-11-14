@@ -23,7 +23,17 @@ Download the [latest release](https://github.com/dpfens/PyFit/archive/v2.0.zip).
 ```
 python setup.py install
 ```
+
 To install locally, use the `--inplace` switch when installing:
 ```
 python setup.py install --inplace
 ```
+
+## Tests
+To test the calculations of PyFit, run the python distutils test:
+```
+python setup.py test
+```
+
+## Support
+Please raise potential bugs on [Github](https://github.com/dpfens/PyFit/issues).
