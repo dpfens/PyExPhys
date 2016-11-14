@@ -491,7 +491,7 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "stringsource",
-  "enums.pyx",
+  "src/enums.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -524,10 +524,10 @@ enum __pyx_t_5enums_Race {
 /* "enums.pyx":7
  *     White, Black, NativeAmerican, PacificIslander
  * 
- * cpdef enum Activity:             # <<<<<<<<<<<<<<
+ * cpdef enum PAL:             # <<<<<<<<<<<<<<
  *     Sedentary, Low, Active, VeryActive
  */
-enum __pyx_t_5enums_Activity {
+enum __pyx_t_5enums_PAL {
   __pyx_e_5enums_Sedentary,
   __pyx_e_5enums_Low,
   __pyx_e_5enums_Active,
@@ -815,7 +815,7 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_Gender(enum
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_Race(enum __pyx_t_5enums_Race value);
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(enum __pyx_t_5enums_Activity value);
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(enum __pyx_t_5enums_PAL value);
 
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
@@ -845,6 +845,7 @@ int __pyx_module_is_main_enums = 0;
 static PyObject *__pyx_builtin_ValueError;
 static const char __pyx_k_v[] = "v";
 static const char __pyx_k_Low[] = "Low";
+static const char __pyx_k_PAL[] = "PAL";
 static const char __pyx_k_cls[] = "cls";
 static const char __pyx_k_dct[] = "dct";
 static const char __pyx_k_doc[] = "__doc__";
@@ -877,7 +878,6 @@ static const char __pyx_k_IntEnum[] = "IntEnum";
 static const char __pyx_k_members[] = "__members__";
 static const char __pyx_k_parents[] = "parents";
 static const char __pyx_k_prepare[] = "__prepare__";
-static const char __pyx_k_Activity[] = "Activity";
 static const char __pyx_k_EnumBase[] = "EnumBase";
 static const char __pyx_k_EnumType[] = "EnumType";
 static const char __pyx_k_qualname[] = "__qualname__";
@@ -896,7 +896,6 @@ static const char __pyx_k_Pyx_EnumBase___str[] = "__Pyx_EnumBase.__str__";
 static const char __pyx_k_Pyx_EnumBase___repr[] = "__Pyx_EnumBase.__repr__";
 static const char __pyx_k_Unknown_enum_value_s[] = "Unknown enum value: '%s'";
 static PyObject *__pyx_n_s_Active;
-static PyObject *__pyx_n_s_Activity;
 static PyObject *__pyx_n_s_Black;
 static PyObject *__pyx_n_s_EnumBase;
 static PyObject *__pyx_n_s_EnumType;
@@ -907,6 +906,7 @@ static PyObject *__pyx_n_s_Low;
 static PyObject *__pyx_n_s_Male;
 static PyObject *__pyx_n_s_NativeAmerican;
 static PyObject *__pyx_n_s_OrderedDict;
+static PyObject *__pyx_n_s_PAL;
 static PyObject *__pyx_n_s_PacificIslander;
 static PyObject *__pyx_n_s_Pyx_EnumBase;
 static PyObject *__pyx_n_s_Pyx_EnumBase___new;
@@ -1935,7 +1935,6 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_Active, __pyx_k_Active, sizeof(__pyx_k_Active), 0, 0, 1, 1},
-  {&__pyx_n_s_Activity, __pyx_k_Activity, sizeof(__pyx_k_Activity), 0, 0, 1, 1},
   {&__pyx_n_s_Black, __pyx_k_Black, sizeof(__pyx_k_Black), 0, 0, 1, 1},
   {&__pyx_n_s_EnumBase, __pyx_k_EnumBase, sizeof(__pyx_k_EnumBase), 0, 0, 1, 1},
   {&__pyx_n_s_EnumType, __pyx_k_EnumType, sizeof(__pyx_k_EnumType), 0, 0, 1, 1},
@@ -1946,6 +1945,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_Male, __pyx_k_Male, sizeof(__pyx_k_Male), 0, 0, 1, 1},
   {&__pyx_n_s_NativeAmerican, __pyx_k_NativeAmerican, sizeof(__pyx_k_NativeAmerican), 0, 0, 1, 1},
   {&__pyx_n_s_OrderedDict, __pyx_k_OrderedDict, sizeof(__pyx_k_OrderedDict), 0, 0, 1, 1},
+  {&__pyx_n_s_PAL, __pyx_k_PAL, sizeof(__pyx_k_PAL), 0, 0, 1, 1},
   {&__pyx_n_s_PacificIslander, __pyx_k_PacificIslander, sizeof(__pyx_k_PacificIslander), 0, 0, 1, 1},
   {&__pyx_n_s_Pyx_EnumBase, __pyx_k_Pyx_EnumBase, sizeof(__pyx_k_Pyx_EnumBase), 0, 0, 1, 1},
   {&__pyx_n_s_Pyx_EnumBase___new, __pyx_k_Pyx_EnumBase___new, sizeof(__pyx_k_Pyx_EnumBase___new), 0, 0, 1, 1},
@@ -3135,19 +3135,19 @@ PyMODINIT_FUNC PyInit_enums(void)
  * cdef dict __Pyx_globals = globals()
  * if PY_VERSION_HEX >= 0x03040000:             # <<<<<<<<<<<<<<
  * 
- *     Activity = __Pyx_EnumBase('Activity', __Pyx_OrderedDict([
+ *     PAL = __Pyx_EnumBase('PAL', __Pyx_OrderedDict([
  */
   __pyx_t_2 = ((PY_VERSION_HEX >= 0x03040000) != 0);
   if (__pyx_t_2) {
 
     /* "EnumType":54
  * 
- *     Activity = __Pyx_EnumBase('Activity', __Pyx_OrderedDict([
+ *     PAL = __Pyx_EnumBase('PAL', __Pyx_OrderedDict([
  *         ('Sedentary', Sedentary),             # <<<<<<<<<<<<<<
  *         ('Low', Low),
  *         ('Active', Active),
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(__pyx_e_5enums_Sedentary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Sedentary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -3159,13 +3159,13 @@ PyMODINIT_FUNC PyInit_enums(void)
     __pyx_t_4 = 0;
 
     /* "EnumType":55
- *     Activity = __Pyx_EnumBase('Activity', __Pyx_OrderedDict([
+ *     PAL = __Pyx_EnumBase('PAL', __Pyx_OrderedDict([
  *         ('Sedentary', Sedentary),
  *         ('Low', Low),             # <<<<<<<<<<<<<<
  *         ('Active', Active),
  *         ('VeryActive', VeryActive),
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(__pyx_e_5enums_Low); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 55, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Low); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -3183,7 +3183,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('VeryActive', VeryActive),
  *     ]))
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(__pyx_e_5enums_Active); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 56, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Active); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -3199,9 +3199,9 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('Active', Active),
  *         ('VeryActive', VeryActive),             # <<<<<<<<<<<<<<
  *     ]))
- *     __Pyx_globals['Sedentary'] = Activity.Sedentary
+ *     __Pyx_globals['Sedentary'] = PAL.Sedentary
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(__pyx_e_5enums_VeryActive); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 57, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_VeryActive); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -3215,7 +3215,7 @@ PyMODINIT_FUNC PyInit_enums(void)
     /* "EnumType":53
  * if PY_VERSION_HEX >= 0x03040000:
  * 
- *     Activity = __Pyx_EnumBase('Activity', __Pyx_OrderedDict([             # <<<<<<<<<<<<<<
+ *     PAL = __Pyx_EnumBase('PAL', __Pyx_OrderedDict([             # <<<<<<<<<<<<<<
  *         ('Sedentary', Sedentary),
  *         ('Low', Low),
  */
@@ -3278,9 +3278,9 @@ PyMODINIT_FUNC PyInit_enums(void)
     if (__pyx_t_6) {
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6); __pyx_t_6 = NULL;
     }
-    __Pyx_INCREF(__pyx_n_s_Activity);
-    __Pyx_GIVEREF(__pyx_n_s_Activity);
-    PyTuple_SET_ITEM(__pyx_t_4, 0+__pyx_t_8, __pyx_n_s_Activity);
+    __Pyx_INCREF(__pyx_n_s_PAL);
+    __Pyx_GIVEREF(__pyx_n_s_PAL);
+    PyTuple_SET_ITEM(__pyx_t_4, 0+__pyx_t_8, __pyx_n_s_PAL);
     __Pyx_GIVEREF(__pyx_t_9);
     PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_8, __pyx_t_9);
     __pyx_t_9 = 0;
@@ -3288,17 +3288,17 @@ PyMODINIT_FUNC PyInit_enums(void)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (PyDict_SetItem(__pyx_d, __pyx_n_s_Activity, __pyx_t_1) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_d, __pyx_n_s_PAL, __pyx_t_1) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "EnumType":59
  *         ('VeryActive', VeryActive),
  *     ]))
- *     __Pyx_globals['Sedentary'] = Activity.Sedentary             # <<<<<<<<<<<<<<
- *     __Pyx_globals['Low'] = Activity.Low
- *     __Pyx_globals['Active'] = Activity.Active
+ *     __Pyx_globals['Sedentary'] = PAL.Sedentary             # <<<<<<<<<<<<<<
+ *     __Pyx_globals['Low'] = PAL.Low
+ *     __Pyx_globals['Active'] = PAL.Active
  */
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_Activity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Sedentary); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 59, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -3312,12 +3312,12 @@ PyMODINIT_FUNC PyInit_enums(void)
 
     /* "EnumType":60
  *     ]))
- *     __Pyx_globals['Sedentary'] = Activity.Sedentary
- *     __Pyx_globals['Low'] = Activity.Low             # <<<<<<<<<<<<<<
- *     __Pyx_globals['Active'] = Activity.Active
- *     __Pyx_globals['VeryActive'] = Activity.VeryActive
+ *     __Pyx_globals['Sedentary'] = PAL.Sedentary
+ *     __Pyx_globals['Low'] = PAL.Low             # <<<<<<<<<<<<<<
+ *     __Pyx_globals['Active'] = PAL.Active
+ *     __Pyx_globals['VeryActive'] = PAL.VeryActive
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_Activity); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 60, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_Low); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -3330,13 +3330,13 @@ PyMODINIT_FUNC PyInit_enums(void)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "EnumType":61
- *     __Pyx_globals['Sedentary'] = Activity.Sedentary
- *     __Pyx_globals['Low'] = Activity.Low
- *     __Pyx_globals['Active'] = Activity.Active             # <<<<<<<<<<<<<<
- *     __Pyx_globals['VeryActive'] = Activity.VeryActive
+ *     __Pyx_globals['Sedentary'] = PAL.Sedentary
+ *     __Pyx_globals['Low'] = PAL.Low
+ *     __Pyx_globals['Active'] = PAL.Active             # <<<<<<<<<<<<<<
+ *     __Pyx_globals['VeryActive'] = PAL.VeryActive
  * else:
  */
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_Activity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Active); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 61, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -3349,13 +3349,13 @@ PyMODINIT_FUNC PyInit_enums(void)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
     /* "EnumType":62
- *     __Pyx_globals['Low'] = Activity.Low
- *     __Pyx_globals['Active'] = Activity.Active
- *     __Pyx_globals['VeryActive'] = Activity.VeryActive             # <<<<<<<<<<<<<<
+ *     __Pyx_globals['Low'] = PAL.Low
+ *     __Pyx_globals['Active'] = PAL.Active
+ *     __Pyx_globals['VeryActive'] = PAL.VeryActive             # <<<<<<<<<<<<<<
  * else:
- *     class Activity(__Pyx_EnumBase):
+ *     class PAL(__Pyx_EnumBase):
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_Activity); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 62, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_VeryActive); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -3372,17 +3372,17 @@ PyMODINIT_FUNC PyInit_enums(void)
  * cdef dict __Pyx_globals = globals()
  * if PY_VERSION_HEX >= 0x03040000:             # <<<<<<<<<<<<<<
  * 
- *     Activity = __Pyx_EnumBase('Activity', __Pyx_OrderedDict([
+ *     PAL = __Pyx_EnumBase('PAL', __Pyx_OrderedDict([
  */
     goto __pyx_L6;
   }
 
   /* "EnumType":64
- *     __Pyx_globals['VeryActive'] = Activity.VeryActive
+ *     __Pyx_globals['VeryActive'] = PAL.VeryActive
  * else:
- *     class Activity(__Pyx_EnumBase):             # <<<<<<<<<<<<<<
+ *     class PAL(__Pyx_EnumBase):             # <<<<<<<<<<<<<<
  *         pass
- *     __Pyx_globals['Sedentary'] = Activity(Sedentary, 'Sedentary')
+ *     __Pyx_globals['Sedentary'] = PAL(Sedentary, 'Sedentary')
  */
   /*else*/ {
     __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
@@ -3392,26 +3392,26 @@ PyMODINIT_FUNC PyInit_enums(void)
     PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_EnumBase);
     __pyx_t_7 = __Pyx_CalculateMetaclass(NULL, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 64, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_7, __pyx_t_1, __pyx_n_s_Activity, __pyx_n_s_Activity, (PyObject *) NULL, __pyx_n_s_EnumType, (PyObject *) NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_7, __pyx_t_1, __pyx_n_s_PAL, __pyx_n_s_PAL, (PyObject *) NULL, __pyx_n_s_EnumType, (PyObject *) NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 64, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_9 = __Pyx_Py3ClassCreate(__pyx_t_7, __pyx_n_s_Activity, __pyx_t_1, __pyx_t_4, NULL, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 64, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_Py3ClassCreate(__pyx_t_7, __pyx_n_s_PAL, __pyx_t_1, __pyx_t_4, NULL, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 64, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_d, __pyx_n_s_Activity, __pyx_t_9) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_d, __pyx_n_s_PAL, __pyx_t_9) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "EnumType":66
- *     class Activity(__Pyx_EnumBase):
+ *     class PAL(__Pyx_EnumBase):
  *         pass
- *     __Pyx_globals['Sedentary'] = Activity(Sedentary, 'Sedentary')             # <<<<<<<<<<<<<<
- *     __Pyx_globals['Low'] = Activity(Low, 'Low')
- *     __Pyx_globals['Active'] = Activity(Active, 'Active')
+ *     __Pyx_globals['Sedentary'] = PAL(Sedentary, 'Sedentary')             # <<<<<<<<<<<<<<
+ *     __Pyx_globals['Low'] = PAL(Low, 'Low')
+ *     __Pyx_globals['Active'] = PAL(Active, 'Active')
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_Activity); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(__pyx_e_5enums_Sedentary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Sedentary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_9 = NULL;
     __pyx_t_8 = 0;
@@ -3449,14 +3449,14 @@ PyMODINIT_FUNC PyInit_enums(void)
 
     /* "EnumType":67
  *         pass
- *     __Pyx_globals['Sedentary'] = Activity(Sedentary, 'Sedentary')
- *     __Pyx_globals['Low'] = Activity(Low, 'Low')             # <<<<<<<<<<<<<<
- *     __Pyx_globals['Active'] = Activity(Active, 'Active')
- *     __Pyx_globals['VeryActive'] = Activity(VeryActive, 'VeryActive')
+ *     __Pyx_globals['Sedentary'] = PAL(Sedentary, 'Sedentary')
+ *     __Pyx_globals['Low'] = PAL(Low, 'Low')             # <<<<<<<<<<<<<<
+ *     __Pyx_globals['Active'] = PAL(Active, 'Active')
+ *     __Pyx_globals['VeryActive'] = PAL(VeryActive, 'VeryActive')
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_Activity); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(__pyx_e_5enums_Low); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Low); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_4 = NULL;
     __pyx_t_8 = 0;
@@ -3493,15 +3493,15 @@ PyMODINIT_FUNC PyInit_enums(void)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "EnumType":68
- *     __Pyx_globals['Sedentary'] = Activity(Sedentary, 'Sedentary')
- *     __Pyx_globals['Low'] = Activity(Low, 'Low')
- *     __Pyx_globals['Active'] = Activity(Active, 'Active')             # <<<<<<<<<<<<<<
- *     __Pyx_globals['VeryActive'] = Activity(VeryActive, 'VeryActive')
+ *     __Pyx_globals['Sedentary'] = PAL(Sedentary, 'Sedentary')
+ *     __Pyx_globals['Low'] = PAL(Low, 'Low')
+ *     __Pyx_globals['Active'] = PAL(Active, 'Active')             # <<<<<<<<<<<<<<
+ *     __Pyx_globals['VeryActive'] = PAL(VeryActive, 'VeryActive')
  * 
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_Activity); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(__pyx_e_5enums_Active); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Active); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_6 = NULL;
     __pyx_t_8 = 0;
@@ -3538,14 +3538,14 @@ PyMODINIT_FUNC PyInit_enums(void)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "EnumType":69
- *     __Pyx_globals['Low'] = Activity(Low, 'Low')
- *     __Pyx_globals['Active'] = Activity(Active, 'Active')
- *     __Pyx_globals['VeryActive'] = Activity(VeryActive, 'VeryActive')             # <<<<<<<<<<<<<<
+ *     __Pyx_globals['Low'] = PAL(Low, 'Low')
+ *     __Pyx_globals['Active'] = PAL(Active, 'Active')
+ *     __Pyx_globals['VeryActive'] = PAL(VeryActive, 'VeryActive')             # <<<<<<<<<<<<<<
  * 
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_Activity); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 69, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 69, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(__pyx_e_5enums_VeryActive); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 69, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_VeryActive); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 69, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_9 = NULL;
     __pyx_t_8 = 0;
@@ -5155,28 +5155,28 @@ bad:
 }
 
 /* CIntToPy */
-            static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_Activity(enum __pyx_t_5enums_Activity value) {
-    const enum __pyx_t_5enums_Activity neg_one = (enum __pyx_t_5enums_Activity) -1, const_zero = (enum __pyx_t_5enums_Activity) 0;
+            static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(enum __pyx_t_5enums_PAL value) {
+    const enum __pyx_t_5enums_PAL neg_one = (enum __pyx_t_5enums_PAL) -1, const_zero = (enum __pyx_t_5enums_PAL) 0;
     const int is_unsigned = neg_one > const_zero;
     if (is_unsigned) {
-        if (sizeof(enum __pyx_t_5enums_Activity) < sizeof(long)) {
+        if (sizeof(enum __pyx_t_5enums_PAL) < sizeof(long)) {
             return PyInt_FromLong((long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Activity) <= sizeof(unsigned long)) {
+        } else if (sizeof(enum __pyx_t_5enums_PAL) <= sizeof(unsigned long)) {
             return PyLong_FromUnsignedLong((unsigned long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Activity) <= sizeof(unsigned PY_LONG_LONG)) {
+        } else if (sizeof(enum __pyx_t_5enums_PAL) <= sizeof(unsigned PY_LONG_LONG)) {
             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
         }
     } else {
-        if (sizeof(enum __pyx_t_5enums_Activity) <= sizeof(long)) {
+        if (sizeof(enum __pyx_t_5enums_PAL) <= sizeof(long)) {
             return PyInt_FromLong((long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Activity) <= sizeof(PY_LONG_LONG)) {
+        } else if (sizeof(enum __pyx_t_5enums_PAL) <= sizeof(PY_LONG_LONG)) {
             return PyLong_FromLongLong((PY_LONG_LONG) value);
         }
     }
     {
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(enum __pyx_t_5enums_Activity),
+        return _PyLong_FromByteArray(bytes, sizeof(enum __pyx_t_5enums_PAL),
                                      little, !is_unsigned);
     }
 }

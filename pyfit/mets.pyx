@@ -842,3 +842,17 @@ cdef class METs(object):
     		MET(4.8,"21065","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),
     		MET(3.0,"21070","walk/stand combination, for volunteer purposes")
         ]
+
+cpdef float karvonen(float mets, float intensity):
+    return intensity * (mets -1) + 1
+
+cpdef float fromVO2(float vO2):
+    return vO2 / 3.5
+
+cpdef float toKCal(float mets, float weight):
+    return (mets * 3.5 * weight)/200
+
+cpdef float target(float vO2Max, intensity):
+    cdef float mets = fromVO2(vO2Max)
+    cdef float targetMets = karvonen(mets, intensity)
+    return targetMets

@@ -490,7 +490,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "sport/running/grading.pyx",
+  "src/sport/running/grading.pyx",
 };
 
 /*--- Type declarations ---*/

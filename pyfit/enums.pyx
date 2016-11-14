@@ -4,5 +4,5 @@ cpdef enum Gender:
 cpdef enum Race:
     White, Black, NativeAmerican, PacificIslander
 
-cpdef enum Activity:
+cpdef enum PAL:
     Sedentary, Low, Active, VeryActive

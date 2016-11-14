@@ -2,8 +2,10 @@
 
 /* BEGIN: Cython Metadata
 {
-    "distutils": {}, 
-    "module_name": "heart"
+    "distutils": {
+        "depends": []
+    }, 
+    "module_name": "pyfit.model.aerobic"
 }
 END: Cython Metadata */
 
@@ -273,8 +275,9 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__heart
-#define __PYX_HAVE_API__heart
+#define __PYX_HAVE__pyfit__model__aerobic
+#define __PYX_HAVE_API__pyfit__model__aerobic
+#include "math.h"
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -490,77 +493,72 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "cardio/heart.pyx",
+  "pyfit/model/aerobic.pyx",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_5heart_HR;
-struct __pyx_obj_5heart_ResidualVolume;
+struct __pyx_obj_5pyfit_5model_7aerobic_Riegel;
+struct __pyx_obj_5pyfit_5model_7aerobic_Cameron;
 
-/* "heart.pyx":1
- * cdef class HR(object):             # <<<<<<<<<<<<<<
- *     cdef int age
- *     cdef readonly dict __dir__
- */
-struct __pyx_obj_5heart_HR {
-  PyObject_HEAD
-  struct __pyx_vtabstruct_5heart_HR *__pyx_vtab;
-  int age;
-  PyObject *__dir__;
-};
-
-
-/* "heart.pyx":60
- *         return intensity * (maximum - rest) + rest
+/* "pyfit/model/aerobic.pyx":3
+ * from libc.math cimport pow
  * 
- * cdef class ResidualVolume(object):             # <<<<<<<<<<<<<<
- *     cdef float height # meters
- *     cdef float age # years
+ * cdef class Riegel(object):             # <<<<<<<<<<<<<<
+ *     cdef readonly float d1
+ *     cdef readonly float t1
  */
-struct __pyx_obj_5heart_ResidualVolume {
+struct __pyx_obj_5pyfit_5model_7aerobic_Riegel {
   PyObject_HEAD
-  struct __pyx_vtabstruct_5heart_ResidualVolume *__pyx_vtab;
-  float height;
-  float age;
-  float weight;
-  PyObject *__dict__;
+  struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Riegel *__pyx_vtab;
+  float d1;
+  float t1;
 };
 
 
-
-/* "heart.pyx":1
- * cdef class HR(object):             # <<<<<<<<<<<<<<
- *     cdef int age
- *     cdef readonly dict __dir__
- */
-
-struct __pyx_vtabstruct_5heart_HR {
-  float (*maxFox)(struct __pyx_obj_5heart_HR *);
-  float (*maxGellish)(struct __pyx_obj_5heart_HR *);
-  float (*maxAstrand)(struct __pyx_obj_5heart_HR *);
-  float (*maxTanaka)(struct __pyx_obj_5heart_HR *);
-  float (*maxGulati)(struct __pyx_obj_5heart_HR *);
-  float (*mean_arterial_pressure)(struct __pyx_obj_5heart_HR *, int, int);
-  float (*target_hr)(struct __pyx_obj_5heart_HR *, float, int, int);
-};
-static struct __pyx_vtabstruct_5heart_HR *__pyx_vtabptr_5heart_HR;
-
-
-/* "heart.pyx":60
- *         return intensity * (maximum - rest) + rest
+/* "pyfit/model/aerobic.pyx":21
+ *         return self.t1 * pow( (d2/self.d1), 1.06)
  * 
- * cdef class ResidualVolume(object):             # <<<<<<<<<<<<<<
- *     cdef float height # meters
- *     cdef float age # years
+ * cdef class Cameron(object):             # <<<<<<<<<<<<<<
+ *     cdef readonly float d1
+ *     cdef readonly float t1
+ */
+struct __pyx_obj_5pyfit_5model_7aerobic_Cameron {
+  PyObject_HEAD
+  struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *__pyx_vtab;
+  float d1;
+  float t1;
+};
+
+
+
+/* "pyfit/model/aerobic.pyx":3
+ * from libc.math cimport pow
+ * 
+ * cdef class Riegel(object):             # <<<<<<<<<<<<<<
+ *     cdef readonly float d1
+ *     cdef readonly float t1
  */
 
-struct __pyx_vtabstruct_5heart_ResidualVolume {
-  PyObject *(*berglund)(struct __pyx_obj_5heart_ResidualVolume *);
-  PyObject *(*boren)(struct __pyx_obj_5heart_ResidualVolume *);
-  PyObject *(*goldman)(struct __pyx_obj_5heart_ResidualVolume *);
-  PyObject *(*obrien)(struct __pyx_obj_5heart_ResidualVolume *, float);
+struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Riegel {
+  PyObject *(*distance)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, float, int __pyx_skip_dispatch);
+  PyObject *(*time)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, float, int __pyx_skip_dispatch);
 };
-static struct __pyx_vtabstruct_5heart_ResidualVolume *__pyx_vtabptr_5heart_ResidualVolume;
+static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Riegel *__pyx_vtabptr_5pyfit_5model_7aerobic_Riegel;
+
+
+/* "pyfit/model/aerobic.pyx":21
+ *         return self.t1 * pow( (d2/self.d1), 1.06)
+ * 
+ * cdef class Cameron(object):             # <<<<<<<<<<<<<<
+ *     cdef readonly float d1
+ *     cdef readonly float t1
+ */
+
+struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron {
+  PyObject *(*__pyx___f__)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, float);
+  PyObject *(*time)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, float, int __pyx_skip_dispatch);
+};
+static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *__pyx_vtabptr_5pyfit_5model_7aerobic_Cameron;
 
 /* --- Runtime support code (head) --- */
 /* Refnanny.proto */
@@ -626,6 +624,10 @@ static struct __pyx_vtabstruct_5heart_ResidualVolume *__pyx_vtabptr_5heart_Resid
 #define __Pyx_CLEAR(r)    do { PyObject* tmp = ((PyObject*)(r)); r = NULL; __Pyx_DECREF(tmp);} while(0)
 #define __Pyx_XCLEAR(r)   do { if((r) != NULL) {PyObject* tmp = ((PyObject*)(r)); r = NULL; __Pyx_DECREF(tmp);}} while(0)
 
+/* RaiseArgTupleInvalid.proto */
+static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
+    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
+
 /* RaiseDoubleKeywords.proto */
 static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
 
@@ -634,12 +636,36 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
     PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
     const char* function_name);
 
-/* RaiseArgTupleInvalid.proto */
-static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
-    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
+/* PyObjectGetAttrStr.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject* attr_name) {
+    PyTypeObject* tp = Py_TYPE(obj);
+    if (likely(tp->tp_getattro))
+        return tp->tp_getattro(obj, attr_name);
+#if PY_MAJOR_VERSION < 3
+    if (likely(tp->tp_getattr))
+        return tp->tp_getattr(obj, PyString_AS_STRING(attr_name));
+#endif
+    return PyObject_GetAttr(obj, attr_name);
+}
+#else
+#define __Pyx_PyObject_GetAttrStr(o,n) PyObject_GetAttr(o,n)
+#endif
 
-/* None.proto */
-static CYTHON_INLINE long __Pyx_div_long(long, long);
+/* PyObjectCall.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
+#else
+#define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
+#endif
+
+/* PyObjectCallMethO.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
+#endif
+
+/* PyObjectCallOneArg.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
 /* SetVTable.proto */
 static int __Pyx_SetVtable(PyObject *dict, void *vtable);
@@ -663,14 +689,14 @@ static void __pyx_insert_code_object(int code_line, PyCodeObject* code_object);
 static void __Pyx_AddTraceback(const char *funcname, int c_line,
                                int py_line, const char *filename);
 
-/* CIntFromPy.proto */
-static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
-
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
+
+/* CIntFromPy.proto */
+static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
 /* CheckBinaryVersion.proto */
 static int __Pyx_check_binary_version(void);
@@ -678,450 +704,70 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static float __pyx_f_5heart_2HR_maxFox(struct __pyx_obj_5heart_HR *__pyx_v_self); /* proto*/
-static float __pyx_f_5heart_2HR_maxGellish(struct __pyx_obj_5heart_HR *__pyx_v_self); /* proto*/
-static float __pyx_f_5heart_2HR_maxAstrand(struct __pyx_obj_5heart_HR *__pyx_v_self); /* proto*/
-static float __pyx_f_5heart_2HR_maxTanaka(struct __pyx_obj_5heart_HR *__pyx_v_self); /* proto*/
-static float __pyx_f_5heart_2HR_maxGulati(struct __pyx_obj_5heart_HR *__pyx_v_self); /* proto*/
-static float __pyx_f_5heart_2HR_mean_arterial_pressure(CYTHON_UNUSED struct __pyx_obj_5heart_HR *__pyx_v_self, int __pyx_v_diastolic_bp, int __pyx_v_systolic_bp); /* proto*/
-static float __pyx_f_5heart_2HR_target_hr(CYTHON_UNUSED struct __pyx_obj_5heart_HR *__pyx_v_self, float __pyx_v_intensity, int __pyx_v_rest, int __pyx_v_maximum); /* proto*/
-static PyObject *__pyx_f_5heart_14ResidualVolume_berglund(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self); /* proto*/
-static PyObject *__pyx_f_5heart_14ResidualVolume_boren(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self); /* proto*/
-static PyObject *__pyx_f_5heart_14ResidualVolume_goldman(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self); /* proto*/
-static PyObject *__pyx_f_5heart_14ResidualVolume_obrien(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self, float __pyx_v_bsa); /* proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_t2, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d2, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_x); /* proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d2, int __pyx_skip_dispatch); /* proto*/
 
-/* Module declarations from 'heart' */
-static PyTypeObject *__pyx_ptype_5heart_HR = 0;
-static PyTypeObject *__pyx_ptype_5heart_ResidualVolume = 0;
-#define __Pyx_MODULE_NAME "heart"
-int __pyx_module_is_main_heart = 0;
+/* Module declarations from 'libc.math' */
 
-/* Implementation of 'heart' */
-static const char __pyx_k_age[] = "age";
+/* Module declarations from 'pyfit.model.aerobic' */
+static PyTypeObject *__pyx_ptype_5pyfit_5model_7aerobic_Riegel = 0;
+static PyTypeObject *__pyx_ptype_5pyfit_5model_7aerobic_Cameron = 0;
+#define __Pyx_MODULE_NAME "pyfit.model.aerobic"
+int __pyx_module_is_main_pyfit__model__aerobic = 0;
+
+/* Implementation of 'pyfit.model.aerobic' */
+static const char __pyx_k_d1[] = "d1";
+static const char __pyx_k_t1[] = "t1";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_test[] = "__test__";
-static const char __pyx_k_height[] = "height";
-static const char __pyx_k_weight[] = "weight";
+static const char __pyx_k_time[] = "time";
+static const char __pyx_k_distance[] = "distance";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
-static PyObject *__pyx_n_s_age;
-static PyObject *__pyx_n_s_height;
+static PyObject *__pyx_n_s_d1;
+static PyObject *__pyx_n_s_distance;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_pyx_vtable;
+static PyObject *__pyx_n_s_t1;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_n_s_weight;
-static int __pyx_pf_5heart_2HR___cinit__(struct __pyx_obj_5heart_HR *__pyx_v_self, int __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5heart_2HR_7__dir_____get__(struct __pyx_obj_5heart_HR *__pyx_v_self); /* proto */
-static int __pyx_pf_5heart_14ResidualVolume___cinit__(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static PyObject *__pyx_pf_5heart_14ResidualVolume_8__dict_____get__(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self); /* proto */
-static PyObject *__pyx_tp_new_5heart_HR(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_5heart_ResidualVolume(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_n_s_time;
+static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d1, float __pyx_v_t1); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_t2); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d2); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2d1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2t1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self); /* proto */
+static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d1, float __pyx_v_t1); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d2); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2d1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2t1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self); /* proto */
+static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_Riegel(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_Cameron(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_int_0;
 
-/* "heart.pyx":5
- *     cdef readonly dict __dir__
+/* "pyfit/model/aerobic.pyx":7
+ *     cdef readonly float t1
  * 
- *     def __cinit__(self, int age):             # <<<<<<<<<<<<<<
- *         self.age = age
- * 
+ *     def __cinit__(self, float d1, float t1):             # <<<<<<<<<<<<<<
+ *         self.d1 = d1
+ *         self.t1 = t1
  */
 
 /* Python wrapper */
-static int __pyx_pw_5heart_2HR_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_5heart_2HR_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  int __pyx_v_age;
+static int __pyx_pw_5pyfit_5model_7aerobic_6Riegel_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_5pyfit_5model_7aerobic_6Riegel_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  float __pyx_v_d1;
+  float __pyx_v_t1;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_age,0};
-    PyObject* values[1] = {0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_d1,&__pyx_n_s_t1,0};
+    PyObject* values[2] = {0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_age)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 5, __pyx_L3_error)
-      }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-    }
-    __pyx_v_age = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_age == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 5, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 5, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("heart.HR.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return -1;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5heart_2HR___cinit__(((struct __pyx_obj_5heart_HR *)__pyx_v_self), __pyx_v_age);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static int __pyx_pf_5heart_2HR___cinit__(struct __pyx_obj_5heart_HR *__pyx_v_self, int __pyx_v_age) {
-  int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__cinit__", 0);
-
-  /* "heart.pyx":6
- * 
- *     def __cinit__(self, int age):
- *         self.age = age             # <<<<<<<<<<<<<<
- * 
- *     """
- */
-  __pyx_v_self->age = __pyx_v_age;
-
-  /* "heart.pyx":5
- *     cdef readonly dict __dir__
- * 
- *     def __cinit__(self, int age):             # <<<<<<<<<<<<<<
- *         self.age = age
- * 
- */
-
-  /* function exit code */
-  __pyx_r = 0;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":14
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxFox(self):             # <<<<<<<<<<<<<<
- *         return 208.0 - (0.7 * self.age)
- * 
- */
-
-static float __pyx_f_5heart_2HR_maxFox(struct __pyx_obj_5heart_HR *__pyx_v_self) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("maxFox", 0);
-
-  /* "heart.pyx":15
- *     """
- *     cdef float maxFox(self):
- *         return 208.0 - (0.7 * self.age)             # <<<<<<<<<<<<<<
- * 
- *     """
- */
-  __pyx_r = (208.0 - (0.7 * __pyx_v_self->age));
-  goto __pyx_L0;
-
-  /* "heart.pyx":14
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxFox(self):             # <<<<<<<<<<<<<<
- *         return 208.0 - (0.7 * self.age)
- * 
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":24
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxGellish(self):             # <<<<<<<<<<<<<<
- *         return 207 - (0.7 * self.age)
- * 
- */
-
-static float __pyx_f_5heart_2HR_maxGellish(struct __pyx_obj_5heart_HR *__pyx_v_self) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("maxGellish", 0);
-
-  /* "heart.pyx":25
- *     """
- *     cdef float maxGellish(self):
- *         return 207 - (0.7 * self.age)             # <<<<<<<<<<<<<<
- * 
- *     """
- */
-  __pyx_r = (207.0 - (0.7 * __pyx_v_self->age));
-  goto __pyx_L0;
-
-  /* "heart.pyx":24
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxGellish(self):             # <<<<<<<<<<<<<<
- *         return 207 - (0.7 * self.age)
- * 
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":33
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxAstrand(self):             # <<<<<<<<<<<<<<
- *         return 216.6-(0.84*self.age)
- * 
- */
-
-static float __pyx_f_5heart_2HR_maxAstrand(struct __pyx_obj_5heart_HR *__pyx_v_self) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("maxAstrand", 0);
-
-  /* "heart.pyx":34
- *     """
- *     cdef float maxAstrand(self):
- *         return 216.6-(0.84*self.age)             # <<<<<<<<<<<<<<
- * 
- *     """
- */
-  __pyx_r = (216.6 - (0.84 * __pyx_v_self->age));
-  goto __pyx_L0;
-
-  /* "heart.pyx":33
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxAstrand(self):             # <<<<<<<<<<<<<<
- *         return 216.6-(0.84*self.age)
- * 
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":42
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxTanaka(self):             # <<<<<<<<<<<<<<
- *         return 208-(0.7*self.age)
- * 
- */
-
-static float __pyx_f_5heart_2HR_maxTanaka(struct __pyx_obj_5heart_HR *__pyx_v_self) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("maxTanaka", 0);
-
-  /* "heart.pyx":43
- *     """
- *     cdef float maxTanaka(self):
- *         return 208-(0.7*self.age)             # <<<<<<<<<<<<<<
- * 
- *     """
- */
-  __pyx_r = (208.0 - (0.7 * __pyx_v_self->age));
-  goto __pyx_L0;
-
-  /* "heart.pyx":42
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxTanaka(self):             # <<<<<<<<<<<<<<
- *         return 208-(0.7*self.age)
- * 
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":51
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxGulati(self):             # <<<<<<<<<<<<<<
- *         return 206-(0.88*self.age)
- * 
- */
-
-static float __pyx_f_5heart_2HR_maxGulati(struct __pyx_obj_5heart_HR *__pyx_v_self) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("maxGulati", 0);
-
-  /* "heart.pyx":52
- *     """
- *     cdef float maxGulati(self):
- *         return 206-(0.88*self.age)             # <<<<<<<<<<<<<<
- * 
- *     cdef float mean_arterial_pressure(self, int diastolic_bp, int systolic_bp):
- */
-  __pyx_r = (206.0 - (0.88 * __pyx_v_self->age));
-  goto __pyx_L0;
-
-  /* "heart.pyx":51
- *     @returns {Number} max heart rate in bpm
- *     """
- *     cdef float maxGulati(self):             # <<<<<<<<<<<<<<
- *         return 206-(0.88*self.age)
- * 
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":54
- *         return 206-(0.88*self.age)
- * 
- *     cdef float mean_arterial_pressure(self, int diastolic_bp, int systolic_bp):             # <<<<<<<<<<<<<<
- *         return ((2 * diastolic_bp) + systolic_bp) / 3
- * 
- */
-
-static float __pyx_f_5heart_2HR_mean_arterial_pressure(CYTHON_UNUSED struct __pyx_obj_5heart_HR *__pyx_v_self, int __pyx_v_diastolic_bp, int __pyx_v_systolic_bp) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("mean_arterial_pressure", 0);
-
-  /* "heart.pyx":55
- * 
- *     cdef float mean_arterial_pressure(self, int diastolic_bp, int systolic_bp):
- *         return ((2 * diastolic_bp) + systolic_bp) / 3             # <<<<<<<<<<<<<<
- * 
- *     cdef float target_hr(self, float intensity, int rest, int maximum):
- */
-  __pyx_r = __Pyx_div_long(((2 * __pyx_v_diastolic_bp) + __pyx_v_systolic_bp), 3);
-  goto __pyx_L0;
-
-  /* "heart.pyx":54
- *         return 206-(0.88*self.age)
- * 
- *     cdef float mean_arterial_pressure(self, int diastolic_bp, int systolic_bp):             # <<<<<<<<<<<<<<
- *         return ((2 * diastolic_bp) + systolic_bp) / 3
- * 
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":57
- *         return ((2 * diastolic_bp) + systolic_bp) / 3
- * 
- *     cdef float target_hr(self, float intensity, int rest, int maximum):             # <<<<<<<<<<<<<<
- *         return intensity * (maximum - rest) + rest
- * 
- */
-
-static float __pyx_f_5heart_2HR_target_hr(CYTHON_UNUSED struct __pyx_obj_5heart_HR *__pyx_v_self, float __pyx_v_intensity, int __pyx_v_rest, int __pyx_v_maximum) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("target_hr", 0);
-
-  /* "heart.pyx":58
- * 
- *     cdef float target_hr(self, float intensity, int rest, int maximum):
- *         return intensity * (maximum - rest) + rest             # <<<<<<<<<<<<<<
- * 
- * cdef class ResidualVolume(object):
- */
-  __pyx_r = ((__pyx_v_intensity * (__pyx_v_maximum - __pyx_v_rest)) + __pyx_v_rest);
-  goto __pyx_L0;
-
-  /* "heart.pyx":57
- *         return ((2 * diastolic_bp) + systolic_bp) / 3
- * 
- *     cdef float target_hr(self, float intensity, int rest, int maximum):             # <<<<<<<<<<<<<<
- *         return intensity * (maximum - rest) + rest
- * 
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":3
- * cdef class HR(object):
- *     cdef int age
- *     cdef readonly dict __dir__             # <<<<<<<<<<<<<<
- * 
- *     def __cinit__(self, int age):
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_5heart_2HR_7__dir___1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_5heart_2HR_7__dir___1__get__(PyObject *__pyx_v_self) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_5heart_2HR_7__dir_____get__(((struct __pyx_obj_5heart_HR *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_5heart_2HR_7__dir_____get__(struct __pyx_obj_5heart_HR *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__get__", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_v_self->__dir__);
-  __pyx_r = __pyx_v_self->__dir__;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":66
- *     cdef readonly dict __dict__
- * 
- *     def __cinit__(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
- *         self.age = age
- *         self.weight = weight
- */
-
-/* Python wrapper */
-static int __pyx_pw_5heart_14ResidualVolume_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_5heart_14ResidualVolume_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
-  int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_age,&__pyx_n_s_weight,&__pyx_n_s_height,0};
-    PyObject* values[3] = {0,0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
         case  0: break;
@@ -1130,86 +776,70 @@ static int __pyx_pw_5heart_14ResidualVolume_1__cinit__(PyObject *__pyx_v_self, P
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
-        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_age)) != 0)) kw_args--;
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_d1)) != 0)) kw_args--;
         else goto __pyx_L5_argtuple_error;
         case  1:
-        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_weight)) != 0)) kw_args--;
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_t1)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, 1); __PYX_ERR(0, 66, __pyx_L3_error)
-        }
-        case  2:
-        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_height)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, 2); __PYX_ERR(0, 66, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 7, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 66, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 7, __pyx_L3_error)
       }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 66, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 66, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 66, __pyx_L3_error)
+    __pyx_v_d1 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_d1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
+    __pyx_v_t1 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_t1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 66, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 7, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("heart.ResidualVolume.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5heart_14ResidualVolume___cinit__(((struct __pyx_obj_5heart_ResidualVolume *)__pyx_v_self), __pyx_v_age, __pyx_v_weight, __pyx_v_height);
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self), __pyx_v_d1, __pyx_v_t1);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_5heart_14ResidualVolume___cinit__(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d1, float __pyx_v_t1) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "heart.pyx":67
+  /* "pyfit/model/aerobic.pyx":8
  * 
- *     def __cinit__(self, float age, float weight, float height):
- *         self.age = age             # <<<<<<<<<<<<<<
- *         self.weight = weight
- *         self.height = height
- */
-  __pyx_v_self->age = __pyx_v_age;
-
-  /* "heart.pyx":68
- *     def __cinit__(self, float age, float weight, float height):
- *         self.age = age
- *         self.weight = weight             # <<<<<<<<<<<<<<
- *         self.height = height
+ *     def __cinit__(self, float d1, float t1):
+ *         self.d1 = d1             # <<<<<<<<<<<<<<
+ *         self.t1 = t1
  * 
  */
-  __pyx_v_self->weight = __pyx_v_weight;
+  __pyx_v_self->d1 = __pyx_v_d1;
 
-  /* "heart.pyx":69
- *         self.age = age
- *         self.weight = weight
- *         self.height = height             # <<<<<<<<<<<<<<
+  /* "pyfit/model/aerobic.pyx":9
+ *     def __cinit__(self, float d1, float t1):
+ *         self.d1 = d1
+ *         self.t1 = t1             # <<<<<<<<<<<<<<
  * 
- *     cdef berglund(self):
+ *     cpdef distance(self, float t2):
  */
-  __pyx_v_self->height = __pyx_v_height;
+  __pyx_v_self->t1 = __pyx_v_t1;
 
-  /* "heart.pyx":66
- *     cdef readonly dict __dict__
+  /* "pyfit/model/aerobic.pyx":7
+ *     cdef readonly float t1
  * 
- *     def __cinit__(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
- *         self.age = age
- *         self.weight = weight
+ *     def __cinit__(self, float d1, float t1):             # <<<<<<<<<<<<<<
+ *         self.d1 = d1
+ *         self.t1 = t1
  */
 
   /* function exit code */
@@ -1218,56 +848,141 @@ static int __pyx_pf_5heart_14ResidualVolume___cinit__(struct __pyx_obj_5heart_Re
   return __pyx_r;
 }
 
-/* "heart.pyx":71
- *         self.height = height
+/* "pyfit/model/aerobic.pyx":11
+ *         self.t1 = t1
  * 
- *     cdef berglund(self):             # <<<<<<<<<<<<<<
- *         cdef float height_meters = self.height / 100
- *         return (0.0115*self.age) + (0.019* height_meters) - 2.24;
+ *     cpdef distance(self, float t2):             # <<<<<<<<<<<<<<
+ *         if t2 <= 0:
+ *             return 0
  */
 
-static PyObject *__pyx_f_5heart_14ResidualVolume_berglund(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self) {
-  float __pyx_v_height_meters;
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance(PyObject *__pyx_v_self, PyObject *__pyx_arg_t2); /*proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_t2, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("berglund", 0);
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  double __pyx_t_8;
+  double __pyx_t_9;
+  __Pyx_RefNannySetupContext("distance", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_distance); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance)) {
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_t2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 11, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
 
-  /* "heart.pyx":72
+  /* "pyfit/model/aerobic.pyx":12
  * 
- *     cdef berglund(self):
- *         cdef float height_meters = self.height / 100             # <<<<<<<<<<<<<<
- *         return (0.0115*self.age) + (0.019* height_meters) - 2.24;
+ *     cpdef distance(self, float t2):
+ *         if t2 <= 0:             # <<<<<<<<<<<<<<
+ *             return 0
+ *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
+ */
+  __pyx_t_7 = ((__pyx_v_t2 <= 0.0) != 0);
+  if (__pyx_t_7) {
+
+    /* "pyfit/model/aerobic.pyx":13
+ *     cpdef distance(self, float t2):
+ *         if t2 <= 0:
+ *             return 0             # <<<<<<<<<<<<<<
+ *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
  * 
  */
-  __pyx_v_height_meters = (__pyx_v_self->height / 100.0);
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_INCREF(__pyx_int_0);
+    __pyx_r = __pyx_int_0;
+    goto __pyx_L0;
 
-  /* "heart.pyx":73
- *     cdef berglund(self):
- *         cdef float height_meters = self.height / 100
- *         return (0.0115*self.age) + (0.019* height_meters) - 2.24;             # <<<<<<<<<<<<<<
+    /* "pyfit/model/aerobic.pyx":12
  * 
- *     cdef boren(self):
+ *     cpdef distance(self, float t2):
+ *         if t2 <= 0:             # <<<<<<<<<<<<<<
+ *             return 0
+ *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
+ */
+  }
+
+  /* "pyfit/model/aerobic.pyx":14
+ *         if t2 <= 0:
+ *             return 0
+ *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef time(self, float d2):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble((((0.0115 * __pyx_v_self->age) + (0.019 * __pyx_v_height_meters)) - 2.24)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_8 = pow(__pyx_v_t2, (50.0 / 53.0));
+  __pyx_t_9 = pow(__pyx_v_self->t1, (50.0 / 53.0));
+  if (unlikely(__pyx_t_9 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 14, __pyx_L1_error)
+  }
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->d1 * (__pyx_t_8 / __pyx_t_9))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "heart.pyx":71
- *         self.height = height
+  /* "pyfit/model/aerobic.pyx":11
+ *         self.t1 = t1
  * 
- *     cdef berglund(self):             # <<<<<<<<<<<<<<
- *         cdef float height_meters = self.height / 100
- *         return (0.0115*self.age) + (0.019* height_meters) - 2.24;
+ *     cpdef distance(self, float t2):             # <<<<<<<<<<<<<<
+ *         if t2 <= 0:
+ *             return 0
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("heart.ResidualVolume.berglund", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.distance", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1275,56 +990,183 @@ static PyObject *__pyx_f_5heart_14ResidualVolume_berglund(struct __pyx_obj_5hear
   return __pyx_r;
 }
 
-/* "heart.pyx":75
- *         return (0.0115*self.age) + (0.019* height_meters) - 2.24;
- * 
- *     cdef boren(self):             # <<<<<<<<<<<<<<
- *         cdef float height_meters = self.height / 100
- *         return (0.022*self.age) + (0.0198*height_meters) - (0.015*self.weight) - 1.54
- */
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance(PyObject *__pyx_v_self, PyObject *__pyx_arg_t2); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance(PyObject *__pyx_v_self, PyObject *__pyx_arg_t2) {
+  float __pyx_v_t2;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("distance (wrapper)", 0);
+  assert(__pyx_arg_t2); {
+    __pyx_v_t2 = __pyx_PyFloat_AsFloat(__pyx_arg_t2); if (unlikely((__pyx_v_t2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.distance", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self), ((float)__pyx_v_t2));
 
-static PyObject *__pyx_f_5heart_14ResidualVolume_boren(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self) {
-  float __pyx_v_height_meters;
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_t2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("boren", 0);
-
-  /* "heart.pyx":76
- * 
- *     cdef boren(self):
- *         cdef float height_meters = self.height / 100             # <<<<<<<<<<<<<<
- *         return (0.022*self.age) + (0.0198*height_meters) - (0.015*self.weight) - 1.54
- * 
- */
-  __pyx_v_height_meters = (__pyx_v_self->height / 100.0);
-
-  /* "heart.pyx":77
- *     cdef boren(self):
- *         cdef float height_meters = self.height / 100
- *         return (0.022*self.age) + (0.0198*height_meters) - (0.015*self.weight) - 1.54             # <<<<<<<<<<<<<<
- * 
- *     cdef goldman(self):
- */
+  __Pyx_RefNannySetupContext("distance", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(((((0.022 * __pyx_v_self->age) + (0.0198 * __pyx_v_height_meters)) - (0.015 * __pyx_v_self->weight)) - 1.54)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(__pyx_v_self, __pyx_v_t2, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "heart.pyx":75
- *         return (0.0115*self.age) + (0.019* height_meters) - 2.24;
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.distance", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/model/aerobic.pyx":16
+ *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
  * 
- *     cdef boren(self):             # <<<<<<<<<<<<<<
- *         cdef float height_meters = self.height / 100
- *         return (0.022*self.age) + (0.0198*height_meters) - (0.015*self.weight) - 1.54
+ *     cpdef time(self, float d2):             # <<<<<<<<<<<<<<
+ *         if d2 <= 0:
+ *             return 0
+ */
+
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d2, int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("time", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time)) {
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_d2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 16, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/model/aerobic.pyx":17
+ * 
+ *     cpdef time(self, float d2):
+ *         if d2 <= 0:             # <<<<<<<<<<<<<<
+ *             return 0
+ *         return self.t1 * pow( (d2/self.d1), 1.06)
+ */
+  __pyx_t_7 = ((__pyx_v_d2 <= 0.0) != 0);
+  if (__pyx_t_7) {
+
+    /* "pyfit/model/aerobic.pyx":18
+ *     cpdef time(self, float d2):
+ *         if d2 <= 0:
+ *             return 0             # <<<<<<<<<<<<<<
+ *         return self.t1 * pow( (d2/self.d1), 1.06)
+ * 
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_INCREF(__pyx_int_0);
+    __pyx_r = __pyx_int_0;
+    goto __pyx_L0;
+
+    /* "pyfit/model/aerobic.pyx":17
+ * 
+ *     cpdef time(self, float d2):
+ *         if d2 <= 0:             # <<<<<<<<<<<<<<
+ *             return 0
+ *         return self.t1 * pow( (d2/self.d1), 1.06)
+ */
+  }
+
+  /* "pyfit/model/aerobic.pyx":19
+ *         if d2 <= 0:
+ *             return 0
+ *         return self.t1 * pow( (d2/self.d1), 1.06)             # <<<<<<<<<<<<<<
+ * 
+ * cdef class Cameron(object):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  if (unlikely(__pyx_v_self->d1 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 19, __pyx_L1_error)
+  }
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->t1 * pow((__pyx_v_d2 / __pyx_v_self->d1), 1.06))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "pyfit/model/aerobic.pyx":16
+ *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
+ * 
+ *     cpdef time(self, float d2):             # <<<<<<<<<<<<<<
+ *         if d2 <= 0:
+ *             return 0
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("heart.ResidualVolume.boren", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.time", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1332,157 +1174,606 @@ static PyObject *__pyx_f_5heart_14ResidualVolume_boren(struct __pyx_obj_5heart_R
   return __pyx_r;
 }
 
-/* "heart.pyx":79
- *         return (0.022*self.age) + (0.0198*height_meters) - (0.015*self.weight) - 1.54
- * 
- *     cdef goldman(self):             # <<<<<<<<<<<<<<
- *         cdef float height_meters = self.height / 100
- *         return (0.017*self.age) + (0.027*self.height) - 3.477
- */
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2) {
+  float __pyx_v_d2;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("time (wrapper)", 0);
+  assert(__pyx_arg_d2); {
+    __pyx_v_d2 = __pyx_PyFloat_AsFloat(__pyx_arg_d2); if (unlikely((__pyx_v_d2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 16, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.time", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self), ((float)__pyx_v_d2));
 
-static PyObject *__pyx_f_5heart_14ResidualVolume_goldman(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self) {
-  CYTHON_UNUSED float __pyx_v_height_meters;
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("goldman", 0);
-
-  /* "heart.pyx":80
- * 
- *     cdef goldman(self):
- *         cdef float height_meters = self.height / 100             # <<<<<<<<<<<<<<
- *         return (0.017*self.age) + (0.027*self.height) - 3.477
- * 
- */
-  __pyx_v_height_meters = (__pyx_v_self->height / 100.0);
-
-  /* "heart.pyx":81
- *     cdef goldman(self):
- *         cdef float height_meters = self.height / 100
- *         return (0.017*self.age) + (0.027*self.height) - 3.477             # <<<<<<<<<<<<<<
- * 
- *     cdef obrien(self, float bsa):
- */
+  __Pyx_RefNannySetupContext("time", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble((((0.017 * __pyx_v_self->age) + (0.027 * __pyx_v_self->height)) - 3.477)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5pyfit_5model_7aerobic_6Riegel_time(__pyx_v_self, __pyx_v_d2, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "heart.pyx":79
- *         return (0.022*self.age) + (0.0198*height_meters) - (0.015*self.weight) - 1.54
- * 
- *     cdef goldman(self):             # <<<<<<<<<<<<<<
- *         cdef float height_meters = self.height / 100
- *         return (0.017*self.age) + (0.027*self.height) - 3.477
- */
-
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("heart.ResidualVolume.goldman", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.time", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "heart.pyx":83
- *         return (0.017*self.age) + (0.027*self.height) - 3.477
+/* "pyfit/model/aerobic.pyx":4
  * 
- *     cdef obrien(self, float bsa):             # <<<<<<<<<<<<<<
- *         cdef float height_meters = self.height / 100
- *         return (0.03*self.age) + (0.0387*height_meters) - (0.73*bsa) - 4.78
- */
-
-static PyObject *__pyx_f_5heart_14ResidualVolume_obrien(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self, float __pyx_v_bsa) {
-  float __pyx_v_height_meters;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("obrien", 0);
-
-  /* "heart.pyx":84
+ * cdef class Riegel(object):
+ *     cdef readonly float d1             # <<<<<<<<<<<<<<
+ *     cdef readonly float t1
  * 
- *     cdef obrien(self, float bsa):
- *         cdef float height_meters = self.height / 100             # <<<<<<<<<<<<<<
- *         return (0.03*self.age) + (0.0387*height_meters) - (0.73*bsa) - 4.78
- */
-  __pyx_v_height_meters = (__pyx_v_self->height / 100.0);
-
-  /* "heart.pyx":85
- *     cdef obrien(self, float bsa):
- *         cdef float height_meters = self.height / 100
- *         return (0.03*self.age) + (0.0387*height_meters) - (0.73*bsa) - 4.78             # <<<<<<<<<<<<<<
- */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(((((0.03 * __pyx_v_self->age) + (0.0387 * __pyx_v_height_meters)) - (0.73 * __pyx_v_bsa)) - 4.78)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "heart.pyx":83
- *         return (0.017*self.age) + (0.027*self.height) - 3.477
- * 
- *     cdef obrien(self, float bsa):             # <<<<<<<<<<<<<<
- *         cdef float height_meters = self.height / 100
- *         return (0.03*self.age) + (0.0387*height_meters) - (0.73*bsa) - 4.78
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("heart.ResidualVolume.obrien", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "heart.pyx":64
- *     cdef float age # years
- *     cdef float weight # kg
- *     cdef readonly dict __dict__             # <<<<<<<<<<<<<<
- * 
- *     def __cinit__(self, float age, float weight, float height):
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5heart_14ResidualVolume_8__dict___1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_5heart_14ResidualVolume_8__dict___1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_2d1_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_2d1_1__get__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_5heart_14ResidualVolume_8__dict_____get__(((struct __pyx_obj_5heart_ResidualVolume *)__pyx_v_self));
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel_2d1___get__(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5heart_14ResidualVolume_8__dict_____get__(struct __pyx_obj_5heart_ResidualVolume *__pyx_v_self) {
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2d1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_v_self->__dict__);
-  __pyx_r = __pyx_v_self->__dict__;
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->d1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
   goto __pyx_L0;
 
   /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.d1.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static struct __pyx_vtabstruct_5heart_HR __pyx_vtable_5heart_HR;
 
-static PyObject *__pyx_tp_new_5heart_HR(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_5heart_HR *p;
+/* "pyfit/model/aerobic.pyx":5
+ * cdef class Riegel(object):
+ *     cdef readonly float d1
+ *     cdef readonly float t1             # <<<<<<<<<<<<<<
+ * 
+ *     def __cinit__(self, float d1, float t1):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_2t1_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_2t1_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel_2t1___get__(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2t1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->t1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Riegel.t1.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/model/aerobic.pyx":25
+ *     cdef readonly float t1
+ * 
+ *     def __cinit__(self, float d1, float t1):             # <<<<<<<<<<<<<<
+ *         self.d1 = d1
+ *         self.t1 = t1
+ */
+
+/* Python wrapper */
+static int __pyx_pw_5pyfit_5model_7aerobic_7Cameron_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_5pyfit_5model_7aerobic_7Cameron_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  float __pyx_v_d1;
+  float __pyx_v_t1;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_d1,&__pyx_n_s_t1,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_d1)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_t1)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 25, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 25, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_d1 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_d1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
+    __pyx_v_t1 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_t1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 25, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.model.aerobic.Cameron.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(((struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self), __pyx_v_d1, __pyx_v_t1);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d1, float __pyx_v_t1) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "pyfit/model/aerobic.pyx":26
+ * 
+ *     def __cinit__(self, float d1, float t1):
+ *         self.d1 = d1             # <<<<<<<<<<<<<<
+ *         self.t1 = t1
+ * 
+ */
+  __pyx_v_self->d1 = __pyx_v_d1;
+
+  /* "pyfit/model/aerobic.pyx":27
+ *     def __cinit__(self, float d1, float t1):
+ *         self.d1 = d1
+ *         self.t1 = t1             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_v_self->t1 = __pyx_v_t1;
+
+  /* "pyfit/model/aerobic.pyx":25
+ *     cdef readonly float t1
+ * 
+ *     def __cinit__(self, float d1, float t1):             # <<<<<<<<<<<<<<
+ *         self.d1 = d1
+ *         self.t1 = t1
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/model/aerobic.pyx":30
+ * 
+ * 
+ *     cdef __f__(self, float x):             # <<<<<<<<<<<<<<
+ *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
+ * 
+ */
+
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_x) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  double __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
+  __Pyx_RefNannySetupContext("__f__", 0);
+
+  /* "pyfit/model/aerobic.pyx":31
+ * 
+ *     cdef __f__(self, float x):
+ *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef time(self, float d2):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = pow(__pyx_v_x, 0.7905);
+  if (unlikely(__pyx_t_1 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 31, __pyx_L1_error)
+  }
+  __pyx_t_2 = PyFloat_FromDouble(((13.49681 - (0.048865 * __pyx_v_x)) + (2.438936 / __pyx_t_1))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* "pyfit/model/aerobic.pyx":30
+ * 
+ * 
+ *     cdef __f__(self, float x):             # <<<<<<<<<<<<<<
+ *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Cameron.__f__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/model/aerobic.pyx":33
+ *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
+ * 
+ *     cpdef time(self, float d2):             # <<<<<<<<<<<<<<
+ *         cdef float d1Miles = self.d1 / 1609.34
+ *         cdef float d2Miles = d2 / 1609.34
+ */
+
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d2, int __pyx_skip_dispatch) {
+  float __pyx_v_d1Miles;
+  float __pyx_v_d2Miles;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("time", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time)) {
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_d2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 33, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/model/aerobic.pyx":34
+ * 
+ *     cpdef time(self, float d2):
+ *         cdef float d1Miles = self.d1 / 1609.34             # <<<<<<<<<<<<<<
+ *         cdef float d2Miles = d2 / 1609.34
+ *         if d2 <= 0:
+ */
+  __pyx_v_d1Miles = (__pyx_v_self->d1 / 1609.34);
+
+  /* "pyfit/model/aerobic.pyx":35
+ *     cpdef time(self, float d2):
+ *         cdef float d1Miles = self.d1 / 1609.34
+ *         cdef float d2Miles = d2 / 1609.34             # <<<<<<<<<<<<<<
+ *         if d2 <= 0:
+ *             return 0
+ */
+  __pyx_v_d2Miles = (__pyx_v_d2 / 1609.34);
+
+  /* "pyfit/model/aerobic.pyx":36
+ *         cdef float d1Miles = self.d1 / 1609.34
+ *         cdef float d2Miles = d2 / 1609.34
+ *         if d2 <= 0:             # <<<<<<<<<<<<<<
+ *             return 0
+ *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
+ */
+  __pyx_t_7 = ((__pyx_v_d2 <= 0.0) != 0);
+  if (__pyx_t_7) {
+
+    /* "pyfit/model/aerobic.pyx":37
+ *         cdef float d2Miles = d2 / 1609.34
+ *         if d2 <= 0:
+ *             return 0             # <<<<<<<<<<<<<<
+ *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_INCREF(__pyx_int_0);
+    __pyx_r = __pyx_int_0;
+    goto __pyx_L0;
+
+    /* "pyfit/model/aerobic.pyx":36
+ *         cdef float d1Miles = self.d1 / 1609.34
+ *         cdef float d2Miles = d2 / 1609.34
+ *         if d2 <= 0:             # <<<<<<<<<<<<<<
+ *             return 0
+ *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
+ */
+  }
+
+  /* "pyfit/model/aerobic.pyx":38
+ *         if d2 <= 0:
+ *             return 0
+ *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles             # <<<<<<<<<<<<<<
+ */
+  __Pyx_XDECREF(__pyx_r);
+  if (unlikely(__pyx_v_d1Miles == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 38, __pyx_L1_error)
+  }
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->t1 / __pyx_v_d1Miles)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = ((struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self->__pyx_vtab)->__pyx___f__(__pyx_v_self, __pyx_v_d1Miles); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = ((struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self->__pyx_vtab)->__pyx___f__(__pyx_v_self, __pyx_v_d2Miles); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_d2Miles); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_1 = PyNumber_Multiply(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "pyfit/model/aerobic.pyx":33
+ *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
+ * 
+ *     cpdef time(self, float d2):             # <<<<<<<<<<<<<<
+ *         cdef float d1Miles = self.d1 / 1609.34
+ *         cdef float d2Miles = d2 / 1609.34
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Cameron.time", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2) {
+  float __pyx_v_d2;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("time (wrapper)", 0);
+  assert(__pyx_arg_d2); {
+    __pyx_v_d2 = __pyx_PyFloat_AsFloat(__pyx_arg_d2); if (unlikely((__pyx_v_d2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 33, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.model.aerobic.Cameron.time", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(((struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self), ((float)__pyx_v_d2));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d2) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("time", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_5pyfit_5model_7aerobic_7Cameron_time(__pyx_v_self, __pyx_v_d2, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Cameron.time", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/model/aerobic.pyx":22
+ * 
+ * cdef class Cameron(object):
+ *     cdef readonly float d1             # <<<<<<<<<<<<<<
+ *     cdef readonly float t1
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_2d1_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_2d1_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_7Cameron_2d1___get__(((struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2d1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->d1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Cameron.d1.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/model/aerobic.pyx":23
+ * cdef class Cameron(object):
+ *     cdef readonly float d1
+ *     cdef readonly float t1             # <<<<<<<<<<<<<<
+ * 
+ *     def __cinit__(self, float d1, float t1):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_2t1_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_2t1_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_7Cameron_2t1___get__(((struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2t1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->t1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.model.aerobic.Cameron.t1.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Riegel __pyx_vtable_5pyfit_5model_7aerobic_Riegel;
+
+static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_Riegel(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -1490,64 +1781,49 @@ static PyObject *__pyx_tp_new_5heart_HR(PyTypeObject *t, PyObject *a, PyObject *
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_5heart_HR *)o);
-  p->__pyx_vtab = __pyx_vtabptr_5heart_HR;
-  p->__dir__ = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  if (unlikely(__pyx_pw_5heart_2HR_1__cinit__(o, a, k) < 0)) {
+  p = ((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)o);
+  p->__pyx_vtab = __pyx_vtabptr_5pyfit_5model_7aerobic_Riegel;
+  if (unlikely(__pyx_pw_5pyfit_5model_7aerobic_6Riegel_1__cinit__(o, a, k) < 0)) {
     Py_DECREF(o); o = 0;
   }
   return o;
 }
 
-static void __pyx_tp_dealloc_5heart_HR(PyObject *o) {
-  struct __pyx_obj_5heart_HR *p = (struct __pyx_obj_5heart_HR *)o;
+static void __pyx_tp_dealloc_5pyfit_5model_7aerobic_Riegel(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
-  if (unlikely(Py_TYPE(o)->tp_finalize) && !_PyGC_FINALIZED(o)) {
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
   }
   #endif
-  PyObject_GC_UnTrack(o);
-  Py_CLEAR(p->__dir__);
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static int __pyx_tp_traverse_5heart_HR(PyObject *o, visitproc v, void *a) {
-  int e;
-  struct __pyx_obj_5heart_HR *p = (struct __pyx_obj_5heart_HR *)o;
-  if (p->__dir__) {
-    e = (*v)(p->__dir__, a); if (e) return e;
-  }
-  return 0;
+static PyObject *__pyx_getprop_5pyfit_5model_7aerobic_6Riegel_d1(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5pyfit_5model_7aerobic_6Riegel_2d1_1__get__(o);
 }
 
-static int __pyx_tp_clear_5heart_HR(PyObject *o) {
-  PyObject* tmp;
-  struct __pyx_obj_5heart_HR *p = (struct __pyx_obj_5heart_HR *)o;
-  tmp = ((PyObject*)p->__dir__);
-  p->__dir__ = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  Py_XDECREF(tmp);
-  return 0;
+static PyObject *__pyx_getprop_5pyfit_5model_7aerobic_6Riegel_t1(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5pyfit_5model_7aerobic_6Riegel_2t1_1__get__(o);
 }
 
-static PyObject *__pyx_getprop_5heart_2HR___dir__(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_5heart_2HR_7__dir___1__get__(o);
-}
-
-static PyMethodDef __pyx_methods_5heart_HR[] = {
+static PyMethodDef __pyx_methods_5pyfit_5model_7aerobic_Riegel[] = {
+  {"distance", (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance, METH_O, 0},
+  {"time", (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static struct PyGetSetDef __pyx_getsets_5heart_HR[] = {
-  {(char *)"__dir__", __pyx_getprop_5heart_2HR___dir__, 0, (char *)0, 0},
+static struct PyGetSetDef __pyx_getsets_5pyfit_5model_7aerobic_Riegel[] = {
+  {(char *)"d1", __pyx_getprop_5pyfit_5model_7aerobic_6Riegel_d1, 0, (char *)0, 0},
+  {(char *)"t1", __pyx_getprop_5pyfit_5model_7aerobic_6Riegel_t1, 0, (char *)0, 0},
   {0, 0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_5heart_HR = {
+static PyTypeObject __pyx_type_5pyfit_5model_7aerobic_Riegel = {
   PyVarObject_HEAD_INIT(0, 0)
-  "heart.HR", /*tp_name*/
-  sizeof(struct __pyx_obj_5heart_HR), /*tp_basicsize*/
+  "pyfit.model.aerobic.Riegel", /*tp_name*/
+  sizeof(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_5heart_HR, /*tp_dealloc*/
+  __pyx_tp_dealloc_5pyfit_5model_7aerobic_Riegel, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -1567,17 +1843,17 @@ static PyTypeObject __pyx_type_5heart_HR = {
   0, /*tp_getattro*/
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
-  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_5heart_HR, /*tp_traverse*/
-  __pyx_tp_clear_5heart_HR, /*tp_clear*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_5heart_HR, /*tp_methods*/
+  __pyx_methods_5pyfit_5model_7aerobic_Riegel, /*tp_methods*/
   0, /*tp_members*/
-  __pyx_getsets_5heart_HR, /*tp_getset*/
+  __pyx_getsets_5pyfit_5model_7aerobic_Riegel, /*tp_getset*/
   0, /*tp_base*/
   0, /*tp_dict*/
   0, /*tp_descr_get*/
@@ -1585,7 +1861,7 @@ static PyTypeObject __pyx_type_5heart_HR = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_5heart_HR, /*tp_new*/
+  __pyx_tp_new_5pyfit_5model_7aerobic_Riegel, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -1599,10 +1875,10 @@ static PyTypeObject __pyx_type_5heart_HR = {
   0, /*tp_finalize*/
   #endif
 };
-static struct __pyx_vtabstruct_5heart_ResidualVolume __pyx_vtable_5heart_ResidualVolume;
+static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron __pyx_vtable_5pyfit_5model_7aerobic_Cameron;
 
-static PyObject *__pyx_tp_new_5heart_ResidualVolume(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_5heart_ResidualVolume *p;
+static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_Cameron(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -1610,64 +1886,48 @@ static PyObject *__pyx_tp_new_5heart_ResidualVolume(PyTypeObject *t, PyObject *a
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_5heart_ResidualVolume *)o);
-  p->__pyx_vtab = __pyx_vtabptr_5heart_ResidualVolume;
-  p->__dict__ = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  if (unlikely(__pyx_pw_5heart_14ResidualVolume_1__cinit__(o, a, k) < 0)) {
+  p = ((struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *)o);
+  p->__pyx_vtab = __pyx_vtabptr_5pyfit_5model_7aerobic_Cameron;
+  if (unlikely(__pyx_pw_5pyfit_5model_7aerobic_7Cameron_1__cinit__(o, a, k) < 0)) {
     Py_DECREF(o); o = 0;
   }
   return o;
 }
 
-static void __pyx_tp_dealloc_5heart_ResidualVolume(PyObject *o) {
-  struct __pyx_obj_5heart_ResidualVolume *p = (struct __pyx_obj_5heart_ResidualVolume *)o;
+static void __pyx_tp_dealloc_5pyfit_5model_7aerobic_Cameron(PyObject *o) {
   #if PY_VERSION_HEX >= 0x030400a1
-  if (unlikely(Py_TYPE(o)->tp_finalize) && !_PyGC_FINALIZED(o)) {
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
   }
   #endif
-  PyObject_GC_UnTrack(o);
-  Py_CLEAR(p->__dict__);
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static int __pyx_tp_traverse_5heart_ResidualVolume(PyObject *o, visitproc v, void *a) {
-  int e;
-  struct __pyx_obj_5heart_ResidualVolume *p = (struct __pyx_obj_5heart_ResidualVolume *)o;
-  if (p->__dict__) {
-    e = (*v)(p->__dict__, a); if (e) return e;
-  }
-  return 0;
+static PyObject *__pyx_getprop_5pyfit_5model_7aerobic_7Cameron_d1(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5pyfit_5model_7aerobic_7Cameron_2d1_1__get__(o);
 }
 
-static int __pyx_tp_clear_5heart_ResidualVolume(PyObject *o) {
-  PyObject* tmp;
-  struct __pyx_obj_5heart_ResidualVolume *p = (struct __pyx_obj_5heart_ResidualVolume *)o;
-  tmp = ((PyObject*)p->__dict__);
-  p->__dict__ = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  Py_XDECREF(tmp);
-  return 0;
+static PyObject *__pyx_getprop_5pyfit_5model_7aerobic_7Cameron_t1(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5pyfit_5model_7aerobic_7Cameron_2t1_1__get__(o);
 }
 
-static PyObject *__pyx_getprop_5heart_14ResidualVolume___dict__(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_5heart_14ResidualVolume_8__dict___1__get__(o);
-}
-
-static PyMethodDef __pyx_methods_5heart_ResidualVolume[] = {
+static PyMethodDef __pyx_methods_5pyfit_5model_7aerobic_Cameron[] = {
+  {"time", (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static struct PyGetSetDef __pyx_getsets_5heart_ResidualVolume[] = {
-  {(char *)"__dict__", __pyx_getprop_5heart_14ResidualVolume___dict__, 0, (char *)0, 0},
+static struct PyGetSetDef __pyx_getsets_5pyfit_5model_7aerobic_Cameron[] = {
+  {(char *)"d1", __pyx_getprop_5pyfit_5model_7aerobic_7Cameron_d1, 0, (char *)0, 0},
+  {(char *)"t1", __pyx_getprop_5pyfit_5model_7aerobic_7Cameron_t1, 0, (char *)0, 0},
   {0, 0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_5heart_ResidualVolume = {
+static PyTypeObject __pyx_type_5pyfit_5model_7aerobic_Cameron = {
   PyVarObject_HEAD_INIT(0, 0)
-  "heart.ResidualVolume", /*tp_name*/
-  sizeof(struct __pyx_obj_5heart_ResidualVolume), /*tp_basicsize*/
+  "pyfit.model.aerobic.Cameron", /*tp_name*/
+  sizeof(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_5heart_ResidualVolume, /*tp_dealloc*/
+  __pyx_tp_dealloc_5pyfit_5model_7aerobic_Cameron, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -1687,17 +1947,17 @@ static PyTypeObject __pyx_type_5heart_ResidualVolume = {
   0, /*tp_getattro*/
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
-  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_5heart_ResidualVolume, /*tp_traverse*/
-  __pyx_tp_clear_5heart_ResidualVolume, /*tp_clear*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_5heart_ResidualVolume, /*tp_methods*/
+  __pyx_methods_5pyfit_5model_7aerobic_Cameron, /*tp_methods*/
   0, /*tp_members*/
-  __pyx_getsets_5heart_ResidualVolume, /*tp_getset*/
+  __pyx_getsets_5pyfit_5model_7aerobic_Cameron, /*tp_getset*/
   0, /*tp_base*/
   0, /*tp_dict*/
   0, /*tp_descr_get*/
@@ -1705,7 +1965,7 @@ static PyTypeObject __pyx_type_5heart_ResidualVolume = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_5heart_ResidualVolume, /*tp_new*/
+  __pyx_tp_new_5pyfit_5model_7aerobic_Cameron, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -1731,7 +1991,7 @@ static struct PyModuleDef __pyx_moduledef = {
   #else
     PyModuleDef_HEAD_INIT,
   #endif
-    "heart",
+    "aerobic",
     0, /* m_doc */
     -1, /* m_size */
     __pyx_methods /* m_methods */,
@@ -1743,12 +2003,13 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_n_s_age, __pyx_k_age, sizeof(__pyx_k_age), 0, 0, 1, 1},
-  {&__pyx_n_s_height, __pyx_k_height, sizeof(__pyx_k_height), 0, 0, 1, 1},
+  {&__pyx_n_s_d1, __pyx_k_d1, sizeof(__pyx_k_d1), 0, 0, 1, 1},
+  {&__pyx_n_s_distance, __pyx_k_distance, sizeof(__pyx_k_distance), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_vtable, __pyx_k_pyx_vtable, sizeof(__pyx_k_pyx_vtable), 0, 0, 1, 1},
+  {&__pyx_n_s_t1, __pyx_k_t1, sizeof(__pyx_k_t1), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
-  {&__pyx_n_s_weight, __pyx_k_weight, sizeof(__pyx_k_weight), 0, 0, 1, 1},
+  {&__pyx_n_s_time, __pyx_k_time, sizeof(__pyx_k_time), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
@@ -1764,17 +2025,18 @@ static int __Pyx_InitCachedConstants(void) {
 
 static int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
+  __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
 }
 
 #if PY_MAJOR_VERSION < 3
-PyMODINIT_FUNC initheart(void); /*proto*/
-PyMODINIT_FUNC initheart(void)
+PyMODINIT_FUNC initaerobic(void); /*proto*/
+PyMODINIT_FUNC initaerobic(void)
 #else
-PyMODINIT_FUNC PyInit_heart(void); /*proto*/
-PyMODINIT_FUNC PyInit_heart(void)
+PyMODINIT_FUNC PyInit_aerobic(void); /*proto*/
+PyMODINIT_FUNC PyInit_aerobic(void)
 #endif
 {
   PyObject *__pyx_t_1 = NULL;
@@ -1788,7 +2050,7 @@ PyMODINIT_FUNC PyInit_heart(void)
           Py_FatalError("failed to import 'refnanny' module");
   }
   #endif
-  __Pyx_RefNannySetupContext("PyMODINIT_FUNC PyInit_heart(void)", 0);
+  __Pyx_RefNannySetupContext("PyMODINIT_FUNC PyInit_aerobic(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -1817,7 +2079,7 @@ PyMODINIT_FUNC PyInit_heart(void)
   #endif
   /*--- Module creation code ---*/
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("heart", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("aerobic", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -1834,14 +2096,14 @@ PyMODINIT_FUNC PyInit_heart(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_heart) {
+  if (__pyx_module_is_main_pyfit__model__aerobic) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "heart")) {
-      if (unlikely(PyDict_SetItemString(modules, "heart", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "pyfit.model.aerobic")) {
+      if (unlikely(PyDict_SetItemString(modules, "pyfit.model.aerobic", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -1853,29 +2115,22 @@ PyMODINIT_FUNC PyInit_heart(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   /*--- Type init code ---*/
-  __pyx_vtabptr_5heart_HR = &__pyx_vtable_5heart_HR;
-  __pyx_vtable_5heart_HR.maxFox = (float (*)(struct __pyx_obj_5heart_HR *))__pyx_f_5heart_2HR_maxFox;
-  __pyx_vtable_5heart_HR.maxGellish = (float (*)(struct __pyx_obj_5heart_HR *))__pyx_f_5heart_2HR_maxGellish;
-  __pyx_vtable_5heart_HR.maxAstrand = (float (*)(struct __pyx_obj_5heart_HR *))__pyx_f_5heart_2HR_maxAstrand;
-  __pyx_vtable_5heart_HR.maxTanaka = (float (*)(struct __pyx_obj_5heart_HR *))__pyx_f_5heart_2HR_maxTanaka;
-  __pyx_vtable_5heart_HR.maxGulati = (float (*)(struct __pyx_obj_5heart_HR *))__pyx_f_5heart_2HR_maxGulati;
-  __pyx_vtable_5heart_HR.mean_arterial_pressure = (float (*)(struct __pyx_obj_5heart_HR *, int, int))__pyx_f_5heart_2HR_mean_arterial_pressure;
-  __pyx_vtable_5heart_HR.target_hr = (float (*)(struct __pyx_obj_5heart_HR *, float, int, int))__pyx_f_5heart_2HR_target_hr;
-  if (PyType_Ready(&__pyx_type_5heart_HR) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_type_5heart_HR.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5heart_HR.tp_dict, __pyx_vtabptr_5heart_HR) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "HR", (PyObject *)&__pyx_type_5heart_HR) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_ptype_5heart_HR = &__pyx_type_5heart_HR;
-  __pyx_vtabptr_5heart_ResidualVolume = &__pyx_vtable_5heart_ResidualVolume;
-  __pyx_vtable_5heart_ResidualVolume.berglund = (PyObject *(*)(struct __pyx_obj_5heart_ResidualVolume *))__pyx_f_5heart_14ResidualVolume_berglund;
-  __pyx_vtable_5heart_ResidualVolume.boren = (PyObject *(*)(struct __pyx_obj_5heart_ResidualVolume *))__pyx_f_5heart_14ResidualVolume_boren;
-  __pyx_vtable_5heart_ResidualVolume.goldman = (PyObject *(*)(struct __pyx_obj_5heart_ResidualVolume *))__pyx_f_5heart_14ResidualVolume_goldman;
-  __pyx_vtable_5heart_ResidualVolume.obrien = (PyObject *(*)(struct __pyx_obj_5heart_ResidualVolume *, float))__pyx_f_5heart_14ResidualVolume_obrien;
-  if (PyType_Ready(&__pyx_type_5heart_ResidualVolume) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
-  __pyx_type_5heart_ResidualVolume.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5heart_ResidualVolume.tp_dict, __pyx_vtabptr_5heart_ResidualVolume) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "ResidualVolume", (PyObject *)&__pyx_type_5heart_ResidualVolume) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
-  __pyx_ptype_5heart_ResidualVolume = &__pyx_type_5heart_ResidualVolume;
+  __pyx_vtabptr_5pyfit_5model_7aerobic_Riegel = &__pyx_vtable_5pyfit_5model_7aerobic_Riegel;
+  __pyx_vtable_5pyfit_5model_7aerobic_Riegel.distance = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance;
+  __pyx_vtable_5pyfit_5model_7aerobic_Riegel.time = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_6Riegel_time;
+  if (PyType_Ready(&__pyx_type_5pyfit_5model_7aerobic_Riegel) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_type_5pyfit_5model_7aerobic_Riegel.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_5model_7aerobic_Riegel.tp_dict, __pyx_vtabptr_5pyfit_5model_7aerobic_Riegel) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Riegel", (PyObject *)&__pyx_type_5pyfit_5model_7aerobic_Riegel) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_ptype_5pyfit_5model_7aerobic_Riegel = &__pyx_type_5pyfit_5model_7aerobic_Riegel;
+  __pyx_vtabptr_5pyfit_5model_7aerobic_Cameron = &__pyx_vtable_5pyfit_5model_7aerobic_Cameron;
+  __pyx_vtable_5pyfit_5model_7aerobic_Cameron.__pyx___f__ = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, float))__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__;
+  __pyx_vtable_5pyfit_5model_7aerobic_Cameron.time = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_7Cameron_time;
+  if (PyType_Ready(&__pyx_type_5pyfit_5model_7aerobic_Cameron) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_type_5pyfit_5model_7aerobic_Cameron.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_5model_7aerobic_Cameron.tp_dict, __pyx_vtabptr_5pyfit_5model_7aerobic_Cameron) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Cameron", (PyObject *)&__pyx_type_5pyfit_5model_7aerobic_Cameron) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_ptype_5pyfit_5model_7aerobic_Cameron = &__pyx_type_5pyfit_5model_7aerobic_Cameron;
   /*--- Type import code ---*/
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
@@ -1884,10 +2139,10 @@ PyMODINIT_FUNC PyInit_heart(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "heart.pyx":1
- * cdef class HR(object):             # <<<<<<<<<<<<<<
- *     cdef int age
- *     cdef readonly dict __dir__
+  /* "pyfit/model/aerobic.pyx":1
+ * from libc.math cimport pow             # <<<<<<<<<<<<<<
+ * 
+ * cdef class Riegel(object):
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -1901,11 +2156,11 @@ PyMODINIT_FUNC PyInit_heart(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init heart", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init pyfit.model.aerobic", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init heart");
+    PyErr_SetString(PyExc_ImportError, "init pyfit.model.aerobic");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -1933,6 +2188,32 @@ end:
     return (__Pyx_RefNannyAPIStruct *)r;
 }
 #endif
+
+/* RaiseArgTupleInvalid */
+static void __Pyx_RaiseArgtupleInvalid(
+    const char* func_name,
+    int exact,
+    Py_ssize_t num_min,
+    Py_ssize_t num_max,
+    Py_ssize_t num_found)
+{
+    Py_ssize_t num_expected;
+    const char *more_or_less;
+    if (num_found < num_min) {
+        num_expected = num_min;
+        more_or_less = "at least";
+    } else {
+        num_expected = num_max;
+        more_or_less = "at most";
+    }
+    if (exact) {
+        more_or_less = "exactly";
+    }
+    PyErr_Format(PyExc_TypeError,
+                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
+                 func_name, more_or_less, num_expected,
+                 (num_expected == 1) ? "" : "s", num_found);
+}
 
 /* RaiseDoubleKeywords */
 static void __Pyx_RaiseDoubleKeywordsError(
@@ -2050,42 +2331,83 @@ bad:
     return -1;
 }
 
-/* RaiseArgTupleInvalid */
-static void __Pyx_RaiseArgtupleInvalid(
-    const char* func_name,
-    int exact,
-    Py_ssize_t num_min,
-    Py_ssize_t num_max,
-    Py_ssize_t num_found)
-{
-    Py_ssize_t num_expected;
-    const char *more_or_less;
-    if (num_found < num_min) {
-        num_expected = num_min;
-        more_or_less = "at least";
-    } else {
-        num_expected = num_max;
-        more_or_less = "at most";
+/* PyObjectCall */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
+    PyObject *result;
+    ternaryfunc call = func->ob_type->tp_call;
+    if (unlikely(!call))
+        return PyObject_Call(func, arg, kw);
+    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
+        return NULL;
+    result = (*call)(func, arg, kw);
+    Py_LeaveRecursiveCall();
+    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
+        PyErr_SetString(
+            PyExc_SystemError,
+            "NULL result without error in PyObject_Call");
     }
-    if (exact) {
-        more_or_less = "exactly";
-    }
-    PyErr_Format(PyExc_TypeError,
-                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
-                 func_name, more_or_less, num_expected,
-                 (num_expected == 1) ? "" : "s", num_found);
+    return result;
 }
+#endif
 
-/* None */
-static CYTHON_INLINE long __Pyx_div_long(long a, long b) {
-    long q = a / b;
-    long r = a - q*b;
-    q -= ((r != 0) & ((r ^ b) < 0));
-    return q;
+/* PyObjectCallMethO */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
+    PyObject *self, *result;
+    PyCFunction cfunc;
+    cfunc = PyCFunction_GET_FUNCTION(func);
+    self = PyCFunction_GET_SELF(func);
+    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
+        return NULL;
+    result = cfunc(self, arg);
+    Py_LeaveRecursiveCall();
+    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
+        PyErr_SetString(
+            PyExc_SystemError,
+            "NULL result without error in PyObject_Call");
+    }
+    return result;
 }
+#endif
+
+/* PyObjectCallOneArg */
+#if CYTHON_COMPILING_IN_CPYTHON
+static PyObject* __Pyx__PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+    PyObject *result;
+    PyObject *args = PyTuple_New(1);
+    if (unlikely(!args)) return NULL;
+    Py_INCREF(arg);
+    PyTuple_SET_ITEM(args, 0, arg);
+    result = __Pyx_PyObject_Call(func, args, NULL);
+    Py_DECREF(args);
+    return result;
+}
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+#ifdef __Pyx_CyFunction_USED
+    if (likely(PyCFunction_Check(func) || PyObject_TypeCheck(func, __pyx_CyFunctionType))) {
+#else
+    if (likely(PyCFunction_Check(func))) {
+#endif
+        if (likely(PyCFunction_GET_FLAGS(func) & METH_O)) {
+            return __Pyx_PyObject_CallMethO(func, arg);
+        }
+    }
+    return __Pyx__PyObject_CallOneArg(func, arg);
+}
+#else
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+    PyObject *result;
+    PyObject *args = PyTuple_Pack(1, arg);
+    if (unlikely(!args)) return NULL;
+    result = __Pyx_PyObject_Call(func, args, NULL);
+    Py_DECREF(args);
+    return result;
+}
+#endif
 
 /* SetVTable */
-static int __Pyx_SetVtable(PyObject *dict, void *vtable) {
+  static int __Pyx_SetVtable(PyObject *dict, void *vtable) {
 #if PY_VERSION_HEX >= 0x02070000
     PyObject *ob = PyCapsule_New(vtable, 0, 0);
 #else
@@ -2103,7 +2425,7 @@ bad:
 }
 
 /* CodeObjectCache */
-static int __pyx_bisect_code_objects(__Pyx_CodeObjectCacheEntry* entries, int count, int code_line) {
+  static int __pyx_bisect_code_objects(__Pyx_CodeObjectCacheEntry* entries, int count, int code_line) {
     int start = 0, mid = 0, end = count - 1;
     if (end >= 0 && code_line > entries[end].code_line) {
         return count;
@@ -2183,7 +2505,7 @@ static void __pyx_insert_code_object(int code_line, PyCodeObject* code_object) {
 }
 
 /* AddTraceback */
-#include "compile.h"
+  #include "compile.h"
 #include "frameobject.h"
 #include "traceback.h"
 static PyCodeObject* __Pyx_CreateCodeObjectForTraceback(
@@ -2263,215 +2585,8 @@ bad:
     Py_XDECREF(py_frame);
 }
 
-/* CIntFromPyVerify */
-#define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
-#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
-#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
-    {\
-        func_type value = func_value;\
-        if (sizeof(target_type) < sizeof(func_type)) {\
-            if (unlikely(value != (func_type) (target_type) value)) {\
-                func_type zero = 0;\
-                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
-                    return (target_type) -1;\
-                if (is_unsigned && unlikely(value < zero))\
-                    goto raise_neg_overflow;\
-                else\
-                    goto raise_overflow;\
-            }\
-        }\
-        return (target_type) value;\
-    }
-
-/* CIntFromPy */
-static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
-    const int neg_one = (int) -1, const_zero = (int) 0;
-    const int is_unsigned = neg_one > const_zero;
-#if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_Check(x))) {
-        if (sizeof(int) < sizeof(long)) {
-            __PYX_VERIFY_RETURN_INT(int, long, PyInt_AS_LONG(x))
-        } else {
-            long val = PyInt_AS_LONG(x);
-            if (is_unsigned && unlikely(val < 0)) {
-                goto raise_neg_overflow;
-            }
-            return (int) val;
-        }
-    } else
-#endif
-    if (likely(PyLong_Check(x))) {
-        if (is_unsigned) {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (int) 0;
-                case  1: __PYX_VERIFY_RETURN_INT(int, digit, digits[0])
-                case 2:
-                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 2 * PyLong_SHIFT) {
-                            return (int) (((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 3 * PyLong_SHIFT) {
-                            return (int) (((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 4 * PyLong_SHIFT) {
-                            return (int) (((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-            }
-#endif
-#if CYTHON_COMPILING_IN_CPYTHON
-            if (unlikely(Py_SIZE(x) < 0)) {
-                goto raise_neg_overflow;
-            }
-#else
-            {
-                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
-                if (unlikely(result < 0))
-                    return (int) -1;
-                if (unlikely(result == 1))
-                    goto raise_neg_overflow;
-            }
-#endif
-            if (sizeof(int) <= sizeof(unsigned long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned long, PyLong_AsUnsignedLong(x))
-            } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
-            }
-        } else {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (int) 0;
-                case -1: __PYX_VERIFY_RETURN_INT(int, sdigit, (sdigit) (-(sdigit)digits[0]))
-                case  1: __PYX_VERIFY_RETURN_INT(int,  digit, +digits[0])
-                case -2:
-                    if (8 * sizeof(int) - 1 > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 2:
-                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                            return (int) ((((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case -3:
-                    if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                            return (int) ((((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case -4:
-                    if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
-                            return (int) ((((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-            }
-#endif
-            if (sizeof(int) <= sizeof(long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, long, PyLong_AsLong(x))
-            } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
-            }
-        }
-        {
-#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
-            PyErr_SetString(PyExc_RuntimeError,
-                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
-#else
-            int val;
-            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
- #if PY_MAJOR_VERSION < 3
-            if (likely(v) && !PyLong_Check(v)) {
-                PyObject *tmp = v;
-                v = PyNumber_Long(tmp);
-                Py_DECREF(tmp);
-            }
- #endif
-            if (likely(v)) {
-                int one = 1; int is_little = (int)*(unsigned char *)&one;
-                unsigned char *bytes = (unsigned char *)&val;
-                int ret = _PyLong_AsByteArray((PyLongObject *)v,
-                                              bytes, sizeof(val),
-                                              is_little, !is_unsigned);
-                Py_DECREF(v);
-                if (likely(!ret))
-                    return val;
-            }
-#endif
-            return (int) -1;
-        }
-    } else {
-        int val;
-        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
-        if (!tmp) return (int) -1;
-        val = __Pyx_PyInt_As_int(tmp);
-        Py_DECREF(tmp);
-        return val;
-    }
-raise_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "value too large to convert to int");
-    return (int) -1;
-raise_neg_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "can't convert negative value to int");
-    return (int) -1;
-}
-
 /* CIntToPy */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
+  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
     const long neg_one = (long) -1, const_zero = (long) 0;
     const int is_unsigned = neg_one > const_zero;
     if (is_unsigned) {
@@ -2497,8 +2612,30 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
     }
 }
 
+/* CIntFromPyVerify */
+  #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
+    {\
+        func_type value = func_value;\
+        if (sizeof(target_type) < sizeof(func_type)) {\
+            if (unlikely(value != (func_type) (target_type) value)) {\
+                func_type zero = 0;\
+                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
+                    return (target_type) -1;\
+                if (is_unsigned && unlikely(value < zero))\
+                    goto raise_neg_overflow;\
+                else\
+                    goto raise_overflow;\
+            }\
+        }\
+        return (target_type) value;\
+    }
+
 /* CIntFromPy */
-static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
+  static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
     const long neg_one = (long) -1, const_zero = (long) 0;
     const int is_unsigned = neg_one > const_zero;
 #if PY_MAJOR_VERSION < 3
@@ -2682,8 +2819,193 @@ raise_neg_overflow:
     return (long) -1;
 }
 
+/* CIntFromPy */
+  static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
+    const int neg_one = (int) -1, const_zero = (int) 0;
+    const int is_unsigned = neg_one > const_zero;
+#if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_Check(x))) {
+        if (sizeof(int) < sizeof(long)) {
+            __PYX_VERIFY_RETURN_INT(int, long, PyInt_AS_LONG(x))
+        } else {
+            long val = PyInt_AS_LONG(x);
+            if (is_unsigned && unlikely(val < 0)) {
+                goto raise_neg_overflow;
+            }
+            return (int) val;
+        }
+    } else
+#endif
+    if (likely(PyLong_Check(x))) {
+        if (is_unsigned) {
+#if CYTHON_USE_PYLONG_INTERNALS
+            const digit* digits = ((PyLongObject*)x)->ob_digit;
+            switch (Py_SIZE(x)) {
+                case  0: return (int) 0;
+                case  1: __PYX_VERIFY_RETURN_INT(int, digit, digits[0])
+                case 2:
+                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 2 * PyLong_SHIFT) {
+                            return (int) (((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+                case 3:
+                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 3 * PyLong_SHIFT) {
+                            return (int) (((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+                case 4:
+                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 4 * PyLong_SHIFT) {
+                            return (int) (((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+            }
+#endif
+#if CYTHON_COMPILING_IN_CPYTHON
+            if (unlikely(Py_SIZE(x) < 0)) {
+                goto raise_neg_overflow;
+            }
+#else
+            {
+                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
+                if (unlikely(result < 0))
+                    return (int) -1;
+                if (unlikely(result == 1))
+                    goto raise_neg_overflow;
+            }
+#endif
+            if (sizeof(int) <= sizeof(unsigned long)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned long, PyLong_AsUnsignedLong(x))
+            } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+            }
+        } else {
+#if CYTHON_USE_PYLONG_INTERNALS
+            const digit* digits = ((PyLongObject*)x)->ob_digit;
+            switch (Py_SIZE(x)) {
+                case  0: return (int) 0;
+                case -1: __PYX_VERIFY_RETURN_INT(int, sdigit, (sdigit) (-(sdigit)digits[0]))
+                case  1: __PYX_VERIFY_RETURN_INT(int,  digit, +digits[0])
+                case -2:
+                    if (8 * sizeof(int) - 1 > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 2:
+                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                            return (int) ((((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case -3:
+                    if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 3:
+                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                            return (int) ((((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case -4:
+                    if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 4:
+                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
+                            return (int) ((((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+            }
+#endif
+            if (sizeof(int) <= sizeof(long)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, long, PyLong_AsLong(x))
+            } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+            }
+        }
+        {
+#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
+            PyErr_SetString(PyExc_RuntimeError,
+                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
+#else
+            int val;
+            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
+ #if PY_MAJOR_VERSION < 3
+            if (likely(v) && !PyLong_Check(v)) {
+                PyObject *tmp = v;
+                v = PyNumber_Long(tmp);
+                Py_DECREF(tmp);
+            }
+ #endif
+            if (likely(v)) {
+                int one = 1; int is_little = (int)*(unsigned char *)&one;
+                unsigned char *bytes = (unsigned char *)&val;
+                int ret = _PyLong_AsByteArray((PyLongObject *)v,
+                                              bytes, sizeof(val),
+                                              is_little, !is_unsigned);
+                Py_DECREF(v);
+                if (likely(!ret))
+                    return val;
+            }
+#endif
+            return (int) -1;
+        }
+    } else {
+        int val;
+        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
+        if (!tmp) return (int) -1;
+        val = __Pyx_PyInt_As_int(tmp);
+        Py_DECREF(tmp);
+        return val;
+    }
+raise_overflow:
+    PyErr_SetString(PyExc_OverflowError,
+        "value too large to convert to int");
+    return (int) -1;
+raise_neg_overflow:
+    PyErr_SetString(PyExc_OverflowError,
+        "can't convert negative value to int");
+    return (int) -1;
+}
+
 /* CheckBinaryVersion */
-static int __Pyx_check_binary_version(void) {
+  static int __Pyx_check_binary_version(void) {
     char ctversion[4], rtversion[4];
     PyOS_snprintf(ctversion, 4, "%d.%d", PY_MAJOR_VERSION, PY_MINOR_VERSION);
     PyOS_snprintf(rtversion, 4, "%s", Py_GetVersion());
@@ -2699,7 +3021,7 @@ static int __Pyx_check_binary_version(void) {
 }
 
 /* InitStrings */
-static int __Pyx_InitStrings(__Pyx_StringTabEntry *t) {
+  static int __Pyx_InitStrings(__Pyx_StringTabEntry *t) {
     while (t->p) {
         #if PY_MAJOR_VERSION < 3
         if (t->is_unicode) {
