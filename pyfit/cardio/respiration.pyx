@@ -82,9 +82,6 @@ cdef class VO2(object):
     cpdef float steppingGross(self, float height, float frequency):
         return (0.2*frequency) + (frequency * self.height * 1.8 * 1.33)
 
-    cpdef float stairmasterMets(self, int setting):
-        return 0.556 * 7.45 * setting
-
     cpdef float usop(self, float hrMax, float restingHR):
         return 15.3 * (hrMax/restingHR)
 

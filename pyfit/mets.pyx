@@ -849,6 +849,9 @@ cpdef float karvonen(float mets, float intensity):
 cpdef float fromVO2(float vO2):
     return vO2 / 3.5
 
+cpdef float stairmasterMets(self, int setting):
+    return 0.556 * 7.45 * setting
+
 cpdef float toKCal(float mets, float weight):
     return (mets * 3.5 * weight)/200
 
