@@ -117,15 +117,24 @@ cdef class Abadie(RMEstimator):
     cpdef float predict(self, float weight):
         return 7.24 + (1.05* weight)
 
+    cpdef float weight(self, float rm):
+        return (4./105)*(25*rm-181)
+
 cdef class Baechle(RMEstimator):
 
     cpdef float predict(self, float weight):
         return weight * (1+(0.033* self.reps) )
 
+    cpdef float weight(self, float rm):
+        return (1000*rm)/(33*self.reps + 1000)
+
 cdef class Brzycki(RMEstimator):
 
     cpdef float predict(self, float weight):
         return weight/(1.0278-(0.0278 * self.reps))
+
+    cpdef float weight(self, float rm):
+        return (1.0278-(0.0278 * self.reps))
 
     cpdef float twoSet(self, float weight, int rep2, float weight2):
         return ((weight - weight2)/(rep2 - self.reps)) * (self.reps - 1) + weight
@@ -140,6 +149,9 @@ cdef class Landers(RMEstimator):
     cpdef float predict(self, float weight):
         return weight/(1.013 - (0.0267123 * self.reps) )
 
+    cpdef float weight(self, float rm):
+        return rm*(1.013 - (0.0267123 * self.reps) )
+
     cpdef float percent(self):
         cdef float value = 101.3 - (2.67123 * self.reps )
         return value / 100
@@ -148,6 +160,9 @@ cdef class Lombardi(RMEstimator):
 
     cpdef float predict(self, float weight):
         return weight*pow(self.reps,0.10)
+
+    cpdef float weight(self, float rm):
+        return rm/pow(self.reps,0.10)
 
 cdef class Mayhew(RMEstimator):
 
@@ -161,10 +176,16 @@ cdef class Mayhew(RMEstimator):
         cdef float value = 52.2 + 41.9* exp(-0.055* self.reps)
         return value / 100
 
+    cpdef float weight(self, float rm):
+        return (rm*( 52.2 + 41.9 * exp(-0.055 * self.reps) ) )/100
+
 cdef class McGlothin(RMEstimator):
 
     cpdef float predict(self, float weight):
         return (100 * weight)/(101.3 - 2.67123 * self.reps)
+
+    cpdef float weight(self, float rm):
+        return (rm*(101.3 - 2.67123 * self.reps) )/100
 
 cdef class  OConnor(RMEstimator):
 
@@ -173,6 +194,9 @@ cdef class  OConnor(RMEstimator):
 
     cpdef float percent(self, float weight):
         return (0.025 * (weight * self.reps)+ weight)
+
+    cpdef float weight(self, float rm):
+        return (40.*rm)/(self.reps+40)
 
 cdef class ReynoldsCP(RMEstimator):
 
@@ -188,6 +212,9 @@ cdef class Wathan(RMEstimator):
 
     cpdef float predict(self, float weight):
         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps) ) )
+
+    cpdef float weight(self, float rm):
+        return (rm*(48.8+(53.8*exp(-0.075 * self.reps) ) ) )/100
 
 cdef class RM(object):
     cdef readonly int gender
