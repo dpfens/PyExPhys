@@ -27,7 +27,10 @@ cdef class HF(HREstimator):
     """
 
     cpdef float predict(self, float age):
-        return 208.0-(0.7 * age)
+        return 220 - age
+
+    cpdef float age(self, float hr):
+        return 220 - hr
 
 cdef class Gellish(HREstimator):
     """
