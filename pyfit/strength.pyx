@@ -135,10 +135,6 @@ cdef class Epley(RMEstimator):
     cpdef float predict(self, float weight):
         return (weight * self.reps * 0.033)+weight
 
-    cdef float percent(self, float weight):
-        cdef float value = ((0.033 * self.reps) * weight) + weight
-        return value / 100
-
 cdef class Landers(RMEstimator):
 
     cpdef float predict(self, float weight):
