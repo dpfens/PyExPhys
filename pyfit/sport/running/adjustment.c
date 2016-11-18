@@ -3,7 +3,7 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {}, 
-    "module_name": "adjustment"
+    "module_name": "pyfit.sport.running.adjustment"
 }
 END: Cython Metadata */
 
@@ -273,8 +273,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__adjustment
-#define __PYX_HAVE_API__adjustment
+#define __PYX_HAVE__pyfit__sport__running__adjustment
+#define __PYX_HAVE_API__pyfit__sport__running__adjustment
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -490,7 +490,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "sport/running/adjustment.pyx",
+  "pyfit/sport/running/adjustment.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -656,12 +656,12 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'adjustment' */
-static float __pyx_f_10adjustment_temperature(float, char *, int __pyx_skip_dispatch); /*proto*/
-#define __Pyx_MODULE_NAME "adjustment"
-int __pyx_module_is_main_adjustment = 0;
+/* Module declarations from 'pyfit.sport.running.adjustment' */
+static double __pyx_f_5pyfit_5sport_7running_10adjustment_temperature(double, char *, int __pyx_skip_dispatch); /*proto*/
+#define __Pyx_MODULE_NAME "pyfit.sport.running.adjustment"
+int __pyx_module_is_main_pyfit__sport__running__adjustment = 0;
 
-/* Implementation of 'adjustment' */
+/* Implementation of 'pyfit.sport.running.adjustment' */
 static const char __pyx_k_60[] = "60";
 static const char __pyx_k_65[] = "65";
 static const char __pyx_k_70[] = "70";
@@ -688,7 +688,7 @@ static PyObject *__pyx_n_s_farenheit;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_seconds;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_pf_10adjustment_temperature(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_seconds, char *__pyx_v_farenheit); /* proto */
+static PyObject *__pyx_pf_5pyfit_5sport_7running_10adjustment_temperature(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_seconds, char *__pyx_v_farenheit); /* proto */
 static PyObject *__pyx_float_1_03;
 static PyObject *__pyx_float_1_06;
 static PyObject *__pyx_float_1_015;
@@ -699,25 +699,25 @@ static PyObject *__pyx_float_1_0375;
 static PyObject *__pyx_float_1_0525;
 static PyObject *__pyx_int_1;
 
-/* "adjustment.pyx":1
- * cpdef float temperature(float seconds, char *farenheit):             # <<<<<<<<<<<<<<
+/* "pyfit/sport/running/adjustment.pyx":1
+ * cpdef double temperature(double seconds, char *farenheit):             # <<<<<<<<<<<<<<
  *     factors = {
  *         "60": 1,
  */
 
-static PyObject *__pyx_pw_10adjustment_1temperature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_10adjustment_temperature(float __pyx_v_seconds, CYTHON_UNUSED char *__pyx_v_farenheit, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_5pyfit_5sport_7running_10adjustment_1temperature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_5sport_7running_10adjustment_temperature(double __pyx_v_seconds, CYTHON_UNUSED char *__pyx_v_farenheit, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_v_factors = NULL;
-  float __pyx_r;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
-  float __pyx_t_4;
+  double __pyx_t_4;
   __Pyx_RefNannySetupContext("temperature", 0);
 
-  /* "adjustment.pyx":3
- * cpdef float temperature(float seconds, char *farenheit):
+  /* "pyfit/sport/running/adjustment.pyx":3
+ * cpdef double temperature(double seconds, char *farenheit):
  *     factors = {
  *         "60": 1,             # <<<<<<<<<<<<<<
  *         "65": 1.0075,
@@ -737,7 +737,7 @@ static float __pyx_f_10adjustment_temperature(float __pyx_v_seconds, CYTHON_UNUS
   __pyx_v_factors = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "adjustment.pyx":13
+  /* "pyfit/sport/running/adjustment.pyx":13
  *         "100" : 1.06
  *     }
  *     return seconds * factors[seconds]             # <<<<<<<<<<<<<<
@@ -753,13 +753,13 @@ static float __pyx_f_10adjustment_temperature(float __pyx_v_seconds, CYTHON_UNUS
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_4;
   goto __pyx_L0;
 
-  /* "adjustment.pyx":1
- * cpdef float temperature(float seconds, char *farenheit):             # <<<<<<<<<<<<<<
+  /* "pyfit/sport/running/adjustment.pyx":1
+ * cpdef double temperature(double seconds, char *farenheit):             # <<<<<<<<<<<<<<
  *     factors = {
  *         "60": 1,
  */
@@ -769,7 +769,7 @@ static float __pyx_f_10adjustment_temperature(float __pyx_v_seconds, CYTHON_UNUS
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_WriteUnraisable("adjustment.temperature", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __Pyx_WriteUnraisable("pyfit.sport.running.adjustment.temperature", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_factors);
@@ -778,9 +778,9 @@ static float __pyx_f_10adjustment_temperature(float __pyx_v_seconds, CYTHON_UNUS
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10adjustment_1temperature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_10adjustment_1temperature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_seconds;
+static PyObject *__pyx_pw_5pyfit_5sport_7running_10adjustment_1temperature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5sport_7running_10adjustment_1temperature(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_seconds;
   char *__pyx_v_farenheit;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -817,31 +817,31 @@ static PyObject *__pyx_pw_10adjustment_1temperature(PyObject *__pyx_self, PyObje
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_seconds = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_seconds == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1, __pyx_L3_error)
+    __pyx_v_seconds = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_seconds == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 1, __pyx_L3_error)
     __pyx_v_farenheit = __Pyx_PyObject_AsString(values[1]); if (unlikely((!__pyx_v_farenheit) && PyErr_Occurred())) __PYX_ERR(0, 1, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("temperature", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("adjustment.temperature", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.sport.running.adjustment.temperature", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10adjustment_temperature(__pyx_self, __pyx_v_seconds, __pyx_v_farenheit);
+  __pyx_r = __pyx_pf_5pyfit_5sport_7running_10adjustment_temperature(__pyx_self, __pyx_v_seconds, __pyx_v_farenheit);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10adjustment_temperature(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_seconds, char *__pyx_v_farenheit) {
+static PyObject *__pyx_pf_5pyfit_5sport_7running_10adjustment_temperature(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_seconds, char *__pyx_v_farenheit) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("temperature", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_10adjustment_temperature(__pyx_v_seconds, __pyx_v_farenheit, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_10adjustment_temperature(__pyx_v_seconds, __pyx_v_farenheit, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -850,7 +850,7 @@ static PyObject *__pyx_pf_10adjustment_temperature(CYTHON_UNUSED PyObject *__pyx
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("adjustment.temperature", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.sport.running.adjustment.temperature", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -859,7 +859,7 @@ static PyObject *__pyx_pf_10adjustment_temperature(CYTHON_UNUSED PyObject *__pyx
 }
 
 static PyMethodDef __pyx_methods[] = {
-  {"temperature", (PyCFunction)__pyx_pw_10adjustment_1temperature, METH_VARARGS|METH_KEYWORDS, 0},
+  {"temperature", (PyCFunction)__pyx_pw_5pyfit_5sport_7running_10adjustment_1temperature, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -989,14 +989,14 @@ PyMODINIT_FUNC PyInit_adjustment(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_adjustment) {
+  if (__pyx_module_is_main_pyfit__sport__running__adjustment) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "adjustment")) {
-      if (unlikely(PyDict_SetItemString(modules, "adjustment", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "pyfit.sport.running.adjustment")) {
+      if (unlikely(PyDict_SetItemString(modules, "pyfit.sport.running.adjustment", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -1016,8 +1016,8 @@ PyMODINIT_FUNC PyInit_adjustment(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "adjustment.pyx":1
- * cpdef float temperature(float seconds, char *farenheit):             # <<<<<<<<<<<<<<
+  /* "pyfit/sport/running/adjustment.pyx":1
+ * cpdef double temperature(double seconds, char *farenheit):             # <<<<<<<<<<<<<<
  *     factors = {
  *         "60": 1,
  */
@@ -1033,11 +1033,11 @@ PyMODINIT_FUNC PyInit_adjustment(void)
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init adjustment", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init pyfit.sport.running.adjustment", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init adjustment");
+    PyErr_SetString(PyExc_ImportError, "init pyfit.sport.running.adjustment");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

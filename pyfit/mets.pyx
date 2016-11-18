@@ -843,19 +843,19 @@ cdef class METs(object):
     		MET(3.0,"21070","walk/stand combination, for volunteer purposes")
         ]
 
-cpdef float karvonen(float mets, float intensity):
+cpdef double karvonen(double mets, double intensity):
     return intensity * (mets -1) + 1
 
-cpdef float fromVO2(float vO2):
+cpdef double fromVO2(double vO2):
     return vO2 / 3.5
 
-cpdef float stairmasterMets(self, int setting):
+cpdef double stairmasterMets(self, int setting):
     return 0.556 * 7.45 * setting
 
-cpdef float toKCal(float mets, float weight):
+cpdef double toKCal(double mets, double weight):
     return (mets * 3.5 * weight)/200
 
-cpdef float target(float vO2Max, intensity):
-    cdef float mets = fromVO2(vO2Max)
-    cdef float targetMets = karvonen(mets, intensity)
+cpdef double target(double vO2Max, intensity):
+    cdef double mets = fromVO2(vO2Max)
+    cdef double targetMets = karvonen(mets, intensity)
     return targetMets

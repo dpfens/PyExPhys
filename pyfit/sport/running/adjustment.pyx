@@ -1,4 +1,4 @@
-cpdef float temperature(float seconds, char *farenheit):
+cpdef double temperature(double seconds, char *farenheit):
     factors = {
         "60": 1,
         "65": 1.0075,

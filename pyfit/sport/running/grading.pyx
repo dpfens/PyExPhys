@@ -5,10 +5,10 @@ cdef class Grade(object):
     cdef readonly int gender
     cdef readonly int age
 
-    cdef float normalize(self, char *event, float time):
+    cdef double normalize(self, char *event, double time):
         if(self.age < 5 or self.age > 100):
             return 0
         cdef char *gender = "Male" if self.gender else "Female"
-        cdef float world_record = table[gender][event]["OC"]
-        cdef float graded_world_record = world_record / table[gender][event]["conversions"][self.age - 5]
+        cdef double world_record = table[gender][event]["OC"]
+        cdef double graded_world_record = world_record / table[gender][event]["conversions"][self.age - 5]
         return time / graded_world_record

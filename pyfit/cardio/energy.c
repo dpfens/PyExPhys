@@ -522,7 +522,7 @@ struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator {
  * 
  * cdef class HB(BMREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 struct __pyx_obj_5pyfit_6cardio_6energy_HB {
   struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator __pyx_base;
@@ -534,7 +534,7 @@ struct __pyx_obj_5pyfit_6cardio_6energy_HB {
  * 
  * cdef class RevisedHB(BMREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB {
   struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator __pyx_base;
@@ -546,7 +546,7 @@ struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB {
  * 
  * cdef class MSJ(BMREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 struct __pyx_obj_5pyfit_6cardio_6energy_MSJ {
   struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator __pyx_base;
@@ -558,15 +558,15 @@ struct __pyx_obj_5pyfit_6cardio_6energy_MSJ {
  * 
  * cdef class RMR(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 struct __pyx_obj_5pyfit_6cardio_6energy_RMR {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_6cardio_6energy_RMR *__pyx_vtab;
   int gender;
-  float age;
-  float weight;
-  float height;
+  double age;
+  double weight;
+  double height;
 };
 
 
@@ -590,7 +590,7 @@ struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator {
  * 
  * cdef class ChildTEE(TEEEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE {
   struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator __pyx_base;
@@ -602,7 +602,7 @@ struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE {
  * 
  * cdef class AdultTEE(TEEEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE {
   struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator __pyx_base;
@@ -619,7 +619,7 @@ struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE {
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_6energy_BMREstimator {
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, float, float, float);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, double, double, double);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_BMREstimator *__pyx_vtabptr_5pyfit_6cardio_6energy_BMREstimator;
 
@@ -629,12 +629,12 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_BMREstimator *__pyx_vtabpt
  * 
  * cdef class HB(BMREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_6energy_HB {
   struct __pyx_vtabstruct_5pyfit_6cardio_6energy_BMREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_HB *, float, float, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_HB *, double, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_HB *__pyx_vtabptr_5pyfit_6cardio_6energy_HB;
 
@@ -644,12 +644,12 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_HB *__pyx_vtabptr_5pyfit_6
  * 
  * cdef class RevisedHB(BMREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_6energy_RevisedHB {
   struct __pyx_vtabstruct_5pyfit_6cardio_6energy_BMREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *, float, float, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *, double, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_RevisedHB *__pyx_vtabptr_5pyfit_6cardio_6energy_RevisedHB;
 
@@ -659,12 +659,12 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_RevisedHB *__pyx_vtabptr_5
  * 
  * cdef class MSJ(BMREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_6energy_MSJ {
   struct __pyx_vtabstruct_5pyfit_6cardio_6energy_BMREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *, float, float, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *, double, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_MSJ *__pyx_vtabptr_5pyfit_6cardio_6energy_MSJ;
 
@@ -674,12 +674,12 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_MSJ *__pyx_vtabptr_5pyfit_
  * 
  * cdef class RMR(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_6energy_RMR {
-  float (*quick)(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *, int __pyx_skip_dispatch);
-  float (*bsa)(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *, float, int __pyx_skip_dispatch);
+  double (*quick)(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *, int __pyx_skip_dispatch);
+  double (*bsa)(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_RMR *__pyx_vtabptr_5pyfit_6cardio_6energy_RMR;
 
@@ -693,8 +693,8 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_RMR *__pyx_vtabptr_5pyfit_
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_6energy_TEEEstimator {
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, float, float, float);
-  float (*fromActivity)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, float, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, double, double, double);
+  double (*fromActivity)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_TEEEstimator *__pyx_vtabptr_5pyfit_6cardio_6energy_TEEEstimator;
 
@@ -704,12 +704,12 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_TEEEstimator *__pyx_vtabpt
  * 
  * cdef class ChildTEE(TEEEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_6energy_ChildTEE {
   struct __pyx_vtabstruct_5pyfit_6cardio_6energy_TEEEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *, float, float, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *, double, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_ChildTEE *__pyx_vtabptr_5pyfit_6cardio_6energy_ChildTEE;
 
@@ -719,12 +719,12 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_ChildTEE *__pyx_vtabptr_5p
  * 
  * cdef class AdultTEE(TEEEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_6energy_AdultTEE {
   struct __pyx_vtabstruct_5pyfit_6cardio_6energy_TEEEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *, float, float, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *, double, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_AdultTEE *__pyx_vtabptr_5pyfit_6cardio_6energy_AdultTEE;
 
@@ -926,21 +926,21 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static float __pyx_f_5pyfit_6cardio_6energy_12BMREstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *__pyx_v_self, CYTHON_UNUSED float __pyx_v_age, CYTHON_UNUSED float __pyx_v_weight, CYTHON_UNUSED float __pyx_v_height); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_2HB_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, float __pyx_v_bsa, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, CYTHON_UNUSED float __pyx_v_age, CYTHON_UNUSED float __pyx_v_weight, CYTHON_UNUSED float __pyx_v_height); /* proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, float __pyx_v_weight, float __pyx_v_mets, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_12BMREstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *__pyx_v_self, CYTHON_UNUSED double __pyx_v_age, CYTHON_UNUSED double __pyx_v_weight, CYTHON_UNUSED double __pyx_v_height); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_2HB_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, double __pyx_v_bsa, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, CYTHON_UNUSED double __pyx_v_age, CYTHON_UNUSED double __pyx_v_weight, CYTHON_UNUSED double __pyx_v_height); /* proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, double __pyx_v_weight, double __pyx_v_mets, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto*/
 
 /* Module declarations from 'pyfit.cardio.energy' */
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_BMREstimator = 0;
@@ -951,8 +951,8 @@ static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_RMR = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_TEEEstimator = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_ChildTEE = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_AdultTEE = 0;
-static float __pyx_f_5pyfit_6cardio_6energy_kma(float, int __pyx_skip_dispatch); /*proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_cunningham(float, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_kma(double, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_cunningham(double, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "pyfit.cardio.energy"
 int __pyx_module_is_main_pyfit__cardio__energy = 0;
 
@@ -1010,24 +1010,24 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_weight;
 static int __pyx_pf_5pyfit_6cardio_6energy_12BMREstimator___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *__pyx_v_self, int __pyx_v_gender); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12BMREstimator_6gender___get__(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static int __pyx_pf_5pyfit_6cardio_6energy_3RMR___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static int __pyx_pf_5pyfit_6cardio_6energy_3RMR___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_2quick(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_4bsa(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, float __pyx_v_bsa); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_4bsa(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, double __pyx_v_bsa); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_6gender___get__(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_3age___get__(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_6weight___get__(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_6height___get__(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_kma(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_lbm); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2cunningham(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_lbm); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_kma(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_lbm); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2cunningham(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_lbm); /* proto */
 static int __pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, int __pyx_v_gender, int __pyx_v_pal); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_2fromActivity(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, float __pyx_v_weight, float __pyx_v_mets); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_2fromActivity(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, double __pyx_v_weight, double __pyx_v_mets); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_6gender___get__(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_3pal___get__(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_BMREstimator(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_HB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_RevisedHB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -1106,7 +1106,7 @@ static int __pyx_pf_5pyfit_6cardio_6energy_12BMREstimator___cinit__(struct __pyx
  *     def __cinit__(self, int gender):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  * 
- *     cdef float predict(self, float age, float weight, float height):
+ *     cdef double predict(self, double age, double weight, double height):
  */
   __pyx_v_self->gender = __pyx_v_gender;
 
@@ -1127,20 +1127,20 @@ static int __pyx_pf_5pyfit_6cardio_6energy_12BMREstimator___cinit__(struct __pyx
 /* "pyfit/cardio/energy.pyx":10
  *         self.gender = gender
  * 
- *     cdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
  */
 
-static float __pyx_f_5pyfit_6cardio_6energy_12BMREstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *__pyx_v_self, CYTHON_UNUSED float __pyx_v_age, CYTHON_UNUSED float __pyx_v_weight, CYTHON_UNUSED float __pyx_v_height) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_6energy_12BMREstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *__pyx_v_self, CYTHON_UNUSED double __pyx_v_age, CYTHON_UNUSED double __pyx_v_weight, CYTHON_UNUSED double __pyx_v_height) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
 
   /* "pyfit/cardio/energy.pyx":11
  * 
- *     cdef float predict(self, float age, float weight, float height):
+ *     cdef double predict(self, double age, double weight, double height):
  *         raise NotImplementedError("The prediction method is not implemented")             # <<<<<<<<<<<<<<
  * 
  * cdef class HB(BMREstimator):
@@ -1154,7 +1154,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_12BMREstimator_predict(CYTHON_UNUSED
   /* "pyfit/cardio/energy.pyx":10
  *         self.gender = gender
  * 
- *     cdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
  */
@@ -1215,14 +1215,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12BMREstimator_6gender___get__(
 /* "pyfit/cardio/energy.pyx":15
  * cdef class HB(BMREstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_2HB_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1233,7 +1233,7 @@ float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
@@ -1280,7 +1280,7 @@ float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1291,7 +1291,7 @@ float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio
 
   /* "pyfit/cardio/energy.pyx":16
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
  *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
@@ -1311,7 +1311,7 @@ float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio
   if (__pyx_t_11) {
 
     /* "pyfit/cardio/energy.pyx":17
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955             # <<<<<<<<<<<<<<
  *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
@@ -1322,7 +1322,7 @@ float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio
 
     /* "pyfit/cardio/energy.pyx":16
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
  *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
@@ -1342,7 +1342,7 @@ float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio
   /* "pyfit/cardio/energy.pyx":15
  * cdef class HB(BMREstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
  */
@@ -1367,9 +1367,9 @@ float __pyx_f_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_2HB_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_2HB_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
@@ -1412,9 +1412,9 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_2HB_1predict(PyObject *__pyx_v_
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1431,7 +1431,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_2HB_1predict(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1454,21 +1454,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2HB_predict(struct __pyx_obj_5p
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_6energy_2HB_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+double __pyx_f_5pyfit_6cardio_6energy_2HB_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_HB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   return __pyx_f_5pyfit_6cardio_6energy_2HB_predict(__pyx_v_self, __pyx_v_age, __pyx_v_weight, __pyx_v_height, 0);
 }
 
 /* "pyfit/cardio/energy.pyx":22
  * cdef class RevisedHB(BMREstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_9RevisedHB_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1479,7 +1479,7 @@ float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
@@ -1526,7 +1526,7 @@ float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1537,7 +1537,7 @@ float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_
 
   /* "pyfit/cardio/energy.pyx":23
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
  *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
@@ -1557,7 +1557,7 @@ float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_
   if (__pyx_t_11) {
 
     /* "pyfit/cardio/energy.pyx":24
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955             # <<<<<<<<<<<<<<
  *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
@@ -1568,7 +1568,7 @@ float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_
 
     /* "pyfit/cardio/energy.pyx":23
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
  *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
@@ -1588,7 +1588,7 @@ float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_
   /* "pyfit/cardio/energy.pyx":22
  * cdef class RevisedHB(BMREstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
  */
@@ -1613,9 +1613,9 @@ float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_9RevisedHB_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_9RevisedHB_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
@@ -1658,9 +1658,9 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_9RevisedHB_1predict(PyObject *_
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1677,7 +1677,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_9RevisedHB_1predict(PyObject *_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1700,21 +1700,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+double __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   return __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(__pyx_v_self, __pyx_v_age, __pyx_v_weight, __pyx_v_height, 0);
 }
 
 /* "pyfit/cardio/energy.pyx":29
  * cdef class MSJ(BMREstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (9.99 * weight + 6.25 * height - 4.92 * age - 161)
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3MSJ_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1725,7 +1725,7 @@ float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardi
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
@@ -1772,7 +1772,7 @@ float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardi
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1783,7 +1783,7 @@ float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardi
 
   /* "pyfit/cardio/energy.pyx":30
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (9.99 * weight + 6.25 * height - 4.92 * age - 161)
  *         return (9.99 * weight + 6.25 * height - 4.92 * age + 5)
@@ -1803,7 +1803,7 @@ float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardi
   if (__pyx_t_11) {
 
     /* "pyfit/cardio/energy.pyx":31
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:
  *             return (9.99 * weight + 6.25 * height - 4.92 * age - 161)             # <<<<<<<<<<<<<<
  *         return (9.99 * weight + 6.25 * height - 4.92 * age + 5)
@@ -1814,7 +1814,7 @@ float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardi
 
     /* "pyfit/cardio/energy.pyx":30
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (9.99 * weight + 6.25 * height - 4.92 * age - 161)
  *         return (9.99 * weight + 6.25 * height - 4.92 * age + 5)
@@ -1834,7 +1834,7 @@ float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardi
   /* "pyfit/cardio/energy.pyx":29
  * cdef class MSJ(BMREstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (9.99 * weight + 6.25 * height - 4.92 * age - 161)
  */
@@ -1859,9 +1859,9 @@ float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardi
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3MSJ_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3MSJ_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
@@ -1904,9 +1904,9 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3MSJ_1predict(PyObject *__pyx_v
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1923,7 +1923,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3MSJ_1predict(PyObject *__pyx_v
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1946,14 +1946,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3MSJ_predict(struct __pyx_obj_5
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+double __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   return __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict(__pyx_v_self, __pyx_v_age, __pyx_v_weight, __pyx_v_height, 0);
 }
 
 /* "pyfit/cardio/energy.pyx":40
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -1962,9 +1962,9 @@ float __pyx_f_5pyfit_6cardio_6energy_3MSJ_predict__pyx_wrap_1(struct __pyx_obj_5
 static int __pyx_pw_5pyfit_6cardio_6energy_3RMR_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_6cardio_6energy_3RMR_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -2015,9 +2015,9 @@ static int __pyx_pw_5pyfit_6cardio_6energy_3RMR_1__cinit__(PyObject *__pyx_v_sel
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 40, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2034,14 +2034,14 @@ static int __pyx_pw_5pyfit_6cardio_6energy_3RMR_1__cinit__(PyObject *__pyx_v_sel
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_6cardio_6energy_3RMR___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_6cardio_6energy_3RMR___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/cardio/energy.pyx":41
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  *         self.weight = weight
@@ -2049,7 +2049,7 @@ static int __pyx_pf_5pyfit_6cardio_6energy_3RMR___cinit__(struct __pyx_obj_5pyfi
   __pyx_v_self->gender = __pyx_v_gender;
 
   /* "pyfit/cardio/energy.pyx":42
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  *         self.weight = weight
@@ -2071,14 +2071,14 @@ static int __pyx_pf_5pyfit_6cardio_6energy_3RMR___cinit__(struct __pyx_obj_5pyfi
  *         self.weight = weight
  *         self.height = height             # <<<<<<<<<<<<<<
  * 
- *     cpdef float quick(self):
+ *     cpdef double quick(self):
  */
   __pyx_v_self->height = __pyx_v_height;
 
   /* "pyfit/cardio/energy.pyx":40
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -2092,20 +2092,20 @@ static int __pyx_pf_5pyfit_6cardio_6energy_3RMR___cinit__(struct __pyx_obj_5pyfi
 /* "pyfit/cardio/energy.pyx":46
  *         self.height = height
  * 
- *     cpdef float quick(self):             # <<<<<<<<<<<<<<
+ *     cpdef double quick(self):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return self.weight * 22
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3RMR_3quick(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("quick", 0);
   /* Check if called by wrapper */
@@ -2134,7 +2134,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2145,7 +2145,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6
 
   /* "pyfit/cardio/energy.pyx":47
  * 
- *     cpdef float quick(self):
+ *     cpdef double quick(self):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return self.weight * 22
  *         return self.weight * 24.2
@@ -2165,7 +2165,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6
   if (__pyx_t_6) {
 
     /* "pyfit/cardio/energy.pyx":48
- *     cpdef float quick(self):
+ *     cpdef double quick(self):
  *         if self.gender == Gender.Female:
  *             return self.weight * 22             # <<<<<<<<<<<<<<
  *         return self.weight * 24.2
@@ -2176,7 +2176,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6
 
     /* "pyfit/cardio/energy.pyx":47
  * 
- *     cpdef float quick(self):
+ *     cpdef double quick(self):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return self.weight * 22
  *         return self.weight * 24.2
@@ -2188,7 +2188,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6
  *             return self.weight * 22
  *         return self.weight * 24.2             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bsa(self, float bsa):
+ *     cpdef double bsa(self, double bsa):
  */
   __pyx_r = (__pyx_v_self->weight * 24.2);
   goto __pyx_L0;
@@ -2196,7 +2196,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_quick(struct __pyx_obj_5pyfit_6
   /* "pyfit/cardio/energy.pyx":46
  *         self.height = height
  * 
- *     cpdef float quick(self):             # <<<<<<<<<<<<<<
+ *     cpdef double quick(self):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return self.weight * 22
  */
@@ -2253,14 +2253,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_2quick(struct __pyx_obj_5p
 /* "pyfit/cardio/energy.pyx":51
  *         return self.weight * 24.2
  * 
- *     cpdef float bsa(self, float bsa):             # <<<<<<<<<<<<<<
+ *     cpdef double bsa(self, double bsa):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return bsa * 840
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3RMR_5bsa(PyObject *__pyx_v_self, PyObject *__pyx_arg_bsa); /*proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, float __pyx_v_bsa, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, double __pyx_v_bsa, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2268,7 +2268,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6ca
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("bsa", 0);
   /* Check if called by wrapper */
@@ -2307,7 +2307,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6ca
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2318,7 +2318,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6ca
 
   /* "pyfit/cardio/energy.pyx":52
  * 
- *     cpdef float bsa(self, float bsa):
+ *     cpdef double bsa(self, double bsa):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return bsa * 840
  *         return bsa * 912
@@ -2338,7 +2338,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6ca
   if (__pyx_t_8) {
 
     /* "pyfit/cardio/energy.pyx":53
- *     cpdef float bsa(self, float bsa):
+ *     cpdef double bsa(self, double bsa):
  *         if self.gender == Gender.Female:
  *             return bsa * 840             # <<<<<<<<<<<<<<
  *         return bsa * 912
@@ -2349,7 +2349,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6ca
 
     /* "pyfit/cardio/energy.pyx":52
  * 
- *     cpdef float bsa(self, float bsa):
+ *     cpdef double bsa(self, double bsa):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return bsa * 840
  *         return bsa * 912
@@ -2361,7 +2361,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6ca
  *             return bsa * 840
  *         return bsa * 912             # <<<<<<<<<<<<<<
  * 
- * cpdef float kma(float lbm):
+ * cpdef double kma(double lbm):
  */
   __pyx_r = (__pyx_v_bsa * 912.0);
   goto __pyx_L0;
@@ -2369,7 +2369,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6ca
   /* "pyfit/cardio/energy.pyx":51
  *         return self.weight * 24.2
  * 
- *     cpdef float bsa(self, float bsa):             # <<<<<<<<<<<<<<
+ *     cpdef double bsa(self, double bsa):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return bsa * 840
  */
@@ -2392,12 +2392,12 @@ static float __pyx_f_5pyfit_6cardio_6energy_3RMR_bsa(struct __pyx_obj_5pyfit_6ca
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3RMR_5bsa(PyObject *__pyx_v_self, PyObject *__pyx_arg_bsa); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3RMR_5bsa(PyObject *__pyx_v_self, PyObject *__pyx_arg_bsa) {
-  float __pyx_v_bsa;
+  double __pyx_v_bsa;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("bsa (wrapper)", 0);
   assert(__pyx_arg_bsa); {
-    __pyx_v_bsa = __pyx_PyFloat_AsFloat(__pyx_arg_bsa); if (unlikely((__pyx_v_bsa == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L3_error)
+    __pyx_v_bsa = __pyx_PyFloat_AsDouble(__pyx_arg_bsa); if (unlikely((__pyx_v_bsa == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2405,14 +2405,14 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3RMR_5bsa(PyObject *__pyx_v_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_3RMR_4bsa(((struct __pyx_obj_5pyfit_6cardio_6energy_RMR *)__pyx_v_self), ((float)__pyx_v_bsa));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_3RMR_4bsa(((struct __pyx_obj_5pyfit_6cardio_6energy_RMR *)__pyx_v_self), ((double)__pyx_v_bsa));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_4bsa(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, float __pyx_v_bsa) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_4bsa(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *__pyx_v_self, double __pyx_v_bsa) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2439,8 +2439,8 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_4bsa(struct __pyx_obj_5pyf
  * 
  * cdef class RMR(object):
  *     cdef readonly int gender             # <<<<<<<<<<<<<<
- *     cdef readonly float age
- *     cdef readonly float weight
+ *     cdef readonly double age
+ *     cdef readonly double weight
  */
 
 /* Python wrapper */
@@ -2482,9 +2482,9 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_6gender___get__(struct __p
 /* "pyfit/cardio/energy.pyx":36
  * cdef class RMR(object):
  *     cdef readonly int gender
- *     cdef readonly float age             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
- *     cdef readonly float height
+ *     cdef readonly double age             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight
+ *     cdef readonly double height
  */
 
 /* Python wrapper */
@@ -2525,9 +2525,9 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_3age___get__(struct __pyx_
 
 /* "pyfit/cardio/energy.pyx":37
  *     cdef readonly int gender
- *     cdef readonly float age
- *     cdef readonly float weight             # <<<<<<<<<<<<<<
- *     cdef readonly float height
+ *     cdef readonly double age
+ *     cdef readonly double weight             # <<<<<<<<<<<<<<
+ *     cdef readonly double height
  * 
  */
 
@@ -2568,11 +2568,11 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_6weight___get__(struct __p
 }
 
 /* "pyfit/cardio/energy.pyx":38
- *     cdef readonly float age
- *     cdef readonly float weight
- *     cdef readonly float height             # <<<<<<<<<<<<<<
+ *     cdef readonly double age
+ *     cdef readonly double weight
+ *     cdef readonly double height             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  */
 
 /* Python wrapper */
@@ -2614,20 +2614,20 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_3RMR_6height___get__(struct __p
 /* "pyfit/cardio/energy.pyx":56
  *         return bsa * 912
  * 
- * cpdef float kma(float lbm):             # <<<<<<<<<<<<<<
+ * cpdef double kma(double lbm):             # <<<<<<<<<<<<<<
  *     return 370 + (21.6 * lbm)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_1kma(PyObject *__pyx_self, PyObject *__pyx_arg_lbm); /*proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_kma(float __pyx_v_lbm, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_6energy_kma(double __pyx_v_lbm, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("kma", 0);
 
   /* "pyfit/cardio/energy.pyx":57
  * 
- * cpdef float kma(float lbm):
+ * cpdef double kma(double lbm):
  *     return 370 + (21.6 * lbm)             # <<<<<<<<<<<<<<
  * 
  * 
@@ -2638,7 +2638,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_kma(float __pyx_v_lbm, CYTHON_UNUSED
   /* "pyfit/cardio/energy.pyx":56
  *         return bsa * 912
  * 
- * cpdef float kma(float lbm):             # <<<<<<<<<<<<<<
+ * cpdef double kma(double lbm):             # <<<<<<<<<<<<<<
  *     return 370 + (21.6 * lbm)
  * 
  */
@@ -2652,12 +2652,12 @@ static float __pyx_f_5pyfit_6cardio_6energy_kma(float __pyx_v_lbm, CYTHON_UNUSED
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_1kma(PyObject *__pyx_self, PyObject *__pyx_arg_lbm); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_1kma(PyObject *__pyx_self, PyObject *__pyx_arg_lbm) {
-  float __pyx_v_lbm;
+  double __pyx_v_lbm;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("kma (wrapper)", 0);
   assert(__pyx_arg_lbm); {
-    __pyx_v_lbm = __pyx_PyFloat_AsFloat(__pyx_arg_lbm); if (unlikely((__pyx_v_lbm == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
+    __pyx_v_lbm = __pyx_PyFloat_AsDouble(__pyx_arg_lbm); if (unlikely((__pyx_v_lbm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2665,14 +2665,14 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_1kma(PyObject *__pyx_self, PyOb
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_kma(__pyx_self, ((float)__pyx_v_lbm));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_kma(__pyx_self, ((double)__pyx_v_lbm));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_kma(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_lbm) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_kma(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_lbm) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2698,20 +2698,20 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_kma(CYTHON_UNUSED PyObject *__p
 /* "pyfit/cardio/energy.pyx":60
  * 
  * 
- * cpdef float cunningham(float lbm):             # <<<<<<<<<<<<<<
+ * cpdef double cunningham(double lbm):             # <<<<<<<<<<<<<<
  *     return 500 + (22 * lbm)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3cunningham(PyObject *__pyx_self, PyObject *__pyx_arg_lbm); /*proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_cunningham(float __pyx_v_lbm, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_6energy_cunningham(double __pyx_v_lbm, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("cunningham", 0);
 
   /* "pyfit/cardio/energy.pyx":61
  * 
- * cpdef float cunningham(float lbm):
+ * cpdef double cunningham(double lbm):
  *     return 500 + (22 * lbm)             # <<<<<<<<<<<<<<
  * 
  * cdef class TEEEstimator(object):
@@ -2722,7 +2722,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_cunningham(float __pyx_v_lbm, CYTHON
   /* "pyfit/cardio/energy.pyx":60
  * 
  * 
- * cpdef float cunningham(float lbm):             # <<<<<<<<<<<<<<
+ * cpdef double cunningham(double lbm):             # <<<<<<<<<<<<<<
  *     return 500 + (22 * lbm)
  * 
  */
@@ -2736,12 +2736,12 @@ static float __pyx_f_5pyfit_6cardio_6energy_cunningham(float __pyx_v_lbm, CYTHON
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3cunningham(PyObject *__pyx_self, PyObject *__pyx_arg_lbm); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3cunningham(PyObject *__pyx_self, PyObject *__pyx_arg_lbm) {
-  float __pyx_v_lbm;
+  double __pyx_v_lbm;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("cunningham (wrapper)", 0);
   assert(__pyx_arg_lbm); {
-    __pyx_v_lbm = __pyx_PyFloat_AsFloat(__pyx_arg_lbm); if (unlikely((__pyx_v_lbm == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 60, __pyx_L3_error)
+    __pyx_v_lbm = __pyx_PyFloat_AsDouble(__pyx_arg_lbm); if (unlikely((__pyx_v_lbm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 60, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2749,14 +2749,14 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_3cunningham(PyObject *__pyx_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_2cunningham(__pyx_self, ((float)__pyx_v_lbm));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_2cunningham(__pyx_self, ((double)__pyx_v_lbm));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2cunningham(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_lbm) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_2cunningham(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_lbm) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2864,7 +2864,7 @@ static int __pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator___cinit__(struct __pyx
  *         self.gender = gender
  *         self.pal = pal             # <<<<<<<<<<<<<<
  * 
- *     cdef float predict(self, float age, float weight, float height):
+ *     cdef double predict(self, double age, double weight, double height):
  */
   __pyx_v_self->pal = __pyx_v_pal;
 
@@ -2885,23 +2885,23 @@ static int __pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator___cinit__(struct __pyx
 /* "pyfit/cardio/energy.pyx":71
  *         self.pal = pal
  * 
- *     cdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
  */
 
-static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, CYTHON_UNUSED float __pyx_v_age, CYTHON_UNUSED float __pyx_v_weight, CYTHON_UNUSED float __pyx_v_height) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, CYTHON_UNUSED double __pyx_v_age, CYTHON_UNUSED double __pyx_v_weight, CYTHON_UNUSED double __pyx_v_height) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
 
   /* "pyfit/cardio/energy.pyx":72
  * 
- *     cdef float predict(self, float age, float weight, float height):
+ *     cdef double predict(self, double age, double weight, double height):
  *         raise NotImplementedError("The prediction method is not implemented")             # <<<<<<<<<<<<<<
  * 
- *     cpdef float fromActivity(self, float weight, float mets):
+ *     cpdef double fromActivity(self, double weight, double mets):
  */
   __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2912,7 +2912,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_predict(CYTHON_UNUSED
   /* "pyfit/cardio/energy.pyx":71
  *         self.pal = pal
  * 
- *     cdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
  */
@@ -2929,14 +2929,14 @@ static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_predict(CYTHON_UNUSED
 /* "pyfit/cardio/energy.pyx":74
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
- *     cpdef float fromActivity(self, float weight, float mets):             # <<<<<<<<<<<<<<
+ *     cpdef double fromActivity(self, double weight, double mets):             # <<<<<<<<<<<<<<
  *         return (mets * 3.5 * weight)/200
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_12TEEEstimator_3fromActivity(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, float __pyx_v_weight, float __pyx_v_mets, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, double __pyx_v_weight, double __pyx_v_mets, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2946,7 +2946,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_U
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("fromActivity", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2987,7 +2987,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_U
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 74, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 74, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2998,7 +2998,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_U
 
   /* "pyfit/cardio/energy.pyx":75
  * 
- *     cpdef float fromActivity(self, float weight, float mets):
+ *     cpdef double fromActivity(self, double weight, double mets):
  *         return (mets * 3.5 * weight)/200             # <<<<<<<<<<<<<<
  * 
  * cdef class ChildTEE(TEEEstimator):
@@ -3009,7 +3009,7 @@ static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_U
   /* "pyfit/cardio/energy.pyx":74
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
- *     cpdef float fromActivity(self, float weight, float mets):             # <<<<<<<<<<<<<<
+ *     cpdef double fromActivity(self, double weight, double mets):             # <<<<<<<<<<<<<<
  *         return (mets * 3.5 * weight)/200
  * 
  */
@@ -3033,8 +3033,8 @@ static float __pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity(CYTHON_U
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_12TEEEstimator_3fromActivity(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_12TEEEstimator_3fromActivity(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_weight;
-  float __pyx_v_mets;
+  double __pyx_v_weight;
+  double __pyx_v_mets;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("fromActivity (wrapper)", 0);
@@ -3070,8 +3070,8 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_12TEEEstimator_3fromActivity(Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 74, __pyx_L3_error)
-    __pyx_v_mets = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_mets == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 74, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 74, __pyx_L3_error)
+    __pyx_v_mets = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_mets == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 74, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3088,7 +3088,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_12TEEEstimator_3fromActivity(Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_2fromActivity(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, float __pyx_v_weight, float __pyx_v_mets) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_2fromActivity(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self, double __pyx_v_weight, double __pyx_v_mets) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3202,14 +3202,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_3pal___get__(str
 /* "pyfit/cardio/energy.pyx":79
  * cdef class ChildTEE(TEEEstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
  *             return 88.5 - (61.9 * age) + 1*((26.7*weight)+(903*height))
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8ChildTEE_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3220,7 +3220,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   int __pyx_t_11;
   int __pyx_t_12;
   __Pyx_RefNannySetupContext("predict", 0);
@@ -3268,7 +3268,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3279,7 +3279,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6
 
   /* "pyfit/cardio/energy.pyx":80
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:             # <<<<<<<<<<<<<<
  *             return 88.5 - (61.9 * age) + 1*((26.7*weight)+(903*height))
  *         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -3318,7 +3318,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6
   if (__pyx_t_11) {
 
     /* "pyfit/cardio/energy.pyx":81
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
  *             return 88.5 - (61.9 * age) + 1*((26.7*weight)+(903*height))             # <<<<<<<<<<<<<<
  *         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -3329,7 +3329,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6
 
     /* "pyfit/cardio/energy.pyx":80
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:             # <<<<<<<<<<<<<<
  *             return 88.5 - (61.9 * age) + 1*((26.7*weight)+(903*height))
  *         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -3762,7 +3762,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6
   /* "pyfit/cardio/energy.pyx":79
  * cdef class ChildTEE(TEEEstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
  *             return 88.5 - (61.9 * age) + 1*((26.7*weight)+(903*height))
  */
@@ -3787,9 +3787,9 @@ float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8ChildTEE_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8ChildTEE_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
@@ -3832,9 +3832,9 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8ChildTEE_1predict(PyObject *__
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3851,7 +3851,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8ChildTEE_1predict(PyObject *__
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3874,21 +3874,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+double __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   return __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(__pyx_v_self, __pyx_v_age, __pyx_v_weight, __pyx_v_height, 0);
 }
 
 /* "pyfit/cardio/energy.pyx":100
  * cdef class AdultTEE(TEEEstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
  *             return 662 - (9.53 * age) + 1*((15.9 * weight) + (540 * height))
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8AdultTEE_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3899,7 +3899,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   int __pyx_t_11;
   int __pyx_t_12;
   __Pyx_RefNannySetupContext("predict", 0);
@@ -3947,7 +3947,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3958,7 +3958,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6
 
   /* "pyfit/cardio/energy.pyx":101
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:             # <<<<<<<<<<<<<<
  *             return 662 - (9.53 * age) + 1*((15.9 * weight) + (540 * height))
  *         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -3997,7 +3997,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6
   if (__pyx_t_11) {
 
     /* "pyfit/cardio/energy.pyx":102
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
  *             return 662 - (9.53 * age) + 1*((15.9 * weight) + (540 * height))             # <<<<<<<<<<<<<<
  *         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -4008,7 +4008,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6
 
     /* "pyfit/cardio/energy.pyx":101
  * 
- *     cpdef float predict(self, float age, float weight, float height):
+ *     cpdef double predict(self, double age, double weight, double height):
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:             # <<<<<<<<<<<<<<
  *             return 662 - (9.53 * age) + 1*((15.9 * weight) + (540 * height))
  *         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -4438,7 +4438,7 @@ float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6
   /* "pyfit/cardio/energy.pyx":100
  * cdef class AdultTEE(TEEEstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
  *             return 662 - (9.53 * age) + 1*((15.9 * weight) + (540 * height))
  */
@@ -4463,9 +4463,9 @@ float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8AdultTEE_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8AdultTEE_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
@@ -4508,9 +4508,9 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8AdultTEE_1predict(PyObject *__
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -4527,7 +4527,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_6energy_8AdultTEE_1predict(PyObject *__
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4550,7 +4550,7 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   return __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(__pyx_v_self, __pyx_v_age, __pyx_v_weight, __pyx_v_height, 0);
 }
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_BMREstimator __pyx_vtable_5pyfit_6cardio_6energy_BMREstimator;
@@ -5301,7 +5301,7 @@ static int __Pyx_InitCachedConstants(void) {
 
   /* "pyfit/cardio/energy.pyx":11
  * 
- *     cdef float predict(self, float age, float weight, float height):
+ *     cdef double predict(self, double age, double weight, double height):
  *         raise NotImplementedError("The prediction method is not implemented")             # <<<<<<<<<<<<<<
  * 
  * cdef class HB(BMREstimator):
@@ -5312,10 +5312,10 @@ static int __Pyx_InitCachedConstants(void) {
 
   /* "pyfit/cardio/energy.pyx":72
  * 
- *     cdef float predict(self, float age, float weight, float height):
+ *     cdef double predict(self, double age, double weight, double height):
  *         raise NotImplementedError("The prediction method is not implemented")             # <<<<<<<<<<<<<<
  * 
- *     cpdef float fromActivity(self, float weight, float mets):
+ *     cpdef double fromActivity(self, double weight, double mets):
  */
   __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_The_prediction_method_is_not_imp); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
@@ -5420,7 +5420,7 @@ PyMODINIT_FUNC PyInit_energy(void)
   /*--- Function export code ---*/
   /*--- Type init code ---*/
   __pyx_vtabptr_5pyfit_6cardio_6energy_BMREstimator = &__pyx_vtable_5pyfit_6cardio_6energy_BMREstimator;
-  __pyx_vtable_5pyfit_6cardio_6energy_BMREstimator.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, float, float, float))__pyx_f_5pyfit_6cardio_6energy_12BMREstimator_predict;
+  __pyx_vtable_5pyfit_6cardio_6energy_BMREstimator.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, double, double, double))__pyx_f_5pyfit_6cardio_6energy_12BMREstimator_predict;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_BMREstimator) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_6energy_BMREstimator.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_6energy_BMREstimator.tp_dict, __pyx_vtabptr_5pyfit_6cardio_6energy_BMREstimator) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
@@ -5428,8 +5428,8 @@ PyMODINIT_FUNC PyInit_energy(void)
   __pyx_ptype_5pyfit_6cardio_6energy_BMREstimator = &__pyx_type_5pyfit_6cardio_6energy_BMREstimator;
   __pyx_vtabptr_5pyfit_6cardio_6energy_HB = &__pyx_vtable_5pyfit_6cardio_6energy_HB;
   __pyx_vtable_5pyfit_6cardio_6energy_HB.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_6energy_BMREstimator;
-  __pyx_vtable_5pyfit_6cardio_6energy_HB.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, float, float, float))__pyx_f_5pyfit_6cardio_6energy_2HB_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_6energy_HB.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_HB *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_2HB_predict;
+  __pyx_vtable_5pyfit_6cardio_6energy_HB.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, double, double, double))__pyx_f_5pyfit_6cardio_6energy_2HB_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_6energy_HB.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_HB *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_2HB_predict;
   __pyx_type_5pyfit_6cardio_6energy_HB.tp_base = __pyx_ptype_5pyfit_6cardio_6energy_BMREstimator;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_HB) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_6energy_HB.tp_print = 0;
@@ -5438,8 +5438,8 @@ PyMODINIT_FUNC PyInit_energy(void)
   __pyx_ptype_5pyfit_6cardio_6energy_HB = &__pyx_type_5pyfit_6cardio_6energy_HB;
   __pyx_vtabptr_5pyfit_6cardio_6energy_RevisedHB = &__pyx_vtable_5pyfit_6cardio_6energy_RevisedHB;
   __pyx_vtable_5pyfit_6cardio_6energy_RevisedHB.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_6energy_BMREstimator;
-  __pyx_vtable_5pyfit_6cardio_6energy_RevisedHB.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, float, float, float))__pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_6energy_RevisedHB.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict;
+  __pyx_vtable_5pyfit_6cardio_6energy_RevisedHB.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, double, double, double))__pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_6energy_RevisedHB.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_RevisedHB *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict;
   __pyx_type_5pyfit_6cardio_6energy_RevisedHB.tp_base = __pyx_ptype_5pyfit_6cardio_6energy_BMREstimator;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_RevisedHB) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_6energy_RevisedHB.tp_print = 0;
@@ -5448,8 +5448,8 @@ PyMODINIT_FUNC PyInit_energy(void)
   __pyx_ptype_5pyfit_6cardio_6energy_RevisedHB = &__pyx_type_5pyfit_6cardio_6energy_RevisedHB;
   __pyx_vtabptr_5pyfit_6cardio_6energy_MSJ = &__pyx_vtable_5pyfit_6cardio_6energy_MSJ;
   __pyx_vtable_5pyfit_6cardio_6energy_MSJ.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_6energy_BMREstimator;
-  __pyx_vtable_5pyfit_6cardio_6energy_MSJ.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, float, float, float))__pyx_f_5pyfit_6cardio_6energy_3MSJ_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_6energy_MSJ.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_3MSJ_predict;
+  __pyx_vtable_5pyfit_6cardio_6energy_MSJ.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *, double, double, double))__pyx_f_5pyfit_6cardio_6energy_3MSJ_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_6energy_MSJ.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_MSJ *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_3MSJ_predict;
   __pyx_type_5pyfit_6cardio_6energy_MSJ.tp_base = __pyx_ptype_5pyfit_6cardio_6energy_BMREstimator;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_MSJ) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_6energy_MSJ.tp_print = 0;
@@ -5457,16 +5457,16 @@ PyMODINIT_FUNC PyInit_energy(void)
   if (PyObject_SetAttrString(__pyx_m, "MSJ", (PyObject *)&__pyx_type_5pyfit_6cardio_6energy_MSJ) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_6energy_MSJ = &__pyx_type_5pyfit_6cardio_6energy_MSJ;
   __pyx_vtabptr_5pyfit_6cardio_6energy_RMR = &__pyx_vtable_5pyfit_6cardio_6energy_RMR;
-  __pyx_vtable_5pyfit_6cardio_6energy_RMR.quick = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_3RMR_quick;
-  __pyx_vtable_5pyfit_6cardio_6energy_RMR.bsa = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_3RMR_bsa;
+  __pyx_vtable_5pyfit_6cardio_6energy_RMR.quick = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_3RMR_quick;
+  __pyx_vtable_5pyfit_6cardio_6energy_RMR.bsa = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_RMR *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_3RMR_bsa;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_RMR) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_6energy_RMR.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_6energy_RMR.tp_dict, __pyx_vtabptr_5pyfit_6cardio_6energy_RMR) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "RMR", (PyObject *)&__pyx_type_5pyfit_6cardio_6energy_RMR) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_6energy_RMR = &__pyx_type_5pyfit_6cardio_6energy_RMR;
   __pyx_vtabptr_5pyfit_6cardio_6energy_TEEEstimator = &__pyx_vtable_5pyfit_6cardio_6energy_TEEEstimator;
-  __pyx_vtable_5pyfit_6cardio_6energy_TEEEstimator.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, float, float, float))__pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_predict;
-  __pyx_vtable_5pyfit_6cardio_6energy_TEEEstimator.fromActivity = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity;
+  __pyx_vtable_5pyfit_6cardio_6energy_TEEEstimator.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, double, double, double))__pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_predict;
+  __pyx_vtable_5pyfit_6cardio_6energy_TEEEstimator.fromActivity = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_12TEEEstimator_fromActivity;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_TEEEstimator) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_6energy_TEEEstimator.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_6energy_TEEEstimator.tp_dict, __pyx_vtabptr_5pyfit_6cardio_6energy_TEEEstimator) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
@@ -5474,8 +5474,8 @@ PyMODINIT_FUNC PyInit_energy(void)
   __pyx_ptype_5pyfit_6cardio_6energy_TEEEstimator = &__pyx_type_5pyfit_6cardio_6energy_TEEEstimator;
   __pyx_vtabptr_5pyfit_6cardio_6energy_ChildTEE = &__pyx_vtable_5pyfit_6cardio_6energy_ChildTEE;
   __pyx_vtable_5pyfit_6cardio_6energy_ChildTEE.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_6energy_TEEEstimator;
-  __pyx_vtable_5pyfit_6cardio_6energy_ChildTEE.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, float, float, float))__pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_6energy_ChildTEE.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict;
+  __pyx_vtable_5pyfit_6cardio_6energy_ChildTEE.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, double, double, double))__pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_6energy_ChildTEE.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict;
   __pyx_type_5pyfit_6cardio_6energy_ChildTEE.tp_base = __pyx_ptype_5pyfit_6cardio_6energy_TEEEstimator;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_ChildTEE) < 0) __PYX_ERR(0, 77, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_6energy_ChildTEE.tp_print = 0;
@@ -5484,8 +5484,8 @@ PyMODINIT_FUNC PyInit_energy(void)
   __pyx_ptype_5pyfit_6cardio_6energy_ChildTEE = &__pyx_type_5pyfit_6cardio_6energy_ChildTEE;
   __pyx_vtabptr_5pyfit_6cardio_6energy_AdultTEE = &__pyx_vtable_5pyfit_6cardio_6energy_AdultTEE;
   __pyx_vtable_5pyfit_6cardio_6energy_AdultTEE.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_6energy_TEEEstimator;
-  __pyx_vtable_5pyfit_6cardio_6energy_AdultTEE.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, float, float, float))__pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_6energy_AdultTEE.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict;
+  __pyx_vtable_5pyfit_6cardio_6energy_AdultTEE.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *, double, double, double))__pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_6energy_AdultTEE.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict;
   __pyx_type_5pyfit_6cardio_6energy_AdultTEE.tp_base = __pyx_ptype_5pyfit_6cardio_6energy_TEEEstimator;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_AdultTEE) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_6energy_AdultTEE.tp_print = 0;
@@ -5529,7 +5529,7 @@ PyMODINIT_FUNC PyInit_energy(void)
   /* "pyfit/cardio/energy.pyx":100
  * cdef class AdultTEE(TEEEstimator):
  * 
- *     cpdef float predict(self, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
  *             return 662 - (9.53 * age) + 1*((15.9 * weight) + (540 * height))
  */

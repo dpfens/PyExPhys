@@ -4,7 +4,7 @@ cdef class HREstimator(object):
     def __cinit__(self):
         pass
 
-    cdef float predict(self, float age):
+    cdef double predict(self, double age):
         raise NotImplementedError("The prediction method is not implemented")
 
 cdef class Astrand(HREstimator):
@@ -15,10 +15,10 @@ cdef class Astrand(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 216.6-(0.84*age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-216.6)/-0.84
 
 cdef class HF(HREstimator):
@@ -29,10 +29,10 @@ cdef class HF(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 220 - age
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return 220 - hr
 
 cdef class Gellish(HREstimator):
@@ -44,10 +44,10 @@ cdef class Gellish(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 207-(0.7 * age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-207.0)/-0.7
 
 cdef class Gulati(HREstimator):
@@ -58,66 +58,66 @@ cdef class Gulati(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 206-(0.88*age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-206.0)/-0.88
 
 cdef class LM(HREstimator):
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 206.3-(0.711 * age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-206.3)/-0.711
 
 cdef class Miller(HREstimator):
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 217-(0.85 * age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-217)/-0.85
 
 cdef class Nes(HREstimator):
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 211 - (0.64 * age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-211)/-0.64
 
 cdef class OaklandL(HREstimator):
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 206.9 - (0.67 * age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-206.9)/-0.67
 
 cdef class OaklandNL1(HREstimator):
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 191.5 - (0.002 * pow(age,2) )
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return 5*sqrt(3830-20*hr)
 
 cdef class OaklandNL2(HREstimator):
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (-10./9)*(sqrt(8176-45*hr)-29)
 
 cdef class RL(HREstimator):
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 205.8 - (0.685 * age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-205.8)/-0.685
 
 cdef class TMS(HREstimator):
@@ -128,17 +128,17 @@ cdef class TMS(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef float predict(self, float age):
+    cpdef double predict(self, double age):
         return 208-(0.7*age)
 
-    cpdef float age(self, float hr):
+    cpdef double age(self, double hr):
         return (hr-208)/-0.7
 
-cpdef float mean_arterial_pressure(int diastolic_bp, int systolic_bp):
+cpdef double mean_arterial_pressure(int diastolic_bp, int systolic_bp):
     return ((2 * diastolic_bp) + systolic_bp) / 3
 
-cpdef float karvonen(float intensity, int rest, int maximum):
+cpdef double karvonen(double intensity, int rest, int maximum):
     return intensity * (maximum - rest) + rest
 
-cpdef float zoladz(float hrMax, float adjuster):
+cpdef double zoladz(double hrMax, double adjuster):
       return hrMax - adjuster

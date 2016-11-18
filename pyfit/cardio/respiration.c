@@ -504,13 +504,13 @@ struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve;
 /* "pyfit/cardio/respiration.pyx":61
  *         self.height = height
  * 
- *     cpdef float reserve(self, float vo2Max, float vo2Rest=3.5):             # <<<<<<<<<<<<<<
+ *     cpdef double reserve(self, double vo2Max, double vo2Rest=3.5):             # <<<<<<<<<<<<<<
  *         return vo2Max - vo2Rest
  * 
  */
 struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve {
   int __pyx_n;
-  float vo2Rest;
+  double vo2Rest;
 };
 
 /* "pyfit/cardio/respiration.pyx":4
@@ -518,15 +518,15 @@ struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve {
  * 
  * cdef class ResidualVolume(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float height # meters
+ *     cdef readonly double height # meters
  */
 struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_vtab;
   int gender;
-  float height;
-  float age;
-  float weight;
+  double height;
+  double age;
+  double weight;
 };
 
 
@@ -535,15 +535,15 @@ struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume {
  * 
  * cdef class VO2(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_6cardio_11respiration_VO2 *__pyx_vtab;
   int gender;
-  float age;
-  float weight;
-  float height;
+  double age;
+  double weight;
+  double height;
 };
 
 
@@ -553,17 +553,17 @@ struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 {
  * 
  * cdef class ResidualVolume(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float height # meters
+ *     cdef readonly double height # meters
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_11respiration_ResidualVolume {
-  float (*normal)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
-  float (*overweight)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
-  float (*berglund)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
-  float (*black)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
-  float (*boren)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
-  float (*goldman)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
-  float (*obrien)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, float, int __pyx_skip_dispatch);
+  double (*normal)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
+  double (*overweight)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
+  double (*berglund)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
+  double (*black)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
+  double (*boren)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
+  double (*goldman)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch);
+  double (*obrien)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_vtabptr_5pyfit_6cardio_11respiration_ResidualVolume;
 
@@ -573,39 +573,38 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_11respiration_ResidualVolume *__py
  * 
  * cdef class VO2(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_11respiration_VO2 {
-  float (*reserve)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve *__pyx_optional_args);
-  float (*target)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, float, int __pyx_skip_dispatch);
-  float (*cooper)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*walkingGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*runningGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*legErgometryGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*armErgometryGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*steppingGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*stairmasterMets)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, int, int __pyx_skip_dispatch);
-  float (*usop)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*foxErgometry)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*ebbelingTreadmill)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*kline)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*larsen)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*astrandStep)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*qcStep)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*georgeRW)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*georgeSteady)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*georgeTreadmill)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
-  float (*treadmillSubmaxSingleStage)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, float, int __pyx_skip_dispatch);
-  float (*treadmillSubmaxVO2Multistage)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, float, float, float, int __pyx_skip_dispatch);
-  float (*curetonChild)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*balke)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*balke15MinRun)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*bruceMale)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, float, int __pyx_skip_dispatch);
-  float (*bruceFemale)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*bruceEC)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*leger)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch);
-  float (*gilbertDaniels)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch);
+  double (*reserve)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve *__pyx_optional_args);
+  double (*target)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, double, int __pyx_skip_dispatch);
+  double (*cooper)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*walkingGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*runningGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*legErgometryGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*armErgometryGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*steppingGross)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*usop)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*foxErgometry)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*ebbelingTreadmill)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*kline)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*larsen)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*astrandStep)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*qcStep)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*georgeRW)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*georgeSteady)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*georgeTreadmill)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
+  double (*treadmillSubmaxSingleStage)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, double, int __pyx_skip_dispatch);
+  double (*treadmillSubmaxVO2Multistage)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, double, double, double, int __pyx_skip_dispatch);
+  double (*curetonChild)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*balke)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*balke15MinRun)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*bruceMale)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, double, int __pyx_skip_dispatch);
+  double (*bruceFemale)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*bruceEC)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*leger)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch);
+  double (*gilbertDaniels)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_11respiration_VO2 *__pyx_vtabptr_5pyfit_6cardio_11respiration_VO2;
 
@@ -804,42 +803,41 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, float __pyx_v_bsa, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_vo2Max, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve *__pyx_optional_args); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_vo2Max, float __pyx_v_vo2Rest, float __pyx_v_intensity, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_distance, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_grade, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_grade, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_mass, float __pyx_v_work, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_mass, float __pyx_v_work, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, CYTHON_UNUSED float __pyx_v_height, float __pyx_v_frequency, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_stairmasterMets(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, int __pyx_v_setting, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hrMax, float __pyx_v_restingHR, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr5, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hrPeak, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_sm1, float __pyx_v_hr1, float __pyx_v_hrmax, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multistage(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_sm1, float __pyx_v_hr1, float __pyx_v_sm2, float __pyx_v_hr2, float __pyx_v_hrMax, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_distance, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_time2, float __pyx_v_time3, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_leger(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_velocity, float __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, double __pyx_v_bsa, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_vo2Max, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve *__pyx_optional_args); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_vo2Max, double __pyx_v_vo2Rest, double __pyx_v_intensity, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_distance, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_grade, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_grade, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_mass, double __pyx_v_work, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_mass, double __pyx_v_work, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, CYTHON_UNUSED double __pyx_v_height, double __pyx_v_frequency, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hrMax, double __pyx_v_restingHR, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr5, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hrPeak, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_sm1, double __pyx_v_hr1, double __pyx_v_hrmax, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multistage(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_sm1, double __pyx_v_hr1, double __pyx_v_sm2, double __pyx_v_hr2, double __pyx_v_hrMax, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_distance, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_time2, double __pyx_v_time3, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_leger(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_velocity, double __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from 'libc.math' */
 
@@ -912,7 +910,6 @@ static const char __pyx_k_balke15MinRun[] = "balke15MinRun";
 static const char __pyx_k_steppingGross[] = "steppingGross";
 static const char __pyx_k_gilbertDaniels[] = "gilbertDaniels";
 static const char __pyx_k_georgeTreadmill[] = "georgeTreadmill";
-static const char __pyx_k_stairmasterMets[] = "stairmasterMets";
 static const char __pyx_k_armErgometryGross[] = "armErgometryGross";
 static const char __pyx_k_ebbelingTreadmill[] = "ebbelingTreadmill";
 static const char __pyx_k_legErgometryGross[] = "legErgometryGross";
@@ -970,7 +967,6 @@ static PyObject *__pyx_n_s_runningGross;
 static PyObject *__pyx_n_s_sm1;
 static PyObject *__pyx_n_s_sm2;
 static PyObject *__pyx_n_s_speed;
-static PyObject *__pyx_n_s_stairmasterMets;
 static PyObject *__pyx_n_s_steppingGross;
 static PyObject *__pyx_n_s_target;
 static PyObject *__pyx_n_s_test;
@@ -986,48 +982,47 @@ static PyObject *__pyx_n_s_vo2Rest;
 static PyObject *__pyx_n_s_walkingGross;
 static PyObject *__pyx_n_s_weight;
 static PyObject *__pyx_n_s_work;
-static int __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume___cinit__(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
+static int __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume___cinit__(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_2normal(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_4overweight(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6berglund(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_8black(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_10boren(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_12goldman(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_14obrien(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, float __pyx_v_bsa); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_14obrien(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, double __pyx_v_bsa); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6gender___get__(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6height___get__(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_3age___get__(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6weight___get__(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self); /* proto */
-static int __pyx_pf_5pyfit_6cardio_11respiration_3VO2___cinit__(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_2reserve(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_vo2Max, float __pyx_v_vo2Rest); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_4target(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_vo2Max, float __pyx_v_vo2Rest, float __pyx_v_intensity); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6cooper(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_distance); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_8walkingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_grade); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_10runningGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_grade); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_12legErgometryGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_mass, float __pyx_v_work); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_14armErgometryGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_mass, float __pyx_v_work); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_16steppingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_height, float __pyx_v_frequency); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_18stairmasterMets(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, int __pyx_v_setting); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_20usop(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hrMax, float __pyx_v_restingHR); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_22foxErgometry(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr5); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_24ebbelingTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_hr); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_26kline(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hrPeak); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_28larsen(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hr); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_30astrandStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_32qcStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_34georgeRW(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_36georgeSteady(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hr); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_38georgeTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_hr); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_40treadmillSubmaxSingleStage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_sm1, float __pyx_v_hr1, float __pyx_v_hrmax); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_42treadmillSubmaxVO2Multistage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_sm1, float __pyx_v_hr1, float __pyx_v_sm2, float __pyx_v_hr2, float __pyx_v_hrMax); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_44curetonChild(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_46balke(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_48balke15MinRun(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_distance); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_50bruceMale(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_time2, float __pyx_v_time3); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_52bruceFemale(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_54bruceEC(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_56leger(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_58gilbertDaniels(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_velocity, float __pyx_v_time); /* proto */
+static int __pyx_pf_5pyfit_6cardio_11respiration_3VO2___cinit__(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_2reserve(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_vo2Max, double __pyx_v_vo2Rest); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_4target(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_vo2Max, double __pyx_v_vo2Rest, double __pyx_v_intensity); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6cooper(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_distance); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_8walkingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_grade); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_10runningGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_grade); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_12legErgometryGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_mass, double __pyx_v_work); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_14armErgometryGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_mass, double __pyx_v_work); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_16steppingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_height, double __pyx_v_frequency); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_18usop(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hrMax, double __pyx_v_restingHR); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_20foxErgometry(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr5); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_22ebbelingTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_24kline(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hrPeak); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_26larsen(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_28astrandStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_30qcStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_32georgeRW(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_34georgeSteady(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_36georgeTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_38treadmillSubmaxSingleStage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_sm1, double __pyx_v_hr1, double __pyx_v_hrmax); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_40treadmillSubmaxVO2Multistage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_sm1, double __pyx_v_hr1, double __pyx_v_sm2, double __pyx_v_hr2, double __pyx_v_hrMax); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_42curetonChild(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_44balke(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_46balke15MinRun(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_distance); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_48bruceMale(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_time2, double __pyx_v_time3); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_50bruceFemale(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_52bruceEC(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_54leger(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_56gilbertDaniels(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_velocity, double __pyx_v_time); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6gender___get__(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_3age___get__(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6weight___get__(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self); /* proto */
@@ -1036,9 +1031,9 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_11respiration_ResidualVolume(PyType
 static PyObject *__pyx_tp_new_5pyfit_6cardio_11respiration_VO2(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 
 /* "pyfit/cardio/respiration.pyx":10
- *     cdef readonly float weight # kg
+ *     cdef readonly double weight # kg
  * 
- *     def __cinit__(self, int gender,  float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender,  double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -1047,9 +1042,9 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_11respiration_VO2(PyTypeObject *t, 
 static int __pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -1100,9 +1095,9 @@ static int __pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_1__cinit__(PyO
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 10, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1119,14 +1114,14 @@ static int __pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_1__cinit__(PyO
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume___cinit__(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume___cinit__(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/cardio/respiration.pyx":11
  * 
- *     def __cinit__(self, int gender,  float age, float weight, float height):
+ *     def __cinit__(self, int gender,  double age, double weight, double height):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  *         self.weight = weight
@@ -1134,7 +1129,7 @@ static int __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume___cinit__(stru
   __pyx_v_self->gender = __pyx_v_gender;
 
   /* "pyfit/cardio/respiration.pyx":12
- *     def __cinit__(self, int gender,  float age, float weight, float height):
+ *     def __cinit__(self, int gender,  double age, double weight, double height):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  *         self.weight = weight
@@ -1161,9 +1156,9 @@ static int __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume___cinit__(stru
   __pyx_v_self->height = __pyx_v_height;
 
   /* "pyfit/cardio/respiration.pyx":10
- *     cdef readonly float weight # kg
+ *     cdef readonly double weight # kg
  * 
- *     def __cinit__(self, int gender,  float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender,  double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -1177,21 +1172,21 @@ static int __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume___cinit__(stru
 /* "pyfit/cardio/respiration.pyx":17
  * 
  * 
- *     cpdef float normal(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double normal(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return 0.0275 * self.age + 0.0189*heightCm - 2.6139
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_3normal(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("normal", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1219,7 +1214,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal(struct
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1230,19 +1225,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal(struct
 
   /* "pyfit/cardio/respiration.pyx":18
  * 
- *     cpdef float normal(self):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double normal(self):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.0275 * self.age + 0.0189*heightCm - 2.6139
  * 
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/cardio/respiration.pyx":19
- *     cpdef float normal(self):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double normal(self):
+ *         cdef double heightCm = self.height * 100
  *         return 0.0275 * self.age + 0.0189*heightCm - 2.6139             # <<<<<<<<<<<<<<
  * 
- *     cpdef float overweight(self):
+ *     cpdef double overweight(self):
  */
   __pyx_r = (((0.0275 * __pyx_v_self->age) + (0.0189 * __pyx_v_heightCm)) - 2.6139);
   goto __pyx_L0;
@@ -1250,8 +1245,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal(struct
   /* "pyfit/cardio/respiration.pyx":17
  * 
  * 
- *     cpdef float normal(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double normal(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return 0.0275 * self.age + 0.0189*heightCm - 2.6139
  */
 
@@ -1307,21 +1302,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_2normal(
 /* "pyfit/cardio/respiration.pyx":21
  *         return 0.0275 * self.age + 0.0189*heightCm - 2.6139
  * 
- *     cpdef float overweight(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double overweight(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return 0.0277 * self.age + 0.0138*heightCm - 2.3967
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_5overweight(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("overweight", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1349,7 +1344,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight(st
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1360,19 +1355,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight(st
 
   /* "pyfit/cardio/respiration.pyx":22
  * 
- *     cpdef float overweight(self):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double overweight(self):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.0277 * self.age + 0.0138*heightCm - 2.3967
  * 
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/cardio/respiration.pyx":23
- *     cpdef float overweight(self):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double overweight(self):
+ *         cdef double heightCm = self.height * 100
  *         return 0.0277 * self.age + 0.0138*heightCm - 2.3967             # <<<<<<<<<<<<<<
  * 
- *     cpdef float berglund(self):
+ *     cpdef double berglund(self):
  */
   __pyx_r = (((0.0277 * __pyx_v_self->age) + (0.0138 * __pyx_v_heightCm)) - 2.3967);
   goto __pyx_L0;
@@ -1380,8 +1375,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight(st
   /* "pyfit/cardio/respiration.pyx":21
  *         return 0.0275 * self.age + 0.0189*heightCm - 2.6139
  * 
- *     cpdef float overweight(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double overweight(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return 0.0277 * self.age + 0.0138*heightCm - 2.3967
  */
 
@@ -1437,21 +1432,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_4overwei
 /* "pyfit/cardio/respiration.pyx":25
  *         return 0.0277 * self.age + 0.0138*heightCm - 2.3967
  * 
- *     cpdef float berglund(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double berglund(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_7berglund(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("berglund", 0);
   /* Check if called by wrapper */
@@ -1480,7 +1475,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(stru
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1491,16 +1486,16 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(stru
 
   /* "pyfit/cardio/respiration.pyx":26
  * 
- *     cpdef float berglund(self):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double berglund(self):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 0.007*self.age + 0.0268*self.height - 3.42
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/cardio/respiration.pyx":27
- *     cpdef float berglund(self):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double berglund(self):
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 0.007*self.age + 0.0268*self.height - 3.42
  *         return (0.022*self.age) + (0.0198*heightCm) - (0.015*self.weight) - 1.54
@@ -1520,7 +1515,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(stru
   if (__pyx_t_6) {
 
     /* "pyfit/cardio/respiration.pyx":28
- *         cdef float heightCm = self.height * 100
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:
  *             return 0.007*self.age + 0.0268*self.height - 3.42             # <<<<<<<<<<<<<<
  *         return (0.022*self.age) + (0.0198*heightCm) - (0.015*self.weight) - 1.54
@@ -1530,8 +1525,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(stru
     goto __pyx_L0;
 
     /* "pyfit/cardio/respiration.pyx":27
- *     cpdef float berglund(self):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double berglund(self):
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 0.007*self.age + 0.0268*self.height - 3.42
  *         return (0.022*self.age) + (0.0198*heightCm) - (0.015*self.weight) - 1.54
@@ -1543,7 +1538,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(stru
  *             return 0.007*self.age + 0.0268*self.height - 3.42
  *         return (0.022*self.age) + (0.0198*heightCm) - (0.015*self.weight) - 1.54             # <<<<<<<<<<<<<<
  * 
- *     cpdef float black(self):
+ *     cpdef double black(self):
  */
   __pyx_r = ((((0.022 * __pyx_v_self->age) + (0.0198 * __pyx_v_heightCm)) - (0.015 * __pyx_v_self->weight)) - 1.54);
   goto __pyx_L0;
@@ -1551,8 +1546,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund(stru
   /* "pyfit/cardio/respiration.pyx":25
  *         return 0.0277 * self.age + 0.0138*heightCm - 2.3967
  * 
- *     cpdef float berglund(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double berglund(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
@@ -1608,21 +1603,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6berglun
 /* "pyfit/cardio/respiration.pyx":31
  *         return (0.022*self.age) + (0.0198*heightCm) - (0.015*self.weight) - 1.54
  * 
- *     cpdef float black(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double black(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return 0.21 * self.age + 0.023*heightCm - 2.978
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_9black(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("black", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1650,7 +1645,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black(struct 
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1661,19 +1656,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black(struct 
 
   /* "pyfit/cardio/respiration.pyx":32
  * 
- *     cpdef float black(self):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double black(self):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.21 * self.age + 0.023*heightCm - 2.978
  * 
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/cardio/respiration.pyx":33
- *     cpdef float black(self):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double black(self):
+ *         cdef double heightCm = self.height * 100
  *         return 0.21 * self.age + 0.023*heightCm - 2.978             # <<<<<<<<<<<<<<
  * 
- *     cpdef float boren(self):
+ *     cpdef double boren(self):
  */
   __pyx_r = (((0.21 * __pyx_v_self->age) + (0.023 * __pyx_v_heightCm)) - 2.978);
   goto __pyx_L0;
@@ -1681,8 +1676,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black(struct 
   /* "pyfit/cardio/respiration.pyx":31
  *         return (0.022*self.age) + (0.0198*heightCm) - (0.015*self.weight) - 1.54
  * 
- *     cpdef float black(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double black(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return 0.21 * self.age + 0.023*heightCm - 2.978
  */
 
@@ -1738,21 +1733,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_8black(s
 /* "pyfit/cardio/respiration.pyx":35
  *         return 0.21 * self.age + 0.023*heightCm - 2.978
  * 
- *     cpdef float boren(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double boren(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return (0.0115*self.age) + (0.019* heightCm) - 2.24
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_11boren(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("boren", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1780,7 +1775,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren(struct 
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1791,19 +1786,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren(struct 
 
   /* "pyfit/cardio/respiration.pyx":36
  * 
- *     cpdef float boren(self):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double boren(self):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
  *         return (0.0115*self.age) + (0.019* heightCm) - 2.24
  * 
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/cardio/respiration.pyx":37
- *     cpdef float boren(self):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double boren(self):
+ *         cdef double heightCm = self.height * 100
  *         return (0.0115*self.age) + (0.019* heightCm) - 2.24             # <<<<<<<<<<<<<<
  * 
- *     cpdef float goldman(self):
+ *     cpdef double goldman(self):
  */
   __pyx_r = (((0.0115 * __pyx_v_self->age) + (0.019 * __pyx_v_heightCm)) - 2.24);
   goto __pyx_L0;
@@ -1811,8 +1806,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren(struct 
   /* "pyfit/cardio/respiration.pyx":35
  *         return 0.21 * self.age + 0.023*heightCm - 2.978
  * 
- *     cpdef float boren(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double boren(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return (0.0115*self.age) + (0.019* heightCm) - 2.24
  */
 
@@ -1868,21 +1863,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_10boren(
 /* "pyfit/cardio/respiration.pyx":39
  *         return (0.0115*self.age) + (0.019* heightCm) - 2.24
  * 
- *     cpdef float goldman(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double goldman(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_13goldman(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("goldman", 0);
   /* Check if called by wrapper */
@@ -1911,7 +1906,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struc
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 39, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 39, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1922,16 +1917,16 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struc
 
   /* "pyfit/cardio/respiration.pyx":40
  * 
- *     cpdef float goldman(self):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double goldman(self):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 0.009*self.age + 0.032*heightCm - 3.9
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/cardio/respiration.pyx":41
- *     cpdef float goldman(self):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double goldman(self):
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 0.009*self.age + 0.032*heightCm - 3.9
  *         return (0.017*self.age) + (0.027*heightCm) - 3.477
@@ -1951,7 +1946,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struc
   if (__pyx_t_6) {
 
     /* "pyfit/cardio/respiration.pyx":42
- *         cdef float heightCm = self.height * 100
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:
  *             return 0.009*self.age + 0.032*heightCm - 3.9             # <<<<<<<<<<<<<<
  *         return (0.017*self.age) + (0.027*heightCm) - 3.477
@@ -1961,8 +1956,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struc
     goto __pyx_L0;
 
     /* "pyfit/cardio/respiration.pyx":41
- *     cpdef float goldman(self):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double goldman(self):
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 0.009*self.age + 0.032*heightCm - 3.9
  *         return (0.017*self.age) + (0.027*heightCm) - 3.477
@@ -1974,7 +1969,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struc
  *             return 0.009*self.age + 0.032*heightCm - 3.9
  *         return (0.017*self.age) + (0.027*heightCm) - 3.477             # <<<<<<<<<<<<<<
  * 
- *     cpdef float obrien(self, float bsa):
+ *     cpdef double obrien(self, double bsa):
  */
   __pyx_r = (((0.017 * __pyx_v_self->age) + (0.027 * __pyx_v_heightCm)) - 3.477);
   goto __pyx_L0;
@@ -1982,8 +1977,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman(struc
   /* "pyfit/cardio/respiration.pyx":39
  *         return (0.0115*self.age) + (0.019* heightCm) - 2.24
  * 
- *     cpdef float goldman(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double goldman(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
@@ -2039,15 +2034,15 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_12goldma
 /* "pyfit/cardio/respiration.pyx":45
  *         return (0.017*self.age) + (0.027*heightCm) - 3.477
  * 
- *     cpdef float obrien(self, float bsa):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double obrien(self, double bsa):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return (0.03*self.age) + (0.0387*heightCm) - (0.73*bsa) - 4.78
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_15obrien(PyObject *__pyx_v_self, PyObject *__pyx_arg_bsa); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, float __pyx_v_bsa, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, double __pyx_v_bsa, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2055,7 +2050,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("obrien", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2093,7 +2088,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2104,16 +2099,16 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct
 
   /* "pyfit/cardio/respiration.pyx":46
  * 
- *     cpdef float obrien(self, float bsa):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double obrien(self, double bsa):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
  *         return (0.03*self.age) + (0.0387*heightCm) - (0.73*bsa) - 4.78
  * 
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/cardio/respiration.pyx":47
- *     cpdef float obrien(self, float bsa):
- *         cdef float heightCm = self.height * 100
+ *     cpdef double obrien(self, double bsa):
+ *         cdef double heightCm = self.height * 100
  *         return (0.03*self.age) + (0.0387*heightCm) - (0.73*bsa) - 4.78             # <<<<<<<<<<<<<<
  * 
  * cdef class VO2(object):
@@ -2124,8 +2119,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct
   /* "pyfit/cardio/respiration.pyx":45
  *         return (0.017*self.age) + (0.027*heightCm) - 3.477
  * 
- *     cpdef float obrien(self, float bsa):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
+ *     cpdef double obrien(self, double bsa):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
  *         return (0.03*self.age) + (0.0387*heightCm) - (0.73*bsa) - 4.78
  */
 
@@ -2147,12 +2142,12 @@ static float __pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien(struct
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_15obrien(PyObject *__pyx_v_self, PyObject *__pyx_arg_bsa); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_15obrien(PyObject *__pyx_v_self, PyObject *__pyx_arg_bsa) {
-  float __pyx_v_bsa;
+  double __pyx_v_bsa;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("obrien (wrapper)", 0);
   assert(__pyx_arg_bsa); {
-    __pyx_v_bsa = __pyx_PyFloat_AsFloat(__pyx_arg_bsa); if (unlikely((__pyx_v_bsa == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L3_error)
+    __pyx_v_bsa = __pyx_PyFloat_AsDouble(__pyx_arg_bsa); if (unlikely((__pyx_v_bsa == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2160,14 +2155,14 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_14ResidualVolume_15obrien
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_14obrien(((struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *)__pyx_v_self), ((float)__pyx_v_bsa));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_14obrien(((struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *)__pyx_v_self), ((double)__pyx_v_bsa));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_14obrien(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, float __pyx_v_bsa) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_14obrien(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *__pyx_v_self, double __pyx_v_bsa) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2194,8 +2189,8 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_14obrien
  * 
  * cdef class ResidualVolume(object):
  *     cdef readonly int gender             # <<<<<<<<<<<<<<
- *     cdef readonly float height # meters
- *     cdef readonly float age # years
+ *     cdef readonly double height # meters
+ *     cdef readonly double age # years
  */
 
 /* Python wrapper */
@@ -2237,9 +2232,9 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6gender_
 /* "pyfit/cardio/respiration.pyx":6
  * cdef class ResidualVolume(object):
  *     cdef readonly int gender
- *     cdef readonly float height # meters             # <<<<<<<<<<<<<<
- *     cdef readonly float age # years
- *     cdef readonly float weight # kg
+ *     cdef readonly double height # meters             # <<<<<<<<<<<<<<
+ *     cdef readonly double age # years
+ *     cdef readonly double weight # kg
  */
 
 /* Python wrapper */
@@ -2280,9 +2275,9 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6height_
 
 /* "pyfit/cardio/respiration.pyx":7
  *     cdef readonly int gender
- *     cdef readonly float height # meters
- *     cdef readonly float age # years             # <<<<<<<<<<<<<<
- *     cdef readonly float weight # kg
+ *     cdef readonly double height # meters
+ *     cdef readonly double age # years             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight # kg
  * 
  */
 
@@ -2323,11 +2318,11 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_3age___g
 }
 
 /* "pyfit/cardio/respiration.pyx":8
- *     cdef readonly float height # meters
- *     cdef readonly float age # years
- *     cdef readonly float weight # kg             # <<<<<<<<<<<<<<
+ *     cdef readonly double height # meters
+ *     cdef readonly double age # years
+ *     cdef readonly double weight # kg             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender,  float age, float weight, float height):
+ *     def __cinit__(self, int gender,  double age, double weight, double height):
  */
 
 /* Python wrapper */
@@ -2367,9 +2362,9 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6weight_
 }
 
 /* "pyfit/cardio/respiration.pyx":55
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -2378,9 +2373,9 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_14ResidualVolume_6weight_
 static int __pyx_pw_5pyfit_6cardio_11respiration_3VO2_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_6cardio_11respiration_3VO2_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -2431,9 +2426,9 @@ static int __pyx_pw_5pyfit_6cardio_11respiration_3VO2_1__cinit__(PyObject *__pyx
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2450,14 +2445,14 @@ static int __pyx_pw_5pyfit_6cardio_11respiration_3VO2_1__cinit__(PyObject *__pyx
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_6cardio_11respiration_3VO2___cinit__(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_6cardio_11respiration_3VO2___cinit__(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/cardio/respiration.pyx":56
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  *         self.weight = weight
@@ -2465,7 +2460,7 @@ static int __pyx_pf_5pyfit_6cardio_11respiration_3VO2___cinit__(struct __pyx_obj
   __pyx_v_self->gender = __pyx_v_gender;
 
   /* "pyfit/cardio/respiration.pyx":57
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  *         self.weight = weight
@@ -2487,14 +2482,14 @@ static int __pyx_pf_5pyfit_6cardio_11respiration_3VO2___cinit__(struct __pyx_obj
  *         self.weight = weight
  *         self.height = height             # <<<<<<<<<<<<<<
  * 
- *     cpdef float reserve(self, float vo2Max, float vo2Rest=3.5):
+ *     cpdef double reserve(self, double vo2Max, double vo2Rest=3.5):
  */
   __pyx_v_self->height = __pyx_v_height;
 
   /* "pyfit/cardio/respiration.pyx":55
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -2508,15 +2503,15 @@ static int __pyx_pf_5pyfit_6cardio_11respiration_3VO2___cinit__(struct __pyx_obj
 /* "pyfit/cardio/respiration.pyx":61
  *         self.height = height
  * 
- *     cpdef float reserve(self, float vo2Max, float vo2Rest=3.5):             # <<<<<<<<<<<<<<
+ *     cpdef double reserve(self, double vo2Max, double vo2Rest=3.5):             # <<<<<<<<<<<<<<
  *         return vo2Max - vo2Rest
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_3reserve(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_vo2Max, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve *__pyx_optional_args) {
-  float __pyx_v_vo2Rest = ((float)3.5);
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_vo2Max, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve *__pyx_optional_args) {
+  double __pyx_v_vo2Rest = ((double)3.5);
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2526,7 +2521,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED str
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("reserve", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
@@ -2572,7 +2567,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED str
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2583,10 +2578,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED str
 
   /* "pyfit/cardio/respiration.pyx":62
  * 
- *     cpdef float reserve(self, float vo2Max, float vo2Rest=3.5):
+ *     cpdef double reserve(self, double vo2Max, double vo2Rest=3.5):
  *         return vo2Max - vo2Rest             # <<<<<<<<<<<<<<
  * 
- *     cpdef float target(self, float vo2Max, float vo2Rest, float intensity):
+ *     cpdef double target(self, double vo2Max, double vo2Rest, double intensity):
  */
   __pyx_r = (__pyx_v_vo2Max - __pyx_v_vo2Rest);
   goto __pyx_L0;
@@ -2594,7 +2589,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED str
   /* "pyfit/cardio/respiration.pyx":61
  *         self.height = height
  * 
- *     cpdef float reserve(self, float vo2Max, float vo2Rest=3.5):             # <<<<<<<<<<<<<<
+ *     cpdef double reserve(self, double vo2Max, double vo2Rest=3.5):             # <<<<<<<<<<<<<<
  *         return vo2Max - vo2Rest
  * 
  */
@@ -2618,8 +2613,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve(CYTHON_UNUSED str
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_3reserve(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_3reserve(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_vo2Max;
-  float __pyx_v_vo2Rest;
+  double __pyx_v_vo2Max;
+  double __pyx_v_vo2Rest;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("reserve (wrapper)", 0);
@@ -2657,11 +2652,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_3reserve(PyObject *_
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_vo2Max = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_vo2Max == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
+    __pyx_v_vo2Max = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vo2Max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
     if (values[1]) {
-      __pyx_v_vo2Rest = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_vo2Rest == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
+      __pyx_v_vo2Rest = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_vo2Rest == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
     } else {
-      __pyx_v_vo2Rest = ((float)3.5);
+      __pyx_v_vo2Rest = ((double)3.5);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
@@ -2679,10 +2674,10 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_3reserve(PyObject *_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_2reserve(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_vo2Max, float __pyx_v_vo2Rest) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_2reserve(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_vo2Max, double __pyx_v_vo2Rest) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  float __pyx_t_1;
+  double __pyx_t_1;
   struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("reserve", 0);
@@ -2710,14 +2705,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_2reserve(struct __py
 /* "pyfit/cardio/respiration.pyx":64
  *         return vo2Max - vo2Rest
  * 
- *     cpdef float target(self, float vo2Max, float vo2Rest, float intensity):             # <<<<<<<<<<<<<<
+ *     cpdef double target(self, double vo2Max, double vo2Rest, double intensity):             # <<<<<<<<<<<<<<
  *         return intensity * (vo2Max - vo2Rest)+ vo2Rest
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_5target(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_vo2Max, float __pyx_v_vo2Rest, float __pyx_v_intensity, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_vo2Max, double __pyx_v_vo2Rest, double __pyx_v_intensity, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2728,7 +2723,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED stru
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   __Pyx_RefNannySetupContext("target", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2774,7 +2769,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED stru
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2785,10 +2780,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED stru
 
   /* "pyfit/cardio/respiration.pyx":65
  * 
- *     cpdef float target(self, float vo2Max, float vo2Rest, float intensity):
+ *     cpdef double target(self, double vo2Max, double vo2Rest, double intensity):
  *         return intensity * (vo2Max - vo2Rest)+ vo2Rest             # <<<<<<<<<<<<<<
  * 
- *     cpdef float cooper(self, float distance):
+ *     cpdef double cooper(self, double distance):
  */
   __pyx_r = ((__pyx_v_intensity * (__pyx_v_vo2Max - __pyx_v_vo2Rest)) + __pyx_v_vo2Rest);
   goto __pyx_L0;
@@ -2796,7 +2791,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED stru
   /* "pyfit/cardio/respiration.pyx":64
  *         return vo2Max - vo2Rest
  * 
- *     cpdef float target(self, float vo2Max, float vo2Rest, float intensity):             # <<<<<<<<<<<<<<
+ *     cpdef double target(self, double vo2Max, double vo2Rest, double intensity):             # <<<<<<<<<<<<<<
  *         return intensity * (vo2Max - vo2Rest)+ vo2Rest
  * 
  */
@@ -2821,9 +2816,9 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_target(CYTHON_UNUSED stru
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_5target(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_5target(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_vo2Max;
-  float __pyx_v_vo2Rest;
-  float __pyx_v_intensity;
+  double __pyx_v_vo2Max;
+  double __pyx_v_vo2Rest;
+  double __pyx_v_intensity;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("target (wrapper)", 0);
@@ -2866,9 +2861,9 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_5target(PyObject *__
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_vo2Max = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_vo2Max == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L3_error)
-    __pyx_v_vo2Rest = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_vo2Rest == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L3_error)
-    __pyx_v_intensity = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_intensity == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L3_error)
+    __pyx_v_vo2Max = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vo2Max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L3_error)
+    __pyx_v_vo2Rest = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_vo2Rest == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L3_error)
+    __pyx_v_intensity = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_intensity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2885,7 +2880,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_5target(PyObject *__
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_4target(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_vo2Max, float __pyx_v_vo2Rest, float __pyx_v_intensity) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_4target(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_vo2Max, double __pyx_v_vo2Rest, double __pyx_v_intensity) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2911,14 +2906,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_4target(struct __pyx
 /* "pyfit/cardio/respiration.pyx":67
  *         return intensity * (vo2Max - vo2Rest)+ vo2Rest
  * 
- *     cpdef float cooper(self, float distance):             # <<<<<<<<<<<<<<
+ *     cpdef double cooper(self, double distance):             # <<<<<<<<<<<<<<
  *         return 0.0268 * distance - 11.3
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_7cooper(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_distance, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_distance, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2926,7 +2921,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED stru
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("cooper", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2964,7 +2959,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED stru
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2975,10 +2970,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED stru
 
   /* "pyfit/cardio/respiration.pyx":68
  * 
- *     cpdef float cooper(self, float distance):
+ *     cpdef double cooper(self, double distance):
  *         return 0.0268 * distance - 11.3             # <<<<<<<<<<<<<<
  * 
- *     cpdef float walkingGross(self, float speed, float grade):
+ *     cpdef double walkingGross(self, double speed, double grade):
  */
   __pyx_r = ((0.0268 * __pyx_v_distance) - 11.3);
   goto __pyx_L0;
@@ -2986,7 +2981,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED stru
   /* "pyfit/cardio/respiration.pyx":67
  *         return intensity * (vo2Max - vo2Rest)+ vo2Rest
  * 
- *     cpdef float cooper(self, float distance):             # <<<<<<<<<<<<<<
+ *     cpdef double cooper(self, double distance):             # <<<<<<<<<<<<<<
  *         return 0.0268 * distance - 11.3
  * 
  */
@@ -3009,12 +3004,12 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper(CYTHON_UNUSED stru
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_7cooper(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_7cooper(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance) {
-  float __pyx_v_distance;
+  double __pyx_v_distance;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("cooper (wrapper)", 0);
   assert(__pyx_arg_distance); {
-    __pyx_v_distance = __pyx_PyFloat_AsFloat(__pyx_arg_distance); if (unlikely((__pyx_v_distance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
+    __pyx_v_distance = __pyx_PyFloat_AsDouble(__pyx_arg_distance); if (unlikely((__pyx_v_distance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3022,14 +3017,14 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_7cooper(PyObject *__
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_6cooper(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_distance));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_6cooper(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_distance));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6cooper(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_distance) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6cooper(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_distance) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3055,14 +3050,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6cooper(struct __pyx
 /* "pyfit/cardio/respiration.pyx":70
  *         return 0.0268 * distance - 11.3
  * 
- *     cpdef float walkingGross(self, float speed, float grade):             # <<<<<<<<<<<<<<
+ *     cpdef double walkingGross(self, double speed, double grade):             # <<<<<<<<<<<<<<
  *         return (0.1*speed) + (1.8*speed*grade)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_9walkingGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_grade, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_grade, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3072,7 +3067,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSE
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("walkingGross", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -3113,7 +3108,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSE
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 70, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 70, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3124,10 +3119,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSE
 
   /* "pyfit/cardio/respiration.pyx":71
  * 
- *     cpdef float walkingGross(self, float speed, float grade):
+ *     cpdef double walkingGross(self, double speed, double grade):
  *         return (0.1*speed) + (1.8*speed*grade)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float runningGross(self, float speed, float grade):
+ *     cpdef double runningGross(self, double speed, double grade):
  */
   __pyx_r = ((0.1 * __pyx_v_speed) + ((1.8 * __pyx_v_speed) * __pyx_v_grade));
   goto __pyx_L0;
@@ -3135,7 +3130,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSE
   /* "pyfit/cardio/respiration.pyx":70
  *         return 0.0268 * distance - 11.3
  * 
- *     cpdef float walkingGross(self, float speed, float grade):             # <<<<<<<<<<<<<<
+ *     cpdef double walkingGross(self, double speed, double grade):             # <<<<<<<<<<<<<<
  *         return (0.1*speed) + (1.8*speed*grade)
  * 
  */
@@ -3159,8 +3154,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross(CYTHON_UNUSE
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_9walkingGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_9walkingGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_speed;
-  float __pyx_v_grade;
+  double __pyx_v_speed;
+  double __pyx_v_grade;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("walkingGross (wrapper)", 0);
@@ -3196,8 +3191,8 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_9walkingGross(PyObje
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_speed = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_speed == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 70, __pyx_L3_error)
-    __pyx_v_grade = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grade == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 70, __pyx_L3_error)
+    __pyx_v_speed = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_speed == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 70, __pyx_L3_error)
+    __pyx_v_grade = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_grade == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 70, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3214,7 +3209,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_9walkingGross(PyObje
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_8walkingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_grade) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_8walkingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_grade) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3240,14 +3235,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_8walkingGross(struct
 /* "pyfit/cardio/respiration.pyx":73
  *         return (0.1*speed) + (1.8*speed*grade)
  * 
- *     cpdef float runningGross(self, float speed, float grade):             # <<<<<<<<<<<<<<
+ *     cpdef double runningGross(self, double speed, double grade):             # <<<<<<<<<<<<<<
  *         return (0.2*speed) + (0.9*speed*grade)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_11runningGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_grade, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_grade, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3257,7 +3252,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSE
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("runningGross", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -3298,7 +3293,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSE
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3309,10 +3304,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSE
 
   /* "pyfit/cardio/respiration.pyx":74
  * 
- *     cpdef float runningGross(self, float speed, float grade):
+ *     cpdef double runningGross(self, double speed, double grade):
  *         return (0.2*speed) + (0.9*speed*grade)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float legErgometryGross(self, float mass, float work):
+ *     cpdef double legErgometryGross(self, double mass, double work):
  */
   __pyx_r = ((0.2 * __pyx_v_speed) + ((0.9 * __pyx_v_speed) * __pyx_v_grade));
   goto __pyx_L0;
@@ -3320,7 +3315,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSE
   /* "pyfit/cardio/respiration.pyx":73
  *         return (0.1*speed) + (1.8*speed*grade)
  * 
- *     cpdef float runningGross(self, float speed, float grade):             # <<<<<<<<<<<<<<
+ *     cpdef double runningGross(self, double speed, double grade):             # <<<<<<<<<<<<<<
  *         return (0.2*speed) + (0.9*speed*grade)
  * 
  */
@@ -3344,8 +3339,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross(CYTHON_UNUSE
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_11runningGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_11runningGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_speed;
-  float __pyx_v_grade;
+  double __pyx_v_speed;
+  double __pyx_v_grade;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("runningGross (wrapper)", 0);
@@ -3381,8 +3376,8 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_11runningGross(PyObj
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_speed = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_speed == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
-    __pyx_v_grade = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grade == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
+    __pyx_v_speed = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_speed == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
+    __pyx_v_grade = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_grade == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3399,7 +3394,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_11runningGross(PyObj
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_10runningGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_grade) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_10runningGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_grade) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3425,14 +3420,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_10runningGross(struc
 /* "pyfit/cardio/respiration.pyx":76
  *         return (0.2*speed) + (0.9*speed*grade)
  * 
- *     cpdef float legErgometryGross(self, float mass, float work):             # <<<<<<<<<<<<<<
+ *     cpdef double legErgometryGross(self, double mass, double work):             # <<<<<<<<<<<<<<
  *         return 3.5 + 1.8* (work/mass)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_13legErgometryGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_mass, float __pyx_v_work, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_mass, double __pyx_v_work, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3442,7 +3437,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("legErgometryGross", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -3483,7 +3478,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3494,10 +3489,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_
 
   /* "pyfit/cardio/respiration.pyx":77
  * 
- *     cpdef float legErgometryGross(self, float mass, float work):
+ *     cpdef double legErgometryGross(self, double mass, double work):
  *         return 3.5 + 1.8* (work/mass)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float armErgometryGross(self, float mass, float work):
+ *     cpdef double armErgometryGross(self, double mass, double work):
  */
   if (unlikely(__pyx_v_mass == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
@@ -3509,7 +3504,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_
   /* "pyfit/cardio/respiration.pyx":76
  *         return (0.2*speed) + (0.9*speed*grade)
  * 
- *     cpdef float legErgometryGross(self, float mass, float work):             # <<<<<<<<<<<<<<
+ *     cpdef double legErgometryGross(self, double mass, double work):             # <<<<<<<<<<<<<<
  *         return 3.5 + 1.8* (work/mass)
  * 
  */
@@ -3533,8 +3528,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross(CYTHON_
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_13legErgometryGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_13legErgometryGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_mass;
-  float __pyx_v_work;
+  double __pyx_v_mass;
+  double __pyx_v_work;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("legErgometryGross (wrapper)", 0);
@@ -3570,8 +3565,8 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_13legErgometryGross(
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_mass = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mass == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
-    __pyx_v_work = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_work == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
+    __pyx_v_mass = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mass == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
+    __pyx_v_work = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_work == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3588,7 +3583,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_13legErgometryGross(
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_12legErgometryGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_mass, float __pyx_v_work) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_12legErgometryGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_mass, double __pyx_v_work) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3614,14 +3609,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_12legErgometryGross(
 /* "pyfit/cardio/respiration.pyx":79
  *         return 3.5 + 1.8* (work/mass)
  * 
- *     cpdef float armErgometryGross(self, float mass, float work):             # <<<<<<<<<<<<<<
+ *     cpdef double armErgometryGross(self, double mass, double work):             # <<<<<<<<<<<<<<
  *         return (3.0 * work/mass)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_15armErgometryGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_mass, float __pyx_v_work, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_mass, double __pyx_v_work, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3631,8 +3626,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross(CYTHON_
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
-  double __pyx_t_10;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("armErgometryGross", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -3673,7 +3667,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross(CYTHON_
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3684,23 +3678,23 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross(CYTHON_
 
   /* "pyfit/cardio/respiration.pyx":80
  * 
- *     cpdef float armErgometryGross(self, float mass, float work):
+ *     cpdef double armErgometryGross(self, double mass, double work):
  *         return (3.0 * work/mass)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float steppingGross(self, float height, float frequency):
+ *     cpdef double steppingGross(self, double height, double frequency):
  */
-  __pyx_t_10 = (3.0 * __pyx_v_work);
+  __pyx_t_9 = (3.0 * __pyx_v_work);
   if (unlikely(__pyx_v_mass == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 80, __pyx_L1_error)
   }
-  __pyx_r = (__pyx_t_10 / __pyx_v_mass);
+  __pyx_r = (__pyx_t_9 / __pyx_v_mass);
   goto __pyx_L0;
 
   /* "pyfit/cardio/respiration.pyx":79
  *         return 3.5 + 1.8* (work/mass)
  * 
- *     cpdef float armErgometryGross(self, float mass, float work):             # <<<<<<<<<<<<<<
+ *     cpdef double armErgometryGross(self, double mass, double work):             # <<<<<<<<<<<<<<
  *         return (3.0 * work/mass)
  * 
  */
@@ -3724,8 +3718,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross(CYTHON_
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_15armErgometryGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_15armErgometryGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_mass;
-  float __pyx_v_work;
+  double __pyx_v_mass;
+  double __pyx_v_work;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("armErgometryGross (wrapper)", 0);
@@ -3761,8 +3755,8 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_15armErgometryGross(
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_mass = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mass == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
-    __pyx_v_work = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_work == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
+    __pyx_v_mass = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mass == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
+    __pyx_v_work = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_work == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3779,7 +3773,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_15armErgometryGross(
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_14armErgometryGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_mass, float __pyx_v_work) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_14armErgometryGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_mass, double __pyx_v_work) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3805,14 +3799,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_14armErgometryGross(
 /* "pyfit/cardio/respiration.pyx":82
  *         return (3.0 * work/mass)
  * 
- *     cpdef float steppingGross(self, float height, float frequency):             # <<<<<<<<<<<<<<
+ *     cpdef double steppingGross(self, double height, double frequency):             # <<<<<<<<<<<<<<
  *         return (0.2*frequency) + (frequency * self.height * 1.8 * 1.33)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_17steppingGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, CYTHON_UNUSED float __pyx_v_height, float __pyx_v_frequency, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, CYTHON_UNUSED double __pyx_v_height, double __pyx_v_frequency, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3822,7 +3816,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __py
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("steppingGross", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -3863,7 +3857,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __py
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3874,10 +3868,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __py
 
   /* "pyfit/cardio/respiration.pyx":83
  * 
- *     cpdef float steppingGross(self, float height, float frequency):
+ *     cpdef double steppingGross(self, double height, double frequency):
  *         return (0.2*frequency) + (frequency * self.height * 1.8 * 1.33)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float stairmasterMets(self, int setting):
+ *     cpdef double usop(self, double hrMax, double restingHR):
  */
   __pyx_r = ((0.2 * __pyx_v_frequency) + (((__pyx_v_frequency * __pyx_v_self->height) * 1.8) * 1.33));
   goto __pyx_L0;
@@ -3885,7 +3879,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __py
   /* "pyfit/cardio/respiration.pyx":82
  *         return (3.0 * work/mass)
  * 
- *     cpdef float steppingGross(self, float height, float frequency):             # <<<<<<<<<<<<<<
+ *     cpdef double steppingGross(self, double height, double frequency):             # <<<<<<<<<<<<<<
  *         return (0.2*frequency) + (frequency * self.height * 1.8 * 1.33)
  * 
  */
@@ -3909,8 +3903,8 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross(struct __py
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_17steppingGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_17steppingGross(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_height;
-  float __pyx_v_frequency;
+  double __pyx_v_height;
+  double __pyx_v_frequency;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("steppingGross (wrapper)", 0);
@@ -3946,8 +3940,8 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_17steppingGross(PyOb
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L3_error)
-    __pyx_v_frequency = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_frequency == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L3_error)
+    __pyx_v_frequency = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_frequency == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3964,7 +3958,7 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_17steppingGross(PyOb
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_16steppingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_height, float __pyx_v_frequency) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_16steppingGross(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_height, double __pyx_v_frequency) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3990,158 +3984,14 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_16steppingGross(stru
 /* "pyfit/cardio/respiration.pyx":85
  *         return (0.2*frequency) + (frequency * self.height * 1.8 * 1.33)
  * 
- *     cpdef float stairmasterMets(self, int setting):             # <<<<<<<<<<<<<<
- *         return 0.556 * 7.45 * setting
- * 
- */
-
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19stairmasterMets(PyObject *__pyx_v_self, PyObject *__pyx_arg_setting); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_stairmasterMets(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, int __pyx_v_setting, int __pyx_skip_dispatch) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("stairmasterMets", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_stairmasterMets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19stairmasterMets)) {
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_setting); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
-      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_5)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_5);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
-        }
-      }
-      if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
-      } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 85, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
-        __Pyx_GIVEREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
-        __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_r = __pyx_t_7;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      goto __pyx_L0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  }
-
-  /* "pyfit/cardio/respiration.pyx":86
- * 
- *     cpdef float stairmasterMets(self, int setting):
- *         return 0.556 * 7.45 * setting             # <<<<<<<<<<<<<<
- * 
- *     cpdef float usop(self, float hrMax, float restingHR):
- */
-  __pyx_r = ((0.556 * 7.45) * __pyx_v_setting);
-  goto __pyx_L0;
-
-  /* "pyfit/cardio/respiration.pyx":85
- *         return (0.2*frequency) + (frequency * self.height * 1.8 * 1.33)
- * 
- *     cpdef float stairmasterMets(self, int setting):             # <<<<<<<<<<<<<<
- *         return 0.556 * 7.45 * setting
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_WriteUnraisable("pyfit.cardio.respiration.VO2.stairmasterMets", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19stairmasterMets(PyObject *__pyx_v_self, PyObject *__pyx_arg_setting); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19stairmasterMets(PyObject *__pyx_v_self, PyObject *__pyx_arg_setting) {
-  int __pyx_v_setting;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("stairmasterMets (wrapper)", 0);
-  assert(__pyx_arg_setting); {
-    __pyx_v_setting = __Pyx_PyInt_As_int(__pyx_arg_setting); if (unlikely((__pyx_v_setting == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.stairmasterMets", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_18stairmasterMets(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((int)__pyx_v_setting));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_18stairmasterMets(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, int __pyx_v_setting) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("stairmasterMets", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_stairmasterMets(__pyx_v_self, __pyx_v_setting, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.stairmasterMets", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "pyfit/cardio/respiration.pyx":88
- *         return 0.556 * 7.45 * setting
- * 
- *     cpdef float usop(self, float hrMax, float restingHR):             # <<<<<<<<<<<<<<
+ *     cpdef double usop(self, double hrMax, double restingHR):             # <<<<<<<<<<<<<<
  *         return 15.3 * (hrMax/restingHR)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21usop(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hrMax, float __pyx_v_restingHR, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19usop(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hrMax, double __pyx_v_restingHR, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4151,18 +4001,18 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("usop", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_usop); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_usop); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21usop)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hrMax); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 88, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19usop)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hrMax); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_restingHR); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 88, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_restingHR); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 85, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -4177,7 +4027,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 88, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 85, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -4188,11 +4038,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4201,24 +4051,24 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":89
+  /* "pyfit/cardio/respiration.pyx":86
  * 
- *     cpdef float usop(self, float hrMax, float restingHR):
+ *     cpdef double usop(self, double hrMax, double restingHR):
  *         return 15.3 * (hrMax/restingHR)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float foxErgometry(self, float hr5):
+ *     cpdef double foxErgometry(self, double hr5):
  */
   if (unlikely(__pyx_v_restingHR == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 89, __pyx_L1_error)
+    __PYX_ERR(0, 86, __pyx_L1_error)
   }
   __pyx_r = (15.3 * (__pyx_v_hrMax / __pyx_v_restingHR));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":88
- *         return 0.556 * 7.45 * setting
+  /* "pyfit/cardio/respiration.pyx":85
+ *         return (0.2*frequency) + (frequency * self.height * 1.8 * 1.33)
  * 
- *     cpdef float usop(self, float hrMax, float restingHR):             # <<<<<<<<<<<<<<
+ *     cpdef double usop(self, double hrMax, double restingHR):             # <<<<<<<<<<<<<<
  *         return 15.3 * (hrMax/restingHR)
  * 
  */
@@ -4240,10 +4090,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(CYTHON_UNUSED struct
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21usop(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21usop(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_hrMax;
-  float __pyx_v_restingHR;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19usop(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19usop(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_hrMax;
+  double __pyx_v_restingHR;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("usop (wrapper)", 0);
@@ -4267,11 +4117,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21usop(PyObject *__p
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_restingHR)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("usop", 1, 2, 2, 1); __PYX_ERR(0, 88, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("usop", 1, 2, 2, 1); __PYX_ERR(0, 85, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "usop") < 0)) __PYX_ERR(0, 88, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "usop") < 0)) __PYX_ERR(0, 85, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -4279,31 +4129,31 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21usop(PyObject *__p
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_hrMax = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_hrMax == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L3_error)
-    __pyx_v_restingHR = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_restingHR == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L3_error)
+    __pyx_v_hrMax = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_hrMax == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L3_error)
+    __pyx_v_restingHR = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_restingHR == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("usop", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 88, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("usop", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 85, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.usop", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_20usop(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_hrMax, __pyx_v_restingHR);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_18usop(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_hrMax, __pyx_v_restingHR);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_20usop(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hrMax, float __pyx_v_restingHR) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_18usop(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hrMax, double __pyx_v_restingHR) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("usop", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(__pyx_v_self, __pyx_v_hrMax, __pyx_v_restingHR, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_usop(__pyx_v_self, __pyx_v_hrMax, __pyx_v_restingHR, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4320,17 +4170,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_20usop(struct __pyx_
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":91
+/* "pyfit/cardio/respiration.pyx":88
  *         return 15.3 * (hrMax/restingHR)
  * 
- *     cpdef float foxErgometry(self, float hr5):             # <<<<<<<<<<<<<<
+ *     cpdef double foxErgometry(self, double hr5):             # <<<<<<<<<<<<<<
  *         return 6300.0 - (19.26 * hr5)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23foxErgometry(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr5); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr5, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21foxErgometry(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr5); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr5, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4338,16 +4188,16 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(CYTHON_UNUSE
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("foxErgometry", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_foxErgometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_foxErgometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23foxErgometry)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21foxErgometry)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 88, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -4361,22 +4211,22 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(CYTHON_UNUSE
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 91, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 88, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4385,20 +4235,20 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(CYTHON_UNUSE
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":92
+  /* "pyfit/cardio/respiration.pyx":89
  * 
- *     cpdef float foxErgometry(self, float hr5):
+ *     cpdef double foxErgometry(self, double hr5):
  *         return 6300.0 - (19.26 * hr5)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float ebbelingTreadmill(self, float speed, float hr):
+ *     cpdef double ebbelingTreadmill(self, double speed, double hr):
  */
   __pyx_r = (6300.0 - (19.26 * __pyx_v_hr5));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":91
+  /* "pyfit/cardio/respiration.pyx":88
  *         return 15.3 * (hrMax/restingHR)
  * 
- *     cpdef float foxErgometry(self, float hr5):             # <<<<<<<<<<<<<<
+ *     cpdef double foxErgometry(self, double hr5):             # <<<<<<<<<<<<<<
  *         return 6300.0 - (19.26 * hr5)
  * 
  */
@@ -4419,14 +4269,14 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(CYTHON_UNUSE
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23foxErgometry(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr5); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23foxErgometry(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr5) {
-  float __pyx_v_hr5;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21foxErgometry(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr5); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21foxErgometry(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr5) {
+  double __pyx_v_hr5;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("foxErgometry (wrapper)", 0);
   assert(__pyx_arg_hr5); {
-    __pyx_v_hr5 = __pyx_PyFloat_AsFloat(__pyx_arg_hr5); if (unlikely((__pyx_v_hr5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L3_error)
+    __pyx_v_hr5 = __pyx_PyFloat_AsDouble(__pyx_arg_hr5); if (unlikely((__pyx_v_hr5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4434,20 +4284,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23foxErgometry(PyObj
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_22foxErgometry(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_hr5));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_20foxErgometry(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_hr5));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_22foxErgometry(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr5) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_20foxErgometry(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr5) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("foxErgometry", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(__pyx_v_self, __pyx_v_hr5, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry(__pyx_v_self, __pyx_v_hr5, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4464,17 +4314,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_22foxErgometry(struc
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":94
+/* "pyfit/cardio/respiration.pyx":91
  *         return 6300.0 - (19.26 * hr5)
  * 
- *     cpdef float ebbelingTreadmill(self, float speed, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double ebbelingTreadmill(self, double speed, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 15.1 + (21.8 * speed) - (0.327*hr) - (0.263*self.age) + (0.00504 * (hr*self.age) )+(5.48 * 0.0)
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25ebbelingTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_hr, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23ebbelingTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4484,19 +4334,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct 
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("ebbelingTreadmill", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_ebbelingTreadmill); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_ebbelingTreadmill); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25ebbelingTreadmill)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_speed); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 94, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23ebbelingTreadmill)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_speed); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 94, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -4511,7 +4361,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct 
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 94, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -4522,11 +4372,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct 
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4535,29 +4385,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct 
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":95
+  /* "pyfit/cardio/respiration.pyx":92
  * 
- *     cpdef float ebbelingTreadmill(self, float speed, float hr):
+ *     cpdef double ebbelingTreadmill(self, double speed, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 15.1 + (21.8 * speed) - (0.327*hr) - (0.263*self.age) + (0.00504 * (hr*self.age) )+(5.48 * 0.0)
  *         return 15.1+(21.8*speed)-(0.327*hr)-(0.263*self.age)+( 0.00504*(hr*self.age) )+(5.48*1.0)
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_10) {
 
-    /* "pyfit/cardio/respiration.pyx":96
- *     cpdef float ebbelingTreadmill(self, float speed, float hr):
+    /* "pyfit/cardio/respiration.pyx":93
+ *     cpdef double ebbelingTreadmill(self, double speed, double hr):
  *         if self.gender == Gender.Female:
  *             return 15.1 + (21.8 * speed) - (0.327*hr) - (0.263*self.age) + (0.00504 * (hr*self.age) )+(5.48 * 0.0)             # <<<<<<<<<<<<<<
  *         return 15.1+(21.8*speed)-(0.327*hr)-(0.263*self.age)+( 0.00504*(hr*self.age) )+(5.48*1.0)
@@ -4566,29 +4416,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct 
     __pyx_r = (((((15.1 + (21.8 * __pyx_v_speed)) - (0.327 * __pyx_v_hr)) - (0.263 * __pyx_v_self->age)) + (0.00504 * (__pyx_v_hr * __pyx_v_self->age))) + (5.48 * 0.0));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":95
+    /* "pyfit/cardio/respiration.pyx":92
  * 
- *     cpdef float ebbelingTreadmill(self, float speed, float hr):
+ *     cpdef double ebbelingTreadmill(self, double speed, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 15.1 + (21.8 * speed) - (0.327*hr) - (0.263*self.age) + (0.00504 * (hr*self.age) )+(5.48 * 0.0)
  *         return 15.1+(21.8*speed)-(0.327*hr)-(0.263*self.age)+( 0.00504*(hr*self.age) )+(5.48*1.0)
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":97
+  /* "pyfit/cardio/respiration.pyx":94
  *         if self.gender == Gender.Female:
  *             return 15.1 + (21.8 * speed) - (0.327*hr) - (0.263*self.age) + (0.00504 * (hr*self.age) )+(5.48 * 0.0)
  *         return 15.1+(21.8*speed)-(0.327*hr)-(0.263*self.age)+( 0.00504*(hr*self.age) )+(5.48*1.0)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float kline(self, float time, float hrPeak):
+ *     cpdef double kline(self, double time, double hrPeak):
  */
   __pyx_r = (((((15.1 + (21.8 * __pyx_v_speed)) - (0.327 * __pyx_v_hr)) - (0.263 * __pyx_v_self->age)) + (0.00504 * (__pyx_v_hr * __pyx_v_self->age))) + (5.48 * 1.0));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":94
+  /* "pyfit/cardio/respiration.pyx":91
  *         return 6300.0 - (19.26 * hr5)
  * 
- *     cpdef float ebbelingTreadmill(self, float speed, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double ebbelingTreadmill(self, double speed, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 15.1 + (21.8 * speed) - (0.327*hr) - (0.263*self.age) + (0.00504 * (hr*self.age) )+(5.48 * 0.0)
  */
@@ -4610,10 +4460,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(struct 
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25ebbelingTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25ebbelingTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_speed;
-  float __pyx_v_hr;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23ebbelingTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23ebbelingTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_speed;
+  double __pyx_v_hr;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("ebbelingTreadmill (wrapper)", 0);
@@ -4637,11 +4487,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25ebbelingTreadmill(
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("ebbelingTreadmill", 1, 2, 2, 1); __PYX_ERR(0, 94, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("ebbelingTreadmill", 1, 2, 2, 1); __PYX_ERR(0, 91, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "ebbelingTreadmill") < 0)) __PYX_ERR(0, 94, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "ebbelingTreadmill") < 0)) __PYX_ERR(0, 91, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -4649,31 +4499,31 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25ebbelingTreadmill(
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_speed = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_speed == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L3_error)
-    __pyx_v_hr = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_hr == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L3_error)
+    __pyx_v_speed = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_speed == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L3_error)
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("ebbelingTreadmill", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 94, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("ebbelingTreadmill", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 91, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.ebbelingTreadmill", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_24ebbelingTreadmill(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_speed, __pyx_v_hr);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_22ebbelingTreadmill(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_speed, __pyx_v_hr);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_24ebbelingTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_hr) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_22ebbelingTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_hr) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("ebbelingTreadmill", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(__pyx_v_self, __pyx_v_speed, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill(__pyx_v_self, __pyx_v_speed, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4690,17 +4540,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_24ebbelingTreadmill(
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":99
+/* "pyfit/cardio/respiration.pyx":96
  *         return 15.1+(21.8*speed)-(0.327*hr)-(0.263*self.age)+( 0.00504*(hr*self.age) )+(5.48*1.0)
  * 
- *     cpdef float kline(self, float time, float hrPeak):             # <<<<<<<<<<<<<<
+ *     cpdef double kline(self, double time, double hrPeak):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*0.0 - 3.2649*time - 0.1565*hrPeak
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27kline(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hrPeak, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25kline(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hrPeak, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4710,19 +4560,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5p
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("kline", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_kline); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_kline); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27kline)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25kline)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hrPeak); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 99, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hrPeak); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -4737,7 +4587,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5p
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 99, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -4748,11 +4598,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5p
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4761,29 +4611,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5p
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":100
+  /* "pyfit/cardio/respiration.pyx":97
  * 
- *     cpdef float kline(self, float time, float hrPeak):
+ *     cpdef double kline(self, double time, double hrPeak):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*0.0 - 3.2649*time - 0.1565*hrPeak
  *         return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*1.0 - 3.2649*time - 0.1565*hrPeak
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_10) {
 
-    /* "pyfit/cardio/respiration.pyx":101
- *     cpdef float kline(self, float time, float hrPeak):
+    /* "pyfit/cardio/respiration.pyx":98
+ *     cpdef double kline(self, double time, double hrPeak):
  *         if self.gender == Gender.Female:
  *             return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*0.0 - 3.2649*time - 0.1565*hrPeak             # <<<<<<<<<<<<<<
  *         return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*1.0 - 3.2649*time - 0.1565*hrPeak
@@ -4792,29 +4642,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5p
     __pyx_r = (((((132.853 - (0.0769 * __pyx_v_self->weight)) - (0.3877 * __pyx_v_self->age)) + (6.315 * 0.0)) - (3.2649 * __pyx_v_time)) - (0.1565 * __pyx_v_hrPeak));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":100
+    /* "pyfit/cardio/respiration.pyx":97
  * 
- *     cpdef float kline(self, float time, float hrPeak):
+ *     cpdef double kline(self, double time, double hrPeak):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*0.0 - 3.2649*time - 0.1565*hrPeak
  *         return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*1.0 - 3.2649*time - 0.1565*hrPeak
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":102
+  /* "pyfit/cardio/respiration.pyx":99
  *         if self.gender == Gender.Female:
  *             return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*0.0 - 3.2649*time - 0.1565*hrPeak
  *         return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*1.0 - 3.2649*time - 0.1565*hrPeak             # <<<<<<<<<<<<<<
  * 
- *     cpdef float larsen(self, float time, float hr):
+ *     cpdef double larsen(self, double time, double hr):
  */
   __pyx_r = (((((132.853 - (0.0769 * __pyx_v_self->weight)) - (0.3877 * __pyx_v_self->age)) + (6.315 * 1.0)) - (3.2649 * __pyx_v_time)) - (0.1565 * __pyx_v_hrPeak));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":99
+  /* "pyfit/cardio/respiration.pyx":96
  *         return 15.1+(21.8*speed)-(0.327*hr)-(0.263*self.age)+( 0.00504*(hr*self.age) )+(5.48*1.0)
  * 
- *     cpdef float kline(self, float time, float hrPeak):             # <<<<<<<<<<<<<<
+ *     cpdef double kline(self, double time, double hrPeak):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*0.0 - 3.2649*time - 0.1565*hrPeak
  */
@@ -4836,10 +4686,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(struct __pyx_obj_5p
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27kline(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27kline(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_time;
-  float __pyx_v_hrPeak;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25kline(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25kline(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_time;
+  double __pyx_v_hrPeak;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("kline (wrapper)", 0);
@@ -4863,11 +4713,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27kline(PyObject *__
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hrPeak)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("kline", 1, 2, 2, 1); __PYX_ERR(0, 99, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("kline", 1, 2, 2, 1); __PYX_ERR(0, 96, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "kline") < 0)) __PYX_ERR(0, 99, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "kline") < 0)) __PYX_ERR(0, 96, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -4875,31 +4725,31 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27kline(PyObject *__
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_time = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L3_error)
-    __pyx_v_hrPeak = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_hrPeak == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L3_error)
+    __pyx_v_hrPeak = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_hrPeak == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("kline", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 99, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("kline", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 96, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.kline", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_26kline(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_time, __pyx_v_hrPeak);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_24kline(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_time, __pyx_v_hrPeak);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_26kline(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hrPeak) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_24kline(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hrPeak) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("kline", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(__pyx_v_self, __pyx_v_time, __pyx_v_hrPeak, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_kline(__pyx_v_self, __pyx_v_time, __pyx_v_hrPeak, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4916,17 +4766,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_26kline(struct __pyx
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":104
+/* "pyfit/cardio/respiration.pyx":101
  *         return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*1.0 - 3.2649*time - 0.1565*hrPeak
  * 
- *     cpdef float larsen(self, float time, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double larsen(self, double time, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 100.16 + (7.30*0.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr)
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29larsen(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hr, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27larsen(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4936,19 +4786,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("larsen", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_larsen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_larsen); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29larsen)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27larsen)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 104, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -4963,7 +4813,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 104, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -4974,11 +4824,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4987,29 +4837,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":105
+  /* "pyfit/cardio/respiration.pyx":102
  * 
- *     cpdef float larsen(self, float time, float hr):
+ *     cpdef double larsen(self, double time, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 100.16 + (7.30*0.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr)
  *         return 100.16 + (7.30*1.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr);
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_10) {
 
-    /* "pyfit/cardio/respiration.pyx":106
- *     cpdef float larsen(self, float time, float hr):
+    /* "pyfit/cardio/respiration.pyx":103
+ *     cpdef double larsen(self, double time, double hr):
  *         if self.gender == Gender.Female:
  *             return 100.16 + (7.30*0.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr)             # <<<<<<<<<<<<<<
  *         return 100.16 + (7.30*1.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr);
@@ -5018,29 +4868,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5
     __pyx_r = ((((100.16 + (7.30 * 0.0)) - (0.164 * __pyx_v_self->weight)) - (1.273 * __pyx_v_time)) - (0.1563 * __pyx_v_hr));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":105
+    /* "pyfit/cardio/respiration.pyx":102
  * 
- *     cpdef float larsen(self, float time, float hr):
+ *     cpdef double larsen(self, double time, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 100.16 + (7.30*0.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr)
  *         return 100.16 + (7.30*1.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr);
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":107
+  /* "pyfit/cardio/respiration.pyx":104
  *         if self.gender == Gender.Female:
  *             return 100.16 + (7.30*0.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr)
  *         return 100.16 + (7.30*1.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr);             # <<<<<<<<<<<<<<
  * 
- *     cpdef float astrandStep(self, float hr):
+ *     cpdef double astrandStep(self, double hr):
  */
   __pyx_r = ((((100.16 + (7.30 * 1.0)) - (0.164 * __pyx_v_self->weight)) - (1.273 * __pyx_v_time)) - (0.1563 * __pyx_v_hr));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":104
+  /* "pyfit/cardio/respiration.pyx":101
  *         return 132.853 - 0.0769*self.weight - 0.3877*self.age + 6.315*1.0 - 3.2649*time - 0.1565*hrPeak
  * 
- *     cpdef float larsen(self, float time, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double larsen(self, double time, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 100.16 + (7.30*0.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr)
  */
@@ -5062,10 +4912,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(struct __pyx_obj_5
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29larsen(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29larsen(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_time;
-  float __pyx_v_hr;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27larsen(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27larsen(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_time;
+  double __pyx_v_hr;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("larsen (wrapper)", 0);
@@ -5089,11 +4939,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29larsen(PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("larsen", 1, 2, 2, 1); __PYX_ERR(0, 104, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("larsen", 1, 2, 2, 1); __PYX_ERR(0, 101, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "larsen") < 0)) __PYX_ERR(0, 104, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "larsen") < 0)) __PYX_ERR(0, 101, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -5101,31 +4951,31 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29larsen(PyObject *_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_time = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L3_error)
-    __pyx_v_hr = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_hr == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L3_error)
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("larsen", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 104, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("larsen", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 101, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.larsen", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_28larsen(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_time, __pyx_v_hr);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_26larsen(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_time, __pyx_v_hr);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_28larsen(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hr) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_26larsen(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hr) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("larsen", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(__pyx_v_self, __pyx_v_time, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen(__pyx_v_self, __pyx_v_time, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5142,17 +4992,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_28larsen(struct __py
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":109
+/* "pyfit/cardio/respiration.pyx":106
  *         return 100.16 + (7.30*1.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr);
  * 
- *     cpdef float astrandStep(self, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double astrandStep(self, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 3.750*((self.weight+3)/(hr-65))
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31astrandStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29astrandStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5160,18 +5010,18 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("astrandStep", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_astrandStep); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_astrandStep); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31astrandStep)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29astrandStep)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 106, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -5185,22 +5035,22 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 106, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 106, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5209,29 +5059,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":110
+  /* "pyfit/cardio/respiration.pyx":107
  * 
- *     cpdef float astrandStep(self, float hr):
+ *     cpdef double astrandStep(self, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 3.750*((self.weight+3)/(hr-65))
  *         return 3.744*((self.weight+5)/(hr-62))
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_8) {
 
-    /* "pyfit/cardio/respiration.pyx":111
- *     cpdef float astrandStep(self, float hr):
+    /* "pyfit/cardio/respiration.pyx":108
+ *     cpdef double astrandStep(self, double hr):
  *         if self.gender == Gender.Female:
  *             return 3.750*((self.weight+3)/(hr-65))             # <<<<<<<<<<<<<<
  *         return 3.744*((self.weight+5)/(hr-62))
@@ -5241,40 +5091,40 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_
     __pyx_t_9 = (__pyx_v_hr - 65.0);
     if (unlikely(__pyx_t_9 == 0)) {
       PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-      __PYX_ERR(0, 111, __pyx_L1_error)
+      __PYX_ERR(0, 108, __pyx_L1_error)
     }
     __pyx_r = (3.750 * (__pyx_t_7 / __pyx_t_9));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":110
+    /* "pyfit/cardio/respiration.pyx":107
  * 
- *     cpdef float astrandStep(self, float hr):
+ *     cpdef double astrandStep(self, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 3.750*((self.weight+3)/(hr-65))
  *         return 3.744*((self.weight+5)/(hr-62))
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":112
+  /* "pyfit/cardio/respiration.pyx":109
  *         if self.gender == Gender.Female:
  *             return 3.750*((self.weight+3)/(hr-65))
  *         return 3.744*((self.weight+5)/(hr-62))             # <<<<<<<<<<<<<<
  * 
- *     cpdef float qcStep(self, float hr):
+ *     cpdef double qcStep(self, double hr):
  */
   __pyx_t_9 = (__pyx_v_self->weight + 5.0);
   __pyx_t_7 = (__pyx_v_hr - 62.0);
   if (unlikely(__pyx_t_7 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 112, __pyx_L1_error)
+    __PYX_ERR(0, 109, __pyx_L1_error)
   }
   __pyx_r = (3.744 * (__pyx_t_9 / __pyx_t_7));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":109
+  /* "pyfit/cardio/respiration.pyx":106
  *         return 100.16 + (7.30*1.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr);
  * 
- *     cpdef float astrandStep(self, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double astrandStep(self, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 3.750*((self.weight+3)/(hr-65))
  */
@@ -5295,14 +5145,14 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(struct __pyx_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31astrandStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31astrandStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
-  float __pyx_v_hr;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29astrandStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29astrandStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("astrandStep (wrapper)", 0);
   assert(__pyx_arg_hr); {
-    __pyx_v_hr = __pyx_PyFloat_AsFloat(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L3_error)
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 106, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5310,20 +5160,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31astrandStep(PyObje
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_30astrandStep(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_hr));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_28astrandStep(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_hr));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_30astrandStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_28astrandStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("astrandStep", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5340,17 +5190,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_30astrandStep(struct
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":114
+/* "pyfit/cardio/respiration.pyx":111
  *         return 3.744*((self.weight+5)/(hr-62))
  * 
- *     cpdef float qcStep(self, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double qcStep(self, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 65.81-(0.1847 * hr)
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33qcStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31qcStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5358,17 +5208,17 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("qcStep", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_qcStep); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_qcStep); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33qcStep)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31qcStep)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -5382,22 +5232,22 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 114, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 111, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 114, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 111, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5406,29 +5256,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":115
+  /* "pyfit/cardio/respiration.pyx":112
  * 
- *     cpdef float qcStep(self, float hr):
+ *     cpdef double qcStep(self, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 65.81-(0.1847 * hr)
  *         return 111.33 - (0.42 * hr)
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_8) {
 
-    /* "pyfit/cardio/respiration.pyx":116
- *     cpdef float qcStep(self, float hr):
+    /* "pyfit/cardio/respiration.pyx":113
+ *     cpdef double qcStep(self, double hr):
  *         if self.gender == Gender.Female:
  *             return 65.81-(0.1847 * hr)             # <<<<<<<<<<<<<<
  *         return 111.33 - (0.42 * hr)
@@ -5437,29 +5287,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5
     __pyx_r = (65.81 - (0.1847 * __pyx_v_hr));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":115
+    /* "pyfit/cardio/respiration.pyx":112
  * 
- *     cpdef float qcStep(self, float hr):
+ *     cpdef double qcStep(self, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 65.81-(0.1847 * hr)
  *         return 111.33 - (0.42 * hr)
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":117
+  /* "pyfit/cardio/respiration.pyx":114
  *         if self.gender == Gender.Female:
  *             return 65.81-(0.1847 * hr)
  *         return 111.33 - (0.42 * hr)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float georgeRW(self, float time):
+ *     cpdef double georgeRW(self, double time):
  */
   __pyx_r = (111.33 - (0.42 * __pyx_v_hr));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":114
+  /* "pyfit/cardio/respiration.pyx":111
  *         return 3.744*((self.weight+5)/(hr-62))
  * 
- *     cpdef float qcStep(self, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double qcStep(self, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 65.81-(0.1847 * hr)
  */
@@ -5480,14 +5330,14 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(struct __pyx_obj_5
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33qcStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33qcStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
-  float __pyx_v_hr;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31qcStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31qcStep(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("qcStep (wrapper)", 0);
   assert(__pyx_arg_hr); {
-    __pyx_v_hr = __pyx_PyFloat_AsFloat(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 114, __pyx_L3_error)
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 111, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5495,20 +5345,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33qcStep(PyObject *_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_32qcStep(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_hr));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_30qcStep(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_hr));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_32qcStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_hr) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_30qcStep(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_hr) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("qcStep", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5525,17 +5375,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_32qcStep(struct __py
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":119
+/* "pyfit/cardio/respiration.pyx":116
  *         return 111.33 - (0.42 * hr)
  * 
- *     cpdef float georgeRW(self, float time):             # <<<<<<<<<<<<<<
+ *     cpdef double georgeRW(self, double time):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*0.0)
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeRW(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33georgeRW(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5543,17 +5393,17 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("georgeRW", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_georgeRW); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_georgeRW); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeRW)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33georgeRW)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 116, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -5567,22 +5417,22 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 119, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 116, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 116, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5591,29 +5441,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":120
+  /* "pyfit/cardio/respiration.pyx":117
  * 
- *     cpdef float georgeRW(self, float time):
+ *     cpdef double georgeRW(self, double time):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*0.0)
  *         return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*1.0)
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_8) {
 
-    /* "pyfit/cardio/respiration.pyx":121
- *     cpdef float georgeRW(self, float time):
+    /* "pyfit/cardio/respiration.pyx":118
+ *     cpdef double georgeRW(self, double time):
  *         if self.gender == Gender.Female:
  *             return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*0.0)             # <<<<<<<<<<<<<<
  *         return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*1.0)
@@ -5622,29 +5472,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj
     __pyx_r = (((88.02 - (0.1656 * __pyx_v_self->weight)) - (2.76 * __pyx_v_time)) + (3.716 * 0.0));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":120
+    /* "pyfit/cardio/respiration.pyx":117
  * 
- *     cpdef float georgeRW(self, float time):
+ *     cpdef double georgeRW(self, double time):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*0.0)
  *         return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*1.0)
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":122
+  /* "pyfit/cardio/respiration.pyx":119
  *         if self.gender == Gender.Female:
  *             return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*0.0)
  *         return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*1.0)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float georgeSteady(self, float time, float hr):
+ *     cpdef double georgeSteady(self, double time, double hr):
  */
   __pyx_r = (((88.02 - (0.1656 * __pyx_v_self->weight)) - (2.76 * __pyx_v_time)) + (3.716 * 1.0));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":119
+  /* "pyfit/cardio/respiration.pyx":116
  *         return 111.33 - (0.42 * hr)
  * 
- *     cpdef float georgeRW(self, float time):             # <<<<<<<<<<<<<<
+ *     cpdef double georgeRW(self, double time):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*0.0)
  */
@@ -5665,14 +5515,14 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(struct __pyx_obj
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeRW(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeRW(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
-  float __pyx_v_time;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33georgeRW(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33georgeRW(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
+  double __pyx_v_time;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("georgeRW (wrapper)", 0);
   assert(__pyx_arg_time); {
-    __pyx_v_time = __pyx_PyFloat_AsFloat(__pyx_arg_time); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(__pyx_arg_time); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 116, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5680,20 +5530,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeRW(PyObject 
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_34georgeRW(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_time));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_32georgeRW(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_time));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_34georgeRW(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_32georgeRW(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("georgeRW", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5710,17 +5560,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_34georgeRW(struct __
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":124
+/* "pyfit/cardio/respiration.pyx":121
  *         return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*1.0)
  * 
- *     cpdef float georgeSteady(self, float time, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double georgeSteady(self, double time, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeSteady(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hr, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeSteady(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5730,19 +5580,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("georgeSteady", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_georgeSteady); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_georgeSteady); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeSteady)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeSteady)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -5757,7 +5607,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 121, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -5768,11 +5618,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 121, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5781,29 +5631,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":125
+  /* "pyfit/cardio/respiration.pyx":122
  * 
- *     cpdef float georgeSteady(self, float time, float hr):
+ *     cpdef double georgeSteady(self, double time, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr
  *         return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr + 8.344
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_10) {
 
-    /* "pyfit/cardio/respiration.pyx":126
- *     cpdef float georgeSteady(self, float time, float hr):
+    /* "pyfit/cardio/respiration.pyx":123
+ *     cpdef double georgeSteady(self, double time, double hr):
  *         if self.gender == Gender.Female:
  *             return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr             # <<<<<<<<<<<<<<
  *         return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr + 8.344
@@ -5812,29 +5662,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx
     __pyx_r = (((100.5 - (0.1636 * __pyx_v_self->weight)) - (1.438 * __pyx_v_time)) - (0.1928 * __pyx_v_hr));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":125
+    /* "pyfit/cardio/respiration.pyx":122
  * 
- *     cpdef float georgeSteady(self, float time, float hr):
+ *     cpdef double georgeSteady(self, double time, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr
  *         return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr + 8.344
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":127
+  /* "pyfit/cardio/respiration.pyx":124
  *         if self.gender == Gender.Female:
  *             return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr
  *         return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr + 8.344             # <<<<<<<<<<<<<<
  * 
- *     cpdef float georgeTreadmill(self, float speed, float hr):
+ *     cpdef double georgeTreadmill(self, double speed, double hr):
  */
   __pyx_r = ((((100.5 - (0.1636 * __pyx_v_self->weight)) - (1.438 * __pyx_v_time)) - (0.1928 * __pyx_v_hr)) + 8.344);
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":124
+  /* "pyfit/cardio/respiration.pyx":121
  *         return 88.02 - (0.1656*self.weight) - (2.76*time) + (3.716*1.0)
  * 
- *     cpdef float georgeSteady(self, float time, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double georgeSteady(self, double time, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr
  */
@@ -5856,10 +5706,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(struct __pyx
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeSteady(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeSteady(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_time;
-  float __pyx_v_hr;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeSteady(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeSteady(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_time;
+  double __pyx_v_hr;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("georgeSteady (wrapper)", 0);
@@ -5883,11 +5733,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeSteady(PyObj
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("georgeSteady", 1, 2, 2, 1); __PYX_ERR(0, 124, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("georgeSteady", 1, 2, 2, 1); __PYX_ERR(0, 121, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "georgeSteady") < 0)) __PYX_ERR(0, 124, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "georgeSteady") < 0)) __PYX_ERR(0, 121, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -5895,31 +5745,31 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeSteady(PyObj
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_time = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L3_error)
-    __pyx_v_hr = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_hr == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 121, __pyx_L3_error)
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 121, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("georgeSteady", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 124, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("georgeSteady", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 121, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.georgeSteady", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_36georgeSteady(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_time, __pyx_v_hr);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_34georgeSteady(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_time, __pyx_v_hr);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_36georgeSteady(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_hr) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_34georgeSteady(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_hr) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("georgeSteady", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(__pyx_v_self, __pyx_v_time, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady(__pyx_v_self, __pyx_v_time, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5936,17 +5786,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_36georgeSteady(struc
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":129
+/* "pyfit/cardio/respiration.pyx":126
  *         return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr + 8.344
  * 
- *     cpdef float georgeTreadmill(self, float speed, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double georgeTreadmill(self, double speed, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 54.07-(0.1938* self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*0.0)
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39georgeTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_hr, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5956,19 +5806,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("georgeTreadmill", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_georgeTreadmill); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_georgeTreadmill); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39georgeTreadmill)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_speed); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 129, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeTreadmill)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_speed); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -5983,7 +5833,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -5994,11 +5844,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 129, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6007,29 +5857,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":130
+  /* "pyfit/cardio/respiration.pyx":127
  * 
- *     cpdef float georgeTreadmill(self, float speed, float hr):
+ *     cpdef double georgeTreadmill(self, double speed, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 54.07-(0.1938* self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*0.0)
  *         return 54.07-(0.1938*self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*1.0)
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_10) {
 
-    /* "pyfit/cardio/respiration.pyx":131
- *     cpdef float georgeTreadmill(self, float speed, float hr):
+    /* "pyfit/cardio/respiration.pyx":128
+ *     cpdef double georgeTreadmill(self, double speed, double hr):
  *         if self.gender == Gender.Female:
  *             return 54.07-(0.1938* self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*0.0)             # <<<<<<<<<<<<<<
  *         return 54.07-(0.1938*self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*1.0)
@@ -6038,29 +5888,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __
     __pyx_r = ((((54.07 - (0.1938 * __pyx_v_self->weight)) - (4.47 * __pyx_v_speed)) + (0.01453 * __pyx_v_hr)) + (7.062 * 0.0));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":130
+    /* "pyfit/cardio/respiration.pyx":127
  * 
- *     cpdef float georgeTreadmill(self, float speed, float hr):
+ *     cpdef double georgeTreadmill(self, double speed, double hr):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 54.07-(0.1938* self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*0.0)
  *         return 54.07-(0.1938*self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*1.0)
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":132
+  /* "pyfit/cardio/respiration.pyx":129
  *         if self.gender == Gender.Female:
  *             return 54.07-(0.1938* self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*0.0)
  *         return 54.07-(0.1938*self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*1.0)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float treadmillSubmaxSingleStage(self, float sm1, float hr1, float hrmax):
+ *     cpdef double treadmillSubmaxSingleStage(self, double sm1, double hr1, double hrmax):
  */
   __pyx_r = ((((54.07 - (0.1938 * __pyx_v_self->weight)) - (4.47 * __pyx_v_speed)) + (0.01453 * __pyx_v_hr)) + (7.062 * 1.0));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":129
+  /* "pyfit/cardio/respiration.pyx":126
  *         return 100.5 - 0.1636*self.weight - 1.438 * time - 0.1928 * hr + 8.344
  * 
- *     cpdef float georgeTreadmill(self, float speed, float hr):             # <<<<<<<<<<<<<<
+ *     cpdef double georgeTreadmill(self, double speed, double hr):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 54.07-(0.1938* self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*0.0)
  */
@@ -6082,10 +5932,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(struct __
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39georgeTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39georgeTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_speed;
-  float __pyx_v_hr;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeTreadmill(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_speed;
+  double __pyx_v_hr;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("georgeTreadmill (wrapper)", 0);
@@ -6109,11 +5959,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39georgeTreadmill(Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hr)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("georgeTreadmill", 1, 2, 2, 1); __PYX_ERR(0, 129, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("georgeTreadmill", 1, 2, 2, 1); __PYX_ERR(0, 126, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "georgeTreadmill") < 0)) __PYX_ERR(0, 129, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "georgeTreadmill") < 0)) __PYX_ERR(0, 126, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -6121,31 +5971,31 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39georgeTreadmill(Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_speed = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_speed == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 129, __pyx_L3_error)
-    __pyx_v_hr = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_hr == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 129, __pyx_L3_error)
+    __pyx_v_speed = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_speed == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 126, __pyx_L3_error)
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 126, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("georgeTreadmill", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 129, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("georgeTreadmill", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 126, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.georgeTreadmill", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_38georgeTreadmill(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_speed, __pyx_v_hr);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_36georgeTreadmill(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_speed, __pyx_v_hr);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_38georgeTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, float __pyx_v_hr) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_36georgeTreadmill(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, double __pyx_v_hr) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("georgeTreadmill", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(__pyx_v_self, __pyx_v_speed, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill(__pyx_v_self, __pyx_v_speed, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6162,17 +6012,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_38georgeTreadmill(st
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":134
+/* "pyfit/cardio/respiration.pyx":131
  *         return 54.07-(0.1938*self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*1.0)
  * 
- *     cpdef float treadmillSubmaxSingleStage(self, float sm1, float hr1, float hrmax):             # <<<<<<<<<<<<<<
+ *     cpdef double treadmillSubmaxSingleStage(self, double sm1, double hr1, double hrmax):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return sm1*( (hrmax-72) / (hr1-72) )
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxSingleStage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_sm1, float __pyx_v_hr1, float __pyx_v_hrmax, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39treadmillSubmaxSingleStage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_sm1, double __pyx_v_hr1, double __pyx_v_hrmax, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6183,22 +6033,22 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStag
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   int __pyx_t_11;
-  float __pyx_t_12;
+  double __pyx_t_12;
   __Pyx_RefNannySetupContext("treadmillSubmaxSingleStage", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_treadmillSubmaxSingleStage); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_treadmillSubmaxSingleStage); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxSingleStage)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_sm1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39treadmillSubmaxSingleStage)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_sm1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_hrmax); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_hrmax); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_6 = __pyx_t_1; __pyx_t_7 = NULL;
@@ -6213,7 +6063,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStag
           __pyx_t_8 = 1;
         }
       }
-      __pyx_t_9 = PyTuple_New(3+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __pyx_t_9 = PyTuple_New(3+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       if (__pyx_t_7) {
         __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -6227,11 +6077,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStag
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6240,29 +6090,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStag
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":135
+  /* "pyfit/cardio/respiration.pyx":132
  * 
- *     cpdef float treadmillSubmaxSingleStage(self, float sm1, float hr1, float hrmax):
+ *     cpdef double treadmillSubmaxSingleStage(self, double sm1, double hr1, double hrmax):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return sm1*( (hrmax-72) / (hr1-72) )
  *         return sm1*( (hrmax-61) / (hr1-61) )
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_6, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_6, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 135, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_11) {
 
-    /* "pyfit/cardio/respiration.pyx":136
- *     cpdef float treadmillSubmaxSingleStage(self, float sm1, float hr1, float hrmax):
+    /* "pyfit/cardio/respiration.pyx":133
+ *     cpdef double treadmillSubmaxSingleStage(self, double sm1, double hr1, double hrmax):
  *         if self.gender == Gender.Female:
  *             return sm1*( (hrmax-72) / (hr1-72) )             # <<<<<<<<<<<<<<
  *         return sm1*( (hrmax-61) / (hr1-61) )
@@ -6272,40 +6122,40 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStag
     __pyx_t_12 = (__pyx_v_hr1 - 72.0);
     if (unlikely(__pyx_t_12 == 0)) {
       PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-      __PYX_ERR(0, 136, __pyx_L1_error)
+      __PYX_ERR(0, 133, __pyx_L1_error)
     }
     __pyx_r = (__pyx_v_sm1 * (__pyx_t_10 / __pyx_t_12));
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":135
+    /* "pyfit/cardio/respiration.pyx":132
  * 
- *     cpdef float treadmillSubmaxSingleStage(self, float sm1, float hr1, float hrmax):
+ *     cpdef double treadmillSubmaxSingleStage(self, double sm1, double hr1, double hrmax):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return sm1*( (hrmax-72) / (hr1-72) )
  *         return sm1*( (hrmax-61) / (hr1-61) )
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":137
+  /* "pyfit/cardio/respiration.pyx":134
  *         if self.gender == Gender.Female:
  *             return sm1*( (hrmax-72) / (hr1-72) )
  *         return sm1*( (hrmax-61) / (hr1-61) )             # <<<<<<<<<<<<<<
  * 
- *     cpdef float treadmillSubmaxVO2Multistage(self, float sm1, float hr1, float sm2, float hr2, float hrMax):
+ *     cpdef double treadmillSubmaxVO2Multistage(self, double sm1, double hr1, double sm2, double hr2, double hrMax):
  */
   __pyx_t_12 = (__pyx_v_hrmax - 61.0);
   __pyx_t_10 = (__pyx_v_hr1 - 61.0);
   if (unlikely(__pyx_t_10 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 137, __pyx_L1_error)
+    __PYX_ERR(0, 134, __pyx_L1_error)
   }
   __pyx_r = (__pyx_v_sm1 * (__pyx_t_12 / __pyx_t_10));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":134
+  /* "pyfit/cardio/respiration.pyx":131
  *         return 54.07-(0.1938*self.weight)-(4.47*speed)+( 0.01453*hr ) +(7.062*1.0)
  * 
- *     cpdef float treadmillSubmaxSingleStage(self, float sm1, float hr1, float hrmax):             # <<<<<<<<<<<<<<
+ *     cpdef double treadmillSubmaxSingleStage(self, double sm1, double hr1, double hrmax):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return sm1*( (hrmax-72) / (hr1-72) )
  */
@@ -6328,11 +6178,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStag
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxSingleStage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxSingleStage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_sm1;
-  float __pyx_v_hr1;
-  float __pyx_v_hrmax;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39treadmillSubmaxSingleStage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39treadmillSubmaxSingleStage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_sm1;
+  double __pyx_v_hr1;
+  double __pyx_v_hrmax;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("treadmillSubmaxSingleStage (wrapper)", 0);
@@ -6357,16 +6207,16 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxSin
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hr1)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxSingleStage", 1, 3, 3, 1); __PYX_ERR(0, 134, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxSingleStage", 1, 3, 3, 1); __PYX_ERR(0, 131, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hrmax)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxSingleStage", 1, 3, 3, 2); __PYX_ERR(0, 134, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxSingleStage", 1, 3, 3, 2); __PYX_ERR(0, 131, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "treadmillSubmaxSingleStage") < 0)) __PYX_ERR(0, 134, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "treadmillSubmaxSingleStage") < 0)) __PYX_ERR(0, 131, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -6375,32 +6225,32 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxSin
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_sm1 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_sm1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
-    __pyx_v_hr1 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_hr1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
-    __pyx_v_hrmax = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_hrmax == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
+    __pyx_v_sm1 = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_sm1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L3_error)
+    __pyx_v_hr1 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_hr1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L3_error)
+    __pyx_v_hrmax = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_hrmax == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("treadmillSubmaxSingleStage", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 134, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("treadmillSubmaxSingleStage", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 131, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.treadmillSubmaxSingleStage", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_40treadmillSubmaxSingleStage(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_sm1, __pyx_v_hr1, __pyx_v_hrmax);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_38treadmillSubmaxSingleStage(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_sm1, __pyx_v_hr1, __pyx_v_hrmax);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_40treadmillSubmaxSingleStage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_sm1, float __pyx_v_hr1, float __pyx_v_hrmax) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_38treadmillSubmaxSingleStage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_sm1, double __pyx_v_hr1, double __pyx_v_hrmax) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("treadmillSubmaxSingleStage", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStage(__pyx_v_self, __pyx_v_sm1, __pyx_v_hr1, __pyx_v_hrmax, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStage(__pyx_v_self, __pyx_v_sm1, __pyx_v_hr1, __pyx_v_hrmax, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6417,18 +6267,18 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_40treadmillSubmaxSin
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":139
+/* "pyfit/cardio/respiration.pyx":136
  *         return sm1*( (hrmax-61) / (hr1-61) )
  * 
- *     cpdef float treadmillSubmaxVO2Multistage(self, float sm1, float hr1, float sm2, float hr2, float hrMax):             # <<<<<<<<<<<<<<
- *         cdef float b = (sm2 - sm1) / (hr2 - hr1)
+ *     cpdef double treadmillSubmaxVO2Multistage(self, double sm1, double hr1, double sm2, double hr2, double hrMax):             # <<<<<<<<<<<<<<
+ *         cdef double b = (sm2 - sm1) / (hr2 - hr1)
  *         return sm2+b*(hrMax-hr2)
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43treadmillSubmaxVO2Multistage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multistage(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_sm1, float __pyx_v_hr1, float __pyx_v_sm2, float __pyx_v_hr2, float __pyx_v_hrMax, int __pyx_skip_dispatch) {
-  float __pyx_v_b;
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxVO2Multistage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multistage(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_sm1, double __pyx_v_hr1, double __pyx_v_sm2, double __pyx_v_hr2, double __pyx_v_hrMax, int __pyx_skip_dispatch) {
+  double __pyx_v_b;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6441,25 +6291,25 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multist
   PyObject *__pyx_t_9 = NULL;
   Py_ssize_t __pyx_t_10;
   PyObject *__pyx_t_11 = NULL;
-  float __pyx_t_12;
-  float __pyx_t_13;
+  double __pyx_t_12;
+  double __pyx_t_13;
   __Pyx_RefNannySetupContext("treadmillSubmaxVO2Multistage", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_treadmillSubmaxVO2Multistage); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_treadmillSubmaxVO2Multistage); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43treadmillSubmaxVO2Multistage)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_sm1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 139, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxVO2Multistage)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_sm1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 139, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_hr1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_sm2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 139, __pyx_L1_error)
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_sm2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = PyFloat_FromDouble(__pyx_v_hr2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 139, __pyx_L1_error)
+      __pyx_t_6 = PyFloat_FromDouble(__pyx_v_hr2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_7 = PyFloat_FromDouble(__pyx_v_hrMax); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 139, __pyx_L1_error)
+      __pyx_t_7 = PyFloat_FromDouble(__pyx_v_hrMax); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_8 = __pyx_t_1; __pyx_t_9 = NULL;
@@ -6474,7 +6324,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multist
           __pyx_t_10 = 1;
         }
       }
-      __pyx_t_11 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 139, __pyx_L1_error)
+      __pyx_t_11 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       if (__pyx_t_9) {
         __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
@@ -6494,11 +6344,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multist
       __pyx_t_5 = 0;
       __pyx_t_6 = 0;
       __pyx_t_7 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_12 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_12 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L1_error)
+      __pyx_t_12 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_12 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_12;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6507,10 +6357,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multist
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":140
+  /* "pyfit/cardio/respiration.pyx":137
  * 
- *     cpdef float treadmillSubmaxVO2Multistage(self, float sm1, float hr1, float sm2, float hr2, float hrMax):
- *         cdef float b = (sm2 - sm1) / (hr2 - hr1)             # <<<<<<<<<<<<<<
+ *     cpdef double treadmillSubmaxVO2Multistage(self, double sm1, double hr1, double sm2, double hr2, double hrMax):
+ *         cdef double b = (sm2 - sm1) / (hr2 - hr1)             # <<<<<<<<<<<<<<
  *         return sm2+b*(hrMax-hr2)
  * 
  */
@@ -6518,25 +6368,25 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multist
   __pyx_t_13 = (__pyx_v_hr2 - __pyx_v_hr1);
   if (unlikely(__pyx_t_13 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 140, __pyx_L1_error)
+    __PYX_ERR(0, 137, __pyx_L1_error)
   }
   __pyx_v_b = (__pyx_t_12 / __pyx_t_13);
 
-  /* "pyfit/cardio/respiration.pyx":141
- *     cpdef float treadmillSubmaxVO2Multistage(self, float sm1, float hr1, float sm2, float hr2, float hrMax):
- *         cdef float b = (sm2 - sm1) / (hr2 - hr1)
+  /* "pyfit/cardio/respiration.pyx":138
+ *     cpdef double treadmillSubmaxVO2Multistage(self, double sm1, double hr1, double sm2, double hr2, double hrMax):
+ *         cdef double b = (sm2 - sm1) / (hr2 - hr1)
  *         return sm2+b*(hrMax-hr2)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float curetonChild(self, float time):
+ *     cpdef double curetonChild(self, double time):
  */
   __pyx_r = (__pyx_v_sm2 + (__pyx_v_b * (__pyx_v_hrMax - __pyx_v_hr2)));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":139
+  /* "pyfit/cardio/respiration.pyx":136
  *         return sm1*( (hrmax-61) / (hr1-61) )
  * 
- *     cpdef float treadmillSubmaxVO2Multistage(self, float sm1, float hr1, float sm2, float hr2, float hrMax):             # <<<<<<<<<<<<<<
- *         cdef float b = (sm2 - sm1) / (hr2 - hr1)
+ *     cpdef double treadmillSubmaxVO2Multistage(self, double sm1, double hr1, double sm2, double hr2, double hrMax):             # <<<<<<<<<<<<<<
+ *         cdef double b = (sm2 - sm1) / (hr2 - hr1)
  *         return sm2+b*(hrMax-hr2)
  */
 
@@ -6560,13 +6410,13 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multist
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43treadmillSubmaxVO2Multistage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43treadmillSubmaxVO2Multistage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_sm1;
-  float __pyx_v_hr1;
-  float __pyx_v_sm2;
-  float __pyx_v_hr2;
-  float __pyx_v_hrMax;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxVO2Multistage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxVO2Multistage(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_sm1;
+  double __pyx_v_hr1;
+  double __pyx_v_sm2;
+  double __pyx_v_hr2;
+  double __pyx_v_hrMax;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("treadmillSubmaxVO2Multistage (wrapper)", 0);
@@ -6593,26 +6443,26 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43treadmillSubmaxVO2
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hr1)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, 1); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, 1); __PYX_ERR(0, 136, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_sm2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, 2); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, 2); __PYX_ERR(0, 136, __pyx_L3_error)
         }
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hr2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, 3); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, 3); __PYX_ERR(0, 136, __pyx_L3_error)
         }
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hrMax)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, 4); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, 4); __PYX_ERR(0, 136, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "treadmillSubmaxVO2Multistage") < 0)) __PYX_ERR(0, 139, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "treadmillSubmaxVO2Multistage") < 0)) __PYX_ERR(0, 136, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -6623,34 +6473,34 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43treadmillSubmaxVO2
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_sm1 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_sm1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
-    __pyx_v_hr1 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_hr1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
-    __pyx_v_sm2 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_sm2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
-    __pyx_v_hr2 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_hr2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
-    __pyx_v_hrMax = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_hrMax == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
+    __pyx_v_sm1 = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_sm1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
+    __pyx_v_hr1 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_hr1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
+    __pyx_v_sm2 = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_sm2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
+    __pyx_v_hr2 = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_hr2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
+    __pyx_v_hrMax = __pyx_PyFloat_AsDouble(values[4]); if (unlikely((__pyx_v_hrMax == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 139, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("treadmillSubmaxVO2Multistage", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 136, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.treadmillSubmaxVO2Multistage", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_42treadmillSubmaxVO2Multistage(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_sm1, __pyx_v_hr1, __pyx_v_sm2, __pyx_v_hr2, __pyx_v_hrMax);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_40treadmillSubmaxVO2Multistage(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_sm1, __pyx_v_hr1, __pyx_v_sm2, __pyx_v_hr2, __pyx_v_hrMax);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_42treadmillSubmaxVO2Multistage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_sm1, float __pyx_v_hr1, float __pyx_v_sm2, float __pyx_v_hr2, float __pyx_v_hrMax) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_40treadmillSubmaxVO2Multistage(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_sm1, double __pyx_v_hr1, double __pyx_v_sm2, double __pyx_v_hr2, double __pyx_v_hrMax) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("treadmillSubmaxVO2Multistage", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multistage(__pyx_v_self, __pyx_v_sm1, __pyx_v_hr1, __pyx_v_sm2, __pyx_v_hr2, __pyx_v_hrMax, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multistage(__pyx_v_self, __pyx_v_sm1, __pyx_v_hr1, __pyx_v_sm2, __pyx_v_hr2, __pyx_v_hrMax, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6667,18 +6517,18 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_42treadmillSubmaxVO2
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":143
+/* "pyfit/cardio/respiration.pyx":140
  *         return sm2+b*(hrMax-hr2)
  * 
- *     cpdef float curetonChild(self, float time):             # <<<<<<<<<<<<<<
- *         cdef float bmi = (self.weight/pow(self.height/100, 2))
+ *     cpdef double curetonChild(self, double time):             # <<<<<<<<<<<<<<
+ *         cdef double bmi = (self.weight/pow(self.height/100, 2))
  *         return 108.94 - (8.41 * time) + 0.34 * 108.94 - (8.41 * time) + 0.34 * pow(time,2) + 0.21*self.age - (0.84*bmi)
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45curetonChild(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch) {
-  float __pyx_v_bmi;
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43curetonChild(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch) {
+  double __pyx_v_bmi;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6686,17 +6536,16 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(struct __pyx
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  double __pyx_t_8;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("curetonChild", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_curetonChild); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_curetonChild); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45curetonChild)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43curetonChild)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 140, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6710,22 +6559,22 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(struct __pyx
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 143, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 140, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6734,35 +6583,35 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(struct __pyx
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":144
+  /* "pyfit/cardio/respiration.pyx":141
  * 
- *     cpdef float curetonChild(self, float time):
- *         cdef float bmi = (self.weight/pow(self.height/100, 2))             # <<<<<<<<<<<<<<
+ *     cpdef double curetonChild(self, double time):
+ *         cdef double bmi = (self.weight/pow(self.height/100, 2))             # <<<<<<<<<<<<<<
  *         return 108.94 - (8.41 * time) + 0.34 * 108.94 - (8.41 * time) + 0.34 * pow(time,2) + 0.21*self.age - (0.84*bmi)
  * 
  */
-  __pyx_t_8 = pow((__pyx_v_self->height / 100.0), 2.0);
-  if (unlikely(__pyx_t_8 == 0)) {
+  __pyx_t_7 = pow((__pyx_v_self->height / 100.0), 2.0);
+  if (unlikely(__pyx_t_7 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 144, __pyx_L1_error)
+    __PYX_ERR(0, 141, __pyx_L1_error)
   }
-  __pyx_v_bmi = (__pyx_v_self->weight / __pyx_t_8);
+  __pyx_v_bmi = (__pyx_v_self->weight / __pyx_t_7);
 
-  /* "pyfit/cardio/respiration.pyx":145
- *     cpdef float curetonChild(self, float time):
- *         cdef float bmi = (self.weight/pow(self.height/100, 2))
+  /* "pyfit/cardio/respiration.pyx":142
+ *     cpdef double curetonChild(self, double time):
+ *         cdef double bmi = (self.weight/pow(self.height/100, 2))
  *         return 108.94 - (8.41 * time) + 0.34 * 108.94 - (8.41 * time) + 0.34 * pow(time,2) + 0.21*self.age - (0.84*bmi)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float balke(self, float time):
+ *     cpdef double balke(self, double time):
  */
   __pyx_r = ((((((108.94 - (8.41 * __pyx_v_time)) + (0.34 * 108.94)) - (8.41 * __pyx_v_time)) + (0.34 * pow(__pyx_v_time, 2.0))) + (0.21 * __pyx_v_self->age)) - (0.84 * __pyx_v_bmi));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":143
+  /* "pyfit/cardio/respiration.pyx":140
  *         return sm2+b*(hrMax-hr2)
  * 
- *     cpdef float curetonChild(self, float time):             # <<<<<<<<<<<<<<
- *         cdef float bmi = (self.weight/pow(self.height/100, 2))
+ *     cpdef double curetonChild(self, double time):             # <<<<<<<<<<<<<<
+ *         cdef double bmi = (self.weight/pow(self.height/100, 2))
  *         return 108.94 - (8.41 * time) + 0.34 * 108.94 - (8.41 * time) + 0.34 * pow(time,2) + 0.21*self.age - (0.84*bmi)
  */
 
@@ -6782,14 +6631,14 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(struct __pyx
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45curetonChild(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45curetonChild(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
-  float __pyx_v_time;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43curetonChild(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43curetonChild(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
+  double __pyx_v_time;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("curetonChild (wrapper)", 0);
   assert(__pyx_arg_time); {
-    __pyx_v_time = __pyx_PyFloat_AsFloat(__pyx_arg_time); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(__pyx_arg_time); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6797,20 +6646,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45curetonChild(PyObj
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_44curetonChild(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_time));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_42curetonChild(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_time));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_44curetonChild(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_42curetonChild(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("curetonChild", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6827,17 +6676,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_44curetonChild(struc
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":147
+/* "pyfit/cardio/respiration.pyx":144
  *         return 108.94 - (8.41 * time) + 0.34 * 108.94 - (8.41 * time) + 0.34 * pow(time,2) + 0.21*self.age - (0.84*bmi)
  * 
- *     cpdef float balke(self, float time):             # <<<<<<<<<<<<<<
+ *     cpdef double balke(self, double time):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 1.38 * time + 5.22
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45balke(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6845,17 +6694,17 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5p
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("balke", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_balke); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_balke); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 147, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45balke)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6869,22 +6718,22 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5p
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 144, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 144, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 144, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 144, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6893,29 +6742,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5p
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":148
+  /* "pyfit/cardio/respiration.pyx":145
  * 
- *     cpdef float balke(self, float time):
+ *     cpdef double balke(self, double time):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 1.38 * time + 5.22
  *         return 1.444 * time + 14.99
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_8) {
 
-    /* "pyfit/cardio/respiration.pyx":149
- *     cpdef float balke(self, float time):
+    /* "pyfit/cardio/respiration.pyx":146
+ *     cpdef double balke(self, double time):
  *         if self.gender == Gender.Female:
  *             return 1.38 * time + 5.22             # <<<<<<<<<<<<<<
  *         return 1.444 * time + 14.99
@@ -6924,29 +6773,29 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5p
     __pyx_r = ((1.38 * __pyx_v_time) + 5.22);
     goto __pyx_L0;
 
-    /* "pyfit/cardio/respiration.pyx":148
+    /* "pyfit/cardio/respiration.pyx":145
  * 
- *     cpdef float balke(self, float time):
+ *     cpdef double balke(self, double time):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 1.38 * time + 5.22
  *         return 1.444 * time + 14.99
  */
   }
 
-  /* "pyfit/cardio/respiration.pyx":150
+  /* "pyfit/cardio/respiration.pyx":147
  *         if self.gender == Gender.Female:
  *             return 1.38 * time + 5.22
  *         return 1.444 * time + 14.99             # <<<<<<<<<<<<<<
  * 
- *     cpdef float balke15MinRun(self, float distance):
+ *     cpdef double balke15MinRun(self, double distance):
  */
   __pyx_r = ((1.444 * __pyx_v_time) + 14.99);
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":147
+  /* "pyfit/cardio/respiration.pyx":144
  *         return 108.94 - (8.41 * time) + 0.34 * 108.94 - (8.41 * time) + 0.34 * pow(time,2) + 0.21*self.age - (0.84*bmi)
  * 
- *     cpdef float balke(self, float time):             # <<<<<<<<<<<<<<
+ *     cpdef double balke(self, double time):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 1.38 * time + 5.22
  */
@@ -6967,14 +6816,14 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(struct __pyx_obj_5p
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
-  float __pyx_v_time;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45balke(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45balke(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
+  double __pyx_v_time;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("balke (wrapper)", 0);
   assert(__pyx_arg_time); {
-    __pyx_v_time = __pyx_PyFloat_AsFloat(__pyx_arg_time); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(__pyx_arg_time); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 144, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6982,20 +6831,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke(PyObject *__
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_46balke(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_time));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_44balke(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_time));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_46balke(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_44balke(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("balke", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_balke(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7012,17 +6861,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_46balke(struct __pyx
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":152
+/* "pyfit/cardio/respiration.pyx":149
  *         return 1.444 * time + 14.99
  * 
- *     cpdef float balke15MinRun(self, float distance):             # <<<<<<<<<<<<<<
+ *     cpdef double balke15MinRun(self, double distance):             # <<<<<<<<<<<<<<
  *         return 0.0178*distance + 9.6
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49balke15MinRun(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_distance, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke15MinRun(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_distance, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7030,16 +6879,16 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(CYTHON_UNUS
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("balke15MinRun", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_balke15MinRun); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_balke15MinRun); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49balke15MinRun)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_distance); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke15MinRun)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_distance); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 149, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -7053,22 +6902,22 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(CYTHON_UNUS
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 152, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7077,20 +6926,20 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(CYTHON_UNUS
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":153
+  /* "pyfit/cardio/respiration.pyx":150
  * 
- *     cpdef float balke15MinRun(self, float distance):
+ *     cpdef double balke15MinRun(self, double distance):
  *         return 0.0178*distance + 9.6             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bruceMale(self, float time, float time2, float time3):
+ *     cpdef double bruceMale(self, double time, double time2, double time3):
  */
   __pyx_r = ((0.0178 * __pyx_v_distance) + 9.6);
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":152
+  /* "pyfit/cardio/respiration.pyx":149
  *         return 1.444 * time + 14.99
  * 
- *     cpdef float balke15MinRun(self, float distance):             # <<<<<<<<<<<<<<
+ *     cpdef double balke15MinRun(self, double distance):             # <<<<<<<<<<<<<<
  *         return 0.0178*distance + 9.6
  * 
  */
@@ -7111,14 +6960,14 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(CYTHON_UNUS
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49balke15MinRun(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49balke15MinRun(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance) {
-  float __pyx_v_distance;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke15MinRun(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke15MinRun(PyObject *__pyx_v_self, PyObject *__pyx_arg_distance) {
+  double __pyx_v_distance;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("balke15MinRun (wrapper)", 0);
   assert(__pyx_arg_distance); {
-    __pyx_v_distance = __pyx_PyFloat_AsFloat(__pyx_arg_distance); if (unlikely((__pyx_v_distance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L3_error)
+    __pyx_v_distance = __pyx_PyFloat_AsDouble(__pyx_arg_distance); if (unlikely((__pyx_v_distance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7126,20 +6975,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49balke15MinRun(PyOb
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_48balke15MinRun(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_distance));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_46balke15MinRun(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_distance));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_48balke15MinRun(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_distance) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_46balke15MinRun(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_distance) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("balke15MinRun", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(__pyx_v_self, __pyx_v_distance, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun(__pyx_v_self, __pyx_v_distance, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7156,17 +7005,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_48balke15MinRun(stru
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":155
+/* "pyfit/cardio/respiration.pyx":152
  *         return 0.0178*distance + 9.6
  * 
- *     cpdef float bruceMale(self, float time, float time2, float time3):             # <<<<<<<<<<<<<<
+ *     cpdef double bruceMale(self, double time, double time2, double time3):             # <<<<<<<<<<<<<<
  *         return 14.76 - 1.379*time + 0.451*time2 - 0.012*time3
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceMale(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_time2, float __pyx_v_time3, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49bruceMale(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_time2, double __pyx_v_time3, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7177,20 +7026,20 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED s
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   __Pyx_RefNannySetupContext("bruceMale", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_bruceMale); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_bruceMale); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceMale)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49bruceMale)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_time2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 155, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_time2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 152, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_time3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 155, __pyx_L1_error)
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_time3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 152, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_6 = __pyx_t_1; __pyx_t_7 = NULL;
@@ -7205,7 +7054,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED s
           __pyx_t_8 = 1;
         }
       }
-      __pyx_t_9 = PyTuple_New(3+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 155, __pyx_L1_error)
+      __pyx_t_9 = PyTuple_New(3+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 152, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       if (__pyx_t_7) {
         __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -7219,11 +7068,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED s
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7232,20 +7081,20 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED s
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":156
+  /* "pyfit/cardio/respiration.pyx":153
  * 
- *     cpdef float bruceMale(self, float time, float time2, float time3):
+ *     cpdef double bruceMale(self, double time, double time2, double time3):
  *         return 14.76 - 1.379*time + 0.451*time2 - 0.012*time3             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bruceFemale(self, float time):
+ *     cpdef double bruceFemale(self, double time):
  */
   __pyx_r = (((14.76 - (1.379 * __pyx_v_time)) + (0.451 * __pyx_v_time2)) - (0.012 * __pyx_v_time3));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":155
+  /* "pyfit/cardio/respiration.pyx":152
  *         return 0.0178*distance + 9.6
  * 
- *     cpdef float bruceMale(self, float time, float time2, float time3):             # <<<<<<<<<<<<<<
+ *     cpdef double bruceMale(self, double time, double time2, double time3):             # <<<<<<<<<<<<<<
  *         return 14.76 - 1.379*time + 0.451*time2 - 0.012*time3
  * 
  */
@@ -7268,11 +7117,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(CYTHON_UNUSED s
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceMale(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceMale(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_time;
-  float __pyx_v_time2;
-  float __pyx_v_time3;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49bruceMale(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49bruceMale(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_time;
+  double __pyx_v_time2;
+  double __pyx_v_time3;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("bruceMale (wrapper)", 0);
@@ -7297,16 +7146,16 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceMale(PyObject
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_time2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("bruceMale", 1, 3, 3, 1); __PYX_ERR(0, 155, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("bruceMale", 1, 3, 3, 1); __PYX_ERR(0, 152, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_time3)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("bruceMale", 1, 3, 3, 2); __PYX_ERR(0, 155, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("bruceMale", 1, 3, 3, 2); __PYX_ERR(0, 152, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "bruceMale") < 0)) __PYX_ERR(0, 155, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "bruceMale") < 0)) __PYX_ERR(0, 152, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -7315,32 +7164,32 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceMale(PyObject
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_time = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L3_error)
-    __pyx_v_time2 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_time2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L3_error)
-    __pyx_v_time3 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_time3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L3_error)
+    __pyx_v_time2 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_time2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L3_error)
+    __pyx_v_time3 = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_time3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("bruceMale", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 155, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("bruceMale", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 152, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceMale", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_50bruceMale(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_time, __pyx_v_time2, __pyx_v_time3);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_48bruceMale(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_time, __pyx_v_time2, __pyx_v_time3);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_50bruceMale(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, float __pyx_v_time2, float __pyx_v_time3) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_48bruceMale(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, double __pyx_v_time2, double __pyx_v_time3) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("bruceMale", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(__pyx_v_self, __pyx_v_time, __pyx_v_time2, __pyx_v_time3, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale(__pyx_v_self, __pyx_v_time, __pyx_v_time2, __pyx_v_time3, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7357,17 +7206,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_50bruceMale(struct _
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":158
+/* "pyfit/cardio/respiration.pyx":155
  *         return 14.76 - 1.379*time + 0.451*time2 - 0.012*time3
  * 
- *     cpdef float bruceFemale(self, float time):             # <<<<<<<<<<<<<<
+ *     cpdef double bruceFemale(self, double time):             # <<<<<<<<<<<<<<
  *         return 4.38 * time - 3.90
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceFemale(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceFemale(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7375,15 +7224,159 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("bruceFemale", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_bruceFemale); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_bruceFemale); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceFemale)) {
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceFemale)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 155, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/respiration.pyx":156
+ * 
+ *     cpdef double bruceFemale(self, double time):
+ *         return 4.38 * time - 3.90             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double bruceEC(self, double time):
+ */
+  __pyx_r = ((4.38 * __pyx_v_time) - 3.90);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/respiration.pyx":155
+ *         return 14.76 - 1.379*time + 0.451*time2 - 0.012*time3
+ * 
+ *     cpdef double bruceFemale(self, double time):             # <<<<<<<<<<<<<<
+ *         return 4.38 * time - 3.90
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.respiration.VO2.bruceFemale", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceFemale(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceFemale(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
+  double __pyx_v_time;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("bruceFemale (wrapper)", 0);
+  assert(__pyx_arg_time); {
+    __pyx_v_time = __pyx_PyFloat_AsDouble(__pyx_arg_time); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceFemale", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_50bruceFemale(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_time));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_50bruceFemale(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("bruceFemale", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceFemale", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/respiration.pyx":158
+ *         return 4.38 * time - 3.90
+ * 
+ *     cpdef double bruceEC(self, double time):             # <<<<<<<<<<<<<<
+ *         return (2.282*time) + 8.545
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceEC(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("bruceEC", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_bruceEC); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceEC)) {
       __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
@@ -7413,7 +7406,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7424,19 +7417,19 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED
 
   /* "pyfit/cardio/respiration.pyx":159
  * 
- *     cpdef float bruceFemale(self, float time):
- *         return 4.38 * time - 3.90             # <<<<<<<<<<<<<<
+ *     cpdef double bruceEC(self, double time):
+ *         return (2.282*time) + 8.545             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bruceEC(self, float time):
+ *     cpdef double leger(self, double speed):
  */
-  __pyx_r = ((4.38 * __pyx_v_time) - 3.90);
+  __pyx_r = ((2.282 * __pyx_v_time) + 8.545);
   goto __pyx_L0;
 
   /* "pyfit/cardio/respiration.pyx":158
- *         return 14.76 - 1.379*time + 0.451*time2 - 0.012*time3
- * 
- *     cpdef float bruceFemale(self, float time):             # <<<<<<<<<<<<<<
  *         return 4.38 * time - 3.90
+ * 
+ *     cpdef double bruceEC(self, double time):             # <<<<<<<<<<<<<<
+ *         return (2.282*time) + 8.545
  * 
  */
 
@@ -7448,7 +7441,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_WriteUnraisable("pyfit.cardio.respiration.VO2.bruceFemale", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __Pyx_WriteUnraisable("pyfit.cardio.respiration.VO2.bruceEC", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -7456,35 +7449,35 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(CYTHON_UNUSED
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceFemale(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceFemale(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
-  float __pyx_v_time;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceEC(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceEC(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
+  double __pyx_v_time;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("bruceFemale (wrapper)", 0);
+  __Pyx_RefNannySetupContext("bruceEC (wrapper)", 0);
   assert(__pyx_arg_time); {
-    __pyx_v_time = __pyx_PyFloat_AsFloat(__pyx_arg_time); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(__pyx_arg_time); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceFemale", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceEC", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_52bruceFemale(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_time));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_52bruceEC(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_time));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_52bruceFemale(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_52bruceEC(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_time) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("bruceFemale", 0);
+  __Pyx_RefNannySetupContext("bruceEC", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7493,7 +7486,7 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_52bruceFemale(struct
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceFemale", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceEC", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7502,16 +7495,16 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_52bruceFemale(struct
 }
 
 /* "pyfit/cardio/respiration.pyx":161
- *         return 4.38 * time - 3.90
- * 
- *     cpdef float bruceEC(self, float time):             # <<<<<<<<<<<<<<
  *         return (2.282*time) + 8.545
+ * 
+ *     cpdef double leger(self, double speed):             # <<<<<<<<<<<<<<
+ *         return 31.025 + (3.238*speed) - (3.248*self.age) + 0.1536*(self.age*speed)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55bruceEC(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55leger(PyObject *__pyx_v_self, PyObject *__pyx_arg_speed); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_leger(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7519,16 +7512,16 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(CYTHON_UNUSED str
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("bruceEC", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("leger", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_bruceEC); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_leger); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55bruceEC)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55leger)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_speed); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -7557,7 +7550,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(CYTHON_UNUSED str
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7568,162 +7561,18 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(CYTHON_UNUSED str
 
   /* "pyfit/cardio/respiration.pyx":162
  * 
- *     cpdef float bruceEC(self, float time):
- *         return (2.282*time) + 8.545             # <<<<<<<<<<<<<<
- * 
- *     cpdef float leger(self, float speed):
- */
-  __pyx_r = ((2.282 * __pyx_v_time) + 8.545);
-  goto __pyx_L0;
-
-  /* "pyfit/cardio/respiration.pyx":161
- *         return 4.38 * time - 3.90
- * 
- *     cpdef float bruceEC(self, float time):             # <<<<<<<<<<<<<<
- *         return (2.282*time) + 8.545
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_WriteUnraisable("pyfit.cardio.respiration.VO2.bruceEC", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55bruceEC(PyObject *__pyx_v_self, PyObject *__pyx_arg_time); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55bruceEC(PyObject *__pyx_v_self, PyObject *__pyx_arg_time) {
-  float __pyx_v_time;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("bruceEC (wrapper)", 0);
-  assert(__pyx_arg_time); {
-    __pyx_v_time = __pyx_PyFloat_AsFloat(__pyx_arg_time); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceEC", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_54bruceEC(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_time));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_54bruceEC(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_time) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("bruceEC", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC(__pyx_v_self, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.bruceEC", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "pyfit/cardio/respiration.pyx":164
- *         return (2.282*time) + 8.545
- * 
- *     cpdef float leger(self, float speed):             # <<<<<<<<<<<<<<
- *         return 31.025 + (3.238*speed) - (3.248*self.age) + 0.1536*(self.age*speed)
- * 
- */
-
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57leger(PyObject *__pyx_v_self, PyObject *__pyx_arg_speed); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_leger(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed, int __pyx_skip_dispatch) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("leger", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_leger); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57leger)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_speed); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
-      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_5)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_5);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
-        }
-      }
-      if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
-      } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 164, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
-        __Pyx_GIVEREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
-        __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_r = __pyx_t_7;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      goto __pyx_L0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  }
-
-  /* "pyfit/cardio/respiration.pyx":165
- * 
- *     cpdef float leger(self, float speed):
+ *     cpdef double leger(self, double speed):
  *         return 31.025 + (3.238*speed) - (3.248*self.age) + 0.1536*(self.age*speed)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float gilbertDaniels(self, float velocity, float time):
+ *     cpdef double gilbertDaniels(self, double velocity, double time):
  */
   __pyx_r = (((31.025 + (3.238 * __pyx_v_speed)) - (3.248 * __pyx_v_self->age)) + (0.1536 * (__pyx_v_self->age * __pyx_v_speed)));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":164
+  /* "pyfit/cardio/respiration.pyx":161
  *         return (2.282*time) + 8.545
  * 
- *     cpdef float leger(self, float speed):             # <<<<<<<<<<<<<<
+ *     cpdef double leger(self, double speed):             # <<<<<<<<<<<<<<
  *         return 31.025 + (3.238*speed) - (3.248*self.age) + 0.1536*(self.age*speed)
  * 
  */
@@ -7744,14 +7593,14 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_leger(struct __pyx_obj_5p
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57leger(PyObject *__pyx_v_self, PyObject *__pyx_arg_speed); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57leger(PyObject *__pyx_v_self, PyObject *__pyx_arg_speed) {
-  float __pyx_v_speed;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55leger(PyObject *__pyx_v_self, PyObject *__pyx_arg_speed); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55leger(PyObject *__pyx_v_self, PyObject *__pyx_arg_speed) {
+  double __pyx_v_speed;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("leger (wrapper)", 0);
   assert(__pyx_arg_speed); {
-    __pyx_v_speed = __pyx_PyFloat_AsFloat(__pyx_arg_speed); if (unlikely((__pyx_v_speed == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
+    __pyx_v_speed = __pyx_PyFloat_AsDouble(__pyx_arg_speed); if (unlikely((__pyx_v_speed == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7759,20 +7608,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57leger(PyObject *__
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_56leger(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((float)__pyx_v_speed));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_54leger(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), ((double)__pyx_v_speed));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_56leger(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_speed) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_54leger(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_speed) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("leger", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_leger(__pyx_v_self, __pyx_v_speed, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_leger(__pyx_v_self, __pyx_v_speed, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7789,19 +7638,19 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_56leger(struct __pyx
   return __pyx_r;
 }
 
-/* "pyfit/cardio/respiration.pyx":167
+/* "pyfit/cardio/respiration.pyx":164
  *         return 31.025 + (3.238*speed) - (3.248*self.age) + 0.1536*(self.age*speed)
  * 
- *     cpdef float gilbertDaniels(self, float velocity, float time):             # <<<<<<<<<<<<<<
- *         cdef float numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6
- *         cdef float denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8
+ *     cpdef double gilbertDaniels(self, double velocity, double time):             # <<<<<<<<<<<<<<
+ *         cdef double numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6
+ *         cdef double denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_59gilbertDaniels(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_velocity, float __pyx_v_time, int __pyx_skip_dispatch) {
-  float __pyx_v_numerator;
-  float __pyx_v_denominator;
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57gilbertDaniels(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_velocity, double __pyx_v_time, int __pyx_skip_dispatch) {
+  double __pyx_v_numerator;
+  double __pyx_v_denominator;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7811,18 +7660,18 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNU
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("gilbertDaniels", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_gilbertDaniels); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_gilbertDaniels); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_59gilbertDaniels)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_velocity); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57gilbertDaniels)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_velocity); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 167, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 164, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -7837,7 +7686,7 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNU
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 167, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 164, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -7848,11 +7697,11 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNU
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7861,41 +7710,41 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNU
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/respiration.pyx":168
+  /* "pyfit/cardio/respiration.pyx":165
  * 
- *     cpdef float gilbertDaniels(self, float velocity, float time):
- *         cdef float numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6             # <<<<<<<<<<<<<<
- *         cdef float denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8
+ *     cpdef double gilbertDaniels(self, double velocity, double time):
+ *         cdef double numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6             # <<<<<<<<<<<<<<
+ *         cdef double denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8
  *         return numerator/denominator
  */
   __pyx_v_numerator = (((0.000104 * pow(__pyx_v_velocity, 2.0)) + (0.182258 * __pyx_v_velocity)) - 4.6);
 
-  /* "pyfit/cardio/respiration.pyx":169
- *     cpdef float gilbertDaniels(self, float velocity, float time):
- *         cdef float numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6
- *         cdef float denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8             # <<<<<<<<<<<<<<
+  /* "pyfit/cardio/respiration.pyx":166
+ *     cpdef double gilbertDaniels(self, double velocity, double time):
+ *         cdef double numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6
+ *         cdef double denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8             # <<<<<<<<<<<<<<
  *         return numerator/denominator
  */
   __pyx_v_denominator = (((0.2989558 * exp((-0.1932605 * __pyx_v_time))) + (0.1894393 * exp((-0.012778 * __pyx_v_time)))) + 0.8);
 
-  /* "pyfit/cardio/respiration.pyx":170
- *         cdef float numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6
- *         cdef float denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8
+  /* "pyfit/cardio/respiration.pyx":167
+ *         cdef double numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6
+ *         cdef double denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8
  *         return numerator/denominator             # <<<<<<<<<<<<<<
  */
   if (unlikely(__pyx_v_denominator == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 170, __pyx_L1_error)
+    __PYX_ERR(0, 167, __pyx_L1_error)
   }
   __pyx_r = (__pyx_v_numerator / __pyx_v_denominator);
   goto __pyx_L0;
 
-  /* "pyfit/cardio/respiration.pyx":167
+  /* "pyfit/cardio/respiration.pyx":164
  *         return 31.025 + (3.238*speed) - (3.248*self.age) + 0.1536*(self.age*speed)
  * 
- *     cpdef float gilbertDaniels(self, float velocity, float time):             # <<<<<<<<<<<<<<
- *         cdef float numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6
- *         cdef float denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8
+ *     cpdef double gilbertDaniels(self, double velocity, double time):             # <<<<<<<<<<<<<<
+ *         cdef double numerator = 0.000104*pow(velocity,2)+0.182258* velocity-4.6
+ *         cdef double denominator= 0.2989558*exp(-0.1932605*time)+0.1894393*exp(-0.012778*time)+0.8
  */
 
   /* function exit code */
@@ -7915,10 +7764,10 @@ static float __pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(CYTHON_UNU
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_59gilbertDaniels(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_59gilbertDaniels(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_velocity;
-  float __pyx_v_time;
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57gilbertDaniels(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57gilbertDaniels(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_velocity;
+  double __pyx_v_time;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("gilbertDaniels (wrapper)", 0);
@@ -7942,11 +7791,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_59gilbertDaniels(PyO
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_time)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("gilbertDaniels", 1, 2, 2, 1); __PYX_ERR(0, 167, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("gilbertDaniels", 1, 2, 2, 1); __PYX_ERR(0, 164, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "gilbertDaniels") < 0)) __PYX_ERR(0, 167, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "gilbertDaniels") < 0)) __PYX_ERR(0, 164, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7954,31 +7803,31 @@ static PyObject *__pyx_pw_5pyfit_6cardio_11respiration_3VO2_59gilbertDaniels(PyO
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_velocity = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_velocity == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L3_error)
-    __pyx_v_time = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L3_error)
+    __pyx_v_velocity = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_velocity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("gilbertDaniels", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 167, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("gilbertDaniels", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 164, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.respiration.VO2.gilbertDaniels", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_58gilbertDaniels(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_velocity, __pyx_v_time);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_11respiration_3VO2_56gilbertDaniels(((struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *)__pyx_v_self), __pyx_v_velocity, __pyx_v_time);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_58gilbertDaniels(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, float __pyx_v_velocity, float __pyx_v_time) {
+static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_56gilbertDaniels(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *__pyx_v_self, double __pyx_v_velocity, double __pyx_v_time) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("gilbertDaniels", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(__pyx_v_self, __pyx_v_velocity, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels(__pyx_v_self, __pyx_v_velocity, __pyx_v_time, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7999,8 +7848,8 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_58gilbertDaniels(str
  * 
  * cdef class VO2(object):
  *     cdef readonly int gender             # <<<<<<<<<<<<<<
- *     cdef readonly float age
- *     cdef readonly float weight
+ *     cdef readonly double age
+ *     cdef readonly double weight
  */
 
 /* Python wrapper */
@@ -8042,9 +7891,9 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6gender___get__(stru
 /* "pyfit/cardio/respiration.pyx":51
  * cdef class VO2(object):
  *     cdef readonly int gender
- *     cdef readonly float age             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
- *     cdef readonly float height
+ *     cdef readonly double age             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight
+ *     cdef readonly double height
  */
 
 /* Python wrapper */
@@ -8085,9 +7934,9 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_3age___get__(struct 
 
 /* "pyfit/cardio/respiration.pyx":52
  *     cdef readonly int gender
- *     cdef readonly float age
- *     cdef readonly float weight             # <<<<<<<<<<<<<<
- *     cdef readonly float height
+ *     cdef readonly double age
+ *     cdef readonly double weight             # <<<<<<<<<<<<<<
+ *     cdef readonly double height
  * 
  */
 
@@ -8128,11 +7977,11 @@ static PyObject *__pyx_pf_5pyfit_6cardio_11respiration_3VO2_6weight___get__(stru
 }
 
 /* "pyfit/cardio/respiration.pyx":53
- *     cdef readonly float age
- *     cdef readonly float weight
- *     cdef readonly float height             # <<<<<<<<<<<<<<
+ *     cdef readonly double age
+ *     cdef readonly double weight
+ *     cdef readonly double height             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  */
 
 /* Python wrapper */
@@ -8343,27 +8192,26 @@ static PyMethodDef __pyx_methods_5pyfit_6cardio_11respiration_VO2[] = {
   {"legErgometryGross", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_13legErgometryGross, METH_VARARGS|METH_KEYWORDS, 0},
   {"armErgometryGross", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_15armErgometryGross, METH_VARARGS|METH_KEYWORDS, 0},
   {"steppingGross", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_17steppingGross, METH_VARARGS|METH_KEYWORDS, 0},
-  {"stairmasterMets", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19stairmasterMets, METH_O, 0},
-  {"usop", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21usop, METH_VARARGS|METH_KEYWORDS, 0},
-  {"foxErgometry", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23foxErgometry, METH_O, 0},
-  {"ebbelingTreadmill", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25ebbelingTreadmill, METH_VARARGS|METH_KEYWORDS, 0},
-  {"kline", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27kline, METH_VARARGS|METH_KEYWORDS, 0},
-  {"larsen", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29larsen, METH_VARARGS|METH_KEYWORDS, 0},
-  {"astrandStep", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31astrandStep, METH_O, 0},
-  {"qcStep", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33qcStep, METH_O, 0},
-  {"georgeRW", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeRW, METH_O, 0},
-  {"georgeSteady", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeSteady, METH_VARARGS|METH_KEYWORDS, 0},
-  {"georgeTreadmill", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39georgeTreadmill, METH_VARARGS|METH_KEYWORDS, 0},
-  {"treadmillSubmaxSingleStage", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxSingleStage, METH_VARARGS|METH_KEYWORDS, 0},
-  {"treadmillSubmaxVO2Multistage", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43treadmillSubmaxVO2Multistage, METH_VARARGS|METH_KEYWORDS, 0},
-  {"curetonChild", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45curetonChild, METH_O, 0},
-  {"balke", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke, METH_O, 0},
-  {"balke15MinRun", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49balke15MinRun, METH_O, 0},
-  {"bruceMale", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceMale, METH_VARARGS|METH_KEYWORDS, 0},
-  {"bruceFemale", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceFemale, METH_O, 0},
-  {"bruceEC", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55bruceEC, METH_O, 0},
-  {"leger", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57leger, METH_O, 0},
-  {"gilbertDaniels", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_59gilbertDaniels, METH_VARARGS|METH_KEYWORDS, 0},
+  {"usop", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_19usop, METH_VARARGS|METH_KEYWORDS, 0},
+  {"foxErgometry", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_21foxErgometry, METH_O, 0},
+  {"ebbelingTreadmill", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_23ebbelingTreadmill, METH_VARARGS|METH_KEYWORDS, 0},
+  {"kline", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_25kline, METH_VARARGS|METH_KEYWORDS, 0},
+  {"larsen", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_27larsen, METH_VARARGS|METH_KEYWORDS, 0},
+  {"astrandStep", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_29astrandStep, METH_O, 0},
+  {"qcStep", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_31qcStep, METH_O, 0},
+  {"georgeRW", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_33georgeRW, METH_O, 0},
+  {"georgeSteady", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_35georgeSteady, METH_VARARGS|METH_KEYWORDS, 0},
+  {"georgeTreadmill", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_37georgeTreadmill, METH_VARARGS|METH_KEYWORDS, 0},
+  {"treadmillSubmaxSingleStage", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_39treadmillSubmaxSingleStage, METH_VARARGS|METH_KEYWORDS, 0},
+  {"treadmillSubmaxVO2Multistage", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_41treadmillSubmaxVO2Multistage, METH_VARARGS|METH_KEYWORDS, 0},
+  {"curetonChild", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_43curetonChild, METH_O, 0},
+  {"balke", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_45balke, METH_O, 0},
+  {"balke15MinRun", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_47balke15MinRun, METH_O, 0},
+  {"bruceMale", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_49bruceMale, METH_VARARGS|METH_KEYWORDS, 0},
+  {"bruceFemale", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_51bruceFemale, METH_O, 0},
+  {"bruceEC", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_53bruceEC, METH_O, 0},
+  {"leger", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_55leger, METH_O, 0},
+  {"gilbertDaniels", (PyCFunction)__pyx_pw_5pyfit_6cardio_11respiration_3VO2_57gilbertDaniels, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -8508,7 +8356,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_sm1, __pyx_k_sm1, sizeof(__pyx_k_sm1), 0, 0, 1, 1},
   {&__pyx_n_s_sm2, __pyx_k_sm2, sizeof(__pyx_k_sm2), 0, 0, 1, 1},
   {&__pyx_n_s_speed, __pyx_k_speed, sizeof(__pyx_k_speed), 0, 0, 1, 1},
-  {&__pyx_n_s_stairmasterMets, __pyx_k_stairmasterMets, sizeof(__pyx_k_stairmasterMets), 0, 0, 1, 1},
   {&__pyx_n_s_steppingGross, __pyx_k_steppingGross, sizeof(__pyx_k_steppingGross), 0, 0, 1, 1},
   {&__pyx_n_s_target, __pyx_k_target, sizeof(__pyx_k_target), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
@@ -8630,48 +8477,47 @@ PyMODINIT_FUNC PyInit_respiration(void)
   /*--- Function export code ---*/
   /*--- Type init code ---*/
   __pyx_vtabptr_5pyfit_6cardio_11respiration_ResidualVolume = &__pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume;
-  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.normal = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal;
-  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.overweight = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight;
-  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.berglund = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund;
-  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.black = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black;
-  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.boren = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren;
-  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.goldman = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman;
-  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.obrien = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien;
+  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.normal = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_normal;
+  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.overweight = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_overweight;
+  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.berglund = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_berglund;
+  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.black = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_black;
+  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.boren = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_boren;
+  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.goldman = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_goldman;
+  __pyx_vtable_5pyfit_6cardio_11respiration_ResidualVolume.obrien = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_ResidualVolume *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_14ResidualVolume_obrien;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_11respiration_ResidualVolume) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_11respiration_ResidualVolume.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_11respiration_ResidualVolume.tp_dict, __pyx_vtabptr_5pyfit_6cardio_11respiration_ResidualVolume) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "ResidualVolume", (PyObject *)&__pyx_type_5pyfit_6cardio_11respiration_ResidualVolume) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_11respiration_ResidualVolume = &__pyx_type_5pyfit_6cardio_11respiration_ResidualVolume;
   __pyx_vtabptr_5pyfit_6cardio_11respiration_VO2 = &__pyx_vtable_5pyfit_6cardio_11respiration_VO2;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.reserve = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve *__pyx_optional_args))__pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.target = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_target;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.cooper = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.walkingGross = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.runningGross = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.legErgometryGross = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.armErgometryGross = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.steppingGross = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.stairmasterMets = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, int, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_stairmasterMets;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.usop = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_usop;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.foxErgometry = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.ebbelingTreadmill = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.kline = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_kline;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.larsen = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.astrandStep = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.qcStep = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.georgeRW = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.georgeSteady = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.georgeTreadmill = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.treadmillSubmaxSingleStage = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStage;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.treadmillSubmaxVO2Multistage = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multistage;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.curetonChild = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.balke = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_balke;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.balke15MinRun = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.bruceMale = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.bruceFemale = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.bruceEC = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.leger = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_leger;
-  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.gilbertDaniels = (float (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.reserve = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_6cardio_11respiration_3VO2_reserve *__pyx_optional_args))__pyx_f_5pyfit_6cardio_11respiration_3VO2_reserve;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.target = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_target;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.cooper = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_cooper;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.walkingGross = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_walkingGross;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.runningGross = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_runningGross;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.legErgometryGross = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_legErgometryGross;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.armErgometryGross = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_armErgometryGross;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.steppingGross = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_steppingGross;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.usop = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_usop;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.foxErgometry = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_foxErgometry;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.ebbelingTreadmill = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_ebbelingTreadmill;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.kline = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_kline;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.larsen = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_larsen;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.astrandStep = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_astrandStep;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.qcStep = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_qcStep;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.georgeRW = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeRW;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.georgeSteady = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeSteady;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.georgeTreadmill = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_georgeTreadmill;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.treadmillSubmaxSingleStage = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxSingleStage;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.treadmillSubmaxVO2Multistage = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_treadmillSubmaxVO2Multistage;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.curetonChild = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_curetonChild;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.balke = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_balke;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.balke15MinRun = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_balke15MinRun;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.bruceMale = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceMale;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.bruceFemale = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceFemale;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.bruceEC = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_bruceEC;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.leger = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_leger;
+  __pyx_vtable_5pyfit_6cardio_11respiration_VO2.gilbertDaniels = (double (*)(struct __pyx_obj_5pyfit_6cardio_11respiration_VO2 *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_11respiration_3VO2_gilbertDaniels;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_11respiration_VO2) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_11respiration_VO2.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_11respiration_VO2.tp_dict, __pyx_vtabptr_5pyfit_6cardio_11respiration_VO2) < 0) __PYX_ERR(0, 49, __pyx_L1_error)

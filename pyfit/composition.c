@@ -508,27 +508,27 @@ struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime;
 /* "pyfit/composition.pyx":23
  *         return self.weight/(self.height * self.height)
  * 
- *     cpdef float bmi_prime(self, float upper_limit=25.9):             # <<<<<<<<<<<<<<
+ *     cpdef double bmi_prime(self, double upper_limit=25.9):             # <<<<<<<<<<<<<<
  *         return self.bmi()/upper_limit
  * 
  */
 struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime {
   int __pyx_n;
-  float upper_limit;
+  double upper_limit;
 };
 
 /* "pyfit/composition.pyx":7
  *     return 0.033 * weight
  * 
  * cdef class Index(object):             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
- *     cdef readonly float height
+ *     cdef readonly double weight
+ *     cdef readonly double height
  */
 struct __pyx_obj_5pyfit_11composition_Index {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_11composition_Index *__pyx_vtab;
-  float weight;
-  float height;
+  double weight;
+  double height;
 };
 
 
@@ -537,15 +537,15 @@ struct __pyx_obj_5pyfit_11composition_Index {
  * 
  * cdef class Mass(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 struct __pyx_obj_5pyfit_11composition_Mass {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_11composition_Mass *__pyx_vtab;
   int gender;
-  float age;
-  float weight;
-  float height;
+  double age;
+  double weight;
+  double height;
 };
 
 
@@ -554,7 +554,7 @@ struct __pyx_obj_5pyfit_11composition_Mass {
  * 
  * cdef class Density(object):             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self,int gender, float age):
+ *     def __cinit__(self,int gender, double age):
  */
 struct __pyx_obj_5pyfit_11composition_Density {
   PyObject_HEAD
@@ -566,7 +566,7 @@ struct __pyx_obj_5pyfit_11composition_Density {
  * 
  * cdef class BodyFat(object):             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender, float age):
+ *     def __cinit__(self, int gender, double age):
  */
 struct __pyx_obj_5pyfit_11composition_BodyFat {
   PyObject_HEAD
@@ -578,15 +578,15 @@ struct __pyx_obj_5pyfit_11composition_BodyFat {
  * 
  * cdef class SurfaceArea(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 struct __pyx_obj_5pyfit_11composition_SurfaceArea {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_11composition_SurfaceArea *__pyx_vtab;
   int gender;
-  float age;
-  float weight;
-  float height;
+  double age;
+  double weight;
+  double height;
 };
 
 
@@ -595,14 +595,14 @@ struct __pyx_obj_5pyfit_11composition_SurfaceArea {
  * 
  * cdef class Stature(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 struct __pyx_obj_5pyfit_11composition_Stature {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_11composition_Stature *__pyx_vtab;
   int gender;
-  float age;
-  float height;
+  double age;
+  double height;
 };
 
 
@@ -611,19 +611,19 @@ struct __pyx_obj_5pyfit_11composition_Stature {
  *     return 0.033 * weight
  * 
  * cdef class Index(object):             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
- *     cdef readonly float height
+ *     cdef readonly double weight
+ *     cdef readonly double height
  */
 
 struct __pyx_vtabstruct_5pyfit_11composition_Index {
-  float (*bai)(struct __pyx_obj_5pyfit_11composition_Index *, float, int __pyx_skip_dispatch);
-  float (*bmi)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch);
-  float (*bmi_prime)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime *__pyx_optional_args);
-  float (*bsi)(struct __pyx_obj_5pyfit_11composition_Index *, float, int __pyx_skip_dispatch);
-  float (*corpulence)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch);
-  float (*sbsi)(struct __pyx_obj_5pyfit_11composition_Index *, float, float, float, int __pyx_skip_dispatch);
-  float (*WHR)(struct __pyx_obj_5pyfit_11composition_Index *, float, float, int __pyx_skip_dispatch);
-  float (*WHtR)(struct __pyx_obj_5pyfit_11composition_Index *, float, int __pyx_skip_dispatch);
+  double (*bai)(struct __pyx_obj_5pyfit_11composition_Index *, double, int __pyx_skip_dispatch);
+  double (*bmi)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch);
+  double (*bmi_prime)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime *__pyx_optional_args);
+  double (*bsi)(struct __pyx_obj_5pyfit_11composition_Index *, double, int __pyx_skip_dispatch);
+  double (*corpulence)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch);
+  double (*sbsi)(struct __pyx_obj_5pyfit_11composition_Index *, double, double, double, int __pyx_skip_dispatch);
+  double (*WHR)(struct __pyx_obj_5pyfit_11composition_Index *, double, double, int __pyx_skip_dispatch);
+  double (*WHtR)(struct __pyx_obj_5pyfit_11composition_Index *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_11composition_Index *__pyx_vtabptr_5pyfit_11composition_Index;
 
@@ -633,15 +633,15 @@ static struct __pyx_vtabstruct_5pyfit_11composition_Index *__pyx_vtabptr_5pyfit_
  * 
  * cdef class Mass(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 
 struct __pyx_vtabstruct_5pyfit_11composition_Mass {
-  float (*ffmChild)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch);
-  float (*ffmAdolescent)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch);
-  float (*ffmAdultLean)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch);
-  float (*ffmAdultObese)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch);
-  float (*ffmAdultAthlete)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch);
+  double (*ffmChild)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch);
+  double (*ffmAdolescent)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch);
+  double (*ffmAdultLean)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch);
+  double (*ffmAdultObese)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch);
+  double (*ffmAdultAthlete)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_11composition_Mass *__pyx_vtabptr_5pyfit_11composition_Mass;
 
@@ -651,20 +651,20 @@ static struct __pyx_vtabstruct_5pyfit_11composition_Mass *__pyx_vtabptr_5pyfit_1
  * 
  * cdef class SurfaceArea(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 
 struct __pyx_vtabstruct_5pyfit_11composition_SurfaceArea {
-  float (*boyd)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*costeff)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*dubois)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*fujimoto)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*gehangeorge)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*haycock)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*mosteller)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*schlich)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*shuterAslani)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
-  float (*takahira)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*boyd)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*costeff)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*dubois)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*fujimoto)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*gehangeorge)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*haycock)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*mosteller)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*schlich)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*shuterAslani)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
+  double (*takahira)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_11composition_SurfaceArea *__pyx_vtabptr_5pyfit_11composition_SurfaceArea;
 
@@ -674,14 +674,14 @@ static struct __pyx_vtabstruct_5pyfit_11composition_SurfaceArea *__pyx_vtabptr_5
  * 
  * cdef class Stature(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 
 struct __pyx_vtabstruct_5pyfit_11composition_Stature {
-  float (*universal)(struct __pyx_obj_5pyfit_11composition_Stature *, int __pyx_skip_dispatch);
-  float (*americanWhite)(struct __pyx_obj_5pyfit_11composition_Stature *, float, int __pyx_skip_dispatch);
-  float (*americanBlack)(struct __pyx_obj_5pyfit_11composition_Stature *, float, int __pyx_skip_dispatch);
-  float (*strideLength)(struct __pyx_obj_5pyfit_11composition_Stature *, int __pyx_skip_dispatch);
+  double (*universal)(struct __pyx_obj_5pyfit_11composition_Stature *, int __pyx_skip_dispatch);
+  double (*americanWhite)(struct __pyx_obj_5pyfit_11composition_Stature *, double, int __pyx_skip_dispatch);
+  double (*americanBlack)(struct __pyx_obj_5pyfit_11composition_Stature *, double, int __pyx_skip_dispatch);
+  double (*strideLength)(struct __pyx_obj_5pyfit_11composition_Stature *, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_11composition_Stature *__pyx_vtabptr_5pyfit_11composition_Stature;
 
@@ -898,33 +898,33 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static float __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_hipCircumference, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_5Index_bmi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime *__pyx_optional_args); /* proto*/
-static float __pyx_f_5pyfit_11composition_5Index_bsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waist_circumference, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_5Index_corpulence(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_5Index_sbsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_bsa, float __pyx_v_vertical_trunk_circumference, float __pyx_v_waist_circumference, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waistCircumference, float __pyx_v_hipCircumference, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waistCircumference, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmChild(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmAdolescent(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, CYTHON_UNUSED float __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, CYTHON_UNUSED float __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, CYTHON_UNUSED float __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_boyd(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_costeff(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_dubois(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_haycock(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_mosteller(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_takahira(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_7Stature_universal(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, float __pyx_v_femurLength, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, float __pyx_v_femurLength, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_hipCircumference, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_5Index_bmi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime *__pyx_optional_args); /* proto*/
+static double __pyx_f_5pyfit_11composition_5Index_bsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waist_circumference, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_5Index_corpulence(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_5Index_sbsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_bsa, double __pyx_v_vertical_trunk_circumference, double __pyx_v_waist_circumference, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waistCircumference, double __pyx_v_hipCircumference, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waistCircumference, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_4Mass_ffmChild(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_4Mass_ffmAdolescent(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, CYTHON_UNUSED double __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, CYTHON_UNUSED double __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, CYTHON_UNUSED double __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_boyd(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_costeff(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_dubois(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_haycock(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_mosteller(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_takahira(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_7Stature_universal(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, double __pyx_v_femurLength, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, double __pyx_v_femurLength, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from 'libc.math' */
 
@@ -935,7 +935,7 @@ static PyTypeObject *__pyx_ptype_5pyfit_11composition_Density = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_11composition_BodyFat = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_11composition_SurfaceArea = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_11composition_Stature = 0;
-static float __pyx_f_5pyfit_11composition_dailyWaterNeed(float, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_11composition_dailyWaterNeed(double, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "pyfit.composition"
 int __pyx_module_is_main_pyfit__composition = 0;
 
@@ -1032,31 +1032,31 @@ static PyObject *__pyx_n_s_vertical_trunk_circumference;
 static PyObject *__pyx_n_s_waistCircumference;
 static PyObject *__pyx_n_s_waist_circumference;
 static PyObject *__pyx_n_s_weight;
-static PyObject *__pyx_pf_5pyfit_11composition_dailyWaterNeed(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_weight); /* proto */
-static int __pyx_pf_5pyfit_11composition_5Index___cinit__(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_2bai(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_hipCircumference); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_dailyWaterNeed(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_weight); /* proto */
+static int __pyx_pf_5pyfit_11composition_5Index___cinit__(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_2bai(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_hipCircumference); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_5Index_4bmi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_6bmi_prime(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_upper_limit); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_8bsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waist_circumference); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_6bmi_prime(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_upper_limit); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_8bsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waist_circumference); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_5Index_10corpulence(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_12sbsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_bsa, float __pyx_v_vertical_trunk_circumference, float __pyx_v_waist_circumference); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_14WHR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waistCircumference, float __pyx_v_hipCircumference); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_16WHtR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waistCircumference); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_12sbsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_bsa, double __pyx_v_vertical_trunk_circumference, double __pyx_v_waist_circumference); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_14WHR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waistCircumference, double __pyx_v_hipCircumference); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_16WHtR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waistCircumference); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_5Index_6weight___get__(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_5Index_6height___get__(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self); /* proto */
-static int __pyx_pf_5pyfit_11composition_4Mass___cinit__(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_2ffmChild(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_4ffmAdolescent(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6ffmAdultLean(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_8ffmAdultObese(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_10ffmAdultAthlete(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance); /* proto */
+static int __pyx_pf_5pyfit_11composition_4Mass___cinit__(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_2ffmChild(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_4ffmAdolescent(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6ffmAdultLean(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_8ffmAdultObese(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_10ffmAdultAthlete(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6gender___get__(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_4Mass_3age___get__(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6weight___get__(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6height___get__(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self); /* proto */
-static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5pyfit_11composition_Density *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age); /* proto */
-static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5pyfit_11composition_BodyFat *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age); /* proto */
-static int __pyx_pf_5pyfit_11composition_11SurfaceArea___cinit__(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height); /* proto */
+static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5pyfit_11composition_Density *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age); /* proto */
+static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5pyfit_11composition_BodyFat *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age); /* proto */
+static int __pyx_pf_5pyfit_11composition_11SurfaceArea___cinit__(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_2boyd(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_4costeff(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6dubois(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self); /* proto */
@@ -1071,10 +1071,10 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6gender___get__(str
 static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_3age___get__(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6weight___get__(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6height___get__(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self); /* proto */
-static int __pyx_pf_5pyfit_11composition_7Stature___cinit__(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_height); /* proto */
+static int __pyx_pf_5pyfit_11composition_7Stature___cinit__(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_height); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_7Stature_2universal(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_7Stature_4americanWhite(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, float __pyx_v_femurLength); /* proto */
-static PyObject *__pyx_pf_5pyfit_11composition_7Stature_6americanBlack(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, float __pyx_v_femurLength); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_7Stature_4americanWhite(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, double __pyx_v_femurLength); /* proto */
+static PyObject *__pyx_pf_5pyfit_11composition_7Stature_6americanBlack(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, double __pyx_v_femurLength); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_7Stature_8strideLength(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_7Stature_6gender___get__(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_11composition_7Stature_3age___get__(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self); /* proto */
@@ -1089,20 +1089,20 @@ static PyObject *__pyx_tp_new_5pyfit_11composition_Stature(PyTypeObject *t, PyOb
 /* "pyfit/composition.pyx":4
  * from pyfit.enums import Gender
  * 
- * cpdef float dailyWaterNeed(float weight):             # <<<<<<<<<<<<<<
+ * cpdef double dailyWaterNeed(double weight):             # <<<<<<<<<<<<<<
  *     return 0.033 * weight
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_1dailyWaterNeed(PyObject *__pyx_self, PyObject *__pyx_arg_weight); /*proto*/
-static float __pyx_f_5pyfit_11composition_dailyWaterNeed(float __pyx_v_weight, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_dailyWaterNeed(double __pyx_v_weight, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("dailyWaterNeed", 0);
 
   /* "pyfit/composition.pyx":5
  * 
- * cpdef float dailyWaterNeed(float weight):
+ * cpdef double dailyWaterNeed(double weight):
  *     return 0.033 * weight             # <<<<<<<<<<<<<<
  * 
  * cdef class Index(object):
@@ -1113,7 +1113,7 @@ static float __pyx_f_5pyfit_11composition_dailyWaterNeed(float __pyx_v_weight, C
   /* "pyfit/composition.pyx":4
  * from pyfit.enums import Gender
  * 
- * cpdef float dailyWaterNeed(float weight):             # <<<<<<<<<<<<<<
+ * cpdef double dailyWaterNeed(double weight):             # <<<<<<<<<<<<<<
  *     return 0.033 * weight
  * 
  */
@@ -1127,12 +1127,12 @@ static float __pyx_f_5pyfit_11composition_dailyWaterNeed(float __pyx_v_weight, C
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_1dailyWaterNeed(PyObject *__pyx_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_1dailyWaterNeed(PyObject *__pyx_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("dailyWaterNeed (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 4, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 4, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1140,14 +1140,14 @@ static PyObject *__pyx_pw_5pyfit_11composition_1dailyWaterNeed(PyObject *__pyx_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_11composition_dailyWaterNeed(__pyx_self, ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_11composition_dailyWaterNeed(__pyx_self, ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_dailyWaterNeed(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_11composition_dailyWaterNeed(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1171,9 +1171,9 @@ static PyObject *__pyx_pf_5pyfit_11composition_dailyWaterNeed(CYTHON_UNUSED PyOb
 }
 
 /* "pyfit/composition.pyx":11
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.weight = weight
  *         self.height = height
  */
@@ -1181,8 +1181,8 @@ static PyObject *__pyx_pf_5pyfit_11composition_dailyWaterNeed(CYTHON_UNUSED PyOb
 /* Python wrapper */
 static int __pyx_pw_5pyfit_11composition_5Index_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_11composition_5Index_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -1218,8 +1218,8 @@ static int __pyx_pw_5pyfit_11composition_5Index_1__cinit__(PyObject *__pyx_v_sel
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1236,14 +1236,14 @@ static int __pyx_pw_5pyfit_11composition_5Index_1__cinit__(PyObject *__pyx_v_sel
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_11composition_5Index___cinit__(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_weight, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_11composition_5Index___cinit__(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_weight, double __pyx_v_height) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/composition.pyx":12
  * 
- *     def __cinit__(self, float weight, float height):
+ *     def __cinit__(self, double weight, double height):
  *         self.weight = weight             # <<<<<<<<<<<<<<
  *         self.height = height
  * 
@@ -1251,18 +1251,18 @@ static int __pyx_pf_5pyfit_11composition_5Index___cinit__(struct __pyx_obj_5pyfi
   __pyx_v_self->weight = __pyx_v_weight;
 
   /* "pyfit/composition.pyx":13
- *     def __cinit__(self, float weight, float height):
+ *     def __cinit__(self, double weight, double height):
  *         self.weight = weight
  *         self.height = height             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bai(self, float hipCircumference):
+ *     cpdef double bai(self, double hipCircumference):
  */
   __pyx_v_self->height = __pyx_v_height;
 
   /* "pyfit/composition.pyx":11
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.weight = weight
  *         self.height = height
  */
@@ -1276,16 +1276,16 @@ static int __pyx_pf_5pyfit_11composition_5Index___cinit__(struct __pyx_obj_5pyfi
 /* "pyfit/composition.pyx":15
  *         self.height = height
  * 
- *     cpdef float bai(self, float hipCircumference):             # <<<<<<<<<<<<<<
- *         cdef float  numerator = 100 * hipCircumference
- *         cdef float denominator = self.height * sqrt(self.height)
+ *     cpdef double bai(self, double hipCircumference):             # <<<<<<<<<<<<<<
+ *         cdef double  numerator = 100 * hipCircumference
+ *         cdef double denominator = self.height * sqrt(self.height)
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_3bai(PyObject *__pyx_v_self, PyObject *__pyx_arg_hipCircumference); /*proto*/
-static float __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_hipCircumference, int __pyx_skip_dispatch) {
-  float __pyx_v_numerator;
-  float __pyx_v_denominator;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_hipCircumference, int __pyx_skip_dispatch) {
+  double __pyx_v_numerator;
+  double __pyx_v_denominator;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1293,7 +1293,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11c
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("bai", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1331,7 +1331,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11c
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1342,28 +1342,28 @@ static float __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11c
 
   /* "pyfit/composition.pyx":16
  * 
- *     cpdef float bai(self, float hipCircumference):
- *         cdef float  numerator = 100 * hipCircumference             # <<<<<<<<<<<<<<
- *         cdef float denominator = self.height * sqrt(self.height)
+ *     cpdef double bai(self, double hipCircumference):
+ *         cdef double  numerator = 100 * hipCircumference             # <<<<<<<<<<<<<<
+ *         cdef double denominator = self.height * sqrt(self.height)
  *         return (numerator/denominator) - 18
  */
   __pyx_v_numerator = (100.0 * __pyx_v_hipCircumference);
 
   /* "pyfit/composition.pyx":17
- *     cpdef float bai(self, float hipCircumference):
- *         cdef float  numerator = 100 * hipCircumference
- *         cdef float denominator = self.height * sqrt(self.height)             # <<<<<<<<<<<<<<
+ *     cpdef double bai(self, double hipCircumference):
+ *         cdef double  numerator = 100 * hipCircumference
+ *         cdef double denominator = self.height * sqrt(self.height)             # <<<<<<<<<<<<<<
  *         return (numerator/denominator) - 18
  * 
  */
   __pyx_v_denominator = (__pyx_v_self->height * sqrt(__pyx_v_self->height));
 
   /* "pyfit/composition.pyx":18
- *         cdef float  numerator = 100 * hipCircumference
- *         cdef float denominator = self.height * sqrt(self.height)
+ *         cdef double  numerator = 100 * hipCircumference
+ *         cdef double denominator = self.height * sqrt(self.height)
  *         return (numerator/denominator) - 18             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bmi(self):
+ *     cpdef double bmi(self):
  */
   if (unlikely(__pyx_v_denominator == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
@@ -1375,9 +1375,9 @@ static float __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11c
   /* "pyfit/composition.pyx":15
  *         self.height = height
  * 
- *     cpdef float bai(self, float hipCircumference):             # <<<<<<<<<<<<<<
- *         cdef float  numerator = 100 * hipCircumference
- *         cdef float denominator = self.height * sqrt(self.height)
+ *     cpdef double bai(self, double hipCircumference):             # <<<<<<<<<<<<<<
+ *         cdef double  numerator = 100 * hipCircumference
+ *         cdef double denominator = self.height * sqrt(self.height)
  */
 
   /* function exit code */
@@ -1398,12 +1398,12 @@ static float __pyx_f_5pyfit_11composition_5Index_bai(struct __pyx_obj_5pyfit_11c
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_3bai(PyObject *__pyx_v_self, PyObject *__pyx_arg_hipCircumference); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_3bai(PyObject *__pyx_v_self, PyObject *__pyx_arg_hipCircumference) {
-  float __pyx_v_hipCircumference;
+  double __pyx_v_hipCircumference;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("bai (wrapper)", 0);
   assert(__pyx_arg_hipCircumference); {
-    __pyx_v_hipCircumference = __pyx_PyFloat_AsFloat(__pyx_arg_hipCircumference); if (unlikely((__pyx_v_hipCircumference == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
+    __pyx_v_hipCircumference = __pyx_PyFloat_AsDouble(__pyx_arg_hipCircumference); if (unlikely((__pyx_v_hipCircumference == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1411,14 +1411,14 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_3bai(PyObject *__pyx_v_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_11composition_5Index_2bai(((struct __pyx_obj_5pyfit_11composition_Index *)__pyx_v_self), ((float)__pyx_v_hipCircumference));
+  __pyx_r = __pyx_pf_5pyfit_11composition_5Index_2bai(((struct __pyx_obj_5pyfit_11composition_Index *)__pyx_v_self), ((double)__pyx_v_hipCircumference));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_2bai(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_hipCircumference) {
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_2bai(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_hipCircumference) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1444,20 +1444,20 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_2bai(struct __pyx_obj_5pyf
 /* "pyfit/composition.pyx":20
  *         return (numerator/denominator) - 18
  * 
- *     cpdef float bmi(self):             # <<<<<<<<<<<<<<
+ *     cpdef double bmi(self):             # <<<<<<<<<<<<<<
  *         return self.weight/(self.height * self.height)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_5bmi(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_5Index_bmi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_5Index_bmi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("bmi", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1485,7 +1485,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bmi(struct __pyx_obj_5pyfit_11c
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 20, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 20, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1496,10 +1496,10 @@ static float __pyx_f_5pyfit_11composition_5Index_bmi(struct __pyx_obj_5pyfit_11c
 
   /* "pyfit/composition.pyx":21
  * 
- *     cpdef float bmi(self):
+ *     cpdef double bmi(self):
  *         return self.weight/(self.height * self.height)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bmi_prime(self, float upper_limit=25.9):
+ *     cpdef double bmi_prime(self, double upper_limit=25.9):
  */
   __pyx_t_5 = (__pyx_v_self->height * __pyx_v_self->height);
   if (unlikely(__pyx_t_5 == 0)) {
@@ -1512,7 +1512,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bmi(struct __pyx_obj_5pyfit_11c
   /* "pyfit/composition.pyx":20
  *         return (numerator/denominator) - 18
  * 
- *     cpdef float bmi(self):             # <<<<<<<<<<<<<<
+ *     cpdef double bmi(self):             # <<<<<<<<<<<<<<
  *         return self.weight/(self.height * self.height)
  * 
  */
@@ -1569,15 +1569,15 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_4bmi(struct __pyx_obj_5pyf
 /* "pyfit/composition.pyx":23
  *         return self.weight/(self.height * self.height)
  * 
- *     cpdef float bmi_prime(self, float upper_limit=25.9):             # <<<<<<<<<<<<<<
+ *     cpdef double bmi_prime(self, double upper_limit=25.9):             # <<<<<<<<<<<<<<
  *         return self.bmi()/upper_limit
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_7bmi_prime(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime *__pyx_optional_args) {
-  float __pyx_v_upper_limit = ((float)25.9);
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime *__pyx_optional_args) {
+  double __pyx_v_upper_limit = ((double)25.9);
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1585,7 +1585,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyf
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("bmi_prime", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
@@ -1628,7 +1628,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyf
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 23, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 23, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1639,10 +1639,10 @@ static float __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyf
 
   /* "pyfit/composition.pyx":24
  * 
- *     cpdef float bmi_prime(self, float upper_limit=25.9):
+ *     cpdef double bmi_prime(self, double upper_limit=25.9):
  *         return self.bmi()/upper_limit             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bsi(self, float waist_circumference):
+ *     cpdef double bsi(self, double waist_circumference):
  */
   __pyx_t_7 = ((struct __pyx_vtabstruct_5pyfit_11composition_Index *)__pyx_v_self->__pyx_vtab)->bmi(__pyx_v_self, 0);
   if (unlikely(__pyx_v_upper_limit == 0)) {
@@ -1655,7 +1655,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyf
   /* "pyfit/composition.pyx":23
  *         return self.weight/(self.height * self.height)
  * 
- *     cpdef float bmi_prime(self, float upper_limit=25.9):             # <<<<<<<<<<<<<<
+ *     cpdef double bmi_prime(self, double upper_limit=25.9):             # <<<<<<<<<<<<<<
  *         return self.bmi()/upper_limit
  * 
  */
@@ -1678,7 +1678,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bmi_prime(struct __pyx_obj_5pyf
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_7bmi_prime(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_7bmi_prime(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_upper_limit;
+  double __pyx_v_upper_limit;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("bmi_prime (wrapper)", 0);
@@ -1712,9 +1712,9 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_7bmi_prime(PyObject *__pyx
       }
     }
     if (values[0]) {
-      __pyx_v_upper_limit = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_upper_limit == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 23, __pyx_L3_error)
+      __pyx_v_upper_limit = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_upper_limit == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 23, __pyx_L3_error)
     } else {
-      __pyx_v_upper_limit = ((float)25.9);
+      __pyx_v_upper_limit = ((double)25.9);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
@@ -1732,10 +1732,10 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_7bmi_prime(PyObject *__pyx
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_6bmi_prime(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_upper_limit) {
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_6bmi_prime(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_upper_limit) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  float __pyx_t_1;
+  double __pyx_t_1;
   struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("bmi_prime", 0);
@@ -1763,14 +1763,14 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_6bmi_prime(struct __pyx_ob
 /* "pyfit/composition.pyx":26
  *         return self.bmi()/upper_limit
  * 
- *     cpdef float bsi(self, float waist_circumference):             # <<<<<<<<<<<<<<
+ *     cpdef double bsi(self, double waist_circumference):             # <<<<<<<<<<<<<<
  *         return waist_circumference / pow(self.bmi(), 2/3) * pow(self.height, 0.5)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_9bsi(PyObject *__pyx_v_self, PyObject *__pyx_arg_waist_circumference); /*proto*/
-static float __pyx_f_5pyfit_11composition_5Index_bsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waist_circumference, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_5Index_bsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waist_circumference, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1778,8 +1778,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bsi(struct __pyx_obj_5pyfit_11c
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  double __pyx_t_8;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("bsi", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1817,7 +1816,7 @@ static float __pyx_f_5pyfit_11composition_5Index_bsi(struct __pyx_obj_5pyfit_11c
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 26, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 26, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1828,23 +1827,23 @@ static float __pyx_f_5pyfit_11composition_5Index_bsi(struct __pyx_obj_5pyfit_11c
 
   /* "pyfit/composition.pyx":27
  * 
- *     cpdef float bsi(self, float waist_circumference):
+ *     cpdef double bsi(self, double waist_circumference):
  *         return waist_circumference / pow(self.bmi(), 2/3) * pow(self.height, 0.5)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float corpulence(self):
+ *     cpdef double corpulence(self):
  */
-  __pyx_t_8 = pow(((struct __pyx_vtabstruct_5pyfit_11composition_Index *)__pyx_v_self->__pyx_vtab)->bmi(__pyx_v_self, 0), 0.0);
-  if (unlikely(__pyx_t_8 == 0)) {
+  __pyx_t_7 = pow(((struct __pyx_vtabstruct_5pyfit_11composition_Index *)__pyx_v_self->__pyx_vtab)->bmi(__pyx_v_self, 0), 0.0);
+  if (unlikely(__pyx_t_7 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 27, __pyx_L1_error)
   }
-  __pyx_r = ((__pyx_v_waist_circumference / __pyx_t_8) * pow(__pyx_v_self->height, 0.5));
+  __pyx_r = ((__pyx_v_waist_circumference / __pyx_t_7) * pow(__pyx_v_self->height, 0.5));
   goto __pyx_L0;
 
   /* "pyfit/composition.pyx":26
  *         return self.bmi()/upper_limit
  * 
- *     cpdef float bsi(self, float waist_circumference):             # <<<<<<<<<<<<<<
+ *     cpdef double bsi(self, double waist_circumference):             # <<<<<<<<<<<<<<
  *         return waist_circumference / pow(self.bmi(), 2/3) * pow(self.height, 0.5)
  * 
  */
@@ -1867,12 +1866,12 @@ static float __pyx_f_5pyfit_11composition_5Index_bsi(struct __pyx_obj_5pyfit_11c
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_9bsi(PyObject *__pyx_v_self, PyObject *__pyx_arg_waist_circumference); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_9bsi(PyObject *__pyx_v_self, PyObject *__pyx_arg_waist_circumference) {
-  float __pyx_v_waist_circumference;
+  double __pyx_v_waist_circumference;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("bsi (wrapper)", 0);
   assert(__pyx_arg_waist_circumference); {
-    __pyx_v_waist_circumference = __pyx_PyFloat_AsFloat(__pyx_arg_waist_circumference); if (unlikely((__pyx_v_waist_circumference == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 26, __pyx_L3_error)
+    __pyx_v_waist_circumference = __pyx_PyFloat_AsDouble(__pyx_arg_waist_circumference); if (unlikely((__pyx_v_waist_circumference == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 26, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1880,14 +1879,14 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_9bsi(PyObject *__pyx_v_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_11composition_5Index_8bsi(((struct __pyx_obj_5pyfit_11composition_Index *)__pyx_v_self), ((float)__pyx_v_waist_circumference));
+  __pyx_r = __pyx_pf_5pyfit_11composition_5Index_8bsi(((struct __pyx_obj_5pyfit_11composition_Index *)__pyx_v_self), ((double)__pyx_v_waist_circumference));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_8bsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waist_circumference) {
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_8bsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waist_circumference) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1913,21 +1912,20 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_8bsi(struct __pyx_obj_5pyf
 /* "pyfit/composition.pyx":29
  *         return waist_circumference / pow(self.bmi(), 2/3) * pow(self.height, 0.5)
  * 
- *     cpdef float corpulence(self):             # <<<<<<<<<<<<<<
+ *     cpdef double corpulence(self):             # <<<<<<<<<<<<<<
  *         return self.weight/pow(self.height, 3)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_11corpulence(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_5Index_corpulence(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_5Index_corpulence(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
-  double __pyx_t_6;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("corpulence", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1955,7 +1953,7 @@ static float __pyx_f_5pyfit_11composition_5Index_corpulence(struct __pyx_obj_5py
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1966,23 +1964,23 @@ static float __pyx_f_5pyfit_11composition_5Index_corpulence(struct __pyx_obj_5py
 
   /* "pyfit/composition.pyx":30
  * 
- *     cpdef float corpulence(self):
+ *     cpdef double corpulence(self):
  *         return self.weight/pow(self.height, 3)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float sbsi(self, float bsa, float vertical_trunk_circumference, float waist_circumference):
+ *     cpdef double sbsi(self, double bsa, double vertical_trunk_circumference, double waist_circumference):
  */
-  __pyx_t_6 = pow(__pyx_v_self->height, 3.0);
-  if (unlikely(__pyx_t_6 == 0)) {
+  __pyx_t_5 = pow(__pyx_v_self->height, 3.0);
+  if (unlikely(__pyx_t_5 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 30, __pyx_L1_error)
   }
-  __pyx_r = (__pyx_v_self->weight / __pyx_t_6);
+  __pyx_r = (__pyx_v_self->weight / __pyx_t_5);
   goto __pyx_L0;
 
   /* "pyfit/composition.pyx":29
  *         return waist_circumference / pow(self.bmi(), 2/3) * pow(self.height, 0.5)
  * 
- *     cpdef float corpulence(self):             # <<<<<<<<<<<<<<
+ *     cpdef double corpulence(self):             # <<<<<<<<<<<<<<
  *         return self.weight/pow(self.height, 3)
  * 
  */
@@ -2039,14 +2037,14 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_10corpulence(struct __pyx_
 /* "pyfit/composition.pyx":32
  *         return self.weight/pow(self.height, 3)
  * 
- *     cpdef float sbsi(self, float bsa, float vertical_trunk_circumference, float waist_circumference):             # <<<<<<<<<<<<<<
+ *     cpdef double sbsi(self, double bsa, double vertical_trunk_circumference, double waist_circumference):             # <<<<<<<<<<<<<<
  *         return (pow(self.height, 7/4)* pow(waist_circumference, 5/6) )/(bsa * vertical_trunk_circumference)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_13sbsi(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_11composition_5Index_sbsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_bsa, float __pyx_v_vertical_trunk_circumference, float __pyx_v_waist_circumference, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_5Index_sbsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_bsa, double __pyx_v_vertical_trunk_circumference, double __pyx_v_waist_circumference, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2057,7 +2055,7 @@ static float __pyx_f_5pyfit_11composition_5Index_sbsi(struct __pyx_obj_5pyfit_11
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   double __pyx_t_11;
   __Pyx_RefNannySetupContext("sbsi", 0);
   /* Check if called by wrapper */
@@ -2104,7 +2102,7 @@ static float __pyx_f_5pyfit_11composition_5Index_sbsi(struct __pyx_obj_5pyfit_11
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2115,24 +2113,24 @@ static float __pyx_f_5pyfit_11composition_5Index_sbsi(struct __pyx_obj_5pyfit_11
 
   /* "pyfit/composition.pyx":33
  * 
- *     cpdef float sbsi(self, float bsa, float vertical_trunk_circumference, float waist_circumference):
+ *     cpdef double sbsi(self, double bsa, double vertical_trunk_circumference, double waist_circumference):
  *         return (pow(self.height, 7/4)* pow(waist_circumference, 5/6) )/(bsa * vertical_trunk_circumference)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float WHR(self, float waistCircumference, float hipCircumference):
+ *     cpdef double WHR(self, double waistCircumference, double hipCircumference):
  */
-  __pyx_t_11 = (pow(__pyx_v_self->height, 1.0) * pow(__pyx_v_waist_circumference, 0.0));
-  __pyx_t_10 = (__pyx_v_bsa * __pyx_v_vertical_trunk_circumference);
-  if (unlikely(__pyx_t_10 == 0)) {
+  __pyx_t_10 = (pow(__pyx_v_self->height, 1.0) * pow(__pyx_v_waist_circumference, 0.0));
+  __pyx_t_11 = (__pyx_v_bsa * __pyx_v_vertical_trunk_circumference);
+  if (unlikely(__pyx_t_11 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 33, __pyx_L1_error)
   }
-  __pyx_r = (__pyx_t_11 / __pyx_t_10);
+  __pyx_r = (__pyx_t_10 / __pyx_t_11);
   goto __pyx_L0;
 
   /* "pyfit/composition.pyx":32
  *         return self.weight/pow(self.height, 3)
  * 
- *     cpdef float sbsi(self, float bsa, float vertical_trunk_circumference, float waist_circumference):             # <<<<<<<<<<<<<<
+ *     cpdef double sbsi(self, double bsa, double vertical_trunk_circumference, double waist_circumference):             # <<<<<<<<<<<<<<
  *         return (pow(self.height, 7/4)* pow(waist_circumference, 5/6) )/(bsa * vertical_trunk_circumference)
  * 
  */
@@ -2157,9 +2155,9 @@ static float __pyx_f_5pyfit_11composition_5Index_sbsi(struct __pyx_obj_5pyfit_11
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_13sbsi(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_13sbsi(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_bsa;
-  float __pyx_v_vertical_trunk_circumference;
-  float __pyx_v_waist_circumference;
+  double __pyx_v_bsa;
+  double __pyx_v_vertical_trunk_circumference;
+  double __pyx_v_waist_circumference;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sbsi (wrapper)", 0);
@@ -2202,9 +2200,9 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_13sbsi(PyObject *__pyx_v_s
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_bsa = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_bsa == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
-    __pyx_v_vertical_trunk_circumference = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_vertical_trunk_circumference == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
-    __pyx_v_waist_circumference = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_waist_circumference == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
+    __pyx_v_bsa = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_bsa == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
+    __pyx_v_vertical_trunk_circumference = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_vertical_trunk_circumference == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
+    __pyx_v_waist_circumference = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_waist_circumference == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2221,7 +2219,7 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_13sbsi(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_12sbsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_bsa, float __pyx_v_vertical_trunk_circumference, float __pyx_v_waist_circumference) {
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_12sbsi(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_bsa, double __pyx_v_vertical_trunk_circumference, double __pyx_v_waist_circumference) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2247,14 +2245,14 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_12sbsi(struct __pyx_obj_5p
 /* "pyfit/composition.pyx":35
  *         return (pow(self.height, 7/4)* pow(waist_circumference, 5/6) )/(bsa * vertical_trunk_circumference)
  * 
- *     cpdef float WHR(self, float waistCircumference, float hipCircumference):             # <<<<<<<<<<<<<<
+ *     cpdef double WHR(self, double waistCircumference, double hipCircumference):             # <<<<<<<<<<<<<<
  *         return waistCircumference/hipCircumference
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_15WHR(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waistCircumference, float __pyx_v_hipCircumference, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waistCircumference, double __pyx_v_hipCircumference, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2264,7 +2262,7 @@ static float __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("WHR", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2305,7 +2303,7 @@ static float __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2316,10 +2314,10 @@ static float __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_
 
   /* "pyfit/composition.pyx":36
  * 
- *     cpdef float WHR(self, float waistCircumference, float hipCircumference):
+ *     cpdef double WHR(self, double waistCircumference, double hipCircumference):
  *         return waistCircumference/hipCircumference             # <<<<<<<<<<<<<<
  * 
- *     cpdef float WHtR(self, float waistCircumference):
+ *     cpdef double WHtR(self, double waistCircumference):
  */
   if (unlikely(__pyx_v_hipCircumference == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
@@ -2331,7 +2329,7 @@ static float __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_
   /* "pyfit/composition.pyx":35
  *         return (pow(self.height, 7/4)* pow(waist_circumference, 5/6) )/(bsa * vertical_trunk_circumference)
  * 
- *     cpdef float WHR(self, float waistCircumference, float hipCircumference):             # <<<<<<<<<<<<<<
+ *     cpdef double WHR(self, double waistCircumference, double hipCircumference):             # <<<<<<<<<<<<<<
  *         return waistCircumference/hipCircumference
  * 
  */
@@ -2355,8 +2353,8 @@ static float __pyx_f_5pyfit_11composition_5Index_WHR(CYTHON_UNUSED struct __pyx_
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_15WHR(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_15WHR(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_waistCircumference;
-  float __pyx_v_hipCircumference;
+  double __pyx_v_waistCircumference;
+  double __pyx_v_hipCircumference;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("WHR (wrapper)", 0);
@@ -2392,8 +2390,8 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_15WHR(PyObject *__pyx_v_se
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_waistCircumference = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_waistCircumference == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
-    __pyx_v_hipCircumference = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_hipCircumference == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
+    __pyx_v_waistCircumference = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_waistCircumference == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
+    __pyx_v_hipCircumference = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_hipCircumference == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2410,7 +2408,7 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_15WHR(PyObject *__pyx_v_se
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_14WHR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waistCircumference, float __pyx_v_hipCircumference) {
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_14WHR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waistCircumference, double __pyx_v_hipCircumference) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2436,14 +2434,14 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_14WHR(struct __pyx_obj_5py
 /* "pyfit/composition.pyx":38
  *         return waistCircumference/hipCircumference
  * 
- *     cpdef float WHtR(self, float waistCircumference):             # <<<<<<<<<<<<<<
+ *     cpdef double WHtR(self, double waistCircumference):             # <<<<<<<<<<<<<<
  *         return waistCircumference/self.height
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_17WHtR(PyObject *__pyx_v_self, PyObject *__pyx_arg_waistCircumference); /*proto*/
-static float __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waistCircumference, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waistCircumference, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2451,7 +2449,7 @@ static float __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("WHtR", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2489,7 +2487,7 @@ static float __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2500,7 +2498,7 @@ static float __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11
 
   /* "pyfit/composition.pyx":39
  * 
- *     cpdef float WHtR(self, float waistCircumference):
+ *     cpdef double WHtR(self, double waistCircumference):
  *         return waistCircumference/self.height             # <<<<<<<<<<<<<<
  * 
  * cdef class Mass(object):
@@ -2515,7 +2513,7 @@ static float __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11
   /* "pyfit/composition.pyx":38
  *         return waistCircumference/hipCircumference
  * 
- *     cpdef float WHtR(self, float waistCircumference):             # <<<<<<<<<<<<<<
+ *     cpdef double WHtR(self, double waistCircumference):             # <<<<<<<<<<<<<<
  *         return waistCircumference/self.height
  * 
  */
@@ -2538,12 +2536,12 @@ static float __pyx_f_5pyfit_11composition_5Index_WHtR(struct __pyx_obj_5pyfit_11
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_17WHtR(PyObject *__pyx_v_self, PyObject *__pyx_arg_waistCircumference); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_5Index_17WHtR(PyObject *__pyx_v_self, PyObject *__pyx_arg_waistCircumference) {
-  float __pyx_v_waistCircumference;
+  double __pyx_v_waistCircumference;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("WHtR (wrapper)", 0);
   assert(__pyx_arg_waistCircumference); {
-    __pyx_v_waistCircumference = __pyx_PyFloat_AsFloat(__pyx_arg_waistCircumference); if (unlikely((__pyx_v_waistCircumference == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L3_error)
+    __pyx_v_waistCircumference = __pyx_PyFloat_AsDouble(__pyx_arg_waistCircumference); if (unlikely((__pyx_v_waistCircumference == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2551,14 +2549,14 @@ static PyObject *__pyx_pw_5pyfit_11composition_5Index_17WHtR(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_11composition_5Index_16WHtR(((struct __pyx_obj_5pyfit_11composition_Index *)__pyx_v_self), ((float)__pyx_v_waistCircumference));
+  __pyx_r = __pyx_pf_5pyfit_11composition_5Index_16WHtR(((struct __pyx_obj_5pyfit_11composition_Index *)__pyx_v_self), ((double)__pyx_v_waistCircumference));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_5Index_16WHtR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, float __pyx_v_waistCircumference) {
+static PyObject *__pyx_pf_5pyfit_11composition_5Index_16WHtR(struct __pyx_obj_5pyfit_11composition_Index *__pyx_v_self, double __pyx_v_waistCircumference) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2584,8 +2582,8 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_16WHtR(struct __pyx_obj_5p
 /* "pyfit/composition.pyx":8
  * 
  * cdef class Index(object):
- *     cdef readonly float weight             # <<<<<<<<<<<<<<
- *     cdef readonly float height
+ *     cdef readonly double weight             # <<<<<<<<<<<<<<
+ *     cdef readonly double height
  * 
  */
 
@@ -2627,10 +2625,10 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_6weight___get__(struct __p
 
 /* "pyfit/composition.pyx":9
  * cdef class Index(object):
- *     cdef readonly float weight
- *     cdef readonly float height             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight
+ *     cdef readonly double height             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, float weight, float height):
+ *     def __cinit__(self, double weight, double height):
  */
 
 /* Python wrapper */
@@ -2670,9 +2668,9 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_6height___get__(struct __p
 }
 
 /* "pyfit/composition.pyx":47
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -2681,9 +2679,9 @@ static PyObject *__pyx_pf_5pyfit_11composition_5Index_6height___get__(struct __p
 static int __pyx_pw_5pyfit_11composition_4Mass_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_11composition_4Mass_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -2734,9 +2732,9 @@ static int __pyx_pw_5pyfit_11composition_4Mass_1__cinit__(PyObject *__pyx_v_self
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2753,14 +2751,14 @@ static int __pyx_pw_5pyfit_11composition_4Mass_1__cinit__(PyObject *__pyx_v_self
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_11composition_4Mass___cinit__(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_11composition_4Mass___cinit__(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/composition.pyx":48
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  *         self.weight = weight
@@ -2768,7 +2766,7 @@ static int __pyx_pf_5pyfit_11composition_4Mass___cinit__(struct __pyx_obj_5pyfit
   __pyx_v_self->gender = __pyx_v_gender;
 
   /* "pyfit/composition.pyx":49
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  *         self.weight = weight
@@ -2790,14 +2788,14 @@ static int __pyx_pf_5pyfit_11composition_4Mass___cinit__(struct __pyx_obj_5pyfit
  *         self.weight = weight
  *         self.height = height             # <<<<<<<<<<<<<<
  * 
- *     cpdef float ffmChild(self, float resistance, float reactance):
+ *     cpdef double ffmChild(self, double resistance, double reactance):
  */
   __pyx_v_self->height = __pyx_v_height;
 
   /* "pyfit/composition.pyx":47
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -2811,15 +2809,15 @@ static int __pyx_pf_5pyfit_11composition_4Mass___cinit__(struct __pyx_obj_5pyfit
 /* "pyfit/composition.pyx":53
  *         self.height = height
  * 
- *     cpdef float ffmChild(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmChild(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return (0.62*(pow(cm,2)/resistance)) + (0.21*self.weight) + (0.1*reactance) + 4.2
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_3ffmChild(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmChild(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_4Mass_ffmChild(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2829,8 +2827,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmChild(struct __pyx_obj_5pyfit
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
-  double __pyx_t_10;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("ffmChild", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2871,7 +2868,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmChild(struct __pyx_obj_5pyfit
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2882,33 +2879,33 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmChild(struct __pyx_obj_5pyfit
 
   /* "pyfit/composition.pyx":54
  * 
- *     cpdef float ffmChild(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double ffmChild(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         return (0.62*(pow(cm,2)/resistance)) + (0.21*self.weight) + (0.1*reactance) + 4.2
  * 
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":55
- *     cpdef float ffmChild(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmChild(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100
  *         return (0.62*(pow(cm,2)/resistance)) + (0.21*self.weight) + (0.1*reactance) + 4.2             # <<<<<<<<<<<<<<
  * 
- *     cpdef float ffmAdolescent(self, float resistance, float reactance):
+ *     cpdef double ffmAdolescent(self, double resistance, double reactance):
  */
-  __pyx_t_10 = pow(__pyx_v_cm, 2.0);
+  __pyx_t_9 = pow(__pyx_v_cm, 2.0);
   if (unlikely(__pyx_v_resistance == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 55, __pyx_L1_error)
   }
-  __pyx_r = ((((0.62 * (__pyx_t_10 / __pyx_v_resistance)) + (0.21 * __pyx_v_self->weight)) + (0.1 * __pyx_v_reactance)) + 4.2);
+  __pyx_r = ((((0.62 * (__pyx_t_9 / __pyx_v_resistance)) + (0.21 * __pyx_v_self->weight)) + (0.1 * __pyx_v_reactance)) + 4.2);
   goto __pyx_L0;
 
   /* "pyfit/composition.pyx":53
  *         self.height = height
  * 
- *     cpdef float ffmChild(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmChild(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return (0.62*(pow(cm,2)/resistance)) + (0.21*self.weight) + (0.1*reactance) + 4.2
  */
 
@@ -2931,8 +2928,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmChild(struct __pyx_obj_5pyfit
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_3ffmChild(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_3ffmChild(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_resistance;
-  float __pyx_v_reactance;
+  double __pyx_v_resistance;
+  double __pyx_v_reactance;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("ffmChild (wrapper)", 0);
@@ -2968,8 +2965,8 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_3ffmChild(PyObject *__pyx_v
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_resistance = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_resistance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
-    __pyx_v_reactance = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_reactance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
+    __pyx_v_resistance = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_resistance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
+    __pyx_v_reactance = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_reactance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2986,7 +2983,7 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_3ffmChild(PyObject *__pyx_v
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_2ffmChild(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance) {
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_2ffmChild(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3012,15 +3009,15 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_2ffmChild(struct __pyx_obj_
 /* "pyfit/composition.pyx":57
  *         return (0.62*(pow(cm,2)/resistance)) + (0.21*self.weight) + (0.1*reactance) + 4.2
  * 
- *     cpdef float ffmAdolescent(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdolescent(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return (0.61*(pow(cm,2)/resistance)) + (0.25*self.weight) + 1.31
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_5ffmAdolescent(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmAdolescent(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, CYTHON_UNUSED float __pyx_v_reactance, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_4Mass_ffmAdolescent(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, CYTHON_UNUSED double __pyx_v_reactance, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3030,8 +3027,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdolescent(struct __pyx_obj_5
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
-  double __pyx_t_10;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("ffmAdolescent", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -3072,7 +3068,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdolescent(struct __pyx_obj_5
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3083,33 +3079,33 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdolescent(struct __pyx_obj_5
 
   /* "pyfit/composition.pyx":58
  * 
- *     cpdef float ffmAdolescent(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double ffmAdolescent(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         return (0.61*(pow(cm,2)/resistance)) + (0.25*self.weight) + 1.31
  * 
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":59
- *     cpdef float ffmAdolescent(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdolescent(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100
  *         return (0.61*(pow(cm,2)/resistance)) + (0.25*self.weight) + 1.31             # <<<<<<<<<<<<<<
  * 
- *     cpdef float ffmAdultLean(self, float resistance, float reactance):
+ *     cpdef double ffmAdultLean(self, double resistance, double reactance):
  */
-  __pyx_t_10 = pow(__pyx_v_cm, 2.0);
+  __pyx_t_9 = pow(__pyx_v_cm, 2.0);
   if (unlikely(__pyx_v_resistance == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 59, __pyx_L1_error)
   }
-  __pyx_r = (((0.61 * (__pyx_t_10 / __pyx_v_resistance)) + (0.25 * __pyx_v_self->weight)) + 1.31);
+  __pyx_r = (((0.61 * (__pyx_t_9 / __pyx_v_resistance)) + (0.25 * __pyx_v_self->weight)) + 1.31);
   goto __pyx_L0;
 
   /* "pyfit/composition.pyx":57
  *         return (0.62*(pow(cm,2)/resistance)) + (0.21*self.weight) + (0.1*reactance) + 4.2
  * 
- *     cpdef float ffmAdolescent(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdolescent(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return (0.61*(pow(cm,2)/resistance)) + (0.25*self.weight) + 1.31
  */
 
@@ -3132,8 +3128,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdolescent(struct __pyx_obj_5
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_5ffmAdolescent(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_5ffmAdolescent(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_resistance;
-  float __pyx_v_reactance;
+  double __pyx_v_resistance;
+  double __pyx_v_reactance;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("ffmAdolescent (wrapper)", 0);
@@ -3169,8 +3165,8 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_5ffmAdolescent(PyObject *__
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_resistance = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_resistance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L3_error)
-    __pyx_v_reactance = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_reactance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L3_error)
+    __pyx_v_resistance = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_resistance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L3_error)
+    __pyx_v_reactance = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_reactance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3187,7 +3183,7 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_5ffmAdolescent(PyObject *__
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_4ffmAdolescent(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance) {
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_4ffmAdolescent(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3213,15 +3209,15 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_4ffmAdolescent(struct __pyx
 /* "pyfit/composition.pyx":61
  *         return (0.61*(pow(cm,2)/resistance)) + (0.25*self.weight) + 1.31
  * 
- *     cpdef float ffmAdultLean(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultLean(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_7ffmAdultLean(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, CYTHON_UNUSED float __pyx_v_reactance, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, CYTHON_UNUSED double __pyx_v_reactance, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3231,7 +3227,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5p
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("ffmAdultLean", 0);
   /* Check if called by wrapper */
@@ -3273,7 +3269,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5p
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3284,16 +3280,16 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5p
 
   /* "pyfit/composition.pyx":62
  * 
- *     cpdef float ffmAdultLean(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double ffmAdultLean(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (0.000646*pow(cm,2)) - (0.014 * resistance) + (0.421*self.weight) + 10.4
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":63
- *     cpdef float ffmAdultLean(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultLean(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (0.000646*pow(cm,2)) - (0.014 * resistance) + (0.421*self.weight) + 10.4
  *         return (0.00066360*pow(cm,2)) - (0.02117 * resistance) + (0.62854*self.weight) - (0.12380 * self.age) + 9.33285
@@ -3313,7 +3309,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5p
   if (__pyx_t_10) {
 
     /* "pyfit/composition.pyx":64
- *         cdef float cm = self.height * 100
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  *             return (0.000646*pow(cm,2)) - (0.014 * resistance) + (0.421*self.weight) + 10.4             # <<<<<<<<<<<<<<
  *         return (0.00066360*pow(cm,2)) - (0.02117 * resistance) + (0.62854*self.weight) - (0.12380 * self.age) + 9.33285
@@ -3323,8 +3319,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5p
     goto __pyx_L0;
 
     /* "pyfit/composition.pyx":63
- *     cpdef float ffmAdultLean(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultLean(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (0.000646*pow(cm,2)) - (0.014 * resistance) + (0.421*self.weight) + 10.4
  *         return (0.00066360*pow(cm,2)) - (0.02117 * resistance) + (0.62854*self.weight) - (0.12380 * self.age) + 9.33285
@@ -3336,7 +3332,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5p
  *             return (0.000646*pow(cm,2)) - (0.014 * resistance) + (0.421*self.weight) + 10.4
  *         return (0.00066360*pow(cm,2)) - (0.02117 * resistance) + (0.62854*self.weight) - (0.12380 * self.age) + 9.33285             # <<<<<<<<<<<<<<
  * 
- *     cpdef float ffmAdultObese(self, float resistance, float reactance):
+ *     cpdef double ffmAdultObese(self, double resistance, double reactance):
  */
   __pyx_r = (((((0.00066360 * pow(__pyx_v_cm, 2.0)) - (0.02117 * __pyx_v_resistance)) + (0.62854 * __pyx_v_self->weight)) - (0.12380 * __pyx_v_self->age)) + 9.33285);
   goto __pyx_L0;
@@ -3344,8 +3340,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5p
   /* "pyfit/composition.pyx":61
  *         return (0.61*(pow(cm,2)/resistance)) + (0.25*self.weight) + 1.31
  * 
- *     cpdef float ffmAdultLean(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultLean(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
@@ -3368,8 +3364,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultLean(struct __pyx_obj_5p
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_7ffmAdultLean(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_7ffmAdultLean(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_resistance;
-  float __pyx_v_reactance;
+  double __pyx_v_resistance;
+  double __pyx_v_reactance;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("ffmAdultLean (wrapper)", 0);
@@ -3405,8 +3401,8 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_7ffmAdultLean(PyObject *__p
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_resistance = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_resistance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
-    __pyx_v_reactance = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_reactance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
+    __pyx_v_resistance = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_resistance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
+    __pyx_v_reactance = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_reactance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3423,7 +3419,7 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_7ffmAdultLean(PyObject *__p
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6ffmAdultLean(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance) {
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6ffmAdultLean(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3449,15 +3445,15 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6ffmAdultLean(struct __pyx_
 /* "pyfit/composition.pyx":67
  *         return (0.00066360*pow(cm,2)) - (0.02117 * resistance) + (0.62854*self.weight) - (0.12380 * self.age) + 9.33285
  * 
- *     cpdef float ffmAdultObese(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultObese(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_9ffmAdultObese(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, CYTHON_UNUSED float __pyx_v_reactance, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, CYTHON_UNUSED double __pyx_v_reactance, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3467,7 +3463,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   int __pyx_t_10;
   __Pyx_RefNannySetupContext("ffmAdultObese", 0);
   /* Check if called by wrapper */
@@ -3509,7 +3505,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3520,16 +3516,16 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5
 
   /* "pyfit/composition.pyx":68
  * 
- *     cpdef float ffmAdultObese(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double ffmAdultObese(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (0.00091186*pow(cm,2)) - (0.1466 * resistance) + (0.29990*self.weight) - (0.07012 * self.age) + 9.37938
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":69
- *     cpdef float ffmAdultObese(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultObese(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (0.00091186*pow(cm,2)) - (0.1466 * resistance) + (0.29990*self.weight) - (0.07012 * self.age) + 9.37938
  *         return (0.00088580*pow(cm,2)) - (0.02999 * resistance) + (0.42688*self.weight) - (0.07002 * self.age) + 14.52435
@@ -3549,7 +3545,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5
   if (__pyx_t_10) {
 
     /* "pyfit/composition.pyx":70
- *         cdef float cm = self.height * 100
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  *             return (0.00091186*pow(cm,2)) - (0.1466 * resistance) + (0.29990*self.weight) - (0.07012 * self.age) + 9.37938             # <<<<<<<<<<<<<<
  *         return (0.00088580*pow(cm,2)) - (0.02999 * resistance) + (0.42688*self.weight) - (0.07002 * self.age) + 14.52435
@@ -3559,8 +3555,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5
     goto __pyx_L0;
 
     /* "pyfit/composition.pyx":69
- *     cpdef float ffmAdultObese(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultObese(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (0.00091186*pow(cm,2)) - (0.1466 * resistance) + (0.29990*self.weight) - (0.07012 * self.age) + 9.37938
  *         return (0.00088580*pow(cm,2)) - (0.02999 * resistance) + (0.42688*self.weight) - (0.07002 * self.age) + 14.52435
@@ -3572,7 +3568,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5
  *             return (0.00091186*pow(cm,2)) - (0.1466 * resistance) + (0.29990*self.weight) - (0.07012 * self.age) + 9.37938
  *         return (0.00088580*pow(cm,2)) - (0.02999 * resistance) + (0.42688*self.weight) - (0.07002 * self.age) + 14.52435             # <<<<<<<<<<<<<<
  * 
- *     cpdef float ffmAdultAthlete(self, float resistance, float reactance):
+ *     cpdef double ffmAdultAthlete(self, double resistance, double reactance):
  */
   __pyx_r = (((((0.00088580 * pow(__pyx_v_cm, 2.0)) - (0.02999 * __pyx_v_resistance)) + (0.42688 * __pyx_v_self->weight)) - (0.07002 * __pyx_v_self->age)) + 14.52435);
   goto __pyx_L0;
@@ -3580,8 +3576,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5
   /* "pyfit/composition.pyx":67
  *         return (0.00066360*pow(cm,2)) - (0.02117 * resistance) + (0.62854*self.weight) - (0.12380 * self.age) + 9.33285
  * 
- *     cpdef float ffmAdultObese(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultObese(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
@@ -3604,8 +3600,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultObese(struct __pyx_obj_5
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_9ffmAdultObese(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_9ffmAdultObese(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_resistance;
-  float __pyx_v_reactance;
+  double __pyx_v_resistance;
+  double __pyx_v_reactance;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("ffmAdultObese (wrapper)", 0);
@@ -3641,8 +3637,8 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_9ffmAdultObese(PyObject *__
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_resistance = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_resistance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
-    __pyx_v_reactance = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_reactance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
+    __pyx_v_resistance = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_resistance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
+    __pyx_v_reactance = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_reactance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3659,7 +3655,7 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_9ffmAdultObese(PyObject *__
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_8ffmAdultObese(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance) {
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_8ffmAdultObese(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3685,15 +3681,15 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_8ffmAdultObese(struct __pyx
 /* "pyfit/composition.pyx":73
  *         return (0.00088580*pow(cm,2)) - (0.02999 * resistance) + (0.42688*self.weight) - (0.07002 * self.age) + 14.52435
  * 
- *     cpdef float ffmAdultAthlete(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultAthlete(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_11ffmAdultAthlete(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3703,9 +3699,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   int __pyx_t_10;
-  double __pyx_t_11;
   __Pyx_RefNannySetupContext("ffmAdultAthlete", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -3746,7 +3741,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3757,16 +3752,16 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj
 
   /* "pyfit/composition.pyx":74
  * 
- *     cpdef float ffmAdultAthlete(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double ffmAdultAthlete(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (0.282*cm) + (0.415*self.weight) - (0.037*resistance) + (0.096*reactance) - 9.734
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":75
- *     cpdef float ffmAdultAthlete(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultAthlete(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (0.282*cm) + (0.415*self.weight) - (0.037*resistance) + (0.096*reactance) - 9.734
  *         return (0.186*(pow(cm,2)/resistance)) + (0.701*self.weight) + 1.949
@@ -3786,7 +3781,7 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj
   if (__pyx_t_10) {
 
     /* "pyfit/composition.pyx":76
- *         cdef float cm = self.height * 100
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  *             return (0.282*cm) + (0.415*self.weight) - (0.037*resistance) + (0.096*reactance) - 9.734             # <<<<<<<<<<<<<<
  *         return (0.186*(pow(cm,2)/resistance)) + (0.701*self.weight) + 1.949
@@ -3796,8 +3791,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj
     goto __pyx_L0;
 
     /* "pyfit/composition.pyx":75
- *     cpdef float ffmAdultAthlete(self, float resistance, float reactance):
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultAthlete(self, double resistance, double reactance):
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (0.282*cm) + (0.415*self.weight) - (0.037*resistance) + (0.096*reactance) - 9.734
  *         return (0.186*(pow(cm,2)/resistance)) + (0.701*self.weight) + 1.949
@@ -3811,19 +3806,19 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj
  * 
  * cdef class Density(object):
  */
-  __pyx_t_11 = pow(__pyx_v_cm, 2.0);
+  __pyx_t_9 = pow(__pyx_v_cm, 2.0);
   if (unlikely(__pyx_v_resistance == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 77, __pyx_L1_error)
   }
-  __pyx_r = (((0.186 * (__pyx_t_11 / __pyx_v_resistance)) + (0.701 * __pyx_v_self->weight)) + 1.949);
+  __pyx_r = (((0.186 * (__pyx_t_9 / __pyx_v_resistance)) + (0.701 * __pyx_v_self->weight)) + 1.949);
   goto __pyx_L0;
 
   /* "pyfit/composition.pyx":73
  *         return (0.00088580*pow(cm,2)) - (0.02999 * resistance) + (0.42688*self.weight) - (0.07002 * self.age) + 14.52435
  * 
- *     cpdef float ffmAdultAthlete(self, float resistance, float reactance):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double ffmAdultAthlete(self, double resistance, double reactance):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
@@ -3846,8 +3841,8 @@ static float __pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete(struct __pyx_obj
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_11ffmAdultAthlete(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_4Mass_11ffmAdultAthlete(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_resistance;
-  float __pyx_v_reactance;
+  double __pyx_v_resistance;
+  double __pyx_v_reactance;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("ffmAdultAthlete (wrapper)", 0);
@@ -3883,8 +3878,8 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_11ffmAdultAthlete(PyObject 
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_resistance = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_resistance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
-    __pyx_v_reactance = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_reactance == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
+    __pyx_v_resistance = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_resistance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
+    __pyx_v_reactance = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_reactance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3901,7 +3896,7 @@ static PyObject *__pyx_pw_5pyfit_11composition_4Mass_11ffmAdultAthlete(PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_4Mass_10ffmAdultAthlete(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, float __pyx_v_resistance, float __pyx_v_reactance) {
+static PyObject *__pyx_pf_5pyfit_11composition_4Mass_10ffmAdultAthlete(struct __pyx_obj_5pyfit_11composition_Mass *__pyx_v_self, double __pyx_v_resistance, double __pyx_v_reactance) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3928,8 +3923,8 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_10ffmAdultAthlete(struct __
  * 
  * cdef class Mass(object):
  *     cdef readonly int gender             # <<<<<<<<<<<<<<
- *     cdef readonly float age
- *     cdef readonly float weight
+ *     cdef readonly double age
+ *     cdef readonly double weight
  */
 
 /* Python wrapper */
@@ -3971,9 +3966,9 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6gender___get__(struct __py
 /* "pyfit/composition.pyx":43
  * cdef class Mass(object):
  *     cdef readonly int gender
- *     cdef readonly float age             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
- *     cdef readonly float height
+ *     cdef readonly double age             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight
+ *     cdef readonly double height
  */
 
 /* Python wrapper */
@@ -4014,9 +4009,9 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_3age___get__(struct __pyx_o
 
 /* "pyfit/composition.pyx":44
  *     cdef readonly int gender
- *     cdef readonly float age
- *     cdef readonly float weight             # <<<<<<<<<<<<<<
- *     cdef readonly float height
+ *     cdef readonly double age
+ *     cdef readonly double weight             # <<<<<<<<<<<<<<
+ *     cdef readonly double height
  * 
  */
 
@@ -4057,11 +4052,11 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6weight___get__(struct __py
 }
 
 /* "pyfit/composition.pyx":45
- *     cdef readonly float age
- *     cdef readonly float weight
- *     cdef readonly float height             # <<<<<<<<<<<<<<
+ *     cdef readonly double age
+ *     cdef readonly double weight
+ *     cdef readonly double height             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  */
 
 /* Python wrapper */
@@ -4103,7 +4098,7 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6height___get__(struct __py
 /* "pyfit/composition.pyx":81
  * cdef class Density(object):
  * 
- *     def __cinit__(self,int gender, float age):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self,int gender, double age):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -4112,7 +4107,7 @@ static PyObject *__pyx_pf_5pyfit_11composition_4Mass_6height___get__(struct __py
 static int __pyx_pw_5pyfit_11composition_7Density_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_11composition_7Density_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
+  double __pyx_v_age;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -4149,7 +4144,7 @@ static int __pyx_pw_5pyfit_11composition_7Density_1__cinit__(PyObject *__pyx_v_s
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 81, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 81, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 81, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -4166,7 +4161,7 @@ static int __pyx_pw_5pyfit_11composition_7Density_1__cinit__(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5pyfit_11composition_Density *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age) {
+static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5pyfit_11composition_Density *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4174,7 +4169,7 @@ static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5py
 
   /* "pyfit/composition.pyx":82
  * 
- *     def __cinit__(self,int gender, float age):
+ *     def __cinit__(self,int gender, double age):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  * 
@@ -4185,7 +4180,7 @@ static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5py
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pyfit/composition.pyx":83
- *     def __cinit__(self,int gender, float age):
+ *     def __cinit__(self,int gender, double age):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  * 
@@ -4199,7 +4194,7 @@ static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5py
   /* "pyfit/composition.pyx":81
  * cdef class Density(object):
  * 
- *     def __cinit__(self,int gender, float age):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self,int gender, double age):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -4219,7 +4214,7 @@ static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5py
 /* "pyfit/composition.pyx":87
  * cdef class BodyFat(object):
  * 
- *     def __cinit__(self, int gender, float age):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -4228,7 +4223,7 @@ static int __pyx_pf_5pyfit_11composition_7Density___cinit__(struct __pyx_obj_5py
 static int __pyx_pw_5pyfit_11composition_7BodyFat_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_11composition_7BodyFat_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
+  double __pyx_v_age;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -4265,7 +4260,7 @@ static int __pyx_pw_5pyfit_11composition_7BodyFat_1__cinit__(PyObject *__pyx_v_s
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 87, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 87, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 87, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -4282,7 +4277,7 @@ static int __pyx_pw_5pyfit_11composition_7BodyFat_1__cinit__(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5pyfit_11composition_BodyFat *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age) {
+static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5pyfit_11composition_BodyFat *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4290,7 +4285,7 @@ static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5py
 
   /* "pyfit/composition.pyx":88
  * 
- *     def __cinit__(self, int gender, float age):
+ *     def __cinit__(self, int gender, double age):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  * 
@@ -4301,7 +4296,7 @@ static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5py
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pyfit/composition.pyx":89
- *     def __cinit__(self, int gender, float age):
+ *     def __cinit__(self, int gender, double age):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  * 
@@ -4315,7 +4310,7 @@ static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5py
   /* "pyfit/composition.pyx":87
  * cdef class BodyFat(object):
  * 
- *     def __cinit__(self, int gender, float age):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -4333,9 +4328,9 @@ static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5py
 }
 
 /* "pyfit/composition.pyx":97
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -4344,9 +4339,9 @@ static int __pyx_pf_5pyfit_11composition_7BodyFat___cinit__(struct __pyx_obj_5py
 static int __pyx_pw_5pyfit_11composition_11SurfaceArea_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_11composition_11SurfaceArea_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -4397,9 +4392,9 @@ static int __pyx_pw_5pyfit_11composition_11SurfaceArea_1__cinit__(PyObject *__py
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -4416,14 +4411,14 @@ static int __pyx_pw_5pyfit_11composition_11SurfaceArea_1__cinit__(PyObject *__py
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_11composition_11SurfaceArea___cinit__(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_weight, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_11composition_11SurfaceArea___cinit__(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/composition.pyx":98
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  *         self.weight = weight
@@ -4431,7 +4426,7 @@ static int __pyx_pf_5pyfit_11composition_11SurfaceArea___cinit__(struct __pyx_ob
   __pyx_v_self->gender = __pyx_v_gender;
 
   /* "pyfit/composition.pyx":99
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  *         self.weight = weight
@@ -4453,14 +4448,14 @@ static int __pyx_pf_5pyfit_11composition_11SurfaceArea___cinit__(struct __pyx_ob
  *         self.weight = weight
  *         self.height = height             # <<<<<<<<<<<<<<
  * 
- *     cpdef float boyd(self):
+ *     cpdef double boyd(self):
  */
   __pyx_v_self->height = __pyx_v_height;
 
   /* "pyfit/composition.pyx":97
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -4474,22 +4469,22 @@ static int __pyx_pf_5pyfit_11composition_11SurfaceArea___cinit__(struct __pyx_ob
 /* "pyfit/composition.pyx":103
  *         self.height = height
  * 
- *     cpdef float boyd(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
- *         cdef float g = self.weight * 1000
+ *     cpdef double boyd(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
+ *         cdef double g = self.weight * 1000
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_3boyd(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_boyd(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_v_g;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_boyd(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_v_g;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("boyd", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -4517,7 +4512,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_boyd(struct __pyx_obj_5p
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4528,28 +4523,28 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_boyd(struct __pyx_obj_5p
 
   /* "pyfit/composition.pyx":104
  * 
- *     cpdef float boyd(self):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
- *         cdef float g = self.weight * 1000
+ *     cpdef double boyd(self):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
+ *         cdef double g = self.weight * 1000
  *         return 0.0003330 * pow(g,(0.7285-(0.0188*log10(g) ) ))*pow(cm,0.3)
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":105
- *     cpdef float boyd(self):
- *         cdef float cm = self.height * 100
- *         cdef float g = self.weight * 1000             # <<<<<<<<<<<<<<
+ *     cpdef double boyd(self):
+ *         cdef double cm = self.height * 100
+ *         cdef double g = self.weight * 1000             # <<<<<<<<<<<<<<
  *         return 0.0003330 * pow(g,(0.7285-(0.0188*log10(g) ) ))*pow(cm,0.3)
  * 
  */
   __pyx_v_g = (__pyx_v_self->weight * 1000.0);
 
   /* "pyfit/composition.pyx":106
- *         cdef float cm = self.height * 100
- *         cdef float g = self.weight * 1000
+ *         cdef double cm = self.height * 100
+ *         cdef double g = self.weight * 1000
  *         return 0.0003330 * pow(g,(0.7285-(0.0188*log10(g) ) ))*pow(cm,0.3)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float costeff(self):
+ *     cpdef double costeff(self):
  */
   __pyx_r = ((0.0003330 * pow(__pyx_v_g, (0.7285 - (0.0188 * log10(__pyx_v_g))))) * pow(__pyx_v_cm, 0.3));
   goto __pyx_L0;
@@ -4557,9 +4552,9 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_boyd(struct __pyx_obj_5p
   /* "pyfit/composition.pyx":103
  *         self.height = height
  * 
- *     cpdef float boyd(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
- *         cdef float g = self.weight * 1000
+ *     cpdef double boyd(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
+ *         cdef double g = self.weight * 1000
  */
 
   /* function exit code */
@@ -4614,21 +4609,21 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_2boyd(struct __pyx_
 /* "pyfit/composition.pyx":108
  *         return 0.0003330 * pow(g,(0.7285-(0.0188*log10(g) ) ))*pow(cm,0.3)
  * 
- *     cpdef float costeff(self):             # <<<<<<<<<<<<<<
+ *     cpdef double costeff(self):             # <<<<<<<<<<<<<<
  *         return (4*self.weight+7)/(90+self.weight)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_5costeff(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_costeff(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_costeff(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
-  float __pyx_t_6;
+  double __pyx_t_5;
+  double __pyx_t_6;
   __Pyx_RefNannySetupContext("costeff", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -4656,7 +4651,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_costeff(struct __pyx_obj
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4667,10 +4662,10 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_costeff(struct __pyx_obj
 
   /* "pyfit/composition.pyx":109
  * 
- *     cpdef float costeff(self):
+ *     cpdef double costeff(self):
  *         return (4*self.weight+7)/(90+self.weight)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float dubois(self):
+ *     cpdef double dubois(self):
  */
   __pyx_t_5 = ((4.0 * __pyx_v_self->weight) + 7.0);
   __pyx_t_6 = (90.0 + __pyx_v_self->weight);
@@ -4684,7 +4679,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_costeff(struct __pyx_obj
   /* "pyfit/composition.pyx":108
  *         return 0.0003330 * pow(g,(0.7285-(0.0188*log10(g) ) ))*pow(cm,0.3)
  * 
- *     cpdef float costeff(self):             # <<<<<<<<<<<<<<
+ *     cpdef double costeff(self):             # <<<<<<<<<<<<<<
  *         return (4*self.weight+7)/(90+self.weight)
  * 
  */
@@ -4741,21 +4736,21 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_4costeff(struct __p
 /* "pyfit/composition.pyx":111
  *         return (4*self.weight+7)/(90+self.weight)
  * 
- *     cpdef float dubois(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double dubois(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.007184 * pow(self.weight,0.425) * pow(cm,0.725)
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_7dubois(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_dubois(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_dubois(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("dubois", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -4783,7 +4778,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_dubois(struct __pyx_obj_
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 111, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 111, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4794,19 +4789,19 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_dubois(struct __pyx_obj_
 
   /* "pyfit/composition.pyx":112
  * 
- *     cpdef float dubois(self):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double dubois(self):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.007184 * pow(self.weight,0.425) * pow(cm,0.725)
  * 
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":113
- *     cpdef float dubois(self):
- *         cdef float cm = self.height * 100
+ *     cpdef double dubois(self):
+ *         cdef double cm = self.height * 100
  *         return 0.007184 * pow(self.weight,0.425) * pow(cm,0.725)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float fujimoto(self):
+ *     cpdef double fujimoto(self):
  */
   __pyx_r = ((0.007184 * pow(__pyx_v_self->weight, 0.425)) * pow(__pyx_v_cm, 0.725));
   goto __pyx_L0;
@@ -4814,8 +4809,8 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_dubois(struct __pyx_obj_
   /* "pyfit/composition.pyx":111
  *         return (4*self.weight+7)/(90+self.weight)
  * 
- *     cpdef float dubois(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double dubois(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.007184 * pow(self.weight,0.425) * pow(cm,0.725)
  */
 
@@ -4871,21 +4866,21 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6dubois(struct __py
 /* "pyfit/composition.pyx":115
  *         return 0.007184 * pow(self.weight,0.425) * pow(cm,0.725)
  * 
- *     cpdef float fujimoto(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double fujimoto(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.008883 * pow(self.weight, 0.444) * pow(cm, 0.663)
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_9fujimoto(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("fujimoto", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -4913,7 +4908,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto(struct __pyx_ob
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 115, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 115, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4924,19 +4919,19 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto(struct __pyx_ob
 
   /* "pyfit/composition.pyx":116
  * 
- *     cpdef float fujimoto(self):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double fujimoto(self):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.008883 * pow(self.weight, 0.444) * pow(cm, 0.663)
  * 
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":117
- *     cpdef float fujimoto(self):
- *         cdef float cm = self.height * 100
+ *     cpdef double fujimoto(self):
+ *         cdef double cm = self.height * 100
  *         return 0.008883 * pow(self.weight, 0.444) * pow(cm, 0.663)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float gehangeorge(self):
+ *     cpdef double gehangeorge(self):
  */
   __pyx_r = ((0.008883 * pow(__pyx_v_self->weight, 0.444)) * pow(__pyx_v_cm, 0.663));
   goto __pyx_L0;
@@ -4944,8 +4939,8 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto(struct __pyx_ob
   /* "pyfit/composition.pyx":115
  *         return 0.007184 * pow(self.weight,0.425) * pow(cm,0.725)
  * 
- *     cpdef float fujimoto(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double fujimoto(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.008883 * pow(self.weight, 0.444) * pow(cm, 0.663)
  */
 
@@ -5001,21 +4996,21 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_8fujimoto(struct __
 /* "pyfit/composition.pyx":119
  *         return 0.008883 * pow(self.weight, 0.444) * pow(cm, 0.663)
  * 
- *     cpdef float gehangeorge(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double gehangeorge(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.0235 * pow(self.weight, 0.51456) * pow(cm, 0.42246)
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_11gehangeorge(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("gehangeorge", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -5043,7 +5038,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge(struct __pyx
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5054,19 +5049,19 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge(struct __pyx
 
   /* "pyfit/composition.pyx":120
  * 
- *     cpdef float gehangeorge(self):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double gehangeorge(self):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.0235 * pow(self.weight, 0.51456) * pow(cm, 0.42246)
  * 
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":121
- *     cpdef float gehangeorge(self):
- *         cdef float cm = self.height * 100
+ *     cpdef double gehangeorge(self):
+ *         cdef double cm = self.height * 100
  *         return 0.0235 * pow(self.weight, 0.51456) * pow(cm, 0.42246)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float haycock(self):
+ *     cpdef double haycock(self):
  */
   __pyx_r = ((0.0235 * pow(__pyx_v_self->weight, 0.51456)) * pow(__pyx_v_cm, 0.42246));
   goto __pyx_L0;
@@ -5074,8 +5069,8 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge(struct __pyx
   /* "pyfit/composition.pyx":119
  *         return 0.008883 * pow(self.weight, 0.444) * pow(cm, 0.663)
  * 
- *     cpdef float gehangeorge(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double gehangeorge(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.0235 * pow(self.weight, 0.51456) * pow(cm, 0.42246)
  */
 
@@ -5131,21 +5126,21 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_10gehangeorge(struc
 /* "pyfit/composition.pyx":123
  *         return 0.0235 * pow(self.weight, 0.51456) * pow(cm, 0.42246)
  * 
- *     cpdef float haycock(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double haycock(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.024265 * pow(self.weight, 0.5378) * pow(cm, 0.3964)
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_13haycock(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_haycock(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_haycock(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("haycock", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -5173,7 +5168,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_haycock(struct __pyx_obj
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 123, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 123, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5184,19 +5179,19 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_haycock(struct __pyx_obj
 
   /* "pyfit/composition.pyx":124
  * 
- *     cpdef float haycock(self):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double haycock(self):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.024265 * pow(self.weight, 0.5378) * pow(cm, 0.3964)
  * 
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":125
- *     cpdef float haycock(self):
- *         cdef float cm = self.height * 100
+ *     cpdef double haycock(self):
+ *         cdef double cm = self.height * 100
  *         return 0.024265 * pow(self.weight, 0.5378) * pow(cm, 0.3964)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float mosteller(self):
+ *     cpdef double mosteller(self):
  */
   __pyx_r = ((0.024265 * pow(__pyx_v_self->weight, 0.5378)) * pow(__pyx_v_cm, 0.3964));
   goto __pyx_L0;
@@ -5204,8 +5199,8 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_haycock(struct __pyx_obj
   /* "pyfit/composition.pyx":123
  *         return 0.0235 * pow(self.weight, 0.51456) * pow(cm, 0.42246)
  * 
- *     cpdef float haycock(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double haycock(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.024265 * pow(self.weight, 0.5378) * pow(cm, 0.3964)
  */
 
@@ -5261,20 +5256,20 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_12haycock(struct __
 /* "pyfit/composition.pyx":127
  *         return 0.024265 * pow(self.weight, 0.5378) * pow(cm, 0.3964)
  * 
- *     cpdef float mosteller(self):             # <<<<<<<<<<<<<<
+ *     cpdef double mosteller(self):             # <<<<<<<<<<<<<<
  *         return sqrt(self.weight*self.height)/6
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_15mosteller(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_mosteller(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_mosteller(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("mosteller", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -5302,7 +5297,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_mosteller(struct __pyx_o
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 127, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 127, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5313,10 +5308,10 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_mosteller(struct __pyx_o
 
   /* "pyfit/composition.pyx":128
  * 
- *     cpdef float mosteller(self):
+ *     cpdef double mosteller(self):
  *         return sqrt(self.weight*self.height)/6             # <<<<<<<<<<<<<<
  * 
- *     cpdef float schlich(self):
+ *     cpdef double schlich(self):
  */
   __pyx_r = (sqrt((__pyx_v_self->weight * __pyx_v_self->height)) / 6.0);
   goto __pyx_L0;
@@ -5324,7 +5319,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_mosteller(struct __pyx_o
   /* "pyfit/composition.pyx":127
  *         return 0.024265 * pow(self.weight, 0.5378) * pow(cm, 0.3964)
  * 
- *     cpdef float mosteller(self):             # <<<<<<<<<<<<<<
+ *     cpdef double mosteller(self):             # <<<<<<<<<<<<<<
  *         return sqrt(self.weight*self.height)/6
  * 
  */
@@ -5381,21 +5376,21 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_14mosteller(struct 
 /* "pyfit/composition.pyx":130
  *         return sqrt(self.weight*self.height)/6
  * 
- *     cpdef float schlich(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double schlich(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_17schlich(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("schlich", 0);
   /* Check if called by wrapper */
@@ -5424,7 +5419,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5435,16 +5430,16 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj
 
   /* "pyfit/composition.pyx":131
  * 
- *     cpdef float schlich(self):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double schlich(self):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 0.000975482 * pow(self.weight, 0.46) * pow(cm, 1.08)
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":132
- *     cpdef float schlich(self):
- *         cdef float cm = self.height * 100
+ *     cpdef double schlich(self):
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 0.000975482 * pow(self.weight, 0.46) * pow(cm, 1.08)
  *         return 0.000579479 * pow(self.weight, 0.38) * pow(cm, 1.24)
@@ -5464,7 +5459,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj
   if (__pyx_t_6) {
 
     /* "pyfit/composition.pyx":133
- *         cdef float cm = self.height * 100
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  *             return 0.000975482 * pow(self.weight, 0.46) * pow(cm, 1.08)             # <<<<<<<<<<<<<<
  *         return 0.000579479 * pow(self.weight, 0.38) * pow(cm, 1.24)
@@ -5474,8 +5469,8 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj
     goto __pyx_L0;
 
     /* "pyfit/composition.pyx":132
- *     cpdef float schlich(self):
- *         cdef float cm = self.height * 100
+ *     cpdef double schlich(self):
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 0.000975482 * pow(self.weight, 0.46) * pow(cm, 1.08)
  *         return 0.000579479 * pow(self.weight, 0.38) * pow(cm, 1.24)
@@ -5487,7 +5482,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj
  *             return 0.000975482 * pow(self.weight, 0.46) * pow(cm, 1.08)
  *         return 0.000579479 * pow(self.weight, 0.38) * pow(cm, 1.24)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float shuterAslani(self):
+ *     cpdef double shuterAslani(self):
  */
   __pyx_r = ((0.000579479 * pow(__pyx_v_self->weight, 0.38)) * pow(__pyx_v_cm, 1.24));
   goto __pyx_L0;
@@ -5495,8 +5490,8 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_schlich(struct __pyx_obj
   /* "pyfit/composition.pyx":130
  *         return sqrt(self.weight*self.height)/6
  * 
- *     cpdef float schlich(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double schlich(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         if self.gender == Gender.Female:
  */
 
@@ -5552,21 +5547,21 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_16schlich(struct __
 /* "pyfit/composition.pyx":136
  *         return 0.000579479 * pow(self.weight, 0.38) * pow(cm, 1.24)
  * 
- *     cpdef float shuterAslani(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double shuterAslani(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.00949 * pow(self.weight, 0.441) * pow(cm, 0.655)
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_19shuterAslani(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("shuterAslani", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -5594,7 +5589,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani(struct __py
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5605,19 +5600,19 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani(struct __py
 
   /* "pyfit/composition.pyx":137
  * 
- *     cpdef float shuterAslani(self):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double shuterAslani(self):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.00949 * pow(self.weight, 0.441) * pow(cm, 0.655)
  * 
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":138
- *     cpdef float shuterAslani(self):
- *         cdef float cm = self.height * 100
+ *     cpdef double shuterAslani(self):
+ *         cdef double cm = self.height * 100
  *         return 0.00949 * pow(self.weight, 0.441) * pow(cm, 0.655)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float takahira(self):
+ *     cpdef double takahira(self):
  */
   __pyx_r = ((0.00949 * pow(__pyx_v_self->weight, 0.441)) * pow(__pyx_v_cm, 0.655));
   goto __pyx_L0;
@@ -5625,8 +5620,8 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani(struct __py
   /* "pyfit/composition.pyx":136
  *         return 0.000579479 * pow(self.weight, 0.38) * pow(cm, 1.24)
  * 
- *     cpdef float shuterAslani(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double shuterAslani(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.00949 * pow(self.weight, 0.441) * pow(cm, 0.655)
  */
 
@@ -5682,21 +5677,21 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_18shuterAslani(stru
 /* "pyfit/composition.pyx":140
  *         return 0.00949 * pow(self.weight, 0.441) * pow(cm, 0.655)
  * 
- *     cpdef float takahira(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double takahira(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.007241 * pow(self.weight, 0.425) * pow(cm, 0.725)
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_11SurfaceArea_21takahira(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_11SurfaceArea_takahira(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_cm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_11SurfaceArea_takahira(struct __pyx_obj_5pyfit_11composition_SurfaceArea *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_cm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("takahira", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -5724,7 +5719,7 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_takahira(struct __pyx_ob
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5735,16 +5730,16 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_takahira(struct __pyx_ob
 
   /* "pyfit/composition.pyx":141
  * 
- *     cpdef float takahira(self):
- *         cdef float cm = self.height * 100             # <<<<<<<<<<<<<<
+ *     cpdef double takahira(self):
+ *         cdef double cm = self.height * 100             # <<<<<<<<<<<<<<
  *         return 0.007241 * pow(self.weight, 0.425) * pow(cm, 0.725)
  * 
  */
   __pyx_v_cm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":142
- *     cpdef float takahira(self):
- *         cdef float cm = self.height * 100
+ *     cpdef double takahira(self):
+ *         cdef double cm = self.height * 100
  *         return 0.007241 * pow(self.weight, 0.425) * pow(cm, 0.725)             # <<<<<<<<<<<<<<
  * 
  * cdef class Stature(object):
@@ -5755,8 +5750,8 @@ static float __pyx_f_5pyfit_11composition_11SurfaceArea_takahira(struct __pyx_ob
   /* "pyfit/composition.pyx":140
  *         return 0.00949 * pow(self.weight, 0.441) * pow(cm, 0.655)
  * 
- *     cpdef float takahira(self):             # <<<<<<<<<<<<<<
- *         cdef float cm = self.height * 100
+ *     cpdef double takahira(self):             # <<<<<<<<<<<<<<
+ *         cdef double cm = self.height * 100
  *         return 0.007241 * pow(self.weight, 0.425) * pow(cm, 0.725)
  */
 
@@ -5813,8 +5808,8 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_20takahira(struct _
  * 
  * cdef class SurfaceArea(object):
  *     cdef readonly int gender             # <<<<<<<<<<<<<<
- *     cdef readonly float age
- *     cdef readonly float weight
+ *     cdef readonly double age
+ *     cdef readonly double weight
  */
 
 /* Python wrapper */
@@ -5856,9 +5851,9 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6gender___get__(str
 /* "pyfit/composition.pyx":93
  * cdef class SurfaceArea(object):
  *     cdef readonly int gender
- *     cdef readonly float age             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
- *     cdef readonly float height
+ *     cdef readonly double age             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight
+ *     cdef readonly double height
  */
 
 /* Python wrapper */
@@ -5899,9 +5894,9 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_3age___get__(struct
 
 /* "pyfit/composition.pyx":94
  *     cdef readonly int gender
- *     cdef readonly float age
- *     cdef readonly float weight             # <<<<<<<<<<<<<<
- *     cdef readonly float height
+ *     cdef readonly double age
+ *     cdef readonly double weight             # <<<<<<<<<<<<<<
+ *     cdef readonly double height
  * 
  */
 
@@ -5942,11 +5937,11 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6weight___get__(str
 }
 
 /* "pyfit/composition.pyx":95
- *     cdef readonly float age
- *     cdef readonly float weight
- *     cdef readonly float height             # <<<<<<<<<<<<<<
+ *     cdef readonly double age
+ *     cdef readonly double weight
+ *     cdef readonly double height             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender, float age, float weight, float height):
+ *     def __cinit__(self, int gender, double age, double weight, double height):
  */
 
 /* Python wrapper */
@@ -5986,9 +5981,9 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6height___get__(str
 }
 
 /* "pyfit/composition.pyx":149
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -5997,8 +5992,8 @@ static PyObject *__pyx_pf_5pyfit_11composition_11SurfaceArea_6height___get__(str
 static int __pyx_pw_5pyfit_11composition_7Stature_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_11composition_7Stature_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
-  float __pyx_v_height;
+  double __pyx_v_age;
+  double __pyx_v_height;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -6042,8 +6037,8 @@ static int __pyx_pw_5pyfit_11composition_7Stature_1__cinit__(PyObject *__pyx_v_s
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -6060,14 +6055,14 @@ static int __pyx_pw_5pyfit_11composition_7Stature_1__cinit__(PyObject *__pyx_v_s
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_11composition_7Stature___cinit__(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_11composition_7Stature___cinit__(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age, double __pyx_v_height) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/composition.pyx":150
  * 
- *     def __cinit__(self, int gender, float age, float height):
+ *     def __cinit__(self, int gender, double age, double height):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  *         self.height = height
@@ -6075,7 +6070,7 @@ static int __pyx_pf_5pyfit_11composition_7Stature___cinit__(struct __pyx_obj_5py
   __pyx_v_self->gender = __pyx_v_gender;
 
   /* "pyfit/composition.pyx":151
- *     def __cinit__(self, int gender, float age, float height):
+ *     def __cinit__(self, int gender, double age, double height):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  *         self.height = height
@@ -6088,14 +6083,14 @@ static int __pyx_pf_5pyfit_11composition_7Stature___cinit__(struct __pyx_obj_5py
  *         self.age = age
  *         self.height = height             # <<<<<<<<<<<<<<
  * 
- *     cpdef float universal(self):
+ *     cpdef double universal(self):
  */
   __pyx_v_self->height = __pyx_v_height;
 
   /* "pyfit/composition.pyx":149
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, int gender, float age, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age, double height):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -6109,22 +6104,22 @@ static int __pyx_pf_5pyfit_11composition_7Stature___cinit__(struct __pyx_obj_5py
 /* "pyfit/composition.pyx":154
  *         self.height = height
  * 
- *     cpdef float universal(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
- *         cdef float stature = 1.009 * heightCm - 0.426 * self.age + 12.1
+ *     cpdef double universal(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
+ *         cdef double stature = 1.009 * heightCm - 0.426 * self.age + 12.1
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_7Stature_3universal(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_7Stature_universal(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_v_stature;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_7Stature_universal(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_v_stature;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("universal", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -6152,7 +6147,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_universal(struct __pyx_obj_5p
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 154, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 154, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6163,28 +6158,28 @@ static float __pyx_f_5pyfit_11composition_7Stature_universal(struct __pyx_obj_5p
 
   /* "pyfit/composition.pyx":155
  * 
- *     cpdef float universal(self):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
- *         cdef float stature = 1.009 * heightCm - 0.426 * self.age + 12.1
+ *     cpdef double universal(self):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *         cdef double stature = 1.009 * heightCm - 0.426 * self.age + 12.1
  *         return stature / 100
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":156
- *     cpdef float universal(self):
- *         cdef float heightCm = self.height * 100
- *         cdef float stature = 1.009 * heightCm - 0.426 * self.age + 12.1             # <<<<<<<<<<<<<<
+ *     cpdef double universal(self):
+ *         cdef double heightCm = self.height * 100
+ *         cdef double stature = 1.009 * heightCm - 0.426 * self.age + 12.1             # <<<<<<<<<<<<<<
  *         return stature / 100
  * 
  */
   __pyx_v_stature = (((1.009 * __pyx_v_heightCm) - (0.426 * __pyx_v_self->age)) + 12.1);
 
   /* "pyfit/composition.pyx":157
- *         cdef float heightCm = self.height * 100
- *         cdef float stature = 1.009 * heightCm - 0.426 * self.age + 12.1
+ *         cdef double heightCm = self.height * 100
+ *         cdef double stature = 1.009 * heightCm - 0.426 * self.age + 12.1
  *         return stature / 100             # <<<<<<<<<<<<<<
  * 
- *     cpdef float americanWhite(self, float femurLength):
+ *     cpdef double americanWhite(self, double femurLength):
  */
   __pyx_r = (__pyx_v_stature / 100.0);
   goto __pyx_L0;
@@ -6192,9 +6187,9 @@ static float __pyx_f_5pyfit_11composition_7Stature_universal(struct __pyx_obj_5p
   /* "pyfit/composition.pyx":154
  *         self.height = height
  * 
- *     cpdef float universal(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
- *         cdef float stature = 1.009 * heightCm - 0.426 * self.age + 12.1
+ *     cpdef double universal(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
+ *         cdef double stature = 1.009 * heightCm - 0.426 * self.age + 12.1
  */
 
   /* function exit code */
@@ -6249,16 +6244,16 @@ static PyObject *__pyx_pf_5pyfit_11composition_7Stature_2universal(struct __pyx_
 /* "pyfit/composition.pyx":159
  *         return stature / 100
  * 
- *     cpdef float americanWhite(self, float femurLength):             # <<<<<<<<<<<<<<
- *         cdef float femurLengthCm = femurLength * 100
- *         cdef float stature
+ *     cpdef double americanWhite(self, double femurLength):             # <<<<<<<<<<<<<<
+ *         cdef double femurLengthCm = femurLength * 100
+ *         cdef double stature
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_7Stature_5americanWhite(PyObject *__pyx_v_self, PyObject *__pyx_arg_femurLength); /*proto*/
-static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, float __pyx_v_femurLength, int __pyx_skip_dispatch) {
-  float __pyx_v_femurLengthCm;
-  float __pyx_v_stature;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, double __pyx_v_femurLength, int __pyx_skip_dispatch) {
+  double __pyx_v_femurLengthCm;
+  double __pyx_v_stature;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6266,7 +6261,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_ob
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("americanWhite", 0);
   /* Check if called by wrapper */
@@ -6305,7 +6300,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6316,16 +6311,16 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_ob
 
   /* "pyfit/composition.pyx":160
  * 
- *     cpdef float americanWhite(self, float femurLength):
- *         cdef float femurLengthCm = femurLength * 100             # <<<<<<<<<<<<<<
- *         cdef float stature
+ *     cpdef double americanWhite(self, double femurLength):
+ *         cdef double femurLengthCm = femurLength * 100             # <<<<<<<<<<<<<<
+ *         cdef double stature
  *         if self.gender == Gender.Female:
  */
   __pyx_v_femurLengthCm = (__pyx_v_femurLength * 100.0);
 
   /* "pyfit/composition.pyx":162
- *         cdef float femurLengthCm = femurLength * 100
- *         cdef float stature
+ *         cdef double femurLengthCm = femurLength * 100
+ *         cdef double stature
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             stature = 2.47 * femurLengthCm + 54.10
  *         else:
@@ -6345,7 +6340,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_ob
   if (__pyx_t_8) {
 
     /* "pyfit/composition.pyx":163
- *         cdef float stature
+ *         cdef double stature
  *         if self.gender == Gender.Female:
  *             stature = 2.47 * femurLengthCm + 54.10             # <<<<<<<<<<<<<<
  *         else:
@@ -6354,8 +6349,8 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_ob
     __pyx_v_stature = ((2.47 * __pyx_v_femurLengthCm) + 54.10);
 
     /* "pyfit/composition.pyx":162
- *         cdef float femurLengthCm = femurLength * 100
- *         cdef float stature
+ *         cdef double femurLengthCm = femurLength * 100
+ *         cdef double stature
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             stature = 2.47 * femurLengthCm + 54.10
  *         else:
@@ -6380,7 +6375,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_ob
  *             stature = 2.32 * femurLengthCm + 65.53
  *         return stature / 100             # <<<<<<<<<<<<<<
  * 
- *     cpdef float americanBlack(self, float femurLength):
+ *     cpdef double americanBlack(self, double femurLength):
  */
   __pyx_r = (__pyx_v_stature / 100.0);
   goto __pyx_L0;
@@ -6388,9 +6383,9 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_ob
   /* "pyfit/composition.pyx":159
  *         return stature / 100
  * 
- *     cpdef float americanWhite(self, float femurLength):             # <<<<<<<<<<<<<<
- *         cdef float femurLengthCm = femurLength * 100
- *         cdef float stature
+ *     cpdef double americanWhite(self, double femurLength):             # <<<<<<<<<<<<<<
+ *         cdef double femurLengthCm = femurLength * 100
+ *         cdef double stature
  */
 
   /* function exit code */
@@ -6411,12 +6406,12 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanWhite(struct __pyx_ob
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_7Stature_5americanWhite(PyObject *__pyx_v_self, PyObject *__pyx_arg_femurLength); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_7Stature_5americanWhite(PyObject *__pyx_v_self, PyObject *__pyx_arg_femurLength) {
-  float __pyx_v_femurLength;
+  double __pyx_v_femurLength;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("americanWhite (wrapper)", 0);
   assert(__pyx_arg_femurLength); {
-    __pyx_v_femurLength = __pyx_PyFloat_AsFloat(__pyx_arg_femurLength); if (unlikely((__pyx_v_femurLength == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L3_error)
+    __pyx_v_femurLength = __pyx_PyFloat_AsDouble(__pyx_arg_femurLength); if (unlikely((__pyx_v_femurLength == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 159, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6424,14 +6419,14 @@ static PyObject *__pyx_pw_5pyfit_11composition_7Stature_5americanWhite(PyObject 
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_11composition_7Stature_4americanWhite(((struct __pyx_obj_5pyfit_11composition_Stature *)__pyx_v_self), ((float)__pyx_v_femurLength));
+  __pyx_r = __pyx_pf_5pyfit_11composition_7Stature_4americanWhite(((struct __pyx_obj_5pyfit_11composition_Stature *)__pyx_v_self), ((double)__pyx_v_femurLength));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_7Stature_4americanWhite(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, float __pyx_v_femurLength) {
+static PyObject *__pyx_pf_5pyfit_11composition_7Stature_4americanWhite(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, double __pyx_v_femurLength) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6457,16 +6452,16 @@ static PyObject *__pyx_pf_5pyfit_11composition_7Stature_4americanWhite(struct __
 /* "pyfit/composition.pyx":168
  *         return stature / 100
  * 
- *     cpdef float americanBlack(self, float femurLength):             # <<<<<<<<<<<<<<
- *         cdef float femurLengthCm = femurLength * 100
+ *     cpdef double americanBlack(self, double femurLength):             # <<<<<<<<<<<<<<
+ *         cdef double femurLengthCm = femurLength * 100
  *         if self.gender == Gender.Female:
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_7Stature_7americanBlack(PyObject *__pyx_v_self, PyObject *__pyx_arg_femurLength); /*proto*/
-static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, float __pyx_v_femurLength, int __pyx_skip_dispatch) {
-  float __pyx_v_femurLengthCm;
+static double __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, double __pyx_v_femurLength, int __pyx_skip_dispatch) {
+  double __pyx_v_femurLengthCm;
   double __pyx_v_stature;
-  float __pyx_r;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6474,7 +6469,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_ob
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("americanBlack", 0);
   /* Check if called by wrapper */
@@ -6513,7 +6508,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_ob
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6524,16 +6519,16 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_ob
 
   /* "pyfit/composition.pyx":169
  * 
- *     cpdef float americanBlack(self, float femurLength):
- *         cdef float femurLengthCm = femurLength * 100             # <<<<<<<<<<<<<<
+ *     cpdef double americanBlack(self, double femurLength):
+ *         cdef double femurLengthCm = femurLength * 100             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             stature = 2.28 * femurLengthCm + 59.76
  */
   __pyx_v_femurLengthCm = (__pyx_v_femurLength * 100.0);
 
   /* "pyfit/composition.pyx":170
- *     cpdef float americanBlack(self, float femurLength):
- *         cdef float femurLengthCm = femurLength * 100
+ *     cpdef double americanBlack(self, double femurLength):
+ *         cdef double femurLengthCm = femurLength * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             stature = 2.28 * femurLengthCm + 59.76
  *         stature = 2.10 * femurLengthCm + 72.22
@@ -6553,7 +6548,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_ob
   if (__pyx_t_8) {
 
     /* "pyfit/composition.pyx":171
- *         cdef float femurLengthCm = femurLength * 100
+ *         cdef double femurLengthCm = femurLength * 100
  *         if self.gender == Gender.Female:
  *             stature = 2.28 * femurLengthCm + 59.76             # <<<<<<<<<<<<<<
  *         stature = 2.10 * femurLengthCm + 72.22
@@ -6562,8 +6557,8 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_ob
     __pyx_v_stature = ((2.28 * __pyx_v_femurLengthCm) + 59.76);
 
     /* "pyfit/composition.pyx":170
- *     cpdef float americanBlack(self, float femurLength):
- *         cdef float femurLengthCm = femurLength * 100
+ *     cpdef double americanBlack(self, double femurLength):
+ *         cdef double femurLengthCm = femurLength * 100
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             stature = 2.28 * femurLengthCm + 59.76
  *         stature = 2.10 * femurLengthCm + 72.22
@@ -6584,7 +6579,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_ob
  *         stature = 2.10 * femurLengthCm + 72.22
  *         return stature / 100             # <<<<<<<<<<<<<<
  * 
- *     cpdef float strideLength(self):
+ *     cpdef double strideLength(self):
  */
   __pyx_r = (__pyx_v_stature / 100.0);
   goto __pyx_L0;
@@ -6592,8 +6587,8 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_ob
   /* "pyfit/composition.pyx":168
  *         return stature / 100
  * 
- *     cpdef float americanBlack(self, float femurLength):             # <<<<<<<<<<<<<<
- *         cdef float femurLengthCm = femurLength * 100
+ *     cpdef double americanBlack(self, double femurLength):             # <<<<<<<<<<<<<<
+ *         cdef double femurLengthCm = femurLength * 100
  *         if self.gender == Gender.Female:
  */
 
@@ -6615,12 +6610,12 @@ static float __pyx_f_5pyfit_11composition_7Stature_americanBlack(struct __pyx_ob
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_11composition_7Stature_7americanBlack(PyObject *__pyx_v_self, PyObject *__pyx_arg_femurLength); /*proto*/
 static PyObject *__pyx_pw_5pyfit_11composition_7Stature_7americanBlack(PyObject *__pyx_v_self, PyObject *__pyx_arg_femurLength) {
-  float __pyx_v_femurLength;
+  double __pyx_v_femurLength;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("americanBlack (wrapper)", 0);
   assert(__pyx_arg_femurLength); {
-    __pyx_v_femurLength = __pyx_PyFloat_AsFloat(__pyx_arg_femurLength); if (unlikely((__pyx_v_femurLength == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L3_error)
+    __pyx_v_femurLength = __pyx_PyFloat_AsDouble(__pyx_arg_femurLength); if (unlikely((__pyx_v_femurLength == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6628,14 +6623,14 @@ static PyObject *__pyx_pw_5pyfit_11composition_7Stature_7americanBlack(PyObject 
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_11composition_7Stature_6americanBlack(((struct __pyx_obj_5pyfit_11composition_Stature *)__pyx_v_self), ((float)__pyx_v_femurLength));
+  __pyx_r = __pyx_pf_5pyfit_11composition_7Stature_6americanBlack(((struct __pyx_obj_5pyfit_11composition_Stature *)__pyx_v_self), ((double)__pyx_v_femurLength));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_11composition_7Stature_6americanBlack(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, float __pyx_v_femurLength) {
+static PyObject *__pyx_pf_5pyfit_11composition_7Stature_6americanBlack(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, double __pyx_v_femurLength) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6661,22 +6656,22 @@ static PyObject *__pyx_pf_5pyfit_11composition_7Stature_6americanBlack(struct __
 /* "pyfit/composition.pyx":175
  *         return stature / 100
  * 
- *     cpdef float strideLength(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
- *         cdef float strideLength
+ *     cpdef double strideLength(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
+ *         cdef double strideLength
  */
 
 static PyObject *__pyx_pw_5pyfit_11composition_7Stature_9strideLength(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_heightCm;
-  float __pyx_v_strideLength;
-  float __pyx_r;
+static double __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj_5pyfit_11composition_Stature *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_heightCm;
+  double __pyx_v_strideLength;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("strideLength", 0);
   /* Check if called by wrapper */
@@ -6705,7 +6700,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6716,16 +6711,16 @@ static float __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj
 
   /* "pyfit/composition.pyx":176
  * 
- *     cpdef float strideLength(self):
- *         cdef float heightCm = self.height * 100             # <<<<<<<<<<<<<<
- *         cdef float strideLength
+ *     cpdef double strideLength(self):
+ *         cdef double heightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *         cdef double strideLength
  *         if self.gender == Gender.Female:
  */
   __pyx_v_heightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/composition.pyx":178
- *         cdef float heightCm = self.height * 100
- *         cdef float strideLength
+ *         cdef double heightCm = self.height * 100
+ *         cdef double strideLength
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             strideLength = 0.413 * heightCm
  *         strideLength = 0.415 * heightCm
@@ -6745,7 +6740,7 @@ static float __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj
   if (__pyx_t_6) {
 
     /* "pyfit/composition.pyx":179
- *         cdef float strideLength
+ *         cdef double strideLength
  *         if self.gender == Gender.Female:
  *             strideLength = 0.413 * heightCm             # <<<<<<<<<<<<<<
  *         strideLength = 0.415 * heightCm
@@ -6754,8 +6749,8 @@ static float __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj
     __pyx_v_strideLength = (0.413 * __pyx_v_heightCm);
 
     /* "pyfit/composition.pyx":178
- *         cdef float heightCm = self.height * 100
- *         cdef float strideLength
+ *         cdef double heightCm = self.height * 100
+ *         cdef double strideLength
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             strideLength = 0.413 * heightCm
  *         strideLength = 0.415 * heightCm
@@ -6781,9 +6776,9 @@ static float __pyx_f_5pyfit_11composition_7Stature_strideLength(struct __pyx_obj
   /* "pyfit/composition.pyx":175
  *         return stature / 100
  * 
- *     cpdef float strideLength(self):             # <<<<<<<<<<<<<<
- *         cdef float heightCm = self.height * 100
- *         cdef float strideLength
+ *     cpdef double strideLength(self):             # <<<<<<<<<<<<<<
+ *         cdef double heightCm = self.height * 100
+ *         cdef double strideLength
  */
 
   /* function exit code */
@@ -6839,8 +6834,8 @@ static PyObject *__pyx_pf_5pyfit_11composition_7Stature_8strideLength(struct __p
  * 
  * cdef class Stature(object):
  *     cdef readonly int gender             # <<<<<<<<<<<<<<
- *     cdef readonly float age
- *     cdef readonly float height
+ *     cdef readonly double age
+ *     cdef readonly double height
  */
 
 /* Python wrapper */
@@ -6882,8 +6877,8 @@ static PyObject *__pyx_pf_5pyfit_11composition_7Stature_6gender___get__(struct _
 /* "pyfit/composition.pyx":146
  * cdef class Stature(object):
  *     cdef readonly int gender
- *     cdef readonly float age             # <<<<<<<<<<<<<<
- *     cdef readonly float height
+ *     cdef readonly double age             # <<<<<<<<<<<<<<
+ *     cdef readonly double height
  * 
  */
 
@@ -6925,10 +6920,10 @@ static PyObject *__pyx_pf_5pyfit_11composition_7Stature_3age___get__(struct __py
 
 /* "pyfit/composition.pyx":147
  *     cdef readonly int gender
- *     cdef readonly float age
- *     cdef readonly float height             # <<<<<<<<<<<<<<
+ *     cdef readonly double age
+ *     cdef readonly double height             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender, float age, float height):
+ *     def __cinit__(self, int gender, double age, double height):
  */
 
 /* Python wrapper */
@@ -7777,25 +7772,25 @@ PyMODINIT_FUNC PyInit_composition(void)
   /*--- Function export code ---*/
   /*--- Type init code ---*/
   __pyx_vtabptr_5pyfit_11composition_Index = &__pyx_vtable_5pyfit_11composition_Index;
-  __pyx_vtable_5pyfit_11composition_Index.bai = (float (*)(struct __pyx_obj_5pyfit_11composition_Index *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_bai;
-  __pyx_vtable_5pyfit_11composition_Index.bmi = (float (*)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_bmi;
-  __pyx_vtable_5pyfit_11composition_Index.bmi_prime = (float (*)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime *__pyx_optional_args))__pyx_f_5pyfit_11composition_5Index_bmi_prime;
-  __pyx_vtable_5pyfit_11composition_Index.bsi = (float (*)(struct __pyx_obj_5pyfit_11composition_Index *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_bsi;
-  __pyx_vtable_5pyfit_11composition_Index.corpulence = (float (*)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_corpulence;
-  __pyx_vtable_5pyfit_11composition_Index.sbsi = (float (*)(struct __pyx_obj_5pyfit_11composition_Index *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_sbsi;
-  __pyx_vtable_5pyfit_11composition_Index.WHR = (float (*)(struct __pyx_obj_5pyfit_11composition_Index *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_WHR;
-  __pyx_vtable_5pyfit_11composition_Index.WHtR = (float (*)(struct __pyx_obj_5pyfit_11composition_Index *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_WHtR;
+  __pyx_vtable_5pyfit_11composition_Index.bai = (double (*)(struct __pyx_obj_5pyfit_11composition_Index *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_bai;
+  __pyx_vtable_5pyfit_11composition_Index.bmi = (double (*)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_bmi;
+  __pyx_vtable_5pyfit_11composition_Index.bmi_prime = (double (*)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_11composition_5Index_bmi_prime *__pyx_optional_args))__pyx_f_5pyfit_11composition_5Index_bmi_prime;
+  __pyx_vtable_5pyfit_11composition_Index.bsi = (double (*)(struct __pyx_obj_5pyfit_11composition_Index *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_bsi;
+  __pyx_vtable_5pyfit_11composition_Index.corpulence = (double (*)(struct __pyx_obj_5pyfit_11composition_Index *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_corpulence;
+  __pyx_vtable_5pyfit_11composition_Index.sbsi = (double (*)(struct __pyx_obj_5pyfit_11composition_Index *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_sbsi;
+  __pyx_vtable_5pyfit_11composition_Index.WHR = (double (*)(struct __pyx_obj_5pyfit_11composition_Index *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_WHR;
+  __pyx_vtable_5pyfit_11composition_Index.WHtR = (double (*)(struct __pyx_obj_5pyfit_11composition_Index *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_5Index_WHtR;
   if (PyType_Ready(&__pyx_type_5pyfit_11composition_Index) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   __pyx_type_5pyfit_11composition_Index.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_11composition_Index.tp_dict, __pyx_vtabptr_5pyfit_11composition_Index) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "Index", (PyObject *)&__pyx_type_5pyfit_11composition_Index) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   __pyx_ptype_5pyfit_11composition_Index = &__pyx_type_5pyfit_11composition_Index;
   __pyx_vtabptr_5pyfit_11composition_Mass = &__pyx_vtable_5pyfit_11composition_Mass;
-  __pyx_vtable_5pyfit_11composition_Mass.ffmChild = (float (*)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmChild;
-  __pyx_vtable_5pyfit_11composition_Mass.ffmAdolescent = (float (*)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmAdolescent;
-  __pyx_vtable_5pyfit_11composition_Mass.ffmAdultLean = (float (*)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmAdultLean;
-  __pyx_vtable_5pyfit_11composition_Mass.ffmAdultObese = (float (*)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmAdultObese;
-  __pyx_vtable_5pyfit_11composition_Mass.ffmAdultAthlete = (float (*)(struct __pyx_obj_5pyfit_11composition_Mass *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete;
+  __pyx_vtable_5pyfit_11composition_Mass.ffmChild = (double (*)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmChild;
+  __pyx_vtable_5pyfit_11composition_Mass.ffmAdolescent = (double (*)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmAdolescent;
+  __pyx_vtable_5pyfit_11composition_Mass.ffmAdultLean = (double (*)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmAdultLean;
+  __pyx_vtable_5pyfit_11composition_Mass.ffmAdultObese = (double (*)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmAdultObese;
+  __pyx_vtable_5pyfit_11composition_Mass.ffmAdultAthlete = (double (*)(struct __pyx_obj_5pyfit_11composition_Mass *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_4Mass_ffmAdultAthlete;
   if (PyType_Ready(&__pyx_type_5pyfit_11composition_Mass) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
   __pyx_type_5pyfit_11composition_Mass.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_11composition_Mass.tp_dict, __pyx_vtabptr_5pyfit_11composition_Mass) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
@@ -7810,26 +7805,26 @@ PyMODINIT_FUNC PyInit_composition(void)
   if (PyObject_SetAttrString(__pyx_m, "BodyFat", (PyObject *)&__pyx_type_5pyfit_11composition_BodyFat) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
   __pyx_ptype_5pyfit_11composition_BodyFat = &__pyx_type_5pyfit_11composition_BodyFat;
   __pyx_vtabptr_5pyfit_11composition_SurfaceArea = &__pyx_vtable_5pyfit_11composition_SurfaceArea;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.boyd = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_boyd;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.costeff = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_costeff;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.dubois = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_dubois;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.fujimoto = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.gehangeorge = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.haycock = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_haycock;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.mosteller = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_mosteller;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.schlich = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_schlich;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.shuterAslani = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani;
-  __pyx_vtable_5pyfit_11composition_SurfaceArea.takahira = (float (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_takahira;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.boyd = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_boyd;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.costeff = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_costeff;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.dubois = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_dubois;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.fujimoto = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_fujimoto;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.gehangeorge = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_gehangeorge;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.haycock = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_haycock;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.mosteller = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_mosteller;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.schlich = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_schlich;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.shuterAslani = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_shuterAslani;
+  __pyx_vtable_5pyfit_11composition_SurfaceArea.takahira = (double (*)(struct __pyx_obj_5pyfit_11composition_SurfaceArea *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_11SurfaceArea_takahira;
   if (PyType_Ready(&__pyx_type_5pyfit_11composition_SurfaceArea) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
   __pyx_type_5pyfit_11composition_SurfaceArea.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_11composition_SurfaceArea.tp_dict, __pyx_vtabptr_5pyfit_11composition_SurfaceArea) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "SurfaceArea", (PyObject *)&__pyx_type_5pyfit_11composition_SurfaceArea) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
   __pyx_ptype_5pyfit_11composition_SurfaceArea = &__pyx_type_5pyfit_11composition_SurfaceArea;
   __pyx_vtabptr_5pyfit_11composition_Stature = &__pyx_vtable_5pyfit_11composition_Stature;
-  __pyx_vtable_5pyfit_11composition_Stature.universal = (float (*)(struct __pyx_obj_5pyfit_11composition_Stature *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_7Stature_universal;
-  __pyx_vtable_5pyfit_11composition_Stature.americanWhite = (float (*)(struct __pyx_obj_5pyfit_11composition_Stature *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_7Stature_americanWhite;
-  __pyx_vtable_5pyfit_11composition_Stature.americanBlack = (float (*)(struct __pyx_obj_5pyfit_11composition_Stature *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_7Stature_americanBlack;
-  __pyx_vtable_5pyfit_11composition_Stature.strideLength = (float (*)(struct __pyx_obj_5pyfit_11composition_Stature *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_7Stature_strideLength;
+  __pyx_vtable_5pyfit_11composition_Stature.universal = (double (*)(struct __pyx_obj_5pyfit_11composition_Stature *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_7Stature_universal;
+  __pyx_vtable_5pyfit_11composition_Stature.americanWhite = (double (*)(struct __pyx_obj_5pyfit_11composition_Stature *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_7Stature_americanWhite;
+  __pyx_vtable_5pyfit_11composition_Stature.americanBlack = (double (*)(struct __pyx_obj_5pyfit_11composition_Stature *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_7Stature_americanBlack;
+  __pyx_vtable_5pyfit_11composition_Stature.strideLength = (double (*)(struct __pyx_obj_5pyfit_11composition_Stature *, int __pyx_skip_dispatch))__pyx_f_5pyfit_11composition_7Stature_strideLength;
   if (PyType_Ready(&__pyx_type_5pyfit_11composition_Stature) < 0) __PYX_ERR(0, 144, __pyx_L1_error)
   __pyx_type_5pyfit_11composition_Stature.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_11composition_Stature.tp_dict, __pyx_vtabptr_5pyfit_11composition_Stature) < 0) __PYX_ERR(0, 144, __pyx_L1_error)
@@ -7847,7 +7842,7 @@ PyMODINIT_FUNC PyInit_composition(void)
  * from libc.math cimport pow, log10, sqrt
  * from pyfit.enums import Gender             # <<<<<<<<<<<<<<
  * 
- * cpdef float dailyWaterNeed(float weight):
+ * cpdef double dailyWaterNeed(double weight):
  */
   __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

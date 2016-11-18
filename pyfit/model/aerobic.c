@@ -504,14 +504,14 @@ struct __pyx_obj_5pyfit_5model_7aerobic_Cameron;
  * from libc.math cimport pow
  * 
  * cdef class Riegel(object):             # <<<<<<<<<<<<<<
- *     cdef readonly float d1
- *     cdef readonly float t1
+ *     cdef readonly double d1
+ *     cdef readonly double t1
  */
 struct __pyx_obj_5pyfit_5model_7aerobic_Riegel {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Riegel *__pyx_vtab;
-  float d1;
-  float t1;
+  double d1;
+  double t1;
 };
 
 
@@ -519,14 +519,14 @@ struct __pyx_obj_5pyfit_5model_7aerobic_Riegel {
  *         return self.t1 * pow( (d2/self.d1), 1.06)
  * 
  * cdef class Cameron(object):             # <<<<<<<<<<<<<<
- *     cdef readonly float d1
- *     cdef readonly float t1
+ *     cdef readonly double d1
+ *     cdef readonly double t1
  */
 struct __pyx_obj_5pyfit_5model_7aerobic_Cameron {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *__pyx_vtab;
-  float d1;
-  float t1;
+  double d1;
+  double t1;
 };
 
 
@@ -535,13 +535,13 @@ struct __pyx_obj_5pyfit_5model_7aerobic_Cameron {
  * from libc.math cimport pow
  * 
  * cdef class Riegel(object):             # <<<<<<<<<<<<<<
- *     cdef readonly float d1
- *     cdef readonly float t1
+ *     cdef readonly double d1
+ *     cdef readonly double t1
  */
 
 struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Riegel {
-  PyObject *(*distance)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, float, int __pyx_skip_dispatch);
-  PyObject *(*time)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, float, int __pyx_skip_dispatch);
+  PyObject *(*distance)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, double, int __pyx_skip_dispatch);
+  PyObject *(*time)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Riegel *__pyx_vtabptr_5pyfit_5model_7aerobic_Riegel;
 
@@ -550,13 +550,13 @@ static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Riegel *__pyx_vtabptr_5pyf
  *         return self.t1 * pow( (d2/self.d1), 1.06)
  * 
  * cdef class Cameron(object):             # <<<<<<<<<<<<<<
- *     cdef readonly float d1
- *     cdef readonly float t1
+ *     cdef readonly double d1
+ *     cdef readonly double t1
  */
 
 struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron {
-  PyObject *(*__pyx___f__)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, float);
-  PyObject *(*time)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, float, int __pyx_skip_dispatch);
+  PyObject *(*__pyx___f__)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, double);
+  PyObject *(*time)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *__pyx_vtabptr_5pyfit_5model_7aerobic_Cameron;
 
@@ -704,10 +704,10 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_t2, int __pyx_skip_dispatch); /* proto*/
-static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d2, int __pyx_skip_dispatch); /* proto*/
-static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_x); /* proto*/
-static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d2, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_t2, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_d2, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_x); /* proto*/
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_d2, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from 'libc.math' */
 
@@ -732,13 +732,13 @@ static PyObject *__pyx_n_s_pyx_vtable;
 static PyObject *__pyx_n_s_t1;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_time;
-static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d1, float __pyx_v_t1); /* proto */
-static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_t2); /* proto */
-static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d2); /* proto */
+static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_d1, double __pyx_v_t1); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_t2); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_d2); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2d1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2t1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self); /* proto */
-static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d1, float __pyx_v_t1); /* proto */
-static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d2); /* proto */
+static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_d1, double __pyx_v_t1); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_d2); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2d1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2t1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_Riegel(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -746,9 +746,9 @@ static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_Cameron(PyTypeObject *t, Py
 static PyObject *__pyx_int_0;
 
 /* "pyfit/model/aerobic.pyx":7
- *     cdef readonly float t1
+ *     cdef readonly double t1
  * 
- *     def __cinit__(self, float d1, float t1):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, double d1, double t1):             # <<<<<<<<<<<<<<
  *         self.d1 = d1
  *         self.t1 = t1
  */
@@ -756,8 +756,8 @@ static PyObject *__pyx_int_0;
 /* Python wrapper */
 static int __pyx_pw_5pyfit_5model_7aerobic_6Riegel_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_5model_7aerobic_6Riegel_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_d1;
-  float __pyx_v_t1;
+  double __pyx_v_d1;
+  double __pyx_v_t1;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -793,8 +793,8 @@ static int __pyx_pw_5pyfit_5model_7aerobic_6Riegel_1__cinit__(PyObject *__pyx_v_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_d1 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_d1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
-    __pyx_v_t1 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_t1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
+    __pyx_v_d1 = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_d1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
+    __pyx_v_t1 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_t1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 7, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -811,14 +811,14 @@ static int __pyx_pw_5pyfit_5model_7aerobic_6Riegel_1__cinit__(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d1, float __pyx_v_t1) {
+static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_d1, double __pyx_v_t1) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/model/aerobic.pyx":8
  * 
- *     def __cinit__(self, float d1, float t1):
+ *     def __cinit__(self, double d1, double t1):
  *         self.d1 = d1             # <<<<<<<<<<<<<<
  *         self.t1 = t1
  * 
@@ -826,18 +826,18 @@ static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5p
   __pyx_v_self->d1 = __pyx_v_d1;
 
   /* "pyfit/model/aerobic.pyx":9
- *     def __cinit__(self, float d1, float t1):
+ *     def __cinit__(self, double d1, double t1):
  *         self.d1 = d1
  *         self.t1 = t1             # <<<<<<<<<<<<<<
  * 
- *     cpdef distance(self, float t2):
+ *     cpdef distance(self, double t2):
  */
   __pyx_v_self->t1 = __pyx_v_t1;
 
   /* "pyfit/model/aerobic.pyx":7
- *     cdef readonly float t1
+ *     cdef readonly double t1
  * 
- *     def __cinit__(self, float d1, float t1):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, double d1, double t1):             # <<<<<<<<<<<<<<
  *         self.d1 = d1
  *         self.t1 = t1
  */
@@ -851,13 +851,13 @@ static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5p
 /* "pyfit/model/aerobic.pyx":11
  *         self.t1 = t1
  * 
- *     cpdef distance(self, float t2):             # <<<<<<<<<<<<<<
+ *     cpdef distance(self, double t2):             # <<<<<<<<<<<<<<
  *         if t2 <= 0:
  *             return 0
  */
 
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance(PyObject *__pyx_v_self, PyObject *__pyx_arg_t2); /*proto*/
-static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_t2, int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_t2, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -917,7 +917,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_ob
 
   /* "pyfit/model/aerobic.pyx":12
  * 
- *     cpdef distance(self, float t2):
+ *     cpdef distance(self, double t2):
  *         if t2 <= 0:             # <<<<<<<<<<<<<<
  *             return 0
  *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
@@ -926,7 +926,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_ob
   if (__pyx_t_7) {
 
     /* "pyfit/model/aerobic.pyx":13
- *     cpdef distance(self, float t2):
+ *     cpdef distance(self, double t2):
  *         if t2 <= 0:
  *             return 0             # <<<<<<<<<<<<<<
  *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
@@ -939,7 +939,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_ob
 
     /* "pyfit/model/aerobic.pyx":12
  * 
- *     cpdef distance(self, float t2):
+ *     cpdef distance(self, double t2):
  *         if t2 <= 0:             # <<<<<<<<<<<<<<
  *             return 0
  *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
@@ -951,7 +951,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_ob
  *             return 0
  *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))             # <<<<<<<<<<<<<<
  * 
- *     cpdef time(self, float d2):
+ *     cpdef time(self, double d2):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_8 = pow(__pyx_v_t2, (50.0 / 53.0));
@@ -969,7 +969,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_ob
   /* "pyfit/model/aerobic.pyx":11
  *         self.t1 = t1
  * 
- *     cpdef distance(self, float t2):             # <<<<<<<<<<<<<<
+ *     cpdef distance(self, double t2):             # <<<<<<<<<<<<<<
  *         if t2 <= 0:
  *             return 0
  */
@@ -993,12 +993,12 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance(struct __pyx_ob
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance(PyObject *__pyx_v_self, PyObject *__pyx_arg_t2); /*proto*/
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance(PyObject *__pyx_v_self, PyObject *__pyx_arg_t2) {
-  float __pyx_v_t2;
+  double __pyx_v_t2;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("distance (wrapper)", 0);
   assert(__pyx_arg_t2); {
-    __pyx_v_t2 = __pyx_PyFloat_AsFloat(__pyx_arg_t2); if (unlikely((__pyx_v_t2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
+    __pyx_v_t2 = __pyx_PyFloat_AsDouble(__pyx_arg_t2); if (unlikely((__pyx_v_t2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1006,14 +1006,14 @@ static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_3distance(PyObject *__p
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self), ((float)__pyx_v_t2));
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self), ((double)__pyx_v_t2));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_t2) {
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_t2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1039,13 +1039,13 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(struct __pyx_
 /* "pyfit/model/aerobic.pyx":16
  *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
  * 
- *     cpdef time(self, float d2):             # <<<<<<<<<<<<<<
+ *     cpdef time(self, double d2):             # <<<<<<<<<<<<<<
  *         if d2 <= 0:
  *             return 0
  */
 
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
-static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d2, int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_d2, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1103,7 +1103,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5p
 
   /* "pyfit/model/aerobic.pyx":17
  * 
- *     cpdef time(self, float d2):
+ *     cpdef time(self, double d2):
  *         if d2 <= 0:             # <<<<<<<<<<<<<<
  *             return 0
  *         return self.t1 * pow( (d2/self.d1), 1.06)
@@ -1112,7 +1112,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5p
   if (__pyx_t_7) {
 
     /* "pyfit/model/aerobic.pyx":18
- *     cpdef time(self, float d2):
+ *     cpdef time(self, double d2):
  *         if d2 <= 0:
  *             return 0             # <<<<<<<<<<<<<<
  *         return self.t1 * pow( (d2/self.d1), 1.06)
@@ -1125,7 +1125,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5p
 
     /* "pyfit/model/aerobic.pyx":17
  * 
- *     cpdef time(self, float d2):
+ *     cpdef time(self, double d2):
  *         if d2 <= 0:             # <<<<<<<<<<<<<<
  *             return 0
  *         return self.t1 * pow( (d2/self.d1), 1.06)
@@ -1153,7 +1153,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5p
   /* "pyfit/model/aerobic.pyx":16
  *         return self.d1*(pow(t2, 50.0/53.0)/pow(self.t1, 50.0/53.0))
  * 
- *     cpdef time(self, float d2):             # <<<<<<<<<<<<<<
+ *     cpdef time(self, double d2):             # <<<<<<<<<<<<<<
  *         if d2 <= 0:
  *             return 0
  */
@@ -1177,12 +1177,12 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_6Riegel_time(struct __pyx_obj_5p
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2) {
-  float __pyx_v_d2;
+  double __pyx_v_d2;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("time (wrapper)", 0);
   assert(__pyx_arg_d2); {
-    __pyx_v_d2 = __pyx_PyFloat_AsFloat(__pyx_arg_d2); if (unlikely((__pyx_v_d2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 16, __pyx_L3_error)
+    __pyx_v_d2 = __pyx_PyFloat_AsDouble(__pyx_arg_d2); if (unlikely((__pyx_v_d2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 16, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1190,14 +1190,14 @@ static PyObject *__pyx_pw_5pyfit_5model_7aerobic_6Riegel_5time(PyObject *__pyx_v
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self), ((float)__pyx_v_d2));
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(((struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *)__pyx_v_self), ((double)__pyx_v_d2));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, float __pyx_v_d2) {
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_d2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1223,8 +1223,8 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(struct __pyx_obj_
 /* "pyfit/model/aerobic.pyx":4
  * 
  * cdef class Riegel(object):
- *     cdef readonly float d1             # <<<<<<<<<<<<<<
- *     cdef readonly float t1
+ *     cdef readonly double d1             # <<<<<<<<<<<<<<
+ *     cdef readonly double t1
  * 
  */
 
@@ -1266,10 +1266,10 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2d1___get__(struct __py
 
 /* "pyfit/model/aerobic.pyx":5
  * cdef class Riegel(object):
- *     cdef readonly float d1
- *     cdef readonly float t1             # <<<<<<<<<<<<<<
+ *     cdef readonly double d1
+ *     cdef readonly double t1             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, float d1, float t1):
+ *     def __cinit__(self, double d1, double t1):
  */
 
 /* Python wrapper */
@@ -1309,9 +1309,9 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2t1___get__(struct __py
 }
 
 /* "pyfit/model/aerobic.pyx":25
- *     cdef readonly float t1
+ *     cdef readonly double t1
  * 
- *     def __cinit__(self, float d1, float t1):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, double d1, double t1):             # <<<<<<<<<<<<<<
  *         self.d1 = d1
  *         self.t1 = t1
  */
@@ -1319,8 +1319,8 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2t1___get__(struct __py
 /* Python wrapper */
 static int __pyx_pw_5pyfit_5model_7aerobic_7Cameron_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_5model_7aerobic_7Cameron_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_d1;
-  float __pyx_v_t1;
+  double __pyx_v_d1;
+  double __pyx_v_t1;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -1356,8 +1356,8 @@ static int __pyx_pw_5pyfit_5model_7aerobic_7Cameron_1__cinit__(PyObject *__pyx_v
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_d1 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_d1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
-    __pyx_v_t1 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_t1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
+    __pyx_v_d1 = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_d1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
+    __pyx_v_t1 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_t1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 25, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1374,14 +1374,14 @@ static int __pyx_pw_5pyfit_5model_7aerobic_7Cameron_1__cinit__(PyObject *__pyx_v
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d1, float __pyx_v_t1) {
+static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_d1, double __pyx_v_t1) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/model/aerobic.pyx":26
  * 
- *     def __cinit__(self, float d1, float t1):
+ *     def __cinit__(self, double d1, double t1):
  *         self.d1 = d1             # <<<<<<<<<<<<<<
  *         self.t1 = t1
  * 
@@ -1389,7 +1389,7 @@ static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5
   __pyx_v_self->d1 = __pyx_v_d1;
 
   /* "pyfit/model/aerobic.pyx":27
- *     def __cinit__(self, float d1, float t1):
+ *     def __cinit__(self, double d1, double t1):
  *         self.d1 = d1
  *         self.t1 = t1             # <<<<<<<<<<<<<<
  * 
@@ -1398,9 +1398,9 @@ static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5
   __pyx_v_self->t1 = __pyx_v_t1;
 
   /* "pyfit/model/aerobic.pyx":25
- *     cdef readonly float t1
+ *     cdef readonly double t1
  * 
- *     def __cinit__(self, float d1, float t1):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, double d1, double t1):             # <<<<<<<<<<<<<<
  *         self.d1 = d1
  *         self.t1 = t1
  */
@@ -1414,12 +1414,12 @@ static int __pyx_pf_5pyfit_5model_7aerobic_7Cameron___cinit__(struct __pyx_obj_5
 /* "pyfit/model/aerobic.pyx":30
  * 
  * 
- *     cdef __f__(self, float x):             # <<<<<<<<<<<<<<
+ *     cdef __f__(self, double x):             # <<<<<<<<<<<<<<
  *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
  * 
  */
 
-static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_x) {
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_x) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
@@ -1428,10 +1428,10 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED str
 
   /* "pyfit/model/aerobic.pyx":31
  * 
- *     cdef __f__(self, float x):
+ *     cdef __f__(self, double x):
  *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)             # <<<<<<<<<<<<<<
  * 
- *     cpdef time(self, float d2):
+ *     cpdef time(self, double d2):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = pow(__pyx_v_x, 0.7905);
@@ -1448,7 +1448,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED str
   /* "pyfit/model/aerobic.pyx":30
  * 
  * 
- *     cdef __f__(self, float x):             # <<<<<<<<<<<<<<
+ *     cdef __f__(self, double x):             # <<<<<<<<<<<<<<
  *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
  * 
  */
@@ -1467,15 +1467,15 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED str
 /* "pyfit/model/aerobic.pyx":33
  *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
  * 
- *     cpdef time(self, float d2):             # <<<<<<<<<<<<<<
- *         cdef float d1Miles = self.d1 / 1609.34
- *         cdef float d2Miles = d2 / 1609.34
+ *     cpdef time(self, double d2):             # <<<<<<<<<<<<<<
+ *         cdef double d1Miles = self.d1 / 1609.34
+ *         cdef double d2Miles = d2 / 1609.34
  */
 
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
-static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d2, int __pyx_skip_dispatch) {
-  float __pyx_v_d1Miles;
-  float __pyx_v_d2Miles;
+static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_d2, int __pyx_skip_dispatch) {
+  double __pyx_v_d1Miles;
+  double __pyx_v_d2Miles;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1533,25 +1533,25 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5
 
   /* "pyfit/model/aerobic.pyx":34
  * 
- *     cpdef time(self, float d2):
- *         cdef float d1Miles = self.d1 / 1609.34             # <<<<<<<<<<<<<<
- *         cdef float d2Miles = d2 / 1609.34
+ *     cpdef time(self, double d2):
+ *         cdef double d1Miles = self.d1 / 1609.34             # <<<<<<<<<<<<<<
+ *         cdef double d2Miles = d2 / 1609.34
  *         if d2 <= 0:
  */
   __pyx_v_d1Miles = (__pyx_v_self->d1 / 1609.34);
 
   /* "pyfit/model/aerobic.pyx":35
- *     cpdef time(self, float d2):
- *         cdef float d1Miles = self.d1 / 1609.34
- *         cdef float d2Miles = d2 / 1609.34             # <<<<<<<<<<<<<<
+ *     cpdef time(self, double d2):
+ *         cdef double d1Miles = self.d1 / 1609.34
+ *         cdef double d2Miles = d2 / 1609.34             # <<<<<<<<<<<<<<
  *         if d2 <= 0:
  *             return 0
  */
   __pyx_v_d2Miles = (__pyx_v_d2 / 1609.34);
 
   /* "pyfit/model/aerobic.pyx":36
- *         cdef float d1Miles = self.d1 / 1609.34
- *         cdef float d2Miles = d2 / 1609.34
+ *         cdef double d1Miles = self.d1 / 1609.34
+ *         cdef double d2Miles = d2 / 1609.34
  *         if d2 <= 0:             # <<<<<<<<<<<<<<
  *             return 0
  *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
@@ -1560,7 +1560,7 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5
   if (__pyx_t_7) {
 
     /* "pyfit/model/aerobic.pyx":37
- *         cdef float d2Miles = d2 / 1609.34
+ *         cdef double d2Miles = d2 / 1609.34
  *         if d2 <= 0:
  *             return 0             # <<<<<<<<<<<<<<
  *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
@@ -1571,8 +1571,8 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5
     goto __pyx_L0;
 
     /* "pyfit/model/aerobic.pyx":36
- *         cdef float d1Miles = self.d1 / 1609.34
- *         cdef float d2Miles = d2 / 1609.34
+ *         cdef double d1Miles = self.d1 / 1609.34
+ *         cdef double d2Miles = d2 / 1609.34
  *         if d2 <= 0:             # <<<<<<<<<<<<<<
  *             return 0
  *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
@@ -1616,9 +1616,9 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5
   /* "pyfit/model/aerobic.pyx":33
  *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
  * 
- *     cpdef time(self, float d2):             # <<<<<<<<<<<<<<
- *         cdef float d1Miles = self.d1 / 1609.34
- *         cdef float d2Miles = d2 / 1609.34
+ *     cpdef time(self, double d2):             # <<<<<<<<<<<<<<
+ *         cdef double d1Miles = self.d1 / 1609.34
+ *         cdef double d2Miles = d2 / 1609.34
  */
 
   /* function exit code */
@@ -1640,12 +1640,12 @@ static PyObject *__pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2) {
-  float __pyx_v_d2;
+  double __pyx_v_d2;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("time (wrapper)", 0);
   assert(__pyx_arg_d2); {
-    __pyx_v_d2 = __pyx_PyFloat_AsFloat(__pyx_arg_d2); if (unlikely((__pyx_v_d2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 33, __pyx_L3_error)
+    __pyx_v_d2 = __pyx_PyFloat_AsDouble(__pyx_arg_d2); if (unlikely((__pyx_v_d2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 33, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1653,14 +1653,14 @@ static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time(PyObject *__pyx_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(((struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self), ((float)__pyx_v_d2));
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(((struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self), ((double)__pyx_v_d2));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, float __pyx_v_d2) {
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_d2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1686,8 +1686,8 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2time(struct __pyx_obj
 /* "pyfit/model/aerobic.pyx":22
  * 
  * cdef class Cameron(object):
- *     cdef readonly float d1             # <<<<<<<<<<<<<<
- *     cdef readonly float t1
+ *     cdef readonly double d1             # <<<<<<<<<<<<<<
+ *     cdef readonly double t1
  * 
  */
 
@@ -1729,10 +1729,10 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2d1___get__(struct __p
 
 /* "pyfit/model/aerobic.pyx":23
  * cdef class Cameron(object):
- *     cdef readonly float d1
- *     cdef readonly float t1             # <<<<<<<<<<<<<<
+ *     cdef readonly double d1
+ *     cdef readonly double t1             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, float d1, float t1):
+ *     def __cinit__(self, double d1, double t1):
  */
 
 /* Python wrapper */
@@ -2116,16 +2116,16 @@ PyMODINIT_FUNC PyInit_aerobic(void)
   /*--- Function export code ---*/
   /*--- Type init code ---*/
   __pyx_vtabptr_5pyfit_5model_7aerobic_Riegel = &__pyx_vtable_5pyfit_5model_7aerobic_Riegel;
-  __pyx_vtable_5pyfit_5model_7aerobic_Riegel.distance = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance;
-  __pyx_vtable_5pyfit_5model_7aerobic_Riegel.time = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_6Riegel_time;
+  __pyx_vtable_5pyfit_5model_7aerobic_Riegel.distance = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_6Riegel_distance;
+  __pyx_vtable_5pyfit_5model_7aerobic_Riegel.time = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_6Riegel_time;
   if (PyType_Ready(&__pyx_type_5pyfit_5model_7aerobic_Riegel) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __pyx_type_5pyfit_5model_7aerobic_Riegel.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_5model_7aerobic_Riegel.tp_dict, __pyx_vtabptr_5pyfit_5model_7aerobic_Riegel) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "Riegel", (PyObject *)&__pyx_type_5pyfit_5model_7aerobic_Riegel) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __pyx_ptype_5pyfit_5model_7aerobic_Riegel = &__pyx_type_5pyfit_5model_7aerobic_Riegel;
   __pyx_vtabptr_5pyfit_5model_7aerobic_Cameron = &__pyx_vtable_5pyfit_5model_7aerobic_Cameron;
-  __pyx_vtable_5pyfit_5model_7aerobic_Cameron.__pyx___f__ = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, float))__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__;
-  __pyx_vtable_5pyfit_5model_7aerobic_Cameron.time = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_7Cameron_time;
+  __pyx_vtable_5pyfit_5model_7aerobic_Cameron.__pyx___f__ = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, double))__pyx_f_5pyfit_5model_7aerobic_7Cameron___f__;
+  __pyx_vtable_5pyfit_5model_7aerobic_Cameron.time = (PyObject *(*)(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_5model_7aerobic_7Cameron_time;
   if (PyType_Ready(&__pyx_type_5pyfit_5model_7aerobic_Cameron) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
   __pyx_type_5pyfit_5model_7aerobic_Cameron.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_5model_7aerobic_Cameron.tp_dict, __pyx_vtabptr_5pyfit_5model_7aerobic_Cameron) < 0) __PYX_ERR(0, 21, __pyx_L1_error)

@@ -520,7 +520,7 @@ struct __pyx_opt_args_5pyfit_8strength_4Jump_jb;
 /* "pyfit/strength.pyx":37
  *         return a-b*pow(self.weight, -c)
  * 
- *     cpdef float siff(self, bint power=False):             # <<<<<<<<<<<<<<
+ *     cpdef double siff(self, bint power=False):             # <<<<<<<<<<<<<<
  *         if power:
  *             return self.siffPower()
  */
@@ -532,8 +532,8 @@ struct __pyx_opt_args_5pyfit_8strength_7Compare_siff {
 /* "pyfit/strength.pyx":86
  *         return sqrt(4.9 * self.weight) * sqrt(vJumpHeight) * 9.81
  * 
- *     cpdef float harman(self, float vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double harman(self, double vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:
  */
 struct __pyx_opt_args_5pyfit_8strength_4Jump_harman {
@@ -544,9 +544,9 @@ struct __pyx_opt_args_5pyfit_8strength_4Jump_harman {
 /* "pyfit/strength.pyx":92
  *         return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393
  * 
- *     cpdef float jb(self, float vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
- *         cdef float bodyHeightCm = self.height * 100
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double jb(self, double vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
+ *         cdef double bodyHeightCm = self.height * 100
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  */
 struct __pyx_opt_args_5pyfit_8strength_4Jump_jb {
   int __pyx_n;
@@ -558,14 +558,14 @@ struct __pyx_opt_args_5pyfit_8strength_4Jump_jb {
  * 
  * cdef class Compare(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 struct __pyx_obj_5pyfit_8strength_Compare {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_8strength_Compare *__pyx_vtab;
   int gender;
-  float age;
-  float weight;
+  double age;
+  double weight;
 };
 
 
@@ -573,14 +573,14 @@ struct __pyx_obj_5pyfit_8strength_Compare {
  *         return coefficient * weightLifted
  * 
  * cdef class Jump(object):             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
- *     cdef readonly float height
+ *     cdef readonly double weight
+ *     cdef readonly double height
  */
 struct __pyx_obj_5pyfit_8strength_Jump {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_8strength_Jump *__pyx_vtab;
-  float weight;
-  float height;
+  double weight;
+  double height;
 };
 
 
@@ -603,157 +603,157 @@ struct __pyx_obj_5pyfit_8strength_RMEstimator {
  * 
  * cdef class Abadie(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_Abadie {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":120
- *         return 7.24 + (1.05* weight)
+/* "pyfit/strength.pyx":123
+ *         return (4./105)*(25*rm-181)
  * 
  * cdef class Baechle(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_Baechle {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":125
- *         return weight * (1+(0.033* self.reps) )
+/* "pyfit/strength.pyx":131
+ *         return (1000*rm)/(33*self.reps + 1000)
  * 
  * cdef class Brzycki(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_Brzycki {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":133
+/* "pyfit/strength.pyx":142
  *         return ((weight - weight2)/(rep2 - self.reps)) * (self.reps - 1) + weight
  * 
  * cdef class Epley(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_Epley {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":142
- *         return value / 100
+/* "pyfit/strength.pyx":147
+ *         return (weight * self.reps * 0.033)+weight
  * 
  * cdef class Landers(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_Landers {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":151
+/* "pyfit/strength.pyx":159
  *         return value / 100
  * 
  * cdef class Lombardi(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_Lombardi {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":156
- *         return weight*pow(self.reps,0.10)
+/* "pyfit/strength.pyx":167
+ *         return rm/pow(self.reps,0.10)
  * 
  * cdef class Mayhew(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float football(self):
+ *     cpdef double football(self):
  */
 struct __pyx_obj_5pyfit_8strength_Mayhew {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":168
- *         return value / 100
+/* "pyfit/strength.pyx":182
+ *         return (rm*( 52.2 + 41.9 * exp(-0.055 * self.reps) ) )/100
  * 
  * cdef class McGlothin(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_McGlothin {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":173
- *         return (100 * weight)/(101.3 - 2.67123 * self.reps)
+/* "pyfit/strength.pyx":190
+ *         return (rm*(101.3 - 2.67123 * self.reps) )/100
  * 
  * cdef class  OConnor(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_OConnor {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":181
- *         return (0.025 * (weight * self.reps)+ weight)
+/* "pyfit/strength.pyx":201
+ *         return (40.*rm)/(self.reps+40)
  * 
  * cdef class ReynoldsCP(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_ReynoldsCP {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":186
+/* "pyfit/strength.pyx":206
  *         return (1.1307 * weight) + 0.6998
  * 
  * cdef class ReynoldsLP(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_ReynoldsLP {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":191
+/* "pyfit/strength.pyx":211
  *         return (1.09703 * weight) + 14.2546
  * 
  * cdef class Wathan(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 struct __pyx_obj_5pyfit_8strength_Wathan {
   struct __pyx_obj_5pyfit_8strength_RMEstimator __pyx_base;
 };
 
 
-/* "pyfit/strength.pyx":196
- *         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps) ) )
+/* "pyfit/strength.pyx":219
+ *         return (rm*(48.8+(53.8*exp(-0.075 * self.reps) ) ) )/100
  * 
  * cdef class RM(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 struct __pyx_obj_5pyfit_8strength_RM {
   PyObject_HEAD
   struct __pyx_vtabstruct_5pyfit_8strength_RM *__pyx_vtab;
   int gender;
-  float age;
+  double age;
 };
 
 
@@ -763,16 +763,16 @@ struct __pyx_obj_5pyfit_8strength_RM {
  * 
  * cdef class Compare(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Compare {
-  float (*oCarroll)(struct __pyx_obj_5pyfit_8strength_Compare *, float, int __pyx_skip_dispatch);
-  float (*siffWeight)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch);
-  float (*siffPower)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch);
-  float (*siff)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_7Compare_siff *__pyx_optional_args);
-  float (*sinclair)(struct __pyx_obj_5pyfit_8strength_Compare *, float, int __pyx_skip_dispatch);
-  float (*wilks)(struct __pyx_obj_5pyfit_8strength_Compare *, float, int __pyx_skip_dispatch);
+  double (*oCarroll)(struct __pyx_obj_5pyfit_8strength_Compare *, double, int __pyx_skip_dispatch);
+  double (*siffWeight)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch);
+  double (*siffPower)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch);
+  double (*siff)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_7Compare_siff *__pyx_optional_args);
+  double (*sinclair)(struct __pyx_obj_5pyfit_8strength_Compare *, double, int __pyx_skip_dispatch);
+  double (*wilks)(struct __pyx_obj_5pyfit_8strength_Compare *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Compare *__pyx_vtabptr_5pyfit_8strength_Compare;
 
@@ -781,17 +781,17 @@ static struct __pyx_vtabstruct_5pyfit_8strength_Compare *__pyx_vtabptr_5pyfit_8s
  *         return coefficient * weightLifted
  * 
  * cdef class Jump(object):             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
- *     cdef readonly float height
+ *     cdef readonly double weight
+ *     cdef readonly double height
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Jump {
-  float (*bosco)(struct __pyx_obj_5pyfit_8strength_Jump *, float, float, float, int __pyx_skip_dispatch);
-  float (*lewis)(struct __pyx_obj_5pyfit_8strength_Jump *, float, int __pyx_skip_dispatch);
-  float (*harman)(struct __pyx_obj_5pyfit_8strength_Jump *, float, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_harman *__pyx_optional_args);
-  float (*jb)(struct __pyx_obj_5pyfit_8strength_Jump *, float, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_jb *__pyx_optional_args);
-  float (*sayer)(struct __pyx_obj_5pyfit_8strength_Jump *, float, int __pyx_skip_dispatch);
-  float (*mk)(struct __pyx_obj_5pyfit_8strength_Jump *, float, float, int __pyx_skip_dispatch);
+  double (*bosco)(struct __pyx_obj_5pyfit_8strength_Jump *, double, double, double, int __pyx_skip_dispatch);
+  double (*lewis)(struct __pyx_obj_5pyfit_8strength_Jump *, double, int __pyx_skip_dispatch);
+  double (*harman)(struct __pyx_obj_5pyfit_8strength_Jump *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_harman *__pyx_optional_args);
+  double (*jb)(struct __pyx_obj_5pyfit_8strength_Jump *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_jb *__pyx_optional_args);
+  double (*sayer)(struct __pyx_obj_5pyfit_8strength_Jump *, double, int __pyx_skip_dispatch);
+  double (*mk)(struct __pyx_obj_5pyfit_8strength_Jump *, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Jump *__pyx_vtabptr_5pyfit_8strength_Jump;
 
@@ -805,7 +805,7 @@ static struct __pyx_vtabstruct_5pyfit_8strength_Jump *__pyx_vtabptr_5pyfit_8stre
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator {
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
 
@@ -815,199 +815,207 @@ static struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator *__pyx_vtabptr_5pyfi
  * 
  * cdef class Abadie(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Abadie {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_Abadie *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_Abadie *, double, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_Abadie *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Abadie *__pyx_vtabptr_5pyfit_8strength_Abadie;
 
 
-/* "pyfit/strength.pyx":120
- *         return 7.24 + (1.05* weight)
+/* "pyfit/strength.pyx":123
+ *         return (4./105)*(25*rm-181)
  * 
  * cdef class Baechle(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Baechle {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_Baechle *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_Baechle *, double, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_Baechle *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Baechle *__pyx_vtabptr_5pyfit_8strength_Baechle;
 
 
-/* "pyfit/strength.pyx":125
- *         return weight * (1+(0.033* self.reps) )
+/* "pyfit/strength.pyx":131
+ *         return (1000*rm)/(33*self.reps + 1000)
  * 
  * cdef class Brzycki(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Brzycki {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_Brzycki *, float, int __pyx_skip_dispatch);
-  float (*twoSet)(struct __pyx_obj_5pyfit_8strength_Brzycki *, float, int, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_Brzycki *, double, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_Brzycki *, double, int __pyx_skip_dispatch);
+  double (*twoSet)(struct __pyx_obj_5pyfit_8strength_Brzycki *, double, int, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Brzycki *__pyx_vtabptr_5pyfit_8strength_Brzycki;
 
 
-/* "pyfit/strength.pyx":133
+/* "pyfit/strength.pyx":142
  *         return ((weight - weight2)/(rep2 - self.reps)) * (self.reps - 1) + weight
  * 
  * cdef class Epley(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Epley {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_Epley *, float, int __pyx_skip_dispatch);
-  float (*percent)(struct __pyx_obj_5pyfit_8strength_Epley *, float);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_Epley *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Epley *__pyx_vtabptr_5pyfit_8strength_Epley;
 
 
-/* "pyfit/strength.pyx":142
- *         return value / 100
+/* "pyfit/strength.pyx":147
+ *         return (weight * self.reps * 0.033)+weight
  * 
  * cdef class Landers(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Landers {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_Landers *, float, int __pyx_skip_dispatch);
-  float (*percent)(struct __pyx_obj_5pyfit_8strength_Landers *, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_Landers *, double, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_Landers *, double, int __pyx_skip_dispatch);
+  double (*percent)(struct __pyx_obj_5pyfit_8strength_Landers *, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Landers *__pyx_vtabptr_5pyfit_8strength_Landers;
 
 
-/* "pyfit/strength.pyx":151
+/* "pyfit/strength.pyx":159
  *         return value / 100
  * 
  * cdef class Lombardi(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Lombardi {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_Lombardi *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_Lombardi *, double, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_Lombardi *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Lombardi *__pyx_vtabptr_5pyfit_8strength_Lombardi;
 
 
-/* "pyfit/strength.pyx":156
- *         return weight*pow(self.reps,0.10)
+/* "pyfit/strength.pyx":167
+ *         return rm/pow(self.reps,0.10)
  * 
  * cdef class Mayhew(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float football(self):
+ *     cpdef double football(self):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Mayhew {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*football)(struct __pyx_obj_5pyfit_8strength_Mayhew *, int __pyx_skip_dispatch);
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_Mayhew *, float, int __pyx_skip_dispatch);
-  float (*percent)(struct __pyx_obj_5pyfit_8strength_Mayhew *, int __pyx_skip_dispatch);
+  double (*football)(struct __pyx_obj_5pyfit_8strength_Mayhew *, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_Mayhew *, double, int __pyx_skip_dispatch);
+  double (*percent)(struct __pyx_obj_5pyfit_8strength_Mayhew *, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_Mayhew *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Mayhew *__pyx_vtabptr_5pyfit_8strength_Mayhew;
 
 
-/* "pyfit/strength.pyx":168
- *         return value / 100
+/* "pyfit/strength.pyx":182
+ *         return (rm*( 52.2 + 41.9 * exp(-0.055 * self.reps) ) )/100
  * 
  * cdef class McGlothin(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_McGlothin {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_McGlothin *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_McGlothin *, double, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_McGlothin *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_McGlothin *__pyx_vtabptr_5pyfit_8strength_McGlothin;
 
 
-/* "pyfit/strength.pyx":173
- *         return (100 * weight)/(101.3 - 2.67123 * self.reps)
+/* "pyfit/strength.pyx":190
+ *         return (rm*(101.3 - 2.67123 * self.reps) )/100
  * 
  * cdef class  OConnor(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_OConnor {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_OConnor *, float, int __pyx_skip_dispatch);
-  float (*percent)(struct __pyx_obj_5pyfit_8strength_OConnor *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_OConnor *, double, int __pyx_skip_dispatch);
+  double (*percent)(struct __pyx_obj_5pyfit_8strength_OConnor *, double, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_OConnor *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_OConnor *__pyx_vtabptr_5pyfit_8strength_OConnor;
 
 
-/* "pyfit/strength.pyx":181
- *         return (0.025 * (weight * self.reps)+ weight)
+/* "pyfit/strength.pyx":201
+ *         return (40.*rm)/(self.reps+40)
  * 
  * cdef class ReynoldsCP(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_ReynoldsCP {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_ReynoldsCP *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_ReynoldsCP *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_ReynoldsCP *__pyx_vtabptr_5pyfit_8strength_ReynoldsCP;
 
 
-/* "pyfit/strength.pyx":186
+/* "pyfit/strength.pyx":206
  *         return (1.1307 * weight) + 0.6998
  * 
  * cdef class ReynoldsLP(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_ReynoldsLP {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_ReynoldsLP *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_ReynoldsLP *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_ReynoldsLP *__pyx_vtabptr_5pyfit_8strength_ReynoldsLP;
 
 
-/* "pyfit/strength.pyx":191
+/* "pyfit/strength.pyx":211
  *         return (1.09703 * weight) + 14.2546
  * 
  * cdef class Wathan(RMEstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_Wathan {
   struct __pyx_vtabstruct_5pyfit_8strength_RMEstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_8strength_Wathan *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_8strength_Wathan *, double, int __pyx_skip_dispatch);
+  double (*weight)(struct __pyx_obj_5pyfit_8strength_Wathan *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_Wathan *__pyx_vtabptr_5pyfit_8strength_Wathan;
 
 
-/* "pyfit/strength.pyx":196
- *         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps) ) )
+/* "pyfit/strength.pyx":219
+ *         return (rm*(48.8+(53.8*exp(-0.075 * self.reps) ) ) )/100
  * 
  * cdef class RM(object):             # <<<<<<<<<<<<<<
  *     cdef readonly int gender
- *     cdef readonly float age
+ *     cdef readonly double age
  */
 
 struct __pyx_vtabstruct_5pyfit_8strength_RM {
-  float (*ymcaUpperBody)(struct __pyx_obj_5pyfit_8strength_RM *, int, int __pyx_skip_dispatch);
-  float (*femaleMiddleAge)(struct __pyx_obj_5pyfit_8strength_RM *, int, float, int __pyx_skip_dispatch);
-  float (*femaleOlder)(struct __pyx_obj_5pyfit_8strength_RM *, int, float, int __pyx_skip_dispatch);
+  double (*ymcaUpperBody)(struct __pyx_obj_5pyfit_8strength_RM *, int, int __pyx_skip_dispatch);
+  double (*femaleMiddleAge)(struct __pyx_obj_5pyfit_8strength_RM *, int, double, int __pyx_skip_dispatch);
+  double (*femaleOlder)(struct __pyx_obj_5pyfit_8strength_RM *, int, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_8strength_RM *__pyx_vtabptr_5pyfit_8strength_RM;
 
@@ -1209,52 +1217,60 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static float __pyx_f_5pyfit_8strength_7Compare_oCarroll(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_weightLifted, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_7Compare_siff *__pyx_optional_args); /* proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_obtainedTotal, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_weightLifted, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_bosco(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_duration, float __pyx_v_jump_count, float __pyx_v_total_flight_time, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_harman *__pyx_optional_args); /* proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_jb *__pyx_optional_args); /* proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, float __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_11RMEstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_RMEstimator *__pyx_v_self, CYTHON_UNUSED float __pyx_v_weight); /* proto*/
-float __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_6Abadie_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, float __pyx_v_weight); /* proto*/
-float __pyx_f_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_7Baechle_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, float __pyx_v_weight); /* proto*/
-float __pyx_f_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_7Brzycki_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight); /* proto*/
-static float __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight, int __pyx_v_rep2, float __pyx_v_weight2, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_5Epley_predict(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_5Epley_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, float __pyx_v_weight); /* proto*/
-static float __pyx_f_5pyfit_8strength_5Epley_percent(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, float __pyx_v_weight); /* proto*/
-float __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_7Landers_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, float __pyx_v_weight); /* proto*/
-static float __pyx_f_5pyfit_8strength_7Landers_percent(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_8Lombardi_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, float __pyx_v_weight); /* proto*/
-static float __pyx_f_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_6Mayhew_predict(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_6Mayhew_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, float __pyx_v_weight); /* proto*/
-static float __pyx_f_5pyfit_8strength_6Mayhew_percent(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_9McGlothin_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, float __pyx_v_weight); /* proto*/
-float __pyx_f_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_7OConnor_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight); /* proto*/
-static float __pyx_f_5pyfit_8strength_7OConnor_percent(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, float __pyx_v_weight); /* proto*/
-float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, float __pyx_v_weight); /* proto*/
-float __pyx_f_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_8strength_6Wathan_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, float __pyx_v_weight); /* proto*/
-static float __pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
-static float __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, float __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Compare_oCarroll(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_weightLifted, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_7Compare_siff *__pyx_optional_args); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_obtainedTotal, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_weightLifted, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_4Jump_bosco(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_duration, double __pyx_v_jump_count, double __pyx_v_total_flight_time, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_harman *__pyx_optional_args); /* proto*/
+static double __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_jb *__pyx_optional_args); /* proto*/
+static double __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, double __pyx_v_time, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_11RMEstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_RMEstimator *__pyx_v_self, CYTHON_UNUSED double __pyx_v_weight); /* proto*/
+double __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_6Abadie_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_6Abadie_weight(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_7Baechle_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Baechle_weight(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_7Brzycki_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Brzycki_weight(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, CYTHON_UNUSED double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight, int __pyx_v_rep2, double __pyx_v_weight2, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_5Epley_predict(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_5Epley_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, double __pyx_v_weight); /* proto*/
+double __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_7Landers_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Landers_weight(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_7Landers_percent(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_8Lombardi_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_8Lombardi_weight(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_6Mayhew_predict(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_6Mayhew_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_6Mayhew_percent(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_6Mayhew_weight(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_9McGlothin_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_9McGlothin_weight(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_7OConnor_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_7OConnor_percent(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_7OConnor_weight(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_10ReynoldsCP_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, double __pyx_v_weight); /* proto*/
+double __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_10ReynoldsLP_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, double __pyx_v_weight); /* proto*/
+double __pyx_f_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_8strength_6Wathan_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_weight); /* proto*/
+static double __pyx_f_5pyfit_8strength_6Wathan_weight(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, double __pyx_v_weight, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from 'libc.math' */
 
@@ -1277,7 +1293,7 @@ static PyTypeObject *__pyx_ptype_5pyfit_8strength_ReynoldsCP = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_8strength_ReynoldsLP = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_8strength_Wathan = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_8strength_RM = 0;
-static float __pyx_f_5pyfit_8strength_relative(float, float, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_8strength_relative(double, double, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "pyfit.strength"
 int __pyx_module_is_main_pyfit__strength = 0;
 
@@ -1369,51 +1385,60 @@ static PyObject *__pyx_n_s_weight;
 static PyObject *__pyx_n_s_weight2;
 static PyObject *__pyx_n_s_wilks;
 static PyObject *__pyx_n_s_ymcaUpperBody;
-static int __pyx_pf_5pyfit_8strength_7Compare___cinit__(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_v_gender, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7Compare_2oCarroll(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_weightLifted); /* proto */
+static int __pyx_pf_5pyfit_8strength_7Compare___cinit__(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_v_gender, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Compare_2oCarroll(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_weightLifted); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_7Compare_4siffWeight(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_7Compare_6siffPower(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_7Compare_8siff(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_v_power); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7Compare_10sinclair(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_obtainedTotal); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7Compare_12wilks(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_weightLifted); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Compare_10sinclair(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_obtainedTotal); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Compare_12wilks(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_weightLifted); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_7Compare_6gender___get__(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_7Compare_3age___get__(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_7Compare_6weight___get__(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self); /* proto */
-static int __pyx_pf_5pyfit_8strength_4Jump___cinit__(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_weight, float __pyx_v_height); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_2bosco(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_duration, float __pyx_v_jump_count, float __pyx_v_total_flight_time); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_4lewis(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_6harman(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, PyObject *__pyx_v_peak); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_8jb(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, PyObject *__pyx_v_peak); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_10sayer(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_12mk(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, float __pyx_v_time); /* proto */
+static int __pyx_pf_5pyfit_8strength_4Jump___cinit__(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_2bosco(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_duration, double __pyx_v_jump_count, double __pyx_v_total_flight_time); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_4lewis(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_6harman(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, PyObject *__pyx_v_peak); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_8jb(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, PyObject *__pyx_v_peak); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_10sayer(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_12mk(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, double __pyx_v_time); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_4Jump_6weight___get__(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_4Jump_6height___get__(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self); /* proto */
 static int __pyx_pf_5pyfit_8strength_11RMEstimator___cinit__(struct __pyx_obj_5pyfit_8strength_RMEstimator *__pyx_v_self, int __pyx_v_reps); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_11RMEstimator_4reps___get__(struct __pyx_obj_5pyfit_8strength_RMEstimator *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_6Abadie_predict(struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_2twoSet(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight, int __pyx_v_rep2, float __pyx_v_weight2); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_5Epley_predict(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7Landers_2percent(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, float __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_6Abadie_predict(struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_6Abadie_2weight(struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_rm); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Baechle_2weight(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_rm); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_2weight(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_rm); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_4twoSet(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight, int __pyx_v_rep2, double __pyx_v_weight2); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_5Epley_predict(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Landers_2weight(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_rm); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7Landers_4percent(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_8Lombardi_2weight(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_rm); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_2predict(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, float __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_2predict(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_weight); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_4percent(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_2percent(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsCP_predict(struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsLP_predict(struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, float __pyx_v_weight); /* proto */
-static int __pyx_pf_5pyfit_8strength_2RM___cinit__(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_6weight(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_rm); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_9McGlothin_2weight(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_rm); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_2percent(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_4weight(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_rm); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsCP_predict(struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsLP_predict(struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_6Wathan_2weight(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_rm); /* proto */
+static int __pyx_pf_5pyfit_8strength_2RM___cinit__(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_2RM_2ymcaUpperBody(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_2RM_4femaleMiddleAge(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_2RM_6femaleOlder(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, float __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_2RM_4femaleMiddleAge(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_2RM_6femaleOlder(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, double __pyx_v_weight); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_2RM_6gender___get__(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_8strength_2RM_3age___get__(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_8strength_relative(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_weight, float __pyx_v_rm); /* proto */
+static PyObject *__pyx_pf_5pyfit_8strength_relative(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_weight, double __pyx_v_rm); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_8strength_Compare(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_8strength_Jump(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_8strength_RMEstimator(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -1433,9 +1458,9 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_RM(PyTypeObject *t, PyObject *a, 
 static PyObject *__pyx_tuple_;
 
 /* "pyfit/strength.pyx":11
- *     cdef readonly float weight
+ *     cdef readonly double weight
  * 
- *     def __cinit__(self, int gender, float weight):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double weight):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.weight = weight
  */
@@ -1444,7 +1469,7 @@ static PyObject *__pyx_tuple_;
 static int __pyx_pw_5pyfit_8strength_7Compare_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_8strength_7Compare_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -1481,7 +1506,7 @@ static int __pyx_pw_5pyfit_8strength_7Compare_1__cinit__(PyObject *__pyx_v_self,
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1498,14 +1523,14 @@ static int __pyx_pw_5pyfit_8strength_7Compare_1__cinit__(PyObject *__pyx_v_self,
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_8strength_7Compare___cinit__(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_v_gender, float __pyx_v_weight) {
+static int __pyx_pf_5pyfit_8strength_7Compare___cinit__(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_v_gender, double __pyx_v_weight) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/strength.pyx":12
  * 
- *     def __cinit__(self, int gender, float weight):
+ *     def __cinit__(self, int gender, double weight):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.weight = weight
  * 
@@ -1513,18 +1538,18 @@ static int __pyx_pf_5pyfit_8strength_7Compare___cinit__(struct __pyx_obj_5pyfit_
   __pyx_v_self->gender = __pyx_v_gender;
 
   /* "pyfit/strength.pyx":13
- *     def __cinit__(self, int gender, float weight):
+ *     def __cinit__(self, int gender, double weight):
  *         self.gender = gender
  *         self.weight = weight             # <<<<<<<<<<<<<<
  * 
- *     cpdef float oCarroll(self, float weightLifted):
+ *     cpdef double oCarroll(self, double weightLifted):
  */
   __pyx_v_self->weight = __pyx_v_weight;
 
   /* "pyfit/strength.pyx":11
- *     cdef readonly float weight
+ *     cdef readonly double weight
  * 
- *     def __cinit__(self, int gender, float weight):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double weight):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.weight = weight
  */
@@ -1538,14 +1563,14 @@ static int __pyx_pf_5pyfit_8strength_7Compare___cinit__(struct __pyx_obj_5pyfit_
 /* "pyfit/strength.pyx":15
  *         self.weight = weight
  * 
- *     cpdef float oCarroll(self, float weightLifted):             # <<<<<<<<<<<<<<
+ *     cpdef double oCarroll(self, double weightLifted):             # <<<<<<<<<<<<<<
  *         return weightLifted/pow(self.weight-35, 1/3)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_3oCarroll(PyObject *__pyx_v_self, PyObject *__pyx_arg_weightLifted); /*proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_oCarroll(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_weightLifted, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_7Compare_oCarroll(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_weightLifted, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1553,8 +1578,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_oCarroll(struct __pyx_obj_5pyfit_
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  double __pyx_t_8;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("oCarroll", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1592,7 +1616,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_oCarroll(struct __pyx_obj_5pyfit_
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1603,23 +1627,23 @@ static float __pyx_f_5pyfit_8strength_7Compare_oCarroll(struct __pyx_obj_5pyfit_
 
   /* "pyfit/strength.pyx":16
  * 
- *     cpdef float oCarroll(self, float weightLifted):
+ *     cpdef double oCarroll(self, double weightLifted):
  *         return weightLifted/pow(self.weight-35, 1/3)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float siffWeight(self):
+ *     cpdef double siffWeight(self):
  */
-  __pyx_t_8 = pow((__pyx_v_self->weight - 35.0), 0.0);
-  if (unlikely(__pyx_t_8 == 0)) {
+  __pyx_t_7 = pow((__pyx_v_self->weight - 35.0), 0.0);
+  if (unlikely(__pyx_t_7 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 16, __pyx_L1_error)
   }
-  __pyx_r = (__pyx_v_weightLifted / __pyx_t_8);
+  __pyx_r = (__pyx_v_weightLifted / __pyx_t_7);
   goto __pyx_L0;
 
   /* "pyfit/strength.pyx":15
  *         self.weight = weight
  * 
- *     cpdef float oCarroll(self, float weightLifted):             # <<<<<<<<<<<<<<
+ *     cpdef double oCarroll(self, double weightLifted):             # <<<<<<<<<<<<<<
  *         return weightLifted/pow(self.weight-35, 1/3)
  * 
  */
@@ -1642,12 +1666,12 @@ static float __pyx_f_5pyfit_8strength_7Compare_oCarroll(struct __pyx_obj_5pyfit_
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_3oCarroll(PyObject *__pyx_v_self, PyObject *__pyx_arg_weightLifted); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_3oCarroll(PyObject *__pyx_v_self, PyObject *__pyx_arg_weightLifted) {
-  float __pyx_v_weightLifted;
+  double __pyx_v_weightLifted;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("oCarroll (wrapper)", 0);
   assert(__pyx_arg_weightLifted); {
-    __pyx_v_weightLifted = __pyx_PyFloat_AsFloat(__pyx_arg_weightLifted); if (unlikely((__pyx_v_weightLifted == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
+    __pyx_v_weightLifted = __pyx_PyFloat_AsDouble(__pyx_arg_weightLifted); if (unlikely((__pyx_v_weightLifted == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1655,14 +1679,14 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Compare_3oCarroll(PyObject *__pyx_v_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7Compare_2oCarroll(((struct __pyx_obj_5pyfit_8strength_Compare *)__pyx_v_self), ((float)__pyx_v_weightLifted));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Compare_2oCarroll(((struct __pyx_obj_5pyfit_8strength_Compare *)__pyx_v_self), ((double)__pyx_v_weightLifted));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7Compare_2oCarroll(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_weightLifted) {
+static PyObject *__pyx_pf_5pyfit_8strength_7Compare_2oCarroll(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_weightLifted) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1688,23 +1712,23 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_2oCarroll(struct __pyx_obj_5
 /* "pyfit/strength.pyx":18
  *         return weightLifted/pow(self.weight-35, 1/3)
  * 
- *     cpdef float siffWeight(self):             # <<<<<<<<<<<<<<
- *         cdef float a = 512.245
- *         cdef float b = 146230
+ *     cpdef double siffWeight(self):             # <<<<<<<<<<<<<<
+ *         cdef double a = 512.245
+ *         cdef double b = 146230
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_5siffWeight(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_a;
-  float __pyx_v_b;
-  float __pyx_v_c;
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_a;
+  double __pyx_v_b;
+  double __pyx_v_c;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("siffWeight", 0);
   /* Check if called by wrapper */
@@ -1733,7 +1757,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfi
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1744,34 +1768,34 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfi
 
   /* "pyfit/strength.pyx":19
  * 
- *     cpdef float siffWeight(self):
- *         cdef float a = 512.245             # <<<<<<<<<<<<<<
- *         cdef float b = 146230
- *         cdef float c = 1.605
+ *     cpdef double siffWeight(self):
+ *         cdef double a = 512.245             # <<<<<<<<<<<<<<
+ *         cdef double b = 146230
+ *         cdef double c = 1.605
  */
   __pyx_v_a = 512.245;
 
   /* "pyfit/strength.pyx":20
- *     cpdef float siffWeight(self):
- *         cdef float a = 512.245
- *         cdef float b = 146230             # <<<<<<<<<<<<<<
- *         cdef float c = 1.605
+ *     cpdef double siffWeight(self):
+ *         cdef double a = 512.245
+ *         cdef double b = 146230             # <<<<<<<<<<<<<<
+ *         cdef double c = 1.605
  *         if self.gender == Gender.Female:
  */
   __pyx_v_b = 146230.0;
 
   /* "pyfit/strength.pyx":21
- *         cdef float a = 512.245
- *         cdef float b = 146230
- *         cdef float c = 1.605             # <<<<<<<<<<<<<<
+ *         cdef double a = 512.245
+ *         cdef double b = 146230
+ *         cdef double c = 1.605             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             a = 943.063
  */
   __pyx_v_c = 1.605;
 
   /* "pyfit/strength.pyx":22
- *         cdef float b = 146230
- *         cdef float c = 1.605
+ *         cdef double b = 146230
+ *         cdef double c = 1.605
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             a = 943.063
  *             b = 0.05142
@@ -1791,7 +1815,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfi
   if (__pyx_t_6) {
 
     /* "pyfit/strength.pyx":23
- *         cdef float c = 1.605
+ *         cdef double c = 1.605
  *         if self.gender == Gender.Female:
  *             a = 943.063             # <<<<<<<<<<<<<<
  *             b = 0.05142
@@ -1828,8 +1852,8 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfi
     goto __pyx_L0;
 
     /* "pyfit/strength.pyx":22
- *         cdef float b = 146230
- *         cdef float c = 1.605
+ *         cdef double b = 146230
+ *         cdef double c = 1.605
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             a = 943.063
  *             b = 0.05142
@@ -1841,7 +1865,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfi
  *             return c-a*exp(-b*self.weight)
  *         return a-b*pow(self.weight, -c)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float siffPower(self):
+ *     cpdef double siffPower(self):
  */
   __pyx_r = (__pyx_v_a - (__pyx_v_b * pow(__pyx_v_self->weight, (-__pyx_v_c))));
   goto __pyx_L0;
@@ -1849,9 +1873,9 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffWeight(struct __pyx_obj_5pyfi
   /* "pyfit/strength.pyx":18
  *         return weightLifted/pow(self.weight-35, 1/3)
  * 
- *     cpdef float siffWeight(self):             # <<<<<<<<<<<<<<
- *         cdef float a = 512.245
- *         cdef float b = 146230
+ *     cpdef double siffWeight(self):             # <<<<<<<<<<<<<<
+ *         cdef double a = 512.245
+ *         cdef double b = 146230
  */
 
   /* function exit code */
@@ -1906,23 +1930,23 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_4siffWeight(struct __pyx_obj
 /* "pyfit/strength.pyx":29
  *         return a-b*pow(self.weight, -c)
  * 
- *     cpdef float siffPower(self):             # <<<<<<<<<<<<<<
- *         cdef float a = 512.245
- *         cdef float b = 172970
+ *     cpdef double siffPower(self):             # <<<<<<<<<<<<<<
+ *         cdef double a = 512.245
+ *         cdef double b = 172970
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_7siffPower(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_a;
-  float __pyx_v_b;
-  float __pyx_v_c;
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_a;
+  double __pyx_v_b;
+  double __pyx_v_c;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   int __pyx_t_6;
   __Pyx_RefNannySetupContext("siffPower", 0);
   /* Check if called by wrapper */
@@ -1951,7 +1975,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1962,34 +1986,34 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit
 
   /* "pyfit/strength.pyx":30
  * 
- *     cpdef float siffPower(self):
- *         cdef float a = 512.245             # <<<<<<<<<<<<<<
- *         cdef float b = 172970
- *         cdef float c = 1.3925
+ *     cpdef double siffPower(self):
+ *         cdef double a = 512.245             # <<<<<<<<<<<<<<
+ *         cdef double b = 172970
+ *         cdef double c = 1.3925
  */
   __pyx_v_a = 512.245;
 
   /* "pyfit/strength.pyx":31
- *     cpdef float siffPower(self):
- *         cdef float a = 512.245
- *         cdef float b = 172970             # <<<<<<<<<<<<<<
- *         cdef float c = 1.3925
+ *     cpdef double siffPower(self):
+ *         cdef double a = 512.245
+ *         cdef double b = 172970             # <<<<<<<<<<<<<<
+ *         cdef double c = 1.3925
  *         if self.gender == Gender.Female:
  */
   __pyx_v_b = 172970.0;
 
   /* "pyfit/strength.pyx":32
- *         cdef float a = 512.245
- *         cdef float b = 172970
- *         cdef float c = 1.3925             # <<<<<<<<<<<<<<
+ *         cdef double a = 512.245
+ *         cdef double b = 172970
+ *         cdef double c = 1.3925             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return 0
  */
   __pyx_v_c = 1.3925;
 
   /* "pyfit/strength.pyx":33
- *         cdef float b = 172970
- *         cdef float c = 1.3925
+ *         cdef double b = 172970
+ *         cdef double c = 1.3925
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 0
  *         return a-b*pow(self.weight, -c)
@@ -2009,7 +2033,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit
   if (__pyx_t_6) {
 
     /* "pyfit/strength.pyx":34
- *         cdef float c = 1.3925
+ *         cdef double c = 1.3925
  *         if self.gender == Gender.Female:
  *             return 0             # <<<<<<<<<<<<<<
  *         return a-b*pow(self.weight, -c)
@@ -2019,8 +2043,8 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit
     goto __pyx_L0;
 
     /* "pyfit/strength.pyx":33
- *         cdef float b = 172970
- *         cdef float c = 1.3925
+ *         cdef double b = 172970
+ *         cdef double c = 1.3925
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return 0
  *         return a-b*pow(self.weight, -c)
@@ -2032,7 +2056,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit
  *             return 0
  *         return a-b*pow(self.weight, -c)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float siff(self, bint power=False):
+ *     cpdef double siff(self, bint power=False):
  */
   __pyx_r = (__pyx_v_a - (__pyx_v_b * pow(__pyx_v_self->weight, (-__pyx_v_c))));
   goto __pyx_L0;
@@ -2040,9 +2064,9 @@ static float __pyx_f_5pyfit_8strength_7Compare_siffPower(struct __pyx_obj_5pyfit
   /* "pyfit/strength.pyx":29
  *         return a-b*pow(self.weight, -c)
  * 
- *     cpdef float siffPower(self):             # <<<<<<<<<<<<<<
- *         cdef float a = 512.245
- *         cdef float b = 172970
+ *     cpdef double siffPower(self):             # <<<<<<<<<<<<<<
+ *         cdef double a = 512.245
+ *         cdef double b = 172970
  */
 
   /* function exit code */
@@ -2097,15 +2121,15 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_6siffPower(struct __pyx_obj_
 /* "pyfit/strength.pyx":37
  *         return a-b*pow(self.weight, -c)
  * 
- *     cpdef float siff(self, bint power=False):             # <<<<<<<<<<<<<<
+ *     cpdef double siff(self, bint power=False):             # <<<<<<<<<<<<<<
  *         if power:
  *             return self.siffPower()
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_9siff(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_7Compare_siff *__pyx_optional_args) {
+static double __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_7Compare_siff *__pyx_optional_args) {
   int __pyx_v_power = ((int)0);
-  float __pyx_r;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2113,7 +2137,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8str
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("siff", 0);
   if (__pyx_optional_args) {
@@ -2157,7 +2181,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8str
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 37, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 37, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2168,7 +2192,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8str
 
   /* "pyfit/strength.pyx":38
  * 
- *     cpdef float siff(self, bint power=False):
+ *     cpdef double siff(self, bint power=False):
  *         if power:             # <<<<<<<<<<<<<<
  *             return self.siffPower()
  *         return self.siffWeight()
@@ -2177,7 +2201,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8str
   if (__pyx_t_8) {
 
     /* "pyfit/strength.pyx":39
- *     cpdef float siff(self, bint power=False):
+ *     cpdef double siff(self, bint power=False):
  *         if power:
  *             return self.siffPower()             # <<<<<<<<<<<<<<
  *         return self.siffWeight()
@@ -2188,7 +2212,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8str
 
     /* "pyfit/strength.pyx":38
  * 
- *     cpdef float siff(self, bint power=False):
+ *     cpdef double siff(self, bint power=False):
  *         if power:             # <<<<<<<<<<<<<<
  *             return self.siffPower()
  *         return self.siffWeight()
@@ -2200,7 +2224,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8str
  *             return self.siffPower()
  *         return self.siffWeight()             # <<<<<<<<<<<<<<
  * 
- *     cpdef float sinclair(self, float obtainedTotal):
+ *     cpdef double sinclair(self, double obtainedTotal):
  */
   __pyx_r = ((struct __pyx_vtabstruct_5pyfit_8strength_Compare *)__pyx_v_self->__pyx_vtab)->siffWeight(__pyx_v_self, 0);
   goto __pyx_L0;
@@ -2208,7 +2232,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_siff(struct __pyx_obj_5pyfit_8str
   /* "pyfit/strength.pyx":37
  *         return a-b*pow(self.weight, -c)
  * 
- *     cpdef float siff(self, bint power=False):             # <<<<<<<<<<<<<<
+ *     cpdef double siff(self, bint power=False):             # <<<<<<<<<<<<<<
  *         if power:
  *             return self.siffPower()
  */
@@ -2288,7 +2312,7 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Compare_9siff(PyObject *__pyx_v_self
 static PyObject *__pyx_pf_5pyfit_8strength_7Compare_8siff(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, int __pyx_v_power) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  float __pyx_t_1;
+  double __pyx_t_1;
   struct __pyx_opt_args_5pyfit_8strength_7Compare_siff __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("siff", 0);
@@ -2316,18 +2340,18 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_8siff(struct __pyx_obj_5pyfi
 /* "pyfit/strength.pyx":42
  *         return self.siffWeight()
  * 
- *     cpdef float sinclair(self, float obtainedTotal):             # <<<<<<<<<<<<<<
- *         cdef float coefficientA = 0.794358141
- *         cdef float coefficientB = 174.393
+ *     cpdef double sinclair(self, double obtainedTotal):             # <<<<<<<<<<<<<<
+ *         cdef double coefficientA = 0.794358141
+ *         cdef double coefficientB = 174.393
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_11sinclair(PyObject *__pyx_v_self, PyObject *__pyx_arg_obtainedTotal); /*proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_obtainedTotal, int __pyx_skip_dispatch) {
-  float __pyx_v_coefficientA;
-  float __pyx_v_coefficientB;
-  float __pyx_v_exponent;
-  float __pyx_v_multiplier;
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_obtainedTotal, int __pyx_skip_dispatch) {
+  double __pyx_v_coefficientA;
+  double __pyx_v_coefficientB;
+  double __pyx_v_exponent;
+  double __pyx_v_multiplier;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2335,7 +2359,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("sinclair", 0);
   /* Check if called by wrapper */
@@ -2374,7 +2398,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 42, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 42, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2385,25 +2409,25 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
 
   /* "pyfit/strength.pyx":43
  * 
- *     cpdef float sinclair(self, float obtainedTotal):
- *         cdef float coefficientA = 0.794358141             # <<<<<<<<<<<<<<
- *         cdef float coefficientB = 174.393
+ *     cpdef double sinclair(self, double obtainedTotal):
+ *         cdef double coefficientA = 0.794358141             # <<<<<<<<<<<<<<
+ *         cdef double coefficientB = 174.393
  *         if self.gender == Gender.Female:
  */
   __pyx_v_coefficientA = 0.794358141;
 
   /* "pyfit/strength.pyx":44
- *     cpdef float sinclair(self, float obtainedTotal):
- *         cdef float coefficientA = 0.794358141
- *         cdef float coefficientB = 174.393             # <<<<<<<<<<<<<<
+ *     cpdef double sinclair(self, double obtainedTotal):
+ *         cdef double coefficientA = 0.794358141
+ *         cdef double coefficientB = 174.393             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             coefficientA = 0.897260740
  */
   __pyx_v_coefficientB = 174.393;
 
   /* "pyfit/strength.pyx":45
- *         cdef float coefficientA = 0.794358141
- *         cdef float coefficientB = 174.393
+ *         cdef double coefficientA = 0.794358141
+ *         cdef double coefficientB = 174.393
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             coefficientA = 0.897260740
  *             coefficientB = 148.026
@@ -2423,7 +2447,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
   if (__pyx_t_8) {
 
     /* "pyfit/strength.pyx":46
- *         cdef float coefficientB = 174.393
+ *         cdef double coefficientB = 174.393
  *         if self.gender == Gender.Female:
  *             coefficientA = 0.897260740             # <<<<<<<<<<<<<<
  *             coefficientB = 148.026
@@ -2441,8 +2465,8 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
     __pyx_v_coefficientB = 148.026;
 
     /* "pyfit/strength.pyx":45
- *         cdef float coefficientA = 0.794358141
- *         cdef float coefficientB = 174.393
+ *         cdef double coefficientA = 0.794358141
+ *         cdef double coefficientB = 174.393
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             coefficientA = 0.897260740
  *             coefficientB = 148.026
@@ -2454,7 +2478,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
  *             coefficientB = 148.026
  *         if self.weight > coefficientB:             # <<<<<<<<<<<<<<
  *              return 1
- *         cdef float exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
+ *         cdef double exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
  */
   __pyx_t_8 = ((__pyx_v_self->weight > __pyx_v_coefficientB) != 0);
   if (__pyx_t_8) {
@@ -2463,8 +2487,8 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
  *             coefficientB = 148.026
  *         if self.weight > coefficientB:
  *              return 1             # <<<<<<<<<<<<<<
- *         cdef float exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
- *         cdef float multiplier = pow(10, exponent)
+ *         cdef double exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
+ *         cdef double multiplier = pow(10, exponent)
  */
     __pyx_r = 1.0;
     goto __pyx_L0;
@@ -2474,15 +2498,15 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
  *             coefficientB = 148.026
  *         if self.weight > coefficientB:             # <<<<<<<<<<<<<<
  *              return 1
- *         cdef float exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
+ *         cdef double exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
  */
   }
 
   /* "pyfit/strength.pyx":50
  *         if self.weight > coefficientB:
  *              return 1
- *         cdef float exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )             # <<<<<<<<<<<<<<
- *         cdef float multiplier = pow(10, exponent)
+ *         cdef double exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )             # <<<<<<<<<<<<<<
+ *         cdef double multiplier = pow(10, exponent)
  *         return multiplier * obtainedTotal
  */
   if (unlikely(__pyx_v_coefficientB == 0)) {
@@ -2493,19 +2517,19 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
 
   /* "pyfit/strength.pyx":51
  *              return 1
- *         cdef float exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
- *         cdef float multiplier = pow(10, exponent)             # <<<<<<<<<<<<<<
+ *         cdef double exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
+ *         cdef double multiplier = pow(10, exponent)             # <<<<<<<<<<<<<<
  *         return multiplier * obtainedTotal
  * 
  */
   __pyx_v_multiplier = pow(10.0, __pyx_v_exponent);
 
   /* "pyfit/strength.pyx":52
- *         cdef float exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
- *         cdef float multiplier = pow(10, exponent)
+ *         cdef double exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
+ *         cdef double multiplier = pow(10, exponent)
  *         return multiplier * obtainedTotal             # <<<<<<<<<<<<<<
  * 
- *     cpdef float wilks(self, float weightLifted):
+ *     cpdef double wilks(self, double weightLifted):
  */
   __pyx_r = (__pyx_v_multiplier * __pyx_v_obtainedTotal);
   goto __pyx_L0;
@@ -2513,9 +2537,9 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
   /* "pyfit/strength.pyx":42
  *         return self.siffWeight()
  * 
- *     cpdef float sinclair(self, float obtainedTotal):             # <<<<<<<<<<<<<<
- *         cdef float coefficientA = 0.794358141
- *         cdef float coefficientB = 174.393
+ *     cpdef double sinclair(self, double obtainedTotal):             # <<<<<<<<<<<<<<
+ *         cdef double coefficientA = 0.794358141
+ *         cdef double coefficientB = 174.393
  */
 
   /* function exit code */
@@ -2536,12 +2560,12 @@ static float __pyx_f_5pyfit_8strength_7Compare_sinclair(struct __pyx_obj_5pyfit_
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_11sinclair(PyObject *__pyx_v_self, PyObject *__pyx_arg_obtainedTotal); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_11sinclair(PyObject *__pyx_v_self, PyObject *__pyx_arg_obtainedTotal) {
-  float __pyx_v_obtainedTotal;
+  double __pyx_v_obtainedTotal;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sinclair (wrapper)", 0);
   assert(__pyx_arg_obtainedTotal); {
-    __pyx_v_obtainedTotal = __pyx_PyFloat_AsFloat(__pyx_arg_obtainedTotal); if (unlikely((__pyx_v_obtainedTotal == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 42, __pyx_L3_error)
+    __pyx_v_obtainedTotal = __pyx_PyFloat_AsDouble(__pyx_arg_obtainedTotal); if (unlikely((__pyx_v_obtainedTotal == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 42, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2549,14 +2573,14 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Compare_11sinclair(PyObject *__pyx_v
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7Compare_10sinclair(((struct __pyx_obj_5pyfit_8strength_Compare *)__pyx_v_self), ((float)__pyx_v_obtainedTotal));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Compare_10sinclair(((struct __pyx_obj_5pyfit_8strength_Compare *)__pyx_v_self), ((double)__pyx_v_obtainedTotal));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7Compare_10sinclair(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_obtainedTotal) {
+static PyObject *__pyx_pf_5pyfit_8strength_7Compare_10sinclair(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_obtainedTotal) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2582,21 +2606,21 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_10sinclair(struct __pyx_obj_
 /* "pyfit/strength.pyx":54
  *         return multiplier * obtainedTotal
  * 
- *     cpdef float wilks(self, float weightLifted):             # <<<<<<<<<<<<<<
- *         cdef float a = -216.0475144
- *         cdef float b = 16.2606339
+ *     cpdef double wilks(self, double weightLifted):             # <<<<<<<<<<<<<<
+ *         cdef double a = -216.0475144
+ *         cdef double b = 16.2606339
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_13wilks(PyObject *__pyx_v_self, PyObject *__pyx_arg_weightLifted); /*proto*/
-static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_weightLifted, int __pyx_skip_dispatch) {
-  float __pyx_v_a;
-  float __pyx_v_b;
-  float __pyx_v_c;
-  float __pyx_v_d;
-  float __pyx_v_e;
-  float __pyx_v_f;
-  float __pyx_v_coefficient;
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_weightLifted, int __pyx_skip_dispatch) {
+  double __pyx_v_a;
+  double __pyx_v_b;
+  double __pyx_v_c;
+  double __pyx_v_d;
+  double __pyx_v_e;
+  double __pyx_v_f;
+  double __pyx_v_coefficient;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2604,9 +2628,8 @@ static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8st
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
-  double __pyx_t_9;
   __Pyx_RefNannySetupContext("wilks", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2644,7 +2667,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8st
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 54, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 54, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2655,60 +2678,60 @@ static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8st
 
   /* "pyfit/strength.pyx":55
  * 
- *     cpdef float wilks(self, float weightLifted):
- *         cdef float a = -216.0475144             # <<<<<<<<<<<<<<
- *         cdef float b = 16.2606339
- *         cdef float c = -0.002388645
+ *     cpdef double wilks(self, double weightLifted):
+ *         cdef double a = -216.0475144             # <<<<<<<<<<<<<<
+ *         cdef double b = 16.2606339
+ *         cdef double c = -0.002388645
  */
   __pyx_v_a = -216.0475144;
 
   /* "pyfit/strength.pyx":56
- *     cpdef float wilks(self, float weightLifted):
- *         cdef float a = -216.0475144
- *         cdef float b = 16.2606339             # <<<<<<<<<<<<<<
- *         cdef float c = -0.002388645
- *         cdef float d = -0.00113732
+ *     cpdef double wilks(self, double weightLifted):
+ *         cdef double a = -216.0475144
+ *         cdef double b = 16.2606339             # <<<<<<<<<<<<<<
+ *         cdef double c = -0.002388645
+ *         cdef double d = -0.00113732
  */
   __pyx_v_b = 16.2606339;
 
   /* "pyfit/strength.pyx":57
- *         cdef float a = -216.0475144
- *         cdef float b = 16.2606339
- *         cdef float c = -0.002388645             # <<<<<<<<<<<<<<
- *         cdef float d = -0.00113732
- *         cdef float e = 7.01863E-06
+ *         cdef double a = -216.0475144
+ *         cdef double b = 16.2606339
+ *         cdef double c = -0.002388645             # <<<<<<<<<<<<<<
+ *         cdef double d = -0.00113732
+ *         cdef double e = 7.01863E-06
  */
   __pyx_v_c = -0.002388645;
 
   /* "pyfit/strength.pyx":58
- *         cdef float b = 16.2606339
- *         cdef float c = -0.002388645
- *         cdef float d = -0.00113732             # <<<<<<<<<<<<<<
- *         cdef float e = 7.01863E-06
- *         cdef float f = -1.291E-08
+ *         cdef double b = 16.2606339
+ *         cdef double c = -0.002388645
+ *         cdef double d = -0.00113732             # <<<<<<<<<<<<<<
+ *         cdef double e = 7.01863E-06
+ *         cdef double f = -1.291E-08
  */
   __pyx_v_d = -0.00113732;
 
   /* "pyfit/strength.pyx":59
- *         cdef float c = -0.002388645
- *         cdef float d = -0.00113732
- *         cdef float e = 7.01863E-06             # <<<<<<<<<<<<<<
- *         cdef float f = -1.291E-08
+ *         cdef double c = -0.002388645
+ *         cdef double d = -0.00113732
+ *         cdef double e = 7.01863E-06             # <<<<<<<<<<<<<<
+ *         cdef double f = -1.291E-08
  * 
  */
   __pyx_v_e = 7.01863E-06;
 
   /* "pyfit/strength.pyx":60
- *         cdef float d = -0.00113732
- *         cdef float e = 7.01863E-06
- *         cdef float f = -1.291E-08             # <<<<<<<<<<<<<<
+ *         cdef double d = -0.00113732
+ *         cdef double e = 7.01863E-06
+ *         cdef double f = -1.291E-08             # <<<<<<<<<<<<<<
  * 
  *         if self.gender == Gender.Female:
  */
   __pyx_v_f = -1.291E-08;
 
   /* "pyfit/strength.pyx":62
- *         cdef float f = -1.291E-08
+ *         cdef double f = -1.291E-08
  * 
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             a = 594.31747775582
@@ -2769,7 +2792,7 @@ static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8st
  *             d = -0.00930733913
  *             e = 4.731582E-05             # <<<<<<<<<<<<<<
  *             f = -9.054E-08
- *         cdef float coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )
+ *         cdef double coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )
  */
     __pyx_v_e = 4.731582E-05;
 
@@ -2777,13 +2800,13 @@ static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8st
  *             d = -0.00930733913
  *             e = 4.731582E-05
  *             f = -9.054E-08             # <<<<<<<<<<<<<<
- *         cdef float coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )
+ *         cdef double coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )
  *         return coefficient * weightLifted
  */
     __pyx_v_f = -9.054E-08;
 
     /* "pyfit/strength.pyx":62
- *         cdef float f = -1.291E-08
+ *         cdef double f = -1.291E-08
  * 
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             a = 594.31747775582
@@ -2794,20 +2817,20 @@ static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8st
   /* "pyfit/strength.pyx":69
  *             e = 4.731582E-05
  *             f = -9.054E-08
- *         cdef float coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )             # <<<<<<<<<<<<<<
+ *         cdef double coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )             # <<<<<<<<<<<<<<
  *         return coefficient * weightLifted
  * 
  */
-  __pyx_t_9 = (((((__pyx_v_a + (__pyx_v_b * __pyx_v_self->weight)) + (__pyx_v_c * pow(__pyx_v_self->weight, 2.0))) + (__pyx_v_d * pow(__pyx_v_self->weight, 3.0))) + (__pyx_v_e * pow(__pyx_v_self->weight, 4.0))) + (__pyx_v_f * pow(__pyx_v_self->weight, 5.0)));
-  if (unlikely(__pyx_t_9 == 0)) {
+  __pyx_t_7 = (((((__pyx_v_a + (__pyx_v_b * __pyx_v_self->weight)) + (__pyx_v_c * pow(__pyx_v_self->weight, 2.0))) + (__pyx_v_d * pow(__pyx_v_self->weight, 3.0))) + (__pyx_v_e * pow(__pyx_v_self->weight, 4.0))) + (__pyx_v_f * pow(__pyx_v_self->weight, 5.0)));
+  if (unlikely(__pyx_t_7 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 69, __pyx_L1_error)
   }
-  __pyx_v_coefficient = (500.0 / __pyx_t_9);
+  __pyx_v_coefficient = (500.0 / __pyx_t_7);
 
   /* "pyfit/strength.pyx":70
  *             f = -9.054E-08
- *         cdef float coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )
+ *         cdef double coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )
  *         return coefficient * weightLifted             # <<<<<<<<<<<<<<
  * 
  * cdef class Jump(object):
@@ -2818,9 +2841,9 @@ static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8st
   /* "pyfit/strength.pyx":54
  *         return multiplier * obtainedTotal
  * 
- *     cpdef float wilks(self, float weightLifted):             # <<<<<<<<<<<<<<
- *         cdef float a = -216.0475144
- *         cdef float b = 16.2606339
+ *     cpdef double wilks(self, double weightLifted):             # <<<<<<<<<<<<<<
+ *         cdef double a = -216.0475144
+ *         cdef double b = 16.2606339
  */
 
   /* function exit code */
@@ -2841,12 +2864,12 @@ static float __pyx_f_5pyfit_8strength_7Compare_wilks(struct __pyx_obj_5pyfit_8st
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_13wilks(PyObject *__pyx_v_self, PyObject *__pyx_arg_weightLifted); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_7Compare_13wilks(PyObject *__pyx_v_self, PyObject *__pyx_arg_weightLifted) {
-  float __pyx_v_weightLifted;
+  double __pyx_v_weightLifted;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("wilks (wrapper)", 0);
   assert(__pyx_arg_weightLifted); {
-    __pyx_v_weightLifted = __pyx_PyFloat_AsFloat(__pyx_arg_weightLifted); if (unlikely((__pyx_v_weightLifted == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 54, __pyx_L3_error)
+    __pyx_v_weightLifted = __pyx_PyFloat_AsDouble(__pyx_arg_weightLifted); if (unlikely((__pyx_v_weightLifted == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 54, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2854,14 +2877,14 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Compare_13wilks(PyObject *__pyx_v_se
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7Compare_12wilks(((struct __pyx_obj_5pyfit_8strength_Compare *)__pyx_v_self), ((float)__pyx_v_weightLifted));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Compare_12wilks(((struct __pyx_obj_5pyfit_8strength_Compare *)__pyx_v_self), ((double)__pyx_v_weightLifted));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7Compare_12wilks(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, float __pyx_v_weightLifted) {
+static PyObject *__pyx_pf_5pyfit_8strength_7Compare_12wilks(struct __pyx_obj_5pyfit_8strength_Compare *__pyx_v_self, double __pyx_v_weightLifted) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2888,8 +2911,8 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_12wilks(struct __pyx_obj_5py
  * 
  * cdef class Compare(object):
  *     cdef readonly int gender             # <<<<<<<<<<<<<<
- *     cdef readonly float age
- *     cdef readonly float weight
+ *     cdef readonly double age
+ *     cdef readonly double weight
  */
 
 /* Python wrapper */
@@ -2931,8 +2954,8 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_6gender___get__(struct __pyx
 /* "pyfit/strength.pyx":8
  * cdef class Compare(object):
  *     cdef readonly int gender
- *     cdef readonly float age             # <<<<<<<<<<<<<<
- *     cdef readonly float weight
+ *     cdef readonly double age             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight
  * 
  */
 
@@ -2974,10 +2997,10 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_3age___get__(struct __pyx_ob
 
 /* "pyfit/strength.pyx":9
  *     cdef readonly int gender
- *     cdef readonly float age
- *     cdef readonly float weight             # <<<<<<<<<<<<<<
+ *     cdef readonly double age
+ *     cdef readonly double weight             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender, float weight):
+ *     def __cinit__(self, int gender, double weight):
  */
 
 /* Python wrapper */
@@ -3017,9 +3040,9 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_6weight___get__(struct __pyx
 }
 
 /* "pyfit/strength.pyx":76
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.weight = weight
  *         self.height = height
  */
@@ -3027,8 +3050,8 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Compare_6weight___get__(struct __pyx
 /* Python wrapper */
 static int __pyx_pw_5pyfit_8strength_4Jump_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_8strength_4Jump_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_weight;
-  float __pyx_v_height;
+  double __pyx_v_weight;
+  double __pyx_v_height;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -3064,8 +3087,8 @@ static int __pyx_pw_5pyfit_8strength_4Jump_1__cinit__(PyObject *__pyx_v_self, Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
-    __pyx_v_height = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
+    __pyx_v_height = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_height == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3082,14 +3105,14 @@ static int __pyx_pw_5pyfit_8strength_4Jump_1__cinit__(PyObject *__pyx_v_self, Py
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_8strength_4Jump___cinit__(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_weight, float __pyx_v_height) {
+static int __pyx_pf_5pyfit_8strength_4Jump___cinit__(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_weight, double __pyx_v_height) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pyfit/strength.pyx":77
  * 
- *     def __cinit__(self, float weight, float height):
+ *     def __cinit__(self, double weight, double height):
  *         self.weight = weight             # <<<<<<<<<<<<<<
  *         self.height = height
  * 
@@ -3097,18 +3120,18 @@ static int __pyx_pf_5pyfit_8strength_4Jump___cinit__(struct __pyx_obj_5pyfit_8st
   __pyx_v_self->weight = __pyx_v_weight;
 
   /* "pyfit/strength.pyx":78
- *     def __cinit__(self, float weight, float height):
+ *     def __cinit__(self, double weight, double height):
  *         self.weight = weight
  *         self.height = height             # <<<<<<<<<<<<<<
  * 
- *     cpdef float bosco(self, float duration, float jump_count, float total_flight_time):
+ *     cpdef double bosco(self, double duration, double jump_count, double total_flight_time):
  */
   __pyx_v_self->height = __pyx_v_height;
 
   /* "pyfit/strength.pyx":76
- *     cdef readonly float height
+ *     cdef readonly double height
  * 
- *     def __cinit__(self, float weight, float height):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, double weight, double height):             # <<<<<<<<<<<<<<
  *         self.weight = weight
  *         self.height = height
  */
@@ -3122,14 +3145,14 @@ static int __pyx_pf_5pyfit_8strength_4Jump___cinit__(struct __pyx_obj_5pyfit_8st
 /* "pyfit/strength.pyx":80
  *         self.height = height
  * 
- *     cpdef float bosco(self, float duration, float jump_count, float total_flight_time):             # <<<<<<<<<<<<<<
+ *     cpdef double bosco(self, double duration, double jump_count, double total_flight_time):             # <<<<<<<<<<<<<<
  *         return (total_flight_time * duration * pow(9.81,2)) / (4 * jump_count * (duration - total_flight_time) )
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_3bosco(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_bosco(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_duration, float __pyx_v_jump_count, float __pyx_v_total_flight_time, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_4Jump_bosco(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_duration, double __pyx_v_jump_count, double __pyx_v_total_flight_time, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3140,7 +3163,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_bosco(CYTHON_UNUSED struct __pyx_obj
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   double __pyx_t_11;
   __Pyx_RefNannySetupContext("bosco", 0);
   /* Check if called by wrapper */
@@ -3187,7 +3210,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_bosco(CYTHON_UNUSED struct __pyx_obj
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3198,24 +3221,24 @@ static float __pyx_f_5pyfit_8strength_4Jump_bosco(CYTHON_UNUSED struct __pyx_obj
 
   /* "pyfit/strength.pyx":81
  * 
- *     cpdef float bosco(self, float duration, float jump_count, float total_flight_time):
+ *     cpdef double bosco(self, double duration, double jump_count, double total_flight_time):
  *         return (total_flight_time * duration * pow(9.81,2)) / (4 * jump_count * (duration - total_flight_time) )             # <<<<<<<<<<<<<<
  * 
- *     cpdef float lewis(self, float vJumpHeight):
+ *     cpdef double lewis(self, double vJumpHeight):
  */
-  __pyx_t_11 = ((__pyx_v_total_flight_time * __pyx_v_duration) * pow(9.81, 2.0));
-  __pyx_t_10 = ((4.0 * __pyx_v_jump_count) * (__pyx_v_duration - __pyx_v_total_flight_time));
-  if (unlikely(__pyx_t_10 == 0)) {
+  __pyx_t_10 = ((__pyx_v_total_flight_time * __pyx_v_duration) * pow(9.81, 2.0));
+  __pyx_t_11 = ((4.0 * __pyx_v_jump_count) * (__pyx_v_duration - __pyx_v_total_flight_time));
+  if (unlikely(__pyx_t_11 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 81, __pyx_L1_error)
   }
-  __pyx_r = (__pyx_t_11 / __pyx_t_10);
+  __pyx_r = (__pyx_t_10 / __pyx_t_11);
   goto __pyx_L0;
 
   /* "pyfit/strength.pyx":80
  *         self.height = height
  * 
- *     cpdef float bosco(self, float duration, float jump_count, float total_flight_time):             # <<<<<<<<<<<<<<
+ *     cpdef double bosco(self, double duration, double jump_count, double total_flight_time):             # <<<<<<<<<<<<<<
  *         return (total_flight_time * duration * pow(9.81,2)) / (4 * jump_count * (duration - total_flight_time) )
  * 
  */
@@ -3240,9 +3263,9 @@ static float __pyx_f_5pyfit_8strength_4Jump_bosco(CYTHON_UNUSED struct __pyx_obj
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_3bosco(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_3bosco(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_duration;
-  float __pyx_v_jump_count;
-  float __pyx_v_total_flight_time;
+  double __pyx_v_duration;
+  double __pyx_v_jump_count;
+  double __pyx_v_total_flight_time;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("bosco (wrapper)", 0);
@@ -3285,9 +3308,9 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_3bosco(PyObject *__pyx_v_self, 
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_duration = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_duration == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L3_error)
-    __pyx_v_jump_count = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_jump_count == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L3_error)
-    __pyx_v_total_flight_time = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_total_flight_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L3_error)
+    __pyx_v_duration = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_duration == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L3_error)
+    __pyx_v_jump_count = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_jump_count == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L3_error)
+    __pyx_v_total_flight_time = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_total_flight_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3304,7 +3327,7 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_3bosco(PyObject *__pyx_v_self, 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_2bosco(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_duration, float __pyx_v_jump_count, float __pyx_v_total_flight_time) {
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_2bosco(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_duration, double __pyx_v_jump_count, double __pyx_v_total_flight_time) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3330,14 +3353,14 @@ static PyObject *__pyx_pf_5pyfit_8strength_4Jump_2bosco(struct __pyx_obj_5pyfit_
 /* "pyfit/strength.pyx":83
  *         return (total_flight_time * duration * pow(9.81,2)) / (4 * jump_count * (duration - total_flight_time) )
  * 
- *     cpdef float lewis(self, float vJumpHeight):             # <<<<<<<<<<<<<<
+ *     cpdef double lewis(self, double vJumpHeight):             # <<<<<<<<<<<<<<
  *         return sqrt(4.9 * self.weight) * sqrt(vJumpHeight) * 9.81
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_5lewis(PyObject *__pyx_v_self, PyObject *__pyx_arg_vJumpHeight); /*proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3345,7 +3368,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8stren
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("lewis", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -3383,7 +3406,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8stren
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3394,10 +3417,10 @@ static float __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8stren
 
   /* "pyfit/strength.pyx":84
  * 
- *     cpdef float lewis(self, float vJumpHeight):
+ *     cpdef double lewis(self, double vJumpHeight):
  *         return sqrt(4.9 * self.weight) * sqrt(vJumpHeight) * 9.81             # <<<<<<<<<<<<<<
  * 
- *     cpdef float harman(self, float vJumpHeight, peak=False):
+ *     cpdef double harman(self, double vJumpHeight, peak=False):
  */
   __pyx_r = ((sqrt((4.9 * __pyx_v_self->weight)) * sqrt(__pyx_v_vJumpHeight)) * 9.81);
   goto __pyx_L0;
@@ -3405,7 +3428,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8stren
   /* "pyfit/strength.pyx":83
  *         return (total_flight_time * duration * pow(9.81,2)) / (4 * jump_count * (duration - total_flight_time) )
  * 
- *     cpdef float lewis(self, float vJumpHeight):             # <<<<<<<<<<<<<<
+ *     cpdef double lewis(self, double vJumpHeight):             # <<<<<<<<<<<<<<
  *         return sqrt(4.9 * self.weight) * sqrt(vJumpHeight) * 9.81
  * 
  */
@@ -3428,12 +3451,12 @@ static float __pyx_f_5pyfit_8strength_4Jump_lewis(struct __pyx_obj_5pyfit_8stren
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_5lewis(PyObject *__pyx_v_self, PyObject *__pyx_arg_vJumpHeight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_5lewis(PyObject *__pyx_v_self, PyObject *__pyx_arg_vJumpHeight) {
-  float __pyx_v_vJumpHeight;
+  double __pyx_v_vJumpHeight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("lewis (wrapper)", 0);
   assert(__pyx_arg_vJumpHeight); {
-    __pyx_v_vJumpHeight = __pyx_PyFloat_AsFloat(__pyx_arg_vJumpHeight); if (unlikely((__pyx_v_vJumpHeight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L3_error)
+    __pyx_v_vJumpHeight = __pyx_PyFloat_AsDouble(__pyx_arg_vJumpHeight); if (unlikely((__pyx_v_vJumpHeight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3441,14 +3464,14 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_5lewis(PyObject *__pyx_v_self, 
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_4Jump_4lewis(((struct __pyx_obj_5pyfit_8strength_Jump *)__pyx_v_self), ((float)__pyx_v_vJumpHeight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_4Jump_4lewis(((struct __pyx_obj_5pyfit_8strength_Jump *)__pyx_v_self), ((double)__pyx_v_vJumpHeight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_4lewis(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight) {
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_4lewis(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3474,16 +3497,16 @@ static PyObject *__pyx_pf_5pyfit_8strength_4Jump_4lewis(struct __pyx_obj_5pyfit_
 /* "pyfit/strength.pyx":86
  *         return sqrt(4.9 * self.weight) * sqrt(vJumpHeight) * 9.81
  * 
- *     cpdef float harman(self, float vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double harman(self, double vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_7harman(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_harman *__pyx_optional_args) {
+static double __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_harman *__pyx_optional_args) {
   PyObject *__pyx_v_peak = ((PyObject *)Py_False);
-  float __pyx_v_vJumpHeightCm;
-  float __pyx_r;
+  double __pyx_v_vJumpHeightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3492,7 +3515,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8stre
   PyObject *__pyx_t_5 = NULL;
   Py_ssize_t __pyx_t_6;
   PyObject *__pyx_t_7 = NULL;
-  float __pyx_t_8;
+  double __pyx_t_8;
   int __pyx_t_9;
   __Pyx_RefNannySetupContext("harman", 0);
   if (__pyx_optional_args) {
@@ -3537,7 +3560,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8stre
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_8 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_8 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 86, __pyx_L1_error)
+      __pyx_t_8 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_8 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 86, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_8;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3548,16 +3571,16 @@ static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8stre
 
   /* "pyfit/strength.pyx":87
  * 
- *     cpdef float harman(self, float vJumpHeight, peak=False):
- *         cdef float vJumpHeightCm = vJumpHeight * 100             # <<<<<<<<<<<<<<
+ *     cpdef double harman(self, double vJumpHeight, peak=False):
+ *         cdef double vJumpHeightCm = vJumpHeight * 100             # <<<<<<<<<<<<<<
  *         if peak:
  *             return 61.9*vJumpHeightCm + 36*self.weight + 1822
  */
   __pyx_v_vJumpHeightCm = (__pyx_v_vJumpHeight * 100.0);
 
   /* "pyfit/strength.pyx":88
- *     cpdef float harman(self, float vJumpHeight, peak=False):
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double harman(self, double vJumpHeight, peak=False):
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:             # <<<<<<<<<<<<<<
  *             return 61.9*vJumpHeightCm + 36*self.weight + 1822
  *         return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393
@@ -3566,7 +3589,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8stre
   if (__pyx_t_9) {
 
     /* "pyfit/strength.pyx":89
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:
  *             return 61.9*vJumpHeightCm + 36*self.weight + 1822             # <<<<<<<<<<<<<<
  *         return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393
@@ -3576,8 +3599,8 @@ static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8stre
     goto __pyx_L0;
 
     /* "pyfit/strength.pyx":88
- *     cpdef float harman(self, float vJumpHeight, peak=False):
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double harman(self, double vJumpHeight, peak=False):
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:             # <<<<<<<<<<<<<<
  *             return 61.9*vJumpHeightCm + 36*self.weight + 1822
  *         return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393
@@ -3589,7 +3612,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8stre
  *             return 61.9*vJumpHeightCm + 36*self.weight + 1822
  *         return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393             # <<<<<<<<<<<<<<
  * 
- *     cpdef float jb(self, float vJumpHeight, peak=False):
+ *     cpdef double jb(self, double vJumpHeight, peak=False):
  */
   __pyx_r = (((21.1 * __pyx_v_vJumpHeightCm) + (2.3 * __pyx_v_self->weight)) + 1393.0);
   goto __pyx_L0;
@@ -3597,8 +3620,8 @@ static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8stre
   /* "pyfit/strength.pyx":86
  *         return sqrt(4.9 * self.weight) * sqrt(vJumpHeight) * 9.81
  * 
- *     cpdef float harman(self, float vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double harman(self, double vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:
  */
 
@@ -3620,7 +3643,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_harman(struct __pyx_obj_5pyfit_8stre
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_7harman(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_7harman(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_vJumpHeight;
+  double __pyx_v_vJumpHeight;
   PyObject *__pyx_v_peak = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3660,7 +3683,7 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_7harman(PyObject *__pyx_v_self,
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_vJumpHeight = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_vJumpHeight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 86, __pyx_L3_error)
+    __pyx_v_vJumpHeight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vJumpHeight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 86, __pyx_L3_error)
     __pyx_v_peak = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
@@ -3678,10 +3701,10 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_7harman(PyObject *__pyx_v_self,
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_6harman(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, PyObject *__pyx_v_peak) {
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_6harman(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, PyObject *__pyx_v_peak) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  float __pyx_t_1;
+  double __pyx_t_1;
   struct __pyx_opt_args_5pyfit_8strength_4Jump_harman __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("harman", 0);
@@ -3709,17 +3732,17 @@ static PyObject *__pyx_pf_5pyfit_8strength_4Jump_6harman(struct __pyx_obj_5pyfit
 /* "pyfit/strength.pyx":92
  *         return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393
  * 
- *     cpdef float jb(self, float vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
- *         cdef float bodyHeightCm = self.height * 100
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double jb(self, double vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
+ *         cdef double bodyHeightCm = self.height * 100
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_9jb(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_jb *__pyx_optional_args) {
+static double __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_jb *__pyx_optional_args) {
   PyObject *__pyx_v_peak = ((PyObject *)Py_False);
-  float __pyx_v_bodyHeightCm;
-  float __pyx_v_vJumpHeightCm;
-  float __pyx_r;
+  double __pyx_v_bodyHeightCm;
+  double __pyx_v_vJumpHeightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3728,7 +3751,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength
   PyObject *__pyx_t_5 = NULL;
   Py_ssize_t __pyx_t_6;
   PyObject *__pyx_t_7 = NULL;
-  float __pyx_t_8;
+  double __pyx_t_8;
   int __pyx_t_9;
   __Pyx_RefNannySetupContext("jb", 0);
   if (__pyx_optional_args) {
@@ -3773,7 +3796,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_8 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_8 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 92, __pyx_L1_error)
+      __pyx_t_8 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_8 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 92, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_8;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3784,25 +3807,25 @@ static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength
 
   /* "pyfit/strength.pyx":93
  * 
- *     cpdef float jb(self, float vJumpHeight, peak=False):
- *         cdef float bodyHeightCm = self.height * 100             # <<<<<<<<<<<<<<
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double jb(self, double vJumpHeight, peak=False):
+ *         cdef double bodyHeightCm = self.height * 100             # <<<<<<<<<<<<<<
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:
  */
   __pyx_v_bodyHeightCm = (__pyx_v_self->height * 100.0);
 
   /* "pyfit/strength.pyx":94
- *     cpdef float jb(self, float vJumpHeight, peak=False):
- *         cdef float bodyHeightCm = self.height * 100
- *         cdef float vJumpHeightCm = vJumpHeight * 100             # <<<<<<<<<<<<<<
+ *     cpdef double jb(self, double vJumpHeight, peak=False):
+ *         cdef double bodyHeightCm = self.height * 100
+ *         cdef double vJumpHeightCm = vJumpHeight * 100             # <<<<<<<<<<<<<<
  *         if peak:
  *             return 78.6*vJumpHeightCm +60.3*self.weight + 15.3*bodyHeightCm + 1308
  */
   __pyx_v_vJumpHeightCm = (__pyx_v_vJumpHeight * 100.0);
 
   /* "pyfit/strength.pyx":95
- *         cdef float bodyHeightCm = self.height * 100
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *         cdef double bodyHeightCm = self.height * 100
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:             # <<<<<<<<<<<<<<
  *             return 78.6*vJumpHeightCm +60.3*self.weight + 15.3*bodyHeightCm + 1308
  *         return 43.8*vJumpHeightCm + 32.7*self.weight - 16.8*bodyHeightCm + 431
@@ -3811,7 +3834,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength
   if (__pyx_t_9) {
 
     /* "pyfit/strength.pyx":96
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:
  *             return 78.6*vJumpHeightCm +60.3*self.weight + 15.3*bodyHeightCm + 1308             # <<<<<<<<<<<<<<
  *         return 43.8*vJumpHeightCm + 32.7*self.weight - 16.8*bodyHeightCm + 431
@@ -3821,8 +3844,8 @@ static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength
     goto __pyx_L0;
 
     /* "pyfit/strength.pyx":95
- *         cdef float bodyHeightCm = self.height * 100
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *         cdef double bodyHeightCm = self.height * 100
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         if peak:             # <<<<<<<<<<<<<<
  *             return 78.6*vJumpHeightCm +60.3*self.weight + 15.3*bodyHeightCm + 1308
  *         return 43.8*vJumpHeightCm + 32.7*self.weight - 16.8*bodyHeightCm + 431
@@ -3834,7 +3857,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength
  *             return 78.6*vJumpHeightCm +60.3*self.weight + 15.3*bodyHeightCm + 1308
  *         return 43.8*vJumpHeightCm + 32.7*self.weight - 16.8*bodyHeightCm + 431             # <<<<<<<<<<<<<<
  * 
- *     cpdef float sayer(self, float vJumpHeight):
+ *     cpdef double sayer(self, double vJumpHeight):
  */
   __pyx_r = ((((43.8 * __pyx_v_vJumpHeightCm) + (32.7 * __pyx_v_self->weight)) - (16.8 * __pyx_v_bodyHeightCm)) + 431.0);
   goto __pyx_L0;
@@ -3842,9 +3865,9 @@ static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength
   /* "pyfit/strength.pyx":92
  *         return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393
  * 
- *     cpdef float jb(self, float vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
- *         cdef float bodyHeightCm = self.height * 100
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double jb(self, double vJumpHeight, peak=False):             # <<<<<<<<<<<<<<
+ *         cdef double bodyHeightCm = self.height * 100
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  */
 
   /* function exit code */
@@ -3865,7 +3888,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_jb(struct __pyx_obj_5pyfit_8strength
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_9jb(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_9jb(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_vJumpHeight;
+  double __pyx_v_vJumpHeight;
   PyObject *__pyx_v_peak = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -3905,7 +3928,7 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_9jb(PyObject *__pyx_v_self, PyO
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_vJumpHeight = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_vJumpHeight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 92, __pyx_L3_error)
+    __pyx_v_vJumpHeight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vJumpHeight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 92, __pyx_L3_error)
     __pyx_v_peak = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
@@ -3923,10 +3946,10 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_9jb(PyObject *__pyx_v_self, PyO
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_8jb(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, PyObject *__pyx_v_peak) {
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_8jb(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, PyObject *__pyx_v_peak) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  float __pyx_t_1;
+  double __pyx_t_1;
   struct __pyx_opt_args_5pyfit_8strength_4Jump_jb __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("jb", 0);
@@ -3954,15 +3977,15 @@ static PyObject *__pyx_pf_5pyfit_8strength_4Jump_8jb(struct __pyx_obj_5pyfit_8st
 /* "pyfit/strength.pyx":99
  *         return 43.8*vJumpHeightCm + 32.7*self.weight - 16.8*bodyHeightCm + 431
  * 
- *     cpdef float sayer(self, float vJumpHeight):             # <<<<<<<<<<<<<<
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double sayer(self, double vJumpHeight):             # <<<<<<<<<<<<<<
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         return 60.7*vJumpHeightCm + 45.3*self.weight - 2055
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_11sayer(PyObject *__pyx_v_self, PyObject *__pyx_arg_vJumpHeight); /*proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, int __pyx_skip_dispatch) {
-  float __pyx_v_vJumpHeightCm;
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, int __pyx_skip_dispatch) {
+  double __pyx_v_vJumpHeightCm;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -3970,7 +3993,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8stren
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("sayer", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -4008,7 +4031,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8stren
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4019,19 +4042,19 @@ static float __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8stren
 
   /* "pyfit/strength.pyx":100
  * 
- *     cpdef float sayer(self, float vJumpHeight):
- *         cdef float vJumpHeightCm = vJumpHeight * 100             # <<<<<<<<<<<<<<
+ *     cpdef double sayer(self, double vJumpHeight):
+ *         cdef double vJumpHeightCm = vJumpHeight * 100             # <<<<<<<<<<<<<<
  *         return 60.7*vJumpHeightCm + 45.3*self.weight - 2055
  * 
  */
   __pyx_v_vJumpHeightCm = (__pyx_v_vJumpHeight * 100.0);
 
   /* "pyfit/strength.pyx":101
- *     cpdef float sayer(self, float vJumpHeight):
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double sayer(self, double vJumpHeight):
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         return 60.7*vJumpHeightCm + 45.3*self.weight - 2055             # <<<<<<<<<<<<<<
  * 
- *     cpdef float mk(self, float vJumpHeight, float time):
+ *     cpdef double mk(self, double vJumpHeight, double time):
  */
   __pyx_r = (((60.7 * __pyx_v_vJumpHeightCm) + (45.3 * __pyx_v_self->weight)) - 2055.0);
   goto __pyx_L0;
@@ -4039,8 +4062,8 @@ static float __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8stren
   /* "pyfit/strength.pyx":99
  *         return 43.8*vJumpHeightCm + 32.7*self.weight - 16.8*bodyHeightCm + 431
  * 
- *     cpdef float sayer(self, float vJumpHeight):             # <<<<<<<<<<<<<<
- *         cdef float vJumpHeightCm = vJumpHeight * 100
+ *     cpdef double sayer(self, double vJumpHeight):             # <<<<<<<<<<<<<<
+ *         cdef double vJumpHeightCm = vJumpHeight * 100
  *         return 60.7*vJumpHeightCm + 45.3*self.weight - 2055
  */
 
@@ -4062,12 +4085,12 @@ static float __pyx_f_5pyfit_8strength_4Jump_sayer(struct __pyx_obj_5pyfit_8stren
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_11sayer(PyObject *__pyx_v_self, PyObject *__pyx_arg_vJumpHeight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_11sayer(PyObject *__pyx_v_self, PyObject *__pyx_arg_vJumpHeight) {
-  float __pyx_v_vJumpHeight;
+  double __pyx_v_vJumpHeight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sayer (wrapper)", 0);
   assert(__pyx_arg_vJumpHeight); {
-    __pyx_v_vJumpHeight = __pyx_PyFloat_AsFloat(__pyx_arg_vJumpHeight); if (unlikely((__pyx_v_vJumpHeight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L3_error)
+    __pyx_v_vJumpHeight = __pyx_PyFloat_AsDouble(__pyx_arg_vJumpHeight); if (unlikely((__pyx_v_vJumpHeight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4075,14 +4098,14 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_11sayer(PyObject *__pyx_v_self,
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_4Jump_10sayer(((struct __pyx_obj_5pyfit_8strength_Jump *)__pyx_v_self), ((float)__pyx_v_vJumpHeight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_4Jump_10sayer(((struct __pyx_obj_5pyfit_8strength_Jump *)__pyx_v_self), ((double)__pyx_v_vJumpHeight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_10sayer(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight) {
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_10sayer(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4108,14 +4131,14 @@ static PyObject *__pyx_pf_5pyfit_8strength_4Jump_10sayer(struct __pyx_obj_5pyfit
 /* "pyfit/strength.pyx":103
  *         return 60.7*vJumpHeightCm + 45.3*self.weight - 2055
  * 
- *     cpdef float mk(self, float vJumpHeight, float time):             # <<<<<<<<<<<<<<
+ *     cpdef double mk(self, double vJumpHeight, double time):             # <<<<<<<<<<<<<<
  *         return (self.weight * (vJumpHeight/time)) * 9.81
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_13mk(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, float __pyx_v_time, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, double __pyx_v_time, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4125,7 +4148,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("mk", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -4166,7 +4189,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4177,7 +4200,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength
 
   /* "pyfit/strength.pyx":104
  * 
- *     cpdef float mk(self, float vJumpHeight, float time):
+ *     cpdef double mk(self, double vJumpHeight, double time):
  *         return (self.weight * (vJumpHeight/time)) * 9.81             # <<<<<<<<<<<<<<
  * 
  * cdef class RMEstimator:
@@ -4192,7 +4215,7 @@ static float __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength
   /* "pyfit/strength.pyx":103
  *         return 60.7*vJumpHeightCm + 45.3*self.weight - 2055
  * 
- *     cpdef float mk(self, float vJumpHeight, float time):             # <<<<<<<<<<<<<<
+ *     cpdef double mk(self, double vJumpHeight, double time):             # <<<<<<<<<<<<<<
  *         return (self.weight * (vJumpHeight/time)) * 9.81
  * 
  */
@@ -4216,8 +4239,8 @@ static float __pyx_f_5pyfit_8strength_4Jump_mk(struct __pyx_obj_5pyfit_8strength
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_13mk(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_4Jump_13mk(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_vJumpHeight;
-  float __pyx_v_time;
+  double __pyx_v_vJumpHeight;
+  double __pyx_v_time;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("mk (wrapper)", 0);
@@ -4253,8 +4276,8 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_13mk(PyObject *__pyx_v_self, Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_vJumpHeight = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_vJumpHeight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L3_error)
-    __pyx_v_time = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_time == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L3_error)
+    __pyx_v_vJumpHeight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vJumpHeight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L3_error)
+    __pyx_v_time = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_time == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -4271,7 +4294,7 @@ static PyObject *__pyx_pw_5pyfit_8strength_4Jump_13mk(PyObject *__pyx_v_self, Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_4Jump_12mk(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, float __pyx_v_vJumpHeight, float __pyx_v_time) {
+static PyObject *__pyx_pf_5pyfit_8strength_4Jump_12mk(struct __pyx_obj_5pyfit_8strength_Jump *__pyx_v_self, double __pyx_v_vJumpHeight, double __pyx_v_time) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4297,8 +4320,8 @@ static PyObject *__pyx_pf_5pyfit_8strength_4Jump_12mk(struct __pyx_obj_5pyfit_8s
 /* "pyfit/strength.pyx":73
  * 
  * cdef class Jump(object):
- *     cdef readonly float weight             # <<<<<<<<<<<<<<
- *     cdef readonly float height
+ *     cdef readonly double weight             # <<<<<<<<<<<<<<
+ *     cdef readonly double height
  * 
  */
 
@@ -4340,10 +4363,10 @@ static PyObject *__pyx_pf_5pyfit_8strength_4Jump_6weight___get__(struct __pyx_ob
 
 /* "pyfit/strength.pyx":74
  * cdef class Jump(object):
- *     cdef readonly float weight
- *     cdef readonly float height             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight
+ *     cdef readonly double height             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, float weight, float height):
+ *     def __cinit__(self, double weight, double height):
  */
 
 /* Python wrapper */
@@ -4449,7 +4472,7 @@ static int __pyx_pf_5pyfit_8strength_11RMEstimator___cinit__(struct __pyx_obj_5p
  *     def __cinit__(self, int reps):
  *         self.reps = reps             # <<<<<<<<<<<<<<
  * 
- *     cdef float predict(self, float weight):
+ *     cdef double predict(self, double weight):
  */
   __pyx_v_self->reps = __pyx_v_reps;
 
@@ -4470,20 +4493,20 @@ static int __pyx_pf_5pyfit_8strength_11RMEstimator___cinit__(struct __pyx_obj_5p
 /* "pyfit/strength.pyx":112
  *         self.reps = reps
  * 
- *     cdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
  */
 
-static float __pyx_f_5pyfit_8strength_11RMEstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_RMEstimator *__pyx_v_self, CYTHON_UNUSED float __pyx_v_weight) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_11RMEstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_RMEstimator *__pyx_v_self, CYTHON_UNUSED double __pyx_v_weight) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
 
   /* "pyfit/strength.pyx":113
  * 
- *     cdef float predict(self, float weight):
+ *     cdef double predict(self, double weight):
  *         raise NotImplementedError("The prediction method is not implemented")             # <<<<<<<<<<<<<<
  * 
  * cdef class Abadie(RMEstimator):
@@ -4497,7 +4520,7 @@ static float __pyx_f_5pyfit_8strength_11RMEstimator_predict(CYTHON_UNUSED struct
   /* "pyfit/strength.pyx":112
  *         self.reps = reps
  * 
- *     cdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
  */
@@ -4558,14 +4581,14 @@ static PyObject *__pyx_pf_5pyfit_8strength_11RMEstimator_4reps___get__(struct __
 /* "pyfit/strength.pyx":117
  * cdef class Abadie(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return 7.24 + (1.05* weight)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_6Abadie_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4573,7 +4596,7 @@ float __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5p
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -4611,7 +4634,7 @@ float __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5p
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4622,10 +4645,10 @@ float __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5p
 
   /* "pyfit/strength.pyx":118
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  *         return 7.24 + (1.05* weight)             # <<<<<<<<<<<<<<
  * 
- * cdef class Baechle(RMEstimator):
+ *     cpdef double weight(self, double rm):
  */
   __pyx_r = (7.24 + (1.05 * __pyx_v_weight));
   goto __pyx_L0;
@@ -4633,7 +4656,7 @@ float __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5p
   /* "pyfit/strength.pyx":117
  * cdef class Abadie(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return 7.24 + (1.05* weight)
  * 
  */
@@ -4656,12 +4679,12 @@ float __pyx_f_5pyfit_8strength_6Abadie_predict(CYTHON_UNUSED struct __pyx_obj_5p
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_6Abadie_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_6Abadie_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4669,14 +4692,14 @@ static PyObject *__pyx_pw_5pyfit_8strength_6Abadie_1predict(PyObject *__pyx_v_se
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_6Abadie_predict(((struct __pyx_obj_5pyfit_8strength_Abadie *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_6Abadie_predict(((struct __pyx_obj_5pyfit_8strength_Abadie *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_6Abadie_predict(struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_6Abadie_predict(struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4699,21 +4722,21 @@ static PyObject *__pyx_pf_5pyfit_8strength_6Abadie_predict(struct __pyx_obj_5pyf
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_6Abadie_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_6Abadie_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_6Abadie_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":122
- * cdef class Baechle(RMEstimator):
+/* "pyfit/strength.pyx":120
+ *         return 7.24 + (1.05* weight)
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
- *         return weight * (1+(0.033* self.reps) )
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (4./105)*(25*rm-181)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_7Baechle_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_6Abadie_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_6Abadie_weight(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4721,16 +4744,16 @@ float __pyx_f_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strengt
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("weight", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Baechle_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_6Abadie_3weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -4744,22 +4767,22 @@ float __pyx_f_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strengt
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 122, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4768,20 +4791,164 @@ float __pyx_f_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strengt
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":123
+  /* "pyfit/strength.pyx":121
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double weight(self, double rm):
+ *         return (4./105)*(25*rm-181)             # <<<<<<<<<<<<<<
+ * 
+ * cdef class Baechle(RMEstimator):
+ */
+  __pyx_r = ((4. / 105.0) * ((25.0 * __pyx_v_rm) - 181.0));
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":120
+ *         return 7.24 + (1.05* weight)
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (4./105)*(25*rm-181)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.Abadie.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_6Abadie_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_6Abadie_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.Abadie.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_6Abadie_2weight(((struct __pyx_obj_5pyfit_8strength_Abadie *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_6Abadie_2weight(struct __pyx_obj_5pyfit_8strength_Abadie *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Abadie_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.Abadie.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":125
+ * cdef class Baechle(RMEstimator):
+ * 
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
+ *         return weight * (1+(0.033* self.reps) )
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_7Baechle_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
+double __pyx_f_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Baechle_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 125, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":126
+ * 
+ *     cpdef double predict(self, double weight):
  *         return weight * (1+(0.033* self.reps) )             # <<<<<<<<<<<<<<
  * 
- * cdef class Brzycki(RMEstimator):
+ *     cpdef double weight(self, double rm):
  */
   __pyx_r = (__pyx_v_weight * (1.0 + (0.033 * __pyx_v_self->__pyx_base.reps)));
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":122
+  /* "pyfit/strength.pyx":125
  * cdef class Baechle(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return weight * (1+(0.033* self.reps) )
  * 
  */
@@ -4804,12 +4971,12 @@ float __pyx_f_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strengt
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_7Baechle_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_7Baechle_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 122, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4817,20 +4984,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Baechle_1predict(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7Baechle_predict(((struct __pyx_obj_5pyfit_8strength_Baechle *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Baechle_predict(((struct __pyx_obj_5pyfit_8strength_Baechle *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Baechle_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Baechle_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4847,21 +5014,21 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Baechle_predict(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_7Baechle_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_7Baechle_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_7Baechle_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":127
- * cdef class Brzycki(RMEstimator):
+/* "pyfit/strength.pyx":128
+ *         return weight * (1+(0.033* self.reps) )
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
- *         return weight/(1.0278-(0.0278 * self.reps))
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (1000*rm)/(33*self.reps + 1000)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_7Baechle_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_7Baechle_weight(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -4869,17 +5036,17 @@ float __pyx_f_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strengt
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  double __pyx_t_8;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  long __pyx_t_8;
+  __Pyx_RefNannySetupContext("weight", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 127, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Baechle_3weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 128, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -4893,22 +5060,22 @@ float __pyx_f_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strengt
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 127, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 128, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 127, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 128, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4917,25 +5084,175 @@ float __pyx_f_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strengt
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":128
+  /* "pyfit/strength.pyx":129
  * 
- *     cpdef float predict(self, float weight):
- *         return weight/(1.0278-(0.0278 * self.reps))             # <<<<<<<<<<<<<<
+ *     cpdef double weight(self, double rm):
+ *         return (1000*rm)/(33*self.reps + 1000)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float twoSet(self, float weight, int rep2, float weight2):
+ * cdef class Brzycki(RMEstimator):
  */
-  __pyx_t_8 = (1.0278 - (0.0278 * __pyx_v_self->__pyx_base.reps));
+  __pyx_t_7 = (1000.0 * __pyx_v_rm);
+  __pyx_t_8 = ((33 * __pyx_v_self->__pyx_base.reps) + 0x3E8);
   if (unlikely(__pyx_t_8 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 128, __pyx_L1_error)
+    __PYX_ERR(0, 129, __pyx_L1_error)
   }
-  __pyx_r = (__pyx_v_weight / __pyx_t_8);
+  __pyx_r = (__pyx_t_7 / __pyx_t_8);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":127
+  /* "pyfit/strength.pyx":128
+ *         return weight * (1+(0.033* self.reps) )
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (1000*rm)/(33*self.reps + 1000)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.Baechle.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_7Baechle_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_7Baechle_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 128, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.Baechle.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Baechle_2weight(((struct __pyx_obj_5pyfit_8strength_Baechle *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_7Baechle_2weight(struct __pyx_obj_5pyfit_8strength_Baechle *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Baechle_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.Baechle.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":133
  * cdef class Brzycki(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
+ *         return weight/(1.0278-(0.0278 * self.reps))
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
+double __pyx_f_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 133, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 133, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":134
+ * 
+ *     cpdef double predict(self, double weight):
+ *         return weight/(1.0278-(0.0278 * self.reps))             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double weight(self, double rm):
+ */
+  __pyx_t_7 = (1.0278 - (0.0278 * __pyx_v_self->__pyx_base.reps));
+  if (unlikely(__pyx_t_7 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 134, __pyx_L1_error)
+  }
+  __pyx_r = (__pyx_v_weight / __pyx_t_7);
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":133
+ * cdef class Brzycki(RMEstimator):
+ * 
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return weight/(1.0278-(0.0278 * self.reps))
  * 
  */
@@ -4958,12 +5275,12 @@ float __pyx_f_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strengt
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 127, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4971,20 +5288,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_1predict(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7Brzycki_predict(((struct __pyx_obj_5pyfit_8strength_Brzycki *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Brzycki_predict(((struct __pyx_obj_5pyfit_8strength_Brzycki *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Brzycki_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Brzycki_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5001,21 +5318,165 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_predict(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_7Brzycki_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_7Brzycki_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_7Brzycki_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":130
+/* "pyfit/strength.pyx":136
  *         return weight/(1.0278-(0.0278 * self.reps))
  * 
- *     cpdef float twoSet(self, float weight, int rep2, float weight2):             # <<<<<<<<<<<<<<
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (1.0278-(0.0278 * self.reps))
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_7Brzycki_weight(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, CYTHON_UNUSED double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("weight", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_3weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 136, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":137
+ * 
+ *     cpdef double weight(self, double rm):
+ *         return (1.0278-(0.0278 * self.reps))             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double twoSet(self, double weight, int rep2, double weight2):
+ */
+  __pyx_r = (1.0278 - (0.0278 * __pyx_v_self->__pyx_base.reps));
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":136
+ *         return weight/(1.0278-(0.0278 * self.reps))
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (1.0278-(0.0278 * self.reps))
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.Brzycki.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.Brzycki.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Brzycki_2weight(((struct __pyx_obj_5pyfit_8strength_Brzycki *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_2weight(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Brzycki_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.Brzycki.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":139
+ *         return (1.0278-(0.0278 * self.reps))
+ * 
+ *     cpdef double twoSet(self, double weight, int rep2, double weight2):             # <<<<<<<<<<<<<<
  *         return ((weight - weight2)/(rep2 - self.reps)) * (self.reps - 1) + weight
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_3twoSet(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight, int __pyx_v_rep2, float __pyx_v_weight2, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_5twoSet(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight, int __pyx_v_rep2, double __pyx_v_weight2, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5026,21 +5487,21 @@ static float __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8s
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  float __pyx_t_10;
+  double __pyx_t_10;
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("twoSet", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_twoSet); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_twoSet); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_3twoSet)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 130, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_5twoSet)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_rep2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 130, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_rep2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_weight2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_weight2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_6 = __pyx_t_1; __pyx_t_7 = NULL;
@@ -5055,7 +5516,7 @@ static float __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8s
           __pyx_t_8 = 1;
         }
       }
-      __pyx_t_9 = PyTuple_New(3+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 130, __pyx_L1_error)
+      __pyx_t_9 = PyTuple_New(3+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       if (__pyx_t_7) {
         __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -5069,11 +5530,11 @@ static float __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8s
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
       __pyx_t_5 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L1_error)
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_10;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5082,9 +5543,9 @@ static float __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8s
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":131
+  /* "pyfit/strength.pyx":140
  * 
- *     cpdef float twoSet(self, float weight, int rep2, float weight2):
+ *     cpdef double twoSet(self, double weight, int rep2, double weight2):
  *         return ((weight - weight2)/(rep2 - self.reps)) * (self.reps - 1) + weight             # <<<<<<<<<<<<<<
  * 
  * cdef class Epley(RMEstimator):
@@ -5093,15 +5554,15 @@ static float __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8s
   __pyx_t_11 = (__pyx_v_rep2 - __pyx_v_self->__pyx_base.reps);
   if (unlikely(__pyx_t_11 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 131, __pyx_L1_error)
+    __PYX_ERR(0, 140, __pyx_L1_error)
   }
   __pyx_r = (((__pyx_t_10 / __pyx_t_11) * (__pyx_v_self->__pyx_base.reps - 1)) + __pyx_v_weight);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":130
- *         return weight/(1.0278-(0.0278 * self.reps))
+  /* "pyfit/strength.pyx":139
+ *         return (1.0278-(0.0278 * self.reps))
  * 
- *     cpdef float twoSet(self, float weight, int rep2, float weight2):             # <<<<<<<<<<<<<<
+ *     cpdef double twoSet(self, double weight, int rep2, double weight2):             # <<<<<<<<<<<<<<
  *         return ((weight - weight2)/(rep2 - self.reps)) * (self.reps - 1) + weight
  * 
  */
@@ -5124,11 +5585,11 @@ static float __pyx_f_5pyfit_8strength_7Brzycki_twoSet(struct __pyx_obj_5pyfit_8s
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_3twoSet(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_3twoSet(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_weight;
+static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_5twoSet(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_5twoSet(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_weight;
   int __pyx_v_rep2;
-  float __pyx_v_weight2;
+  double __pyx_v_weight2;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("twoSet (wrapper)", 0);
@@ -5153,16 +5614,16 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_3twoSet(PyObject *__pyx_v_se
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_rep2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("twoSet", 1, 3, 3, 1); __PYX_ERR(0, 130, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("twoSet", 1, 3, 3, 1); __PYX_ERR(0, 139, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_weight2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("twoSet", 1, 3, 3, 2); __PYX_ERR(0, 130, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("twoSet", 1, 3, 3, 2); __PYX_ERR(0, 139, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "twoSet") < 0)) __PYX_ERR(0, 130, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "twoSet") < 0)) __PYX_ERR(0, 139, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -5171,32 +5632,32 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Brzycki_3twoSet(PyObject *__pyx_v_se
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L3_error)
-    __pyx_v_rep2 = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_rep2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L3_error)
-    __pyx_v_weight2 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_weight2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
+    __pyx_v_rep2 = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_rep2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
+    __pyx_v_weight2 = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_weight2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("twoSet", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 130, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("twoSet", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 139, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.strength.Brzycki.twoSet", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7Brzycki_2twoSet(((struct __pyx_obj_5pyfit_8strength_Brzycki *)__pyx_v_self), __pyx_v_weight, __pyx_v_rep2, __pyx_v_weight2);
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Brzycki_4twoSet(((struct __pyx_obj_5pyfit_8strength_Brzycki *)__pyx_v_self), __pyx_v_weight, __pyx_v_rep2, __pyx_v_weight2);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_2twoSet(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, float __pyx_v_weight, int __pyx_v_rep2, float __pyx_v_weight2) {
+static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_4twoSet(struct __pyx_obj_5pyfit_8strength_Brzycki *__pyx_v_self, double __pyx_v_weight, int __pyx_v_rep2, double __pyx_v_weight2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("twoSet", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Brzycki_twoSet(__pyx_v_self, __pyx_v_weight, __pyx_v_rep2, __pyx_v_weight2, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Brzycki_twoSet(__pyx_v_self, __pyx_v_weight, __pyx_v_rep2, __pyx_v_weight2, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5213,212 +5674,17 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Brzycki_2twoSet(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":135
- * cdef class Epley(RMEstimator):
- * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
- *         return (weight * self.reps * 0.033)+weight
- * 
- */
-
-static PyObject *__pyx_pw_5pyfit_8strength_5Epley_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_5Epley_predict(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_5Epley_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
-      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_5)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_5);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
-        }
-      }
-      if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
-      } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 135, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
-        __Pyx_GIVEREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
-        __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_r = __pyx_t_7;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      goto __pyx_L0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  }
-
-  /* "pyfit/strength.pyx":136
- * 
- *     cpdef float predict(self, float weight):
- *         return (weight * self.reps * 0.033)+weight             # <<<<<<<<<<<<<<
- * 
- *     cdef float percent(self, float weight):
- */
-  __pyx_r = (((__pyx_v_weight * __pyx_v_self->__pyx_base.reps) * 0.033) + __pyx_v_weight);
-  goto __pyx_L0;
-
-  /* "pyfit/strength.pyx":135
- * cdef class Epley(RMEstimator):
- * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
- *         return (weight * self.reps * 0.033)+weight
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_WriteUnraisable("pyfit.strength.Epley.predict", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_8strength_5Epley_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-static PyObject *__pyx_pw_5pyfit_8strength_5Epley_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
-  assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.strength.Epley.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_5Epley_predict(((struct __pyx_obj_5pyfit_8strength_Epley *)__pyx_v_self), ((float)__pyx_v_weight));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_5pyfit_8strength_5Epley_predict(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, float __pyx_v_weight) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("predict", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_5Epley_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.strength.Epley.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-float __pyx_f_5pyfit_8strength_5Epley_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, float __pyx_v_weight) {
-  return __pyx_f_5pyfit_8strength_5Epley_predict(__pyx_v_self, __pyx_v_weight, 0);
-}
-
-/* "pyfit/strength.pyx":138
- *         return (weight * self.reps * 0.033)+weight
- * 
- *     cdef float percent(self, float weight):             # <<<<<<<<<<<<<<
- *         cdef float value = ((0.033 * self.reps) * weight) + weight
- *         return value / 100
- */
-
-static float __pyx_f_5pyfit_8strength_5Epley_percent(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, float __pyx_v_weight) {
-  float __pyx_v_value;
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("percent", 0);
-
-  /* "pyfit/strength.pyx":139
- * 
- *     cdef float percent(self, float weight):
- *         cdef float value = ((0.033 * self.reps) * weight) + weight             # <<<<<<<<<<<<<<
- *         return value / 100
- * 
- */
-  __pyx_v_value = (((0.033 * __pyx_v_self->__pyx_base.reps) * __pyx_v_weight) + __pyx_v_weight);
-
-  /* "pyfit/strength.pyx":140
- *     cdef float percent(self, float weight):
- *         cdef float value = ((0.033 * self.reps) * weight) + weight
- *         return value / 100             # <<<<<<<<<<<<<<
- * 
- * cdef class Landers(RMEstimator):
- */
-  __pyx_r = (__pyx_v_value / 100.0);
-  goto __pyx_L0;
-
-  /* "pyfit/strength.pyx":138
- *         return (weight * self.reps * 0.033)+weight
- * 
- *     cdef float percent(self, float weight):             # <<<<<<<<<<<<<<
- *         cdef float value = ((0.033 * self.reps) * weight) + weight
- *         return value / 100
- */
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
 /* "pyfit/strength.pyx":144
- * cdef class Landers(RMEstimator):
+ * cdef class Epley(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
- *         return weight/(1.013 - (0.0267123 * self.reps) )
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
+ *         return (weight * self.reps * 0.033)+weight
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_7Landers_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_5Epley_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
+double __pyx_f_5pyfit_8strength_5Epley_predict(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5426,8 +5692,7 @@ float __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strengt
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  double __pyx_t_8;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -5435,7 +5700,7 @@ float __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strengt
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_1predict)) {
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_5Epley_1predict)) {
       __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
@@ -5465,7 +5730,7 @@ float __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strengt
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 144, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 144, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5476,23 +5741,171 @@ float __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strengt
 
   /* "pyfit/strength.pyx":145
  * 
- *     cpdef float predict(self, float weight):
- *         return weight/(1.013 - (0.0267123 * self.reps) )             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):
+ *         return (weight * self.reps * 0.033)+weight             # <<<<<<<<<<<<<<
  * 
- *     cpdef float percent(self):
+ * cdef class Landers(RMEstimator):
  */
-  __pyx_t_8 = (1.013 - (0.0267123 * __pyx_v_self->__pyx_base.reps));
-  if (unlikely(__pyx_t_8 == 0)) {
-    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 145, __pyx_L1_error)
-  }
-  __pyx_r = (__pyx_v_weight / __pyx_t_8);
+  __pyx_r = (((__pyx_v_weight * __pyx_v_self->__pyx_base.reps) * 0.033) + __pyx_v_weight);
   goto __pyx_L0;
 
   /* "pyfit/strength.pyx":144
+ * cdef class Epley(RMEstimator):
+ * 
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
+ *         return (weight * self.reps * 0.033)+weight
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.Epley.predict", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_5Epley_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_5Epley_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
+  double __pyx_v_weight;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
+  assert(__pyx_arg_weight); {
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 144, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.Epley.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_5Epley_predict(((struct __pyx_obj_5pyfit_8strength_Epley *)__pyx_v_self), ((double)__pyx_v_weight));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_5Epley_predict(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, double __pyx_v_weight) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("predict", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_5Epley_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.Epley.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+double __pyx_f_5pyfit_8strength_5Epley_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Epley *__pyx_v_self, double __pyx_v_weight) {
+  return __pyx_f_5pyfit_8strength_5Epley_predict(__pyx_v_self, __pyx_v_weight, 0);
+}
+
+/* "pyfit/strength.pyx":149
  * cdef class Landers(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
+ *         return weight/(1.013 - (0.0267123 * self.reps) )
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_7Landers_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
+double __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 149, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 149, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":150
+ * 
+ *     cpdef double predict(self, double weight):
+ *         return weight/(1.013 - (0.0267123 * self.reps) )             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double weight(self, double rm):
+ */
+  __pyx_t_7 = (1.013 - (0.0267123 * __pyx_v_self->__pyx_base.reps));
+  if (unlikely(__pyx_t_7 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 150, __pyx_L1_error)
+  }
+  __pyx_r = (__pyx_v_weight / __pyx_t_7);
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":149
+ * cdef class Landers(RMEstimator):
+ * 
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return weight/(1.013 - (0.0267123 * self.reps) )
  * 
  */
@@ -5515,12 +5928,12 @@ float __pyx_f_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strengt
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_7Landers_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_7Landers_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 144, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 149, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5528,20 +5941,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_7Landers_1predict(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7Landers_predict(((struct __pyx_obj_5pyfit_8strength_Landers *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Landers_predict(((struct __pyx_obj_5pyfit_8strength_Landers *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Landers_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Landers_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5558,36 +5971,180 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Landers_predict(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_7Landers_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_7Landers_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_7Landers_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":147
+/* "pyfit/strength.pyx":152
  *         return weight/(1.013 - (0.0267123 * self.reps) )
  * 
- *     cpdef float percent(self):             # <<<<<<<<<<<<<<
- *         cdef float value = 101.3 - (2.67123 * self.reps )
- *         return value / 100
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return rm*(1.013 - (0.0267123 * self.reps) )
+ * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_7Landers_3percent(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_8strength_7Landers_percent(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_value;
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_7Landers_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_7Landers_weight(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("weight", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_3weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 152, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":153
+ * 
+ *     cpdef double weight(self, double rm):
+ *         return rm*(1.013 - (0.0267123 * self.reps) )             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double percent(self):
+ */
+  __pyx_r = (__pyx_v_rm * (1.013 - (0.0267123 * __pyx_v_self->__pyx_base.reps)));
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":152
+ *         return weight/(1.013 - (0.0267123 * self.reps) )
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return rm*(1.013 - (0.0267123 * self.reps) )
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.Landers.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_7Landers_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_7Landers_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.Landers.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Landers_2weight(((struct __pyx_obj_5pyfit_8strength_Landers *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_7Landers_2weight(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Landers_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.Landers.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":155
+ *         return rm*(1.013 - (0.0267123 * self.reps) )
+ * 
+ *     cpdef double percent(self):             # <<<<<<<<<<<<<<
+ *         cdef double value = 101.3 - (2.67123 * self.reps )
+ *         return value / 100
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_7Landers_5percent(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static double __pyx_f_5pyfit_8strength_7Landers_percent(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_value;
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("percent", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_percent); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_percent); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_3percent)) {
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_5percent)) {
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -5600,14 +6157,14 @@ static float __pyx_f_5pyfit_8strength_7Landers_percent(struct __pyx_obj_5pyfit_8
         }
       }
       if (__pyx_t_4) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       } else {
-        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5616,18 +6173,18 @@ static float __pyx_f_5pyfit_8strength_7Landers_percent(struct __pyx_obj_5pyfit_8
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":148
+  /* "pyfit/strength.pyx":156
  * 
- *     cpdef float percent(self):
- *         cdef float value = 101.3 - (2.67123 * self.reps )             # <<<<<<<<<<<<<<
+ *     cpdef double percent(self):
+ *         cdef double value = 101.3 - (2.67123 * self.reps )             # <<<<<<<<<<<<<<
  *         return value / 100
  * 
  */
   __pyx_v_value = (101.3 - (2.67123 * __pyx_v_self->__pyx_base.reps));
 
-  /* "pyfit/strength.pyx":149
- *     cpdef float percent(self):
- *         cdef float value = 101.3 - (2.67123 * self.reps )
+  /* "pyfit/strength.pyx":157
+ *     cpdef double percent(self):
+ *         cdef double value = 101.3 - (2.67123 * self.reps )
  *         return value / 100             # <<<<<<<<<<<<<<
  * 
  * cdef class Lombardi(RMEstimator):
@@ -5635,11 +6192,11 @@ static float __pyx_f_5pyfit_8strength_7Landers_percent(struct __pyx_obj_5pyfit_8
   __pyx_r = (__pyx_v_value / 100.0);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":147
- *         return weight/(1.013 - (0.0267123 * self.reps) )
+  /* "pyfit/strength.pyx":155
+ *         return rm*(1.013 - (0.0267123 * self.reps) )
  * 
- *     cpdef float percent(self):             # <<<<<<<<<<<<<<
- *         cdef float value = 101.3 - (2.67123 * self.reps )
+ *     cpdef double percent(self):             # <<<<<<<<<<<<<<
+ *         cdef double value = 101.3 - (2.67123 * self.reps )
  *         return value / 100
  */
 
@@ -5657,25 +6214,25 @@ static float __pyx_f_5pyfit_8strength_7Landers_percent(struct __pyx_obj_5pyfit_8
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_8strength_7Landers_3percent(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_5pyfit_8strength_7Landers_3percent(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_5pyfit_8strength_7Landers_5percent(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_7Landers_5percent(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("percent (wrapper)", 0);
-  __pyx_r = __pyx_pf_5pyfit_8strength_7Landers_2percent(((struct __pyx_obj_5pyfit_8strength_Landers *)__pyx_v_self));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7Landers_4percent(((struct __pyx_obj_5pyfit_8strength_Landers *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7Landers_2percent(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self) {
+static PyObject *__pyx_pf_5pyfit_8strength_7Landers_4percent(struct __pyx_obj_5pyfit_8strength_Landers *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("percent", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Landers_percent(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7Landers_percent(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5692,17 +6249,17 @@ static PyObject *__pyx_pf_5pyfit_8strength_7Landers_2percent(struct __pyx_obj_5p
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":153
+/* "pyfit/strength.pyx":161
  * cdef class Lombardi(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return weight*pow(self.reps,0.10)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_8Lombardi_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5710,16 +6267,16 @@ float __pyx_f_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8streng
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_8Lombardi_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -5733,22 +6290,22 @@ float __pyx_f_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8streng
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 153, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 161, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 153, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5757,20 +6314,20 @@ float __pyx_f_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8streng
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":154
+  /* "pyfit/strength.pyx":162
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  *         return weight*pow(self.reps,0.10)             # <<<<<<<<<<<<<<
  * 
- * cdef class Mayhew(RMEstimator):
+ *     cpdef double weight(self, double rm):
  */
   __pyx_r = (__pyx_v_weight * pow(__pyx_v_self->__pyx_base.reps, 0.10));
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":153
+  /* "pyfit/strength.pyx":161
  * cdef class Lombardi(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return weight*pow(self.reps,0.10)
  * 
  */
@@ -5793,12 +6350,12 @@ float __pyx_f_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8streng
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_8Lombardi_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_8Lombardi_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 153, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5806,20 +6363,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_8Lombardi_1predict(PyObject *__pyx_v_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_8Lombardi_predict(((struct __pyx_obj_5pyfit_8strength_Lombardi *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_8Lombardi_predict(((struct __pyx_obj_5pyfit_8strength_Lombardi *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_8Lombardi_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_8Lombardi_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5836,33 +6393,182 @@ static PyObject *__pyx_pf_5pyfit_8strength_8Lombardi_predict(struct __pyx_obj_5p
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_8Lombardi_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_8Lombardi_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_8Lombardi_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":158
- * cdef class Mayhew(RMEstimator):
+/* "pyfit/strength.pyx":164
+ *         return weight*pow(self.reps,0.10)
  * 
- *     cpdef float football(self):             # <<<<<<<<<<<<<<
- *         return 226.7 + 7.1*(self.reps)
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return rm/pow(self.reps,0.10)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_1football(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_8Lombardi_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_8Lombardi_weight(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("weight", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_8Lombardi_3weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":165
+ * 
+ *     cpdef double weight(self, double rm):
+ *         return rm/pow(self.reps,0.10)             # <<<<<<<<<<<<<<
+ * 
+ * cdef class Mayhew(RMEstimator):
+ */
+  __pyx_t_7 = pow(__pyx_v_self->__pyx_base.reps, 0.10);
+  if (unlikely(__pyx_t_7 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 165, __pyx_L1_error)
+  }
+  __pyx_r = (__pyx_v_rm / __pyx_t_7);
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":164
+ *         return weight*pow(self.reps,0.10)
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return rm/pow(self.reps,0.10)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.Lombardi.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_8Lombardi_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_8Lombardi_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.Lombardi.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_8Lombardi_2weight(((struct __pyx_obj_5pyfit_8strength_Lombardi *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_8Lombardi_2weight(struct __pyx_obj_5pyfit_8strength_Lombardi *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_8Lombardi_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.Lombardi.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":169
+ * cdef class Mayhew(RMEstimator):
+ * 
+ *     cpdef double football(self):             # <<<<<<<<<<<<<<
+ *         return 226.7 + 7.1*(self.reps)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_1football(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static double __pyx_f_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("football", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_football); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_football); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_6Mayhew_1football)) {
       __Pyx_INCREF(__pyx_t_1);
@@ -5877,14 +6583,14 @@ static float __pyx_f_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5pyfit_8
         }
       }
       if (__pyx_t_4) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       } else {
-        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 158, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 169, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5893,20 +6599,20 @@ static float __pyx_f_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5pyfit_8
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":159
+  /* "pyfit/strength.pyx":170
  * 
- *     cpdef float football(self):
+ *     cpdef double football(self):
  *         return 226.7 + 7.1*(self.reps)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  */
   __pyx_r = (226.7 + (7.1 * __pyx_v_self->__pyx_base.reps));
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":158
+  /* "pyfit/strength.pyx":169
  * cdef class Mayhew(RMEstimator):
  * 
- *     cpdef float football(self):             # <<<<<<<<<<<<<<
+ *     cpdef double football(self):             # <<<<<<<<<<<<<<
  *         return 226.7 + 7.1*(self.reps)
  * 
  */
@@ -5943,7 +6649,7 @@ static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5py
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("football", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Mayhew_football(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Mayhew_football(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5960,17 +6666,17 @@ static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_football(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":161
+/* "pyfit/strength.pyx":172
  *         return 226.7 + 7.1*(self.reps)
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return (100*weight)/( 52.2 + 41.9 * exp(-0.055 * self.reps) )
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_3predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_6Mayhew_predict(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_8strength_6Mayhew_predict(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -5978,17 +6684,17 @@ float __pyx_f_5pyfit_8strength_6Mayhew_predict(struct __pyx_obj_5pyfit_8strength
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   double __pyx_t_8;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_6Mayhew_3predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 172, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6002,22 +6708,22 @@ float __pyx_f_5pyfit_8strength_6Mayhew_predict(struct __pyx_obj_5pyfit_8strength
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 161, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6026,26 +6732,26 @@ float __pyx_f_5pyfit_8strength_6Mayhew_predict(struct __pyx_obj_5pyfit_8strength
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":162
+  /* "pyfit/strength.pyx":173
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  *         return (100*weight)/( 52.2 + 41.9 * exp(-0.055 * self.reps) )             # <<<<<<<<<<<<<<
  * 
- *     cpdef float percent(self):
+ *     cpdef double percent(self):
  */
   __pyx_t_7 = (100.0 * __pyx_v_weight);
   __pyx_t_8 = (52.2 + (41.9 * exp((-0.055 * __pyx_v_self->__pyx_base.reps))));
   if (unlikely(__pyx_t_8 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 162, __pyx_L1_error)
+    __PYX_ERR(0, 173, __pyx_L1_error)
   }
   __pyx_r = (__pyx_t_7 / __pyx_t_8);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":161
+  /* "pyfit/strength.pyx":172
  *         return 226.7 + 7.1*(self.reps)
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return (100*weight)/( 52.2 + 41.9 * exp(-0.055 * self.reps) )
  * 
  */
@@ -6068,12 +6774,12 @@ float __pyx_f_5pyfit_8strength_6Mayhew_predict(struct __pyx_obj_5pyfit_8strength
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_3predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_3predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 161, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6081,20 +6787,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_3predict(PyObject *__pyx_v_se
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_6Mayhew_2predict(((struct __pyx_obj_5pyfit_8strength_Mayhew *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_6Mayhew_2predict(((struct __pyx_obj_5pyfit_8strength_Mayhew *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_2predict(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_2predict(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Mayhew_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Mayhew_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6111,34 +6817,34 @@ static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_2predict(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_6Mayhew_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_6Mayhew_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_6Mayhew_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":164
+/* "pyfit/strength.pyx":175
  *         return (100*weight)/( 52.2 + 41.9 * exp(-0.055 * self.reps) )
  * 
- *     cpdef float percent(self):             # <<<<<<<<<<<<<<
- *         cdef float value = 52.2 + 41.9* exp(-0.055* self.reps)
+ *     cpdef double percent(self):             # <<<<<<<<<<<<<<
+ *         cdef double value = 52.2 + 41.9* exp(-0.055* self.reps)
  *         return value / 100
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_5percent(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static float __pyx_f_5pyfit_8strength_6Mayhew_percent(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, int __pyx_skip_dispatch) {
-  float __pyx_v_value;
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_6Mayhew_percent(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, int __pyx_skip_dispatch) {
+  double __pyx_v_value;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  float __pyx_t_5;
+  double __pyx_t_5;
   __Pyx_RefNannySetupContext("percent", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_percent); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_percent); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_6Mayhew_5percent)) {
       __Pyx_INCREF(__pyx_t_1);
@@ -6153,14 +6859,14 @@ static float __pyx_f_5pyfit_8strength_6Mayhew_percent(struct __pyx_obj_5pyfit_8s
         }
       }
       if (__pyx_t_4) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       } else {
-        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
       }
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 164, __pyx_L1_error)
+      __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_5;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6169,30 +6875,30 @@ static float __pyx_f_5pyfit_8strength_6Mayhew_percent(struct __pyx_obj_5pyfit_8s
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":165
+  /* "pyfit/strength.pyx":176
  * 
- *     cpdef float percent(self):
- *         cdef float value = 52.2 + 41.9* exp(-0.055* self.reps)             # <<<<<<<<<<<<<<
+ *     cpdef double percent(self):
+ *         cdef double value = 52.2 + 41.9* exp(-0.055* self.reps)             # <<<<<<<<<<<<<<
  *         return value / 100
  * 
  */
   __pyx_v_value = (52.2 + (41.9 * exp((-0.055 * __pyx_v_self->__pyx_base.reps))));
 
-  /* "pyfit/strength.pyx":166
- *     cpdef float percent(self):
- *         cdef float value = 52.2 + 41.9* exp(-0.055* self.reps)
+  /* "pyfit/strength.pyx":177
+ *     cpdef double percent(self):
+ *         cdef double value = 52.2 + 41.9* exp(-0.055* self.reps)
  *         return value / 100             # <<<<<<<<<<<<<<
  * 
- * cdef class McGlothin(RMEstimator):
+ *     cpdef double weight(self, double rm):
  */
   __pyx_r = (__pyx_v_value / 100.0);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":164
+  /* "pyfit/strength.pyx":175
  *         return (100*weight)/( 52.2 + 41.9 * exp(-0.055 * self.reps) )
  * 
- *     cpdef float percent(self):             # <<<<<<<<<<<<<<
- *         cdef float value = 52.2 + 41.9* exp(-0.055* self.reps)
+ *     cpdef double percent(self):             # <<<<<<<<<<<<<<
+ *         cdef double value = 52.2 + 41.9* exp(-0.055* self.reps)
  *         return value / 100
  */
 
@@ -6228,7 +6934,7 @@ static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_4percent(struct __pyx_obj_5py
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("percent", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Mayhew_percent(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Mayhew_percent(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6245,17 +6951,17 @@ static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_4percent(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":170
- * cdef class McGlothin(RMEstimator):
+/* "pyfit/strength.pyx":179
+ *         return value / 100
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
- *         return (100 * weight)/(101.3 - 2.67123 * self.reps)
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (rm*( 52.2 + 41.9 * exp(-0.055 * self.reps) ) )/100
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_9McGlothin_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_7weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_6Mayhew_weight(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6263,17 +6969,16 @@ float __pyx_f_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8stren
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  double __pyx_t_8;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("weight", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_9McGlothin_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 170, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_6Mayhew_7weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 179, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6287,22 +6992,22 @@ float __pyx_f_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8stren
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 179, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 179, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 170, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 179, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6311,26 +7016,171 @@ float __pyx_f_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8stren
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":171
+  /* "pyfit/strength.pyx":180
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double weight(self, double rm):
+ *         return (rm*( 52.2 + 41.9 * exp(-0.055 * self.reps) ) )/100             # <<<<<<<<<<<<<<
+ * 
+ * cdef class McGlothin(RMEstimator):
+ */
+  __pyx_r = ((__pyx_v_rm * (52.2 + (41.9 * exp((-0.055 * __pyx_v_self->__pyx_base.reps))))) / 100.0);
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":179
+ *         return value / 100
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (rm*( 52.2 + 41.9 * exp(-0.055 * self.reps) ) )/100
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.Mayhew.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_7weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_6Mayhew_7weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 179, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.Mayhew.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_6Mayhew_6weight(((struct __pyx_obj_5pyfit_8strength_Mayhew *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_6Mayhew_6weight(struct __pyx_obj_5pyfit_8strength_Mayhew *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Mayhew_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.Mayhew.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":184
+ * cdef class McGlothin(RMEstimator):
+ * 
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
+ *         return (100 * weight)/(101.3 - 2.67123 * self.reps)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_9McGlothin_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
+double __pyx_f_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  double __pyx_t_8;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_9McGlothin_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":185
+ * 
+ *     cpdef double predict(self, double weight):
  *         return (100 * weight)/(101.3 - 2.67123 * self.reps)             # <<<<<<<<<<<<<<
  * 
- * cdef class  OConnor(RMEstimator):
+ *     cpdef double weight(self, double rm):
  */
   __pyx_t_7 = (100.0 * __pyx_v_weight);
   __pyx_t_8 = (101.3 - (2.67123 * __pyx_v_self->__pyx_base.reps));
   if (unlikely(__pyx_t_8 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 171, __pyx_L1_error)
+    __PYX_ERR(0, 185, __pyx_L1_error)
   }
   __pyx_r = (__pyx_t_7 / __pyx_t_8);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":170
+  /* "pyfit/strength.pyx":184
  * cdef class McGlothin(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return (100 * weight)/(101.3 - 2.67123 * self.reps)
  * 
  */
@@ -6353,12 +7203,12 @@ float __pyx_f_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8stren
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_9McGlothin_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_9McGlothin_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 170, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6366,20 +7216,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_9McGlothin_1predict(PyObject *__pyx_v
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_9McGlothin_predict(((struct __pyx_obj_5pyfit_8strength_McGlothin *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_9McGlothin_predict(((struct __pyx_obj_5pyfit_8strength_McGlothin *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_9McGlothin_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_9McGlothin_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6396,21 +7246,21 @@ static PyObject *__pyx_pf_5pyfit_8strength_9McGlothin_predict(struct __pyx_obj_5
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_9McGlothin_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_9McGlothin_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_9McGlothin_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":175
- * cdef class  OConnor(RMEstimator):
+/* "pyfit/strength.pyx":187
+ *         return (100 * weight)/(101.3 - 2.67123 * self.reps)
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
- *         return weight * (1+0.025*self.reps)
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (rm*(101.3 - 2.67123 * self.reps) )/100
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_9McGlothin_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_9McGlothin_weight(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6418,16 +7268,16 @@ float __pyx_f_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strengt
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("weight", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7OConnor_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_9McGlothin_3weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 187, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6441,22 +7291,22 @@ float __pyx_f_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strengt
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 187, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 175, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 187, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 187, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 187, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6465,20 +7315,164 @@ float __pyx_f_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strengt
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":176
+  /* "pyfit/strength.pyx":188
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double weight(self, double rm):
+ *         return (rm*(101.3 - 2.67123 * self.reps) )/100             # <<<<<<<<<<<<<<
+ * 
+ * cdef class  OConnor(RMEstimator):
+ */
+  __pyx_r = ((__pyx_v_rm * (101.3 - (2.67123 * __pyx_v_self->__pyx_base.reps))) / 100.0);
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":187
+ *         return (100 * weight)/(101.3 - 2.67123 * self.reps)
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (rm*(101.3 - 2.67123 * self.reps) )/100
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.McGlothin.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_9McGlothin_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_9McGlothin_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 187, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.McGlothin.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_9McGlothin_2weight(((struct __pyx_obj_5pyfit_8strength_McGlothin *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_9McGlothin_2weight(struct __pyx_obj_5pyfit_8strength_McGlothin *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_9McGlothin_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.McGlothin.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":192
+ * cdef class  OConnor(RMEstimator):
+ * 
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
+ *         return weight * (1+0.025*self.reps)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
+double __pyx_f_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7OConnor_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 192, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 192, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 192, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":193
+ * 
+ *     cpdef double predict(self, double weight):
  *         return weight * (1+0.025*self.reps)             # <<<<<<<<<<<<<<
  * 
- *     cpdef float percent(self, float weight):
+ *     cpdef double percent(self, double weight):
  */
   __pyx_r = (__pyx_v_weight * (1.0 + (0.025 * __pyx_v_self->__pyx_base.reps)));
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":175
+  /* "pyfit/strength.pyx":192
  * cdef class  OConnor(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return weight * (1+0.025*self.reps)
  * 
  */
@@ -6501,12 +7495,12 @@ float __pyx_f_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strengt
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 192, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6514,20 +7508,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_1predict(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7OConnor_predict(((struct __pyx_obj_5pyfit_8strength_OConnor *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7OConnor_predict(((struct __pyx_obj_5pyfit_8strength_OConnor *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7OConnor_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7OConnor_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6544,21 +7538,21 @@ static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_predict(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_7OConnor_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_7OConnor_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_7OConnor_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":178
+/* "pyfit/strength.pyx":195
  *         return weight * (1+0.025*self.reps)
  * 
- *     cpdef float percent(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double percent(self, double weight):             # <<<<<<<<<<<<<<
  *         return (0.025 * (weight * self.reps)+ weight)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_3percent(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-static float __pyx_f_5pyfit_8strength_7OConnor_percent(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_7OConnor_percent(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6566,16 +7560,16 @@ static float __pyx_f_5pyfit_8strength_7OConnor_percent(struct __pyx_obj_5pyfit_8
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("percent", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_percent); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_percent); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7OConnor_3percent)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 178, __pyx_L1_error)
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6589,22 +7583,22 @@ static float __pyx_f_5pyfit_8strength_7OConnor_percent(struct __pyx_obj_5pyfit_8
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 178, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 178, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 195, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6613,20 +7607,20 @@ static float __pyx_f_5pyfit_8strength_7OConnor_percent(struct __pyx_obj_5pyfit_8
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":179
+  /* "pyfit/strength.pyx":196
  * 
- *     cpdef float percent(self, float weight):
+ *     cpdef double percent(self, double weight):
  *         return (0.025 * (weight * self.reps)+ weight)             # <<<<<<<<<<<<<<
  * 
- * cdef class ReynoldsCP(RMEstimator):
+ *     cpdef double weight(self, double rm):
  */
   __pyx_r = ((0.025 * (__pyx_v_weight * __pyx_v_self->__pyx_base.reps)) + __pyx_v_weight);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":178
+  /* "pyfit/strength.pyx":195
  *         return weight * (1+0.025*self.reps)
  * 
- *     cpdef float percent(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double percent(self, double weight):             # <<<<<<<<<<<<<<
  *         return (0.025 * (weight * self.reps)+ weight)
  * 
  */
@@ -6649,12 +7643,12 @@ static float __pyx_f_5pyfit_8strength_7OConnor_percent(struct __pyx_obj_5pyfit_8
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_3percent(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_3percent(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("percent (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 178, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 195, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6662,20 +7656,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_3percent(PyObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_7OConnor_2percent(((struct __pyx_obj_5pyfit_8strength_OConnor *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_7OConnor_2percent(((struct __pyx_obj_5pyfit_8strength_OConnor *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_2percent(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_2percent(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("percent", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7OConnor_percent(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7OConnor_percent(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6692,17 +7686,17 @@ static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_2percent(struct __pyx_obj_5p
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":183
- * cdef class ReynoldsCP(RMEstimator):
+/* "pyfit/strength.pyx":198
+ *         return (0.025 * (weight * self.reps)+ weight)
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
- *         return (1.1307 * weight) + 0.6998
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (40.*rm)/(self.reps+40)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsCP_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_5weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_7OConnor_weight(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6710,16 +7704,17 @@ float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_o
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  long __pyx_t_8;
+  __Pyx_RefNannySetupContext("weight", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_10ReynoldsCP_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 183, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_7OConnor_5weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 198, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6733,22 +7728,22 @@ float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_o
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 198, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 183, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 198, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 198, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 198, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6757,9 +7752,159 @@ float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_o
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":184
+  /* "pyfit/strength.pyx":199
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double weight(self, double rm):
+ *         return (40.*rm)/(self.reps+40)             # <<<<<<<<<<<<<<
+ * 
+ * cdef class ReynoldsCP(RMEstimator):
+ */
+  __pyx_t_7 = (40. * __pyx_v_rm);
+  __pyx_t_8 = (__pyx_v_self->__pyx_base.reps + 40);
+  if (unlikely(__pyx_t_8 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 199, __pyx_L1_error)
+  }
+  __pyx_r = (__pyx_t_7 / __pyx_t_8);
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":198
+ *         return (0.025 * (weight * self.reps)+ weight)
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (40.*rm)/(self.reps+40)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.OConnor.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_5weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_7OConnor_5weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 198, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.OConnor.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_7OConnor_4weight(((struct __pyx_obj_5pyfit_8strength_OConnor *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_7OConnor_4weight(struct __pyx_obj_5pyfit_8strength_OConnor *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_7OConnor_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.OConnor.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":203
+ * cdef class ReynoldsCP(RMEstimator):
+ * 
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
+ *         return (1.1307 * weight) + 0.6998
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsCP_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
+double __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 203, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_10ReynoldsCP_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 203, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 203, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 203, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 203, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 203, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":204
+ * 
+ *     cpdef double predict(self, double weight):
  *         return (1.1307 * weight) + 0.6998             # <<<<<<<<<<<<<<
  * 
  * cdef class ReynoldsLP(RMEstimator):
@@ -6767,10 +7912,10 @@ float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_o
   __pyx_r = ((1.1307 * __pyx_v_weight) + 0.6998);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":183
+  /* "pyfit/strength.pyx":203
  * cdef class ReynoldsCP(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return (1.1307 * weight) + 0.6998
  * 
  */
@@ -6793,12 +7938,12 @@ float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(CYTHON_UNUSED struct __pyx_o
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsCP_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsCP_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 203, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6806,20 +7951,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsCP_1predict(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_10ReynoldsCP_predict(((struct __pyx_obj_5pyfit_8strength_ReynoldsCP *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_10ReynoldsCP_predict(((struct __pyx_obj_5pyfit_8strength_ReynoldsCP *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsCP_predict(struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsCP_predict(struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_10ReynoldsCP_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_10ReynoldsCP_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 203, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6836,21 +7981,21 @@ static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsCP_predict(struct __pyx_obj
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_10ReynoldsCP_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_10ReynoldsCP_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsCP *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_10ReynoldsCP_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":188
+/* "pyfit/strength.pyx":208
  * cdef class ReynoldsLP(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return (1.09703 * weight) + 14.2546
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsLP_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -6858,16 +8003,16 @@ float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_o
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_10ReynoldsLP_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 188, __pyx_L1_error)
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 208, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -6881,22 +8026,22 @@ float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_o
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 188, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 188, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 188, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 208, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 188, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 208, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6905,9 +8050,9 @@ float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_o
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":189
+  /* "pyfit/strength.pyx":209
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  *         return (1.09703 * weight) + 14.2546             # <<<<<<<<<<<<<<
  * 
  * cdef class Wathan(RMEstimator):
@@ -6915,10 +8060,10 @@ float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_o
   __pyx_r = ((1.09703 * __pyx_v_weight) + 14.2546);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":188
+  /* "pyfit/strength.pyx":208
  * cdef class ReynoldsLP(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return (1.09703 * weight) + 14.2546
  * 
  */
@@ -6941,12 +8086,12 @@ float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(CYTHON_UNUSED struct __pyx_o
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsLP_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsLP_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 188, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 208, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6954,20 +8099,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_10ReynoldsLP_1predict(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_10ReynoldsLP_predict(((struct __pyx_obj_5pyfit_8strength_ReynoldsLP *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_10ReynoldsLP_predict(((struct __pyx_obj_5pyfit_8strength_ReynoldsLP *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsLP_predict(struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsLP_predict(struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_10ReynoldsLP_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_10ReynoldsLP_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6984,21 +8129,21 @@ static PyObject *__pyx_pf_5pyfit_8strength_10ReynoldsLP_predict(struct __pyx_obj
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_10ReynoldsLP_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_10ReynoldsLP_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_8strength_ReynoldsLP *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_10ReynoldsLP_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":193
+/* "pyfit/strength.pyx":213
  * cdef class Wathan(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps) ) )
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_6Wathan_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
-float __pyx_f_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7006,17 +8151,17 @@ float __pyx_f_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   double __pyx_t_8;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_6Wathan_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 213, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -7030,22 +8175,22 @@ float __pyx_f_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 213, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 193, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 213, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 213, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7054,26 +8199,26 @@ float __pyx_f_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":194
+  /* "pyfit/strength.pyx":214
  * 
- *     cpdef float predict(self, float weight):
+ *     cpdef double predict(self, double weight):
  *         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps) ) )             # <<<<<<<<<<<<<<
  * 
- * cdef class RM(object):
+ *     cpdef double weight(self, double rm):
  */
   __pyx_t_7 = (100.0 * __pyx_v_weight);
   __pyx_t_8 = (48.8 + (53.8 * exp((-0.075 * __pyx_v_self->__pyx_base.reps))));
   if (unlikely(__pyx_t_8 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 194, __pyx_L1_error)
+    __PYX_ERR(0, 214, __pyx_L1_error)
   }
   __pyx_r = (__pyx_t_7 / __pyx_t_8);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":193
+  /* "pyfit/strength.pyx":213
  * cdef class Wathan(RMEstimator):
  * 
- *     cpdef float predict(self, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double weight):             # <<<<<<<<<<<<<<
  *         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps) ) )
  * 
  */
@@ -7096,12 +8241,12 @@ float __pyx_f_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_6Wathan_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_6Wathan_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_weight) {
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_weight); {
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 193, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(__pyx_arg_weight); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 213, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7109,20 +8254,20 @@ static PyObject *__pyx_pw_5pyfit_8strength_6Wathan_1predict(PyObject *__pyx_v_se
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_8strength_6Wathan_predict(((struct __pyx_obj_5pyfit_8strength_Wathan *)__pyx_v_self), ((float)__pyx_v_weight));
+  __pyx_r = __pyx_pf_5pyfit_8strength_6Wathan_predict(((struct __pyx_obj_5pyfit_8strength_Wathan *)__pyx_v_self), ((double)__pyx_v_weight));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Wathan_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Wathan_predict(__pyx_v_self, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7139,14 +8284,158 @@ static PyObject *__pyx_pf_5pyfit_8strength_6Wathan_predict(struct __pyx_obj_5pyf
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_8strength_6Wathan_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, float __pyx_v_weight) {
+double __pyx_f_5pyfit_8strength_6Wathan_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_weight) {
   return __pyx_f_5pyfit_8strength_6Wathan_predict(__pyx_v_self, __pyx_v_weight, 0);
 }
 
-/* "pyfit/strength.pyx":200
- *     cdef readonly float age
+/* "pyfit/strength.pyx":216
+ *         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps) ) )
  * 
- *     def __cinit__(self, int gender, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (rm*(48.8+(53.8*exp(-0.075 * self.reps) ) ) )/100
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_8strength_6Wathan_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static double __pyx_f_5pyfit_8strength_6Wathan_weight(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_rm, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("weight", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_6Wathan_3weight)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_rm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 216, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 216, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 216, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/strength.pyx":217
+ * 
+ *     cpdef double weight(self, double rm):
+ *         return (rm*(48.8+(53.8*exp(-0.075 * self.reps) ) ) )/100             # <<<<<<<<<<<<<<
+ * 
+ * cdef class RM(object):
+ */
+  __pyx_r = ((__pyx_v_rm * (48.8 + (53.8 * exp((-0.075 * __pyx_v_self->__pyx_base.reps))))) / 100.0);
+  goto __pyx_L0;
+
+  /* "pyfit/strength.pyx":216
+ *         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps) ) )
+ * 
+ *     cpdef double weight(self, double rm):             # <<<<<<<<<<<<<<
+ *         return (rm*(48.8+(53.8*exp(-0.075 * self.reps) ) ) )/100
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.strength.Wathan.weight", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_8strength_6Wathan_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm); /*proto*/
+static PyObject *__pyx_pw_5pyfit_8strength_6Wathan_3weight(PyObject *__pyx_v_self, PyObject *__pyx_arg_rm) {
+  double __pyx_v_rm;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("weight (wrapper)", 0);
+  assert(__pyx_arg_rm); {
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(__pyx_arg_rm); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 216, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.strength.Wathan.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_8strength_6Wathan_2weight(((struct __pyx_obj_5pyfit_8strength_Wathan *)__pyx_v_self), ((double)__pyx_v_rm));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_8strength_6Wathan_2weight(struct __pyx_obj_5pyfit_8strength_Wathan *__pyx_v_self, double __pyx_v_rm) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("weight", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_6Wathan_weight(__pyx_v_self, __pyx_v_rm, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.strength.Wathan.weight", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/strength.pyx":223
+ *     cdef readonly double age
+ * 
+ *     def __cinit__(self, int gender, double age):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -7155,7 +8444,7 @@ float __pyx_f_5pyfit_8strength_6Wathan_predict__pyx_wrap_1(struct __pyx_obj_5pyf
 static int __pyx_pw_5pyfit_8strength_2RM_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5pyfit_8strength_2RM_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_gender;
-  float __pyx_v_age;
+  double __pyx_v_age;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
@@ -7179,11 +8468,11 @@ static int __pyx_pw_5pyfit_8strength_2RM_1__cinit__(PyObject *__pyx_v_self, PyOb
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_age)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 200, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 223, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 200, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 223, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7191,12 +8480,12 @@ static int __pyx_pw_5pyfit_8strength_2RM_1__cinit__(PyObject *__pyx_v_self, PyOb
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 200, __pyx_L3_error)
-    __pyx_v_age = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 200, __pyx_L3_error)
+    __pyx_v_gender = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_gender == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 223, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 223, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 200, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 223, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.strength.RM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7209,33 +8498,33 @@ static int __pyx_pw_5pyfit_8strength_2RM_1__cinit__(PyObject *__pyx_v_self, PyOb
   return __pyx_r;
 }
 
-static int __pyx_pf_5pyfit_8strength_2RM___cinit__(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_gender, float __pyx_v_age) {
+static int __pyx_pf_5pyfit_8strength_2RM___cinit__(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_gender, double __pyx_v_age) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "pyfit/strength.pyx":201
+  /* "pyfit/strength.pyx":224
  * 
- *     def __cinit__(self, int gender, float age):
+ *     def __cinit__(self, int gender, double age):
  *         self.gender = gender             # <<<<<<<<<<<<<<
  *         self.age = age
  * 
  */
   __pyx_v_self->gender = __pyx_v_gender;
 
-  /* "pyfit/strength.pyx":202
- *     def __cinit__(self, int gender, float age):
+  /* "pyfit/strength.pyx":225
+ *     def __cinit__(self, int gender, double age):
  *         self.gender = gender
  *         self.age = age             # <<<<<<<<<<<<<<
  * 
- *     cpdef float ymcaUpperBody(self, int reps):
+ *     cpdef double ymcaUpperBody(self, int reps):
  */
   __pyx_v_self->age = __pyx_v_age;
 
-  /* "pyfit/strength.pyx":200
- *     cdef readonly float age
+  /* "pyfit/strength.pyx":223
+ *     cdef readonly double age
  * 
- *     def __cinit__(self, int gender, float age):             # <<<<<<<<<<<<<<
+ *     def __cinit__(self, int gender, double age):             # <<<<<<<<<<<<<<
  *         self.gender = gender
  *         self.age = age
  */
@@ -7246,17 +8535,17 @@ static int __pyx_pf_5pyfit_8strength_2RM___cinit__(struct __pyx_obj_5pyfit_8stre
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":204
+/* "pyfit/strength.pyx":227
  *         self.age = age
  * 
- *     cpdef float ymcaUpperBody(self, int reps):             # <<<<<<<<<<<<<<
+ *     cpdef double ymcaUpperBody(self, int reps):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (0.31 * reps) + 19.2
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_2RM_3ymcaUpperBody(PyObject *__pyx_v_self, PyObject *__pyx_arg_reps); /*proto*/
-static float __pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7264,17 +8553,17 @@ static float __pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(struct __pyx_obj_5pyfit_
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("ymcaUpperBody", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_ymcaUpperBody); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_ymcaUpperBody); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_2RM_3ymcaUpperBody)) {
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_reps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 204, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_reps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 227, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -7288,22 +8577,22 @@ static float __pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(struct __pyx_obj_5pyfit_
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 204, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 204, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 227, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 204, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 204, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 227, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7312,29 +8601,29 @@ static float __pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(struct __pyx_obj_5pyfit_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":205
+  /* "pyfit/strength.pyx":228
  * 
- *     cpdef float ymcaUpperBody(self, int reps):
+ *     cpdef double ymcaUpperBody(self, int reps):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (0.31 * reps) + 19.2
  *         return (1.55 * reps) + 37.9
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_8) {
 
-    /* "pyfit/strength.pyx":206
- *     cpdef float ymcaUpperBody(self, int reps):
+    /* "pyfit/strength.pyx":229
+ *     cpdef double ymcaUpperBody(self, int reps):
  *         if self.gender == Gender.Female:
  *             return (0.31 * reps) + 19.2             # <<<<<<<<<<<<<<
  *         return (1.55 * reps) + 37.9
@@ -7343,29 +8632,29 @@ static float __pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(struct __pyx_obj_5pyfit_
     __pyx_r = ((0.31 * __pyx_v_reps) + 19.2);
     goto __pyx_L0;
 
-    /* "pyfit/strength.pyx":205
+    /* "pyfit/strength.pyx":228
  * 
- *     cpdef float ymcaUpperBody(self, int reps):
+ *     cpdef double ymcaUpperBody(self, int reps):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
  *             return (0.31 * reps) + 19.2
  *         return (1.55 * reps) + 37.9
  */
   }
 
-  /* "pyfit/strength.pyx":207
+  /* "pyfit/strength.pyx":230
  *         if self.gender == Gender.Female:
  *             return (0.31 * reps) + 19.2
  *         return (1.55 * reps) + 37.9             # <<<<<<<<<<<<<<
  * 
- *     cpdef float femaleMiddleAge(self, int reps, float weight):
+ *     cpdef double femaleMiddleAge(self, int reps, double weight):
  */
   __pyx_r = ((1.55 * __pyx_v_reps) + 37.9);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":204
+  /* "pyfit/strength.pyx":227
  *         self.age = age
  * 
- *     cpdef float ymcaUpperBody(self, int reps):             # <<<<<<<<<<<<<<
+ *     cpdef double ymcaUpperBody(self, int reps):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
  *             return (0.31 * reps) + 19.2
  */
@@ -7393,7 +8682,7 @@ static PyObject *__pyx_pw_5pyfit_8strength_2RM_3ymcaUpperBody(PyObject *__pyx_v_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("ymcaUpperBody (wrapper)", 0);
   assert(__pyx_arg_reps); {
-    __pyx_v_reps = __Pyx_PyInt_As_int(__pyx_arg_reps); if (unlikely((__pyx_v_reps == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 204, __pyx_L3_error)
+    __pyx_v_reps = __Pyx_PyInt_As_int(__pyx_arg_reps); if (unlikely((__pyx_v_reps == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 227, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7414,7 +8703,7 @@ static PyObject *__pyx_pf_5pyfit_8strength_2RM_2ymcaUpperBody(struct __pyx_obj_5
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("ymcaUpperBody", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(__pyx_v_self, __pyx_v_reps, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_2RM_ymcaUpperBody(__pyx_v_self, __pyx_v_reps, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7431,17 +8720,17 @@ static PyObject *__pyx_pf_5pyfit_8strength_2RM_2ymcaUpperBody(struct __pyx_obj_5
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":209
+/* "pyfit/strength.pyx":232
  *         return (1.55 * reps) + 37.9
  * 
- *     cpdef float femaleMiddleAge(self, int reps, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double femaleMiddleAge(self, int reps, double weight):             # <<<<<<<<<<<<<<
  *         return  (1.06 * weight) + (0.58 * reps) - (0.20 * self.age) - 3.41
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_2RM_5femaleMiddleAge(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7451,18 +8740,18 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfi
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("femaleMiddleAge", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_femaleMiddleAge); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_femaleMiddleAge); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_2RM_5femaleMiddleAge)) {
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_reps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_reps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -7477,7 +8766,7 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfi
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -7488,11 +8777,11 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfi
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7501,20 +8790,20 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfi
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":210
+  /* "pyfit/strength.pyx":233
  * 
- *     cpdef float femaleMiddleAge(self, int reps, float weight):
+ *     cpdef double femaleMiddleAge(self, int reps, double weight):
  *         return  (1.06 * weight) + (0.58 * reps) - (0.20 * self.age) - 3.41             # <<<<<<<<<<<<<<
  * 
- *     cpdef float femaleOlder(self, int reps, float weight):
+ *     cpdef double femaleOlder(self, int reps, double weight):
  */
   __pyx_r = ((((1.06 * __pyx_v_weight) + (0.58 * __pyx_v_reps)) - (0.20 * __pyx_v_self->age)) - 3.41);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":209
+  /* "pyfit/strength.pyx":232
  *         return (1.55 * reps) + 37.9
  * 
- *     cpdef float femaleMiddleAge(self, int reps, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double femaleMiddleAge(self, int reps, double weight):             # <<<<<<<<<<<<<<
  *         return  (1.06 * weight) + (0.58 * reps) - (0.20 * self.age) - 3.41
  * 
  */
@@ -7539,7 +8828,7 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(struct __pyx_obj_5pyfi
 static PyObject *__pyx_pw_5pyfit_8strength_2RM_5femaleMiddleAge(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_2RM_5femaleMiddleAge(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_reps;
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("femaleMiddleAge (wrapper)", 0);
@@ -7563,11 +8852,11 @@ static PyObject *__pyx_pw_5pyfit_8strength_2RM_5femaleMiddleAge(PyObject *__pyx_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_weight)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("femaleMiddleAge", 1, 2, 2, 1); __PYX_ERR(0, 209, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("femaleMiddleAge", 1, 2, 2, 1); __PYX_ERR(0, 232, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "femaleMiddleAge") < 0)) __PYX_ERR(0, 209, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "femaleMiddleAge") < 0)) __PYX_ERR(0, 232, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7575,12 +8864,12 @@ static PyObject *__pyx_pw_5pyfit_8strength_2RM_5femaleMiddleAge(PyObject *__pyx_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_reps = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_reps == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 209, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 209, __pyx_L3_error)
+    __pyx_v_reps = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_reps == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("femaleMiddleAge", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 209, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("femaleMiddleAge", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 232, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.strength.RM.femaleMiddleAge", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7593,13 +8882,13 @@ static PyObject *__pyx_pw_5pyfit_8strength_2RM_5femaleMiddleAge(PyObject *__pyx_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_2RM_4femaleMiddleAge(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_2RM_4femaleMiddleAge(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("femaleMiddleAge", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(__pyx_v_self, __pyx_v_reps, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_2RM_femaleMiddleAge(__pyx_v_self, __pyx_v_reps, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7616,17 +8905,17 @@ static PyObject *__pyx_pf_5pyfit_8strength_2RM_4femaleMiddleAge(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":212
+/* "pyfit/strength.pyx":235
  *         return  (1.06 * weight) + (0.58 * reps) - (0.20 * self.age) - 3.41
  * 
- *     cpdef float femaleOlder(self, int reps, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double femaleOlder(self, int reps, double weight):             # <<<<<<<<<<<<<<
  *         return (0.92 * weight) + (0.79 * reps) - (0.20 * self.age) - 3.73
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_2RM_7femaleOlder(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, float __pyx_v_weight, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, double __pyx_v_weight, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -7636,18 +8925,18 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8s
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
-  float __pyx_t_9;
+  double __pyx_t_9;
   __Pyx_RefNannySetupContext("femaleOlder", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_femaleOlder); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_femaleOlder); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_8strength_2RM_7femaleOlder)) {
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_reps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_reps); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 235, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_weight); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 235, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -7662,7 +8951,7 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8s
           __pyx_t_7 = 1;
         }
       }
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 212, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 235, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -7673,11 +8962,11 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8s
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
       __pyx_t_3 = 0;
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 235, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_9 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L1_error)
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_9;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7686,20 +8975,20 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8s
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/strength.pyx":213
+  /* "pyfit/strength.pyx":236
  * 
- *     cpdef float femaleOlder(self, int reps, float weight):
+ *     cpdef double femaleOlder(self, int reps, double weight):
  *         return (0.92 * weight) + (0.79 * reps) - (0.20 * self.age) - 3.73             # <<<<<<<<<<<<<<
  * 
- * cpdef float relative(float weight, float rm):
+ * cpdef double relative(double weight, double rm):
  */
   __pyx_r = ((((0.92 * __pyx_v_weight) + (0.79 * __pyx_v_reps)) - (0.20 * __pyx_v_self->age)) - 3.73);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":212
+  /* "pyfit/strength.pyx":235
  *         return  (1.06 * weight) + (0.58 * reps) - (0.20 * self.age) - 3.41
  * 
- *     cpdef float femaleOlder(self, int reps, float weight):             # <<<<<<<<<<<<<<
+ *     cpdef double femaleOlder(self, int reps, double weight):             # <<<<<<<<<<<<<<
  *         return (0.92 * weight) + (0.79 * reps) - (0.20 * self.age) - 3.73
  * 
  */
@@ -7724,7 +9013,7 @@ static float __pyx_f_5pyfit_8strength_2RM_femaleOlder(struct __pyx_obj_5pyfit_8s
 static PyObject *__pyx_pw_5pyfit_8strength_2RM_7femaleOlder(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_2RM_7femaleOlder(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_reps;
-  float __pyx_v_weight;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("femaleOlder (wrapper)", 0);
@@ -7748,11 +9037,11 @@ static PyObject *__pyx_pw_5pyfit_8strength_2RM_7femaleOlder(PyObject *__pyx_v_se
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_weight)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("femaleOlder", 1, 2, 2, 1); __PYX_ERR(0, 212, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("femaleOlder", 1, 2, 2, 1); __PYX_ERR(0, 235, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "femaleOlder") < 0)) __PYX_ERR(0, 212, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "femaleOlder") < 0)) __PYX_ERR(0, 235, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7760,12 +9049,12 @@ static PyObject *__pyx_pw_5pyfit_8strength_2RM_7femaleOlder(PyObject *__pyx_v_se
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_reps = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_reps == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L3_error)
+    __pyx_v_reps = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_reps == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("femaleOlder", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 212, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("femaleOlder", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 235, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.strength.RM.femaleOlder", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7778,13 +9067,13 @@ static PyObject *__pyx_pw_5pyfit_8strength_2RM_7femaleOlder(PyObject *__pyx_v_se
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_2RM_6femaleOlder(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_8strength_2RM_6femaleOlder(struct __pyx_obj_5pyfit_8strength_RM *__pyx_v_self, int __pyx_v_reps, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("femaleOlder", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_2RM_femaleOlder(__pyx_v_self, __pyx_v_reps, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_2RM_femaleOlder(__pyx_v_self, __pyx_v_reps, __pyx_v_weight, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7801,11 +9090,11 @@ static PyObject *__pyx_pf_5pyfit_8strength_2RM_6femaleOlder(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":197
+/* "pyfit/strength.pyx":220
  * 
  * cdef class RM(object):
  *     cdef readonly int gender             # <<<<<<<<<<<<<<
- *     cdef readonly float age
+ *     cdef readonly double age
  * 
  */
 
@@ -7828,7 +9117,7 @@ static PyObject *__pyx_pf_5pyfit_8strength_2RM_6gender___get__(struct __pyx_obj_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7845,12 +9134,12 @@ static PyObject *__pyx_pf_5pyfit_8strength_2RM_6gender___get__(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":198
+/* "pyfit/strength.pyx":221
  * cdef class RM(object):
  *     cdef readonly int gender
- *     cdef readonly float age             # <<<<<<<<<<<<<<
+ *     cdef readonly double age             # <<<<<<<<<<<<<<
  * 
- *     def __cinit__(self, int gender, float age):
+ *     def __cinit__(self, int gender, double age):
  */
 
 /* Python wrapper */
@@ -7872,7 +9161,7 @@ static PyObject *__pyx_pf_5pyfit_8strength_2RM_3age___get__(struct __pyx_obj_5py
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7889,35 +9178,35 @@ static PyObject *__pyx_pf_5pyfit_8strength_2RM_3age___get__(struct __pyx_obj_5py
   return __pyx_r;
 }
 
-/* "pyfit/strength.pyx":215
+/* "pyfit/strength.pyx":238
  *         return (0.92 * weight) + (0.79 * reps) - (0.20 * self.age) - 3.73
  * 
- * cpdef float relative(float weight, float rm):             # <<<<<<<<<<<<<<
+ * cpdef double relative(double weight, double rm):             # <<<<<<<<<<<<<<
  *         return rm / weight
  */
 
 static PyObject *__pyx_pw_5pyfit_8strength_1relative(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_8strength_relative(float __pyx_v_weight, float __pyx_v_rm, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_8strength_relative(double __pyx_v_weight, double __pyx_v_rm, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("relative", 0);
 
-  /* "pyfit/strength.pyx":216
+  /* "pyfit/strength.pyx":239
  * 
- * cpdef float relative(float weight, float rm):
+ * cpdef double relative(double weight, double rm):
  *         return rm / weight             # <<<<<<<<<<<<<<
  */
   if (unlikely(__pyx_v_weight == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 216, __pyx_L1_error)
+    __PYX_ERR(0, 239, __pyx_L1_error)
   }
   __pyx_r = (__pyx_v_rm / __pyx_v_weight);
   goto __pyx_L0;
 
-  /* "pyfit/strength.pyx":215
+  /* "pyfit/strength.pyx":238
  *         return (0.92 * weight) + (0.79 * reps) - (0.20 * self.age) - 3.73
  * 
- * cpdef float relative(float weight, float rm):             # <<<<<<<<<<<<<<
+ * cpdef double relative(double weight, double rm):             # <<<<<<<<<<<<<<
  *         return rm / weight
  */
 
@@ -7933,8 +9222,8 @@ static float __pyx_f_5pyfit_8strength_relative(float __pyx_v_weight, float __pyx
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_8strength_1relative(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_8strength_1relative(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_weight;
-  float __pyx_v_rm;
+  double __pyx_v_weight;
+  double __pyx_v_rm;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("relative (wrapper)", 0);
@@ -7958,11 +9247,11 @@ static PyObject *__pyx_pw_5pyfit_8strength_1relative(PyObject *__pyx_self, PyObj
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_rm)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("relative", 1, 2, 2, 1); __PYX_ERR(0, 215, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("relative", 1, 2, 2, 1); __PYX_ERR(0, 238, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "relative") < 0)) __PYX_ERR(0, 215, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "relative") < 0)) __PYX_ERR(0, 238, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7970,12 +9259,12 @@ static PyObject *__pyx_pw_5pyfit_8strength_1relative(PyObject *__pyx_self, PyObj
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 215, __pyx_L3_error)
-    __pyx_v_rm = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_rm == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 215, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 238, __pyx_L3_error)
+    __pyx_v_rm = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_rm == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 238, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("relative", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 215, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("relative", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 238, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.strength.relative", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7988,13 +9277,13 @@ static PyObject *__pyx_pw_5pyfit_8strength_1relative(PyObject *__pyx_self, PyObj
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_8strength_relative(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_weight, float __pyx_v_rm) {
+static PyObject *__pyx_pf_5pyfit_8strength_relative(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_weight, double __pyx_v_rm) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("relative", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_relative(__pyx_v_weight, __pyx_v_rm, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_8strength_relative(__pyx_v_weight, __pyx_v_rm, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8344,6 +9633,7 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_Abadie(PyTypeObject *t, PyObject 
 
 static PyMethodDef __pyx_methods_5pyfit_8strength_Abadie[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_6Abadie_1predict, METH_O, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_6Abadie_3weight, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -8417,6 +9707,7 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_Baechle(PyTypeObject *t, PyObject
 
 static PyMethodDef __pyx_methods_5pyfit_8strength_Baechle[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_7Baechle_1predict, METH_O, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_7Baechle_3weight, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -8490,7 +9781,8 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_Brzycki(PyTypeObject *t, PyObject
 
 static PyMethodDef __pyx_methods_5pyfit_8strength_Brzycki[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_1predict, METH_O, 0},
-  {"twoSet", (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_3twoSet, METH_VARARGS|METH_KEYWORDS, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_3weight, METH_O, 0},
+  {"twoSet", (PyCFunction)__pyx_pw_5pyfit_8strength_7Brzycki_5twoSet, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -8637,7 +9929,8 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_Landers(PyTypeObject *t, PyObject
 
 static PyMethodDef __pyx_methods_5pyfit_8strength_Landers[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_1predict, METH_O, 0},
-  {"percent", (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_3percent, METH_NOARGS, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_3weight, METH_O, 0},
+  {"percent", (PyCFunction)__pyx_pw_5pyfit_8strength_7Landers_5percent, METH_NOARGS, 0},
   {0, 0, 0, 0}
 };
 
@@ -8711,6 +10004,7 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_Lombardi(PyTypeObject *t, PyObjec
 
 static PyMethodDef __pyx_methods_5pyfit_8strength_Lombardi[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_8Lombardi_1predict, METH_O, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_8Lombardi_3weight, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -8786,6 +10080,7 @@ static PyMethodDef __pyx_methods_5pyfit_8strength_Mayhew[] = {
   {"football", (PyCFunction)__pyx_pw_5pyfit_8strength_6Mayhew_1football, METH_NOARGS, 0},
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_6Mayhew_3predict, METH_O, 0},
   {"percent", (PyCFunction)__pyx_pw_5pyfit_8strength_6Mayhew_5percent, METH_NOARGS, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_6Mayhew_7weight, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -8859,6 +10154,7 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_McGlothin(PyTypeObject *t, PyObje
 
 static PyMethodDef __pyx_methods_5pyfit_8strength_McGlothin[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_9McGlothin_1predict, METH_O, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_9McGlothin_3weight, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -8933,6 +10229,7 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_OConnor(PyTypeObject *t, PyObject
 static PyMethodDef __pyx_methods_5pyfit_8strength_OConnor[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_7OConnor_1predict, METH_O, 0},
   {"percent", (PyCFunction)__pyx_pw_5pyfit_8strength_7OConnor_3percent, METH_O, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_7OConnor_5weight, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -9152,6 +10449,7 @@ static PyObject *__pyx_tp_new_5pyfit_8strength_Wathan(PyTypeObject *t, PyObject 
 
 static PyMethodDef __pyx_methods_5pyfit_8strength_Wathan[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_8strength_6Wathan_1predict, METH_O, 0},
+  {"weight", (PyCFunction)__pyx_pw_5pyfit_8strength_6Wathan_3weight, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -9401,7 +10699,7 @@ static int __Pyx_InitCachedConstants(void) {
 
   /* "pyfit/strength.pyx":113
  * 
- *     cdef float predict(self, float weight):
+ *     cdef double predict(self, double weight):
  *         raise NotImplementedError("The prediction method is not implemented")             # <<<<<<<<<<<<<<
  * 
  * cdef class Abadie(RMEstimator):
@@ -9509,31 +10807,31 @@ PyMODINIT_FUNC PyInit_strength(void)
   /*--- Function export code ---*/
   /*--- Type init code ---*/
   __pyx_vtabptr_5pyfit_8strength_Compare = &__pyx_vtable_5pyfit_8strength_Compare;
-  __pyx_vtable_5pyfit_8strength_Compare.oCarroll = (float (*)(struct __pyx_obj_5pyfit_8strength_Compare *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_oCarroll;
-  __pyx_vtable_5pyfit_8strength_Compare.siffWeight = (float (*)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_siffWeight;
-  __pyx_vtable_5pyfit_8strength_Compare.siffPower = (float (*)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_siffPower;
-  __pyx_vtable_5pyfit_8strength_Compare.siff = (float (*)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_7Compare_siff *__pyx_optional_args))__pyx_f_5pyfit_8strength_7Compare_siff;
-  __pyx_vtable_5pyfit_8strength_Compare.sinclair = (float (*)(struct __pyx_obj_5pyfit_8strength_Compare *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_sinclair;
-  __pyx_vtable_5pyfit_8strength_Compare.wilks = (float (*)(struct __pyx_obj_5pyfit_8strength_Compare *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_wilks;
+  __pyx_vtable_5pyfit_8strength_Compare.oCarroll = (double (*)(struct __pyx_obj_5pyfit_8strength_Compare *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_oCarroll;
+  __pyx_vtable_5pyfit_8strength_Compare.siffWeight = (double (*)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_siffWeight;
+  __pyx_vtable_5pyfit_8strength_Compare.siffPower = (double (*)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_siffPower;
+  __pyx_vtable_5pyfit_8strength_Compare.siff = (double (*)(struct __pyx_obj_5pyfit_8strength_Compare *, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_7Compare_siff *__pyx_optional_args))__pyx_f_5pyfit_8strength_7Compare_siff;
+  __pyx_vtable_5pyfit_8strength_Compare.sinclair = (double (*)(struct __pyx_obj_5pyfit_8strength_Compare *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_sinclair;
+  __pyx_vtable_5pyfit_8strength_Compare.wilks = (double (*)(struct __pyx_obj_5pyfit_8strength_Compare *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Compare_wilks;
   if (PyType_Ready(&__pyx_type_5pyfit_8strength_Compare) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Compare.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Compare.tp_dict, __pyx_vtabptr_5pyfit_8strength_Compare) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "Compare", (PyObject *)&__pyx_type_5pyfit_8strength_Compare) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Compare = &__pyx_type_5pyfit_8strength_Compare;
   __pyx_vtabptr_5pyfit_8strength_Jump = &__pyx_vtable_5pyfit_8strength_Jump;
-  __pyx_vtable_5pyfit_8strength_Jump.bosco = (float (*)(struct __pyx_obj_5pyfit_8strength_Jump *, float, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_4Jump_bosco;
-  __pyx_vtable_5pyfit_8strength_Jump.lewis = (float (*)(struct __pyx_obj_5pyfit_8strength_Jump *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_4Jump_lewis;
-  __pyx_vtable_5pyfit_8strength_Jump.harman = (float (*)(struct __pyx_obj_5pyfit_8strength_Jump *, float, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_harman *__pyx_optional_args))__pyx_f_5pyfit_8strength_4Jump_harman;
-  __pyx_vtable_5pyfit_8strength_Jump.jb = (float (*)(struct __pyx_obj_5pyfit_8strength_Jump *, float, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_jb *__pyx_optional_args))__pyx_f_5pyfit_8strength_4Jump_jb;
-  __pyx_vtable_5pyfit_8strength_Jump.sayer = (float (*)(struct __pyx_obj_5pyfit_8strength_Jump *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_4Jump_sayer;
-  __pyx_vtable_5pyfit_8strength_Jump.mk = (float (*)(struct __pyx_obj_5pyfit_8strength_Jump *, float, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_4Jump_mk;
+  __pyx_vtable_5pyfit_8strength_Jump.bosco = (double (*)(struct __pyx_obj_5pyfit_8strength_Jump *, double, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_4Jump_bosco;
+  __pyx_vtable_5pyfit_8strength_Jump.lewis = (double (*)(struct __pyx_obj_5pyfit_8strength_Jump *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_4Jump_lewis;
+  __pyx_vtable_5pyfit_8strength_Jump.harman = (double (*)(struct __pyx_obj_5pyfit_8strength_Jump *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_harman *__pyx_optional_args))__pyx_f_5pyfit_8strength_4Jump_harman;
+  __pyx_vtable_5pyfit_8strength_Jump.jb = (double (*)(struct __pyx_obj_5pyfit_8strength_Jump *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_8strength_4Jump_jb *__pyx_optional_args))__pyx_f_5pyfit_8strength_4Jump_jb;
+  __pyx_vtable_5pyfit_8strength_Jump.sayer = (double (*)(struct __pyx_obj_5pyfit_8strength_Jump *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_4Jump_sayer;
+  __pyx_vtable_5pyfit_8strength_Jump.mk = (double (*)(struct __pyx_obj_5pyfit_8strength_Jump *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_4Jump_mk;
   if (PyType_Ready(&__pyx_type_5pyfit_8strength_Jump) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Jump.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Jump.tp_dict, __pyx_vtabptr_5pyfit_8strength_Jump) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "Jump", (PyObject *)&__pyx_type_5pyfit_8strength_Jump) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Jump = &__pyx_type_5pyfit_8strength_Jump;
   __pyx_vtabptr_5pyfit_8strength_RMEstimator = &__pyx_vtable_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_RMEstimator.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_11RMEstimator_predict;
+  __pyx_vtable_5pyfit_8strength_RMEstimator.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_11RMEstimator_predict;
   if (PyType_Ready(&__pyx_type_5pyfit_8strength_RMEstimator) < 0) __PYX_ERR(0, 106, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_RMEstimator.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_RMEstimator.tp_dict, __pyx_vtabptr_5pyfit_8strength_RMEstimator) < 0) __PYX_ERR(0, 106, __pyx_L1_error)
@@ -9541,8 +10839,9 @@ PyMODINIT_FUNC PyInit_strength(void)
   __pyx_ptype_5pyfit_8strength_RMEstimator = &__pyx_type_5pyfit_8strength_RMEstimator;
   __pyx_vtabptr_5pyfit_8strength_Abadie = &__pyx_vtable_5pyfit_8strength_Abadie;
   __pyx_vtable_5pyfit_8strength_Abadie.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_Abadie.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_6Abadie_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_Abadie.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_Abadie *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Abadie_predict;
+  __pyx_vtable_5pyfit_8strength_Abadie.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_6Abadie_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_Abadie.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_Abadie *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Abadie_predict;
+  __pyx_vtable_5pyfit_8strength_Abadie.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_Abadie *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Abadie_weight;
   __pyx_type_5pyfit_8strength_Abadie.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
   if (PyType_Ready(&__pyx_type_5pyfit_8strength_Abadie) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Abadie.tp_print = 0;
@@ -9551,128 +10850,135 @@ PyMODINIT_FUNC PyInit_strength(void)
   __pyx_ptype_5pyfit_8strength_Abadie = &__pyx_type_5pyfit_8strength_Abadie;
   __pyx_vtabptr_5pyfit_8strength_Baechle = &__pyx_vtable_5pyfit_8strength_Baechle;
   __pyx_vtable_5pyfit_8strength_Baechle.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_Baechle.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_7Baechle_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_Baechle.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_Baechle *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Baechle_predict;
+  __pyx_vtable_5pyfit_8strength_Baechle.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_7Baechle_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_Baechle.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_Baechle *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Baechle_predict;
+  __pyx_vtable_5pyfit_8strength_Baechle.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_Baechle *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Baechle_weight;
   __pyx_type_5pyfit_8strength_Baechle.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Baechle) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Baechle) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Baechle.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Baechle.tp_dict, __pyx_vtabptr_5pyfit_8strength_Baechle) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Baechle", (PyObject *)&__pyx_type_5pyfit_8strength_Baechle) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Baechle.tp_dict, __pyx_vtabptr_5pyfit_8strength_Baechle) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Baechle", (PyObject *)&__pyx_type_5pyfit_8strength_Baechle) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Baechle = &__pyx_type_5pyfit_8strength_Baechle;
   __pyx_vtabptr_5pyfit_8strength_Brzycki = &__pyx_vtable_5pyfit_8strength_Brzycki;
   __pyx_vtable_5pyfit_8strength_Brzycki.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_Brzycki.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_7Brzycki_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_Brzycki.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_Brzycki *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Brzycki_predict;
-  __pyx_vtable_5pyfit_8strength_Brzycki.twoSet = (float (*)(struct __pyx_obj_5pyfit_8strength_Brzycki *, float, int, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Brzycki_twoSet;
+  __pyx_vtable_5pyfit_8strength_Brzycki.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_7Brzycki_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_Brzycki.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_Brzycki *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Brzycki_predict;
+  __pyx_vtable_5pyfit_8strength_Brzycki.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_Brzycki *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Brzycki_weight;
+  __pyx_vtable_5pyfit_8strength_Brzycki.twoSet = (double (*)(struct __pyx_obj_5pyfit_8strength_Brzycki *, double, int, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Brzycki_twoSet;
   __pyx_type_5pyfit_8strength_Brzycki.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Brzycki) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Brzycki) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Brzycki.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Brzycki.tp_dict, __pyx_vtabptr_5pyfit_8strength_Brzycki) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Brzycki", (PyObject *)&__pyx_type_5pyfit_8strength_Brzycki) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Brzycki.tp_dict, __pyx_vtabptr_5pyfit_8strength_Brzycki) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Brzycki", (PyObject *)&__pyx_type_5pyfit_8strength_Brzycki) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Brzycki = &__pyx_type_5pyfit_8strength_Brzycki;
   __pyx_vtabptr_5pyfit_8strength_Epley = &__pyx_vtable_5pyfit_8strength_Epley;
   __pyx_vtable_5pyfit_8strength_Epley.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_Epley.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_5Epley_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_Epley.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_Epley *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_5Epley_predict;
-  __pyx_vtable_5pyfit_8strength_Epley.percent = (float (*)(struct __pyx_obj_5pyfit_8strength_Epley *, float))__pyx_f_5pyfit_8strength_5Epley_percent;
+  __pyx_vtable_5pyfit_8strength_Epley.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_5Epley_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_Epley.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_Epley *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_5Epley_predict;
   __pyx_type_5pyfit_8strength_Epley.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Epley) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Epley) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Epley.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Epley.tp_dict, __pyx_vtabptr_5pyfit_8strength_Epley) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Epley", (PyObject *)&__pyx_type_5pyfit_8strength_Epley) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Epley.tp_dict, __pyx_vtabptr_5pyfit_8strength_Epley) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Epley", (PyObject *)&__pyx_type_5pyfit_8strength_Epley) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Epley = &__pyx_type_5pyfit_8strength_Epley;
   __pyx_vtabptr_5pyfit_8strength_Landers = &__pyx_vtable_5pyfit_8strength_Landers;
   __pyx_vtable_5pyfit_8strength_Landers.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_Landers.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_7Landers_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_Landers.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_Landers *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Landers_predict;
-  __pyx_vtable_5pyfit_8strength_Landers.percent = (float (*)(struct __pyx_obj_5pyfit_8strength_Landers *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Landers_percent;
+  __pyx_vtable_5pyfit_8strength_Landers.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_7Landers_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_Landers.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_Landers *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Landers_predict;
+  __pyx_vtable_5pyfit_8strength_Landers.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_Landers *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Landers_weight;
+  __pyx_vtable_5pyfit_8strength_Landers.percent = (double (*)(struct __pyx_obj_5pyfit_8strength_Landers *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7Landers_percent;
   __pyx_type_5pyfit_8strength_Landers.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Landers) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Landers) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Landers.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Landers.tp_dict, __pyx_vtabptr_5pyfit_8strength_Landers) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Landers", (PyObject *)&__pyx_type_5pyfit_8strength_Landers) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Landers.tp_dict, __pyx_vtabptr_5pyfit_8strength_Landers) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Landers", (PyObject *)&__pyx_type_5pyfit_8strength_Landers) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Landers = &__pyx_type_5pyfit_8strength_Landers;
   __pyx_vtabptr_5pyfit_8strength_Lombardi = &__pyx_vtable_5pyfit_8strength_Lombardi;
   __pyx_vtable_5pyfit_8strength_Lombardi.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_Lombardi.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_8Lombardi_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_Lombardi.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_Lombardi *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_8Lombardi_predict;
+  __pyx_vtable_5pyfit_8strength_Lombardi.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_8Lombardi_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_Lombardi.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_Lombardi *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_8Lombardi_predict;
+  __pyx_vtable_5pyfit_8strength_Lombardi.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_Lombardi *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_8Lombardi_weight;
   __pyx_type_5pyfit_8strength_Lombardi.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Lombardi) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Lombardi) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Lombardi.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Lombardi.tp_dict, __pyx_vtabptr_5pyfit_8strength_Lombardi) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Lombardi", (PyObject *)&__pyx_type_5pyfit_8strength_Lombardi) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Lombardi.tp_dict, __pyx_vtabptr_5pyfit_8strength_Lombardi) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Lombardi", (PyObject *)&__pyx_type_5pyfit_8strength_Lombardi) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Lombardi = &__pyx_type_5pyfit_8strength_Lombardi;
   __pyx_vtabptr_5pyfit_8strength_Mayhew = &__pyx_vtable_5pyfit_8strength_Mayhew;
   __pyx_vtable_5pyfit_8strength_Mayhew.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_Mayhew.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_6Mayhew_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_Mayhew.football = (float (*)(struct __pyx_obj_5pyfit_8strength_Mayhew *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Mayhew_football;
-  __pyx_vtable_5pyfit_8strength_Mayhew.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_Mayhew *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Mayhew_predict;
-  __pyx_vtable_5pyfit_8strength_Mayhew.percent = (float (*)(struct __pyx_obj_5pyfit_8strength_Mayhew *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Mayhew_percent;
+  __pyx_vtable_5pyfit_8strength_Mayhew.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_6Mayhew_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_Mayhew.football = (double (*)(struct __pyx_obj_5pyfit_8strength_Mayhew *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Mayhew_football;
+  __pyx_vtable_5pyfit_8strength_Mayhew.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_Mayhew *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Mayhew_predict;
+  __pyx_vtable_5pyfit_8strength_Mayhew.percent = (double (*)(struct __pyx_obj_5pyfit_8strength_Mayhew *, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Mayhew_percent;
+  __pyx_vtable_5pyfit_8strength_Mayhew.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_Mayhew *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Mayhew_weight;
   __pyx_type_5pyfit_8strength_Mayhew.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Mayhew) < 0) __PYX_ERR(0, 156, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Mayhew) < 0) __PYX_ERR(0, 167, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Mayhew.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Mayhew.tp_dict, __pyx_vtabptr_5pyfit_8strength_Mayhew) < 0) __PYX_ERR(0, 156, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Mayhew", (PyObject *)&__pyx_type_5pyfit_8strength_Mayhew) < 0) __PYX_ERR(0, 156, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Mayhew.tp_dict, __pyx_vtabptr_5pyfit_8strength_Mayhew) < 0) __PYX_ERR(0, 167, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Mayhew", (PyObject *)&__pyx_type_5pyfit_8strength_Mayhew) < 0) __PYX_ERR(0, 167, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Mayhew = &__pyx_type_5pyfit_8strength_Mayhew;
   __pyx_vtabptr_5pyfit_8strength_McGlothin = &__pyx_vtable_5pyfit_8strength_McGlothin;
   __pyx_vtable_5pyfit_8strength_McGlothin.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_McGlothin.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_9McGlothin_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_McGlothin.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_McGlothin *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_9McGlothin_predict;
+  __pyx_vtable_5pyfit_8strength_McGlothin.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_9McGlothin_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_McGlothin.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_McGlothin *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_9McGlothin_predict;
+  __pyx_vtable_5pyfit_8strength_McGlothin.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_McGlothin *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_9McGlothin_weight;
   __pyx_type_5pyfit_8strength_McGlothin.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_McGlothin) < 0) __PYX_ERR(0, 168, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_McGlothin) < 0) __PYX_ERR(0, 182, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_McGlothin.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_McGlothin.tp_dict, __pyx_vtabptr_5pyfit_8strength_McGlothin) < 0) __PYX_ERR(0, 168, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "McGlothin", (PyObject *)&__pyx_type_5pyfit_8strength_McGlothin) < 0) __PYX_ERR(0, 168, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_McGlothin.tp_dict, __pyx_vtabptr_5pyfit_8strength_McGlothin) < 0) __PYX_ERR(0, 182, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "McGlothin", (PyObject *)&__pyx_type_5pyfit_8strength_McGlothin) < 0) __PYX_ERR(0, 182, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_McGlothin = &__pyx_type_5pyfit_8strength_McGlothin;
   __pyx_vtabptr_5pyfit_8strength_OConnor = &__pyx_vtable_5pyfit_8strength_OConnor;
   __pyx_vtable_5pyfit_8strength_OConnor.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_OConnor.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_7OConnor_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_OConnor.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_OConnor *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7OConnor_predict;
-  __pyx_vtable_5pyfit_8strength_OConnor.percent = (float (*)(struct __pyx_obj_5pyfit_8strength_OConnor *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7OConnor_percent;
+  __pyx_vtable_5pyfit_8strength_OConnor.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_7OConnor_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_OConnor.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_OConnor *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7OConnor_predict;
+  __pyx_vtable_5pyfit_8strength_OConnor.percent = (double (*)(struct __pyx_obj_5pyfit_8strength_OConnor *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7OConnor_percent;
+  __pyx_vtable_5pyfit_8strength_OConnor.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_OConnor *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_7OConnor_weight;
   __pyx_type_5pyfit_8strength_OConnor.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_OConnor) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_OConnor) < 0) __PYX_ERR(0, 190, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_OConnor.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_OConnor.tp_dict, __pyx_vtabptr_5pyfit_8strength_OConnor) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "OConnor", (PyObject *)&__pyx_type_5pyfit_8strength_OConnor) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_OConnor.tp_dict, __pyx_vtabptr_5pyfit_8strength_OConnor) < 0) __PYX_ERR(0, 190, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "OConnor", (PyObject *)&__pyx_type_5pyfit_8strength_OConnor) < 0) __PYX_ERR(0, 190, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_OConnor = &__pyx_type_5pyfit_8strength_OConnor;
   __pyx_vtabptr_5pyfit_8strength_ReynoldsCP = &__pyx_vtable_5pyfit_8strength_ReynoldsCP;
   __pyx_vtable_5pyfit_8strength_ReynoldsCP.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_ReynoldsCP.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_10ReynoldsCP_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_ReynoldsCP.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_ReynoldsCP *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_10ReynoldsCP_predict;
+  __pyx_vtable_5pyfit_8strength_ReynoldsCP.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_10ReynoldsCP_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_ReynoldsCP.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_ReynoldsCP *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_10ReynoldsCP_predict;
   __pyx_type_5pyfit_8strength_ReynoldsCP.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_ReynoldsCP) < 0) __PYX_ERR(0, 181, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_ReynoldsCP) < 0) __PYX_ERR(0, 201, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_ReynoldsCP.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_ReynoldsCP.tp_dict, __pyx_vtabptr_5pyfit_8strength_ReynoldsCP) < 0) __PYX_ERR(0, 181, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "ReynoldsCP", (PyObject *)&__pyx_type_5pyfit_8strength_ReynoldsCP) < 0) __PYX_ERR(0, 181, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_ReynoldsCP.tp_dict, __pyx_vtabptr_5pyfit_8strength_ReynoldsCP) < 0) __PYX_ERR(0, 201, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "ReynoldsCP", (PyObject *)&__pyx_type_5pyfit_8strength_ReynoldsCP) < 0) __PYX_ERR(0, 201, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_ReynoldsCP = &__pyx_type_5pyfit_8strength_ReynoldsCP;
   __pyx_vtabptr_5pyfit_8strength_ReynoldsLP = &__pyx_vtable_5pyfit_8strength_ReynoldsLP;
   __pyx_vtable_5pyfit_8strength_ReynoldsLP.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_ReynoldsLP.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_10ReynoldsLP_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_ReynoldsLP.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_ReynoldsLP *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_10ReynoldsLP_predict;
+  __pyx_vtable_5pyfit_8strength_ReynoldsLP.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_10ReynoldsLP_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_ReynoldsLP.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_ReynoldsLP *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_10ReynoldsLP_predict;
   __pyx_type_5pyfit_8strength_ReynoldsLP.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_ReynoldsLP) < 0) __PYX_ERR(0, 186, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_ReynoldsLP) < 0) __PYX_ERR(0, 206, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_ReynoldsLP.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_ReynoldsLP.tp_dict, __pyx_vtabptr_5pyfit_8strength_ReynoldsLP) < 0) __PYX_ERR(0, 186, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "ReynoldsLP", (PyObject *)&__pyx_type_5pyfit_8strength_ReynoldsLP) < 0) __PYX_ERR(0, 186, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_ReynoldsLP.tp_dict, __pyx_vtabptr_5pyfit_8strength_ReynoldsLP) < 0) __PYX_ERR(0, 206, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "ReynoldsLP", (PyObject *)&__pyx_type_5pyfit_8strength_ReynoldsLP) < 0) __PYX_ERR(0, 206, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_ReynoldsLP = &__pyx_type_5pyfit_8strength_ReynoldsLP;
   __pyx_vtabptr_5pyfit_8strength_Wathan = &__pyx_vtable_5pyfit_8strength_Wathan;
   __pyx_vtable_5pyfit_8strength_Wathan.__pyx_base = *__pyx_vtabptr_5pyfit_8strength_RMEstimator;
-  __pyx_vtable_5pyfit_8strength_Wathan.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, float))__pyx_f_5pyfit_8strength_6Wathan_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_8strength_Wathan.predict = (float (*)(struct __pyx_obj_5pyfit_8strength_Wathan *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Wathan_predict;
+  __pyx_vtable_5pyfit_8strength_Wathan.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_RMEstimator *, double))__pyx_f_5pyfit_8strength_6Wathan_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_8strength_Wathan.predict = (double (*)(struct __pyx_obj_5pyfit_8strength_Wathan *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Wathan_predict;
+  __pyx_vtable_5pyfit_8strength_Wathan.weight = (double (*)(struct __pyx_obj_5pyfit_8strength_Wathan *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_6Wathan_weight;
   __pyx_type_5pyfit_8strength_Wathan.tp_base = __pyx_ptype_5pyfit_8strength_RMEstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Wathan) < 0) __PYX_ERR(0, 191, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_Wathan) < 0) __PYX_ERR(0, 211, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_Wathan.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Wathan.tp_dict, __pyx_vtabptr_5pyfit_8strength_Wathan) < 0) __PYX_ERR(0, 191, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Wathan", (PyObject *)&__pyx_type_5pyfit_8strength_Wathan) < 0) __PYX_ERR(0, 191, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_Wathan.tp_dict, __pyx_vtabptr_5pyfit_8strength_Wathan) < 0) __PYX_ERR(0, 211, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Wathan", (PyObject *)&__pyx_type_5pyfit_8strength_Wathan) < 0) __PYX_ERR(0, 211, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_Wathan = &__pyx_type_5pyfit_8strength_Wathan;
   __pyx_vtabptr_5pyfit_8strength_RM = &__pyx_vtable_5pyfit_8strength_RM;
-  __pyx_vtable_5pyfit_8strength_RM.ymcaUpperBody = (float (*)(struct __pyx_obj_5pyfit_8strength_RM *, int, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_2RM_ymcaUpperBody;
-  __pyx_vtable_5pyfit_8strength_RM.femaleMiddleAge = (float (*)(struct __pyx_obj_5pyfit_8strength_RM *, int, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_2RM_femaleMiddleAge;
-  __pyx_vtable_5pyfit_8strength_RM.femaleOlder = (float (*)(struct __pyx_obj_5pyfit_8strength_RM *, int, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_2RM_femaleOlder;
-  if (PyType_Ready(&__pyx_type_5pyfit_8strength_RM) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_vtable_5pyfit_8strength_RM.ymcaUpperBody = (double (*)(struct __pyx_obj_5pyfit_8strength_RM *, int, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_2RM_ymcaUpperBody;
+  __pyx_vtable_5pyfit_8strength_RM.femaleMiddleAge = (double (*)(struct __pyx_obj_5pyfit_8strength_RM *, int, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_2RM_femaleMiddleAge;
+  __pyx_vtable_5pyfit_8strength_RM.femaleOlder = (double (*)(struct __pyx_obj_5pyfit_8strength_RM *, int, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_8strength_2RM_femaleOlder;
+  if (PyType_Ready(&__pyx_type_5pyfit_8strength_RM) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
   __pyx_type_5pyfit_8strength_RM.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_RM.tp_dict, __pyx_vtabptr_5pyfit_8strength_RM) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "RM", (PyObject *)&__pyx_type_5pyfit_8strength_RM) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_8strength_RM.tp_dict, __pyx_vtabptr_5pyfit_8strength_RM) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "RM", (PyObject *)&__pyx_type_5pyfit_8strength_RM) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
   __pyx_ptype_5pyfit_8strength_RM = &__pyx_type_5pyfit_8strength_RM;
   /*--- Type import code ---*/
   /*--- Variable import code ---*/

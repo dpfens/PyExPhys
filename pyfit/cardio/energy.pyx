@@ -7,57 +7,57 @@ cdef class BMREstimator(object):
     def __cinit__(self, int gender):
         self.gender = gender
 
-    cdef float predict(self, float age, float weight, float height):
+    cdef double predict(self, double age, double weight, double height):
         raise NotImplementedError("The prediction method is not implemented")
 
 cdef class HB(BMREstimator):
 
-    cpdef float predict(self, float age, float weight, float height):
+    cpdef double predict(self, double age, double weight, double height):
         if self.gender == Gender.Female:
             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
 
 cdef class RevisedHB(BMREstimator):
 
-    cpdef float predict(self, float age, float weight, float height):
+    cpdef double predict(self, double age, double weight, double height):
         if self.gender == Gender.Female:
             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
 
 cdef class MSJ(BMREstimator):
 
-    cpdef float predict(self, float age, float weight, float height):
+    cpdef double predict(self, double age, double weight, double height):
         if self.gender == Gender.Female:
             return (9.99 * weight + 6.25 * height - 4.92 * age - 161)
         return (9.99 * weight + 6.25 * height - 4.92 * age + 5)
 
 cdef class RMR(object):
     cdef readonly int gender
-    cdef readonly float age
-    cdef readonly float weight
-    cdef readonly float height
+    cdef readonly double age
+    cdef readonly double weight
+    cdef readonly double height
 
-    def __cinit__(self, int gender, float age, float weight, float height):
+    def __cinit__(self, int gender, double age, double weight, double height):
         self.gender = gender
         self.age = age
         self.weight = weight
         self.height = height
 
-    cpdef float quick(self):
+    cpdef double quick(self):
         if self.gender == Gender.Female:
             return self.weight * 22
         return self.weight * 24.2
 
-    cpdef float bsa(self, float bsa):
+    cpdef double bsa(self, double bsa):
         if self.gender == Gender.Female:
             return bsa * 840
         return bsa * 912
 
-cpdef float kma(float lbm):
+cpdef double kma(double lbm):
     return 370 + (21.6 * lbm)
 
 
-cpdef float cunningham(float lbm):
+cpdef double cunningham(double lbm):
     return 500 + (22 * lbm)
 
 cdef class TEEEstimator(object):
@@ -68,15 +68,15 @@ cdef class TEEEstimator(object):
         self.gender = gender
         self.pal = pal
 
-    cdef float predict(self, float age, float weight, float height):
+    cdef double predict(self, double age, double weight, double height):
         raise NotImplementedError("The prediction method is not implemented")
 
-    cpdef float fromActivity(self, float weight, float mets):
+    cpdef double fromActivity(self, double weight, double mets):
         return (mets * 3.5 * weight)/200
 
 cdef class ChildTEE(TEEEstimator):
 
-    cpdef float predict(self, float age, float weight, float height):
+    cpdef double predict(self, double age, double weight, double height):
         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
             return 88.5 - (61.9 * age) + 1*((26.7*weight)+(903*height))
         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -97,7 +97,7 @@ cdef class ChildTEE(TEEEstimator):
 
 cdef class AdultTEE(TEEEstimator):
 
-    cpdef float predict(self, float age, float weight, float height):
+    cpdef double predict(self, double age, double weight, double height):
         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
             return 662 - (9.53 * age) + 1*((15.9 * weight) + (540 * height))
         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:

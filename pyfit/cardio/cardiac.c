@@ -512,7 +512,7 @@ struct __pyx_obj_5pyfit_6cardio_7cardiac_RL;
 struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS;
 
 /* "pyfit/cardio/cardiac.pyx":3
- * from libc.math cimport pow
+ * from libc.math cimport pow, sqrt
  * 
  * cdef class HREstimator(object):             # <<<<<<<<<<<<<<
  *     def __cinit__(self):
@@ -536,8 +536,8 @@ struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand {
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":21
- *         return 216.6-(0.84*age)
+/* "pyfit/cardio/cardiac.pyx":24
+ *         return (hr-216.6)/-0.84
  * 
  * cdef class HF(HREstimator):             # <<<<<<<<<<<<<<
  *     """
@@ -548,8 +548,8 @@ struct __pyx_obj_5pyfit_6cardio_7cardiac_HF {
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":32
- *         return 208.0-(0.7 * age)
+/* "pyfit/cardio/cardiac.pyx":38
+ *         return 220 - hr
  * 
  * cdef class Gellish(HREstimator):             # <<<<<<<<<<<<<<
  *     """
@@ -560,8 +560,8 @@ struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish {
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":44
- *         return 207-(0.7 * age)
+/* "pyfit/cardio/cardiac.pyx":53
+ *         return (hr-207.0)/-0.7
  * 
  * cdef class Gulati(HREstimator):             # <<<<<<<<<<<<<<
  *     """
@@ -572,92 +572,92 @@ struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati {
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":55
- *         return 206-(0.88*age)
+/* "pyfit/cardio/cardiac.pyx":67
+ *         return (hr-206.0)/-0.88
  * 
  * cdef class LM(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 struct __pyx_obj_5pyfit_6cardio_7cardiac_LM {
   struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":60
- *         return 206.3-(0.711 * age)
+/* "pyfit/cardio/cardiac.pyx":75
+ *         return (hr-206.3)/-0.711
  * 
  * cdef class Miller(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller {
   struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":65
- *         return 217-(0.85 * age)
+/* "pyfit/cardio/cardiac.pyx":83
+ *         return (hr-217)/-0.85
  * 
  * cdef class Nes(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes {
   struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":70
- *         return 211 - (0.64 * age)
+/* "pyfit/cardio/cardiac.pyx":91
+ *         return (hr-211)/-0.64
  * 
  * cdef class OaklandL(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL {
   struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":75
- *         return 206.9 - (0.67 * age)
+/* "pyfit/cardio/cardiac.pyx":99
+ *         return (hr-206.9)/-0.67
  * 
  * cdef class OaklandNL1(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 {
   struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":80
- *         return 191.5 - (0.002 * pow(age,2) )
+/* "pyfit/cardio/cardiac.pyx":107
+ *         return 5*sqrt(3830-20*hr)
  * 
  * cdef class OaklandNL2(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 {
   struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":85
- *         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
+/* "pyfit/cardio/cardiac.pyx":115
+ *         return (-10./9)*(sqrt(8176-45*hr)-29)
  * 
  * cdef class RL(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 struct __pyx_obj_5pyfit_6cardio_7cardiac_RL {
   struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
 };
 
 
-/* "pyfit/cardio/cardiac.pyx":90
- *         return 205.8 - (0.685 * age)
+/* "pyfit/cardio/cardiac.pyx":123
+ *         return (hr-205.8)/-0.685
  * 
  * cdef class TMS(HREstimator):             # <<<<<<<<<<<<<<
  *     """
@@ -670,7 +670,7 @@ struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS {
 
 
 /* "pyfit/cardio/cardiac.pyx":3
- * from libc.math cimport pow
+ * from libc.math cimport pow, sqrt
  * 
  * cdef class HREstimator(object):             # <<<<<<<<<<<<<<
  *     def __cinit__(self):
@@ -678,7 +678,7 @@ struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS {
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator {
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
 
@@ -693,13 +693,14 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator *__pyx_vtabpt
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Astrand {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Astrand *__pyx_vtabptr_5pyfit_6cardio_7cardiac_Astrand;
 
 
-/* "pyfit/cardio/cardiac.pyx":21
- *         return 216.6-(0.84*age)
+/* "pyfit/cardio/cardiac.pyx":24
+ *         return (hr-216.6)/-0.84
  * 
  * cdef class HF(HREstimator):             # <<<<<<<<<<<<<<
  *     """
@@ -708,13 +709,14 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Astrand *__pyx_vtabptr_5p
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HF {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HF *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HF;
 
 
-/* "pyfit/cardio/cardiac.pyx":32
- *         return 208.0-(0.7 * age)
+/* "pyfit/cardio/cardiac.pyx":38
+ *         return 220 - hr
  * 
  * cdef class Gellish(HREstimator):             # <<<<<<<<<<<<<<
  *     """
@@ -723,13 +725,14 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HF *__pyx_vtabptr_5pyfit_
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Gellish {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Gellish *__pyx_vtabptr_5pyfit_6cardio_7cardiac_Gellish;
 
 
-/* "pyfit/cardio/cardiac.pyx":44
- *         return 207-(0.7 * age)
+/* "pyfit/cardio/cardiac.pyx":53
+ *         return (hr-207.0)/-0.7
  * 
  * cdef class Gulati(HREstimator):             # <<<<<<<<<<<<<<
  *     """
@@ -738,118 +741,126 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Gellish *__pyx_vtabptr_5p
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Gulati {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Gulati *__pyx_vtabptr_5pyfit_6cardio_7cardiac_Gulati;
 
 
-/* "pyfit/cardio/cardiac.pyx":55
- *         return 206-(0.88*age)
+/* "pyfit/cardio/cardiac.pyx":67
+ *         return (hr-206.0)/-0.88
  * 
  * cdef class LM(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_LM {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_LM *__pyx_vtabptr_5pyfit_6cardio_7cardiac_LM;
 
 
-/* "pyfit/cardio/cardiac.pyx":60
- *         return 206.3-(0.711 * age)
+/* "pyfit/cardio/cardiac.pyx":75
+ *         return (hr-206.3)/-0.711
  * 
  * cdef class Miller(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Miller {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Miller *__pyx_vtabptr_5pyfit_6cardio_7cardiac_Miller;
 
 
-/* "pyfit/cardio/cardiac.pyx":65
- *         return 217-(0.85 * age)
+/* "pyfit/cardio/cardiac.pyx":83
+ *         return (hr-217)/-0.85
  * 
  * cdef class Nes(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Nes {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_Nes *__pyx_vtabptr_5pyfit_6cardio_7cardiac_Nes;
 
 
-/* "pyfit/cardio/cardiac.pyx":70
- *         return 211 - (0.64 * age)
+/* "pyfit/cardio/cardiac.pyx":91
+ *         return (hr-211)/-0.64
  * 
  * cdef class OaklandL(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_OaklandL {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_OaklandL *__pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandL;
 
 
-/* "pyfit/cardio/cardiac.pyx":75
- *         return 206.9 - (0.67 * age)
+/* "pyfit/cardio/cardiac.pyx":99
+ *         return (hr-206.9)/-0.67
  * 
  * cdef class OaklandNL1(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_OaklandNL1 {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandNL1;
 
 
-/* "pyfit/cardio/cardiac.pyx":80
- *         return 191.5 - (0.002 * pow(age,2) )
+/* "pyfit/cardio/cardiac.pyx":107
+ *         return 5*sqrt(3830-20*hr)
  * 
  * cdef class OaklandNL2(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_OaklandNL2 {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandNL2;
 
 
-/* "pyfit/cardio/cardiac.pyx":85
- *         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
+/* "pyfit/cardio/cardiac.pyx":115
+ *         return (-10./9)*(sqrt(8176-45*hr)-29)
  * 
  * cdef class RL(HREstimator):             # <<<<<<<<<<<<<<
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  */
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_RL {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_RL *__pyx_vtabptr_5pyfit_6cardio_7cardiac_RL;
 
 
-/* "pyfit/cardio/cardiac.pyx":90
- *         return 205.8 - (0.685 * age)
+/* "pyfit/cardio/cardiac.pyx":123
+ *         return (hr-205.8)/-0.685
  * 
  * cdef class TMS(HREstimator):             # <<<<<<<<<<<<<<
  *     """
@@ -858,7 +869,8 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_RL *__pyx_vtabptr_5pyfit_
 
 struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_TMS {
   struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_HREstimator __pyx_base;
-  float (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *, float, int __pyx_skip_dispatch);
+  double (*predict)(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *, double, int __pyx_skip_dispatch);
+  double (*age)(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_7cardiac_TMS *__pyx_vtabptr_5pyfit_6cardio_7cardiac_TMS;
 
@@ -1047,31 +1059,43 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static float __pyx_f_5pyfit_6cardio_7cardiac_11HREstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *__pyx_v_self, CYTHON_UNUSED float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, float __pyx_v_age); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, float __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_11HREstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *__pyx_v_self, CYTHON_UNUSED double __pyx_v_age); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_2HF_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_2LM_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_6Miller_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_3Nes_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_2RL_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch); /* proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_age); /* proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_3TMS_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from 'libc.math' */
 
@@ -1089,14 +1113,15 @@ static PyTypeObject *__pyx_ptype_5pyfit_6cardio_7cardiac_OaklandNL1 = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_7cardiac_OaklandNL2 = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_7cardiac_RL = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_7cardiac_TMS = 0;
-static float __pyx_f_5pyfit_6cardio_7cardiac_mean_arterial_pressure(int, int, int __pyx_skip_dispatch); /*proto*/
-static float __pyx_f_5pyfit_6cardio_7cardiac_karvonen(float, int, int, int __pyx_skip_dispatch); /*proto*/
-static float __pyx_f_5pyfit_6cardio_7cardiac_zoladz(float, float, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_mean_arterial_pressure(int, int, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_karvonen(double, int, int, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_zoladz(double, double, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "pyfit.cardio.cardiac"
 int __pyx_module_is_main_pyfit__cardio__cardiac = 0;
 
 /* Implementation of 'pyfit.cardio.cardiac' */
 static PyObject *__pyx_builtin_NotImplementedError;
+static const char __pyx_k_age[] = "age";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_rest[] = "rest";
 static const char __pyx_k_test[] = "__test__";
@@ -1113,6 +1138,7 @@ static const char __pyx_k_The_prediction_method_is_not_imp[] = "The prediction m
 static PyObject *__pyx_n_s_NotImplementedError;
 static PyObject *__pyx_kp_s_The_prediction_method_is_not_imp;
 static PyObject *__pyx_n_s_adjuster;
+static PyObject *__pyx_n_s_age;
 static PyObject *__pyx_n_s_diastolic_bp;
 static PyObject *__pyx_n_s_hrMax;
 static PyObject *__pyx_n_s_intensity;
@@ -1124,21 +1150,33 @@ static PyObject *__pyx_n_s_rest;
 static PyObject *__pyx_n_s_systolic_bp;
 static PyObject *__pyx_n_s_test;
 static int __pyx_pf_5pyfit_6cardio_7cardiac_11HREstimator___cinit__(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2HF_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2LM_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Miller_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3Nes_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2RL_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, float __pyx_v_age); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3TMS_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, float __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2HF_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2HF_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2LM_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2LM_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Miller_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Miller_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3Nes_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3Nes_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2RL_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2RL_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_hr); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3TMS_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_age); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3TMS_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_hr); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_mean_arterial_pressure(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_diastolic_bp, int __pyx_v_systolic_bp); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2karvonen(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_intensity, int __pyx_v_rest, int __pyx_v_maximum); /* proto */
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_4zoladz(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_hrMax, float __pyx_v_adjuster); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2karvonen(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_intensity, int __pyx_v_rest, int __pyx_v_maximum); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_4zoladz(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_hrMax, double __pyx_v_adjuster); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_HREstimator(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_Astrand(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_HF(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -1192,20 +1230,20 @@ static int __pyx_pf_5pyfit_6cardio_7cardiac_11HREstimator___cinit__(CYTHON_UNUSE
 /* "pyfit/cardio/cardiac.pyx":7
  *         pass
  * 
- *     cdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
  */
 
-static float __pyx_f_5pyfit_6cardio_7cardiac_11HREstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *__pyx_v_self, CYTHON_UNUSED float __pyx_v_age) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_7cardiac_11HREstimator_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *__pyx_v_self, CYTHON_UNUSED double __pyx_v_age) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
 
   /* "pyfit/cardio/cardiac.pyx":8
  * 
- *     cdef float predict(self, float age):
+ *     cdef double predict(self, double age):
  *         raise NotImplementedError("The prediction method is not implemented")             # <<<<<<<<<<<<<<
  * 
  * cdef class Astrand(HREstimator):
@@ -1219,7 +1257,7 @@ static float __pyx_f_5pyfit_6cardio_7cardiac_11HREstimator_predict(CYTHON_UNUSED
   /* "pyfit/cardio/cardiac.pyx":7
  *         pass
  * 
- *     cdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("The prediction method is not implemented")
  * 
  */
@@ -1236,14 +1274,14 @@ static float __pyx_f_5pyfit_6cardio_7cardiac_11HREstimator_predict(CYTHON_UNUSED
 /* "pyfit/cardio/cardiac.pyx":18
  *     """
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 216.6-(0.84*age)
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+double __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1251,7 +1289,7 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __py
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -1289,7 +1327,7 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __py
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1300,10 +1338,10 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __py
 
   /* "pyfit/cardio/cardiac.pyx":19
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
  *         return 216.6-(0.84*age)             # <<<<<<<<<<<<<<
  * 
- * cdef class HF(HREstimator):
+ *     cpdef double age(self, double hr):
  */
   __pyx_r = (216.6 - (0.84 * __pyx_v_age));
   goto __pyx_L0;
@@ -1311,7 +1349,7 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __py
   /* "pyfit/cardio/cardiac.pyx":18
  *     """
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 216.6-(0.84*age)
  * 
  */
@@ -1334,12 +1372,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(CYTHON_UNUSED struct __py
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1347,14 +1385,14 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_1predict(PyObject *__
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1377,21 +1415,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_predict(struct __pyx_
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":29
- *     """
+/* "pyfit/cardio/cardiac.pyx":21
+ *         return 216.6-(0.84*age)
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 208.0-(0.7 * age)
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-216.6)/-0.84
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2HF_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_7Astrand_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1399,16 +1437,16 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(CYTHON_UNUSED struct __pyx_obj
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2HF_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -1422,22 +1460,22 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(CYTHON_UNUSED struct __pyx_obj
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 29, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 21, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1446,21 +1484,165 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(CYTHON_UNUSED struct __pyx_obj
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/cardiac.pyx":30
+  /* "pyfit/cardio/cardiac.pyx":22
  * 
- *     cpdef float predict(self, float age):
- *         return 208.0-(0.7 * age)             # <<<<<<<<<<<<<<
+ *     cpdef double age(self, double hr):
+ *         return (hr-216.6)/-0.84             # <<<<<<<<<<<<<<
  * 
- * cdef class Gellish(HREstimator):
+ * cdef class HF(HREstimator):
  */
-  __pyx_r = (208.0 - (0.7 * __pyx_v_age));
+  __pyx_r = ((__pyx_v_hr - 216.6) / -0.84);
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":29
+  /* "pyfit/cardio/cardiac.pyx":21
+ *         return 216.6-(0.84*age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-216.6)/-0.84
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Astrand.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Astrand.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Astrand_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_7Astrand_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Astrand.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":32
  *     """
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 208.0-(0.7 * age)
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 220 - age
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2HF_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2HF_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":33
+ * 
+ *     cpdef double predict(self, double age):
+ *         return 220 - age             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double age(self, double hr):
+ */
+  __pyx_r = (220.0 - __pyx_v_age);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":32
+ *     """
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 220 - age
  * 
  */
 
@@ -1482,12 +1664,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(CYTHON_UNUSED struct __pyx_obj
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2HF_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2HF_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1495,20 +1677,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2HF_1predict(PyObject *__pyx_v
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2HF_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2HF_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2HF_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2HF_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1525,21 +1707,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2HF_predict(struct __pyx_obj_5
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_2HF_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":41
- *     """
+/* "pyfit/cardio/cardiac.pyx":35
+ *         return 220 - age
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 207-(0.7 * age)
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return 220 - hr
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2HF_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_2HF_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1547,16 +1729,16 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(CYTHON_UNUSED struct __py
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2HF_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -1570,22 +1752,22 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(CYTHON_UNUSED struct __py
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 41, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 35, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1594,20 +1776,164 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(CYTHON_UNUSED struct __py
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/cardiac.pyx":42
+  /* "pyfit/cardio/cardiac.pyx":36
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double age(self, double hr):
+ *         return 220 - hr             # <<<<<<<<<<<<<<
+ * 
+ * cdef class Gellish(HREstimator):
+ */
+  __pyx_r = (220.0 - __pyx_v_hr);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":35
+ *         return 220 - age
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return 220 - hr
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.HF.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2HF_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2HF_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.HF.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2HF_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2HF_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2HF_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.HF.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":47
+ *     """
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 207-(0.7 * age)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 47, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":48
+ * 
+ *     cpdef double predict(self, double age):
  *         return 207-(0.7 * age)             # <<<<<<<<<<<<<<
  * 
- * cdef class Gulati(HREstimator):
+ *     cpdef double age(self, double hr):
  */
   __pyx_r = (207.0 - (0.7 * __pyx_v_age));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":41
+  /* "pyfit/cardio/cardiac.pyx":47
  *     """
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 207-(0.7 * age)
  * 
  */
@@ -1630,12 +1956,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(CYTHON_UNUSED struct __py
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1643,20 +1969,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_1predict(PyObject *__
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1673,21 +1999,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_predict(struct __pyx_
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":52
- *     """
+/* "pyfit/cardio/cardiac.pyx":50
+ *         return 207-(0.7 * age)
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 206-(0.88*age)
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-207.0)/-0.7
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_7Gellish_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1695,16 +2021,16 @@ float __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(CYTHON_UNUSED struct __pyx
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -1718,22 +2044,22 @@ float __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(CYTHON_UNUSED struct __pyx
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 52, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 50, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1742,20 +2068,164 @@ float __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(CYTHON_UNUSED struct __pyx
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/cardiac.pyx":53
+  /* "pyfit/cardio/cardiac.pyx":51
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double age(self, double hr):
+ *         return (hr-207.0)/-0.7             # <<<<<<<<<<<<<<
+ * 
+ * cdef class Gulati(HREstimator):
+ */
+  __pyx_r = ((__pyx_v_hr - 207.0) / -0.7);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":50
+ *         return 207-(0.7 * age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-207.0)/-0.7
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Gellish.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Gellish.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_7Gellish_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_7Gellish_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Gellish.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":61
+ *     """
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 206-(0.88*age)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 61, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":62
+ * 
+ *     cpdef double predict(self, double age):
  *         return 206-(0.88*age)             # <<<<<<<<<<<<<<
  * 
- * cdef class LM(HREstimator):
+ *     cpdef double age(self, double hr):
  */
   __pyx_r = (206.0 - (0.88 * __pyx_v_age));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":52
+  /* "pyfit/cardio/cardiac.pyx":61
  *     """
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 206-(0.88*age)
  * 
  */
@@ -1778,12 +2248,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(CYTHON_UNUSED struct __pyx
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1791,20 +2261,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_1predict(PyObject *__p
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1821,21 +2291,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_predict(struct __pyx_o
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":57
- * cdef class LM(HREstimator):
+/* "pyfit/cardio/cardiac.pyx":64
+ *         return 206-(0.88*age)
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 206.3-(0.711 * age)
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-206.0)/-0.88
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2LM_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_6Gulati_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -1843,16 +2313,16 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(CYTHON_UNUSED struct __pyx_obj
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2LM_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -1866,22 +2336,22 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(CYTHON_UNUSED struct __pyx_obj
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 57, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 64, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1890,20 +2360,164 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(CYTHON_UNUSED struct __pyx_obj
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/cardiac.pyx":58
+  /* "pyfit/cardio/cardiac.pyx":65
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double age(self, double hr):
+ *         return (hr-206.0)/-0.88             # <<<<<<<<<<<<<<
+ * 
+ * cdef class LM(HREstimator):
+ */
+  __pyx_r = ((__pyx_v_hr - 206.0) / -0.88);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":64
+ *         return 206-(0.88*age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-206.0)/-0.88
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Gulati.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Gulati.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Gulati_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_6Gulati_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Gulati.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":69
+ * cdef class LM(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 206.3-(0.711 * age)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2LM_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2LM_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 69, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 69, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":70
+ * 
+ *     cpdef double predict(self, double age):
  *         return 206.3-(0.711 * age)             # <<<<<<<<<<<<<<
  * 
- * cdef class Miller(HREstimator):
+ *     cpdef double age(self, double hr):
  */
   __pyx_r = (206.3 - (0.711 * __pyx_v_age));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":57
+  /* "pyfit/cardio/cardiac.pyx":69
  * cdef class LM(HREstimator):
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 206.3-(0.711 * age)
  * 
  */
@@ -1926,12 +2540,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(CYTHON_UNUSED struct __pyx_obj
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2LM_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2LM_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 57, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 69, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1939,20 +2553,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2LM_1predict(PyObject *__pyx_v
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2LM_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2LM_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2LM_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2LM_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1969,317 +2583,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2LM_predict(struct __pyx_obj_5
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_2LM_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":62
- * cdef class Miller(HREstimator):
- * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 217-(0.85 * age)
- * 
- */
-
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
-      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_5)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_5);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
-        }
-      }
-      if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
-      } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 62, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
-        __Pyx_GIVEREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
-        __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 62, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_r = __pyx_t_7;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      goto __pyx_L0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  }
-
-  /* "pyfit/cardio/cardiac.pyx":63
- * 
- *     cpdef float predict(self, float age):
- *         return 217-(0.85 * age)             # <<<<<<<<<<<<<<
- * 
- * cdef class Nes(HREstimator):
- */
-  __pyx_r = (217.0 - (0.85 * __pyx_v_age));
-  goto __pyx_L0;
-
-  /* "pyfit/cardio/cardiac.pyx":62
- * cdef class Miller(HREstimator):
- * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 217-(0.85 * age)
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Miller.predict", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
-  assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 62, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.cardio.cardiac.Miller.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_6Miller_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *)__pyx_v_self), ((float)__pyx_v_age));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Miller_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, float __pyx_v_age) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("predict", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.cardio.cardiac.Miller.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-float __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, float __pyx_v_age) {
-  return __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict(__pyx_v_self, __pyx_v_age, 0);
-}
-
-/* "pyfit/cardio/cardiac.pyx":67
- * cdef class Nes(HREstimator):
- * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 211 - (0.64 * age)
- * 
- */
-
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
-      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_5)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_5);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
-        }
-      }
-      if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
-      } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 67, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
-        __Pyx_GIVEREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
-        __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_r = __pyx_t_7;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      goto __pyx_L0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  }
-
-  /* "pyfit/cardio/cardiac.pyx":68
- * 
- *     cpdef float predict(self, float age):
- *         return 211 - (0.64 * age)             # <<<<<<<<<<<<<<
- * 
- * cdef class OaklandL(HREstimator):
- */
-  __pyx_r = (211.0 - (0.64 * __pyx_v_age));
-  goto __pyx_L0;
-
-  /* "pyfit/cardio/cardiac.pyx":67
- * cdef class Nes(HREstimator):
- * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 211 - (0.64 * age)
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Nes.predict", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
-  assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.cardio.cardiac.Nes.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_3Nes_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *)__pyx_v_self), ((float)__pyx_v_age));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3Nes_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, float __pyx_v_age) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("predict", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.cardio.cardiac.Nes.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-float __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, float __pyx_v_age) {
-  return __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict(__pyx_v_self, __pyx_v_age, 0);
-}
-
 /* "pyfit/cardio/cardiac.pyx":72
- * cdef class OaklandL(HREstimator):
+ *         return 206.3-(0.711 * age)
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 206.9 - (0.67 * age)
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-206.3)/-0.711
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2LM_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_2LM_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2287,16 +2605,16 @@ float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __p
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2LM_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -2325,7 +2643,7 @@ float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __p
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 72, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 72, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2336,19 +2654,19 @@ float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __p
 
   /* "pyfit/cardio/cardiac.pyx":73
  * 
- *     cpdef float predict(self, float age):
- *         return 206.9 - (0.67 * age)             # <<<<<<<<<<<<<<
+ *     cpdef double age(self, double hr):
+ *         return (hr-206.3)/-0.711             # <<<<<<<<<<<<<<
  * 
- * cdef class OaklandNL1(HREstimator):
+ * cdef class Miller(HREstimator):
  */
-  __pyx_r = (206.9 - (0.67 * __pyx_v_age));
+  __pyx_r = ((__pyx_v_hr - 206.3) / -0.711);
   goto __pyx_L0;
 
   /* "pyfit/cardio/cardiac.pyx":72
- * cdef class OaklandL(HREstimator):
+ *         return 206.3-(0.711 * age)
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 206.9 - (0.67 * age)
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-206.3)/-0.711
  * 
  */
 
@@ -2360,7 +2678,7 @@ float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __p
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.OaklandL.predict", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.LM.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -2368,35 +2686,35 @@ float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __p
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2LM_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2LM_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
-  assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 72, __pyx_L3_error)
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 72, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandL.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.LM.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2LM_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *)__pyx_v_self), ((double)__pyx_v_hr));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2LM_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *__pyx_v_self, double __pyx_v_hr) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("predict", 0);
+  __Pyx_RefNannySetupContext("age", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2LM_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2405,7 +2723,7 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_predict(struct __pyx
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandL.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.LM.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2413,21 +2731,17 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_predict(struct __pyx
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, float __pyx_v_age) {
-  return __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(__pyx_v_self, __pyx_v_age, 0);
-}
-
 /* "pyfit/cardio/cardiac.pyx":77
- * cdef class OaklandNL1(HREstimator):
+ * cdef class Miller(HREstimator):
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 191.5 - (0.002 * pow(age,2) )
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 217-(0.85 * age)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2435,7 +2749,7 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct 
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
+  double __pyx_t_7;
   __Pyx_RefNannySetupContext("predict", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -2443,7 +2757,7 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct 
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_1predict)) {
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict)) {
       __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
@@ -2473,7 +2787,7 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct 
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2484,18 +2798,894 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct 
 
   /* "pyfit/cardio/cardiac.pyx":78
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double predict(self, double age):
+ *         return 217-(0.85 * age)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double age(self, double hr):
+ */
+  __pyx_r = (217.0 - (0.85 * __pyx_v_age));
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":77
+ * cdef class Miller(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 217-(0.85 * age)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Miller.predict", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
+  double __pyx_v_age;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
+  assert(__pyx_arg_age); {
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Miller.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_6Miller_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *)__pyx_v_self), ((double)__pyx_v_age));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Miller_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_age) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("predict", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Miller.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+double __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_age) {
+  return __pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict(__pyx_v_self, __pyx_v_age, 0);
+}
+
+/* "pyfit/cardio/cardiac.pyx":80
+ *         return 217-(0.85 * age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-217)/-0.85
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_6Miller_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":81
+ * 
+ *     cpdef double age(self, double hr):
+ *         return (hr-217)/-0.85             # <<<<<<<<<<<<<<
+ * 
+ * cdef class Nes(HREstimator):
+ */
+  __pyx_r = ((__pyx_v_hr - 217.0) / -0.85);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":80
+ *         return 217-(0.85 * age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-217)/-0.85
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Miller.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Miller.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_6Miller_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_6Miller_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_6Miller_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Miller.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":85
+ * cdef class Nes(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 211 - (0.64 * age)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 85, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":86
+ * 
+ *     cpdef double predict(self, double age):
+ *         return 211 - (0.64 * age)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double age(self, double hr):
+ */
+  __pyx_r = (211.0 - (0.64 * __pyx_v_age));
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":85
+ * cdef class Nes(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 211 - (0.64 * age)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Nes.predict", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
+  double __pyx_v_age;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
+  assert(__pyx_arg_age); {
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 85, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Nes.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_3Nes_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *)__pyx_v_self), ((double)__pyx_v_age));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3Nes_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_age) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("predict", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Nes.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+double __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_age) {
+  return __pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict(__pyx_v_self, __pyx_v_age, 0);
+}
+
+/* "pyfit/cardio/cardiac.pyx":88
+ *         return 211 - (0.64 * age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-211)/-0.64
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_3Nes_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 88, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 88, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":89
+ * 
+ *     cpdef double age(self, double hr):
+ *         return (hr-211)/-0.64             # <<<<<<<<<<<<<<
+ * 
+ * cdef class OaklandL(HREstimator):
+ */
+  __pyx_r = ((__pyx_v_hr - 211.0) / -0.64);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":88
+ *         return 211 - (0.64 * age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-211)/-0.64
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.Nes.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Nes.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_3Nes_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3Nes_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_3Nes_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.Nes.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":93
+ * cdef class OaklandL(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 206.9 - (0.67 * age)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 93, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":94
+ * 
+ *     cpdef double predict(self, double age):
+ *         return 206.9 - (0.67 * age)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double age(self, double hr):
+ */
+  __pyx_r = (206.9 - (0.67 * __pyx_v_age));
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":93
+ * cdef class OaklandL(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 206.9 - (0.67 * age)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.OaklandL.predict", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
+  double __pyx_v_age;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
+  assert(__pyx_arg_age); {
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 93, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandL.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *)__pyx_v_self), ((double)__pyx_v_age));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_age) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("predict", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandL.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+double __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_age) {
+  return __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict(__pyx_v_self, __pyx_v_age, 0);
+}
+
+/* "pyfit/cardio/cardiac.pyx":96
+ *         return 206.9 - (0.67 * age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-206.9)/-0.67
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 96, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":97
+ * 
+ *     cpdef double age(self, double hr):
+ *         return (hr-206.9)/-0.67             # <<<<<<<<<<<<<<
+ * 
+ * cdef class OaklandNL1(HREstimator):
+ */
+  __pyx_r = ((__pyx_v_hr - 206.9) / -0.67);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":96
+ *         return 206.9 - (0.67 * age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-206.9)/-0.67
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.OaklandL.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandL.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_8OaklandL_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandL.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":101
+ * cdef class OaklandNL1(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 191.5 - (0.002 * pow(age,2) )
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 101, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":102
+ * 
+ *     cpdef double predict(self, double age):
  *         return 191.5 - (0.002 * pow(age,2) )             # <<<<<<<<<<<<<<
  * 
- * cdef class OaklandNL2(HREstimator):
+ *     cpdef double age(self, double hr):
  */
   __pyx_r = (191.5 - (0.002 * pow(__pyx_v_age, 2.0)));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":77
+  /* "pyfit/cardio/cardiac.pyx":101
  * cdef class OaklandNL1(HREstimator):
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 191.5 - (0.002 * pow(age,2) )
  * 
  */
@@ -2518,12 +3708,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(CYTHON_UNUSED struct 
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2531,20 +3721,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_1predict(PyObject
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2561,21 +3751,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(struct __
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":82
- * cdef class OaklandNL2(HREstimator):
+/* "pyfit/cardio/cardiac.pyx":104
+ *         return 191.5 - (0.002 * pow(age,2) )
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return 5*sqrt(3830-20*hr)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2583,16 +3773,16 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(CYTHON_UNUSED struct 
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 82, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -2606,22 +3796,22 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(CYTHON_UNUSED struct 
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 82, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 104, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2630,20 +3820,164 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(CYTHON_UNUSED struct 
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/cardiac.pyx":83
+  /* "pyfit/cardio/cardiac.pyx":105
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double age(self, double hr):
+ *         return 5*sqrt(3830-20*hr)             # <<<<<<<<<<<<<<
+ * 
+ * cdef class OaklandNL2(HREstimator):
+ */
+  __pyx_r = (5.0 * sqrt((3830.0 - (20.0 * __pyx_v_hr))));
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":104
+ *         return 191.5 - (0.002 * pow(age,2) )
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return 5*sqrt(3830-20*hr)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.OaklandNL1.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandNL1.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL1_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandNL1.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":109
+ * cdef class OaklandNL2(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":110
+ * 
+ *     cpdef double predict(self, double age):
  *         return 163 + (1.16 * age) - (0.018 * pow(age, 2))             # <<<<<<<<<<<<<<
  * 
- * cdef class RL(HREstimator):
+ *     cpdef double age(self, double hr):
  */
   __pyx_r = ((163.0 + (1.16 * __pyx_v_age)) - (0.018 * pow(__pyx_v_age, 2.0)));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":82
+  /* "pyfit/cardio/cardiac.pyx":109
  * cdef class OaklandNL2(HREstimator):
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
  * 
  */
@@ -2666,12 +4000,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(CYTHON_UNUSED struct 
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2679,20 +4013,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_1predict(PyObject
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2709,21 +4043,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(struct __
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":87
- * cdef class RL(HREstimator):
+/* "pyfit/cardio/cardiac.pyx":112
+ *         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 205.8 - (0.685 * age)
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (-10./9)*(sqrt(8176-45*hr)-29)
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2RL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2731,16 +4065,16 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(CYTHON_UNUSED struct __pyx_obj
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2RL_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 87, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -2754,22 +4088,22 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(CYTHON_UNUSED struct __pyx_obj
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 87, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 112, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 87, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 112, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2778,20 +4112,164 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(CYTHON_UNUSED struct __pyx_obj
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/cardiac.pyx":88
+  /* "pyfit/cardio/cardiac.pyx":113
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double age(self, double hr):
+ *         return (-10./9)*(sqrt(8176-45*hr)-29)             # <<<<<<<<<<<<<<
+ * 
+ * cdef class RL(HREstimator):
+ */
+  __pyx_r = ((-10. / 9.0) * (sqrt((8176.0 - (45.0 * __pyx_v_hr))) - 29.0));
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":112
+ *         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (-10./9)*(sqrt(8176-45*hr)-29)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.OaklandNL2.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 112, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandNL2.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_10OaklandNL2_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.OaklandNL2.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":117
+ * cdef class RL(HREstimator):
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 205.8 - (0.685 * age)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2RL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2RL_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":118
+ * 
+ *     cpdef double predict(self, double age):
  *         return 205.8 - (0.685 * age)             # <<<<<<<<<<<<<<
  * 
- * cdef class TMS(HREstimator):
+ *     cpdef double age(self, double hr):
  */
   __pyx_r = (205.8 - (0.685 * __pyx_v_age));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":87
+  /* "pyfit/cardio/cardiac.pyx":117
  * cdef class RL(HREstimator):
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 205.8 - (0.685 * age)
  * 
  */
@@ -2814,12 +4292,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(CYTHON_UNUSED struct __pyx_obj
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2RL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2RL_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 87, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2827,20 +4305,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2RL_1predict(PyObject *__pyx_v
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2RL_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2RL_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2RL_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2RL_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2857,21 +4335,21 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2RL_predict(struct __pyx_obj_5
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_2RL_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":98
- *     """
+/* "pyfit/cardio/cardiac.pyx":120
+ *         return 205.8 - (0.685 * age)
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
- *         return 208-(0.7*age)
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-205.8)/-0.685
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
-float __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, float __pyx_v_age, int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2RL_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_2RL_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
@@ -2879,16 +4357,16 @@ float __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(CYTHON_UNUSED struct __pyx_ob
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  float __pyx_t_7;
-  __Pyx_RefNannySetupContext("predict", 0);
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
   /* Check if overridden in Python */
   else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_1predict)) {
-      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2RL_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
       __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -2902,22 +4380,22 @@ float __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(CYTHON_UNUSED struct __pyx_ob
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 98, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_GIVEREF(__pyx_t_3);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_7 = __pyx_PyFloat_AsFloat(__pyx_t_2); if (unlikely((__pyx_t_7 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 98, __pyx_L1_error)
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_r = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2926,20 +4404,164 @@ float __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(CYTHON_UNUSED struct __pyx_ob
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "pyfit/cardio/cardiac.pyx":99
+  /* "pyfit/cardio/cardiac.pyx":121
  * 
- *     cpdef float predict(self, float age):
+ *     cpdef double age(self, double hr):
+ *         return (hr-205.8)/-0.685             # <<<<<<<<<<<<<<
+ * 
+ * cdef class TMS(HREstimator):
+ */
+  __pyx_r = ((__pyx_v_hr - 205.8) / -0.685);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":120
+ *         return 205.8 - (0.685 * age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-205.8)/-0.685
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.RL.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2RL_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_2RL_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.RL.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_2RL_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2RL_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_2RL_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.RL.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":131
+ *     """
+ * 
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
+ *         return 208-(0.7*age)
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
+double __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_age, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_1predict)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_age); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":132
+ * 
+ *     cpdef double predict(self, double age):
  *         return 208-(0.7*age)             # <<<<<<<<<<<<<<
  * 
- * cpdef float mean_arterial_pressure(int diastolic_bp, int systolic_bp):
+ *     cpdef double age(self, double hr):
  */
   __pyx_r = (208.0 - (0.7 * __pyx_v_age));
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":98
+  /* "pyfit/cardio/cardiac.pyx":131
  *     """
  * 
- *     cpdef float predict(self, float age):             # <<<<<<<<<<<<<<
+ *     cpdef double predict(self, double age):             # <<<<<<<<<<<<<<
  *         return 208-(0.7*age)
  * 
  */
@@ -2962,12 +4584,12 @@ float __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(CYTHON_UNUSED struct __pyx_ob
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_1predict(PyObject *__pyx_v_self, PyObject *__pyx_arg_age) {
-  float __pyx_v_age;
+  double __pyx_v_age;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("predict (wrapper)", 0);
   assert(__pyx_arg_age); {
-    __pyx_v_age = __pyx_PyFloat_AsFloat(__pyx_arg_age); if (unlikely((__pyx_v_age == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 98, __pyx_L3_error)
+    __pyx_v_age = __pyx_PyFloat_AsDouble(__pyx_arg_age); if (unlikely((__pyx_v_age == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2975,20 +4597,20 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_1predict(PyObject *__pyx_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_3TMS_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *)__pyx_v_self), ((float)__pyx_v_age));
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_3TMS_predict(((struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *)__pyx_v_self), ((double)__pyx_v_age));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3TMS_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, float __pyx_v_age) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3TMS_predict(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_age) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(__pyx_v_self, __pyx_v_age, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3005,38 +4627,182 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3TMS_predict(struct __pyx_obj_
   return __pyx_r;
 }
 
-float __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, float __pyx_v_age) {
+double __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict__pyx_wrap_1(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_age) {
   return __pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict(__pyx_v_self, __pyx_v_age, 0);
 }
 
-/* "pyfit/cardio/cardiac.pyx":101
+/* "pyfit/cardio/cardiac.pyx":134
  *         return 208-(0.7*age)
  * 
- * cpdef float mean_arterial_pressure(int diastolic_bp, int systolic_bp):             # <<<<<<<<<<<<<<
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-208)/-0.7
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static double __pyx_f_5pyfit_6cardio_7cardiac_3TMS_age(CYTHON_UNUSED struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_hr, int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  double __pyx_t_7;
+  __Pyx_RefNannySetupContext("age", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_age); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_3age)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_hr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 134, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_7;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/cardiac.pyx":135
+ * 
+ *     cpdef double age(self, double hr):
+ *         return (hr-208)/-0.7             # <<<<<<<<<<<<<<
+ * 
+ * cpdef double mean_arterial_pressure(int diastolic_bp, int systolic_bp):
+ */
+  __pyx_r = ((__pyx_v_hr - 208.0) / -0.7);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/cardiac.pyx":134
+ *         return 208-(0.7*age)
+ * 
+ *     cpdef double age(self, double hr):             # <<<<<<<<<<<<<<
+ *         return (hr-208)/-0.7
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_WriteUnraisable("pyfit.cardio.cardiac.TMS.age", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_3age(PyObject *__pyx_v_self, PyObject *__pyx_arg_hr) {
+  double __pyx_v_hr;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("age (wrapper)", 0);
+  assert(__pyx_arg_hr); {
+    __pyx_v_hr = __pyx_PyFloat_AsDouble(__pyx_arg_hr); if (unlikely((__pyx_v_hr == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.TMS.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_7cardiac_3TMS_2age(((struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *)__pyx_v_self), ((double)__pyx_v_hr));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_3TMS_2age(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *__pyx_v_self, double __pyx_v_hr) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("age", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_3TMS_age(__pyx_v_self, __pyx_v_hr, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.cardiac.TMS.age", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/cardiac.pyx":137
+ *         return (hr-208)/-0.7
+ * 
+ * cpdef double mean_arterial_pressure(int diastolic_bp, int systolic_bp):             # <<<<<<<<<<<<<<
  *     return ((2 * diastolic_bp) + systolic_bp) / 3
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_1mean_arterial_pressure(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_7cardiac_mean_arterial_pressure(int __pyx_v_diastolic_bp, int __pyx_v_systolic_bp, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_7cardiac_mean_arterial_pressure(int __pyx_v_diastolic_bp, int __pyx_v_systolic_bp, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("mean_arterial_pressure", 0);
 
-  /* "pyfit/cardio/cardiac.pyx":102
+  /* "pyfit/cardio/cardiac.pyx":138
  * 
- * cpdef float mean_arterial_pressure(int diastolic_bp, int systolic_bp):
+ * cpdef double mean_arterial_pressure(int diastolic_bp, int systolic_bp):
  *     return ((2 * diastolic_bp) + systolic_bp) / 3             # <<<<<<<<<<<<<<
  * 
- * cpdef float karvonen(float intensity, int rest, int maximum):
+ * cpdef double karvonen(double intensity, int rest, int maximum):
  */
   __pyx_r = __Pyx_div_long(((2 * __pyx_v_diastolic_bp) + __pyx_v_systolic_bp), 3);
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":101
- *         return 208-(0.7*age)
+  /* "pyfit/cardio/cardiac.pyx":137
+ *         return (hr-208)/-0.7
  * 
- * cpdef float mean_arterial_pressure(int diastolic_bp, int systolic_bp):             # <<<<<<<<<<<<<<
+ * cpdef double mean_arterial_pressure(int diastolic_bp, int systolic_bp):             # <<<<<<<<<<<<<<
  *     return ((2 * diastolic_bp) + systolic_bp) / 3
  * 
  */
@@ -3075,11 +4841,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_1mean_arterial_pressure(PyObje
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_systolic_bp)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("mean_arterial_pressure", 1, 2, 2, 1); __PYX_ERR(0, 101, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("mean_arterial_pressure", 1, 2, 2, 1); __PYX_ERR(0, 137, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "mean_arterial_pressure") < 0)) __PYX_ERR(0, 101, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "mean_arterial_pressure") < 0)) __PYX_ERR(0, 137, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3087,12 +4853,12 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_1mean_arterial_pressure(PyObje
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_diastolic_bp = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_diastolic_bp == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L3_error)
-    __pyx_v_systolic_bp = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_systolic_bp == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L3_error)
+    __pyx_v_diastolic_bp = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_diastolic_bp == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 137, __pyx_L3_error)
+    __pyx_v_systolic_bp = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_systolic_bp == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 137, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("mean_arterial_pressure", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 101, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("mean_arterial_pressure", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 137, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.cardiac.mean_arterial_pressure", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3111,7 +4877,7 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_mean_arterial_pressure(CYTHON_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("mean_arterial_pressure", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_mean_arterial_pressure(__pyx_v_diastolic_bp, __pyx_v_systolic_bp, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_mean_arterial_pressure(__pyx_v_diastolic_bp, __pyx_v_systolic_bp, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3128,34 +4894,34 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_mean_arterial_pressure(CYTHON_
   return __pyx_r;
 }
 
-/* "pyfit/cardio/cardiac.pyx":104
+/* "pyfit/cardio/cardiac.pyx":140
  *     return ((2 * diastolic_bp) + systolic_bp) / 3
  * 
- * cpdef float karvonen(float intensity, int rest, int maximum):             # <<<<<<<<<<<<<<
+ * cpdef double karvonen(double intensity, int rest, int maximum):             # <<<<<<<<<<<<<<
  *     return intensity * (maximum - rest) + rest
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3karvonen(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_7cardiac_karvonen(float __pyx_v_intensity, int __pyx_v_rest, int __pyx_v_maximum, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_7cardiac_karvonen(double __pyx_v_intensity, int __pyx_v_rest, int __pyx_v_maximum, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("karvonen", 0);
 
-  /* "pyfit/cardio/cardiac.pyx":105
+  /* "pyfit/cardio/cardiac.pyx":141
  * 
- * cpdef float karvonen(float intensity, int rest, int maximum):
+ * cpdef double karvonen(double intensity, int rest, int maximum):
  *     return intensity * (maximum - rest) + rest             # <<<<<<<<<<<<<<
  * 
- * cpdef float zoladz(float hrMax, float adjuster):
+ * cpdef double zoladz(double hrMax, double adjuster):
  */
   __pyx_r = ((__pyx_v_intensity * (__pyx_v_maximum - __pyx_v_rest)) + __pyx_v_rest);
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":104
+  /* "pyfit/cardio/cardiac.pyx":140
  *     return ((2 * diastolic_bp) + systolic_bp) / 3
  * 
- * cpdef float karvonen(float intensity, int rest, int maximum):             # <<<<<<<<<<<<<<
+ * cpdef double karvonen(double intensity, int rest, int maximum):             # <<<<<<<<<<<<<<
  *     return intensity * (maximum - rest) + rest
  * 
  */
@@ -3169,7 +4935,7 @@ static float __pyx_f_5pyfit_6cardio_7cardiac_karvonen(float __pyx_v_intensity, i
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3karvonen(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3karvonen(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_intensity;
+  double __pyx_v_intensity;
   int __pyx_v_rest;
   int __pyx_v_maximum;
   PyObject *__pyx_r = 0;
@@ -3196,16 +4962,16 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3karvonen(PyObject *__pyx_self
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_rest)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("karvonen", 1, 3, 3, 1); __PYX_ERR(0, 104, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("karvonen", 1, 3, 3, 1); __PYX_ERR(0, 140, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_maximum)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("karvonen", 1, 3, 3, 2); __PYX_ERR(0, 104, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("karvonen", 1, 3, 3, 2); __PYX_ERR(0, 140, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "karvonen") < 0)) __PYX_ERR(0, 104, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "karvonen") < 0)) __PYX_ERR(0, 140, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -3214,13 +4980,13 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3karvonen(PyObject *__pyx_self
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_intensity = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_intensity == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L3_error)
-    __pyx_v_rest = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_rest == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L3_error)
-    __pyx_v_maximum = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_maximum == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L3_error)
+    __pyx_v_intensity = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_intensity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L3_error)
+    __pyx_v_rest = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_rest == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L3_error)
+    __pyx_v_maximum = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_maximum == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("karvonen", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 104, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("karvonen", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 140, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.cardiac.karvonen", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3233,13 +4999,13 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_3karvonen(PyObject *__pyx_self
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2karvonen(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_intensity, int __pyx_v_rest, int __pyx_v_maximum) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2karvonen(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_intensity, int __pyx_v_rest, int __pyx_v_maximum) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("karvonen", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_karvonen(__pyx_v_intensity, __pyx_v_rest, __pyx_v_maximum, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_karvonen(__pyx_v_intensity, __pyx_v_rest, __pyx_v_maximum, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3256,31 +5022,31 @@ static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_2karvonen(CYTHON_UNUSED PyObje
   return __pyx_r;
 }
 
-/* "pyfit/cardio/cardiac.pyx":107
+/* "pyfit/cardio/cardiac.pyx":143
  *     return intensity * (maximum - rest) + rest
  * 
- * cpdef float zoladz(float hrMax, float adjuster):             # <<<<<<<<<<<<<<
+ * cpdef double zoladz(double hrMax, double adjuster):             # <<<<<<<<<<<<<<
  *       return hrMax - adjuster
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_5zoladz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_6cardio_7cardiac_zoladz(float __pyx_v_hrMax, float __pyx_v_adjuster, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_6cardio_7cardiac_zoladz(double __pyx_v_hrMax, double __pyx_v_adjuster, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("zoladz", 0);
 
-  /* "pyfit/cardio/cardiac.pyx":108
+  /* "pyfit/cardio/cardiac.pyx":144
  * 
- * cpdef float zoladz(float hrMax, float adjuster):
+ * cpdef double zoladz(double hrMax, double adjuster):
  *       return hrMax - adjuster             # <<<<<<<<<<<<<<
  */
   __pyx_r = (__pyx_v_hrMax - __pyx_v_adjuster);
   goto __pyx_L0;
 
-  /* "pyfit/cardio/cardiac.pyx":107
+  /* "pyfit/cardio/cardiac.pyx":143
  *     return intensity * (maximum - rest) + rest
  * 
- * cpdef float zoladz(float hrMax, float adjuster):             # <<<<<<<<<<<<<<
+ * cpdef double zoladz(double hrMax, double adjuster):             # <<<<<<<<<<<<<<
  *       return hrMax - adjuster
  */
 
@@ -3293,8 +5059,8 @@ static float __pyx_f_5pyfit_6cardio_7cardiac_zoladz(float __pyx_v_hrMax, float _
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_5zoladz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_5zoladz(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_hrMax;
-  float __pyx_v_adjuster;
+  double __pyx_v_hrMax;
+  double __pyx_v_adjuster;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("zoladz (wrapper)", 0);
@@ -3318,11 +5084,11 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_5zoladz(PyObject *__pyx_self, 
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_adjuster)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("zoladz", 1, 2, 2, 1); __PYX_ERR(0, 107, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("zoladz", 1, 2, 2, 1); __PYX_ERR(0, 143, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "zoladz") < 0)) __PYX_ERR(0, 107, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "zoladz") < 0)) __PYX_ERR(0, 143, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3330,12 +5096,12 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_5zoladz(PyObject *__pyx_self, 
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_hrMax = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_hrMax == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
-    __pyx_v_adjuster = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_adjuster == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
+    __pyx_v_hrMax = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_hrMax == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L3_error)
+    __pyx_v_adjuster = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_adjuster == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("zoladz", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 107, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("zoladz", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 143, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.cardio.cardiac.zoladz", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3348,13 +5114,13 @@ static PyObject *__pyx_pw_5pyfit_6cardio_7cardiac_5zoladz(PyObject *__pyx_self, 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_4zoladz(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_hrMax, float __pyx_v_adjuster) {
+static PyObject *__pyx_pf_5pyfit_6cardio_7cardiac_4zoladz(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_hrMax, double __pyx_v_adjuster) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("zoladz", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_zoladz(__pyx_v_hrMax, __pyx_v_adjuster, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_7cardiac_zoladz(__pyx_v_hrMax, __pyx_v_adjuster, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3472,6 +5238,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_Astrand(PyTypeObject *t, P
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_Astrand[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_7Astrand_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -3545,6 +5312,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_HF(PyTypeObject *t, PyObje
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_HF[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2HF_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2HF_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -3618,6 +5386,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_Gellish(PyTypeObject *t, P
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_Gellish[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_7Gellish_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -3691,6 +5460,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_Gulati(PyTypeObject *t, Py
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_Gulati[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Gulati_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -3764,6 +5534,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_LM(PyTypeObject *t, PyObje
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_LM[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2LM_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2LM_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -3837,6 +5608,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_Miller(PyTypeObject *t, Py
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_Miller[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_6Miller_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -3910,6 +5682,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_Nes(PyTypeObject *t, PyObj
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_Nes[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3Nes_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -3983,6 +5756,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_OaklandL(PyTypeObject *t, 
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_OaklandL[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_8OaklandL_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -4056,6 +5830,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_OaklandNL1(PyTypeObject *t
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_OaklandNL1[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL1_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -4129,6 +5904,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_OaklandNL2(PyTypeObject *t
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_OaklandNL2[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_10OaklandNL2_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -4202,6 +5978,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_RL(PyTypeObject *t, PyObje
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_RL[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2RL_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_2RL_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -4275,6 +6052,7 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_7cardiac_TMS(PyTypeObject *t, PyObj
 
 static PyMethodDef __pyx_methods_5pyfit_6cardio_7cardiac_TMS[] = {
   {"predict", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_1predict, METH_O, 0},
+  {"age", (PyCFunction)__pyx_pw_5pyfit_6cardio_7cardiac_3TMS_3age, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -4365,6 +6143,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_NotImplementedError, __pyx_k_NotImplementedError, sizeof(__pyx_k_NotImplementedError), 0, 0, 1, 1},
   {&__pyx_kp_s_The_prediction_method_is_not_imp, __pyx_k_The_prediction_method_is_not_imp, sizeof(__pyx_k_The_prediction_method_is_not_imp), 0, 0, 1, 0},
   {&__pyx_n_s_adjuster, __pyx_k_adjuster, sizeof(__pyx_k_adjuster), 0, 0, 1, 1},
+  {&__pyx_n_s_age, __pyx_k_age, sizeof(__pyx_k_age), 0, 0, 1, 1},
   {&__pyx_n_s_diastolic_bp, __pyx_k_diastolic_bp, sizeof(__pyx_k_diastolic_bp), 0, 0, 1, 1},
   {&__pyx_n_s_hrMax, __pyx_k_hrMax, sizeof(__pyx_k_hrMax), 0, 0, 1, 1},
   {&__pyx_n_s_intensity, __pyx_k_intensity, sizeof(__pyx_k_intensity), 0, 0, 1, 1},
@@ -4390,7 +6169,7 @@ static int __Pyx_InitCachedConstants(void) {
 
   /* "pyfit/cardio/cardiac.pyx":8
  * 
- *     cdef float predict(self, float age):
+ *     cdef double predict(self, double age):
  *         raise NotImplementedError("The prediction method is not implemented")             # <<<<<<<<<<<<<<
  * 
  * cdef class Astrand(HREstimator):
@@ -4497,7 +6276,7 @@ PyMODINIT_FUNC PyInit_cardiac(void)
   /*--- Function export code ---*/
   /*--- Type init code ---*/
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator = &__pyx_vtable_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_HREstimator.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_11HREstimator_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_HREstimator.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_11HREstimator_predict;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_HREstimator) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_HREstimator.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_HREstimator.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -4505,8 +6284,9 @@ PyMODINIT_FUNC PyInit_cardiac(void)
   __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator = &__pyx_type_5pyfit_6cardio_7cardiac_HREstimator;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_Astrand = &__pyx_vtable_5pyfit_6cardio_7cardiac_Astrand;
   __pyx_vtable_5pyfit_6cardio_7cardiac_Astrand.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Astrand.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Astrand.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Astrand.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Astrand.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_7Astrand_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Astrand.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Astrand *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_7Astrand_age;
   __pyx_type_5pyfit_6cardio_7cardiac_Astrand.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
   if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Astrand) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_Astrand.tp_print = 0;
@@ -4515,113 +6295,124 @@ PyMODINIT_FUNC PyInit_cardiac(void)
   __pyx_ptype_5pyfit_6cardio_7cardiac_Astrand = &__pyx_type_5pyfit_6cardio_7cardiac_Astrand;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_HF = &__pyx_vtable_5pyfit_6cardio_7cardiac_HF;
   __pyx_vtable_5pyfit_6cardio_7cardiac_HF.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_HF.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_2HF_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_HF.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2HF_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_HF.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_2HF_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_HF.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2HF_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_HF.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HF *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2HF_age;
   __pyx_type_5pyfit_6cardio_7cardiac_HF.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_HF) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_HF) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_HF.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_HF.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_HF) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "HF", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_HF) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_HF.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_HF) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "HF", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_HF) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_HF = &__pyx_type_5pyfit_6cardio_7cardiac_HF;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_Gellish = &__pyx_vtable_5pyfit_6cardio_7cardiac_Gellish;
   __pyx_vtable_5pyfit_6cardio_7cardiac_Gellish.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Gellish.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Gellish.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Gellish.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Gellish.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_7Gellish_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Gellish.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gellish *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_7Gellish_age;
   __pyx_type_5pyfit_6cardio_7cardiac_Gellish.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Gellish) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Gellish) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_Gellish.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_Gellish.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_Gellish) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Gellish", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_Gellish) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_Gellish.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_Gellish) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Gellish", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_Gellish) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_Gellish = &__pyx_type_5pyfit_6cardio_7cardiac_Gellish;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_Gulati = &__pyx_vtable_5pyfit_6cardio_7cardiac_Gulati;
   __pyx_vtable_5pyfit_6cardio_7cardiac_Gulati.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Gulati.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Gulati.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Gulati.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Gulati.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_6Gulati_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Gulati.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Gulati *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_6Gulati_age;
   __pyx_type_5pyfit_6cardio_7cardiac_Gulati.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Gulati) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Gulati) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_Gulati.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_Gulati.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_Gulati) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Gulati", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_Gulati) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_Gulati.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_Gulati) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Gulati", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_Gulati) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_Gulati = &__pyx_type_5pyfit_6cardio_7cardiac_Gulati;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_LM = &__pyx_vtable_5pyfit_6cardio_7cardiac_LM;
   __pyx_vtable_5pyfit_6cardio_7cardiac_LM.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_LM.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_2LM_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_LM.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2LM_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_LM.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_2LM_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_LM.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2LM_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_LM.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_LM *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2LM_age;
   __pyx_type_5pyfit_6cardio_7cardiac_LM.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_LM) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_LM) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_LM.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_LM.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_LM) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "LM", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_LM) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_LM.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_LM) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "LM", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_LM) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_LM = &__pyx_type_5pyfit_6cardio_7cardiac_LM;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_Miller = &__pyx_vtable_5pyfit_6cardio_7cardiac_Miller;
   __pyx_vtable_5pyfit_6cardio_7cardiac_Miller.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Miller.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Miller.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Miller.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Miller.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_6Miller_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Miller.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Miller *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_6Miller_age;
   __pyx_type_5pyfit_6cardio_7cardiac_Miller.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Miller) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Miller) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_Miller.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_Miller.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_Miller) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Miller", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_Miller) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_Miller.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_Miller) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Miller", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_Miller) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_Miller = &__pyx_type_5pyfit_6cardio_7cardiac_Miller;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_Nes = &__pyx_vtable_5pyfit_6cardio_7cardiac_Nes;
   __pyx_vtable_5pyfit_6cardio_7cardiac_Nes.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Nes.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_Nes.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Nes.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Nes.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_3Nes_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_Nes.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_Nes *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_3Nes_age;
   __pyx_type_5pyfit_6cardio_7cardiac_Nes.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Nes) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_Nes) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_Nes.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_Nes.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_Nes) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "Nes", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_Nes) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_Nes.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_Nes) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Nes", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_Nes) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_Nes = &__pyx_type_5pyfit_6cardio_7cardiac_Nes;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandL = &__pyx_vtable_5pyfit_6cardio_7cardiac_OaklandL;
   __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandL.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandL.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandL.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandL.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandL.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandL.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandL *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_8OaklandL_age;
   __pyx_type_5pyfit_6cardio_7cardiac_OaklandL.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_OaklandL) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_OaklandL) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_OaklandL.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_OaklandL.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandL) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "OaklandL", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_OaklandL) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_OaklandL.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandL) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "OaklandL", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_OaklandL) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_OaklandL = &__pyx_type_5pyfit_6cardio_7cardiac_OaklandL;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandNL1 = &__pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL1;
   __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL1.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL1.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL1.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL1.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL1.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL1.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL1 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL1_age;
   __pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandNL1) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "OaklandNL1", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandNL1) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "OaklandNL1", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_OaklandNL1 = &__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL1;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandNL2 = &__pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL2;
   __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL2.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL2.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL2.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL2.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL2.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_OaklandNL2.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_OaklandNL2 *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_10OaklandNL2_age;
   __pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2) < 0) __PYX_ERR(0, 107, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandNL2) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "OaklandNL2", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_OaklandNL2) < 0) __PYX_ERR(0, 107, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "OaklandNL2", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2) < 0) __PYX_ERR(0, 107, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_OaklandNL2 = &__pyx_type_5pyfit_6cardio_7cardiac_OaklandNL2;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_RL = &__pyx_vtable_5pyfit_6cardio_7cardiac_RL;
   __pyx_vtable_5pyfit_6cardio_7cardiac_RL.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_RL.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_2RL_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_RL.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2RL_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_RL.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_2RL_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_RL.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2RL_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_RL.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_RL *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_2RL_age;
   __pyx_type_5pyfit_6cardio_7cardiac_RL.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_RL) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_RL) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_RL.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_RL.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_RL) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "RL", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_RL) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_RL.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_RL) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "RL", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_RL) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_RL = &__pyx_type_5pyfit_6cardio_7cardiac_RL;
   __pyx_vtabptr_5pyfit_6cardio_7cardiac_TMS = &__pyx_vtable_5pyfit_6cardio_7cardiac_TMS;
   __pyx_vtable_5pyfit_6cardio_7cardiac_TMS.__pyx_base = *__pyx_vtabptr_5pyfit_6cardio_7cardiac_HREstimator;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_TMS.__pyx_base.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, float))__pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict__pyx_wrap_1;
-  __pyx_vtable_5pyfit_6cardio_7cardiac_TMS.predict = (float (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *, float, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_TMS.__pyx_base.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_HREstimator *, double))__pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict__pyx_wrap_1;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_TMS.predict = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_3TMS_predict;
+  __pyx_vtable_5pyfit_6cardio_7cardiac_TMS.age = (double (*)(struct __pyx_obj_5pyfit_6cardio_7cardiac_TMS *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_7cardiac_3TMS_age;
   __pyx_type_5pyfit_6cardio_7cardiac_TMS.tp_base = __pyx_ptype_5pyfit_6cardio_7cardiac_HREstimator;
-  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_TMS) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_7cardiac_TMS) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __pyx_type_5pyfit_6cardio_7cardiac_TMS.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_TMS.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_TMS) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "TMS", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_TMS) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_7cardiac_TMS.tp_dict, __pyx_vtabptr_5pyfit_6cardio_7cardiac_TMS) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "TMS", (PyObject *)&__pyx_type_5pyfit_6cardio_7cardiac_TMS) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_7cardiac_TMS = &__pyx_type_5pyfit_6cardio_7cardiac_TMS;
   /*--- Type import code ---*/
   /*--- Variable import code ---*/
@@ -4632,7 +6423,7 @@ PyMODINIT_FUNC PyInit_cardiac(void)
   #endif
 
   /* "pyfit/cardio/cardiac.pyx":1
- * from libc.math cimport pow             # <<<<<<<<<<<<<<
+ * from libc.math cimport pow, sqrt             # <<<<<<<<<<<<<<
  * 
  * cdef class HREstimator(object):
  */

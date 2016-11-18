@@ -674,6 +674,9 @@ static void __Pyx_AddTraceback(const char *funcname, int c_line,
 struct __pyx_t_5pyfit_4mets_MET;
 static PyObject* __pyx_convert__to_py_struct____pyx_t_5pyfit_4mets_MET(struct __pyx_t_5pyfit_4mets_MET s);
 /* CIntFromPy.proto */
+static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
+
+/* CIntFromPy.proto */
 static CYTHON_INLINE size_t __Pyx_PyInt_As_size_t(PyObject *);
 
 /* CIntToPy.proto */
@@ -681,9 +684,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
-
-/* CIntFromPy.proto */
-static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
 /* CheckBinaryVersion.proto */
 static int __Pyx_check_binary_version(void);
@@ -694,10 +694,11 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'pyfit.mets' */
 static PyTypeObject *__pyx_ptype_5pyfit_4mets_METs = 0;
-static float __pyx_f_5pyfit_4mets_karvonen(float, float, int __pyx_skip_dispatch); /*proto*/
-static float __pyx_f_5pyfit_4mets_fromVO2(float, int __pyx_skip_dispatch); /*proto*/
-static float __pyx_f_5pyfit_4mets_toKCal(float, float, int __pyx_skip_dispatch); /*proto*/
-static float __pyx_f_5pyfit_4mets_target(float, PyObject *, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_karvonen(double, double, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_fromVO2(double, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_stairmasterMets(PyObject *, int, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_toKCal(double, double, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_target(double, PyObject *, int __pyx_skip_dispatch); /*proto*/
 static CYTHON_INLINE PyObject *__Pyx_carray_to_py_MET(struct __pyx_t_5pyfit_4mets_MET *, Py_ssize_t); /*proto*/
 static CYTHON_INLINE PyObject *__Pyx_carray_to_tuple_MET(struct __pyx_t_5pyfit_4mets_MET *, Py_ssize_t); /*proto*/
 #define __Pyx_MODULE_NAME "pyfit.mets"
@@ -708,11 +709,13 @@ static PyObject *__pyx_builtin_range;
 static const char __pyx_k_code[] = "code";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_mets[] = "mets";
+static const char __pyx_k_self[] = "self";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_value[] = "value";
 static const char __pyx_k_vO2Max[] = "vO2Max";
 static const char __pyx_k_weight[] = "weight";
+static const char __pyx_k_setting[] = "setting";
 static const char __pyx_k_intensity[] = "intensity";
 static const char __pyx_k_description[] = "description";
 static PyObject *__pyx_n_s_code;
@@ -721,16 +724,19 @@ static PyObject *__pyx_n_s_intensity;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_mets;
 static PyObject *__pyx_n_s_range;
+static PyObject *__pyx_n_s_self;
+static PyObject *__pyx_n_s_setting;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_vO2Max;
 static PyObject *__pyx_n_s_value;
 static PyObject *__pyx_n_s_weight;
 static int __pyx_pf_5pyfit_4mets_4METs___init__(struct __pyx_obj_5pyfit_4mets_METs *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_4mets_4METs_4mets___get__(struct __pyx_obj_5pyfit_4mets_METs *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_mets, float __pyx_v_intensity); /* proto */
-static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_vO2); /* proto */
-static PyObject *__pyx_pf_5pyfit_4mets_4toKCal(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_mets, float __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_4mets_6target(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_vO2Max, PyObject *__pyx_v_intensity); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_intensity); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_4stairmasterMets(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_setting); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_8target(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2Max, PyObject *__pyx_v_intensity); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_4mets_METs(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 
 /* "pyfit/mets.pyx":11
@@ -11645,23 +11651,23 @@ static PyObject *__pyx_pf_5pyfit_4mets_4METs_4mets___get__(struct __pyx_obj_5pyf
 /* "pyfit/mets.pyx":846
  *         ]
  * 
- * cpdef float karvonen(float mets, float intensity):             # <<<<<<<<<<<<<<
+ * cpdef double karvonen(double mets, double intensity):             # <<<<<<<<<<<<<<
  *     return intensity * (mets -1) + 1
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_4mets_1karvonen(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_4mets_karvonen(float __pyx_v_mets, float __pyx_v_intensity, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_4mets_karvonen(double __pyx_v_mets, double __pyx_v_intensity, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("karvonen", 0);
 
   /* "pyfit/mets.pyx":847
  * 
- * cpdef float karvonen(float mets, float intensity):
+ * cpdef double karvonen(double mets, double intensity):
  *     return intensity * (mets -1) + 1             # <<<<<<<<<<<<<<
  * 
- * cpdef float fromVO2(float vO2):
+ * cpdef double fromVO2(double vO2):
  */
   __pyx_r = ((__pyx_v_intensity * (__pyx_v_mets - 1.0)) + 1.0);
   goto __pyx_L0;
@@ -11669,7 +11675,7 @@ static float __pyx_f_5pyfit_4mets_karvonen(float __pyx_v_mets, float __pyx_v_int
   /* "pyfit/mets.pyx":846
  *         ]
  * 
- * cpdef float karvonen(float mets, float intensity):             # <<<<<<<<<<<<<<
+ * cpdef double karvonen(double mets, double intensity):             # <<<<<<<<<<<<<<
  *     return intensity * (mets -1) + 1
  * 
  */
@@ -11683,8 +11689,8 @@ static float __pyx_f_5pyfit_4mets_karvonen(float __pyx_v_mets, float __pyx_v_int
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_4mets_1karvonen(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_4mets_1karvonen(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_mets;
-  float __pyx_v_intensity;
+  double __pyx_v_mets;
+  double __pyx_v_intensity;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("karvonen (wrapper)", 0);
@@ -11720,8 +11726,8 @@ static PyObject *__pyx_pw_5pyfit_4mets_1karvonen(PyObject *__pyx_self, PyObject 
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_mets = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mets == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 846, __pyx_L3_error)
-    __pyx_v_intensity = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_intensity == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 846, __pyx_L3_error)
+    __pyx_v_mets = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mets == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 846, __pyx_L3_error)
+    __pyx_v_intensity = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_intensity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 846, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -11738,7 +11744,7 @@ static PyObject *__pyx_pw_5pyfit_4mets_1karvonen(PyObject *__pyx_self, PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_mets, float __pyx_v_intensity) {
+static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_intensity) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -11764,23 +11770,23 @@ static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_se
 /* "pyfit/mets.pyx":849
  *     return intensity * (mets -1) + 1
  * 
- * cpdef float fromVO2(float vO2):             # <<<<<<<<<<<<<<
+ * cpdef double fromVO2(double vO2):             # <<<<<<<<<<<<<<
  *     return vO2 / 3.5
  * 
  */
 
 static PyObject *__pyx_pw_5pyfit_4mets_3fromVO2(PyObject *__pyx_self, PyObject *__pyx_arg_vO2); /*proto*/
-static float __pyx_f_5pyfit_4mets_fromVO2(float __pyx_v_vO2, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static double __pyx_f_5pyfit_4mets_fromVO2(double __pyx_v_vO2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("fromVO2", 0);
 
   /* "pyfit/mets.pyx":850
  * 
- * cpdef float fromVO2(float vO2):
+ * cpdef double fromVO2(double vO2):
  *     return vO2 / 3.5             # <<<<<<<<<<<<<<
  * 
- * cpdef float toKCal(float mets, float weight):
+ * cpdef double stairmasterMets(self, int setting):
  */
   __pyx_r = (__pyx_v_vO2 / 3.5);
   goto __pyx_L0;
@@ -11788,7 +11794,7 @@ static float __pyx_f_5pyfit_4mets_fromVO2(float __pyx_v_vO2, CYTHON_UNUSED int _
   /* "pyfit/mets.pyx":849
  *     return intensity * (mets -1) + 1
  * 
- * cpdef float fromVO2(float vO2):             # <<<<<<<<<<<<<<
+ * cpdef double fromVO2(double vO2):             # <<<<<<<<<<<<<<
  *     return vO2 / 3.5
  * 
  */
@@ -11802,12 +11808,12 @@ static float __pyx_f_5pyfit_4mets_fromVO2(float __pyx_v_vO2, CYTHON_UNUSED int _
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_4mets_3fromVO2(PyObject *__pyx_self, PyObject *__pyx_arg_vO2); /*proto*/
 static PyObject *__pyx_pw_5pyfit_4mets_3fromVO2(PyObject *__pyx_self, PyObject *__pyx_arg_vO2) {
-  float __pyx_v_vO2;
+  double __pyx_v_vO2;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("fromVO2 (wrapper)", 0);
   assert(__pyx_arg_vO2); {
-    __pyx_v_vO2 = __pyx_PyFloat_AsFloat(__pyx_arg_vO2); if (unlikely((__pyx_v_vO2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 849, __pyx_L3_error)
+    __pyx_v_vO2 = __pyx_PyFloat_AsDouble(__pyx_arg_vO2); if (unlikely((__pyx_v_vO2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 849, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11815,14 +11821,14 @@ static PyObject *__pyx_pw_5pyfit_4mets_3fromVO2(PyObject *__pyx_self, PyObject *
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_4mets_2fromVO2(__pyx_self, ((float)__pyx_v_vO2));
+  __pyx_r = __pyx_pf_5pyfit_4mets_2fromVO2(__pyx_self, ((double)__pyx_v_vO2));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_vO2) {
+static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -11848,31 +11854,150 @@ static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_se
 /* "pyfit/mets.pyx":852
  *     return vO2 / 3.5
  * 
- * cpdef float toKCal(float mets, float weight):             # <<<<<<<<<<<<<<
- *     return (mets * 3.5 * weight)/200
+ * cpdef double stairmasterMets(self, int setting):             # <<<<<<<<<<<<<<
+ *     return 0.556 * 7.45 * setting
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_4mets_5toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_4mets_toKCal(float __pyx_v_mets, float __pyx_v_weight, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_4mets_stairmasterMets(CYTHON_UNUSED PyObject *__pyx_v_self, int __pyx_v_setting, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("toKCal", 0);
+  __Pyx_RefNannySetupContext("stairmasterMets", 0);
 
   /* "pyfit/mets.pyx":853
  * 
- * cpdef float toKCal(float mets, float weight):
- *     return (mets * 3.5 * weight)/200             # <<<<<<<<<<<<<<
+ * cpdef double stairmasterMets(self, int setting):
+ *     return 0.556 * 7.45 * setting             # <<<<<<<<<<<<<<
  * 
- * cpdef float target(float vO2Max, intensity):
+ * cpdef double toKCal(double mets, double weight):
  */
-  __pyx_r = (((__pyx_v_mets * 3.5) * __pyx_v_weight) / 200.0);
+  __pyx_r = ((0.556 * 7.45) * __pyx_v_setting);
   goto __pyx_L0;
 
   /* "pyfit/mets.pyx":852
  *     return vO2 / 3.5
  * 
- * cpdef float toKCal(float mets, float weight):             # <<<<<<<<<<<<<<
+ * cpdef double stairmasterMets(self, int setting):             # <<<<<<<<<<<<<<
+ *     return 0.556 * 7.45 * setting
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_self = 0;
+  int __pyx_v_setting;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("stairmasterMets (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_setting,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_self)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_setting)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("stairmasterMets", 1, 2, 2, 1); __PYX_ERR(0, 852, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "stairmasterMets") < 0)) __PYX_ERR(0, 852, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_self = values[0];
+    __pyx_v_setting = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_setting == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 852, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("stairmasterMets", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 852, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.mets.stairmasterMets", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_4mets_4stairmasterMets(__pyx_self, __pyx_v_self, __pyx_v_setting);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_4mets_4stairmasterMets(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_setting) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("stairmasterMets", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_stairmasterMets(__pyx_v_self, __pyx_v_setting, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 852, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.mets.stairmasterMets", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/mets.pyx":855
+ *     return 0.556 * 7.45 * setting
+ * 
+ * cpdef double toKCal(double mets, double weight):             # <<<<<<<<<<<<<<
+ *     return (mets * 3.5 * weight)/200
+ * 
+ */
+
+static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_4mets_toKCal(double __pyx_v_mets, double __pyx_v_weight, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("toKCal", 0);
+
+  /* "pyfit/mets.pyx":856
+ * 
+ * cpdef double toKCal(double mets, double weight):
+ *     return (mets * 3.5 * weight)/200             # <<<<<<<<<<<<<<
+ * 
+ * cpdef double target(double vO2Max, intensity):
+ */
+  __pyx_r = (((__pyx_v_mets * 3.5) * __pyx_v_weight) / 200.0);
+  goto __pyx_L0;
+
+  /* "pyfit/mets.pyx":855
+ *     return 0.556 * 7.45 * setting
+ * 
+ * cpdef double toKCal(double mets, double weight):             # <<<<<<<<<<<<<<
  *     return (mets * 3.5 * weight)/200
  * 
  */
@@ -11884,10 +12009,10 @@ static float __pyx_f_5pyfit_4mets_toKCal(float __pyx_v_mets, float __pyx_v_weigh
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_4mets_5toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_4mets_5toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_mets;
-  float __pyx_v_weight;
+static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_mets;
+  double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("toKCal (wrapper)", 0);
@@ -11911,11 +12036,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_5toKCal(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_weight)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, 1); __PYX_ERR(0, 852, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, 1); __PYX_ERR(0, 855, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toKCal") < 0)) __PYX_ERR(0, 852, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toKCal") < 0)) __PYX_ERR(0, 855, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -11923,31 +12048,31 @@ static PyObject *__pyx_pw_5pyfit_4mets_5toKCal(PyObject *__pyx_self, PyObject *_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_mets = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mets == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 852, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_weight == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 852, __pyx_L3_error)
+    __pyx_v_mets = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mets == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 855, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 855, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 852, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 855, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.mets.toKCal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_4mets_4toKCal(__pyx_self, __pyx_v_mets, __pyx_v_weight);
+  __pyx_r = __pyx_pf_5pyfit_4mets_6toKCal(__pyx_self, __pyx_v_mets, __pyx_v_weight);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_4mets_4toKCal(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_mets, float __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("toKCal", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_toKCal(__pyx_v_mets, __pyx_v_weight, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 852, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_toKCal(__pyx_v_mets, __pyx_v_weight, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 855, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11964,55 +12089,55 @@ static PyObject *__pyx_pf_5pyfit_4mets_4toKCal(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "pyfit/mets.pyx":855
+/* "pyfit/mets.pyx":858
  *     return (mets * 3.5 * weight)/200
  * 
- * cpdef float target(float vO2Max, intensity):             # <<<<<<<<<<<<<<
- *     cdef float mets = fromVO2(vO2Max)
- *     cdef float targetMets = karvonen(mets, intensity)
+ * cpdef double target(double vO2Max, intensity):             # <<<<<<<<<<<<<<
+ *     cdef double mets = fromVO2(vO2Max)
+ *     cdef double targetMets = karvonen(mets, intensity)
  */
 
-static PyObject *__pyx_pw_5pyfit_4mets_7target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static float __pyx_f_5pyfit_4mets_target(float __pyx_v_vO2Max, PyObject *__pyx_v_intensity, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  float __pyx_v_mets;
-  float __pyx_v_targetMets;
-  float __pyx_r;
+static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_4mets_target(double __pyx_v_vO2Max, PyObject *__pyx_v_intensity, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  double __pyx_v_mets;
+  double __pyx_v_targetMets;
+  double __pyx_r;
   __Pyx_RefNannyDeclarations
-  float __pyx_t_1;
+  double __pyx_t_1;
   __Pyx_RefNannySetupContext("target", 0);
 
-  /* "pyfit/mets.pyx":856
+  /* "pyfit/mets.pyx":859
  * 
- * cpdef float target(float vO2Max, intensity):
- *     cdef float mets = fromVO2(vO2Max)             # <<<<<<<<<<<<<<
- *     cdef float targetMets = karvonen(mets, intensity)
+ * cpdef double target(double vO2Max, intensity):
+ *     cdef double mets = fromVO2(vO2Max)             # <<<<<<<<<<<<<<
+ *     cdef double targetMets = karvonen(mets, intensity)
  *     return targetMets
  */
   __pyx_v_mets = __pyx_f_5pyfit_4mets_fromVO2(__pyx_v_vO2Max, 0);
 
-  /* "pyfit/mets.pyx":857
- * cpdef float target(float vO2Max, intensity):
- *     cdef float mets = fromVO2(vO2Max)
- *     cdef float targetMets = karvonen(mets, intensity)             # <<<<<<<<<<<<<<
+  /* "pyfit/mets.pyx":860
+ * cpdef double target(double vO2Max, intensity):
+ *     cdef double mets = fromVO2(vO2Max)
+ *     cdef double targetMets = karvonen(mets, intensity)             # <<<<<<<<<<<<<<
  *     return targetMets
  */
-  __pyx_t_1 = __pyx_PyFloat_AsFloat(__pyx_v_intensity); if (unlikely((__pyx_t_1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 857, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_intensity); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 860, __pyx_L1_error)
   __pyx_v_targetMets = __pyx_f_5pyfit_4mets_karvonen(__pyx_v_mets, __pyx_t_1, 0);
 
-  /* "pyfit/mets.pyx":858
- *     cdef float mets = fromVO2(vO2Max)
- *     cdef float targetMets = karvonen(mets, intensity)
+  /* "pyfit/mets.pyx":861
+ *     cdef double mets = fromVO2(vO2Max)
+ *     cdef double targetMets = karvonen(mets, intensity)
  *     return targetMets             # <<<<<<<<<<<<<<
  */
   __pyx_r = __pyx_v_targetMets;
   goto __pyx_L0;
 
-  /* "pyfit/mets.pyx":855
+  /* "pyfit/mets.pyx":858
  *     return (mets * 3.5 * weight)/200
  * 
- * cpdef float target(float vO2Max, intensity):             # <<<<<<<<<<<<<<
- *     cdef float mets = fromVO2(vO2Max)
- *     cdef float targetMets = karvonen(mets, intensity)
+ * cpdef double target(double vO2Max, intensity):             # <<<<<<<<<<<<<<
+ *     cdef double mets = fromVO2(vO2Max)
+ *     cdef double targetMets = karvonen(mets, intensity)
  */
 
   /* function exit code */
@@ -12025,9 +12150,9 @@ static float __pyx_f_5pyfit_4mets_target(float __pyx_v_vO2Max, PyObject *__pyx_v
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_4mets_7target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_4mets_7target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  float __pyx_v_vO2Max;
+static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_vO2Max;
   PyObject *__pyx_v_intensity = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -12052,11 +12177,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_7target(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_intensity)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("target", 1, 2, 2, 1); __PYX_ERR(0, 855, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("target", 1, 2, 2, 1); __PYX_ERR(0, 858, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "target") < 0)) __PYX_ERR(0, 855, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "target") < 0)) __PYX_ERR(0, 858, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -12064,31 +12189,31 @@ static PyObject *__pyx_pw_5pyfit_4mets_7target(PyObject *__pyx_self, PyObject *_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_vO2Max = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_vO2Max == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 855, __pyx_L3_error)
+    __pyx_v_vO2Max = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vO2Max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 858, __pyx_L3_error)
     __pyx_v_intensity = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("target", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 855, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("target", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 858, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.mets.target", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_4mets_6target(__pyx_self, __pyx_v_vO2Max, __pyx_v_intensity);
+  __pyx_r = __pyx_pf_5pyfit_4mets_8target(__pyx_self, __pyx_v_vO2Max, __pyx_v_intensity);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_4mets_6target(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_vO2Max, PyObject *__pyx_v_intensity) {
+static PyObject *__pyx_pf_5pyfit_4mets_8target(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2Max, PyObject *__pyx_v_intensity) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("target", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_target(__pyx_v_vO2Max, __pyx_v_intensity, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 855, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_target(__pyx_v_vO2Max, __pyx_v_intensity, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 858, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12408,8 +12533,9 @@ static PyTypeObject __pyx_type_5pyfit_4mets_METs = {
 static PyMethodDef __pyx_methods[] = {
   {"karvonen", (PyCFunction)__pyx_pw_5pyfit_4mets_1karvonen, METH_VARARGS|METH_KEYWORDS, 0},
   {"fromVO2", (PyCFunction)__pyx_pw_5pyfit_4mets_3fromVO2, METH_O, 0},
-  {"toKCal", (PyCFunction)__pyx_pw_5pyfit_4mets_5toKCal, METH_VARARGS|METH_KEYWORDS, 0},
-  {"target", (PyCFunction)__pyx_pw_5pyfit_4mets_7target, METH_VARARGS|METH_KEYWORDS, 0},
+  {"stairmasterMets", (PyCFunction)__pyx_pw_5pyfit_4mets_5stairmasterMets, METH_VARARGS|METH_KEYWORDS, 0},
+  {"toKCal", (PyCFunction)__pyx_pw_5pyfit_4mets_7toKCal, METH_VARARGS|METH_KEYWORDS, 0},
+  {"target", (PyCFunction)__pyx_pw_5pyfit_4mets_9target, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -12438,6 +12564,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_mets, __pyx_k_mets, sizeof(__pyx_k_mets), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
+  {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
+  {&__pyx_n_s_setting, __pyx_k_setting, sizeof(__pyx_k_setting), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_vO2Max, __pyx_k_vO2Max, sizeof(__pyx_k_vO2Max), 0, 0, 1, 1},
   {&__pyx_n_s_value, __pyx_k_value, sizeof(__pyx_k_value), 0, 0, 1, 1},
@@ -13084,6 +13212,191 @@ static PyObject* __pyx_convert__to_py_struct____pyx_t_5pyfit_4mets_MET(struct __
     }
 
 /* CIntFromPy */
+static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
+    const int neg_one = (int) -1, const_zero = (int) 0;
+    const int is_unsigned = neg_one > const_zero;
+#if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_Check(x))) {
+        if (sizeof(int) < sizeof(long)) {
+            __PYX_VERIFY_RETURN_INT(int, long, PyInt_AS_LONG(x))
+        } else {
+            long val = PyInt_AS_LONG(x);
+            if (is_unsigned && unlikely(val < 0)) {
+                goto raise_neg_overflow;
+            }
+            return (int) val;
+        }
+    } else
+#endif
+    if (likely(PyLong_Check(x))) {
+        if (is_unsigned) {
+#if CYTHON_USE_PYLONG_INTERNALS
+            const digit* digits = ((PyLongObject*)x)->ob_digit;
+            switch (Py_SIZE(x)) {
+                case  0: return (int) 0;
+                case  1: __PYX_VERIFY_RETURN_INT(int, digit, digits[0])
+                case 2:
+                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 2 * PyLong_SHIFT) {
+                            return (int) (((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+                case 3:
+                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 3 * PyLong_SHIFT) {
+                            return (int) (((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+                case 4:
+                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 4 * PyLong_SHIFT) {
+                            return (int) (((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+            }
+#endif
+#if CYTHON_COMPILING_IN_CPYTHON
+            if (unlikely(Py_SIZE(x) < 0)) {
+                goto raise_neg_overflow;
+            }
+#else
+            {
+                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
+                if (unlikely(result < 0))
+                    return (int) -1;
+                if (unlikely(result == 1))
+                    goto raise_neg_overflow;
+            }
+#endif
+            if (sizeof(int) <= sizeof(unsigned long)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned long, PyLong_AsUnsignedLong(x))
+            } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+            }
+        } else {
+#if CYTHON_USE_PYLONG_INTERNALS
+            const digit* digits = ((PyLongObject*)x)->ob_digit;
+            switch (Py_SIZE(x)) {
+                case  0: return (int) 0;
+                case -1: __PYX_VERIFY_RETURN_INT(int, sdigit, (sdigit) (-(sdigit)digits[0]))
+                case  1: __PYX_VERIFY_RETURN_INT(int,  digit, +digits[0])
+                case -2:
+                    if (8 * sizeof(int) - 1 > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 2:
+                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                            return (int) ((((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case -3:
+                    if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 3:
+                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                            return (int) ((((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case -4:
+                    if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 4:
+                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
+                            return (int) ((((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+            }
+#endif
+            if (sizeof(int) <= sizeof(long)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, long, PyLong_AsLong(x))
+            } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+            }
+        }
+        {
+#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
+            PyErr_SetString(PyExc_RuntimeError,
+                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
+#else
+            int val;
+            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
+ #if PY_MAJOR_VERSION < 3
+            if (likely(v) && !PyLong_Check(v)) {
+                PyObject *tmp = v;
+                v = PyNumber_Long(tmp);
+                Py_DECREF(tmp);
+            }
+ #endif
+            if (likely(v)) {
+                int one = 1; int is_little = (int)*(unsigned char *)&one;
+                unsigned char *bytes = (unsigned char *)&val;
+                int ret = _PyLong_AsByteArray((PyLongObject *)v,
+                                              bytes, sizeof(val),
+                                              is_little, !is_unsigned);
+                Py_DECREF(v);
+                if (likely(!ret))
+                    return val;
+            }
+#endif
+            return (int) -1;
+        }
+    } else {
+        int val;
+        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
+        if (!tmp) return (int) -1;
+        val = __Pyx_PyInt_As_int(tmp);
+        Py_DECREF(tmp);
+        return val;
+    }
+raise_overflow:
+    PyErr_SetString(PyExc_OverflowError,
+        "value too large to convert to int");
+    return (int) -1;
+raise_neg_overflow:
+    PyErr_SetString(PyExc_OverflowError,
+        "can't convert negative value to int");
+    return (int) -1;
+}
+
+/* CIntFromPy */
 static CYTHON_INLINE size_t __Pyx_PyInt_As_size_t(PyObject *x) {
     const size_t neg_one = (size_t) -1, const_zero = (size_t) 0;
     const int is_unsigned = neg_one > const_zero;
@@ -13478,191 +13791,6 @@ raise_neg_overflow:
     PyErr_SetString(PyExc_OverflowError,
         "can't convert negative value to long");
     return (long) -1;
-}
-
-/* CIntFromPy */
-static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
-    const int neg_one = (int) -1, const_zero = (int) 0;
-    const int is_unsigned = neg_one > const_zero;
-#if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_Check(x))) {
-        if (sizeof(int) < sizeof(long)) {
-            __PYX_VERIFY_RETURN_INT(int, long, PyInt_AS_LONG(x))
-        } else {
-            long val = PyInt_AS_LONG(x);
-            if (is_unsigned && unlikely(val < 0)) {
-                goto raise_neg_overflow;
-            }
-            return (int) val;
-        }
-    } else
-#endif
-    if (likely(PyLong_Check(x))) {
-        if (is_unsigned) {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (int) 0;
-                case  1: __PYX_VERIFY_RETURN_INT(int, digit, digits[0])
-                case 2:
-                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 2 * PyLong_SHIFT) {
-                            return (int) (((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 3 * PyLong_SHIFT) {
-                            return (int) (((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 4 * PyLong_SHIFT) {
-                            return (int) (((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-            }
-#endif
-#if CYTHON_COMPILING_IN_CPYTHON
-            if (unlikely(Py_SIZE(x) < 0)) {
-                goto raise_neg_overflow;
-            }
-#else
-            {
-                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
-                if (unlikely(result < 0))
-                    return (int) -1;
-                if (unlikely(result == 1))
-                    goto raise_neg_overflow;
-            }
-#endif
-            if (sizeof(int) <= sizeof(unsigned long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned long, PyLong_AsUnsignedLong(x))
-            } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
-            }
-        } else {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (int) 0;
-                case -1: __PYX_VERIFY_RETURN_INT(int, sdigit, (sdigit) (-(sdigit)digits[0]))
-                case  1: __PYX_VERIFY_RETURN_INT(int,  digit, +digits[0])
-                case -2:
-                    if (8 * sizeof(int) - 1 > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 2:
-                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                            return (int) ((((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case -3:
-                    if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                            return (int) ((((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case -4:
-                    if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
-                            return (int) ((((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-            }
-#endif
-            if (sizeof(int) <= sizeof(long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, long, PyLong_AsLong(x))
-            } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
-            }
-        }
-        {
-#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
-            PyErr_SetString(PyExc_RuntimeError,
-                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
-#else
-            int val;
-            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
- #if PY_MAJOR_VERSION < 3
-            if (likely(v) && !PyLong_Check(v)) {
-                PyObject *tmp = v;
-                v = PyNumber_Long(tmp);
-                Py_DECREF(tmp);
-            }
- #endif
-            if (likely(v)) {
-                int one = 1; int is_little = (int)*(unsigned char *)&one;
-                unsigned char *bytes = (unsigned char *)&val;
-                int ret = _PyLong_AsByteArray((PyLongObject *)v,
-                                              bytes, sizeof(val),
-                                              is_little, !is_unsigned);
-                Py_DECREF(v);
-                if (likely(!ret))
-                    return val;
-            }
-#endif
-            return (int) -1;
-        }
-    } else {
-        int val;
-        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
-        if (!tmp) return (int) -1;
-        val = __Pyx_PyInt_As_int(tmp);
-        Py_DECREF(tmp);
-        return val;
-    }
-raise_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "value too large to convert to int");
-    return (int) -1;
-raise_neg_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "can't convert negative value to int");
-    return (int) -1;
 }
 
 /* CheckBinaryVersion */
