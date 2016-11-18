@@ -1,4 +1,4 @@
-from libc.math cimport pow
+from libc.math cimport pow, sqrt
 
 cdef class HREstimator(object):
     def __cinit__(self):
