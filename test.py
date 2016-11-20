@@ -69,40 +69,40 @@ class MaxHR(unittest.TestCase):
         del self.tms
 
     def test_astrand(self):
-        self.assertEquals(self.astrand.predict(age), 194.33999633789062)
+        self.assertEquals(self.astrand.predict(age), 194.34)
 
     def test_hf(self):
-        self.assertEquals(self.hf.predict(age), 189.4499969482422)
+        self.assertEquals(self.hf.predict(age), 193.5)
 
     def test_gellish(self):
-        self.assertEquals(self.gellish.predict(age), 188.4499969482422)
+        self.assertEquals(self.gellish.predict(age), 188.45)
 
     def test_gulati(self):
-        self.assertEquals(self.gulati.predict(age), 182.67999267578125)
+        self.assertEquals(self.gulati.predict(age), 182.68)
 
     def test_lm(self):
-        self.assertEquals(self.lm.predict(age), 187.45849609375)
+        self.assertEquals(self.lm.predict(age), 187.45850000000002)
 
     def test_miller(self):
-        self.assertEquals(self.miller.predict(age), 194.47500610351562)
+        self.assertEquals(self.miller.predict(age), 194.475)
 
     def test_nes(self):
-        self.assertEquals(self.nes.predict(age), 194.0399932861328)
+        self.assertEquals(self.nes.predict(age), 194.04)
 
     def test_oaklandL(self):
-        self.assertEquals(self.oaklandL.predict(age), 189.14500427246094)
+        self.assertEquals(self.oaklandL.predict(age), 189.145)
 
     def test_oaklandNL1(self):
-        self.assertEquals(self.oaklandNL1.predict(age), 190.0955047607422)
+        self.assertEquals(self.oaklandNL1.predict(age), 190.0955)
 
     def test_oaklandNL2(self):
-        self.assertEquals(self.oaklandNL2.predict(age), 181.09950256347656)
+        self.assertEquals(self.oaklandNL2.predict(age), 181.0995)
 
     def test_rl(self):
-        self.assertEquals(self.rl.predict(age), 187.6475067138672)
+        self.assertEquals(self.rl.predict(age), 187.6475)
 
     def test_tms(self):
-        self.assertEquals(self.tms.predict(age), 189.4499969482422)
+        self.assertEquals(self.tms.predict(age), 189.45)
 
 class BMR(unittest.TestCase):
     def setUp(self):
@@ -116,13 +116,13 @@ class BMR(unittest.TestCase):
         del self.msj
 
     def test_hb(self):
-        self.assertEquals(self.hb.predict(age, weight, height), 800.8040771484375)
+        self.assertEquals(self.hb.predict(age, weight, height), 800.8040994)
 
     def test_revisedHB(self):
-        self.assertEquals(self.revisedHB.predict(age, weight, height), 800.8040771484375)
+        self.assertEquals(self.revisedHB.predict(age, weight, height), 800.8040994)
 
     def test_msj(self):
-        self.assertEquals(self.msj.predict(age, weight, height), 542.7747802734375)
+        self.assertEquals(self.msj.predict(age, weight, height), 542.7747999999999)
 
 class RMR(unittest.TestCase):
     def setUp(self):
@@ -132,10 +132,10 @@ class RMR(unittest.TestCase):
         del self.rmr
 
     def test_quick(self):
-        self.assertEquals(self.rmr.quick(), 1591.6339111328125)
+        self.assertEquals(self.rmr.quick(), 1591.6339999999998)
 
     def test_bsa(self):
-        self.assertEquals(self.rmr.bsa(body_surface_area), 1732.7999267578125)
+        self.assertEquals(self.rmr.bsa(body_surface_area), 1732.8)
 
 class TEE(unittest.TestCase):
     def setUp(self):
@@ -147,25 +147,25 @@ class TEE(unittest.TestCase):
         del self.adult
 
     def test_adult(self):
-        self.assertEquals(self.adult.predict(age, weight, height), 2415.31787109375)
+        self.assertEquals(self.adult.predict(age, weight, height), 2415.3179999999998)
 
     def test_child(self):
-        self.assertEquals(self.child.predict(age, weight, height), 1809.742919921875)
+        self.assertEquals(self.child.predict(age, weight, height), 1809.743)
 
     def test_fromActivity(self):
-        self.assertEquals(self.child.fromActivity(weight, 8.0), 9.207799911499023)
+        self.assertEquals(self.child.fromActivity(weight, 8.0), 9.207799999999999)
 
 class Energy(unittest.TestCase):
     def test_cunningham(self):
-        self.assertEquals(energy.cunningham(lean_body_mass), 1477.9461669921875)
+        self.assertEquals(energy.cunningham(lean_body_mass), 1477.9462)
 
     def test_kma(self):
-        self.assertEquals(energy.kma(lean_body_mass), 1330.165283203125)
+        self.assertEquals(energy.kma(lean_body_mass), 1330.16536)
 
 # Composition Module tests
 class Composition(unittest.TestCase):
     def test_daily_water_intake(self):
-        self.assertEquals(composition.dailyWaterNeed(weight), 2.170409917831421)
+        self.assertEquals(composition.dailyWaterNeed(weight), 2.17041)
 
 class Index(unittest.TestCase):
     def setUp(self):
@@ -176,35 +176,35 @@ class Index(unittest.TestCase):
 
     def test_bai(self):
         value = self.index.bai(hip_circumference)
-        self.assertEquals(value, 17.430858612060547)
+        self.assertEquals(value, 17.43085650680662)
 
     def test_bmi(self):
         value = self.index.bmi()
-        self.assertEquals(value, 20.80483627319336)
+        self.assertEquals(value, 20.804837528042402)
 
     def test_bmi_prime(self):
         value = self.index.bmi_prime()
-        self.assertEquals(value, 0.8032755255699158)
+        self.assertEquals(value, 0.8032755802332974)
 
     def test_bsi(self):
         value = self.index.bsi(waist_circumference)
-        self.assertEquals(value, 1.083801031112671)
+        self.assertEquals(value, 1.0838010645501324)
 
     def test_corpulence(self):
         value = self.index.corpulence()
-        self.assertEquals(value, 11.701257705688477)
+        self.assertEquals(value, 11.701258452217322)
 
     def test_sbsi(self):
         value = self.index.sbsi(body_surface_area, vertical_trunk_circumference, waist_circumference)
-        self.assertEquals(value, 1.0397660732269287)
+        self.assertEquals(value, 1.039766081871345)
 
     def test_WHR(self):
         value = self.index.WHR(waist_circumference, hip_circumference)
-        self.assertEquals(value, 0.9676190614700317)
+        self.assertEquals(value, 0.9676190476190476)
 
     def test_WHtR(self):
         value = self.index.WHtR(waist_circumference)
-        self.assertEquals(value, 0.4571428596973419)
+        self.assertEquals(value, 0.45714285714285713)
 
 class SurfaceArea(unittest.TestCase):
     def setUp(self):
@@ -215,43 +215,43 @@ class SurfaceArea(unittest.TestCase):
 
     def test_boyd(self):
         value = self.sa.boyd()
-        self.assertEquals(value, 1.8661445379257202)
+        self.assertEquals(value, 1.8661444964284422)
 
     def test_costeff(self):
         value = self.sa.costeff()
-        self.assertEquals(value, 1.733838438987732)
+        self.assertEquals(value, 1.7338383514155487)
 
     def test_dubois(self):
         value = self.sa.dubois()
-        self.assertEquals(value, 1.8206592798233032)
+        self.assertEquals(value, 1.820659283833425)
 
     def test_fujimoto(self):
         value = self.sa.fujimoto()
-        self.assertEquals(value, 1.7679450511932373)
+        self.assertEquals(value, 1.7679451154824195)
 
     def test_gehangeorge(self):
         value = self.sa.gehangeorge()
-        self.assertEquals(value, 1.8074172735214233)
+        self.assertEquals(value, 1.807417314977944)
 
     def test_haycock(self):
         value = self.sa.haycock()
-        self.assertEquals(value, 1.7971676588058472)
+        self.assertEquals(value, 1.7971677529555214)
 
     def test_mosteller(self):
         value = self.sa.mosteller()
-        self.assertEquals(value, 1.802306056022644)
+        self.assertEquals(value, 1.8023060844990295)
 
     def test_schlich(self):
         value = self.sa.schlich()
-        self.assertEquals(value, 1.7530877590179443)
+        self.assertEquals(value, 1.753087770492256)
 
     def test_shuterAslani(self):
         value = self.sa.shuterAslani()
-        self.assertEquals(value, 1.7894591093063354)
+        self.assertEquals(value, 1.789459160601124)
 
     def test_takahira(self):
         value = self.sa.takahira()
-        self.assertEquals(value, 1.8351049423217773)
+        self.assertEquals(value, 1.8351049379507)
 
 class Stature(unittest.TestCase):
     def setUp(self):
@@ -262,33 +262,33 @@ class Stature(unittest.TestCase):
 
     def test_universal(self):
         value = self.stature.universal()
-        self.assertEquals(value, 1.6348217725753784)
+        self.assertEquals(value, 1.6348217999999997)
 
     def test_americanWhite(self):
         value = self.stature.americanWhite(femurLength)
-        self.assertEquals(value, 1.7689000368118286)
+        self.assertEquals(value, 1.7689)
 
     def test_americanBlack(self):
         value = self.stature.americanBlack(femurLength)
-        self.assertEquals(value, 1.7302000522613525)
+        self.assertEquals(value, 1.7302000000000002)
 
     def test_strideLength(self):
         value = self.stature.strideLength()
-        self.assertEquals(value, 0.7378700375556946)
+        self.assertEquals(value, 0.73787)
 
 # METs module tests
 class METs(unittest.TestCase):
     def test_karvonen(self):
-        self.assertEquals(mets.karvonen(8.0, 0.65), 5.549999713897705)
+        self.assertEquals(mets.karvonen(8.0, 0.65), 5.55)
 
     def test_fromVO2(self):
-        self.assertEquals(mets.fromVO2(72.3), 20.65714454650879)
+        self.assertEquals(mets.fromVO2(72.3), 20.657142857142855)
 
     def test_toKCal(self):
-        self.assertEquals(mets.toKCal(8.0, weight), 9.207799911499023)
+        self.assertEquals(mets.toKCal(8.0, weight), 9.207799999999999)
 
     def test_target(self):
-        self.assertEquals(mets.target(72.3, 0.65), 13.777143478393555)
+        self.assertEquals(mets.target(72.3, 0.65), 13.777142857142856)
 
 # Models module tests
 class Aerobic(unittest.TestCase):
@@ -301,10 +301,10 @@ class Aerobic(unittest.TestCase):
         del self.riegel
 
     def test_cameron(self):
-        self.assertEquals( self.cameron.time(3200), 569.8930864235182)
+        self.assertEquals( self.cameron.time(3200), 569.8930999989254)
 
     def test_riegel(self):
-        self.assertEquals( self.riegel.time(3200), 573.2427747028469)
+        self.assertEquals( self.riegel.time(3200), 573.2427882846001)
         self.assertEquals( self.riegel.distance(260), 1517.82078410174)
 
 
@@ -344,57 +344,57 @@ class RM1(unittest.TestCase):
         del self.rm
 
     def test_abadie(self):
-        self.assertEquals(self.abadie.predict(weightLifted), 63.939998626708984)
+        self.assertEquals(self.abadie.predict(weightLifted), 63.940000000000005)
 
     def test_baechle(self):
-        self.assertEquals(self.baechle.predict(weightLifted), 66.4739990234375)
+        self.assertEquals(self.baechle.predict(weightLifted), 66.474)
 
     def test_brzycki(self):
-        self.assertEquals(self.brzycki.predict(weightLifted), 64.81037139892578)
+        self.assertEquals(self.brzycki.predict(weightLifted), 64.81036965914546)
 
     def test_epley(self):
-        self.assertEquals(self.epley.predict(weightLifted), 66.4739990234375)
-    
+        self.assertEquals(self.epley.predict(weightLifted), 66.474)
+
     def test_landers(self):
-        self.assertEquals(self.landers.predict(weightLifted), 65.37419891357422)
-        self.assertEquals(self.landers.percent(), 0.8260138630867004)
+        self.assertEquals(self.landers.predict(weightLifted), 65.37420254065944)
+        self.assertEquals(self.landers.percent(), 0.8260139)
 
     def test_lombardi(self):
-        self.assertEquals(self.lombardi.predict(weightLifted), 65.59996032714844)
+        self.assertEquals(self.lombardi.predict(weightLifted), 65.59995837810962)
 
     def test_mayhew(self):
-        self.assertEquals(self.mayhew.predict(weightLifted), 66.90547943115234)
-        self.assertEquals(self.mayhew.percent(), 0.8071088194847107)
+        self.assertEquals(self.mayhew.predict(weightLifted), 66.9054765496236)
+        self.assertEquals(self.mayhew.percent(), 0.8071088165697222)
 
     def test_mcGlothin(self):
-        self.assertEquals(self.mcGlothin.predict(weightLifted), 65.37419891357422)
+        self.assertEquals(self.mcGlothin.predict(weightLifted), 65.37420254065943)
 
     def test_oConnor(self):
-        self.assertEquals(self.oconnor.predict(weightLifted), 63.45000076293945)
-        self.assertEquals(self.oconnor.percent(weightLifted), 63.45000076293945)
+        self.assertEquals(self.oconnor.predict(weightLifted), 63.45)
+        self.assertEquals(self.oconnor.percent(weightLifted), 63.45)
 
     def test_reynoldsCP(self):
-        self.assertEquals(self.reynoldsCP.predict(weightLifted), 61.757598876953125)
+        self.assertEquals(self.reynoldsCP.predict(weightLifted), 61.757600000000004)
 
     def test_reynoldsLP(self):
-        self.assertEquals(self.reynoldsLP.predict(weightLifted), 73.49421691894531)
+        self.assertEquals(self.reynoldsLP.predict(weightLifted), 73.49422)
 
     def test_wathan(self):
-        self.assertEquals(self.wathan.predict(weightLifted), 66.97618103027344)
+        self.assertEquals(self.wathan.predict(weightLifted), 66.97618046223116)
 
     def test_ymcaUpperBody(self):
         self.assertEquals(self.rm.ymcaUpperBody(reps), 48.75)
 
     def test_femaleMiddleAge(self):
-        self.assertEquals(self.rm.femaleMiddleAge(reps, weightLifted), 52.59000015258789)
+        self.assertEquals(self.rm.femaleMiddleAge(reps, weightLifted), 52.59)
 
     def test_femaleOlder(self):
-        self.assertEquals(self.rm.femaleOlder(reps, weightLifted), 46.18000030517578)
+        self.assertEquals(self.rm.femaleOlder(reps, weightLifted), 46.18)
 
 
 class Strength(unittest.TestCase):
     def test_relative(self):
-        self.assertEquals(strength.relative(weight, weightLifted), 0.821043074131012)
+        self.assertEquals(strength.relative(weight, weightLifted), 0.821043028736506)
 
 if __name__ == '__main__':
     unittest.main()
