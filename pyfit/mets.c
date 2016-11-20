@@ -2,7 +2,9 @@
 
 /* BEGIN: Cython Metadata
 {
-    "distutils": {}, 
+    "distutils": {
+        "depends": []
+    }, 
     "module_name": "pyfit.mets"
 }
 END: Cython Metadata */
@@ -407,6 +409,8 @@ static CYTHON_INLINE float __PYX_NAN() {
 
 #define __PYX_HAVE__pyfit__mets
 #define __PYX_HAVE_API__pyfit__mets
+#include <string.h>
+#include <stdlib.h>
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -828,6 +832,10 @@ static int __Pyx_ExportFunction(const char *name, void (*f)(void), const char *s
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
+/* Module declarations from 'libc.string' */
+
+/* Module declarations from 'libc.stdlib' */
+
 /* Module declarations from 'pyfit.mets' */
 static PyTypeObject *__pyx_ptype_5pyfit_4mets_METs = 0;
 static double __pyx_f_5pyfit_4mets_karvonen(double, double, int __pyx_skip_dispatch); /*proto*/
@@ -867,6 +875,7 @@ static PyObject *__pyx_n_s_vO2Max;
 static PyObject *__pyx_n_s_value;
 static PyObject *__pyx_n_s_weight;
 static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_METs *__pyx_v_self); /* proto */
+static void __pyx_pf_5pyfit_4mets_4METs_2__dealloc__(struct __pyx_obj_5pyfit_4mets_METs *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_4mets_4METs_4mets___get__(struct __pyx_obj_5pyfit_4mets_METs *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_intensity); /* proto */
 static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2); /* proto */
@@ -875,7 +884,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_sel
 static PyObject *__pyx_pf_5pyfit_4mets_8target(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2Max, PyObject *__pyx_v_intensity); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_4mets_METs(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 
-/* "pyfit/mets.pyx":5
+/* "pyfit/mets.pyx":7
  * cdef class METs(object):
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -1736,7 +1745,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   struct __pyx_t_5pyfit_4mets_MET __pyx_t_832[831];
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "pyfit/mets.pyx":7
+  /* "pyfit/mets.pyx":9
  *     def __cinit__(self):
  *         self.mets = [
  *     		MET(14.0,"01003","bicycling, mountain, uphill, vigorous"),             # <<<<<<<<<<<<<<
@@ -1747,7 +1756,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_1.code = ((char *)"01003");
   __pyx_t_1.description = ((char *)"bicycling, mountain, uphill, vigorous");
 
-  /* "pyfit/mets.pyx":8
+  /* "pyfit/mets.pyx":10
  *         self.mets = [
  *     		MET(14.0,"01003","bicycling, mountain, uphill, vigorous"),
  *     		MET(16.0,"01004","bicycling, mountain, competitive, racing"),             # <<<<<<<<<<<<<<
@@ -1758,7 +1767,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_2.code = ((char *)"01004");
   __pyx_t_2.description = ((char *)"bicycling, mountain, competitive, racing");
 
-  /* "pyfit/mets.pyx":9
+  /* "pyfit/mets.pyx":11
  *     		MET(14.0,"01003","bicycling, mountain, uphill, vigorous"),
  *     		MET(16.0,"01004","bicycling, mountain, competitive, racing"),
  *     		MET(8.5,"01008","bicycling, BMX"),             # <<<<<<<<<<<<<<
@@ -1769,7 +1778,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_3.code = ((char *)"01008");
   __pyx_t_3.description = ((char *)"bicycling, BMX");
 
-  /* "pyfit/mets.pyx":10
+  /* "pyfit/mets.pyx":12
  *     		MET(16.0,"01004","bicycling, mountain, competitive, racing"),
  *     		MET(8.5,"01008","bicycling, BMX"),
  *     		MET(8.5,"01009","bicycling, mountain, general"),             # <<<<<<<<<<<<<<
@@ -1780,7 +1789,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_4.code = ((char *)"01009");
   __pyx_t_4.description = ((char *)"bicycling, mountain, general");
 
-  /* "pyfit/mets.pyx":11
+  /* "pyfit/mets.pyx":13
  *     		MET(8.5,"01008","bicycling, BMX"),
  *     		MET(8.5,"01009","bicycling, mountain, general"),
  *     		MET(4.0,"01010","bicycling, <10 mph, leisure, to work or for pleasure (Taylor Code 115)"),             # <<<<<<<<<<<<<<
@@ -1791,7 +1800,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_5.code = ((char *)"01010");
   __pyx_t_5.description = ((char *)"bicycling, <10 mph, leisure, to work or for pleasure (Taylor Code 115)");
 
-  /* "pyfit/mets.pyx":12
+  /* "pyfit/mets.pyx":14
  *     		MET(8.5,"01009","bicycling, mountain, general"),
  *     		MET(4.0,"01010","bicycling, <10 mph, leisure, to work or for pleasure (Taylor Code 115)"),
  *     		MET(6.8,"01011","bicycling, to/from work, self selected pace"),             # <<<<<<<<<<<<<<
@@ -1802,7 +1811,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_6.code = ((char *)"01011");
   __pyx_t_6.description = ((char *)"bicycling, to/from work, self selected pace");
 
-  /* "pyfit/mets.pyx":13
+  /* "pyfit/mets.pyx":15
  *     		MET(4.0,"01010","bicycling, <10 mph, leisure, to work or for pleasure (Taylor Code 115)"),
  *     		MET(6.8,"01011","bicycling, to/from work, self selected pace"),
  *     		MET(5.8,"01013","bicycling, on dirt or farm road, moderate pace"),             # <<<<<<<<<<<<<<
@@ -1813,7 +1822,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_7.code = ((char *)"01013");
   __pyx_t_7.description = ((char *)"bicycling, on dirt or farm road, moderate pace");
 
-  /* "pyfit/mets.pyx":14
+  /* "pyfit/mets.pyx":16
  *     		MET(6.8,"01011","bicycling, to/from work, self selected pace"),
  *     		MET(5.8,"01013","bicycling, on dirt or farm road, moderate pace"),
  *     		MET(7.5,"01015","bicycling, general"),             # <<<<<<<<<<<<<<
@@ -1824,7 +1833,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_8.code = ((char *)"01015");
   __pyx_t_8.description = ((char *)"bicycling, general");
 
-  /* "pyfit/mets.pyx":15
+  /* "pyfit/mets.pyx":17
  *     		MET(5.8,"01013","bicycling, on dirt or farm road, moderate pace"),
  *     		MET(7.5,"01015","bicycling, general"),
  *     		MET(3.5,"01018","bicycling, leisure, 5.5 mph"),             # <<<<<<<<<<<<<<
@@ -1835,7 +1844,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_9.code = ((char *)"01018");
   __pyx_t_9.description = ((char *)"bicycling, leisure, 5.5 mph");
 
-  /* "pyfit/mets.pyx":16
+  /* "pyfit/mets.pyx":18
  *     		MET(7.5,"01015","bicycling, general"),
  *     		MET(3.5,"01018","bicycling, leisure, 5.5 mph"),
  *     		MET(6.8,"01020","bicycling, 10-11.9 mph, leisure, slow, light effort"),             # <<<<<<<<<<<<<<
@@ -1846,7 +1855,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_10.code = ((char *)"01020");
   __pyx_t_10.description = ((char *)"bicycling, 10-11.9 mph, leisure, slow, light effort");
 
-  /* "pyfit/mets.pyx":17
+  /* "pyfit/mets.pyx":19
  *     		MET(3.5,"01018","bicycling, leisure, 5.5 mph"),
  *     		MET(6.8,"01020","bicycling, 10-11.9 mph, leisure, slow, light effort"),
  *     		MET(8.0,"01030","bicycling, 12-13.9 mph, leisure, moderate effort"),             # <<<<<<<<<<<<<<
@@ -1857,7 +1866,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_11.code = ((char *)"01030");
   __pyx_t_11.description = ((char *)"bicycling, 12-13.9 mph, leisure, moderate effort");
 
-  /* "pyfit/mets.pyx":18
+  /* "pyfit/mets.pyx":20
  *     		MET(6.8,"01020","bicycling, 10-11.9 mph, leisure, slow, light effort"),
  *     		MET(8.0,"01030","bicycling, 12-13.9 mph, leisure, moderate effort"),
  *     		MET(10.0,"01040","bicycling, 14-15.9 mph, racing or leisure, fast, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -1868,7 +1877,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_12.code = ((char *)"01040");
   __pyx_t_12.description = ((char *)"bicycling, 14-15.9 mph, racing or leisure, fast, vigorous effort");
 
-  /* "pyfit/mets.pyx":19
+  /* "pyfit/mets.pyx":21
  *     		MET(8.0,"01030","bicycling, 12-13.9 mph, leisure, moderate effort"),
  *     		MET(10.0,"01040","bicycling, 14-15.9 mph, racing or leisure, fast, vigorous effort"),
  *     		MET(12.0,"01050","bicycling, 16-19 mph, racing/not drafting or > 19 mph drafting, very fast, racing general"),             # <<<<<<<<<<<<<<
@@ -1879,7 +1888,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_13.code = ((char *)"01050");
   __pyx_t_13.description = ((char *)"bicycling, 16-19 mph, racing/not drafting or > 19 mph drafting, very fast, racing general");
 
-  /* "pyfit/mets.pyx":20
+  /* "pyfit/mets.pyx":22
  *     		MET(10.0,"01040","bicycling, 14-15.9 mph, racing or leisure, fast, vigorous effort"),
  *     		MET(12.0,"01050","bicycling, 16-19 mph, racing/not drafting or > 19 mph drafting, very fast, racing general"),
  *     		MET(15.8,"01060","bicycling, > 20 mph, racing, not drafting"),             # <<<<<<<<<<<<<<
@@ -1890,7 +1899,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_14.code = ((char *)"01060");
   __pyx_t_14.description = ((char *)"bicycling, > 20 mph, racing, not drafting");
 
-  /* "pyfit/mets.pyx":21
+  /* "pyfit/mets.pyx":23
  *     		MET(12.0,"01050","bicycling, 16-19 mph, racing/not drafting or > 19 mph drafting, very fast, racing general"),
  *     		MET(15.8,"01060","bicycling, > 20 mph, racing, not drafting"),
  *     		MET(8.5,"01065","bicycling, 12 mph, seated, hands on brake hoods or bar drops, 80 rpm"),             # <<<<<<<<<<<<<<
@@ -1901,7 +1910,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_15.code = ((char *)"01065");
   __pyx_t_15.description = ((char *)"bicycling, 12 mph, seated, hands on brake hoods or bar drops, 80 rpm");
 
-  /* "pyfit/mets.pyx":22
+  /* "pyfit/mets.pyx":24
  *     		MET(15.8,"01060","bicycling, > 20 mph, racing, not drafting"),
  *     		MET(8.5,"01065","bicycling, 12 mph, seated, hands on brake hoods or bar drops, 80 rpm"),
  *     		MET(9.0,"01066","bicycling, 12 mph, standing, hands on brake hoods, 60 rpm"),             # <<<<<<<<<<<<<<
@@ -1912,7 +1921,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_16.code = ((char *)"01066");
   __pyx_t_16.description = ((char *)"bicycling, 12 mph, standing, hands on brake hoods, 60 rpm");
 
-  /* "pyfit/mets.pyx":23
+  /* "pyfit/mets.pyx":25
  *     		MET(8.5,"01065","bicycling, 12 mph, seated, hands on brake hoods or bar drops, 80 rpm"),
  *     		MET(9.0,"01066","bicycling, 12 mph, standing, hands on brake hoods, 60 rpm"),
  *     		MET(5.0,"01070","unicycling"),             # <<<<<<<<<<<<<<
@@ -1923,7 +1932,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_17.code = ((char *)"01070");
   __pyx_t_17.description = ((char *)"unicycling");
 
-  /* "pyfit/mets.pyx":24
+  /* "pyfit/mets.pyx":26
  *     		MET(9.0,"01066","bicycling, 12 mph, standing, hands on brake hoods, 60 rpm"),
  *     		MET(5.0,"01070","unicycling"),
  *     		MET(2.3,"02001","activity promoting video game (e.g., Wii Fit), light effort (e.g., balance, yoga)"),             # <<<<<<<<<<<<<<
@@ -1934,7 +1943,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_18.code = ((char *)"02001");
   __pyx_t_18.description = ((char *)"activity promoting video game (e.g., Wii Fit), light effort (e.g., balance, yoga)");
 
-  /* "pyfit/mets.pyx":25
+  /* "pyfit/mets.pyx":27
  *     		MET(5.0,"01070","unicycling"),
  *     		MET(2.3,"02001","activity promoting video game (e.g., Wii Fit), light effort (e.g., balance, yoga)"),
  *     		MET(3.8,"02003","activity promoting video game (e.g., Wii Fit), moderate effort (e.g., aerobic, resistance)"),             # <<<<<<<<<<<<<<
@@ -1945,7 +1954,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_19.code = ((char *)"02003");
   __pyx_t_19.description = ((char *)"activity promoting video game (e.g., Wii Fit), moderate effort (e.g., aerobic, resistance)");
 
-  /* "pyfit/mets.pyx":26
+  /* "pyfit/mets.pyx":28
  *     		MET(2.3,"02001","activity promoting video game (e.g., Wii Fit), light effort (e.g., balance, yoga)"),
  *     		MET(3.8,"02003","activity promoting video game (e.g., Wii Fit), moderate effort (e.g., aerobic, resistance)"),
  *     		MET(7.2,"02005","activity promoting video/arcade game (e.g., Exergaming, Dance Dance Revolution), vigorous effort"),             # <<<<<<<<<<<<<<
@@ -1956,7 +1965,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_20.code = ((char *)"02005");
   __pyx_t_20.description = ((char *)"activity promoting video/arcade game (e.g., Exergaming, Dance Dance Revolution), vigorous effort");
 
-  /* "pyfit/mets.pyx":27
+  /* "pyfit/mets.pyx":29
  *     		MET(3.8,"02003","activity promoting video game (e.g., Wii Fit), moderate effort (e.g., aerobic, resistance)"),
  *     		MET(7.2,"02005","activity promoting video/arcade game (e.g., Exergaming, Dance Dance Revolution), vigorous effort"),
  *     		MET(5.0,"02008","army type obstacle course exercise, boot camp training program\\u00a0"),             # <<<<<<<<<<<<<<
@@ -1967,7 +1976,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_21.code = ((char *)"02008");
   __pyx_t_21.description = ((char *)"army type obstacle course exercise, boot camp training program\\u00a0");
 
-  /* "pyfit/mets.pyx":28
+  /* "pyfit/mets.pyx":30
  *     		MET(7.2,"02005","activity promoting video/arcade game (e.g., Exergaming, Dance Dance Revolution), vigorous effort"),
  *     		MET(5.0,"02008","army type obstacle course exercise, boot camp training program\\u00a0"),
  *     		MET(7.0,"02010","bicycling, stationary, general"),             # <<<<<<<<<<<<<<
@@ -1978,7 +1987,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_22.code = ((char *)"02010");
   __pyx_t_22.description = ((char *)"bicycling, stationary, general");
 
-  /* "pyfit/mets.pyx":29
+  /* "pyfit/mets.pyx":31
  *     		MET(5.0,"02008","army type obstacle course exercise, boot camp training program\\u00a0"),
  *     		MET(7.0,"02010","bicycling, stationary, general"),
  *     		MET(3.5,"02011","bicycling, stationary, 30-50 watts, very light to light effort"),             # <<<<<<<<<<<<<<
@@ -1989,7 +1998,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_23.code = ((char *)"02011");
   __pyx_t_23.description = ((char *)"bicycling, stationary, 30-50 watts, very light to light effort");
 
-  /* "pyfit/mets.pyx":30
+  /* "pyfit/mets.pyx":32
  *     		MET(7.0,"02010","bicycling, stationary, general"),
  *     		MET(3.5,"02011","bicycling, stationary, 30-50 watts, very light to light effort"),
  *     		MET(6.8,"02012","bicycling, stationary, 90-100 watts, moderate to vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2000,7 +2009,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_24.code = ((char *)"02012");
   __pyx_t_24.description = ((char *)"bicycling, stationary, 90-100 watts, moderate to vigorous effort");
 
-  /* "pyfit/mets.pyx":31
+  /* "pyfit/mets.pyx":33
  *     		MET(3.5,"02011","bicycling, stationary, 30-50 watts, very light to light effort"),
  *     		MET(6.8,"02012","bicycling, stationary, 90-100 watts, moderate to vigorous effort"),
  *     		MET(8.8,"02013","bicycling, stationary, 101-160 watts, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2011,7 +2020,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_25.code = ((char *)"02013");
   __pyx_t_25.description = ((char *)"bicycling, stationary, 101-160 watts, vigorous effort");
 
-  /* "pyfit/mets.pyx":32
+  /* "pyfit/mets.pyx":34
  *     		MET(6.8,"02012","bicycling, stationary, 90-100 watts, moderate to vigorous effort"),
  *     		MET(8.8,"02013","bicycling, stationary, 101-160 watts, vigorous effort"),
  *     		MET(11.0,"02014","bicycling, stationary, 161-200 watts, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2022,7 +2031,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_26.code = ((char *)"02014");
   __pyx_t_26.description = ((char *)"bicycling, stationary, 161-200 watts, vigorous effort");
 
-  /* "pyfit/mets.pyx":33
+  /* "pyfit/mets.pyx":35
  *     		MET(8.8,"02013","bicycling, stationary, 101-160 watts, vigorous effort"),
  *     		MET(11.0,"02014","bicycling, stationary, 161-200 watts, vigorous effort"),
  *     		MET(14.0,"02015","bicycling, stationary, 201-270 watts, very vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2033,7 +2042,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_27.code = ((char *)"02015");
   __pyx_t_27.description = ((char *)"bicycling, stationary, 201-270 watts, very vigorous effort");
 
-  /* "pyfit/mets.pyx":34
+  /* "pyfit/mets.pyx":36
  *     		MET(11.0,"02014","bicycling, stationary, 161-200 watts, vigorous effort"),
  *     		MET(14.0,"02015","bicycling, stationary, 201-270 watts, very vigorous effort"),
  *     		MET(4.8,"02017","bicycling, stationary, 51-89 watts, light-to-moderate effort"),             # <<<<<<<<<<<<<<
@@ -2044,7 +2053,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_28.code = ((char *)"02017");
   __pyx_t_28.description = ((char *)"bicycling, stationary, 51-89 watts, light-to-moderate effort");
 
-  /* "pyfit/mets.pyx":35
+  /* "pyfit/mets.pyx":37
  *     		MET(14.0,"02015","bicycling, stationary, 201-270 watts, very vigorous effort"),
  *     		MET(4.8,"02017","bicycling, stationary, 51-89 watts, light-to-moderate effort"),
  *     		MET(8.5,"02019","bicycling, stationary, RPM/Spin bike class"),             # <<<<<<<<<<<<<<
@@ -2055,7 +2064,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_29.code = ((char *)"02019");
   __pyx_t_29.description = ((char *)"bicycling, stationary, RPM/Spin bike class");
 
-  /* "pyfit/mets.pyx":36
+  /* "pyfit/mets.pyx":38
  *     		MET(4.8,"02017","bicycling, stationary, 51-89 watts, light-to-moderate effort"),
  *     		MET(8.5,"02019","bicycling, stationary, RPM/Spin bike class"),
  *     		MET(8.0,"02020","calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2066,7 +2075,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_30.code = ((char *)"02020");
   __pyx_t_30.description = ((char *)"calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort");
 
-  /* "pyfit/mets.pyx":37
+  /* "pyfit/mets.pyx":39
  *     		MET(8.5,"02019","bicycling, stationary, RPM/Spin bike class"),
  *     		MET(8.0,"02020","calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort"),
  *     		MET(3.8,"02022","calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort"),             # <<<<<<<<<<<<<<
@@ -2077,7 +2086,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_31.code = ((char *)"02022");
   __pyx_t_31.description = ((char *)"calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort");
 
-  /* "pyfit/mets.pyx":38
+  /* "pyfit/mets.pyx":40
  *     		MET(8.0,"02020","calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort"),
  *     		MET(3.8,"02022","calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort"),
  *     		MET(2.8,"02024","calisthenics (e.g., situps, abdominal crunches), light effort"),             # <<<<<<<<<<<<<<
@@ -2088,7 +2097,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_32.code = ((char *)"02024");
   __pyx_t_32.description = ((char *)"calisthenics (e.g., situps, abdominal crunches), light effort");
 
-  /* "pyfit/mets.pyx":39
+  /* "pyfit/mets.pyx":41
  *     		MET(3.8,"02022","calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort"),
  *     		MET(2.8,"02024","calisthenics (e.g., situps, abdominal crunches), light effort"),
  *     		MET(3.5,"02030","calisthenics, light or moderate effort, general (example: back exercises), going up & down from floor (Taylor Code 150)"),             # <<<<<<<<<<<<<<
@@ -2099,7 +2108,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_33.code = ((char *)"02030");
   __pyx_t_33.description = ((char *)"calisthenics, light or moderate effort, general (example: back exercises), going up & down from floor (Taylor Code 150)");
 
-  /* "pyfit/mets.pyx":40
+  /* "pyfit/mets.pyx":42
  *     		MET(2.8,"02024","calisthenics (e.g., situps, abdominal crunches), light effort"),
  *     		MET(3.5,"02030","calisthenics, light or moderate effort, general (example: back exercises), going up & down from floor (Taylor Code 150)"),
  *     		MET(4.3,"02035","circuit training, moderate effort"),             # <<<<<<<<<<<<<<
@@ -2110,7 +2119,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_34.code = ((char *)"02035");
   __pyx_t_34.description = ((char *)"circuit training, moderate effort");
 
-  /* "pyfit/mets.pyx":41
+  /* "pyfit/mets.pyx":43
  *     		MET(3.5,"02030","calisthenics, light or moderate effort, general (example: back exercises), going up & down from floor (Taylor Code 150)"),
  *     		MET(4.3,"02035","circuit training, moderate effort"),
  *     		MET(8.0,"02040","circuit training, including kettlebells, some aerobic movement with minimal rest, general, vigorous intensity"),             # <<<<<<<<<<<<<<
@@ -2121,7 +2130,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_35.code = ((char *)"02040");
   __pyx_t_35.description = ((char *)"circuit training, including kettlebells, some aerobic movement with minimal rest, general, vigorous intensity");
 
-  /* "pyfit/mets.pyx":42
+  /* "pyfit/mets.pyx":44
  *     		MET(4.3,"02035","circuit training, moderate effort"),
  *     		MET(8.0,"02040","circuit training, including kettlebells, some aerobic movement with minimal rest, general, vigorous intensity"),
  *     		MET(3.5,"02045","Curves exercise routines in women"),             # <<<<<<<<<<<<<<
@@ -2132,7 +2141,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_36.code = ((char *)"02045");
   __pyx_t_36.description = ((char *)"Curves exercise routines in women");
 
-  /* "pyfit/mets.pyx":43
+  /* "pyfit/mets.pyx":45
  *     		MET(8.0,"02040","circuit training, including kettlebells, some aerobic movement with minimal rest, general, vigorous intensity"),
  *     		MET(3.5,"02045","Curves exercise routines in women"),
  *     		MET(5.0,"02048","Elliptical trainer, moderate effort\\u00a0"),             # <<<<<<<<<<<<<<
@@ -2143,7 +2152,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_37.code = ((char *)"02048");
   __pyx_t_37.description = ((char *)"Elliptical trainer, moderate effort\\u00a0");
 
-  /* "pyfit/mets.pyx":44
+  /* "pyfit/mets.pyx":46
  *     		MET(3.5,"02045","Curves exercise routines in women"),
  *     		MET(5.0,"02048","Elliptical trainer, moderate effort\\u00a0"),
  *     		MET(6.0,"02050","resistance training (weight lifting - free weight, nautilus or universal-type), power lifting or body building, vigorous effort (Taylor Code 210)"),             # <<<<<<<<<<<<<<
@@ -2154,7 +2163,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_38.code = ((char *)"02050");
   __pyx_t_38.description = ((char *)"resistance training (weight lifting - free weight, nautilus or universal-type), power lifting or body building, vigorous effort (Taylor Code 210)");
 
-  /* "pyfit/mets.pyx":45
+  /* "pyfit/mets.pyx":47
  *     		MET(5.0,"02048","Elliptical trainer, moderate effort\\u00a0"),
  *     		MET(6.0,"02050","resistance training (weight lifting - free weight, nautilus or universal-type), power lifting or body building, vigorous effort (Taylor Code 210)"),
  *     		MET(5.0,"02052","resistance (weight) training, squats , slow or explosive effort"),             # <<<<<<<<<<<<<<
@@ -2165,7 +2174,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_39.code = ((char *)"02052");
   __pyx_t_39.description = ((char *)"resistance (weight) training, squats , slow or explosive effort");
 
-  /* "pyfit/mets.pyx":46
+  /* "pyfit/mets.pyx":48
  *     		MET(6.0,"02050","resistance training (weight lifting - free weight, nautilus or universal-type), power lifting or body building, vigorous effort (Taylor Code 210)"),
  *     		MET(5.0,"02052","resistance (weight) training, squats , slow or explosive effort"),
  *     		MET(3.5,"02054","resistance (weight) training, multiple exercises, 8-15 repetitions at varied resistance\\u00a0"),             # <<<<<<<<<<<<<<
@@ -2176,7 +2185,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_40.code = ((char *)"02054");
   __pyx_t_40.description = ((char *)"resistance (weight) training, multiple exercises, 8-15 repetitions at varied resistance\\u00a0");
 
-  /* "pyfit/mets.pyx":47
+  /* "pyfit/mets.pyx":49
  *     		MET(5.0,"02052","resistance (weight) training, squats , slow or explosive effort"),
  *     		MET(3.5,"02054","resistance (weight) training, multiple exercises, 8-15 repetitions at varied resistance\\u00a0"),
  *     		MET(5.5,"02060","health club exercise, general (Taylor Code 160)"),             # <<<<<<<<<<<<<<
@@ -2187,7 +2196,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_41.code = ((char *)"02060");
   __pyx_t_41.description = ((char *)"health club exercise, general (Taylor Code 160)");
 
-  /* "pyfit/mets.pyx":48
+  /* "pyfit/mets.pyx":50
  *     		MET(3.5,"02054","resistance (weight) training, multiple exercises, 8-15 repetitions at varied resistance\\u00a0"),
  *     		MET(5.5,"02060","health club exercise, general (Taylor Code 160)"),
  *     		MET(9.0,"02065","stair-treadmill ergometer, general"),             # <<<<<<<<<<<<<<
@@ -2198,7 +2207,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_42.code = ((char *)"02065");
   __pyx_t_42.description = ((char *)"stair-treadmill ergometer, general");
 
-  /* "pyfit/mets.pyx":49
+  /* "pyfit/mets.pyx":51
  *     		MET(5.5,"02060","health club exercise, general (Taylor Code 160)"),
  *     		MET(9.0,"02065","stair-treadmill ergometer, general"),
  *     		MET(11.0,"02068","rope skipping, general"),             # <<<<<<<<<<<<<<
@@ -2209,7 +2218,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_43.code = ((char *)"02068");
   __pyx_t_43.description = ((char *)"rope skipping, general");
 
-  /* "pyfit/mets.pyx":50
+  /* "pyfit/mets.pyx":52
  *     		MET(9.0,"02065","stair-treadmill ergometer, general"),
  *     		MET(11.0,"02068","rope skipping, general"),
  *     		MET(6.0,"02070","rowing, stationary ergometer, general, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2220,7 +2229,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_44.code = ((char *)"02070");
   __pyx_t_44.description = ((char *)"rowing, stationary ergometer, general, vigorous effort");
 
-  /* "pyfit/mets.pyx":51
+  /* "pyfit/mets.pyx":53
  *     		MET(11.0,"02068","rope skipping, general"),
  *     		MET(6.0,"02070","rowing, stationary ergometer, general, vigorous effort"),
  *     		MET(4.8,"02071","rowing, stationary, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -2231,7 +2240,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_45.code = ((char *)"02071");
   __pyx_t_45.description = ((char *)"rowing, stationary, general, moderate effort");
 
-  /* "pyfit/mets.pyx":52
+  /* "pyfit/mets.pyx":54
  *     		MET(6.0,"02070","rowing, stationary ergometer, general, vigorous effort"),
  *     		MET(4.8,"02071","rowing, stationary, general, moderate effort"),
  *     		MET(7.0,"02072","rowing, stationary, 100 watts, moderate effort"),             # <<<<<<<<<<<<<<
@@ -2242,7 +2251,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_46.code = ((char *)"02072");
   __pyx_t_46.description = ((char *)"rowing, stationary, 100 watts, moderate effort");
 
-  /* "pyfit/mets.pyx":53
+  /* "pyfit/mets.pyx":55
  *     		MET(4.8,"02071","rowing, stationary, general, moderate effort"),
  *     		MET(7.0,"02072","rowing, stationary, 100 watts, moderate effort"),
  *     		MET(8.5,"02073","rowing, stationary, 150 watts, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2253,7 +2262,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_47.code = ((char *)"02073");
   __pyx_t_47.description = ((char *)"rowing, stationary, 150 watts, vigorous effort");
 
-  /* "pyfit/mets.pyx":54
+  /* "pyfit/mets.pyx":56
  *     		MET(7.0,"02072","rowing, stationary, 100 watts, moderate effort"),
  *     		MET(8.5,"02073","rowing, stationary, 150 watts, vigorous effort"),
  *     		MET(12.0,"02074","rowing, stationary, 200 watts, very vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2264,7 +2273,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_48.code = ((char *)"02074");
   __pyx_t_48.description = ((char *)"rowing, stationary, 200 watts, very vigorous effort");
 
-  /* "pyfit/mets.pyx":55
+  /* "pyfit/mets.pyx":57
  *     		MET(8.5,"02073","rowing, stationary, 150 watts, vigorous effort"),
  *     		MET(12.0,"02074","rowing, stationary, 200 watts, very vigorous effort"),
  *     		MET(6.8,"02080","ski machine, general"),             # <<<<<<<<<<<<<<
@@ -2275,7 +2284,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_49.code = ((char *)"02080");
   __pyx_t_49.description = ((char *)"ski machine, general");
 
-  /* "pyfit/mets.pyx":56
+  /* "pyfit/mets.pyx":58
  *     		MET(12.0,"02074","rowing, stationary, 200 watts, very vigorous effort"),
  *     		MET(6.8,"02080","ski machine, general"),
  *     		MET(11.0,"02085","slide board exercise, general"),             # <<<<<<<<<<<<<<
@@ -2286,7 +2295,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_50.code = ((char *)"02085");
   __pyx_t_50.description = ((char *)"slide board exercise, general");
 
-  /* "pyfit/mets.pyx":57
+  /* "pyfit/mets.pyx":59
  *     		MET(6.8,"02080","ski machine, general"),
  *     		MET(11.0,"02085","slide board exercise, general"),
  *     		MET(6.0,"02090","slimnastics, jazzercise"),             # <<<<<<<<<<<<<<
@@ -2297,7 +2306,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_51.code = ((char *)"02090");
   __pyx_t_51.description = ((char *)"slimnastics, jazzercise");
 
-  /* "pyfit/mets.pyx":58
+  /* "pyfit/mets.pyx":60
  *     		MET(11.0,"02085","slide board exercise, general"),
  *     		MET(6.0,"02090","slimnastics, jazzercise"),
  *     		MET(2.3,"02101","stretching, mild"),             # <<<<<<<<<<<<<<
@@ -2308,7 +2317,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_52.code = ((char *)"02101");
   __pyx_t_52.description = ((char *)"stretching, mild");
 
-  /* "pyfit/mets.pyx":59
+  /* "pyfit/mets.pyx":61
  *     		MET(6.0,"02090","slimnastics, jazzercise"),
  *     		MET(2.3,"02101","stretching, mild"),
  *     		MET(3.0,"02105","pilates, general"),             # <<<<<<<<<<<<<<
@@ -2319,7 +2328,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_53.code = ((char *)"02105");
   __pyx_t_53.description = ((char *)"pilates, general");
 
-  /* "pyfit/mets.pyx":60
+  /* "pyfit/mets.pyx":62
  *     		MET(2.3,"02101","stretching, mild"),
  *     		MET(3.0,"02105","pilates, general"),
  *     		MET(6.8,"02110","teaching exercise class (e.g., aerobic, water)"),             # <<<<<<<<<<<<<<
@@ -2330,7 +2339,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_54.code = ((char *)"02110");
   __pyx_t_54.description = ((char *)"teaching exercise class (e.g., aerobic, water)");
 
-  /* "pyfit/mets.pyx":61
+  /* "pyfit/mets.pyx":63
  *     		MET(3.0,"02105","pilates, general"),
  *     		MET(6.8,"02110","teaching exercise class (e.g., aerobic, water)"),
  *     		MET(2.8,"02112","therapeutic exercise ball, Fitball exercise"),             # <<<<<<<<<<<<<<
@@ -2341,7 +2350,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_55.code = ((char *)"02112");
   __pyx_t_55.description = ((char *)"therapeutic exercise ball, Fitball exercise");
 
-  /* "pyfit/mets.pyx":62
+  /* "pyfit/mets.pyx":64
  *     		MET(6.8,"02110","teaching exercise class (e.g., aerobic, water)"),
  *     		MET(2.8,"02112","therapeutic exercise ball, Fitball exercise"),
  *     		MET(2.8,"02115","upper body exercise, arm ergometer"),             # <<<<<<<<<<<<<<
@@ -2352,7 +2361,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_56.code = ((char *)"02115");
   __pyx_t_56.description = ((char *)"upper body exercise, arm ergometer");
 
-  /* "pyfit/mets.pyx":63
+  /* "pyfit/mets.pyx":65
  *     		MET(2.8,"02112","therapeutic exercise ball, Fitball exercise"),
  *     		MET(2.8,"02115","upper body exercise, arm ergometer"),
  *     		MET(4.3,"02117","upper body exercise, stationary bicycle - Airdyne (arms only) 40 rpm, moderate"),             # <<<<<<<<<<<<<<
@@ -2363,7 +2372,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_57.code = ((char *)"02117");
   __pyx_t_57.description = ((char *)"upper body exercise, stationary bicycle - Airdyne (arms only) 40 rpm, moderate");
 
-  /* "pyfit/mets.pyx":64
+  /* "pyfit/mets.pyx":66
  *     		MET(2.8,"02115","upper body exercise, arm ergometer"),
  *     		MET(4.3,"02117","upper body exercise, stationary bicycle - Airdyne (arms only) 40 rpm, moderate"),
  *     		MET(5.3,"02120","water aerobics, water calisthenics, water exercise"),             # <<<<<<<<<<<<<<
@@ -2374,7 +2383,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_58.code = ((char *)"02120");
   __pyx_t_58.description = ((char *)"water aerobics, water calisthenics, water exercise");
 
-  /* "pyfit/mets.pyx":65
+  /* "pyfit/mets.pyx":67
  *     		MET(4.3,"02117","upper body exercise, stationary bicycle - Airdyne (arms only) 40 rpm, moderate"),
  *     		MET(5.3,"02120","water aerobics, water calisthenics, water exercise"),
  *     		MET(1.3,"02135","whirlpool, sitting"),             # <<<<<<<<<<<<<<
@@ -2385,7 +2394,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_59.code = ((char *)"02135");
   __pyx_t_59.description = ((char *)"whirlpool, sitting");
 
-  /* "pyfit/mets.pyx":66
+  /* "pyfit/mets.pyx":68
  *     		MET(5.3,"02120","water aerobics, water calisthenics, water exercise"),
  *     		MET(1.3,"02135","whirlpool, sitting"),
  *     		MET(2.3,"02140","video exercise workouts, TV conditioning programs (e.g., yoga, stretching), light effort"),             # <<<<<<<<<<<<<<
@@ -2396,7 +2405,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_60.code = ((char *)"02140");
   __pyx_t_60.description = ((char *)"video exercise workouts, TV conditioning programs (e.g., yoga, stretching), light effort");
 
-  /* "pyfit/mets.pyx":67
+  /* "pyfit/mets.pyx":69
  *     		MET(1.3,"02135","whirlpool, sitting"),
  *     		MET(2.3,"02140","video exercise workouts, TV conditioning programs (e.g., yoga, stretching), light effort"),
  *     		MET(4.0,"02143","video exercise workouts, TV conditioning programs (e.g., cardio-resistance), moderate effort"),             # <<<<<<<<<<<<<<
@@ -2407,7 +2416,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_61.code = ((char *)"02143");
   __pyx_t_61.description = ((char *)"video exercise workouts, TV conditioning programs (e.g., cardio-resistance), moderate effort");
 
-  /* "pyfit/mets.pyx":68
+  /* "pyfit/mets.pyx":70
  *     		MET(2.3,"02140","video exercise workouts, TV conditioning programs (e.g., yoga, stretching), light effort"),
  *     		MET(4.0,"02143","video exercise workouts, TV conditioning programs (e.g., cardio-resistance), moderate effort"),
  *     		MET(6.0,"02146","video exercise workouts, TV conditioning programs (e.g., cardio-resistance), vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2418,7 +2427,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_62.code = ((char *)"02146");
   __pyx_t_62.description = ((char *)"video exercise workouts, TV conditioning programs (e.g., cardio-resistance), vigorous effort");
 
-  /* "pyfit/mets.pyx":69
+  /* "pyfit/mets.pyx":71
  *     		MET(4.0,"02143","video exercise workouts, TV conditioning programs (e.g., cardio-resistance), moderate effort"),
  *     		MET(6.0,"02146","video exercise workouts, TV conditioning programs (e.g., cardio-resistance), vigorous effort"),
  *     		MET(2.5,"02150","yoga, Hatha"),             # <<<<<<<<<<<<<<
@@ -2429,7 +2438,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_63.code = ((char *)"02150");
   __pyx_t_63.description = ((char *)"yoga, Hatha");
 
-  /* "pyfit/mets.pyx":70
+  /* "pyfit/mets.pyx":72
  *     		MET(6.0,"02146","video exercise workouts, TV conditioning programs (e.g., cardio-resistance), vigorous effort"),
  *     		MET(2.5,"02150","yoga, Hatha"),
  *     		MET(4.0,"02160","yoga, Power"),             # <<<<<<<<<<<<<<
@@ -2440,7 +2449,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_64.code = ((char *)"02160");
   __pyx_t_64.description = ((char *)"yoga, Power");
 
-  /* "pyfit/mets.pyx":71
+  /* "pyfit/mets.pyx":73
  *     		MET(2.5,"02150","yoga, Hatha"),
  *     		MET(4.0,"02160","yoga, Power"),
  *     		MET(2.0,"02170","yoga, Nadisodhana"),             # <<<<<<<<<<<<<<
@@ -2451,7 +2460,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_65.code = ((char *)"02170");
   __pyx_t_65.description = ((char *)"yoga, Nadisodhana");
 
-  /* "pyfit/mets.pyx":72
+  /* "pyfit/mets.pyx":74
  *     		MET(4.0,"02160","yoga, Power"),
  *     		MET(2.0,"02170","yoga, Nadisodhana"),
  *     		MET(3.3,"02180","yoga, Surya Namaskar"),             # <<<<<<<<<<<<<<
@@ -2462,7 +2471,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_66.code = ((char *)"02180");
   __pyx_t_66.description = ((char *)"yoga, Surya Namaskar");
 
-  /* "pyfit/mets.pyx":73
+  /* "pyfit/mets.pyx":75
  *     		MET(2.0,"02170","yoga, Nadisodhana"),
  *     		MET(3.3,"02180","yoga, Surya Namaskar"),
  *     		MET(5.3,"02200","native New Zealander physical activities (e.g., Haka Powhiri, Moteatea, Waita Tira, Whakawatea, etc.) , general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -2473,7 +2482,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_67.code = ((char *)"02200");
   __pyx_t_67.description = ((char *)"native New Zealander physical activities (e.g., Haka Powhiri, Moteatea, Waita Tira, Whakawatea, etc.) , general, moderate effort");
 
-  /* "pyfit/mets.pyx":74
+  /* "pyfit/mets.pyx":76
  *     		MET(3.3,"02180","yoga, Surya Namaskar"),
  *     		MET(5.3,"02200","native New Zealander physical activities (e.g., Haka Powhiri, Moteatea, Waita Tira, Whakawatea, etc.) , general, moderate effort"),
  *     		MET(6.8,"02205","native New Zealander physical activities (e.g., Haka, Taiahab), general, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2484,7 +2493,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_68.code = ((char *)"02205");
   __pyx_t_68.description = ((char *)"native New Zealander physical activities (e.g., Haka, Taiahab), general, vigorous effort");
 
-  /* "pyfit/mets.pyx":75
+  /* "pyfit/mets.pyx":77
  *     		MET(5.3,"02200","native New Zealander physical activities (e.g., Haka Powhiri, Moteatea, Waita Tira, Whakawatea, etc.) , general, moderate effort"),
  *     		MET(6.8,"02205","native New Zealander physical activities (e.g., Haka, Taiahab), general, vigorous effort"),
  *     		MET(5.0,"03010","ballet, modern, or jazz, general, rehearsal or class"),             # <<<<<<<<<<<<<<
@@ -2495,7 +2504,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_69.code = ((char *)"03010");
   __pyx_t_69.description = ((char *)"ballet, modern, or jazz, general, rehearsal or class");
 
-  /* "pyfit/mets.pyx":76
+  /* "pyfit/mets.pyx":78
  *     		MET(6.8,"02205","native New Zealander physical activities (e.g., Haka, Taiahab), general, vigorous effort"),
  *     		MET(5.0,"03010","ballet, modern, or jazz, general, rehearsal or class"),
  *     		MET(6.8,"03012","ballet, modern, or jazz, performance, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -2506,7 +2515,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_70.code = ((char *)"03012");
   __pyx_t_70.description = ((char *)"ballet, modern, or jazz, performance, vigorous effort");
 
-  /* "pyfit/mets.pyx":77
+  /* "pyfit/mets.pyx":79
  *     		MET(5.0,"03010","ballet, modern, or jazz, general, rehearsal or class"),
  *     		MET(6.8,"03012","ballet, modern, or jazz, performance, vigorous effort"),
  *     		MET(4.8,"03014","tap"),             # <<<<<<<<<<<<<<
@@ -2517,7 +2526,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_71.code = ((char *)"03014");
   __pyx_t_71.description = ((char *)"tap");
 
-  /* "pyfit/mets.pyx":78
+  /* "pyfit/mets.pyx":80
  *     		MET(6.8,"03012","ballet, modern, or jazz, performance, vigorous effort"),
  *     		MET(4.8,"03014","tap"),
  *     		MET(7.3,"03015","aerobic, general"),             # <<<<<<<<<<<<<<
@@ -2528,7 +2537,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_72.code = ((char *)"03015");
   __pyx_t_72.description = ((char *)"aerobic, general");
 
-  /* "pyfit/mets.pyx":79
+  /* "pyfit/mets.pyx":81
  *     		MET(4.8,"03014","tap"),
  *     		MET(7.3,"03015","aerobic, general"),
  *     		MET(7.5,"03016","aerobic, step, with 6 - 8 inch step"),             # <<<<<<<<<<<<<<
@@ -2539,7 +2548,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_73.code = ((char *)"03016");
   __pyx_t_73.description = ((char *)"aerobic, step, with 6 - 8 inch step");
 
-  /* "pyfit/mets.pyx":80
+  /* "pyfit/mets.pyx":82
  *     		MET(7.3,"03015","aerobic, general"),
  *     		MET(7.5,"03016","aerobic, step, with 6 - 8 inch step"),
  *     		MET(9.5,"03017","aerobic, step, with 10 - 12 inch step"),             # <<<<<<<<<<<<<<
@@ -2550,7 +2559,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_74.code = ((char *)"03017");
   __pyx_t_74.description = ((char *)"aerobic, step, with 10 - 12 inch step");
 
-  /* "pyfit/mets.pyx":81
+  /* "pyfit/mets.pyx":83
  *     		MET(7.5,"03016","aerobic, step, with 6 - 8 inch step"),
  *     		MET(9.5,"03017","aerobic, step, with 10 - 12 inch step"),
  *     		MET(5.5,"03018","aerobic, step, with 4-inch step"),             # <<<<<<<<<<<<<<
@@ -2561,7 +2570,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_75.code = ((char *)"03018");
   __pyx_t_75.description = ((char *)"aerobic, step, with 4-inch step");
 
-  /* "pyfit/mets.pyx":82
+  /* "pyfit/mets.pyx":84
  *     		MET(9.5,"03017","aerobic, step, with 10 - 12 inch step"),
  *     		MET(5.5,"03018","aerobic, step, with 4-inch step"),
  *     		MET(8.5,"03019","bench step class, general"),             # <<<<<<<<<<<<<<
@@ -2572,7 +2581,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_76.code = ((char *)"03019");
   __pyx_t_76.description = ((char *)"bench step class, general");
 
-  /* "pyfit/mets.pyx":83
+  /* "pyfit/mets.pyx":85
  *     		MET(5.5,"03018","aerobic, step, with 4-inch step"),
  *     		MET(8.5,"03019","bench step class, general"),
  *     		MET(5.0,"03020","aerobic, low impact"),             # <<<<<<<<<<<<<<
@@ -2583,7 +2592,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_77.code = ((char *)"03020");
   __pyx_t_77.description = ((char *)"aerobic, low impact");
 
-  /* "pyfit/mets.pyx":84
+  /* "pyfit/mets.pyx":86
  *     		MET(8.5,"03019","bench step class, general"),
  *     		MET(5.0,"03020","aerobic, low impact"),
  *     		MET(7.3,"03021","aerobic, high impact"),             # <<<<<<<<<<<<<<
@@ -2594,7 +2603,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_78.code = ((char *)"03021");
   __pyx_t_78.description = ((char *)"aerobic, high impact");
 
-  /* "pyfit/mets.pyx":85
+  /* "pyfit/mets.pyx":87
  *     		MET(5.0,"03020","aerobic, low impact"),
  *     		MET(7.3,"03021","aerobic, high impact"),
  *     		MET(10.0,"03022","aerobic dance wearing 10-15 lb weights"),             # <<<<<<<<<<<<<<
@@ -2605,7 +2614,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_79.code = ((char *)"03022");
   __pyx_t_79.description = ((char *)"aerobic dance wearing 10-15 lb weights");
 
-  /* "pyfit/mets.pyx":86
+  /* "pyfit/mets.pyx":88
  *     		MET(7.3,"03021","aerobic, high impact"),
  *     		MET(10.0,"03022","aerobic dance wearing 10-15 lb weights"),
  *     		MET(4.5,"03025","ethnic or cultural dancing (e.g., Greek, Middle Eastern, hula, salsa, merengue, bamba y plena, flamenco, belly, and swing)"),             # <<<<<<<<<<<<<<
@@ -2616,7 +2625,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_80.code = ((char *)"03025");
   __pyx_t_80.description = ((char *)"ethnic or cultural dancing (e.g., Greek, Middle Eastern, hula, salsa, merengue, bamba y plena, flamenco, belly, and swing)");
 
-  /* "pyfit/mets.pyx":87
+  /* "pyfit/mets.pyx":89
  *     		MET(10.0,"03022","aerobic dance wearing 10-15 lb weights"),
  *     		MET(4.5,"03025","ethnic or cultural dancing (e.g., Greek, Middle Eastern, hula, salsa, merengue, bamba y plena, flamenco, belly, and swing)"),
  *     		MET(5.5,"03030","ballroom, fast (Taylor Code 125)"),             # <<<<<<<<<<<<<<
@@ -2627,7 +2636,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_81.code = ((char *)"03030");
   __pyx_t_81.description = ((char *)"ballroom, fast (Taylor Code 125)");
 
-  /* "pyfit/mets.pyx":88
+  /* "pyfit/mets.pyx":90
  *     		MET(4.5,"03025","ethnic or cultural dancing (e.g., Greek, Middle Eastern, hula, salsa, merengue, bamba y plena, flamenco, belly, and swing)"),
  *     		MET(5.5,"03030","ballroom, fast (Taylor Code 125)"),
  *     		MET(7.8,"03031","general dancing (e.g., disco, folk, Irish step dancing, line dancing, polka, contra, country)"),             # <<<<<<<<<<<<<<
@@ -2638,7 +2647,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_82.code = ((char *)"03031");
   __pyx_t_82.description = ((char *)"general dancing (e.g., disco, folk, Irish step dancing, line dancing, polka, contra, country)");
 
-  /* "pyfit/mets.pyx":89
+  /* "pyfit/mets.pyx":91
  *     		MET(5.5,"03030","ballroom, fast (Taylor Code 125)"),
  *     		MET(7.8,"03031","general dancing (e.g., disco, folk, Irish step dancing, line dancing, polka, contra, country)"),
  *     		MET(11.3,"03038","ballroom dancing, competitive, general"),             # <<<<<<<<<<<<<<
@@ -2649,7 +2658,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_83.code = ((char *)"03038");
   __pyx_t_83.description = ((char *)"ballroom dancing, competitive, general");
 
-  /* "pyfit/mets.pyx":90
+  /* "pyfit/mets.pyx":92
  *     		MET(7.8,"03031","general dancing (e.g., disco, folk, Irish step dancing, line dancing, polka, contra, country)"),
  *     		MET(11.3,"03038","ballroom dancing, competitive, general"),
  *     		MET(3.0,"03040","ballroom, slow (e.g., waltz, foxtrot, slow dancing, samba, tango, 19th century dance, mambo, cha cha)"),             # <<<<<<<<<<<<<<
@@ -2660,7 +2669,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_84.code = ((char *)"03040");
   __pyx_t_84.description = ((char *)"ballroom, slow (e.g., waltz, foxtrot, slow dancing, samba, tango, 19th century dance, mambo, cha cha)");
 
-  /* "pyfit/mets.pyx":91
+  /* "pyfit/mets.pyx":93
  *     		MET(11.3,"03038","ballroom dancing, competitive, general"),
  *     		MET(3.0,"03040","ballroom, slow (e.g., waltz, foxtrot, slow dancing, samba, tango, 19th century dance, mambo, cha cha)"),
  *     		MET(5.5,"03050","Anishinaabe Jingle Dancing"),             # <<<<<<<<<<<<<<
@@ -2671,7 +2680,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_85.code = ((char *)"03050");
   __pyx_t_85.description = ((char *)"Anishinaabe Jingle Dancing");
 
-  /* "pyfit/mets.pyx":92
+  /* "pyfit/mets.pyx":94
  *     		MET(3.0,"03040","ballroom, slow (e.g., waltz, foxtrot, slow dancing, samba, tango, 19th century dance, mambo, cha cha)"),
  *     		MET(5.5,"03050","Anishinaabe Jingle Dancing"),
  *     		MET(3.5,"03060","Caribbean dance (Abakua, Beguine, Bellair, Bongo, Brukin's, Caribbean Quadrills, Dinki Mini, Gere, Gumbay, Ibo, Jonkonnu, Kumina, Oreisha, Jambu)"),             # <<<<<<<<<<<<<<
@@ -2682,7 +2691,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_86.code = ((char *)"03060");
   __pyx_t_86.description = ((char *)"Caribbean dance (Abakua, Beguine, Bellair, Bongo, Brukin's, Caribbean Quadrills, Dinki Mini, Gere, Gumbay, Ibo, Jonkonnu, Kumina, Oreisha, Jambu)");
 
-  /* "pyfit/mets.pyx":93
+  /* "pyfit/mets.pyx":95
  *     		MET(5.5,"03050","Anishinaabe Jingle Dancing"),
  *     		MET(3.5,"03060","Caribbean dance (Abakua, Beguine, Bellair, Bongo, Brukin's, Caribbean Quadrills, Dinki Mini, Gere, Gumbay, Ibo, Jonkonnu, Kumina, Oreisha, Jambu)"),
  *     		MET(3.5,"04001","fishing, general"),             # <<<<<<<<<<<<<<
@@ -2693,7 +2702,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_87.code = ((char *)"04001");
   __pyx_t_87.description = ((char *)"fishing, general");
 
-  /* "pyfit/mets.pyx":94
+  /* "pyfit/mets.pyx":96
  *     		MET(3.5,"03060","Caribbean dance (Abakua, Beguine, Bellair, Bongo, Brukin's, Caribbean Quadrills, Dinki Mini, Gere, Gumbay, Ibo, Jonkonnu, Kumina, Oreisha, Jambu)"),
  *     		MET(3.5,"04001","fishing, general"),
  *     		MET(4.5,"04005","fishing, crab fishing"),             # <<<<<<<<<<<<<<
@@ -2704,7 +2713,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_88.code = ((char *)"04005");
   __pyx_t_88.description = ((char *)"fishing, crab fishing");
 
-  /* "pyfit/mets.pyx":95
+  /* "pyfit/mets.pyx":97
  *     		MET(3.5,"04001","fishing, general"),
  *     		MET(4.5,"04005","fishing, crab fishing"),
  *     		MET(4.0,"04007","fishing, catching fish with hands"),             # <<<<<<<<<<<<<<
@@ -2715,7 +2724,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_89.code = ((char *)"04007");
   __pyx_t_89.description = ((char *)"fishing, catching fish with hands");
 
-  /* "pyfit/mets.pyx":96
+  /* "pyfit/mets.pyx":98
  *     		MET(4.5,"04005","fishing, crab fishing"),
  *     		MET(4.0,"04007","fishing, catching fish with hands"),
  *     		MET(4.3,"04010","fishing related, digging worms, with shovel"),             # <<<<<<<<<<<<<<
@@ -2726,7 +2735,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_90.code = ((char *)"04010");
   __pyx_t_90.description = ((char *)"fishing related, digging worms, with shovel");
 
-  /* "pyfit/mets.pyx":97
+  /* "pyfit/mets.pyx":99
  *     		MET(4.0,"04007","fishing, catching fish with hands"),
  *     		MET(4.3,"04010","fishing related, digging worms, with shovel"),
  *     		MET(4.0,"04020","fishing from river bank and walking"),             # <<<<<<<<<<<<<<
@@ -2737,7 +2746,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_91.code = ((char *)"04020");
   __pyx_t_91.description = ((char *)"fishing from river bank and walking");
 
-  /* "pyfit/mets.pyx":98
+  /* "pyfit/mets.pyx":100
  *     		MET(4.3,"04010","fishing related, digging worms, with shovel"),
  *     		MET(4.0,"04020","fishing from river bank and walking"),
  *     		MET(2.0,"04030","fishing from boat or canoe, sitting"),             # <<<<<<<<<<<<<<
@@ -2748,7 +2757,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_92.code = ((char *)"04030");
   __pyx_t_92.description = ((char *)"fishing from boat or canoe, sitting");
 
-  /* "pyfit/mets.pyx":99
+  /* "pyfit/mets.pyx":101
  *     		MET(4.0,"04020","fishing from river bank and walking"),
  *     		MET(2.0,"04030","fishing from boat or canoe, sitting"),
  *     		MET(3.5,"04040","fishing from river bank, standing (Taylor Code 660)"),             # <<<<<<<<<<<<<<
@@ -2759,7 +2768,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_93.code = ((char *)"04040");
   __pyx_t_93.description = ((char *)"fishing from river bank, standing (Taylor Code 660)");
 
-  /* "pyfit/mets.pyx":100
+  /* "pyfit/mets.pyx":102
  *     		MET(2.0,"04030","fishing from boat or canoe, sitting"),
  *     		MET(3.5,"04040","fishing from river bank, standing (Taylor Code 660)"),
  *     		MET(6.0,"04050","fishing in stream, in waders (Taylor Code 670)"),             # <<<<<<<<<<<<<<
@@ -2770,7 +2779,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_94.code = ((char *)"04050");
   __pyx_t_94.description = ((char *)"fishing in stream, in waders (Taylor Code 670)");
 
-  /* "pyfit/mets.pyx":101
+  /* "pyfit/mets.pyx":103
  *     		MET(3.5,"04040","fishing from river bank, standing (Taylor Code 660)"),
  *     		MET(6.0,"04050","fishing in stream, in waders (Taylor Code 670)"),
  *     		MET(2.0,"04060","fishing, ice, sitting"),             # <<<<<<<<<<<<<<
@@ -2781,7 +2790,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_95.code = ((char *)"04060");
   __pyx_t_95.description = ((char *)"fishing, ice, sitting");
 
-  /* "pyfit/mets.pyx":102
+  /* "pyfit/mets.pyx":104
  *     		MET(6.0,"04050","fishing in stream, in waders (Taylor Code 670)"),
  *     		MET(2.0,"04060","fishing, ice, sitting"),
  *     		MET(1.8,"04061","fishing, jog or line, standing, general"),             # <<<<<<<<<<<<<<
@@ -2792,7 +2801,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_96.code = ((char *)"04061");
   __pyx_t_96.description = ((char *)"fishing, jog or line, standing, general");
 
-  /* "pyfit/mets.pyx":103
+  /* "pyfit/mets.pyx":105
  *     		MET(2.0,"04060","fishing, ice, sitting"),
  *     		MET(1.8,"04061","fishing, jog or line, standing, general"),
  *     		MET(3.5,"04062","fishing, dip net, setting net and retrieving fish, general"),             # <<<<<<<<<<<<<<
@@ -2803,7 +2812,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_97.code = ((char *)"04062");
   __pyx_t_97.description = ((char *)"fishing, dip net, setting net and retrieving fish, general");
 
-  /* "pyfit/mets.pyx":104
+  /* "pyfit/mets.pyx":106
  *     		MET(1.8,"04061","fishing, jog or line, standing, general"),
  *     		MET(3.5,"04062","fishing, dip net, setting net and retrieving fish, general"),
  *     		MET(3.8,"04063","fishing, set net, setting net and retrieving fish, general"),             # <<<<<<<<<<<<<<
@@ -2814,7 +2823,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_98.code = ((char *)"04063");
   __pyx_t_98.description = ((char *)"fishing, set net, setting net and retrieving fish, general");
 
-  /* "pyfit/mets.pyx":105
+  /* "pyfit/mets.pyx":107
  *     		MET(3.5,"04062","fishing, dip net, setting net and retrieving fish, general"),
  *     		MET(3.8,"04063","fishing, set net, setting net and retrieving fish, general"),
  *     		MET(3.0,"04064","fishing, fishing wheel, setting net and retrieving fish, general"),             # <<<<<<<<<<<<<<
@@ -2825,7 +2834,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_99.code = ((char *)"04064");
   __pyx_t_99.description = ((char *)"fishing, fishing wheel, setting net and retrieving fish, general");
 
-  /* "pyfit/mets.pyx":106
+  /* "pyfit/mets.pyx":108
  *     		MET(3.8,"04063","fishing, set net, setting net and retrieving fish, general"),
  *     		MET(3.0,"04064","fishing, fishing wheel, setting net and retrieving fish, general"),
  *     		MET(2.3,"04065","fishing with a spear, standing"),             # <<<<<<<<<<<<<<
@@ -2836,7 +2845,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_100.code = ((char *)"04065");
   __pyx_t_100.description = ((char *)"fishing with a spear, standing");
 
-  /* "pyfit/mets.pyx":107
+  /* "pyfit/mets.pyx":109
  *     		MET(3.0,"04064","fishing, fishing wheel, setting net and retrieving fish, general"),
  *     		MET(2.3,"04065","fishing with a spear, standing"),
  *     		MET(2.5,"04070","hunting, bow and arrow, or crossbow"),             # <<<<<<<<<<<<<<
@@ -2847,7 +2856,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_101.code = ((char *)"04070");
   __pyx_t_101.description = ((char *)"hunting, bow and arrow, or crossbow");
 
-  /* "pyfit/mets.pyx":108
+  /* "pyfit/mets.pyx":110
  *     		MET(2.3,"04065","fishing with a spear, standing"),
  *     		MET(2.5,"04070","hunting, bow and arrow, or crossbow"),
  *     		MET(6.0,"04080","hunting, deer, elk, large game (Taylor Code 170)"),             # <<<<<<<<<<<<<<
@@ -2858,7 +2867,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_102.code = ((char *)"04080");
   __pyx_t_102.description = ((char *)"hunting, deer, elk, large game (Taylor Code 170)");
 
-  /* "pyfit/mets.pyx":109
+  /* "pyfit/mets.pyx":111
  *     		MET(2.5,"04070","hunting, bow and arrow, or crossbow"),
  *     		MET(6.0,"04080","hunting, deer, elk, large game (Taylor Code 170)"),
  *     		MET(11.3,"04081","hunting large game, dragging carcass"),             # <<<<<<<<<<<<<<
@@ -2869,7 +2878,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_103.code = ((char *)"04081");
   __pyx_t_103.description = ((char *)"hunting large game, dragging carcass");
 
-  /* "pyfit/mets.pyx":110
+  /* "pyfit/mets.pyx":112
  *     		MET(6.0,"04080","hunting, deer, elk, large game (Taylor Code 170)"),
  *     		MET(11.3,"04081","hunting large game, dragging carcass"),
  *     		MET(4.0,"04083","hunting large marine animals"),             # <<<<<<<<<<<<<<
@@ -2880,7 +2889,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_104.code = ((char *)"04083");
   __pyx_t_104.description = ((char *)"hunting large marine animals");
 
-  /* "pyfit/mets.pyx":111
+  /* "pyfit/mets.pyx":113
  *     		MET(11.3,"04081","hunting large game, dragging carcass"),
  *     		MET(4.0,"04083","hunting large marine animals"),
  *     		MET(2.5,"04085","hunting large game, from a hunting stand, limited walking"),             # <<<<<<<<<<<<<<
@@ -2891,7 +2900,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_105.code = ((char *)"04085");
   __pyx_t_105.description = ((char *)"hunting large game, from a hunting stand, limited walking");
 
-  /* "pyfit/mets.pyx":112
+  /* "pyfit/mets.pyx":114
  *     		MET(4.0,"04083","hunting large marine animals"),
  *     		MET(2.5,"04085","hunting large game, from a hunting stand, limited walking"),
  *     		MET(2.0,"04086","hunting large game from a car, plane, or boat"),             # <<<<<<<<<<<<<<
@@ -2902,7 +2911,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_106.code = ((char *)"04086");
   __pyx_t_106.description = ((char *)"hunting large game from a car, plane, or boat");
 
-  /* "pyfit/mets.pyx":113
+  /* "pyfit/mets.pyx":115
  *     		MET(2.5,"04085","hunting large game, from a hunting stand, limited walking"),
  *     		MET(2.0,"04086","hunting large game from a car, plane, or boat"),
  *     		MET(2.5,"04090","hunting, duck, wading"),             # <<<<<<<<<<<<<<
@@ -2913,7 +2922,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_107.code = ((char *)"04090");
   __pyx_t_107.description = ((char *)"hunting, duck, wading");
 
-  /* "pyfit/mets.pyx":114
+  /* "pyfit/mets.pyx":116
  *     		MET(2.0,"04086","hunting large game from a car, plane, or boat"),
  *     		MET(2.5,"04090","hunting, duck, wading"),
  *     		MET(3.0,"04095","hunting, flying fox, squirrel"),             # <<<<<<<<<<<<<<
@@ -2924,7 +2933,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_108.code = ((char *)"04095");
   __pyx_t_108.description = ((char *)"hunting, flying fox, squirrel");
 
-  /* "pyfit/mets.pyx":115
+  /* "pyfit/mets.pyx":117
  *     		MET(2.5,"04090","hunting, duck, wading"),
  *     		MET(3.0,"04095","hunting, flying fox, squirrel"),
  *     		MET(5.0,"04100","hunting, general"),             # <<<<<<<<<<<<<<
@@ -2935,7 +2944,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_109.code = ((char *)"04100");
   __pyx_t_109.description = ((char *)"hunting, general");
 
-  /* "pyfit/mets.pyx":116
+  /* "pyfit/mets.pyx":118
  *     		MET(3.0,"04095","hunting, flying fox, squirrel"),
  *     		MET(5.0,"04100","hunting, general"),
  *     		MET(6.0,"04110","hunting, pheasants or grouse (Taylor Code 680)"),             # <<<<<<<<<<<<<<
@@ -2946,7 +2955,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_110.code = ((char *)"04110");
   __pyx_t_110.description = ((char *)"hunting, pheasants or grouse (Taylor Code 680)");
 
-  /* "pyfit/mets.pyx":117
+  /* "pyfit/mets.pyx":119
  *     		MET(5.0,"04100","hunting, general"),
  *     		MET(6.0,"04110","hunting, pheasants or grouse (Taylor Code 680)"),
  *     		MET(3.3,"04115","hunting, birds"),             # <<<<<<<<<<<<<<
@@ -2957,7 +2966,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_111.code = ((char *)"04115");
   __pyx_t_111.description = ((char *)"hunting, birds");
 
-  /* "pyfit/mets.pyx":118
+  /* "pyfit/mets.pyx":120
  *     		MET(6.0,"04110","hunting, pheasants or grouse (Taylor Code 680)"),
  *     		MET(3.3,"04115","hunting, birds"),
  *     		MET(5.0,"04120","hunting, rabbit, squirrel, prairie chick, raccoon, small game (Taylor Code 690)"),             # <<<<<<<<<<<<<<
@@ -2968,7 +2977,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_112.code = ((char *)"04120");
   __pyx_t_112.description = ((char *)"hunting, rabbit, squirrel, prairie chick, raccoon, small game (Taylor Code 690)");
 
-  /* "pyfit/mets.pyx":119
+  /* "pyfit/mets.pyx":121
  *     		MET(3.3,"04115","hunting, birds"),
  *     		MET(5.0,"04120","hunting, rabbit, squirrel, prairie chick, raccoon, small game (Taylor Code 690)"),
  *     		MET(3.3,"04123","hunting, pigs, wild"),             # <<<<<<<<<<<<<<
@@ -2979,7 +2988,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_113.code = ((char *)"04123");
   __pyx_t_113.description = ((char *)"hunting, pigs, wild");
 
-  /* "pyfit/mets.pyx":120
+  /* "pyfit/mets.pyx":122
  *     		MET(5.0,"04120","hunting, rabbit, squirrel, prairie chick, raccoon, small game (Taylor Code 690)"),
  *     		MET(3.3,"04123","hunting, pigs, wild"),
  *     		MET(2.0,"04124","trapping game, general"),             # <<<<<<<<<<<<<<
@@ -2990,7 +2999,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_114.code = ((char *)"04124");
   __pyx_t_114.description = ((char *)"trapping game, general");
 
-  /* "pyfit/mets.pyx":121
+  /* "pyfit/mets.pyx":123
  *     		MET(3.3,"04123","hunting, pigs, wild"),
  *     		MET(2.0,"04124","trapping game, general"),
  *     		MET(9.5,"04125","hunting, hiking with hunting gear"),             # <<<<<<<<<<<<<<
@@ -3001,7 +3010,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_115.code = ((char *)"04125");
   __pyx_t_115.description = ((char *)"hunting, hiking with hunting gear");
 
-  /* "pyfit/mets.pyx":122
+  /* "pyfit/mets.pyx":124
  *     		MET(2.0,"04124","trapping game, general"),
  *     		MET(9.5,"04125","hunting, hiking with hunting gear"),
  *     		MET(2.5,"04130","pistol shooting or trap shooting, standing"),             # <<<<<<<<<<<<<<
@@ -3012,7 +3021,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_116.code = ((char *)"04130");
   __pyx_t_116.description = ((char *)"pistol shooting or trap shooting, standing");
 
-  /* "pyfit/mets.pyx":123
+  /* "pyfit/mets.pyx":125
  *     		MET(9.5,"04125","hunting, hiking with hunting gear"),
  *     		MET(2.5,"04130","pistol shooting or trap shooting, standing"),
  *     		MET(2.3,"04140","rifle exercises, shooting, lying down"),             # <<<<<<<<<<<<<<
@@ -3023,7 +3032,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_117.code = ((char *)"04140");
   __pyx_t_117.description = ((char *)"rifle exercises, shooting, lying down");
 
-  /* "pyfit/mets.pyx":124
+  /* "pyfit/mets.pyx":126
  *     		MET(2.5,"04130","pistol shooting or trap shooting, standing"),
  *     		MET(2.3,"04140","rifle exercises, shooting, lying down"),
  *     		MET(2.5,"04145","rifle exercises, shooting, kneeling or standing"),             # <<<<<<<<<<<<<<
@@ -3034,7 +3043,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_118.code = ((char *)"04145");
   __pyx_t_118.description = ((char *)"rifle exercises, shooting, kneeling or standing");
 
-  /* "pyfit/mets.pyx":125
+  /* "pyfit/mets.pyx":127
  *     		MET(2.3,"04140","rifle exercises, shooting, lying down"),
  *     		MET(2.5,"04145","rifle exercises, shooting, kneeling or standing"),
  *     		MET(3.3,"05010","cleaning, sweeping carpet or floors, general"),             # <<<<<<<<<<<<<<
@@ -3045,7 +3054,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_119.code = ((char *)"05010");
   __pyx_t_119.description = ((char *)"cleaning, sweeping carpet or floors, general");
 
-  /* "pyfit/mets.pyx":126
+  /* "pyfit/mets.pyx":128
  *     		MET(2.5,"04145","rifle exercises, shooting, kneeling or standing"),
  *     		MET(3.3,"05010","cleaning, sweeping carpet or floors, general"),
  *     		MET(2.3,"05011","cleaning, sweeping, slow, light effort"),             # <<<<<<<<<<<<<<
@@ -3056,7 +3065,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_120.code = ((char *)"05011");
   __pyx_t_120.description = ((char *)"cleaning, sweeping, slow, light effort");
 
-  /* "pyfit/mets.pyx":127
+  /* "pyfit/mets.pyx":129
  *     		MET(3.3,"05010","cleaning, sweeping carpet or floors, general"),
  *     		MET(2.3,"05011","cleaning, sweeping, slow, light effort"),
  *     		MET(3.8,"05012","cleaning, sweeping, slow, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3067,7 +3076,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_121.code = ((char *)"05012");
   __pyx_t_121.description = ((char *)"cleaning, sweeping, slow, moderate effort");
 
-  /* "pyfit/mets.pyx":128
+  /* "pyfit/mets.pyx":130
  *     		MET(2.3,"05011","cleaning, sweeping, slow, light effort"),
  *     		MET(3.8,"05012","cleaning, sweeping, slow, moderate effort"),
  *     		MET(3.5,"05020","cleaning, heavy or major (e.g. wash car, wash windows, clean garage), moderate effort"),             # <<<<<<<<<<<<<<
@@ -3078,7 +3087,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_122.code = ((char *)"05020");
   __pyx_t_122.description = ((char *)"cleaning, heavy or major (e.g. wash car, wash windows, clean garage), moderate effort");
 
-  /* "pyfit/mets.pyx":129
+  /* "pyfit/mets.pyx":131
  *     		MET(3.8,"05012","cleaning, sweeping, slow, moderate effort"),
  *     		MET(3.5,"05020","cleaning, heavy or major (e.g. wash car, wash windows, clean garage), moderate effort"),
  *     		MET(3.5,"05021","cleaning, mopping, standing, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3089,7 +3098,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_123.code = ((char *)"05021");
   __pyx_t_123.description = ((char *)"cleaning, mopping, standing, moderate effort");
 
-  /* "pyfit/mets.pyx":130
+  /* "pyfit/mets.pyx":132
  *     		MET(3.5,"05020","cleaning, heavy or major (e.g. wash car, wash windows, clean garage), moderate effort"),
  *     		MET(3.5,"05021","cleaning, mopping, standing, moderate effort"),
  *     		MET(3.2,"05022","cleaning windows, washing windows, general"),             # <<<<<<<<<<<<<<
@@ -3100,7 +3109,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_124.code = ((char *)"05022");
   __pyx_t_124.description = ((char *)"cleaning windows, washing windows, general");
 
-  /* "pyfit/mets.pyx":131
+  /* "pyfit/mets.pyx":133
  *     		MET(3.5,"05021","cleaning, mopping, standing, moderate effort"),
  *     		MET(3.2,"05022","cleaning windows, washing windows, general"),
  *     		MET(2.5,"05023","mopping, standing, light effort"),             # <<<<<<<<<<<<<<
@@ -3111,7 +3120,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_125.code = ((char *)"05023");
   __pyx_t_125.description = ((char *)"mopping, standing, light effort");
 
-  /* "pyfit/mets.pyx":132
+  /* "pyfit/mets.pyx":134
  *     		MET(3.2,"05022","cleaning windows, washing windows, general"),
  *     		MET(2.5,"05023","mopping, standing, light effort"),
  *     		MET(4.5,"05024","polishing floors, standing, walking slowly, using electric polishing machine"),             # <<<<<<<<<<<<<<
@@ -3122,7 +3131,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_126.code = ((char *)"05024");
   __pyx_t_126.description = ((char *)"polishing floors, standing, walking slowly, using electric polishing machine");
 
-  /* "pyfit/mets.pyx":133
+  /* "pyfit/mets.pyx":135
  *     		MET(2.5,"05023","mopping, standing, light effort"),
  *     		MET(4.5,"05024","polishing floors, standing, walking slowly, using electric polishing machine"),
  *     		MET(2.8,"05025","multiple household tasks all at once, light effort"),             # <<<<<<<<<<<<<<
@@ -3133,7 +3142,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_127.code = ((char *)"05025");
   __pyx_t_127.description = ((char *)"multiple household tasks all at once, light effort");
 
-  /* "pyfit/mets.pyx":134
+  /* "pyfit/mets.pyx":136
  *     		MET(4.5,"05024","polishing floors, standing, walking slowly, using electric polishing machine"),
  *     		MET(2.8,"05025","multiple household tasks all at once, light effort"),
  *     		MET(3.5,"05026","multiple household tasks all at once, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3144,7 +3153,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_128.code = ((char *)"05026");
   __pyx_t_128.description = ((char *)"multiple household tasks all at once, moderate effort");
 
-  /* "pyfit/mets.pyx":135
+  /* "pyfit/mets.pyx":137
  *     		MET(2.8,"05025","multiple household tasks all at once, light effort"),
  *     		MET(3.5,"05026","multiple household tasks all at once, moderate effort"),
  *     		MET(4.3,"05027","multiple household tasks all at once, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -3155,7 +3164,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_129.code = ((char *)"05027");
   __pyx_t_129.description = ((char *)"multiple household tasks all at once, vigorous effort");
 
-  /* "pyfit/mets.pyx":136
+  /* "pyfit/mets.pyx":138
  *     		MET(3.5,"05026","multiple household tasks all at once, moderate effort"),
  *     		MET(4.3,"05027","multiple household tasks all at once, vigorous effort"),
  *     		MET(3.3,"05030","cleaning, house or cabin, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3166,7 +3175,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_130.code = ((char *)"05030");
   __pyx_t_130.description = ((char *)"cleaning, house or cabin, general, moderate effort");
 
-  /* "pyfit/mets.pyx":137
+  /* "pyfit/mets.pyx":139
  *     		MET(4.3,"05027","multiple household tasks all at once, vigorous effort"),
  *     		MET(3.3,"05030","cleaning, house or cabin, general, moderate effort"),
  *     		MET(2.3,"05032","dusting or polishing furniture, general"),             # <<<<<<<<<<<<<<
@@ -3177,7 +3186,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_131.code = ((char *)"05032");
   __pyx_t_131.description = ((char *)"dusting or polishing furniture, general");
 
-  /* "pyfit/mets.pyx":138
+  /* "pyfit/mets.pyx":140
  *     		MET(3.3,"05030","cleaning, house or cabin, general, moderate effort"),
  *     		MET(2.3,"05032","dusting or polishing furniture, general"),
  *     		MET(3.3,"05035","kitchen activity, general, (e.g., cooking, washing dishes, cleaning up), moderate effort"),             # <<<<<<<<<<<<<<
@@ -3188,7 +3197,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_132.code = ((char *)"05035");
   __pyx_t_132.description = ((char *)"kitchen activity, general, (e.g., cooking, washing dishes, cleaning up), moderate effort");
 
-  /* "pyfit/mets.pyx":139
+  /* "pyfit/mets.pyx":141
  *     		MET(2.3,"05032","dusting or polishing furniture, general"),
  *     		MET(3.3,"05035","kitchen activity, general, (e.g., cooking, washing dishes, cleaning up), moderate effort"),
  *     		MET(2.5,"05040","cleaning, general (straightening up, changing linen, carrying out trash, light effort"),             # <<<<<<<<<<<<<<
@@ -3199,7 +3208,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_133.code = ((char *)"05040");
   __pyx_t_133.description = ((char *)"cleaning, general (straightening up, changing linen, carrying out trash, light effort");
 
-  /* "pyfit/mets.pyx":140
+  /* "pyfit/mets.pyx":142
  *     		MET(3.3,"05035","kitchen activity, general, (e.g., cooking, washing dishes, cleaning up), moderate effort"),
  *     		MET(2.5,"05040","cleaning, general (straightening up, changing linen, carrying out trash, light effort"),
  *     		MET(1.8,"05041","wash dishes, standing or in general (not broken into stand/walk components)"),             # <<<<<<<<<<<<<<
@@ -3210,7 +3219,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_134.code = ((char *)"05041");
   __pyx_t_134.description = ((char *)"wash dishes, standing or in general (not broken into stand/walk components)");
 
-  /* "pyfit/mets.pyx":141
+  /* "pyfit/mets.pyx":143
  *     		MET(2.5,"05040","cleaning, general (straightening up, changing linen, carrying out trash, light effort"),
  *     		MET(1.8,"05041","wash dishes, standing or in general (not broken into stand/walk components)"),
  *     		MET(2.5,"05042","wash dishes, clearing dishes from table, walking, light effort"),             # <<<<<<<<<<<<<<
@@ -3221,7 +3230,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_135.code = ((char *)"05042");
   __pyx_t_135.description = ((char *)"wash dishes, clearing dishes from table, walking, light effort");
 
-  /* "pyfit/mets.pyx":142
+  /* "pyfit/mets.pyx":144
  *     		MET(1.8,"05041","wash dishes, standing or in general (not broken into stand/walk components)"),
  *     		MET(2.5,"05042","wash dishes, clearing dishes from table, walking, light effort"),
  *     		MET(3.3,"05043","vacuuming, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3232,7 +3241,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_136.code = ((char *)"05043");
   __pyx_t_136.description = ((char *)"vacuuming, general, moderate effort");
 
-  /* "pyfit/mets.pyx":143
+  /* "pyfit/mets.pyx":145
  *     		MET(2.5,"05042","wash dishes, clearing dishes from table, walking, light effort"),
  *     		MET(3.3,"05043","vacuuming, general, moderate effort"),
  *     		MET(3.0,"05044","butchering animals, small"),             # <<<<<<<<<<<<<<
@@ -3243,7 +3252,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_137.code = ((char *)"05044");
   __pyx_t_137.description = ((char *)"butchering animals, small");
 
-  /* "pyfit/mets.pyx":144
+  /* "pyfit/mets.pyx":146
  *     		MET(3.3,"05043","vacuuming, general, moderate effort"),
  *     		MET(3.0,"05044","butchering animals, small"),
  *     		MET(6.0,"05045","butchering animal, large, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -3254,7 +3263,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_138.code = ((char *)"05045");
   __pyx_t_138.description = ((char *)"butchering animal, large, vigorous effort");
 
-  /* "pyfit/mets.pyx":145
+  /* "pyfit/mets.pyx":147
  *     		MET(3.0,"05044","butchering animals, small"),
  *     		MET(6.0,"05045","butchering animal, large, vigorous effort"),
  *     		MET(2.3,"05046","cutting and smoking fish, drying fish or meat"),             # <<<<<<<<<<<<<<
@@ -3265,7 +3274,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_139.code = ((char *)"05046");
   __pyx_t_139.description = ((char *)"cutting and smoking fish, drying fish or meat");
 
-  /* "pyfit/mets.pyx":146
+  /* "pyfit/mets.pyx":148
  *     		MET(6.0,"05045","butchering animal, large, vigorous effort"),
  *     		MET(2.3,"05046","cutting and smoking fish, drying fish or meat"),
  *     		MET(4.0,"05048","tanning hides, general"),             # <<<<<<<<<<<<<<
@@ -3276,7 +3285,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_140.code = ((char *)"05048");
   __pyx_t_140.description = ((char *)"tanning hides, general");
 
-  /* "pyfit/mets.pyx":147
+  /* "pyfit/mets.pyx":149
  *     		MET(2.3,"05046","cutting and smoking fish, drying fish or meat"),
  *     		MET(4.0,"05048","tanning hides, general"),
  *     		MET(3.5,"05049","cooking or food preparation, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3287,7 +3296,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_141.code = ((char *)"05049");
   __pyx_t_141.description = ((char *)"cooking or food preparation, moderate effort");
 
-  /* "pyfit/mets.pyx":148
+  /* "pyfit/mets.pyx":150
  *     		MET(4.0,"05048","tanning hides, general"),
  *     		MET(3.5,"05049","cooking or food preparation, moderate effort"),
  *     		MET(2.0,"05050","cooking or food preparation - standing or sitting or in general (not broken into stand/walk components), manual appliances, light effort"),             # <<<<<<<<<<<<<<
@@ -3298,7 +3307,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_142.code = ((char *)"05050");
   __pyx_t_142.description = ((char *)"cooking or food preparation - standing or sitting or in general (not broken into stand/walk components), manual appliances, light effort");
 
-  /* "pyfit/mets.pyx":149
+  /* "pyfit/mets.pyx":151
  *     		MET(3.5,"05049","cooking or food preparation, moderate effort"),
  *     		MET(2.0,"05050","cooking or food preparation - standing or sitting or in general (not broken into stand/walk components), manual appliances, light effort"),
  *     		MET(2.5,"05051","serving food, setting table, implied walking or standing"),             # <<<<<<<<<<<<<<
@@ -3309,7 +3318,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_143.code = ((char *)"05051");
   __pyx_t_143.description = ((char *)"serving food, setting table, implied walking or standing");
 
-  /* "pyfit/mets.pyx":150
+  /* "pyfit/mets.pyx":152
  *     		MET(2.0,"05050","cooking or food preparation - standing or sitting or in general (not broken into stand/walk components), manual appliances, light effort"),
  *     		MET(2.5,"05051","serving food, setting table, implied walking or standing"),
  *     		MET(2.5,"05052","cooking or food preparation, walking"),             # <<<<<<<<<<<<<<
@@ -3320,7 +3329,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_144.code = ((char *)"05052");
   __pyx_t_144.description = ((char *)"cooking or food preparation, walking");
 
-  /* "pyfit/mets.pyx":151
+  /* "pyfit/mets.pyx":153
  *     		MET(2.5,"05051","serving food, setting table, implied walking or standing"),
  *     		MET(2.5,"05052","cooking or food preparation, walking"),
  *     		MET(2.5,"05053","feeding household animals"),             # <<<<<<<<<<<<<<
@@ -3331,7 +3340,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_145.code = ((char *)"05053");
   __pyx_t_145.description = ((char *)"feeding household animals");
 
-  /* "pyfit/mets.pyx":152
+  /* "pyfit/mets.pyx":154
  *     		MET(2.5,"05052","cooking or food preparation, walking"),
  *     		MET(2.5,"05053","feeding household animals"),
  *     		MET(2.5,"05055","putting away groceries (e.g. carrying groceries, shopping without a grocery cart), carrying packages"),             # <<<<<<<<<<<<<<
@@ -3342,7 +3351,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_146.code = ((char *)"05055");
   __pyx_t_146.description = ((char *)"putting away groceries (e.g. carrying groceries, shopping without a grocery cart), carrying packages");
 
-  /* "pyfit/mets.pyx":153
+  /* "pyfit/mets.pyx":155
  *     		MET(2.5,"05053","feeding household animals"),
  *     		MET(2.5,"05055","putting away groceries (e.g. carrying groceries, shopping without a grocery cart), carrying packages"),
  *     		MET(7.5,"05056","carrying groceries upstairs"),             # <<<<<<<<<<<<<<
@@ -3353,7 +3362,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_147.code = ((char *)"05056");
   __pyx_t_147.description = ((char *)"carrying groceries upstairs");
 
-  /* "pyfit/mets.pyx":154
+  /* "pyfit/mets.pyx":156
  *     		MET(2.5,"05055","putting away groceries (e.g. carrying groceries, shopping without a grocery cart), carrying packages"),
  *     		MET(7.5,"05056","carrying groceries upstairs"),
  *     		MET(3.0,"05057","cooking Indian bread on an outside stove"),             # <<<<<<<<<<<<<<
@@ -3364,7 +3373,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_148.code = ((char *)"05057");
   __pyx_t_148.description = ((char *)"cooking Indian bread on an outside stove");
 
-  /* "pyfit/mets.pyx":155
+  /* "pyfit/mets.pyx":157
  *     		MET(7.5,"05056","carrying groceries upstairs"),
  *     		MET(3.0,"05057","cooking Indian bread on an outside stove"),
  *     		MET(2.3,"05060","food shopping with or without a grocery cart, standing or walking"),             # <<<<<<<<<<<<<<
@@ -3375,7 +3384,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_149.code = ((char *)"05060");
   __pyx_t_149.description = ((char *)"food shopping with or without a grocery cart, standing or walking");
 
-  /* "pyfit/mets.pyx":156
+  /* "pyfit/mets.pyx":158
  *     		MET(3.0,"05057","cooking Indian bread on an outside stove"),
  *     		MET(2.3,"05060","food shopping with or without a grocery cart, standing or walking"),
  *     		MET(2.3,"05065","non-food shopping, with or without a cart, standing or walking"),             # <<<<<<<<<<<<<<
@@ -3386,7 +3395,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_150.code = ((char *)"05065");
   __pyx_t_150.description = ((char *)"non-food shopping, with or without a cart, standing or walking");
 
-  /* "pyfit/mets.pyx":157
+  /* "pyfit/mets.pyx":159
  *     		MET(2.3,"05060","food shopping with or without a grocery cart, standing or walking"),
  *     		MET(2.3,"05065","non-food shopping, with or without a cart, standing or walking"),
  *     		MET(1.8,"05070","ironing"),             # <<<<<<<<<<<<<<
@@ -3397,7 +3406,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_151.code = ((char *)"05070");
   __pyx_t_151.description = ((char *)"ironing");
 
-  /* "pyfit/mets.pyx":158
+  /* "pyfit/mets.pyx":160
  *     		MET(2.3,"05065","non-food shopping, with or without a cart, standing or walking"),
  *     		MET(1.8,"05070","ironing"),
  *     		MET(1.3,"05080","knitting, sewing, light effort, wrapping presents, sitting"),             # <<<<<<<<<<<<<<
@@ -3408,7 +3417,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_152.code = ((char *)"05080");
   __pyx_t_152.description = ((char *)"knitting, sewing, light effort, wrapping presents, sitting");
 
-  /* "pyfit/mets.pyx":159
+  /* "pyfit/mets.pyx":161
  *     		MET(1.8,"05070","ironing"),
  *     		MET(1.3,"05080","knitting, sewing, light effort, wrapping presents, sitting"),
  *     		MET(2.8,"05082","sewing with a machine"),             # <<<<<<<<<<<<<<
@@ -3419,7 +3428,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_153.code = ((char *)"05082");
   __pyx_t_153.description = ((char *)"sewing with a machine");
 
-  /* "pyfit/mets.pyx":160
+  /* "pyfit/mets.pyx":162
  *     		MET(1.3,"05080","knitting, sewing, light effort, wrapping presents, sitting"),
  *     		MET(2.8,"05082","sewing with a machine"),
  *     		MET(2.0,"05090","laundry, fold or hang clothes, put clothes in washer or dryer, packing suitcase, washing clothes by hand,implied standing, light effort"),             # <<<<<<<<<<<<<<
@@ -3430,7 +3439,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_154.code = ((char *)"05090");
   __pyx_t_154.description = ((char *)"laundry, fold or hang clothes, put clothes in washer or dryer, packing suitcase, washing clothes by hand,implied standing, light effort");
 
-  /* "pyfit/mets.pyx":161
+  /* "pyfit/mets.pyx":163
  *     		MET(2.8,"05082","sewing with a machine"),
  *     		MET(2.0,"05090","laundry, fold or hang clothes, put clothes in washer or dryer, packing suitcase, washing clothes by hand,implied standing, light effort"),
  *     		MET(4.0,"05092","laundry, hanging wash, washing clothes by hand, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3441,7 +3450,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_155.code = ((char *)"05092");
   __pyx_t_155.description = ((char *)"laundry, hanging wash, washing clothes by hand, moderate effort");
 
-  /* "pyfit/mets.pyx":162
+  /* "pyfit/mets.pyx":164
  *     		MET(2.0,"05090","laundry, fold or hang clothes, put clothes in washer or dryer, packing suitcase, washing clothes by hand,implied standing, light effort"),
  *     		MET(4.0,"05092","laundry, hanging wash, washing clothes by hand, moderate effort"),
  *     		MET(2.3,"05095","laundry, putting away clothes, gathering clothes to pack, putting away laundry,implied walking"),             # <<<<<<<<<<<<<<
@@ -3452,7 +3461,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_156.code = ((char *)"05095");
   __pyx_t_156.description = ((char *)"laundry, putting away clothes, gathering clothes to pack, putting away laundry,implied walking");
 
-  /* "pyfit/mets.pyx":163
+  /* "pyfit/mets.pyx":165
  *     		MET(4.0,"05092","laundry, hanging wash, washing clothes by hand, moderate effort"),
  *     		MET(2.3,"05095","laundry, putting away clothes, gathering clothes to pack, putting away laundry,implied walking"),
  *     		MET(3.3,"05100","making bed, changing linens"),             # <<<<<<<<<<<<<<
@@ -3463,7 +3472,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_157.code = ((char *)"05100");
   __pyx_t_157.description = ((char *)"making bed, changing linens");
 
-  /* "pyfit/mets.pyx":164
+  /* "pyfit/mets.pyx":166
  *     		MET(2.3,"05095","laundry, putting away clothes, gathering clothes to pack, putting away laundry,implied walking"),
  *     		MET(3.3,"05100","making bed, changing linens"),
  *     		MET(5.0,"05110","maple syruping/sugar bushing (including carrying buckets, carrying wood)"),             # <<<<<<<<<<<<<<
@@ -3474,7 +3483,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_158.code = ((char *)"05110");
   __pyx_t_158.description = ((char *)"maple syruping/sugar bushing (including carrying buckets, carrying wood)");
 
-  /* "pyfit/mets.pyx":165
+  /* "pyfit/mets.pyx":167
  *     		MET(3.3,"05100","making bed, changing linens"),
  *     		MET(5.0,"05110","maple syruping/sugar bushing (including carrying buckets, carrying wood)"),
  *     		MET(5.8,"05120","moving furniture, household items, carrying boxes"),             # <<<<<<<<<<<<<<
@@ -3485,7 +3494,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_159.code = ((char *)"05120");
   __pyx_t_159.description = ((char *)"moving furniture, household items, carrying boxes");
 
-  /* "pyfit/mets.pyx":166
+  /* "pyfit/mets.pyx":168
  *     		MET(5.0,"05110","maple syruping/sugar bushing (including carrying buckets, carrying wood)"),
  *     		MET(5.8,"05120","moving furniture, household items, carrying boxes"),
  *     		MET(5.0,"05121","moving, lifting light loads"),             # <<<<<<<<<<<<<<
@@ -3496,7 +3505,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_160.code = ((char *)"05121");
   __pyx_t_160.description = ((char *)"moving, lifting light loads");
 
-  /* "pyfit/mets.pyx":167
+  /* "pyfit/mets.pyx":169
  *     		MET(5.8,"05120","moving furniture, household items, carrying boxes"),
  *     		MET(5.0,"05121","moving, lifting light loads"),
  *     		MET(4.8,"05125","organizing room"),             # <<<<<<<<<<<<<<
@@ -3507,7 +3516,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_161.code = ((char *)"05125");
   __pyx_t_161.description = ((char *)"organizing room");
 
-  /* "pyfit/mets.pyx":168
+  /* "pyfit/mets.pyx":170
  *     		MET(5.0,"05121","moving, lifting light loads"),
  *     		MET(4.8,"05125","organizing room"),
  *     		MET(3.5,"05130","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3518,7 +3527,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_162.code = ((char *)"05130");
   __pyx_t_162.description = ((char *)"scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, moderate effort");
 
-  /* "pyfit/mets.pyx":169
+  /* "pyfit/mets.pyx":171
  *     		MET(4.8,"05125","organizing room"),
  *     		MET(3.5,"05130","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, moderate effort"),
  *     		MET(2.0,"05131","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, light effort"),             # <<<<<<<<<<<<<<
@@ -3529,7 +3538,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_163.code = ((char *)"05131");
   __pyx_t_163.description = ((char *)"scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, light effort");
 
-  /* "pyfit/mets.pyx":170
+  /* "pyfit/mets.pyx":172
  *     		MET(3.5,"05130","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, moderate effort"),
  *     		MET(2.0,"05131","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, light effort"),
  *     		MET(6.5,"05132","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -3540,7 +3549,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_164.code = ((char *)"05132");
   __pyx_t_164.description = ((char *)"scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, vigorous effort");
 
-  /* "pyfit/mets.pyx":171
+  /* "pyfit/mets.pyx":173
  *     		MET(2.0,"05131","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, light effort"),
  *     		MET(6.5,"05132","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, vigorous effort"),
  *     		MET(4.0,"05140","sweeping garage, sidewalk or outside of house"),             # <<<<<<<<<<<<<<
@@ -3551,7 +3560,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_165.code = ((char *)"05140");
   __pyx_t_165.description = ((char *)"sweeping garage, sidewalk or outside of house");
 
-  /* "pyfit/mets.pyx":172
+  /* "pyfit/mets.pyx":174
  *     		MET(6.5,"05132","scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, vigorous effort"),
  *     		MET(4.0,"05140","sweeping garage, sidewalk or outside of house"),
  *     		MET(3.5,"05146","standing, packing/unpacking boxes, occasional lifting of lightweight household items, loading or unloading items in car, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3562,7 +3571,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_166.code = ((char *)"05146");
   __pyx_t_166.description = ((char *)"standing, packing/unpacking boxes, occasional lifting of lightweight household items, loading or unloading items in car, moderate effort");
 
-  /* "pyfit/mets.pyx":173
+  /* "pyfit/mets.pyx":175
  *     		MET(4.0,"05140","sweeping garage, sidewalk or outside of house"),
  *     		MET(3.5,"05146","standing, packing/unpacking boxes, occasional lifting of lightweight household items, loading or unloading items in car, moderate effort"),
  *     		MET(3.0,"05147","implied walking, putting away household items, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3573,7 +3582,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_167.code = ((char *)"05147");
   __pyx_t_167.description = ((char *)"implied walking, putting away household items, moderate effort");
 
-  /* "pyfit/mets.pyx":174
+  /* "pyfit/mets.pyx":176
  *     		MET(3.5,"05146","standing, packing/unpacking boxes, occasional lifting of lightweight household items, loading or unloading items in car, moderate effort"),
  *     		MET(3.0,"05147","implied walking, putting away household items, moderate effort"),
  *     		MET(2.5,"05148","watering  plants"),             # <<<<<<<<<<<<<<
@@ -3584,7 +3593,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_168.code = ((char *)"05148");
   __pyx_t_168.description = ((char *)"watering  plants");
 
-  /* "pyfit/mets.pyx":175
+  /* "pyfit/mets.pyx":177
  *     		MET(3.0,"05147","implied walking, putting away household items, moderate effort"),
  *     		MET(2.5,"05148","watering  plants"),
  *     		MET(2.5,"05149","building a fire inside"),             # <<<<<<<<<<<<<<
@@ -3595,7 +3604,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_169.code = ((char *)"05149");
   __pyx_t_169.description = ((char *)"building a fire inside");
 
-  /* "pyfit/mets.pyx":176
+  /* "pyfit/mets.pyx":178
  *     		MET(2.5,"05148","watering  plants"),
  *     		MET(2.5,"05149","building a fire inside"),
  *     		MET(9.0,"05150","moving household items upstairs, carrying boxes or furniture"),             # <<<<<<<<<<<<<<
@@ -3606,7 +3615,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_170.code = ((char *)"05150");
   __pyx_t_170.description = ((char *)"moving household items upstairs, carrying boxes or furniture");
 
-  /* "pyfit/mets.pyx":177
+  /* "pyfit/mets.pyx":179
  *     		MET(2.5,"05149","building a fire inside"),
  *     		MET(9.0,"05150","moving household items upstairs, carrying boxes or furniture"),
  *     		MET(2.0,"05160","standing, light effort tasks (pump gas, change light bulb, etc.)"),             # <<<<<<<<<<<<<<
@@ -3617,7 +3626,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_171.code = ((char *)"05160");
   __pyx_t_171.description = ((char *)"standing, light effort tasks (pump gas, change light bulb, etc.)");
 
-  /* "pyfit/mets.pyx":178
+  /* "pyfit/mets.pyx":180
  *     		MET(9.0,"05150","moving household items upstairs, carrying boxes or furniture"),
  *     		MET(2.0,"05160","standing, light effort tasks (pump gas, change light bulb, etc.)"),
  *     		MET(3.5,"05165","walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)"),             # <<<<<<<<<<<<<<
@@ -3628,7 +3637,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_172.code = ((char *)"05165");
   __pyx_t_172.description = ((char *)"walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)");
 
-  /* "pyfit/mets.pyx":179
+  /* "pyfit/mets.pyx":181
  *     		MET(2.0,"05160","standing, light effort tasks (pump gas, change light bulb, etc.)"),
  *     		MET(3.5,"05165","walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)"),
  *     		MET(2.2,"05170","sitting, playing with child(ren), light effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3639,7 +3648,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_173.code = ((char *)"05170");
   __pyx_t_173.description = ((char *)"sitting, playing with child(ren), light effort, only active periods");
 
-  /* "pyfit/mets.pyx":180
+  /* "pyfit/mets.pyx":182
  *     		MET(3.5,"05165","walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)"),
  *     		MET(2.2,"05170","sitting, playing with child(ren), light effort, only active periods"),
  *     		MET(2.8,"05171","standing, playing with child(ren) light effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3650,7 +3659,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_174.code = ((char *)"05171");
   __pyx_t_174.description = ((char *)"standing, playing with child(ren) light effort, only active periods");
 
-  /* "pyfit/mets.pyx":181
+  /* "pyfit/mets.pyx":183
  *     		MET(2.2,"05170","sitting, playing with child(ren), light effort, only active periods"),
  *     		MET(2.8,"05171","standing, playing with child(ren) light effort, only active periods"),
  *     		MET(3.5,"05175","walking/running, playing with child(ren), moderate effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3661,7 +3670,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_175.code = ((char *)"05175");
   __pyx_t_175.description = ((char *)"walking/running, playing with child(ren), moderate effort, only active periods");
 
-  /* "pyfit/mets.pyx":182
+  /* "pyfit/mets.pyx":184
  *     		MET(2.8,"05171","standing, playing with child(ren) light effort, only active periods"),
  *     		MET(3.5,"05175","walking/running, playing with child(ren), moderate effort, only active periods"),
  *     		MET(5.8,"05180","walking/running, playing with child(ren), vigorous effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3672,7 +3681,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_176.code = ((char *)"05180");
   __pyx_t_176.description = ((char *)"walking/running, playing with child(ren), vigorous effort, only active periods");
 
-  /* "pyfit/mets.pyx":183
+  /* "pyfit/mets.pyx":185
  *     		MET(3.5,"05175","walking/running, playing with child(ren), moderate effort, only active periods"),
  *     		MET(5.8,"05180","walking/running, playing with child(ren), vigorous effort, only active periods"),
  *     		MET(3.0,"05181","walking and carrying small child, child weighing 15 lbs or more"),             # <<<<<<<<<<<<<<
@@ -3683,7 +3692,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_177.code = ((char *)"05181");
   __pyx_t_177.description = ((char *)"walking and carrying small child, child weighing 15 lbs or more");
 
-  /* "pyfit/mets.pyx":184
+  /* "pyfit/mets.pyx":186
  *     		MET(5.8,"05180","walking/running, playing with child(ren), vigorous effort, only active periods"),
  *     		MET(3.0,"05181","walking and carrying small child, child weighing 15 lbs or more"),
  *     		MET(2.3,"05182","walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)"),             # <<<<<<<<<<<<<<
@@ -3694,7 +3703,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_178.code = ((char *)"05182");
   __pyx_t_178.description = ((char *)"walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)");
 
-  /* "pyfit/mets.pyx":185
+  /* "pyfit/mets.pyx":187
  *     		MET(3.0,"05181","walking and carrying small child, child weighing 15 lbs or more"),
  *     		MET(2.3,"05182","walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)"),
  *     		MET(2.0,"05183","standing, holding child"),             # <<<<<<<<<<<<<<
@@ -3705,7 +3714,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_179.code = ((char *)"05183");
   __pyx_t_179.description = ((char *)"standing, holding child");
 
-  /* "pyfit/mets.pyx":186
+  /* "pyfit/mets.pyx":188
  *     		MET(2.3,"05182","walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)"),
  *     		MET(2.0,"05183","standing, holding child"),
  *     		MET(2.5,"05184","child care, infant, general"),             # <<<<<<<<<<<<<<
@@ -3716,7 +3725,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_180.code = ((char *)"05184");
   __pyx_t_180.description = ((char *)"child care, infant, general");
 
-  /* "pyfit/mets.pyx":187
+  /* "pyfit/mets.pyx":189
  *     		MET(2.0,"05183","standing, holding child"),
  *     		MET(2.5,"05184","child care, infant, general"),
  *     		MET(2.0,"05185","child care, sitting/kneeling (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), light effort, general"),             # <<<<<<<<<<<<<<
@@ -3727,7 +3736,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_181.code = ((char *)"05185");
   __pyx_t_181.description = ((char *)"child care, sitting/kneeling (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), light effort, general");
 
-  /* "pyfit/mets.pyx":188
+  /* "pyfit/mets.pyx":190
  *     		MET(2.5,"05184","child care, infant, general"),
  *     		MET(2.0,"05185","child care, sitting/kneeling (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), light effort, general"),
  *     		MET(3.0,"05186","child care, standing (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), moderate effort"),             # <<<<<<<<<<<<<<
@@ -3738,7 +3747,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_182.code = ((char *)"05186");
   __pyx_t_182.description = ((char *)"child care, standing (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), moderate effort");
 
-  /* "pyfit/mets.pyx":189
+  /* "pyfit/mets.pyx":191
  *     		MET(2.0,"05185","child care, sitting/kneeling (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), light effort, general"),
  *     		MET(3.0,"05186","child care, standing (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), moderate effort"),
  *     		MET(1.5,"05188","reclining with baby"),             # <<<<<<<<<<<<<<
@@ -3749,7 +3758,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_183.code = ((char *)"05188");
   __pyx_t_183.description = ((char *)"reclining with baby");
 
-  /* "pyfit/mets.pyx":190
+  /* "pyfit/mets.pyx":192
  *     		MET(3.0,"05186","child care, standing (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), moderate effort"),
  *     		MET(1.5,"05188","reclining with baby"),
  *     		MET(2.0,"05189","breastfeeding, sitting or reclining"),             # <<<<<<<<<<<<<<
@@ -3760,7 +3769,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_184.code = ((char *)"05189");
   __pyx_t_184.description = ((char *)"breastfeeding, sitting or reclining");
 
-  /* "pyfit/mets.pyx":191
+  /* "pyfit/mets.pyx":193
  *     		MET(1.5,"05188","reclining with baby"),
  *     		MET(2.0,"05189","breastfeeding, sitting or reclining"),
  *     		MET(2.5,"05190","sit, playing with animals, light effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3771,7 +3780,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_185.code = ((char *)"05190");
   __pyx_t_185.description = ((char *)"sit, playing with animals, light effort, only active periods");
 
-  /* "pyfit/mets.pyx":192
+  /* "pyfit/mets.pyx":194
  *     		MET(2.0,"05189","breastfeeding, sitting or reclining"),
  *     		MET(2.5,"05190","sit, playing with animals, light effort, only active periods"),
  *     		MET(2.8,"05191","stand, playing with animals, light effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3782,7 +3791,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_186.code = ((char *)"05191");
   __pyx_t_186.description = ((char *)"stand, playing with animals, light effort, only active periods");
 
-  /* "pyfit/mets.pyx":193
+  /* "pyfit/mets.pyx":195
  *     		MET(2.5,"05190","sit, playing with animals, light effort, only active periods"),
  *     		MET(2.8,"05191","stand, playing with animals, light effort, only active periods"),
  *     		MET(3.0,"05192","walk/run, playing with animals, general, light effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3793,7 +3802,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_187.code = ((char *)"05192");
   __pyx_t_187.description = ((char *)"walk/run, playing with animals, general, light effort, only active periods");
 
-  /* "pyfit/mets.pyx":194
+  /* "pyfit/mets.pyx":196
  *     		MET(2.8,"05191","stand, playing with animals, light effort, only active periods"),
  *     		MET(3.0,"05192","walk/run, playing with animals, general, light effort, only active periods"),
  *     		MET(4.0,"05193","walk/run, playing with animals, moderate effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3804,7 +3813,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_188.code = ((char *)"05193");
   __pyx_t_188.description = ((char *)"walk/run, playing with animals, moderate effort, only active periods");
 
-  /* "pyfit/mets.pyx":195
+  /* "pyfit/mets.pyx":197
  *     		MET(3.0,"05192","walk/run, playing with animals, general, light effort, only active periods"),
  *     		MET(4.0,"05193","walk/run, playing with animals, moderate effort, only active periods"),
  *     		MET(5.0,"05194","walk/run, playing with animals, vigorous effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3815,7 +3824,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_189.code = ((char *)"05194");
   __pyx_t_189.description = ((char *)"walk/run, playing with animals, vigorous effort, only active periods");
 
-  /* "pyfit/mets.pyx":196
+  /* "pyfit/mets.pyx":198
  *     		MET(4.0,"05193","walk/run, playing with animals, moderate effort, only active periods"),
  *     		MET(5.0,"05194","walk/run, playing with animals, vigorous effort, only active periods"),
  *     		MET(3.5,"05195","standing, bathing dog"),             # <<<<<<<<<<<<<<
@@ -3826,7 +3835,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_190.code = ((char *)"05195");
   __pyx_t_190.description = ((char *)"standing, bathing dog");
 
-  /* "pyfit/mets.pyx":197
+  /* "pyfit/mets.pyx":199
  *     		MET(5.0,"05194","walk/run, playing with animals, vigorous effort, only active periods"),
  *     		MET(3.5,"05195","standing, bathing dog"),
  *     		MET(2.3,"05197","animal care, household animals, general"),             # <<<<<<<<<<<<<<
@@ -3837,7 +3846,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_191.code = ((char *)"05197");
   __pyx_t_191.description = ((char *)"animal care, household animals, general");
 
-  /* "pyfit/mets.pyx":198
+  /* "pyfit/mets.pyx":200
  *     		MET(3.5,"05195","standing, bathing dog"),
  *     		MET(2.3,"05197","animal care, household animals, general"),
  *     		MET(4.0,"05200","elder care, disabled adult, bathing, dressing, moving into and out of bed, only active periods "),             # <<<<<<<<<<<<<<
@@ -3848,7 +3857,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_192.code = ((char *)"05200");
   __pyx_t_192.description = ((char *)"elder care, disabled adult, bathing, dressing, moving into and out of bed, only active periods ");
 
-  /* "pyfit/mets.pyx":199
+  /* "pyfit/mets.pyx":201
  *     		MET(2.3,"05197","animal care, household animals, general"),
  *     		MET(4.0,"05200","elder care, disabled adult, bathing, dressing, moving into and out of bed, only active periods "),
  *     		MET(2.3,"05205","elder care, disabled adult, feeding, combing hair, light effort, only active periods"),             # <<<<<<<<<<<<<<
@@ -3859,7 +3868,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_193.code = ((char *)"05205");
   __pyx_t_193.description = ((char *)"elder care, disabled adult, feeding, combing hair, light effort, only active periods");
 
-  /* "pyfit/mets.pyx":200
+  /* "pyfit/mets.pyx":202
  *     		MET(4.0,"05200","elder care, disabled adult, bathing, dressing, moving into and out of bed, only active periods "),
  *     		MET(2.3,"05205","elder care, disabled adult, feeding, combing hair, light effort, only active periods"),
  *     		MET(3.0,"06010","airplane repair"),             # <<<<<<<<<<<<<<
@@ -3870,7 +3879,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_194.code = ((char *)"06010");
   __pyx_t_194.description = ((char *)"airplane repair");
 
-  /* "pyfit/mets.pyx":201
+  /* "pyfit/mets.pyx":203
  *     		MET(2.3,"05205","elder care, disabled adult, feeding, combing hair, light effort, only active periods"),
  *     		MET(3.0,"06010","airplane repair"),
  *     		MET(4.0,"06020","automobile body work"),             # <<<<<<<<<<<<<<
@@ -3881,7 +3890,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_195.code = ((char *)"06020");
   __pyx_t_195.description = ((char *)"automobile body work");
 
-  /* "pyfit/mets.pyx":202
+  /* "pyfit/mets.pyx":204
  *     		MET(3.0,"06010","airplane repair"),
  *     		MET(4.0,"06020","automobile body work"),
  *     		MET(3.3,"06030","automobile repair, light or moderate effort"),             # <<<<<<<<<<<<<<
@@ -3892,7 +3901,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_196.code = ((char *)"06030");
   __pyx_t_196.description = ((char *)"automobile repair, light or moderate effort");
 
-  /* "pyfit/mets.pyx":203
+  /* "pyfit/mets.pyx":205
  *     		MET(4.0,"06020","automobile body work"),
  *     		MET(3.3,"06030","automobile repair, light or moderate effort"),
  *     		MET(3.0,"06040","carpentry, general, workshop (Taylor Code 620)"),             # <<<<<<<<<<<<<<
@@ -3903,7 +3912,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_197.code = ((char *)"06040");
   __pyx_t_197.description = ((char *)"carpentry, general, workshop (Taylor Code 620)");
 
-  /* "pyfit/mets.pyx":204
+  /* "pyfit/mets.pyx":206
  *     		MET(3.3,"06030","automobile repair, light or moderate effort"),
  *     		MET(3.0,"06040","carpentry, general, workshop (Taylor Code 620)"),
  *     		MET(6.0,"06050","carpentry, outside house, installing rain gutters (Taylor Code 640),carpentry, outside house, building a fence"),             # <<<<<<<<<<<<<<
@@ -3914,7 +3923,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_198.code = ((char *)"06050");
   __pyx_t_198.description = ((char *)"carpentry, outside house, installing rain gutters (Taylor Code 640),carpentry, outside house, building a fence");
 
-  /* "pyfit/mets.pyx":205
+  /* "pyfit/mets.pyx":207
  *     		MET(3.0,"06040","carpentry, general, workshop (Taylor Code 620)"),
  *     		MET(6.0,"06050","carpentry, outside house, installing rain gutters (Taylor Code 640),carpentry, outside house, building a fence"),
  *     		MET(3.8,"06052","carpentry, outside house, building a fence"),             # <<<<<<<<<<<<<<
@@ -3925,7 +3934,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_199.code = ((char *)"06052");
   __pyx_t_199.description = ((char *)"carpentry, outside house, building a fence");
 
-  /* "pyfit/mets.pyx":206
+  /* "pyfit/mets.pyx":208
  *     		MET(6.0,"06050","carpentry, outside house, installing rain gutters (Taylor Code 640),carpentry, outside house, building a fence"),
  *     		MET(3.8,"06052","carpentry, outside house, building a fence"),
  *     		MET(3.3,"06060","carpentry, finishing or refinishing cabinets or furniture"),             # <<<<<<<<<<<<<<
@@ -3936,7 +3945,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_200.code = ((char *)"06060");
   __pyx_t_200.description = ((char *)"carpentry, finishing or refinishing cabinets or furniture");
 
-  /* "pyfit/mets.pyx":207
+  /* "pyfit/mets.pyx":209
  *     		MET(3.8,"06052","carpentry, outside house, building a fence"),
  *     		MET(3.3,"06060","carpentry, finishing or refinishing cabinets or furniture"),
  *     		MET(6.0,"06070","carpentry, sawing hardwood"),             # <<<<<<<<<<<<<<
@@ -3947,7 +3956,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_201.code = ((char *)"06070");
   __pyx_t_201.description = ((char *)"carpentry, sawing hardwood");
 
-  /* "pyfit/mets.pyx":208
+  /* "pyfit/mets.pyx":210
  *     		MET(3.3,"06060","carpentry, finishing or refinishing cabinets or furniture"),
  *     		MET(6.0,"06070","carpentry, sawing hardwood"),
  *     		MET(4.0,"06072","carpentry, home remodeling tasks, moderate effort"),             # <<<<<<<<<<<<<<
@@ -3958,7 +3967,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_202.code = ((char *)"06072");
   __pyx_t_202.description = ((char *)"carpentry, home remodeling tasks, moderate effort");
 
-  /* "pyfit/mets.pyx":209
+  /* "pyfit/mets.pyx":211
  *     		MET(6.0,"06070","carpentry, sawing hardwood"),
  *     		MET(4.0,"06072","carpentry, home remodeling tasks, moderate effort"),
  *     		MET(2.3,"06074","carpentry, home remodeling tasks, light effort\\u00a0"),             # <<<<<<<<<<<<<<
@@ -3969,7 +3978,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_203.code = ((char *)"06074");
   __pyx_t_203.description = ((char *)"carpentry, home remodeling tasks, light effort\\u00a0");
 
-  /* "pyfit/mets.pyx":210
+  /* "pyfit/mets.pyx":212
  *     		MET(4.0,"06072","carpentry, home remodeling tasks, moderate effort"),
  *     		MET(2.3,"06074","carpentry, home remodeling tasks, light effort\\u00a0"),
  *     		MET(5.0,"06080","caulking, chinking log cabin"),             # <<<<<<<<<<<<<<
@@ -3980,7 +3989,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_204.code = ((char *)"06080");
   __pyx_t_204.description = ((char *)"caulking, chinking log cabin");
 
-  /* "pyfit/mets.pyx":211
+  /* "pyfit/mets.pyx":213
  *     		MET(2.3,"06074","carpentry, home remodeling tasks, light effort\\u00a0"),
  *     		MET(5.0,"06080","caulking, chinking log cabin"),
  *     		MET(4.5,"06090","caulking, except log cabin"),             # <<<<<<<<<<<<<<
@@ -3991,7 +4000,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_205.code = ((char *)"06090");
   __pyx_t_205.description = ((char *)"caulking, except log cabin");
 
-  /* "pyfit/mets.pyx":212
+  /* "pyfit/mets.pyx":214
  *     		MET(5.0,"06080","caulking, chinking log cabin"),
  *     		MET(4.5,"06090","caulking, except log cabin"),
  *     		MET(5.0,"06100","cleaning gutters"),             # <<<<<<<<<<<<<<
@@ -4002,7 +4011,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_206.code = ((char *)"06100");
   __pyx_t_206.description = ((char *)"cleaning gutters");
 
-  /* "pyfit/mets.pyx":213
+  /* "pyfit/mets.pyx":215
  *     		MET(4.5,"06090","caulking, except log cabin"),
  *     		MET(5.0,"06100","cleaning gutters"),
  *     		MET(5.0,"06110","excavating garage"),             # <<<<<<<<<<<<<<
@@ -4013,7 +4022,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_207.code = ((char *)"06110");
   __pyx_t_207.description = ((char *)"excavating garage");
 
-  /* "pyfit/mets.pyx":214
+  /* "pyfit/mets.pyx":216
  *     		MET(5.0,"06100","cleaning gutters"),
  *     		MET(5.0,"06110","excavating garage"),
  *     		MET(5.0,"06120","hanging storm windows"),             # <<<<<<<<<<<<<<
@@ -4024,7 +4033,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_208.code = ((char *)"06120");
   __pyx_t_208.description = ((char *)"hanging storm windows");
 
-  /* "pyfit/mets.pyx":215
+  /* "pyfit/mets.pyx":217
  *     		MET(5.0,"06110","excavating garage"),
  *     		MET(5.0,"06120","hanging storm windows"),
  *     		MET(5.0,"06122","hanging sheet rock inside house"),             # <<<<<<<<<<<<<<
@@ -4035,7 +4044,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_209.code = ((char *)"06122");
   __pyx_t_209.description = ((char *)"hanging sheet rock inside house");
 
-  /* "pyfit/mets.pyx":216
+  /* "pyfit/mets.pyx":218
  *     		MET(5.0,"06120","hanging storm windows"),
  *     		MET(5.0,"06122","hanging sheet rock inside house"),
  *     		MET(3.0,"06124","hammering nails"),             # <<<<<<<<<<<<<<
@@ -4046,7 +4055,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_210.code = ((char *)"06124");
   __pyx_t_210.description = ((char *)"hammering nails");
 
-  /* "pyfit/mets.pyx":217
+  /* "pyfit/mets.pyx":219
  *     		MET(5.0,"06122","hanging sheet rock inside house"),
  *     		MET(3.0,"06124","hammering nails"),
  *     		MET(2.5,"06126","home repair, general, light effort"),             # <<<<<<<<<<<<<<
@@ -4057,7 +4066,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_211.code = ((char *)"06126");
   __pyx_t_211.description = ((char *)"home repair, general, light effort");
 
-  /* "pyfit/mets.pyx":218
+  /* "pyfit/mets.pyx":220
  *     		MET(3.0,"06124","hammering nails"),
  *     		MET(2.5,"06126","home repair, general, light effort"),
  *     		MET(4.5,"06127","home repair, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4068,7 +4077,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_212.code = ((char *)"06127");
   __pyx_t_212.description = ((char *)"home repair, general, moderate effort");
 
-  /* "pyfit/mets.pyx":219
+  /* "pyfit/mets.pyx":221
  *     		MET(2.5,"06126","home repair, general, light effort"),
  *     		MET(4.5,"06127","home repair, general, moderate effort"),
  *     		MET(6.0,"06128","home repair, general, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -4079,7 +4088,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_213.code = ((char *)"06128");
   __pyx_t_213.description = ((char *)"home repair, general, vigorous effort");
 
-  /* "pyfit/mets.pyx":220
+  /* "pyfit/mets.pyx":222
  *     		MET(4.5,"06127","home repair, general, moderate effort"),
  *     		MET(6.0,"06128","home repair, general, vigorous effort"),
  *     		MET(4.5,"06130","laying or removing carpet"),             # <<<<<<<<<<<<<<
@@ -4090,7 +4099,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_214.code = ((char *)"06130");
   __pyx_t_214.description = ((char *)"laying or removing carpet");
 
-  /* "pyfit/mets.pyx":221
+  /* "pyfit/mets.pyx":223
  *     		MET(6.0,"06128","home repair, general, vigorous effort"),
  *     		MET(4.5,"06130","laying or removing carpet"),
  *     		MET(3.8,"06140","laying tile or linoleum,repairing appliances"),             # <<<<<<<<<<<<<<
@@ -4101,7 +4110,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_215.code = ((char *)"06140");
   __pyx_t_215.description = ((char *)"laying tile or linoleum,repairing appliances");
 
-  /* "pyfit/mets.pyx":222
+  /* "pyfit/mets.pyx":224
  *     		MET(4.5,"06130","laying or removing carpet"),
  *     		MET(3.8,"06140","laying tile or linoleum,repairing appliances"),
  *     		MET(3.0,"06144","repairing appliances"),             # <<<<<<<<<<<<<<
@@ -4112,7 +4121,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_216.code = ((char *)"06144");
   __pyx_t_216.description = ((char *)"repairing appliances");
 
-  /* "pyfit/mets.pyx":223
+  /* "pyfit/mets.pyx":225
  *     		MET(3.8,"06140","laying tile or linoleum,repairing appliances"),
  *     		MET(3.0,"06144","repairing appliances"),
  *     		MET(5.0,"06150","painting, outside home (Taylor Code 650)"),             # <<<<<<<<<<<<<<
@@ -4123,7 +4132,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_217.code = ((char *)"06150");
   __pyx_t_217.description = ((char *)"painting, outside home (Taylor Code 650)");
 
-  /* "pyfit/mets.pyx":224
+  /* "pyfit/mets.pyx":226
  *     		MET(3.0,"06144","repairing appliances"),
  *     		MET(5.0,"06150","painting, outside home (Taylor Code 650)"),
  *     		MET(3.3,"06160","painting inside house,wallpapering, scraping paint"),             # <<<<<<<<<<<<<<
@@ -4134,7 +4143,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_218.code = ((char *)"06160");
   __pyx_t_218.description = ((char *)"painting inside house,wallpapering, scraping paint");
 
-  /* "pyfit/mets.pyx":225
+  /* "pyfit/mets.pyx":227
  *     		MET(5.0,"06150","painting, outside home (Taylor Code 650)"),
  *     		MET(3.3,"06160","painting inside house,wallpapering, scraping paint"),
  *     		MET(4.5,"06165","painting, (Taylor Code 630)"),             # <<<<<<<<<<<<<<
@@ -4145,7 +4154,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_219.code = ((char *)"06165");
   __pyx_t_219.description = ((char *)"painting, (Taylor Code 630)");
 
-  /* "pyfit/mets.pyx":226
+  /* "pyfit/mets.pyx":228
  *     		MET(3.3,"06160","painting inside house,wallpapering, scraping paint"),
  *     		MET(4.5,"06165","painting, (Taylor Code 630)"),
  *     		MET(3.0,"06167","plumbing, general"),             # <<<<<<<<<<<<<<
@@ -4156,7 +4165,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_220.code = ((char *)"06167");
   __pyx_t_220.description = ((char *)"plumbing, general");
 
-  /* "pyfit/mets.pyx":227
+  /* "pyfit/mets.pyx":229
  *     		MET(4.5,"06165","painting, (Taylor Code 630)"),
  *     		MET(3.0,"06167","plumbing, general"),
  *     		MET(3.0,"06170","put on and removal of tarp - sailboat"),             # <<<<<<<<<<<<<<
@@ -4167,7 +4176,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_221.code = ((char *)"06170");
   __pyx_t_221.description = ((char *)"put on and removal of tarp - sailboat");
 
-  /* "pyfit/mets.pyx":228
+  /* "pyfit/mets.pyx":230
  *     		MET(3.0,"06167","plumbing, general"),
  *     		MET(3.0,"06170","put on and removal of tarp - sailboat"),
  *     		MET(6.0,"06180","roofing"),             # <<<<<<<<<<<<<<
@@ -4178,7 +4187,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_222.code = ((char *)"06180");
   __pyx_t_222.description = ((char *)"roofing");
 
-  /* "pyfit/mets.pyx":229
+  /* "pyfit/mets.pyx":231
  *     		MET(3.0,"06170","put on and removal of tarp - sailboat"),
  *     		MET(6.0,"06180","roofing"),
  *     		MET(4.5,"06190","sanding floors with a power sander"),             # <<<<<<<<<<<<<<
@@ -4189,7 +4198,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_223.code = ((char *)"06190");
   __pyx_t_223.description = ((char *)"sanding floors with a power sander");
 
-  /* "pyfit/mets.pyx":230
+  /* "pyfit/mets.pyx":232
  *     		MET(6.0,"06180","roofing"),
  *     		MET(4.5,"06190","sanding floors with a power sander"),
  *     		MET(4.5,"06200","scraping and painting sailboat or powerboat"),             # <<<<<<<<<<<<<<
@@ -4200,7 +4209,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_224.code = ((char *)"06200");
   __pyx_t_224.description = ((char *)"scraping and painting sailboat or powerboat");
 
-  /* "pyfit/mets.pyx":231
+  /* "pyfit/mets.pyx":233
  *     		MET(4.5,"06190","sanding floors with a power sander"),
  *     		MET(4.5,"06200","scraping and painting sailboat or powerboat"),
  *     		MET(2.0,"06205","sharpening tools"),             # <<<<<<<<<<<<<<
@@ -4211,7 +4220,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_225.code = ((char *)"06205");
   __pyx_t_225.description = ((char *)"sharpening tools");
 
-  /* "pyfit/mets.pyx":232
+  /* "pyfit/mets.pyx":234
  *     		MET(4.5,"06200","scraping and painting sailboat or powerboat"),
  *     		MET(2.0,"06205","sharpening tools"),
  *     		MET(5.0,"06210","spreading dirt with a shovel"),             # <<<<<<<<<<<<<<
@@ -4222,7 +4231,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_226.code = ((char *)"06210");
   __pyx_t_226.description = ((char *)"spreading dirt with a shovel");
 
-  /* "pyfit/mets.pyx":233
+  /* "pyfit/mets.pyx":235
  *     		MET(2.0,"06205","sharpening tools"),
  *     		MET(5.0,"06210","spreading dirt with a shovel"),
  *     		MET(4.5,"06220","washing and waxing hull of sailboat or airplane"),             # <<<<<<<<<<<<<<
@@ -4233,7 +4242,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_227.code = ((char *)"06220");
   __pyx_t_227.description = ((char *)"washing and waxing hull of sailboat or airplane");
 
-  /* "pyfit/mets.pyx":234
+  /* "pyfit/mets.pyx":236
  *     		MET(5.0,"06210","spreading dirt with a shovel"),
  *     		MET(4.5,"06220","washing and waxing hull of sailboat or airplane"),
  *     		MET(2.0,"06225","washing and waxing car"),             # <<<<<<<<<<<<<<
@@ -4244,7 +4253,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_228.code = ((char *)"06225");
   __pyx_t_228.description = ((char *)"washing and waxing car");
 
-  /* "pyfit/mets.pyx":235
+  /* "pyfit/mets.pyx":237
  *     		MET(4.5,"06220","washing and waxing hull of sailboat or airplane"),
  *     		MET(2.0,"06225","washing and waxing car"),
  *     		MET(4.5,"06230","washing fence, painting fence, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4255,7 +4264,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_229.code = ((char *)"06230");
   __pyx_t_229.description = ((char *)"washing fence, painting fence, moderate effort");
 
-  /* "pyfit/mets.pyx":236
+  /* "pyfit/mets.pyx":238
  *     		MET(2.0,"06225","washing and waxing car"),
  *     		MET(4.5,"06230","washing fence, painting fence, moderate effort"),
  *     		MET(3.3,"06240","wiring, tapping-splicing"),             # <<<<<<<<<<<<<<
@@ -4266,7 +4275,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_230.code = ((char *)"06240");
   __pyx_t_230.description = ((char *)"wiring, tapping-splicing");
 
-  /* "pyfit/mets.pyx":237
+  /* "pyfit/mets.pyx":239
  *     		MET(4.5,"06230","washing fence, painting fence, moderate effort"),
  *     		MET(3.3,"06240","wiring, tapping-splicing"),
  *     		MET(1.0,"07010","lying quietly and watching television"),             # <<<<<<<<<<<<<<
@@ -4277,7 +4286,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_231.code = ((char *)"07010");
   __pyx_t_231.description = ((char *)"lying quietly and watching television");
 
-  /* "pyfit/mets.pyx":238
+  /* "pyfit/mets.pyx":240
  *     		MET(3.3,"06240","wiring, tapping-splicing"),
  *     		MET(1.0,"07010","lying quietly and watching television"),
  *     		MET(1.3,"07011","lying quietly, doing nothing, lying in bed awake, listening to music (not talking or reading)"),             # <<<<<<<<<<<<<<
@@ -4288,7 +4297,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_232.code = ((char *)"07011");
   __pyx_t_232.description = ((char *)"lying quietly, doing nothing, lying in bed awake, listening to music (not talking or reading)");
 
-  /* "pyfit/mets.pyx":239
+  /* "pyfit/mets.pyx":241
  *     		MET(1.0,"07010","lying quietly and watching television"),
  *     		MET(1.3,"07011","lying quietly, doing nothing, lying in bed awake, listening to music (not talking or reading)"),
  *     		MET(1.3,"07020","sitting quietly and watching television"),             # <<<<<<<<<<<<<<
@@ -4299,7 +4308,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_233.code = ((char *)"07020");
   __pyx_t_233.description = ((char *)"sitting quietly and watching television");
 
-  /* "pyfit/mets.pyx":240
+  /* "pyfit/mets.pyx":242
  *     		MET(1.3,"07011","lying quietly, doing nothing, lying in bed awake, listening to music (not talking or reading)"),
  *     		MET(1.3,"07020","sitting quietly and watching television"),
  *     		MET(1.3,"07021","sitting quietly, general"),             # <<<<<<<<<<<<<<
@@ -4310,7 +4319,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_234.code = ((char *)"07021");
   __pyx_t_234.description = ((char *)"sitting quietly, general");
 
-  /* "pyfit/mets.pyx":241
+  /* "pyfit/mets.pyx":243
  *     		MET(1.3,"07020","sitting quietly and watching television"),
  *     		MET(1.3,"07021","sitting quietly, general"),
  *     		MET(1.5,"07022","sitting quietly, fidgeting, general, fidgeting hands"),             # <<<<<<<<<<<<<<
@@ -4321,7 +4330,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_235.code = ((char *)"07022");
   __pyx_t_235.description = ((char *)"sitting quietly, fidgeting, general, fidgeting hands");
 
-  /* "pyfit/mets.pyx":242
+  /* "pyfit/mets.pyx":244
  *     		MET(1.3,"07021","sitting quietly, general"),
  *     		MET(1.5,"07022","sitting quietly, fidgeting, general, fidgeting hands"),
  *     		MET(1.8,"07023","sitting, fidgeting feet"),             # <<<<<<<<<<<<<<
@@ -4332,7 +4341,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_236.code = ((char *)"07023");
   __pyx_t_236.description = ((char *)"sitting, fidgeting feet");
 
-  /* "pyfit/mets.pyx":243
+  /* "pyfit/mets.pyx":245
  *     		MET(1.5,"07022","sitting quietly, fidgeting, general, fidgeting hands"),
  *     		MET(1.8,"07023","sitting, fidgeting feet"),
  *     		MET(1.3,"07024","sitting, smoking"),             # <<<<<<<<<<<<<<
@@ -4343,7 +4352,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_237.code = ((char *)"07024");
   __pyx_t_237.description = ((char *)"sitting, smoking");
 
-  /* "pyfit/mets.pyx":244
+  /* "pyfit/mets.pyx":246
  *     		MET(1.8,"07023","sitting, fidgeting feet"),
  *     		MET(1.3,"07024","sitting, smoking"),
  *     		MET(1.5,"07025","sitting, listening to music (not talking or reading) or watching a movie in a theater"),             # <<<<<<<<<<<<<<
@@ -4354,7 +4363,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_238.code = ((char *)"07025");
   __pyx_t_238.description = ((char *)"sitting, listening to music (not talking or reading) or watching a movie in a theater");
 
-  /* "pyfit/mets.pyx":245
+  /* "pyfit/mets.pyx":247
  *     		MET(1.3,"07024","sitting, smoking"),
  *     		MET(1.5,"07025","sitting, listening to music (not talking or reading) or watching a movie in a theater"),
  *     		MET(1.3,"07026","sitting at a desk, resting head in hands"),             # <<<<<<<<<<<<<<
@@ -4365,7 +4374,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_239.code = ((char *)"07026");
   __pyx_t_239.description = ((char *)"sitting at a desk, resting head in hands");
 
-  /* "pyfit/mets.pyx":246
+  /* "pyfit/mets.pyx":248
  *     		MET(1.5,"07025","sitting, listening to music (not talking or reading) or watching a movie in a theater"),
  *     		MET(1.3,"07026","sitting at a desk, resting head in hands"),
  *     		MET(1.3,"07040","standing quietly, standing in a line"),             # <<<<<<<<<<<<<<
@@ -4376,7 +4385,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_240.code = ((char *)"07040");
   __pyx_t_240.description = ((char *)"standing quietly, standing in a line");
 
-  /* "pyfit/mets.pyx":247
+  /* "pyfit/mets.pyx":249
  *     		MET(1.3,"07026","sitting at a desk, resting head in hands"),
  *     		MET(1.3,"07040","standing quietly, standing in a line"),
  *     		MET(1.8,"07041","standing, fidgeting"),             # <<<<<<<<<<<<<<
@@ -4387,7 +4396,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_241.code = ((char *)"07041");
   __pyx_t_241.description = ((char *)"standing, fidgeting");
 
-  /* "pyfit/mets.pyx":248
+  /* "pyfit/mets.pyx":250
  *     		MET(1.3,"07040","standing quietly, standing in a line"),
  *     		MET(1.8,"07041","standing, fidgeting"),
  *     		MET(1.3,"07050","reclining, writing"),             # <<<<<<<<<<<<<<
@@ -4398,7 +4407,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_242.code = ((char *)"07050");
   __pyx_t_242.description = ((char *)"reclining, writing");
 
-  /* "pyfit/mets.pyx":249
+  /* "pyfit/mets.pyx":251
  *     		MET(1.8,"07041","standing, fidgeting"),
  *     		MET(1.3,"07050","reclining, writing"),
  *     		MET(1.3,"07060","reclining, talking or talking on phone"),             # <<<<<<<<<<<<<<
@@ -4409,7 +4418,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_243.code = ((char *)"07060");
   __pyx_t_243.description = ((char *)"reclining, talking or talking on phone");
 
-  /* "pyfit/mets.pyx":250
+  /* "pyfit/mets.pyx":252
  *     		MET(1.3,"07050","reclining, writing"),
  *     		MET(1.3,"07060","reclining, talking or talking on phone"),
  *     		MET(1.3,"07070","reclining, reading"),             # <<<<<<<<<<<<<<
@@ -4420,7 +4429,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_244.code = ((char *)"07070");
   __pyx_t_244.description = ((char *)"reclining, reading");
 
-  /* "pyfit/mets.pyx":251
+  /* "pyfit/mets.pyx":253
  *     		MET(1.3,"07060","reclining, talking or talking on phone"),
  *     		MET(1.3,"07070","reclining, reading"),
  *     		MET(1.0,"07075","meditating"),             # <<<<<<<<<<<<<<
@@ -4431,7 +4440,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_245.code = ((char *)"07075");
   __pyx_t_245.description = ((char *)"meditating");
 
-  /* "pyfit/mets.pyx":252
+  /* "pyfit/mets.pyx":254
  *     		MET(1.3,"07070","reclining, reading"),
  *     		MET(1.0,"07075","meditating"),
  *     		MET(3.3,"08009","carrying, loading or stacking wood, loading/unloading or carrying lumber, light-to-moderate effort"),             # <<<<<<<<<<<<<<
@@ -4442,7 +4451,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_246.code = ((char *)"08009");
   __pyx_t_246.description = ((char *)"carrying, loading or stacking wood, loading/unloading or carrying lumber, light-to-moderate effort");
 
-  /* "pyfit/mets.pyx":253
+  /* "pyfit/mets.pyx":255
  *     		MET(1.0,"07075","meditating"),
  *     		MET(3.3,"08009","carrying, loading or stacking wood, loading/unloading or carrying lumber, light-to-moderate effort"),
  *     		MET(5.5,"08010","carrying, loading or stacking wood, loading/unloading or carrying lumber"),             # <<<<<<<<<<<<<<
@@ -4453,7 +4462,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_247.code = ((char *)"08010");
   __pyx_t_247.description = ((char *)"carrying, loading or stacking wood, loading/unloading or carrying lumber");
 
-  /* "pyfit/mets.pyx":254
+  /* "pyfit/mets.pyx":256
  *     		MET(3.3,"08009","carrying, loading or stacking wood, loading/unloading or carrying lumber, light-to-moderate effort"),
  *     		MET(5.5,"08010","carrying, loading or stacking wood, loading/unloading or carrying lumber"),
  *     		MET(4.5,"08019","chopping wood, splitting logs, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4464,7 +4473,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_248.code = ((char *)"08019");
   __pyx_t_248.description = ((char *)"chopping wood, splitting logs, moderate effort");
 
-  /* "pyfit/mets.pyx":255
+  /* "pyfit/mets.pyx":257
  *     		MET(5.5,"08010","carrying, loading or stacking wood, loading/unloading or carrying lumber"),
  *     		MET(4.5,"08019","chopping wood, splitting logs, moderate effort"),
  *     		MET(6.3,"08020","chopping wood, splitting logs, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -4475,7 +4484,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_249.code = ((char *)"08020");
   __pyx_t_249.description = ((char *)"chopping wood, splitting logs, vigorous effort");
 
-  /* "pyfit/mets.pyx":256
+  /* "pyfit/mets.pyx":258
  *     		MET(4.5,"08019","chopping wood, splitting logs, moderate effort"),
  *     		MET(6.3,"08020","chopping wood, splitting logs, vigorous effort"),
  *     		MET(3.5,"08025","clearing light brush, thinning garden, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4486,7 +4495,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_250.code = ((char *)"08025");
   __pyx_t_250.description = ((char *)"clearing light brush, thinning garden, moderate effort");
 
-  /* "pyfit/mets.pyx":257
+  /* "pyfit/mets.pyx":259
  *     		MET(6.3,"08020","chopping wood, splitting logs, vigorous effort"),
  *     		MET(3.5,"08025","clearing light brush, thinning garden, moderate effort"),
  *     		MET(6.3,"08030","clearing brush/land, undergrowth, or ground, hauling branches, wheelbarrow chores, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -4497,7 +4506,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_251.code = ((char *)"08030");
   __pyx_t_251.description = ((char *)"clearing brush/land, undergrowth, or ground, hauling branches, wheelbarrow chores, vigorous effort");
 
-  /* "pyfit/mets.pyx":258
+  /* "pyfit/mets.pyx":260
  *     		MET(3.5,"08025","clearing light brush, thinning garden, moderate effort"),
  *     		MET(6.3,"08030","clearing brush/land, undergrowth, or ground, hauling branches, wheelbarrow chores, vigorous effort"),
  *     		MET(5.0,"08040","digging sandbox, shoveling sand"),             # <<<<<<<<<<<<<<
@@ -4508,7 +4517,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_252.code = ((char *)"08040");
   __pyx_t_252.description = ((char *)"digging sandbox, shoveling sand");
 
-  /* "pyfit/mets.pyx":259
+  /* "pyfit/mets.pyx":261
  *     		MET(6.3,"08030","clearing brush/land, undergrowth, or ground, hauling branches, wheelbarrow chores, vigorous effort"),
  *     		MET(5.0,"08040","digging sandbox, shoveling sand"),
  *     		MET(3.5,"08045","digging, spading, filling garden, composting, light-to-moderate effort"),             # <<<<<<<<<<<<<<
@@ -4519,7 +4528,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_253.code = ((char *)"08045");
   __pyx_t_253.description = ((char *)"digging, spading, filling garden, composting, light-to-moderate effort");
 
-  /* "pyfit/mets.pyx":260
+  /* "pyfit/mets.pyx":262
  *     		MET(5.0,"08040","digging sandbox, shoveling sand"),
  *     		MET(3.5,"08045","digging, spading, filling garden, composting, light-to-moderate effort"),
  *     		MET(5.0,"08050","digging, spading, filling garden, compositing, (Taylor Code 590)"),             # <<<<<<<<<<<<<<
@@ -4530,7 +4539,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_254.code = ((char *)"08050");
   __pyx_t_254.description = ((char *)"digging, spading, filling garden, compositing, (Taylor Code 590)");
 
-  /* "pyfit/mets.pyx":261
+  /* "pyfit/mets.pyx":263
  *     		MET(3.5,"08045","digging, spading, filling garden, composting, light-to-moderate effort"),
  *     		MET(5.0,"08050","digging, spading, filling garden, compositing, (Taylor Code 590)"),
  *     		MET(7.8,"08052","digging, spading, filling garden, composting, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -4541,7 +4550,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_255.code = ((char *)"08052");
   __pyx_t_255.description = ((char *)"digging, spading, filling garden, composting, vigorous effort");
 
-  /* "pyfit/mets.pyx":262
+  /* "pyfit/mets.pyx":264
  *     		MET(5.0,"08050","digging, spading, filling garden, compositing, (Taylor Code 590)"),
  *     		MET(7.8,"08052","digging, spading, filling garden, composting, vigorous effort"),
  *     		MET(2.8,"08055","driving tractor"),             # <<<<<<<<<<<<<<
@@ -4552,7 +4561,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_256.code = ((char *)"08055");
   __pyx_t_256.description = ((char *)"driving tractor");
 
-  /* "pyfit/mets.pyx":263
+  /* "pyfit/mets.pyx":265
  *     		MET(7.8,"08052","digging, spading, filling garden, composting, vigorous effort"),
  *     		MET(2.8,"08055","driving tractor"),
  *     		MET(8.3,"08057","felling trees, large size"),             # <<<<<<<<<<<<<<
@@ -4563,7 +4572,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_257.code = ((char *)"08057");
   __pyx_t_257.description = ((char *)"felling trees, large size");
 
-  /* "pyfit/mets.pyx":264
+  /* "pyfit/mets.pyx":266
  *     		MET(2.8,"08055","driving tractor"),
  *     		MET(8.3,"08057","felling trees, large size"),
  *     		MET(5.3,"08058","felling trees, small-medium size"),             # <<<<<<<<<<<<<<
@@ -4574,7 +4583,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_258.code = ((char *)"08058");
   __pyx_t_258.description = ((char *)"felling trees, small-medium size");
 
-  /* "pyfit/mets.pyx":265
+  /* "pyfit/mets.pyx":267
  *     		MET(8.3,"08057","felling trees, large size"),
  *     		MET(5.3,"08058","felling trees, small-medium size"),
  *     		MET(5.8,"08060","gardening with heavy power tools, tilling a garden, chain saw"),             # <<<<<<<<<<<<<<
@@ -4585,7 +4594,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_259.code = ((char *)"08060");
   __pyx_t_259.description = ((char *)"gardening with heavy power tools, tilling a garden, chain saw");
 
-  /* "pyfit/mets.pyx":266
+  /* "pyfit/mets.pyx":268
  *     		MET(5.3,"08058","felling trees, small-medium size"),
  *     		MET(5.8,"08060","gardening with heavy power tools, tilling a garden, chain saw"),
  *     		MET(2.3,"08065","gardening, using containers, older adults > 60 years"),             # <<<<<<<<<<<<<<
@@ -4596,7 +4605,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_260.code = ((char *)"08065");
   __pyx_t_260.description = ((char *)"gardening, using containers, older adults > 60 years");
 
-  /* "pyfit/mets.pyx":267
+  /* "pyfit/mets.pyx":269
  *     		MET(5.8,"08060","gardening with heavy power tools, tilling a garden, chain saw"),
  *     		MET(2.3,"08065","gardening, using containers, older adults > 60 years"),
  *     		MET(4.0,"08070","irrigation channels, opening and closing ports"),             # <<<<<<<<<<<<<<
@@ -4607,7 +4616,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_261.code = ((char *)"08070");
   __pyx_t_261.description = ((char *)"irrigation channels, opening and closing ports");
 
-  /* "pyfit/mets.pyx":268
+  /* "pyfit/mets.pyx":270
  *     		MET(2.3,"08065","gardening, using containers, older adults > 60 years"),
  *     		MET(4.0,"08070","irrigation channels, opening and closing ports"),
  *     		MET(6.3,"08080","laying crushed rock"),             # <<<<<<<<<<<<<<
@@ -4618,7 +4627,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_262.code = ((char *)"08080");
   __pyx_t_262.description = ((char *)"laying crushed rock");
 
-  /* "pyfit/mets.pyx":269
+  /* "pyfit/mets.pyx":271
  *     		MET(4.0,"08070","irrigation channels, opening and closing ports"),
  *     		MET(6.3,"08080","laying crushed rock"),
  *     		MET(5.0,"08090","laying sod"),             # <<<<<<<<<<<<<<
@@ -4629,7 +4638,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_263.code = ((char *)"08090");
   __pyx_t_263.description = ((char *)"laying sod");
 
-  /* "pyfit/mets.pyx":270
+  /* "pyfit/mets.pyx":272
  *     		MET(6.3,"08080","laying crushed rock"),
  *     		MET(5.0,"08090","laying sod"),
  *     		MET(5.5,"08095","mowing lawn, general"),             # <<<<<<<<<<<<<<
@@ -4640,7 +4649,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_264.code = ((char *)"08095");
   __pyx_t_264.description = ((char *)"mowing lawn, general");
 
-  /* "pyfit/mets.pyx":271
+  /* "pyfit/mets.pyx":273
  *     		MET(5.0,"08090","laying sod"),
  *     		MET(5.5,"08095","mowing lawn, general"),
  *     		MET(2.5,"08100","mowing lawn, riding mower (Taylor Code 550)"),             # <<<<<<<<<<<<<<
@@ -4651,7 +4660,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_265.code = ((char *)"08100");
   __pyx_t_265.description = ((char *)"mowing lawn, riding mower (Taylor Code 550)");
 
-  /* "pyfit/mets.pyx":272
+  /* "pyfit/mets.pyx":274
  *     		MET(5.5,"08095","mowing lawn, general"),
  *     		MET(2.5,"08100","mowing lawn, riding mower (Taylor Code 550)"),
  *     		MET(6.0,"08110","mowing lawn, walk, hand mower (Taylor Code 570)"),             # <<<<<<<<<<<<<<
@@ -4662,7 +4671,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_266.code = ((char *)"08110");
   __pyx_t_266.description = ((char *)"mowing lawn, walk, hand mower (Taylor Code 570)");
 
-  /* "pyfit/mets.pyx":273
+  /* "pyfit/mets.pyx":275
  *     		MET(2.5,"08100","mowing lawn, riding mower (Taylor Code 550)"),
  *     		MET(6.0,"08110","mowing lawn, walk, hand mower (Taylor Code 570)"),
  *     		MET(5.0,"08120","mowing lawn, walk, power mower, moderate or vigorous effort"),             # <<<<<<<<<<<<<<
@@ -4673,7 +4682,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_267.code = ((char *)"08120");
   __pyx_t_267.description = ((char *)"mowing lawn, walk, power mower, moderate or vigorous effort");
 
-  /* "pyfit/mets.pyx":274
+  /* "pyfit/mets.pyx":276
  *     		MET(6.0,"08110","mowing lawn, walk, hand mower (Taylor Code 570)"),
  *     		MET(5.0,"08120","mowing lawn, walk, power mower, moderate or vigorous effort"),
  *     		MET(4.5,"08125","mowing lawn, power mower, light or moderate effort (Taylor Code 590)"),             # <<<<<<<<<<<<<<
@@ -4684,7 +4693,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_268.code = ((char *)"08125");
   __pyx_t_268.description = ((char *)"mowing lawn, power mower, light or moderate effort (Taylor Code 590)");
 
-  /* "pyfit/mets.pyx":275
+  /* "pyfit/mets.pyx":277
  *     		MET(5.0,"08120","mowing lawn, walk, power mower, moderate or vigorous effort"),
  *     		MET(4.5,"08125","mowing lawn, power mower, light or moderate effort (Taylor Code 590)"),
  *     		MET(2.5,"08130","operating snow blower, walking"),             # <<<<<<<<<<<<<<
@@ -4695,7 +4704,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_269.code = ((char *)"08130");
   __pyx_t_269.description = ((char *)"operating snow blower, walking");
 
-  /* "pyfit/mets.pyx":276
+  /* "pyfit/mets.pyx":278
  *     		MET(4.5,"08125","mowing lawn, power mower, light or moderate effort (Taylor Code 590)"),
  *     		MET(2.5,"08130","operating snow blower, walking"),
  *     		MET(2.0,"08135","planting, potting, transplanting seedlings or plants, light effort"),             # <<<<<<<<<<<<<<
@@ -4706,7 +4715,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_270.code = ((char *)"08135");
   __pyx_t_270.description = ((char *)"planting, potting, transplanting seedlings or plants, light effort");
 
-  /* "pyfit/mets.pyx":277
+  /* "pyfit/mets.pyx":279
  *     		MET(2.5,"08130","operating snow blower, walking"),
  *     		MET(2.0,"08135","planting, potting, transplanting seedlings or plants, light effort"),
  *     		MET(4.3,"08140","planting seedlings, shrub, stooping, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4717,7 +4726,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_271.code = ((char *)"08140");
   __pyx_t_271.description = ((char *)"planting seedlings, shrub, stooping, moderate effort");
 
-  /* "pyfit/mets.pyx":278
+  /* "pyfit/mets.pyx":280
  *     		MET(2.0,"08135","planting, potting, transplanting seedlings or plants, light effort"),
  *     		MET(4.3,"08140","planting seedlings, shrub, stooping, moderate effort"),
  *     		MET(4.3,"08145","planting crops or garden, stooping, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4728,7 +4737,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_272.code = ((char *)"08145");
   __pyx_t_272.description = ((char *)"planting crops or garden, stooping, moderate effort");
 
-  /* "pyfit/mets.pyx":279
+  /* "pyfit/mets.pyx":281
  *     		MET(4.3,"08140","planting seedlings, shrub, stooping, moderate effort"),
  *     		MET(4.3,"08145","planting crops or garden, stooping, moderate effort"),
  *     		MET(4.5,"08150","planting trees"),             # <<<<<<<<<<<<<<
@@ -4739,7 +4748,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_273.code = ((char *)"08150");
   __pyx_t_273.description = ((char *)"planting trees");
 
-  /* "pyfit/mets.pyx":280
+  /* "pyfit/mets.pyx":282
  *     		MET(4.3,"08145","planting crops or garden, stooping, moderate effort"),
  *     		MET(4.5,"08150","planting trees"),
  *     		MET(3.8,"08160","raking lawn or leaves, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4750,7 +4759,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_274.code = ((char *)"08160");
   __pyx_t_274.description = ((char *)"raking lawn or leaves, moderate effort");
 
-  /* "pyfit/mets.pyx":281
+  /* "pyfit/mets.pyx":283
  *     		MET(4.5,"08150","planting trees"),
  *     		MET(3.8,"08160","raking lawn or leaves, moderate effort"),
  *     		MET(4.0,"08165","raking lawn (Taylor Code 600)"),             # <<<<<<<<<<<<<<
@@ -4761,7 +4770,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_275.code = ((char *)"08165");
   __pyx_t_275.description = ((char *)"raking lawn (Taylor Code 600)");
 
-  /* "pyfit/mets.pyx":282
+  /* "pyfit/mets.pyx":284
  *     		MET(3.8,"08160","raking lawn or leaves, moderate effort"),
  *     		MET(4.0,"08165","raking lawn (Taylor Code 600)"),
  *     		MET(4.0,"08170","raking roof with snow rake"),             # <<<<<<<<<<<<<<
@@ -4772,7 +4781,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_276.code = ((char *)"08170");
   __pyx_t_276.description = ((char *)"raking roof with snow rake");
 
-  /* "pyfit/mets.pyx":283
+  /* "pyfit/mets.pyx":285
  *     		MET(4.0,"08165","raking lawn (Taylor Code 600)"),
  *     		MET(4.0,"08170","raking roof with snow rake"),
  *     		MET(3.0,"08180","riding snow blower"),             # <<<<<<<<<<<<<<
@@ -4783,7 +4792,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_277.code = ((char *)"08180");
   __pyx_t_277.description = ((char *)"riding snow blower");
 
-  /* "pyfit/mets.pyx":284
+  /* "pyfit/mets.pyx":286
  *     		MET(4.0,"08170","raking roof with snow rake"),
  *     		MET(3.0,"08180","riding snow blower"),
  *     		MET(4.0,"08190","sacking grass, leaves"),             # <<<<<<<<<<<<<<
@@ -4794,7 +4803,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_278.code = ((char *)"08190");
   __pyx_t_278.description = ((char *)"sacking grass, leaves");
 
-  /* "pyfit/mets.pyx":285
+  /* "pyfit/mets.pyx":287
  *     		MET(3.0,"08180","riding snow blower"),
  *     		MET(4.0,"08190","sacking grass, leaves"),
  *     		MET(5.5,"08192","shoveling dirt or mud"),             # <<<<<<<<<<<<<<
@@ -4805,7 +4814,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_279.code = ((char *)"08192");
   __pyx_t_279.description = ((char *)"shoveling dirt or mud");
 
-  /* "pyfit/mets.pyx":286
+  /* "pyfit/mets.pyx":288
  *     		MET(4.0,"08190","sacking grass, leaves"),
  *     		MET(5.5,"08192","shoveling dirt or mud"),
  *     		MET(5.3,"08195","shoveling snow, by hand, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4816,7 +4825,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_280.code = ((char *)"08195");
   __pyx_t_280.description = ((char *)"shoveling snow, by hand, moderate effort");
 
-  /* "pyfit/mets.pyx":287
+  /* "pyfit/mets.pyx":289
  *     		MET(5.5,"08192","shoveling dirt or mud"),
  *     		MET(5.3,"08195","shoveling snow, by hand, moderate effort"),
  *     		MET(6.0,"08200","shovelling snow, by hand (Taylor Code 610)"),             # <<<<<<<<<<<<<<
@@ -4827,7 +4836,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_281.code = ((char *)"08200");
   __pyx_t_281.description = ((char *)"shovelling snow, by hand (Taylor Code 610)");
 
-  /* "pyfit/mets.pyx":288
+  /* "pyfit/mets.pyx":290
  *     		MET(5.3,"08195","shoveling snow, by hand, moderate effort"),
  *     		MET(6.0,"08200","shovelling snow, by hand (Taylor Code 610)"),
  *     		MET(7.5,"08202","shoveling snow, by hand, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -4838,7 +4847,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_282.code = ((char *)"08202");
   __pyx_t_282.description = ((char *)"shoveling snow, by hand, vigorous effort");
 
-  /* "pyfit/mets.pyx":289
+  /* "pyfit/mets.pyx":291
  *     		MET(6.0,"08200","shovelling snow, by hand (Taylor Code 610)"),
  *     		MET(7.5,"08202","shoveling snow, by hand, vigorous effort"),
  *     		MET(4.0,"08210","trimming shrubs or trees, manual cutter"),             # <<<<<<<<<<<<<<
@@ -4849,7 +4858,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_283.code = ((char *)"08210");
   __pyx_t_283.description = ((char *)"trimming shrubs or trees, manual cutter");
 
-  /* "pyfit/mets.pyx":290
+  /* "pyfit/mets.pyx":292
  *     		MET(7.5,"08202","shoveling snow, by hand, vigorous effort"),
  *     		MET(4.0,"08210","trimming shrubs or trees, manual cutter"),
  *     		MET(3.5,"08215","trimming shrubs or trees, power cutter, using leaf blower, edge, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4860,7 +4869,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_284.code = ((char *)"08215");
   __pyx_t_284.description = ((char *)"trimming shrubs or trees, power cutter, using leaf blower, edge, moderate effort");
 
-  /* "pyfit/mets.pyx":291
+  /* "pyfit/mets.pyx":293
  *     		MET(4.0,"08210","trimming shrubs or trees, manual cutter"),
  *     		MET(3.5,"08215","trimming shrubs or trees, power cutter, using leaf blower, edge, moderate effort"),
  *     		MET(3.0,"08220","walking, applying fertilizer or seeding a lawn, push applicator"),             # <<<<<<<<<<<<<<
@@ -4871,7 +4880,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_285.code = ((char *)"08220");
   __pyx_t_285.description = ((char *)"walking, applying fertilizer or seeding a lawn, push applicator");
 
-  /* "pyfit/mets.pyx":292
+  /* "pyfit/mets.pyx":294
  *     		MET(3.5,"08215","trimming shrubs or trees, power cutter, using leaf blower, edge, moderate effort"),
  *     		MET(3.0,"08220","walking, applying fertilizer or seeding a lawn, push applicator"),
  *     		MET(1.5,"08230","watering lawn or garden, standing or walking"),             # <<<<<<<<<<<<<<
@@ -4882,7 +4891,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_286.code = ((char *)"08230");
   __pyx_t_286.description = ((char *)"watering lawn or garden, standing or walking");
 
-  /* "pyfit/mets.pyx":293
+  /* "pyfit/mets.pyx":295
  *     		MET(3.0,"08220","walking, applying fertilizer or seeding a lawn, push applicator"),
  *     		MET(1.5,"08230","watering lawn or garden, standing or walking"),
  *     		MET(3.5,"08239","weeding, cultivating garden, light-to-moderate effort"),             # <<<<<<<<<<<<<<
@@ -4893,7 +4902,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_287.code = ((char *)"08239");
   __pyx_t_287.description = ((char *)"weeding, cultivating garden, light-to-moderate effort");
 
-  /* "pyfit/mets.pyx":294
+  /* "pyfit/mets.pyx":296
  *     		MET(1.5,"08230","watering lawn or garden, standing or walking"),
  *     		MET(3.5,"08239","weeding, cultivating garden, light-to-moderate effort"),
  *     		MET(4.5,"08240","weeding, cultivating garden (Taylor Code 580)"),             # <<<<<<<<<<<<<<
@@ -4904,7 +4913,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_288.code = ((char *)"08240");
   __pyx_t_288.description = ((char *)"weeding, cultivating garden (Taylor Code 580)");
 
-  /* "pyfit/mets.pyx":295
+  /* "pyfit/mets.pyx":297
  *     		MET(3.5,"08239","weeding, cultivating garden, light-to-moderate effort"),
  *     		MET(4.5,"08240","weeding, cultivating garden (Taylor Code 580)"),
  *     		MET(5.0,"08241","weeding, cultivating garden, using a hoe, moderate-to-vigorous effort"),             # <<<<<<<<<<<<<<
@@ -4915,7 +4924,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_289.code = ((char *)"08241");
   __pyx_t_289.description = ((char *)"weeding, cultivating garden, using a hoe, moderate-to-vigorous effort");
 
-  /* "pyfit/mets.pyx":296
+  /* "pyfit/mets.pyx":298
  *     		MET(4.5,"08240","weeding, cultivating garden (Taylor Code 580)"),
  *     		MET(5.0,"08241","weeding, cultivating garden, using a hoe, moderate-to-vigorous effort"),
  *     		MET(3.8,"08245","gardening, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4926,7 +4935,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_290.code = ((char *)"08245");
   __pyx_t_290.description = ((char *)"gardening, general, moderate effort");
 
-  /* "pyfit/mets.pyx":297
+  /* "pyfit/mets.pyx":299
  *     		MET(5.0,"08241","weeding, cultivating garden, using a hoe, moderate-to-vigorous effort"),
  *     		MET(3.8,"08245","gardening, general, moderate effort"),
  *     		MET(3.5,"08246","picking fruit off trees, picking fruits/vegetables, moderate effort"),             # <<<<<<<<<<<<<<
@@ -4937,7 +4946,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_291.code = ((char *)"08246");
   __pyx_t_291.description = ((char *)"picking fruit off trees, picking fruits/vegetables, moderate effort");
 
-  /* "pyfit/mets.pyx":298
+  /* "pyfit/mets.pyx":300
  *     		MET(3.8,"08245","gardening, general, moderate effort"),
  *     		MET(3.5,"08246","picking fruit off trees, picking fruits/vegetables, moderate effort"),
  *     		MET(4.5,"08248","picking fruit off trees, gleaning fruits, picking fruits/vegetables, climbing ladder to pick fruit, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -4948,7 +4957,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_292.code = ((char *)"08248");
   __pyx_t_292.description = ((char *)"picking fruit off trees, gleaning fruits, picking fruits/vegetables, climbing ladder to pick fruit, vigorous effort");
 
-  /* "pyfit/mets.pyx":299
+  /* "pyfit/mets.pyx":301
  *     		MET(3.5,"08246","picking fruit off trees, picking fruits/vegetables, moderate effort"),
  *     		MET(4.5,"08248","picking fruit off trees, gleaning fruits, picking fruits/vegetables, climbing ladder to pick fruit, vigorous effort"),
  *     		MET(3.3,"08250","implied walking/standing - picking up yard, light, picking flowers or vegetables"),             # <<<<<<<<<<<<<<
@@ -4959,7 +4968,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_293.code = ((char *)"08250");
   __pyx_t_293.description = ((char *)"implied walking/standing - picking up yard, light, picking flowers or vegetables");
 
-  /* "pyfit/mets.pyx":300
+  /* "pyfit/mets.pyx":302
  *     		MET(4.5,"08248","picking fruit off trees, gleaning fruits, picking fruits/vegetables, climbing ladder to pick fruit, vigorous effort"),
  *     		MET(3.3,"08250","implied walking/standing - picking up yard, light, picking flowers or vegetables"),
  *     		MET(3.0,"08251","walking, gathering gardening tools"),             # <<<<<<<<<<<<<<
@@ -4970,7 +4979,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_294.code = ((char *)"08251");
   __pyx_t_294.description = ((char *)"walking, gathering gardening tools");
 
-  /* "pyfit/mets.pyx":301
+  /* "pyfit/mets.pyx":303
  *     		MET(3.3,"08250","implied walking/standing - picking up yard, light, picking flowers or vegetables"),
  *     		MET(3.0,"08251","walking, gathering gardening tools"),
  *     		MET(5.5,"08255","wheelbarrow, pushing garden cart or wheelbarrow"),             # <<<<<<<<<<<<<<
@@ -4981,7 +4990,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_295.code = ((char *)"08255");
   __pyx_t_295.description = ((char *)"wheelbarrow, pushing garden cart or wheelbarrow");
 
-  /* "pyfit/mets.pyx":302
+  /* "pyfit/mets.pyx":304
  *     		MET(3.0,"08251","walking, gathering gardening tools"),
  *     		MET(5.5,"08255","wheelbarrow, pushing garden cart or wheelbarrow"),
  *     		MET(3.0,"08260","yard work, general, light effort"),             # <<<<<<<<<<<<<<
@@ -4992,7 +5001,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_296.code = ((char *)"08260");
   __pyx_t_296.description = ((char *)"yard work, general, light effort");
 
-  /* "pyfit/mets.pyx":303
+  /* "pyfit/mets.pyx":305
  *     		MET(5.5,"08255","wheelbarrow, pushing garden cart or wheelbarrow"),
  *     		MET(3.0,"08260","yard work, general, light effort"),
  *     		MET(4.0,"08261","yard work, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -5003,7 +5012,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_297.code = ((char *)"08261");
   __pyx_t_297.description = ((char *)"yard work, general, moderate effort");
 
-  /* "pyfit/mets.pyx":304
+  /* "pyfit/mets.pyx":306
  *     		MET(3.0,"08260","yard work, general, light effort"),
  *     		MET(4.0,"08261","yard work, general, moderate effort"),
  *     		MET(6.0,"08262","yard work, general, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -5014,7 +5023,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_298.code = ((char *)"08262");
   __pyx_t_298.description = ((char *)"yard work, general, vigorous effort");
 
-  /* "pyfit/mets.pyx":305
+  /* "pyfit/mets.pyx":307
  *     		MET(4.0,"08261","yard work, general, moderate effort"),
  *     		MET(6.0,"08262","yard work, general, vigorous effort"),
  *     		MET(1.5,"09000","board game playing, sitting"),             # <<<<<<<<<<<<<<
@@ -5025,7 +5034,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_299.code = ((char *)"09000");
   __pyx_t_299.description = ((char *)"board game playing, sitting");
 
-  /* "pyfit/mets.pyx":306
+  /* "pyfit/mets.pyx":308
  *     		MET(6.0,"08262","yard work, general, vigorous effort"),
  *     		MET(1.5,"09000","board game playing, sitting"),
  *     		MET(2.5,"09005","casino gambling, standing"),             # <<<<<<<<<<<<<<
@@ -5036,7 +5045,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_300.code = ((char *)"09005");
   __pyx_t_300.description = ((char *)"casino gambling, standing");
 
-  /* "pyfit/mets.pyx":307
+  /* "pyfit/mets.pyx":309
  *     		MET(1.5,"09000","board game playing, sitting"),
  *     		MET(2.5,"09005","casino gambling, standing"),
  *     		MET(1.5,"09010","card playing, sitting"),             # <<<<<<<<<<<<<<
@@ -5047,7 +5056,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_301.code = ((char *)"09010");
   __pyx_t_301.description = ((char *)"card playing, sitting");
 
-  /* "pyfit/mets.pyx":308
+  /* "pyfit/mets.pyx":310
  *     		MET(2.5,"09005","casino gambling, standing"),
  *     		MET(1.5,"09010","card playing, sitting"),
  *     		MET(1.5,"09013","chess game, sitting"),             # <<<<<<<<<<<<<<
@@ -5058,7 +5067,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_302.code = ((char *)"09013");
   __pyx_t_302.description = ((char *)"chess game, sitting");
 
-  /* "pyfit/mets.pyx":309
+  /* "pyfit/mets.pyx":311
  *     		MET(1.5,"09010","card playing, sitting"),
  *     		MET(1.5,"09013","chess game, sitting"),
  *     		MET(1.5,"09015","copying documents, standing"),             # <<<<<<<<<<<<<<
@@ -5069,7 +5078,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_303.code = ((char *)"09015");
   __pyx_t_303.description = ((char *)"copying documents, standing");
 
-  /* "pyfit/mets.pyx":310
+  /* "pyfit/mets.pyx":312
  *     		MET(1.5,"09013","chess game, sitting"),
  *     		MET(1.5,"09015","copying documents, standing"),
  *     		MET(1.8,"09020","drawing, writing, painting, standing"),             # <<<<<<<<<<<<<<
@@ -5080,7 +5089,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_304.code = ((char *)"09020");
   __pyx_t_304.description = ((char *)"drawing, writing, painting, standing");
 
-  /* "pyfit/mets.pyx":311
+  /* "pyfit/mets.pyx":313
  *     		MET(1.5,"09015","copying documents, standing"),
  *     		MET(1.8,"09020","drawing, writing, painting, standing"),
  *     		MET(1.0,"09025","laughing, sitting"),             # <<<<<<<<<<<<<<
@@ -5091,7 +5100,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_305.code = ((char *)"09025");
   __pyx_t_305.description = ((char *)"laughing, sitting");
 
-  /* "pyfit/mets.pyx":312
+  /* "pyfit/mets.pyx":314
  *     		MET(1.8,"09020","drawing, writing, painting, standing"),
  *     		MET(1.0,"09025","laughing, sitting"),
  *     		MET(1.3,"09030","sitting, reading, book, newspaper, etc."),             # <<<<<<<<<<<<<<
@@ -5102,7 +5111,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_306.code = ((char *)"09030");
   __pyx_t_306.description = ((char *)"sitting, reading, book, newspaper, etc.");
 
-  /* "pyfit/mets.pyx":313
+  /* "pyfit/mets.pyx":315
  *     		MET(1.0,"09025","laughing, sitting"),
  *     		MET(1.3,"09030","sitting, reading, book, newspaper, etc."),
  *     		MET(1.3,"09040","sitting, writing, desk work, typing"),             # <<<<<<<<<<<<<<
@@ -5113,7 +5122,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_307.code = ((char *)"09040");
   __pyx_t_307.description = ((char *)"sitting, writing, desk work, typing");
 
-  /* "pyfit/mets.pyx":314
+  /* "pyfit/mets.pyx":316
  *     		MET(1.3,"09030","sitting, reading, book, newspaper, etc."),
  *     		MET(1.3,"09040","sitting, writing, desk work, typing"),
  *     		MET(1.0,"09045","sitting, playing traditional video game, computer game"),             # <<<<<<<<<<<<<<
@@ -5124,7 +5133,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_308.code = ((char *)"09045");
   __pyx_t_308.description = ((char *)"sitting, playing traditional video game, computer game");
 
-  /* "pyfit/mets.pyx":315
+  /* "pyfit/mets.pyx":317
  *     		MET(1.3,"09040","sitting, writing, desk work, typing"),
  *     		MET(1.0,"09045","sitting, playing traditional video game, computer game"),
  *     		MET(1.8,"09050","standing, talking in person, on the phone, computer, or text messaging, light effort"),             # <<<<<<<<<<<<<<
@@ -5135,7 +5144,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_309.code = ((char *)"09050");
   __pyx_t_309.description = ((char *)"standing, talking in person, on the phone, computer, or text messaging, light effort");
 
-  /* "pyfit/mets.pyx":316
+  /* "pyfit/mets.pyx":318
  *     		MET(1.0,"09045","sitting, playing traditional video game, computer game"),
  *     		MET(1.8,"09050","standing, talking in person, on the phone, computer, or text messaging, light effort"),
  *     		MET(1.5,"09055","sitting, talking in person, on the phone, computer, or text messaging, light effort"),             # <<<<<<<<<<<<<<
@@ -5146,7 +5155,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_310.code = ((char *)"09055");
   __pyx_t_310.description = ((char *)"sitting, talking in person, on the phone, computer, or text messaging, light effort");
 
-  /* "pyfit/mets.pyx":317
+  /* "pyfit/mets.pyx":319
  *     		MET(1.8,"09050","standing, talking in person, on the phone, computer, or text messaging, light effort"),
  *     		MET(1.5,"09055","sitting, talking in person, on the phone, computer, or text messaging, light effort"),
  *     		MET(1.3,"09060","sitting, studying, general, including reading and/or writing, light effort"),             # <<<<<<<<<<<<<<
@@ -5157,7 +5166,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_311.code = ((char *)"09060");
   __pyx_t_311.description = ((char *)"sitting, studying, general, including reading and/or writing, light effort");
 
-  /* "pyfit/mets.pyx":318
+  /* "pyfit/mets.pyx":320
  *     		MET(1.5,"09055","sitting, talking in person, on the phone, computer, or text messaging, light effort"),
  *     		MET(1.3,"09060","sitting, studying, general, including reading and/or writing, light effort"),
  *     		MET(1.8,"09065","sitting, in class, general, including note-taking or class discussion"),             # <<<<<<<<<<<<<<
@@ -5168,7 +5177,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_312.code = ((char *)"09065");
   __pyx_t_312.description = ((char *)"sitting, in class, general, including note-taking or class discussion");
 
-  /* "pyfit/mets.pyx":319
+  /* "pyfit/mets.pyx":321
  *     		MET(1.3,"09060","sitting, studying, general, including reading and/or writing, light effort"),
  *     		MET(1.8,"09065","sitting, in class, general, including note-taking or class discussion"),
  *     		MET(1.8,"09070","standing, reading"),             # <<<<<<<<<<<<<<
@@ -5179,7 +5188,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_313.code = ((char *)"09070");
   __pyx_t_313.description = ((char *)"standing, reading");
 
-  /* "pyfit/mets.pyx":320
+  /* "pyfit/mets.pyx":322
  *     		MET(1.8,"09065","sitting, in class, general, including note-taking or class discussion"),
  *     		MET(1.8,"09070","standing, reading"),
  *     		MET(2.5,"09071","standing, miscellaneous"),             # <<<<<<<<<<<<<<
@@ -5190,7 +5199,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_314.code = ((char *)"09071");
   __pyx_t_314.description = ((char *)"standing, miscellaneous");
 
-  /* "pyfit/mets.pyx":321
+  /* "pyfit/mets.pyx":323
  *     		MET(1.8,"09070","standing, reading"),
  *     		MET(2.5,"09071","standing, miscellaneous"),
  *     		MET(1.8,"09075","sitting, arts and crafts,\\u00a0 carving wood, weaving, spinning wool, light effort"),             # <<<<<<<<<<<<<<
@@ -5201,7 +5210,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_315.code = ((char *)"09075");
   __pyx_t_315.description = ((char *)"sitting, arts and crafts,\\u00a0 carving wood, weaving, spinning wool, light effort");
 
-  /* "pyfit/mets.pyx":322
+  /* "pyfit/mets.pyx":324
  *     		MET(2.5,"09071","standing, miscellaneous"),
  *     		MET(1.8,"09075","sitting, arts and crafts,\\u00a0 carving wood, weaving, spinning wool, light effort"),
  *     		MET(3.0,"09080","sitting, arts and crafts,\\u00a0 carving wood, weaving, spinning wool, moderate effort"),             # <<<<<<<<<<<<<<
@@ -5212,7 +5221,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_316.code = ((char *)"09080");
   __pyx_t_316.description = ((char *)"sitting, arts and crafts,\\u00a0 carving wood, weaving, spinning wool, moderate effort");
 
-  /* "pyfit/mets.pyx":323
+  /* "pyfit/mets.pyx":325
  *     		MET(1.8,"09075","sitting, arts and crafts,\\u00a0 carving wood, weaving, spinning wool, light effort"),
  *     		MET(3.0,"09080","sitting, arts and crafts,\\u00a0 carving wood, weaving, spinning wool, moderate effort"),
  *     		MET(2.5,"09085","standing, arts and crafts, sand painting, carving, weaving, light effort"),             # <<<<<<<<<<<<<<
@@ -5223,7 +5232,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_317.code = ((char *)"09085");
   __pyx_t_317.description = ((char *)"standing, arts and crafts, sand painting, carving, weaving, light effort");
 
-  /* "pyfit/mets.pyx":324
+  /* "pyfit/mets.pyx":326
  *     		MET(3.0,"09080","sitting, arts and crafts,\\u00a0 carving wood, weaving, spinning wool, moderate effort"),
  *     		MET(2.5,"09085","standing, arts and crafts, sand painting, carving, weaving, light effort"),
  *     		MET(3.3,"09090","standing, arts and crafts, sand painting, carving, weaving, moderate effort"),             # <<<<<<<<<<<<<<
@@ -5234,7 +5243,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_318.code = ((char *)"09090");
   __pyx_t_318.description = ((char *)"standing, arts and crafts, sand painting, carving, weaving, moderate effort");
 
-  /* "pyfit/mets.pyx":325
+  /* "pyfit/mets.pyx":327
  *     		MET(2.5,"09085","standing, arts and crafts, sand painting, carving, weaving, light effort"),
  *     		MET(3.3,"09090","standing, arts and crafts, sand painting, carving, weaving, moderate effort"),
  *     		MET(3.5,"09095","standing, arts and crafts, sand painting, carving, weaving, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -5245,7 +5254,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_319.code = ((char *)"09095");
   __pyx_t_319.description = ((char *)"standing, arts and crafts, sand painting, carving, weaving, vigorous effort");
 
-  /* "pyfit/mets.pyx":326
+  /* "pyfit/mets.pyx":328
  *     		MET(3.3,"09090","standing, arts and crafts, sand painting, carving, weaving, moderate effort"),
  *     		MET(3.5,"09095","standing, arts and crafts, sand painting, carving, weaving, vigorous effort"),
  *     		MET(1.8,"09100","retreat/family reunion activities involving sitting, relaxing, talking, eating"),             # <<<<<<<<<<<<<<
@@ -5256,7 +5265,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_320.code = ((char *)"09100");
   __pyx_t_320.description = ((char *)"retreat/family reunion activities involving sitting, relaxing, talking, eating");
 
-  /* "pyfit/mets.pyx":327
+  /* "pyfit/mets.pyx":329
  *     		MET(3.5,"09095","standing, arts and crafts, sand painting, carving, weaving, vigorous effort"),
  *     		MET(1.8,"09100","retreat/family reunion activities involving sitting, relaxing, talking, eating"),
  *     		MET(3.0,"09101","retreat/family reunion activities involving playing games with children"),             # <<<<<<<<<<<<<<
@@ -5267,7 +5276,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_321.code = ((char *)"09101");
   __pyx_t_321.description = ((char *)"retreat/family reunion activities involving playing games with children");
 
-  /* "pyfit/mets.pyx":328
+  /* "pyfit/mets.pyx":330
  *     		MET(1.8,"09100","retreat/family reunion activities involving sitting, relaxing, talking, eating"),
  *     		MET(3.0,"09101","retreat/family reunion activities involving playing games with children"),
  *     		MET(2.0,"09105","touring/traveling/vacation involving riding in a vehicle"),             # <<<<<<<<<<<<<<
@@ -5278,7 +5287,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_322.code = ((char *)"09105");
   __pyx_t_322.description = ((char *)"touring/traveling/vacation involving riding in a vehicle");
 
-  /* "pyfit/mets.pyx":329
+  /* "pyfit/mets.pyx":331
  *     		MET(3.0,"09101","retreat/family reunion activities involving playing games with children"),
  *     		MET(2.0,"09105","touring/traveling/vacation involving riding in a vehicle"),
  *     		MET(3.5,"09106","touring/traveling/vacation involving walking"),             # <<<<<<<<<<<<<<
@@ -5289,7 +5298,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_323.code = ((char *)"09106");
   __pyx_t_323.description = ((char *)"touring/traveling/vacation involving walking");
 
-  /* "pyfit/mets.pyx":330
+  /* "pyfit/mets.pyx":332
  *     		MET(2.0,"09105","touring/traveling/vacation involving riding in a vehicle"),
  *     		MET(3.5,"09106","touring/traveling/vacation involving walking"),
  *     		MET(2.5,"09110","camping involving standing, walking, sitting, light-to-moderate effort"),             # <<<<<<<<<<<<<<
@@ -5300,7 +5309,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_324.code = ((char *)"09110");
   __pyx_t_324.description = ((char *)"camping involving standing, walking, sitting, light-to-moderate effort");
 
-  /* "pyfit/mets.pyx":331
+  /* "pyfit/mets.pyx":333
  *     		MET(3.5,"09106","touring/traveling/vacation involving walking"),
  *     		MET(2.5,"09110","camping involving standing, walking, sitting, light-to-moderate effort"),
  *     		MET(1.5,"09115","sitting at a sporting event, spectator"),             # <<<<<<<<<<<<<<
@@ -5311,7 +5320,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_325.code = ((char *)"09115");
   __pyx_t_325.description = ((char *)"sitting at a sporting event, spectator");
 
-  /* "pyfit/mets.pyx":332
+  /* "pyfit/mets.pyx":334
  *     		MET(2.5,"09110","camping involving standing, walking, sitting, light-to-moderate effort"),
  *     		MET(1.5,"09115","sitting at a sporting event, spectator"),
  *     		MET(1.8,"10010","accordion, sitting"),             # <<<<<<<<<<<<<<
@@ -5322,7 +5331,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_326.code = ((char *)"10010");
   __pyx_t_326.description = ((char *)"accordion, sitting");
 
-  /* "pyfit/mets.pyx":333
+  /* "pyfit/mets.pyx":335
  *     		MET(1.5,"09115","sitting at a sporting event, spectator"),
  *     		MET(1.8,"10010","accordion, sitting"),
  *     		MET(2.3,"10020","cello, sitting"),             # <<<<<<<<<<<<<<
@@ -5333,7 +5342,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_327.code = ((char *)"10020");
   __pyx_t_327.description = ((char *)"cello, sitting");
 
-  /* "pyfit/mets.pyx":334
+  /* "pyfit/mets.pyx":336
  *     		MET(1.8,"10010","accordion, sitting"),
  *     		MET(2.3,"10020","cello, sitting"),
  *     		MET(2.3,"10030","conducting orchestra, standing"),             # <<<<<<<<<<<<<<
@@ -5344,7 +5353,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_328.code = ((char *)"10030");
   __pyx_t_328.description = ((char *)"conducting orchestra, standing");
 
-  /* "pyfit/mets.pyx":335
+  /* "pyfit/mets.pyx":337
  *     		MET(2.3,"10020","cello, sitting"),
  *     		MET(2.3,"10030","conducting orchestra, standing"),
  *     		MET(3.8,"10040","drums, sitting"),             # <<<<<<<<<<<<<<
@@ -5355,7 +5364,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_329.code = ((char *)"10040");
   __pyx_t_329.description = ((char *)"drums, sitting");
 
-  /* "pyfit/mets.pyx":336
+  /* "pyfit/mets.pyx":338
  *     		MET(2.3,"10030","conducting orchestra, standing"),
  *     		MET(3.8,"10040","drums, sitting"),
  *     		MET(3.0,"10045","drumming (e.g., bongo, conga, benbe), moderate, sitting"),             # <<<<<<<<<<<<<<
@@ -5366,7 +5375,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_330.code = ((char *)"10045");
   __pyx_t_330.description = ((char *)"drumming (e.g., bongo, conga, benbe), moderate, sitting");
 
-  /* "pyfit/mets.pyx":337
+  /* "pyfit/mets.pyx":339
  *     		MET(3.8,"10040","drums, sitting"),
  *     		MET(3.0,"10045","drumming (e.g., bongo, conga, benbe), moderate, sitting"),
  *     		MET(2.0,"10050","flute, sitting"),             # <<<<<<<<<<<<<<
@@ -5377,7 +5386,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_331.code = ((char *)"10050");
   __pyx_t_331.description = ((char *)"flute, sitting");
 
-  /* "pyfit/mets.pyx":338
+  /* "pyfit/mets.pyx":340
  *     		MET(3.0,"10045","drumming (e.g., bongo, conga, benbe), moderate, sitting"),
  *     		MET(2.0,"10050","flute, sitting"),
  *     		MET(1.8,"10060","horn, standing"),             # <<<<<<<<<<<<<<
@@ -5388,7 +5397,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_332.code = ((char *)"10060");
   __pyx_t_332.description = ((char *)"horn, standing");
 
-  /* "pyfit/mets.pyx":339
+  /* "pyfit/mets.pyx":341
  *     		MET(2.0,"10050","flute, sitting"),
  *     		MET(1.8,"10060","horn, standing"),
  *     		MET(2.3,"10070","piano, sitting"),             # <<<<<<<<<<<<<<
@@ -5399,7 +5408,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_333.code = ((char *)"10070");
   __pyx_t_333.description = ((char *)"piano, sitting");
 
-  /* "pyfit/mets.pyx":340
+  /* "pyfit/mets.pyx":342
  *     		MET(1.8,"10060","horn, standing"),
  *     		MET(2.3,"10070","piano, sitting"),
  *     		MET(3.5,"10080","trombone, standing"),             # <<<<<<<<<<<<<<
@@ -5410,7 +5419,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_334.code = ((char *)"10080");
   __pyx_t_334.description = ((char *)"trombone, standing");
 
-  /* "pyfit/mets.pyx":341
+  /* "pyfit/mets.pyx":343
  *     		MET(2.3,"10070","piano, sitting"),
  *     		MET(3.5,"10080","trombone, standing"),
  *     		MET(1.8,"10090","trumpet, standing"),             # <<<<<<<<<<<<<<
@@ -5421,7 +5430,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_335.code = ((char *)"10090");
   __pyx_t_335.description = ((char *)"trumpet, standing");
 
-  /* "pyfit/mets.pyx":342
+  /* "pyfit/mets.pyx":344
  *     		MET(3.5,"10080","trombone, standing"),
  *     		MET(1.8,"10090","trumpet, standing"),
  *     		MET(2.5,"10100","violin, sitting"),             # <<<<<<<<<<<<<<
@@ -5432,7 +5441,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_336.code = ((char *)"10100");
   __pyx_t_336.description = ((char *)"violin, sitting");
 
-  /* "pyfit/mets.pyx":343
+  /* "pyfit/mets.pyx":345
  *     		MET(1.8,"10090","trumpet, standing"),
  *     		MET(2.5,"10100","violin, sitting"),
  *     		MET(1.8,"10110","woodwind, sitting"),             # <<<<<<<<<<<<<<
@@ -5443,7 +5452,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_337.code = ((char *)"10110");
   __pyx_t_337.description = ((char *)"woodwind, sitting");
 
-  /* "pyfit/mets.pyx":344
+  /* "pyfit/mets.pyx":346
  *     		MET(2.5,"10100","violin, sitting"),
  *     		MET(1.8,"10110","woodwind, sitting"),
  *     		MET(2.0,"10120","guitar, classical, folk, sitting"),             # <<<<<<<<<<<<<<
@@ -5454,7 +5463,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_338.code = ((char *)"10120");
   __pyx_t_338.description = ((char *)"guitar, classical, folk, sitting");
 
-  /* "pyfit/mets.pyx":345
+  /* "pyfit/mets.pyx":347
  *     		MET(1.8,"10110","woodwind, sitting"),
  *     		MET(2.0,"10120","guitar, classical, folk, sitting"),
  *     		MET(3.0,"10125","guitar, rock and roll band, standing"),             # <<<<<<<<<<<<<<
@@ -5465,7 +5474,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_339.code = ((char *)"10125");
   __pyx_t_339.description = ((char *)"guitar, rock and roll band, standing");
 
-  /* "pyfit/mets.pyx":346
+  /* "pyfit/mets.pyx":348
  *     		MET(2.0,"10120","guitar, classical, folk, sitting"),
  *     		MET(3.0,"10125","guitar, rock and roll band, standing"),
  *     		MET(4.0,"10130","marching band, baton twirling, walking, moderate pace, general"),             # <<<<<<<<<<<<<<
@@ -5476,7 +5485,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_340.code = ((char *)"10130");
   __pyx_t_340.description = ((char *)"marching band, baton twirling, walking, moderate pace, general");
 
-  /* "pyfit/mets.pyx":347
+  /* "pyfit/mets.pyx":349
  *     		MET(3.0,"10125","guitar, rock and roll band, standing"),
  *     		MET(4.0,"10130","marching band, baton twirling, walking, moderate pace, general"),
  *     		MET(5.5,"10131","marching band, playing an instrument, walking, brisk pace, general"),             # <<<<<<<<<<<<<<
@@ -5487,7 +5496,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_341.code = ((char *)"10131");
   __pyx_t_341.description = ((char *)"marching band, playing an instrument, walking, brisk pace, general");
 
-  /* "pyfit/mets.pyx":348
+  /* "pyfit/mets.pyx":350
  *     		MET(4.0,"10130","marching band, baton twirling, walking, moderate pace, general"),
  *     		MET(5.5,"10131","marching band, playing an instrument, walking, brisk pace, general"),
  *     		MET(3.5,"10135","marching band, drum major, walking"),             # <<<<<<<<<<<<<<
@@ -5498,7 +5507,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_342.code = ((char *)"10135");
   __pyx_t_342.description = ((char *)"marching band, drum major, walking");
 
-  /* "pyfit/mets.pyx":349
+  /* "pyfit/mets.pyx":351
  *     		MET(5.5,"10131","marching band, playing an instrument, walking, brisk pace, general"),
  *     		MET(3.5,"10135","marching band, drum major, walking"),
  *     		MET(2.3,"11003","active workstation, treadmill desk, walking"),             # <<<<<<<<<<<<<<
@@ -5509,7 +5518,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_343.code = ((char *)"11003");
   __pyx_t_343.description = ((char *)"active workstation, treadmill desk, walking");
 
-  /* "pyfit/mets.pyx":350
+  /* "pyfit/mets.pyx":352
  *     		MET(3.5,"10135","marching band, drum major, walking"),
  *     		MET(2.3,"11003","active workstation, treadmill desk, walking"),
  *     		MET(3.0,"11006","airline flight attendant"),             # <<<<<<<<<<<<<<
@@ -5520,7 +5529,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_344.code = ((char *)"11006");
   __pyx_t_344.description = ((char *)"airline flight attendant");
 
-  /* "pyfit/mets.pyx":351
+  /* "pyfit/mets.pyx":353
  *     		MET(2.3,"11003","active workstation, treadmill desk, walking"),
  *     		MET(3.0,"11006","airline flight attendant"),
  *     		MET(4.0,"11010","bakery, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -5531,7 +5540,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_345.code = ((char *)"11010");
   __pyx_t_345.description = ((char *)"bakery, general, moderate effort");
 
-  /* "pyfit/mets.pyx":352
+  /* "pyfit/mets.pyx":354
  *     		MET(3.0,"11006","airline flight attendant"),
  *     		MET(4.0,"11010","bakery, general, moderate effort"),
  *     		MET(2.0,"11015","bakery, light effort"),             # <<<<<<<<<<<<<<
@@ -5542,7 +5551,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_346.code = ((char *)"11015");
   __pyx_t_346.description = ((char *)"bakery, light effort");
 
-  /* "pyfit/mets.pyx":353
+  /* "pyfit/mets.pyx":355
  *     		MET(4.0,"11010","bakery, general, moderate effort"),
  *     		MET(2.0,"11015","bakery, light effort"),
  *     		MET(2.3,"11020","bookbinding"),             # <<<<<<<<<<<<<<
@@ -5553,7 +5562,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_347.code = ((char *)"11020");
   __pyx_t_347.description = ((char *)"bookbinding");
 
-  /* "pyfit/mets.pyx":354
+  /* "pyfit/mets.pyx":356
  *     		MET(2.0,"11015","bakery, light effort"),
  *     		MET(2.3,"11020","bookbinding"),
  *     		MET(6.0,"11030","building road, driving heavy machinery"),             # <<<<<<<<<<<<<<
@@ -5564,7 +5573,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_348.code = ((char *)"11030");
   __pyx_t_348.description = ((char *)"building road, driving heavy machinery");
 
-  /* "pyfit/mets.pyx":355
+  /* "pyfit/mets.pyx":357
  *     		MET(2.3,"11020","bookbinding"),
  *     		MET(6.0,"11030","building road, driving heavy machinery"),
  *     		MET(2.0,"11035","building road, directing traffic, standing"),             # <<<<<<<<<<<<<<
@@ -5575,7 +5584,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_349.code = ((char *)"11035");
   __pyx_t_349.description = ((char *)"building road, directing traffic, standing");
 
-  /* "pyfit/mets.pyx":356
+  /* "pyfit/mets.pyx":358
  *     		MET(6.0,"11030","building road, driving heavy machinery"),
  *     		MET(2.0,"11035","building road, directing traffic, standing"),
  *     		MET(2.5,"11038","carpentry, general, light effort"),             # <<<<<<<<<<<<<<
@@ -5586,7 +5595,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_350.code = ((char *)"11038");
   __pyx_t_350.description = ((char *)"carpentry, general, light effort");
 
-  /* "pyfit/mets.pyx":357
+  /* "pyfit/mets.pyx":359
  *     		MET(2.0,"11035","building road, directing traffic, standing"),
  *     		MET(2.5,"11038","carpentry, general, light effort"),
  *     		MET(4.3,"11040","carpentry, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -5597,7 +5606,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_351.code = ((char *)"11040");
   __pyx_t_351.description = ((char *)"carpentry, general, moderate effort");
 
-  /* "pyfit/mets.pyx":358
+  /* "pyfit/mets.pyx":360
  *     		MET(2.5,"11038","carpentry, general, light effort"),
  *     		MET(4.3,"11040","carpentry, general, moderate effort"),
  *     		MET(7.0,"11042","carpentry, general, heavy or vigorous effort"),             # <<<<<<<<<<<<<<
@@ -5608,7 +5617,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_352.code = ((char *)"11042");
   __pyx_t_352.description = ((char *)"carpentry, general, heavy or vigorous effort");
 
-  /* "pyfit/mets.pyx":359
+  /* "pyfit/mets.pyx":361
  *     		MET(4.3,"11040","carpentry, general, moderate effort"),
  *     		MET(7.0,"11042","carpentry, general, heavy or vigorous effort"),
  *     		MET(8.0,"11050","carrying heavy loads (e.g., bricks, tools)"),             # <<<<<<<<<<<<<<
@@ -5619,7 +5628,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_353.code = ((char *)"11050");
   __pyx_t_353.description = ((char *)"carrying heavy loads (e.g., bricks, tools)");
 
-  /* "pyfit/mets.pyx":360
+  /* "pyfit/mets.pyx":362
  *     		MET(7.0,"11042","carpentry, general, heavy or vigorous effort"),
  *     		MET(8.0,"11050","carrying heavy loads (e.g., bricks, tools)"),
  *     		MET(8.0,"11060","carrying moderate loads up stairs, moving boxes 25-49 lbs"),             # <<<<<<<<<<<<<<
@@ -5630,7 +5639,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_354.code = ((char *)"11060");
   __pyx_t_354.description = ((char *)"carrying moderate loads up stairs, moving boxes 25-49 lbs");
 
-  /* "pyfit/mets.pyx":361
+  /* "pyfit/mets.pyx":363
  *     		MET(8.0,"11050","carrying heavy loads (e.g., bricks, tools)"),
  *     		MET(8.0,"11060","carrying moderate loads up stairs, moving boxes 25-49 lbs"),
  *     		MET(4.0,"11070","chambermaid, hotel housekeeper, making bed, cleaning bathroom, pushing cart"),             # <<<<<<<<<<<<<<
@@ -5641,7 +5650,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_355.code = ((char *)"11070");
   __pyx_t_355.description = ((char *)"chambermaid, hotel housekeeper, making bed, cleaning bathroom, pushing cart");
 
-  /* "pyfit/mets.pyx":362
+  /* "pyfit/mets.pyx":364
  *     		MET(8.0,"11060","carrying moderate loads up stairs, moving boxes 25-49 lbs"),
  *     		MET(4.0,"11070","chambermaid, hotel housekeeper, making bed, cleaning bathroom, pushing cart"),
  *     		MET(5.3,"11080","coal mining, drilling coal, rock"),             # <<<<<<<<<<<<<<
@@ -5652,7 +5661,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_356.code = ((char *)"11080");
   __pyx_t_356.description = ((char *)"coal mining, drilling coal, rock");
 
-  /* "pyfit/mets.pyx":363
+  /* "pyfit/mets.pyx":365
  *     		MET(4.0,"11070","chambermaid, hotel housekeeper, making bed, cleaning bathroom, pushing cart"),
  *     		MET(5.3,"11080","coal mining, drilling coal, rock"),
  *     		MET(5.0,"11090","coal mining, erecting supports"),             # <<<<<<<<<<<<<<
@@ -5663,7 +5672,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_357.code = ((char *)"11090");
   __pyx_t_357.description = ((char *)"coal mining, erecting supports");
 
-  /* "pyfit/mets.pyx":364
+  /* "pyfit/mets.pyx":366
  *     		MET(5.3,"11080","coal mining, drilling coal, rock"),
  *     		MET(5.0,"11090","coal mining, erecting supports"),
  *     		MET(5.5,"11100","coal mining, general"),             # <<<<<<<<<<<<<<
@@ -5674,7 +5683,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_358.code = ((char *)"11100");
   __pyx_t_358.description = ((char *)"coal mining, general");
 
-  /* "pyfit/mets.pyx":365
+  /* "pyfit/mets.pyx":367
  *     		MET(5.0,"11090","coal mining, erecting supports"),
  *     		MET(5.5,"11100","coal mining, general"),
  *     		MET(6.3,"11110","coal mining, shoveling coal"),             # <<<<<<<<<<<<<<
@@ -5685,7 +5694,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_359.code = ((char *)"11110");
   __pyx_t_359.description = ((char *)"coal mining, shoveling coal");
 
-  /* "pyfit/mets.pyx":366
+  /* "pyfit/mets.pyx":368
  *     		MET(5.5,"11100","coal mining, general"),
  *     		MET(6.3,"11110","coal mining, shoveling coal"),
  *     		MET(2.5,"11115","cook, chef"),             # <<<<<<<<<<<<<<
@@ -5696,7 +5705,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_360.code = ((char *)"11115");
   __pyx_t_360.description = ((char *)"cook, chef");
 
-  /* "pyfit/mets.pyx":367
+  /* "pyfit/mets.pyx":369
  *     		MET(6.3,"11110","coal mining, shoveling coal"),
  *     		MET(2.5,"11115","cook, chef"),
  *     		MET(4.0,"11120","construction, outside, remodeling, new structures (e.g., roof repair, miscellaneous"),             # <<<<<<<<<<<<<<
@@ -5707,7 +5716,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_361.code = ((char *)"11120");
   __pyx_t_361.description = ((char *)"construction, outside, remodeling, new structures (e.g., roof repair, miscellaneous");
 
-  /* "pyfit/mets.pyx":368
+  /* "pyfit/mets.pyx":370
  *     		MET(2.5,"11115","cook, chef"),
  *     		MET(4.0,"11120","construction, outside, remodeling, new structures (e.g., roof repair, miscellaneous"),
  *     		MET(2.3,"11125","custodial work, light effort (e.g., cleaning sink and toilet, dusting, vacuuming, light cleaning)"),             # <<<<<<<<<<<<<<
@@ -5718,7 +5727,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_362.code = ((char *)"11125");
   __pyx_t_362.description = ((char *)"custodial work, light effort (e.g., cleaning sink and toilet, dusting, vacuuming, light cleaning)");
 
-  /* "pyfit/mets.pyx":369
+  /* "pyfit/mets.pyx":371
  *     		MET(4.0,"11120","construction, outside, remodeling, new structures (e.g., roof repair, miscellaneous"),
  *     		MET(2.3,"11125","custodial work, light effort (e.g., cleaning sink and toilet, dusting, vacuuming, light cleaning)"),
  *     		MET(3.8,"11126","custodial work, moderate effort (e.g., electric buffer, feathering arena floors, mopping, taking out trash, vacuuming)"),             # <<<<<<<<<<<<<<
@@ -5729,7 +5738,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_363.code = ((char *)"11126");
   __pyx_t_363.description = ((char *)"custodial work, moderate effort (e.g., electric buffer, feathering arena floors, mopping, taking out trash, vacuuming)");
 
-  /* "pyfit/mets.pyx":370
+  /* "pyfit/mets.pyx":372
  *     		MET(2.3,"11125","custodial work, light effort (e.g., cleaning sink and toilet, dusting, vacuuming, light cleaning)"),
  *     		MET(3.8,"11126","custodial work, moderate effort (e.g., electric buffer, feathering arena floors, mopping, taking out trash, vacuuming)"),
  *     		MET(2.0,"11128","driving delivery truck, taxi, shuttle bus, school bus"),             # <<<<<<<<<<<<<<
@@ -5740,7 +5749,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_364.code = ((char *)"11128");
   __pyx_t_364.description = ((char *)"driving delivery truck, taxi, shuttle bus, school bus");
 
-  /* "pyfit/mets.pyx":371
+  /* "pyfit/mets.pyx":373
  *     		MET(3.8,"11126","custodial work, moderate effort (e.g., electric buffer, feathering arena floors, mopping, taking out trash, vacuuming)"),
  *     		MET(2.0,"11128","driving delivery truck, taxi, shuttle bus, school bus"),
  *     		MET(3.3,"11130","electrical work (e.g., hook up wire, tapping-splicing)"),             # <<<<<<<<<<<<<<
@@ -5751,7 +5760,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_365.code = ((char *)"11130");
   __pyx_t_365.description = ((char *)"electrical work (e.g., hook up wire, tapping-splicing)");
 
-  /* "pyfit/mets.pyx":372
+  /* "pyfit/mets.pyx":374
  *     		MET(2.0,"11128","driving delivery truck, taxi, shuttle bus, school bus"),
  *     		MET(3.3,"11130","electrical work (e.g., hook up wire, tapping-splicing)"),
  *     		MET(1.8,"11135","engineer (e.g., mechanical or electrical)"),             # <<<<<<<<<<<<<<
@@ -5762,7 +5771,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_366.code = ((char *)"11135");
   __pyx_t_366.description = ((char *)"engineer (e.g., mechanical or electrical)");
 
-  /* "pyfit/mets.pyx":373
+  /* "pyfit/mets.pyx":375
  *     		MET(3.3,"11130","electrical work (e.g., hook up wire, tapping-splicing)"),
  *     		MET(1.8,"11135","engineer (e.g., mechanical or electrical)"),
  *     		MET(7.8,"11145","farming, vigorous effort (e.g., baling hay, cleaning barn)"),             # <<<<<<<<<<<<<<
@@ -5773,7 +5782,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_367.code = ((char *)"11145");
   __pyx_t_367.description = ((char *)"farming, vigorous effort (e.g., baling hay, cleaning barn)");
 
-  /* "pyfit/mets.pyx":374
+  /* "pyfit/mets.pyx":376
  *     		MET(1.8,"11135","engineer (e.g., mechanical or electrical)"),
  *     		MET(7.8,"11145","farming, vigorous effort (e.g., baling hay, cleaning barn)"),
  *     		MET(4.8,"11146","farming, moderate effort (e.g., feeding animals, chasing cattle by walking and/or horseback, spreading manure, harvesting crops)"),             # <<<<<<<<<<<<<<
@@ -5784,7 +5793,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_368.code = ((char *)"11146");
   __pyx_t_368.description = ((char *)"farming, moderate effort (e.g., feeding animals, chasing cattle by walking and/or horseback, spreading manure, harvesting crops)");
 
-  /* "pyfit/mets.pyx":375
+  /* "pyfit/mets.pyx":377
  *     		MET(7.8,"11145","farming, vigorous effort (e.g., baling hay, cleaning barn)"),
  *     		MET(4.8,"11146","farming, moderate effort (e.g., feeding animals, chasing cattle by walking and/or horseback, spreading manure, harvesting crops)"),
  *     		MET(2.0,"11147","farming, light effort (e.g., cleaning animal sheds, preparing animal feed)"),             # <<<<<<<<<<<<<<
@@ -5795,7 +5804,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_369.code = ((char *)"11147");
   __pyx_t_369.description = ((char *)"farming, light effort (e.g., cleaning animal sheds, preparing animal feed)");
 
-  /* "pyfit/mets.pyx":376
+  /* "pyfit/mets.pyx":378
  *     		MET(4.8,"11146","farming, moderate effort (e.g., feeding animals, chasing cattle by walking and/or horseback, spreading manure, harvesting crops)"),
  *     		MET(2.0,"11147","farming, light effort (e.g., cleaning animal sheds, preparing animal feed)"),
  *     		MET(2.8,"11170","farming, driving tasks (e.g., driving tractor or harvester)"),             # <<<<<<<<<<<<<<
@@ -5806,7 +5815,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_370.code = ((char *)"11170");
   __pyx_t_370.description = ((char *)"farming, driving tasks (e.g., driving tractor or harvester)");
 
-  /* "pyfit/mets.pyx":377
+  /* "pyfit/mets.pyx":379
  *     		MET(2.0,"11147","farming, light effort (e.g., cleaning animal sheds, preparing animal feed)"),
  *     		MET(2.8,"11170","farming, driving tasks (e.g., driving tractor or harvester)"),
  *     		MET(3.5,"11180","farming, feeding small animals"),             # <<<<<<<<<<<<<<
@@ -5817,7 +5826,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_371.code = ((char *)"11180");
   __pyx_t_371.description = ((char *)"farming, feeding small animals");
 
-  /* "pyfit/mets.pyx":378
+  /* "pyfit/mets.pyx":380
  *     		MET(2.8,"11170","farming, driving tasks (e.g., driving tractor or harvester)"),
  *     		MET(3.5,"11180","farming, feeding small animals"),
  *     		MET(4.3,"11190","farming, feeding cattle, horses"),             # <<<<<<<<<<<<<<
@@ -5828,7 +5837,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_372.code = ((char *)"11190");
   __pyx_t_372.description = ((char *)"farming, feeding cattle, horses");
 
-  /* "pyfit/mets.pyx":379
+  /* "pyfit/mets.pyx":381
  *     		MET(3.5,"11180","farming, feeding small animals"),
  *     		MET(4.3,"11190","farming, feeding cattle, horses"),
  *     		MET(4.3,"11191","farming, hauling water for animals, general hauling water"),             # <<<<<<<<<<<<<<
@@ -5839,7 +5848,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_373.code = ((char *)"11191");
   __pyx_t_373.description = ((char *)"farming, hauling water for animals, general hauling water");
 
-  /* "pyfit/mets.pyx":380
+  /* "pyfit/mets.pyx":382
  *     		MET(4.3,"11190","farming, feeding cattle, horses"),
  *     		MET(4.3,"11191","farming, hauling water for animals, general hauling water"),
  *     		MET(4.5,"11192","farming, taking care of animals (e.g., grooming, brushing, shearing sheep, assisting with birthing, medical care, branding), general"),             # <<<<<<<<<<<<<<
@@ -5850,7 +5859,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_374.code = ((char *)"11192");
   __pyx_t_374.description = ((char *)"farming, taking care of animals (e.g., grooming, brushing, shearing sheep, assisting with birthing, medical care, branding), general");
 
-  /* "pyfit/mets.pyx":381
+  /* "pyfit/mets.pyx":383
  *     		MET(4.3,"11191","farming, hauling water for animals, general hauling water"),
  *     		MET(4.5,"11192","farming, taking care of animals (e.g., grooming, brushing, shearing sheep, assisting with birthing, medical care, branding), general"),
  *     		MET(3.8,"11195","farming, rice, planting, grain milling activities"),             # <<<<<<<<<<<<<<
@@ -5861,7 +5870,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_375.code = ((char *)"11195");
   __pyx_t_375.description = ((char *)"farming, rice, planting, grain milling activities");
 
-  /* "pyfit/mets.pyx":382
+  /* "pyfit/mets.pyx":384
  *     		MET(4.5,"11192","farming, taking care of animals (e.g., grooming, brushing, shearing sheep, assisting with birthing, medical care, branding), general"),
  *     		MET(3.8,"11195","farming, rice, planting, grain milling activities"),
  *     		MET(3.5,"11210","farming, milking by hand, cleaning pails, moderate effort"),             # <<<<<<<<<<<<<<
@@ -5872,7 +5881,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_376.code = ((char *)"11210");
   __pyx_t_376.description = ((char *)"farming, milking by hand, cleaning pails, moderate effort");
 
-  /* "pyfit/mets.pyx":383
+  /* "pyfit/mets.pyx":385
  *     		MET(3.8,"11195","farming, rice, planting, grain milling activities"),
  *     		MET(3.5,"11210","farming, milking by hand, cleaning pails, moderate effort"),
  *     		MET(1.3,"11220","farming, milking by machine, light effort"),             # <<<<<<<<<<<<<<
@@ -5883,7 +5892,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_377.code = ((char *)"11220");
   __pyx_t_377.description = ((char *)"farming, milking by machine, light effort");
 
-  /* "pyfit/mets.pyx":384
+  /* "pyfit/mets.pyx":386
  *     		MET(3.5,"11210","farming, milking by hand, cleaning pails, moderate effort"),
  *     		MET(1.3,"11220","farming, milking by machine, light effort"),
  *     		MET(8.0,"11240","fire fighter, general"),             # <<<<<<<<<<<<<<
@@ -5894,7 +5903,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_378.code = ((char *)"11240");
   __pyx_t_378.description = ((char *)"fire fighter, general");
 
-  /* "pyfit/mets.pyx":385
+  /* "pyfit/mets.pyx":387
  *     		MET(1.3,"11220","farming, milking by machine, light effort"),
  *     		MET(8.0,"11240","fire fighter, general"),
  *     		MET(6.8,"11244","fire fighter, rescue victim, automobile accident, using pike pole"),             # <<<<<<<<<<<<<<
@@ -5905,7 +5914,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_379.code = ((char *)"11244");
   __pyx_t_379.description = ((char *)"fire fighter, rescue victim, automobile accident, using pike pole");
 
-  /* "pyfit/mets.pyx":386
+  /* "pyfit/mets.pyx":388
  *     		MET(8.0,"11240","fire fighter, general"),
  *     		MET(6.8,"11244","fire fighter, rescue victim, automobile accident, using pike pole"),
  *     		MET(8.0,"11245","fire fighter, raising and climbing ladder with full gear, simulated fire suppression"),             # <<<<<<<<<<<<<<
@@ -5916,7 +5925,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_380.code = ((char *)"11245");
   __pyx_t_380.description = ((char *)"fire fighter, raising and climbing ladder with full gear, simulated fire suppression");
 
-  /* "pyfit/mets.pyx":387
+  /* "pyfit/mets.pyx":389
  *     		MET(6.8,"11244","fire fighter, rescue victim, automobile accident, using pike pole"),
  *     		MET(8.0,"11245","fire fighter, raising and climbing ladder with full gear, simulated fire suppression"),
  *     		MET(9.0,"11246","fire fighter, hauling hoses on ground, carrying/hoisting equipment, breaking down walls, wearing full gear"),             # <<<<<<<<<<<<<<
@@ -5927,7 +5936,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_381.code = ((char *)"11246");
   __pyx_t_381.description = ((char *)"fire fighter, hauling hoses on ground, carrying/hoisting equipment, breaking down walls, wearing full gear");
 
-  /* "pyfit/mets.pyx":388
+  /* "pyfit/mets.pyx":390
  *     		MET(8.0,"11245","fire fighter, raising and climbing ladder with full gear, simulated fire suppression"),
  *     		MET(9.0,"11246","fire fighter, hauling hoses on ground, carrying/hoisting equipment, breaking down walls, wearing full gear"),
  *     		MET(3.5,"11247","fishing, commercial, light effort"),             # <<<<<<<<<<<<<<
@@ -5938,7 +5947,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_382.code = ((char *)"11247");
   __pyx_t_382.description = ((char *)"fishing, commercial, light effort");
 
-  /* "pyfit/mets.pyx":389
+  /* "pyfit/mets.pyx":391
  *     		MET(9.0,"11246","fire fighter, hauling hoses on ground, carrying/hoisting equipment, breaking down walls, wearing full gear"),
  *     		MET(3.5,"11247","fishing, commercial, light effort"),
  *     		MET(5.0,"11248","fishing, commercial, moderate effort"),             # <<<<<<<<<<<<<<
@@ -5949,7 +5958,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_383.code = ((char *)"11248");
   __pyx_t_383.description = ((char *)"fishing, commercial, moderate effort");
 
-  /* "pyfit/mets.pyx":390
+  /* "pyfit/mets.pyx":392
  *     		MET(3.5,"11247","fishing, commercial, light effort"),
  *     		MET(5.0,"11248","fishing, commercial, moderate effort"),
  *     		MET(7.0,"11249","fishing, commercial, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -5960,7 +5969,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_384.code = ((char *)"11249");
   __pyx_t_384.description = ((char *)"fishing, commercial, vigorous effort");
 
-  /* "pyfit/mets.pyx":391
+  /* "pyfit/mets.pyx":393
  *     		MET(5.0,"11248","fishing, commercial, moderate effort"),
  *     		MET(7.0,"11249","fishing, commercial, vigorous effort"),
  *     		MET(17.5,"11250","forestry, ax chopping, very fast, 1.25 kg axe, 51 blows/min, extremely vigorous effort"),             # <<<<<<<<<<<<<<
@@ -5971,7 +5980,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_385.code = ((char *)"11250");
   __pyx_t_385.description = ((char *)"forestry, ax chopping, very fast, 1.25 kg axe, 51 blows/min, extremely vigorous effort");
 
-  /* "pyfit/mets.pyx":392
+  /* "pyfit/mets.pyx":394
  *     		MET(7.0,"11249","fishing, commercial, vigorous effort"),
  *     		MET(17.5,"11250","forestry, ax chopping, very fast, 1.25 kg axe, 51 blows/min, extremely vigorous effort"),
  *     		MET(5.0,"11260","forestry, ax chopping, slow, 1.25 kg axe, 19 blows/min, moderate effort"),             # <<<<<<<<<<<<<<
@@ -5982,7 +5991,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_386.code = ((char *)"11260");
   __pyx_t_386.description = ((char *)"forestry, ax chopping, slow, 1.25 kg axe, 19 blows/min, moderate effort");
 
-  /* "pyfit/mets.pyx":393
+  /* "pyfit/mets.pyx":395
  *     		MET(17.5,"11250","forestry, ax chopping, very fast, 1.25 kg axe, 51 blows/min, extremely vigorous effort"),
  *     		MET(5.0,"11260","forestry, ax chopping, slow, 1.25 kg axe, 19 blows/min, moderate effort"),
  *     		MET(8.0,"11262","forestry, ax chopping, fast, 1.25 kg axe, 35 blows/min, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -5993,7 +6002,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_387.code = ((char *)"11262");
   __pyx_t_387.description = ((char *)"forestry, ax chopping, fast, 1.25 kg axe, 35 blows/min, vigorous effort");
 
-  /* "pyfit/mets.pyx":394
+  /* "pyfit/mets.pyx":396
  *     		MET(5.0,"11260","forestry, ax chopping, slow, 1.25 kg axe, 19 blows/min, moderate effort"),
  *     		MET(8.0,"11262","forestry, ax chopping, fast, 1.25 kg axe, 35 blows/min, vigorous effort"),
  *     		MET(4.5,"11264","forestry, moderate effort (e.g., sawing wood with power saw, weeding, hoeing)"),             # <<<<<<<<<<<<<<
@@ -6004,7 +6013,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_388.code = ((char *)"11264");
   __pyx_t_388.description = ((char *)"forestry, moderate effort (e.g., sawing wood with power saw, weeding, hoeing)");
 
-  /* "pyfit/mets.pyx":395
+  /* "pyfit/mets.pyx":397
  *     		MET(8.0,"11262","forestry, ax chopping, fast, 1.25 kg axe, 35 blows/min, vigorous effort"),
  *     		MET(4.5,"11264","forestry, moderate effort (e.g., sawing wood with power saw, weeding, hoeing)"),
  *     		MET(8.0,"11266","forestry, vigorous effort (e.g., barking, felling, or trimming trees, carrying or stacking logs, felling trees, planting seeds, sawing lumber by hand )"),             # <<<<<<<<<<<<<<
@@ -6015,7 +6024,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_389.code = ((char *)"11266");
   __pyx_t_389.description = ((char *)"forestry, vigorous effort (e.g., barking, felling, or trimming trees, carrying or stacking logs, felling trees, planting seeds, sawing lumber by hand )");
 
-  /* "pyfit/mets.pyx":396
+  /* "pyfit/mets.pyx":398
  *     		MET(4.5,"11264","forestry, moderate effort (e.g., sawing wood with power saw, weeding, hoeing)"),
  *     		MET(8.0,"11266","forestry, vigorous effort (e.g., barking, felling, or trimming trees, carrying or stacking logs, felling trees, planting seeds, sawing lumber by hand )"),
  *     		MET(4.5,"11370","furriery"),             # <<<<<<<<<<<<<<
@@ -6026,7 +6035,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_390.code = ((char *)"11370");
   __pyx_t_390.description = ((char *)"furriery");
 
-  /* "pyfit/mets.pyx":397
+  /* "pyfit/mets.pyx":399
  *     		MET(8.0,"11266","forestry, vigorous effort (e.g., barking, felling, or trimming trees, carrying or stacking logs, felling trees, planting seeds, sawing lumber by hand )"),
  *     		MET(4.5,"11370","furriery"),
  *     		MET(4.0,"11375","garbage collector, walking, dumping bins into truck"),             # <<<<<<<<<<<<<<
@@ -6037,7 +6046,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_391.code = ((char *)"11375");
   __pyx_t_391.description = ((char *)"garbage collector, walking, dumping bins into truck");
 
-  /* "pyfit/mets.pyx":398
+  /* "pyfit/mets.pyx":400
  *     		MET(4.5,"11370","furriery"),
  *     		MET(4.0,"11375","garbage collector, walking, dumping bins into truck"),
  *     		MET(1.8,"11378","hairstylist (e.g., plaiting hair, manicure, make-up artist)"),             # <<<<<<<<<<<<<<
@@ -6048,7 +6057,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_392.code = ((char *)"11378");
   __pyx_t_392.description = ((char *)"hairstylist (e.g., plaiting hair, manicure, make-up artist)");
 
-  /* "pyfit/mets.pyx":399
+  /* "pyfit/mets.pyx":401
  *     		MET(4.0,"11375","garbage collector, walking, dumping bins into truck"),
  *     		MET(1.8,"11378","hairstylist (e.g., plaiting hair, manicure, make-up artist)"),
  *     		MET(7.3,"11380","horse grooming, including feeding, cleaning stalls, bathing, brushing, clipping, longeing and exercising horses."),             # <<<<<<<<<<<<<<
@@ -6059,7 +6068,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_393.code = ((char *)"11380");
   __pyx_t_393.description = ((char *)"horse grooming, including feeding, cleaning stalls, bathing, brushing, clipping, longeing and exercising horses.");
 
-  /* "pyfit/mets.pyx":400
+  /* "pyfit/mets.pyx":402
  *     		MET(1.8,"11378","hairstylist (e.g., plaiting hair, manicure, make-up artist)"),
  *     		MET(7.3,"11380","horse grooming, including feeding, cleaning stalls, bathing, brushing, clipping, longeing and exercising horses."),
  *     		MET(4.3,"11381","horse, feeding, watering, cleaning stalls, implied walking and lifting loads"),             # <<<<<<<<<<<<<<
@@ -6070,7 +6079,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_394.code = ((char *)"11381");
   __pyx_t_394.description = ((char *)"horse, feeding, watering, cleaning stalls, implied walking and lifting loads");
 
-  /* "pyfit/mets.pyx":401
+  /* "pyfit/mets.pyx":403
  *     		MET(7.3,"11380","horse grooming, including feeding, cleaning stalls, bathing, brushing, clipping, longeing and exercising horses."),
  *     		MET(4.3,"11381","horse, feeding, watering, cleaning stalls, implied walking and lifting loads"),
  *     		MET(7.3,"11390","horse racing, galloping"),             # <<<<<<<<<<<<<<
@@ -6081,7 +6090,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_395.code = ((char *)"11390");
   __pyx_t_395.description = ((char *)"horse racing, galloping");
 
-  /* "pyfit/mets.pyx":402
+  /* "pyfit/mets.pyx":404
  *     		MET(4.3,"11381","horse, feeding, watering, cleaning stalls, implied walking and lifting loads"),
  *     		MET(7.3,"11390","horse racing, galloping"),
  *     		MET(5.8,"11400","horse racing, trotting"),             # <<<<<<<<<<<<<<
@@ -6092,7 +6101,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_396.code = ((char *)"11400");
   __pyx_t_396.description = ((char *)"horse racing, trotting");
 
-  /* "pyfit/mets.pyx":403
+  /* "pyfit/mets.pyx":405
  *     		MET(7.3,"11390","horse racing, galloping"),
  *     		MET(5.8,"11400","horse racing, trotting"),
  *     		MET(3.8,"11410","horse racing, walking"),             # <<<<<<<<<<<<<<
@@ -6103,7 +6112,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_397.code = ((char *)"11410");
   __pyx_t_397.description = ((char *)"horse racing, walking");
 
-  /* "pyfit/mets.pyx":404
+  /* "pyfit/mets.pyx":406
  *     		MET(5.8,"11400","horse racing, trotting"),
  *     		MET(3.8,"11410","horse racing, walking"),
  *     		MET(3.0,"11413","kitchen maid"),             # <<<<<<<<<<<<<<
@@ -6114,7 +6123,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_398.code = ((char *)"11413");
   __pyx_t_398.description = ((char *)"kitchen maid");
 
-  /* "pyfit/mets.pyx":405
+  /* "pyfit/mets.pyx":407
  *     		MET(3.8,"11410","horse racing, walking"),
  *     		MET(3.0,"11413","kitchen maid"),
  *     		MET(4.0,"11415","lawn keeper, yard work, general"),             # <<<<<<<<<<<<<<
@@ -6125,7 +6134,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_399.code = ((char *)"11415");
   __pyx_t_399.description = ((char *)"lawn keeper, yard work, general");
 
-  /* "pyfit/mets.pyx":406
+  /* "pyfit/mets.pyx":408
  *     		MET(3.0,"11413","kitchen maid"),
  *     		MET(4.0,"11415","lawn keeper, yard work, general"),
  *     		MET(3.3,"11418","laundry worker"),             # <<<<<<<<<<<<<<
@@ -6136,7 +6145,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_400.code = ((char *)"11418");
   __pyx_t_400.description = ((char *)"laundry worker");
 
-  /* "pyfit/mets.pyx":407
+  /* "pyfit/mets.pyx":409
  *     		MET(4.0,"11415","lawn keeper, yard work, general"),
  *     		MET(3.3,"11418","laundry worker"),
  *     		MET(3.0,"11420","locksmith"),             # <<<<<<<<<<<<<<
@@ -6147,7 +6156,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_401.code = ((char *)"11420");
   __pyx_t_401.description = ((char *)"locksmith");
 
-  /* "pyfit/mets.pyx":408
+  /* "pyfit/mets.pyx":410
  *     		MET(3.3,"11418","laundry worker"),
  *     		MET(3.0,"11420","locksmith"),
  *     		MET(3.0,"11430","machine tooling (e.g., machining, working sheet metal, machine fitter, operating lathe, welding) light-to-moderate effort"),             # <<<<<<<<<<<<<<
@@ -6158,7 +6167,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_402.code = ((char *)"11430");
   __pyx_t_402.description = ((char *)"machine tooling (e.g., machining, working sheet metal, machine fitter, operating lathe, welding) light-to-moderate effort");
 
-  /* "pyfit/mets.pyx":409
+  /* "pyfit/mets.pyx":411
  *     		MET(3.0,"11420","locksmith"),
  *     		MET(3.0,"11430","machine tooling (e.g., machining, working sheet metal, machine fitter, operating lathe, welding) light-to-moderate effort"),
  *     		MET(5.0,"11450","machine tooling, operating punch press, moderate effort"),             # <<<<<<<<<<<<<<
@@ -6169,7 +6178,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_403.code = ((char *)"11450");
   __pyx_t_403.description = ((char *)"machine tooling, operating punch press, moderate effort");
 
-  /* "pyfit/mets.pyx":410
+  /* "pyfit/mets.pyx":412
  *     		MET(3.0,"11430","machine tooling (e.g., machining, working sheet metal, machine fitter, operating lathe, welding) light-to-moderate effort"),
  *     		MET(5.0,"11450","machine tooling, operating punch press, moderate effort"),
  *     		MET(1.8,"11472","manager, property"),             # <<<<<<<<<<<<<<
@@ -6180,7 +6189,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_404.code = ((char *)"11472");
   __pyx_t_404.description = ((char *)"manager, property");
 
-  /* "pyfit/mets.pyx":411
+  /* "pyfit/mets.pyx":413
  *     		MET(5.0,"11450","machine tooling, operating punch press, moderate effort"),
  *     		MET(1.8,"11472","manager, property"),
  *     		MET(2.8,"11475","manual or unskilled labor, general, light effort"),             # <<<<<<<<<<<<<<
@@ -6191,7 +6200,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_405.code = ((char *)"11475");
   __pyx_t_405.description = ((char *)"manual or unskilled labor, general, light effort");
 
-  /* "pyfit/mets.pyx":412
+  /* "pyfit/mets.pyx":414
  *     		MET(1.8,"11472","manager, property"),
  *     		MET(2.8,"11475","manual or unskilled labor, general, light effort"),
  *     		MET(4.5,"11476","manual or unskilled labor, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -6202,7 +6211,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_406.code = ((char *)"11476");
   __pyx_t_406.description = ((char *)"manual or unskilled labor, general, moderate effort");
 
-  /* "pyfit/mets.pyx":413
+  /* "pyfit/mets.pyx":415
  *     		MET(2.8,"11475","manual or unskilled labor, general, light effort"),
  *     		MET(4.5,"11476","manual or unskilled labor, general, moderate effort"),
  *     		MET(6.5,"11477","manual or unskilled labor, general, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -6213,7 +6222,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_407.code = ((char *)"11477");
   __pyx_t_407.description = ((char *)"manual or unskilled labor, general, vigorous effort");
 
-  /* "pyfit/mets.pyx":414
+  /* "pyfit/mets.pyx":416
  *     		MET(4.5,"11476","manual or unskilled labor, general, moderate effort"),
  *     		MET(6.5,"11477","manual or unskilled labor, general, vigorous effort"),
  *     		MET(4.3,"11480","masonry, concrete, moderate effort"),             # <<<<<<<<<<<<<<
@@ -6224,7 +6233,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_408.code = ((char *)"11480");
   __pyx_t_408.description = ((char *)"masonry, concrete, moderate effort");
 
-  /* "pyfit/mets.pyx":415
+  /* "pyfit/mets.pyx":417
  *     		MET(6.5,"11477","manual or unskilled labor, general, vigorous effort"),
  *     		MET(4.3,"11480","masonry, concrete, moderate effort"),
  *     		MET(2.5,"11482","masonry, concrete, light effort"),             # <<<<<<<<<<<<<<
@@ -6235,7 +6244,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_409.code = ((char *)"11482");
   __pyx_t_409.description = ((char *)"masonry, concrete, light effort");
 
-  /* "pyfit/mets.pyx":416
+  /* "pyfit/mets.pyx":418
  *     		MET(4.3,"11480","masonry, concrete, moderate effort"),
  *     		MET(2.5,"11482","masonry, concrete, light effort"),
  *     		MET(4.0,"11485","massage therapist, standing"),             # <<<<<<<<<<<<<<
@@ -6246,7 +6255,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_410.code = ((char *)"11485");
   __pyx_t_410.description = ((char *)"massage therapist, standing");
 
-  /* "pyfit/mets.pyx":417
+  /* "pyfit/mets.pyx":419
  *     		MET(2.5,"11482","masonry, concrete, light effort"),
  *     		MET(4.0,"11485","massage therapist, standing"),
  *     		MET(7.5,"11490","moving, carrying or pushing heavy objects, 75 lbs or more, only active time (e.g., desks, moving van work)"),             # <<<<<<<<<<<<<<
@@ -6257,7 +6266,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_411.code = ((char *)"11490");
   __pyx_t_411.description = ((char *)"moving, carrying or pushing heavy objects, 75 lbs or more, only active time (e.g., desks, moving van work)");
 
-  /* "pyfit/mets.pyx":418
+  /* "pyfit/mets.pyx":420
  *     		MET(4.0,"11485","massage therapist, standing"),
  *     		MET(7.5,"11490","moving, carrying or pushing heavy objects, 75 lbs or more, only active time (e.g., desks, moving van work)"),
  *     		MET(12.0,"11495","skindiving or SCUBA diving as a frogman, Navy Seal"),             # <<<<<<<<<<<<<<
@@ -6268,7 +6277,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_412.code = ((char *)"11495");
   __pyx_t_412.description = ((char *)"skindiving or SCUBA diving as a frogman, Navy Seal");
 
-  /* "pyfit/mets.pyx":419
+  /* "pyfit/mets.pyx":421
  *     		MET(7.5,"11490","moving, carrying or pushing heavy objects, 75 lbs or more, only active time (e.g., desks, moving van work)"),
  *     		MET(12.0,"11495","skindiving or SCUBA diving as a frogman, Navy Seal"),
  *     		MET(2.5,"11500","operating heavy duty equipment, automated, not driving"),             # <<<<<<<<<<<<<<
@@ -6279,7 +6288,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_413.code = ((char *)"11500");
   __pyx_t_413.description = ((char *)"operating heavy duty equipment, automated, not driving");
 
-  /* "pyfit/mets.pyx":420
+  /* "pyfit/mets.pyx":422
  *     		MET(12.0,"11495","skindiving or SCUBA diving as a frogman, Navy Seal"),
  *     		MET(2.5,"11500","operating heavy duty equipment, automated, not driving"),
  *     		MET(4.5,"11510","orange grove work, picking fruit"),             # <<<<<<<<<<<<<<
@@ -6290,7 +6299,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_414.code = ((char *)"11510");
   __pyx_t_414.description = ((char *)"orange grove work, picking fruit");
 
-  /* "pyfit/mets.pyx":421
+  /* "pyfit/mets.pyx":423
  *     		MET(2.5,"11500","operating heavy duty equipment, automated, not driving"),
  *     		MET(4.5,"11510","orange grove work, picking fruit"),
  *     		MET(3.3,"11514","painting,house, furniture, moderate effort"),             # <<<<<<<<<<<<<<
@@ -6301,7 +6310,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_415.code = ((char *)"11514");
   __pyx_t_415.description = ((char *)"painting,house, furniture, moderate effort");
 
-  /* "pyfit/mets.pyx":422
+  /* "pyfit/mets.pyx":424
  *     		MET(4.5,"11510","orange grove work, picking fruit"),
  *     		MET(3.3,"11514","painting,house, furniture, moderate effort"),
  *     		MET(3.0,"11516","plumbing activities"),             # <<<<<<<<<<<<<<
@@ -6312,7 +6321,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_416.code = ((char *)"11516");
   __pyx_t_416.description = ((char *)"plumbing activities");
 
-  /* "pyfit/mets.pyx":423
+  /* "pyfit/mets.pyx":425
  *     		MET(3.3,"11514","painting,house, furniture, moderate effort"),
  *     		MET(3.0,"11516","plumbing activities"),
  *     		MET(2.0,"11520","printing, paper industry worker, standing"),             # <<<<<<<<<<<<<<
@@ -6323,7 +6332,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_417.code = ((char *)"11520");
   __pyx_t_417.description = ((char *)"printing, paper industry worker, standing");
 
-  /* "pyfit/mets.pyx":424
+  /* "pyfit/mets.pyx":426
  *     		MET(3.0,"11516","plumbing activities"),
  *     		MET(2.0,"11520","printing, paper industry worker, standing"),
  *     		MET(2.5,"11525","police, directing traffic, standing"),             # <<<<<<<<<<<<<<
@@ -6334,7 +6343,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_418.code = ((char *)"11525");
   __pyx_t_418.description = ((char *)"police, directing traffic, standing");
 
-  /* "pyfit/mets.pyx":425
+  /* "pyfit/mets.pyx":427
  *     		MET(2.0,"11520","printing, paper industry worker, standing"),
  *     		MET(2.5,"11525","police, directing traffic, standing"),
  *     		MET(2.5,"11526","police, driving a squad car, sitting"),             # <<<<<<<<<<<<<<
@@ -6345,7 +6354,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_419.code = ((char *)"11526");
   __pyx_t_419.description = ((char *)"police, driving a squad car, sitting");
 
-  /* "pyfit/mets.pyx":426
+  /* "pyfit/mets.pyx":428
  *     		MET(2.5,"11525","police, directing traffic, standing"),
  *     		MET(2.5,"11526","police, driving a squad car, sitting"),
  *     		MET(1.3,"11527","police, riding in a squad car, sitting"),             # <<<<<<<<<<<<<<
@@ -6356,7 +6365,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_420.code = ((char *)"11527");
   __pyx_t_420.description = ((char *)"police, riding in a squad car, sitting");
 
-  /* "pyfit/mets.pyx":427
+  /* "pyfit/mets.pyx":429
  *     		MET(2.5,"11526","police, driving a squad car, sitting"),
  *     		MET(1.3,"11527","police, riding in a squad car, sitting"),
  *     		MET(4.0,"11528","police, making an arrest, standing"),             # <<<<<<<<<<<<<<
@@ -6367,7 +6376,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_421.code = ((char *)"11528");
   __pyx_t_421.description = ((char *)"police, making an arrest, standing");
 
-  /* "pyfit/mets.pyx":428
+  /* "pyfit/mets.pyx":430
  *     		MET(1.3,"11527","police, riding in a squad car, sitting"),
  *     		MET(4.0,"11528","police, making an arrest, standing"),
  *     		MET(2.3,"11529","postal carrier, walking to deliver mail"),             # <<<<<<<<<<<<<<
@@ -6378,7 +6387,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_422.code = ((char *)"11529");
   __pyx_t_422.description = ((char *)"postal carrier, walking to deliver mail");
 
-  /* "pyfit/mets.pyx":429
+  /* "pyfit/mets.pyx":431
  *     		MET(4.0,"11528","police, making an arrest, standing"),
  *     		MET(2.3,"11529","postal carrier, walking to deliver mail"),
  *     		MET(2.0,"11530","shoe repair, general"),             # <<<<<<<<<<<<<<
@@ -6389,7 +6398,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_423.code = ((char *)"11530");
   __pyx_t_423.description = ((char *)"shoe repair, general");
 
-  /* "pyfit/mets.pyx":430
+  /* "pyfit/mets.pyx":432
  *     		MET(2.3,"11529","postal carrier, walking to deliver mail"),
  *     		MET(2.0,"11530","shoe repair, general"),
  *     		MET(7.8,"11540","shoveling, digging ditches"),             # <<<<<<<<<<<<<<
@@ -6400,7 +6409,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_424.code = ((char *)"11540");
   __pyx_t_424.description = ((char *)"shoveling, digging ditches");
 
-  /* "pyfit/mets.pyx":431
+  /* "pyfit/mets.pyx":433
  *     		MET(2.0,"11530","shoe repair, general"),
  *     		MET(7.8,"11540","shoveling, digging ditches"),
  *     		MET(8.8,"11550","shoveling, more than 16 pounds/minute, deep digging, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -6411,7 +6420,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_425.code = ((char *)"11550");
   __pyx_t_425.description = ((char *)"shoveling, more than 16 pounds/minute, deep digging, vigorous effort");
 
-  /* "pyfit/mets.pyx":432
+  /* "pyfit/mets.pyx":434
  *     		MET(7.8,"11540","shoveling, digging ditches"),
  *     		MET(8.8,"11550","shoveling, more than 16 pounds/minute, deep digging, vigorous effort"),
  *     		MET(5.0,"11560","shoveling, less than 10 pounds/minute, moderate effort"),             # <<<<<<<<<<<<<<
@@ -6422,7 +6431,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_426.code = ((char *)"11560");
   __pyx_t_426.description = ((char *)"shoveling, less than 10 pounds/minute, moderate effort");
 
-  /* "pyfit/mets.pyx":433
+  /* "pyfit/mets.pyx":435
  *     		MET(8.8,"11550","shoveling, more than 16 pounds/minute, deep digging, vigorous effort"),
  *     		MET(5.0,"11560","shoveling, less than 10 pounds/minute, moderate effort"),
  *     		MET(6.5,"11570","shoveling, 10 to 15 pounds/minute, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -6433,7 +6442,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_427.code = ((char *)"11570");
   __pyx_t_427.description = ((char *)"shoveling, 10 to 15 pounds/minute, vigorous effort");
 
-  /* "pyfit/mets.pyx":434
+  /* "pyfit/mets.pyx":436
  *     		MET(5.0,"11560","shoveling, less than 10 pounds/minute, moderate effort"),
  *     		MET(6.5,"11570","shoveling, 10 to 15 pounds/minute, vigorous effort"),
  *     		MET(1.5,"11580","sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)"),             # <<<<<<<<<<<<<<
@@ -6444,7 +6453,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_428.code = ((char *)"11580");
   __pyx_t_428.description = ((char *)"sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)");
 
-  /* "pyfit/mets.pyx":435
+  /* "pyfit/mets.pyx":437
  *     		MET(6.5,"11570","shoveling, 10 to 15 pounds/minute, vigorous effort"),
  *     		MET(1.5,"11580","sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)"),
  *     		MET(1.5,"11585","sitting meetings, light effort, general, and/or with talking involved (e.g., eating at a business meeting)"),             # <<<<<<<<<<<<<<
@@ -6455,7 +6464,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_429.code = ((char *)"11585");
   __pyx_t_429.description = ((char *)"sitting meetings, light effort, general, and/or with talking involved (e.g., eating at a business meeting)");
 
-  /* "pyfit/mets.pyx":436
+  /* "pyfit/mets.pyx":438
  *     		MET(1.5,"11580","sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)"),
  *     		MET(1.5,"11585","sitting meetings, light effort, general, and/or with talking involved (e.g., eating at a business meeting)"),
  *     		MET(2.5,"11590","sitting tasks, moderate effort (e.g., pushing heavy levers, riding mower/forklift, crane operation)"),             # <<<<<<<<<<<<<<
@@ -6466,7 +6475,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_430.code = ((char *)"11590");
   __pyx_t_430.description = ((char *)"sitting tasks, moderate effort (e.g., pushing heavy levers, riding mower/forklift, crane operation)");
 
-  /* "pyfit/mets.pyx":437
+  /* "pyfit/mets.pyx":439
  *     		MET(1.5,"11585","sitting meetings, light effort, general, and/or with talking involved (e.g., eating at a business meeting)"),
  *     		MET(2.5,"11590","sitting tasks, moderate effort (e.g., pushing heavy levers, riding mower/forklift, crane operation)"),
  *     		MET(2.8,"11593","sitting, teaching stretching or yoga, or light effort exercise class"),             # <<<<<<<<<<<<<<
@@ -6477,7 +6486,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_431.code = ((char *)"11593");
   __pyx_t_431.description = ((char *)"sitting, teaching stretching or yoga, or light effort exercise class");
 
-  /* "pyfit/mets.pyx":438
+  /* "pyfit/mets.pyx":440
  *     		MET(2.5,"11590","sitting tasks, moderate effort (e.g., pushing heavy levers, riding mower/forklift, crane operation)"),
  *     		MET(2.8,"11593","sitting, teaching stretching or yoga, or light effort exercise class"),
  *     		MET(3.0,"11600","standing tasks, light effort (e.g., bartending, store clerk, assembling, filing, duplicating, librarian, putting up a Christmas tree, standing and talking at work, changing clothes when teaching physical education,standing)"),             # <<<<<<<<<<<<<<
@@ -6488,7 +6497,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_432.code = ((char *)"11600");
   __pyx_t_432.description = ((char *)"standing tasks, light effort (e.g., bartending, store clerk, assembling, filing, duplicating, librarian, putting up a Christmas tree, standing and talking at work, changing clothes when teaching physical education,standing)");
 
-  /* "pyfit/mets.pyx":439
+  /* "pyfit/mets.pyx":441
  *     		MET(2.8,"11593","sitting, teaching stretching or yoga, or light effort exercise class"),
  *     		MET(3.0,"11600","standing tasks, light effort (e.g., bartending, store clerk, assembling, filing, duplicating, librarian, putting up a Christmas tree, standing and talking at work, changing clothes when teaching physical education,standing)"),
  *     		MET(3.0,"11610","standing, light/moderate effort (e.g., assemble/repair heavy parts, welding,stocking parts,auto repair,standing, packing boxes, nursing patient care)"),             # <<<<<<<<<<<<<<
@@ -6499,7 +6508,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_433.code = ((char *)"11610");
   __pyx_t_433.description = ((char *)"standing, light/moderate effort (e.g., assemble/repair heavy parts, welding,stocking parts,auto repair,standing, packing boxes, nursing patient care)");
 
-  /* "pyfit/mets.pyx":440
+  /* "pyfit/mets.pyx":442
  *     		MET(3.0,"11600","standing tasks, light effort (e.g., bartending, store clerk, assembling, filing, duplicating, librarian, putting up a Christmas tree, standing and talking at work, changing clothes when teaching physical education,standing)"),
  *     		MET(3.0,"11610","standing, light/moderate effort (e.g., assemble/repair heavy parts, welding,stocking parts,auto repair,standing, packing boxes, nursing patient care)"),
  *     		MET(4.5,"11615","standing, moderate effort, lifting items continuously, 10 \\u2013 20 lbs, with limited walking or resting"),             # <<<<<<<<<<<<<<
@@ -6510,7 +6519,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_434.code = ((char *)"11615");
   __pyx_t_434.description = ((char *)"standing, moderate effort, lifting items continuously, 10 \\u2013 20 lbs, with limited walking or resting");
 
-  /* "pyfit/mets.pyx":441
+  /* "pyfit/mets.pyx":443
  *     		MET(3.0,"11610","standing, light/moderate effort (e.g., assemble/repair heavy parts, welding,stocking parts,auto repair,standing, packing boxes, nursing patient care)"),
  *     		MET(4.5,"11615","standing, moderate effort, lifting items continuously, 10 \\u2013 20 lbs, with limited walking or resting"),
  *     		MET(3.5,"11620","standing, moderate effort, intermittent lifting 50 lbs, hitch/twisting ropes"),             # <<<<<<<<<<<<<<
@@ -6521,7 +6530,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_435.code = ((char *)"11620");
   __pyx_t_435.description = ((char *)"standing, moderate effort, intermittent lifting 50 lbs, hitch/twisting ropes");
 
-  /* "pyfit/mets.pyx":442
+  /* "pyfit/mets.pyx":444
  *     		MET(4.5,"11615","standing, moderate effort, lifting items continuously, 10 \\u2013 20 lbs, with limited walking or resting"),
  *     		MET(3.5,"11620","standing, moderate effort, intermittent lifting 50 lbs, hitch/twisting ropes"),
  *     		MET(4.5,"11630","standing, moderate/heavy tasks (e.g., lifting more than 50 lbs, masonry, painting, paper hanging)"),             # <<<<<<<<<<<<<<
@@ -6532,7 +6541,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_436.code = ((char *)"11630");
   __pyx_t_436.description = ((char *)"standing, moderate/heavy tasks (e.g., lifting more than 50 lbs, masonry, painting, paper hanging)");
 
-  /* "pyfit/mets.pyx":443
+  /* "pyfit/mets.pyx":445
  *     		MET(3.5,"11620","standing, moderate effort, intermittent lifting 50 lbs, hitch/twisting ropes"),
  *     		MET(4.5,"11630","standing, moderate/heavy tasks (e.g., lifting more than 50 lbs, masonry, painting, paper hanging)"),
  *     		MET(5.3,"11708","steel mill, moderate effort (e.g., fettling, forging, tipping molds)"),             # <<<<<<<<<<<<<<
@@ -6543,7 +6552,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_437.code = ((char *)"11708");
   __pyx_t_437.description = ((char *)"steel mill, moderate effort (e.g., fettling, forging, tipping molds)");
 
-  /* "pyfit/mets.pyx":444
+  /* "pyfit/mets.pyx":446
  *     		MET(4.5,"11630","standing, moderate/heavy tasks (e.g., lifting more than 50 lbs, masonry, painting, paper hanging)"),
  *     		MET(5.3,"11708","steel mill, moderate effort (e.g., fettling, forging, tipping molds)"),
  *     		MET(8.3,"11710","steel mill, vigorous effort (e.g., hand rolling, merchant mill rolling, removing slag, tending furnace)"),             # <<<<<<<<<<<<<<
@@ -6554,7 +6563,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_438.code = ((char *)"11710");
   __pyx_t_438.description = ((char *)"steel mill, vigorous effort (e.g., hand rolling, merchant mill rolling, removing slag, tending furnace)");
 
-  /* "pyfit/mets.pyx":445
+  /* "pyfit/mets.pyx":447
  *     		MET(5.3,"11708","steel mill, moderate effort (e.g., fettling, forging, tipping molds)"),
  *     		MET(8.3,"11710","steel mill, vigorous effort (e.g., hand rolling, merchant mill rolling, removing slag, tending furnace)"),
  *     		MET(2.3,"11720","tailoring, cutting fabric"),             # <<<<<<<<<<<<<<
@@ -6565,7 +6574,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_439.code = ((char *)"11720");
   __pyx_t_439.description = ((char *)"tailoring, cutting fabric");
 
-  /* "pyfit/mets.pyx":446
+  /* "pyfit/mets.pyx":448
  *     		MET(8.3,"11710","steel mill, vigorous effort (e.g., hand rolling, merchant mill rolling, removing slag, tending furnace)"),
  *     		MET(2.3,"11720","tailoring, cutting fabric"),
  *     		MET(2.5,"11730","tailoring, general"),             # <<<<<<<<<<<<<<
@@ -6576,7 +6585,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_440.code = ((char *)"11730");
   __pyx_t_440.description = ((char *)"tailoring, general");
 
-  /* "pyfit/mets.pyx":447
+  /* "pyfit/mets.pyx":449
  *     		MET(2.3,"11720","tailoring, cutting fabric"),
  *     		MET(2.5,"11730","tailoring, general"),
  *     		MET(1.8,"11740","tailoring, hand sewing"),             # <<<<<<<<<<<<<<
@@ -6587,7 +6596,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_441.code = ((char *)"11740");
   __pyx_t_441.description = ((char *)"tailoring, hand sewing");
 
-  /* "pyfit/mets.pyx":448
+  /* "pyfit/mets.pyx":450
  *     		MET(2.5,"11730","tailoring, general"),
  *     		MET(1.8,"11740","tailoring, hand sewing"),
  *     		MET(2.5,"11750","tailoring, machine sewing"),             # <<<<<<<<<<<<<<
@@ -6598,7 +6607,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_442.code = ((char *)"11750");
   __pyx_t_442.description = ((char *)"tailoring, machine sewing");
 
-  /* "pyfit/mets.pyx":449
+  /* "pyfit/mets.pyx":451
  *     		MET(1.8,"11740","tailoring, hand sewing"),
  *     		MET(2.5,"11750","tailoring, machine sewing"),
  *     		MET(3.5,"11760","tailoring, pressing"),             # <<<<<<<<<<<<<<
@@ -6609,7 +6618,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_443.code = ((char *)"11760");
   __pyx_t_443.description = ((char *)"tailoring, pressing");
 
-  /* "pyfit/mets.pyx":450
+  /* "pyfit/mets.pyx":452
  *     		MET(2.5,"11750","tailoring, machine sewing"),
  *     		MET(3.5,"11760","tailoring, pressing"),
  *     		MET(2.0,"11763","tailoring, weaving, light effort (e.g., finishing operations, washing, dyeing, inspecting cloth, counting yards, paperwork)"),             # <<<<<<<<<<<<<<
@@ -6620,7 +6629,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_444.code = ((char *)"11763");
   __pyx_t_444.description = ((char *)"tailoring, weaving, light effort (e.g., finishing operations, washing, dyeing, inspecting cloth, counting yards, paperwork)");
 
-  /* "pyfit/mets.pyx":451
+  /* "pyfit/mets.pyx":453
  *     		MET(3.5,"11760","tailoring, pressing"),
  *     		MET(2.0,"11763","tailoring, weaving, light effort (e.g., finishing operations, washing, dyeing, inspecting cloth, counting yards, paperwork)"),
  *     		MET(4.0,"11765","tailoring, weaving, moderate effort (e.g., spinning and weaving operations, delivering boxes of yam to spinners, loading of warp bean, pinwinding, conewinding, warping, cloth cutting)"),             # <<<<<<<<<<<<<<
@@ -6631,7 +6640,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_445.code = ((char *)"11765");
   __pyx_t_445.description = ((char *)"tailoring, weaving, moderate effort (e.g., spinning and weaving operations, delivering boxes of yam to spinners, loading of warp bean, pinwinding, conewinding, warping, cloth cutting)");
 
-  /* "pyfit/mets.pyx":452
+  /* "pyfit/mets.pyx":454
  *     		MET(2.0,"11763","tailoring, weaving, light effort (e.g., finishing operations, washing, dyeing, inspecting cloth, counting yards, paperwork)"),
  *     		MET(4.0,"11765","tailoring, weaving, moderate effort (e.g., spinning and weaving operations, delivering boxes of yam to spinners, loading of warp bean, pinwinding, conewinding, warping, cloth cutting)"),
  *     		MET(6.5,"11766","truck driving, loading and unloading truck, tying down load, standing, walking and carrying heavy loads"),             # <<<<<<<<<<<<<<
@@ -6642,7 +6651,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_446.code = ((char *)"11766");
   __pyx_t_446.description = ((char *)"truck driving, loading and unloading truck, tying down load, standing, walking and carrying heavy loads");
 
-  /* "pyfit/mets.pyx":453
+  /* "pyfit/mets.pyx":455
  *     		MET(4.0,"11765","tailoring, weaving, moderate effort (e.g., spinning and weaving operations, delivering boxes of yam to spinners, loading of warp bean, pinwinding, conewinding, warping, cloth cutting)"),
  *     		MET(6.5,"11766","truck driving, loading and unloading truck, tying down load, standing, walking and carrying heavy loads"),
  *     		MET(1.3,"11770","typing, electric, manual or computer"),             # <<<<<<<<<<<<<<
@@ -6653,7 +6662,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_447.code = ((char *)"11770");
   __pyx_t_447.description = ((char *)"typing, electric, manual or computer");
 
-  /* "pyfit/mets.pyx":454
+  /* "pyfit/mets.pyx":456
  *     		MET(6.5,"11766","truck driving, loading and unloading truck, tying down load, standing, walking and carrying heavy loads"),
  *     		MET(1.3,"11770","typing, electric, manual or computer"),
  *     		MET(6.3,"11780","using heavy power tools such as pneumatic tools (e.g., jackhammers, drills)"),             # <<<<<<<<<<<<<<
@@ -6664,7 +6673,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_448.code = ((char *)"11780");
   __pyx_t_448.description = ((char *)"using heavy power tools such as pneumatic tools (e.g., jackhammers, drills)");
 
-  /* "pyfit/mets.pyx":455
+  /* "pyfit/mets.pyx":457
  *     		MET(1.3,"11770","typing, electric, manual or computer"),
  *     		MET(6.3,"11780","using heavy power tools such as pneumatic tools (e.g., jackhammers, drills)"),
  *     		MET(8.0,"11790","using heavy tools (not power) such as shovel, pick, tunnel bar, spade"),             # <<<<<<<<<<<<<<
@@ -6675,7 +6684,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_449.code = ((char *)"11790");
   __pyx_t_449.description = ((char *)"using heavy tools (not power) such as shovel, pick, tunnel bar, spade");
 
-  /* "pyfit/mets.pyx":456
+  /* "pyfit/mets.pyx":458
  *     		MET(6.3,"11780","using heavy power tools such as pneumatic tools (e.g., jackhammers, drills)"),
  *     		MET(8.0,"11790","using heavy tools (not power) such as shovel, pick, tunnel bar, spade"),
  *     		MET(2.0,"11791","walking on job, less than 2.0 mph, very slow speed, in office or lab area"),             # <<<<<<<<<<<<<<
@@ -6686,7 +6695,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_450.code = ((char *)"11791");
   __pyx_t_450.description = ((char *)"walking on job, less than 2.0 mph, very slow speed, in office or lab area");
 
-  /* "pyfit/mets.pyx":457
+  /* "pyfit/mets.pyx":459
  *     		MET(8.0,"11790","using heavy tools (not power) such as shovel, pick, tunnel bar, spade"),
  *     		MET(2.0,"11791","walking on job, less than 2.0 mph, very slow speed, in office or lab area"),
  *     		MET(3.5,"11792","walking on job, 3.0 mph, in office, moderate speed, not carrying anything"),             # <<<<<<<<<<<<<<
@@ -6697,7 +6706,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_451.code = ((char *)"11792");
   __pyx_t_451.description = ((char *)"walking on job, 3.0 mph, in office, moderate speed, not carrying anything");
 
-  /* "pyfit/mets.pyx":458
+  /* "pyfit/mets.pyx":460
  *     		MET(2.0,"11791","walking on job, less than 2.0 mph, very slow speed, in office or lab area"),
  *     		MET(3.5,"11792","walking on job, 3.0 mph, in office, moderate speed, not carrying anything"),
  *     		MET(4.3,"11793","walking on job, 3.5 mph, in office, brisk speed, not carrying anything"),             # <<<<<<<<<<<<<<
@@ -6708,7 +6717,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_452.code = ((char *)"11793");
   __pyx_t_452.description = ((char *)"walking on job, 3.5 mph, in office, brisk speed, not carrying anything");
 
-  /* "pyfit/mets.pyx":459
+  /* "pyfit/mets.pyx":461
  *     		MET(3.5,"11792","walking on job, 3.0 mph, in office, moderate speed, not carrying anything"),
  *     		MET(4.3,"11793","walking on job, 3.5 mph, in office, brisk speed, not carrying anything"),
  *     		MET(3.5,"11795","walking on job, 2.5 mph, slow speed and carrying light objects less than 25 pounds"),             # <<<<<<<<<<<<<<
@@ -6719,7 +6728,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_453.code = ((char *)"11795");
   __pyx_t_453.description = ((char *)"walking on job, 2.5 mph, slow speed and carrying light objects less than 25 pounds");
 
-  /* "pyfit/mets.pyx":460
+  /* "pyfit/mets.pyx":462
  *     		MET(4.3,"11793","walking on job, 3.5 mph, in office, brisk speed, not carrying anything"),
  *     		MET(3.5,"11795","walking on job, 2.5 mph, slow speed and carrying light objects less than 25 pounds"),
  *     		MET(3.0,"11796","walking, gathering things at work, ready to leave"),             # <<<<<<<<<<<<<<
@@ -6730,7 +6739,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_454.code = ((char *)"11796");
   __pyx_t_454.description = ((char *)"walking, gathering things at work, ready to leave");
 
-  /* "pyfit/mets.pyx":461
+  /* "pyfit/mets.pyx":463
  *     		MET(3.5,"11795","walking on job, 2.5 mph, slow speed and carrying light objects less than 25 pounds"),
  *     		MET(3.0,"11796","walking, gathering things at work, ready to leave"),
  *     		MET(3.8,"11797","walking, 2.5 mph, slow speed, carrying heavy objects more than 25 lbs"),             # <<<<<<<<<<<<<<
@@ -6741,7 +6750,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_455.code = ((char *)"11797");
   __pyx_t_455.description = ((char *)"walking, 2.5 mph, slow speed, carrying heavy objects more than 25 lbs");
 
-  /* "pyfit/mets.pyx":462
+  /* "pyfit/mets.pyx":464
  *     		MET(3.0,"11796","walking, gathering things at work, ready to leave"),
  *     		MET(3.8,"11797","walking, 2.5 mph, slow speed, carrying heavy objects more than 25 lbs"),
  *     		MET(4.5,"11800","walking, 3.0 mph, moderately and carrying light objects less than 25 lbs"),             # <<<<<<<<<<<<<<
@@ -6752,7 +6761,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_456.code = ((char *)"11800");
   __pyx_t_456.description = ((char *)"walking, 3.0 mph, moderately and carrying light objects less than 25 lbs");
 
-  /* "pyfit/mets.pyx":463
+  /* "pyfit/mets.pyx":465
  *     		MET(3.8,"11797","walking, 2.5 mph, slow speed, carrying heavy objects more than 25 lbs"),
  *     		MET(4.5,"11800","walking, 3.0 mph, moderately and carrying light objects less than 25 lbs"),
  *     		MET(3.5,"11805","walking, pushing a wheelchair"),             # <<<<<<<<<<<<<<
@@ -6763,7 +6772,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_457.code = ((char *)"11805");
   __pyx_t_457.description = ((char *)"walking, pushing a wheelchair");
 
-  /* "pyfit/mets.pyx":464
+  /* "pyfit/mets.pyx":466
  *     		MET(4.5,"11800","walking, 3.0 mph, moderately and carrying light objects less than 25 lbs"),
  *     		MET(3.5,"11805","walking, pushing a wheelchair"),
  *     		MET(4.8,"11810","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),             # <<<<<<<<<<<<<<
@@ -6774,7 +6783,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_458.code = ((char *)"11810");
   __pyx_t_458.description = ((char *)"walking, 3.5 mph, briskly and carrying objects less than 25 pounds");
 
-  /* "pyfit/mets.pyx":465
+  /* "pyfit/mets.pyx":467
  *     		MET(3.5,"11805","walking, pushing a wheelchair"),
  *     		MET(4.8,"11810","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),
  *     		MET(5.0,"11820","walking or walk downstairs or standing, carrying objects about 25 to 49 pounds"),             # <<<<<<<<<<<<<<
@@ -6785,7 +6794,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_459.code = ((char *)"11820");
   __pyx_t_459.description = ((char *)"walking or walk downstairs or standing, carrying objects about 25 to 49 pounds");
 
-  /* "pyfit/mets.pyx":466
+  /* "pyfit/mets.pyx":468
  *     		MET(4.8,"11810","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),
  *     		MET(5.0,"11820","walking or walk downstairs or standing, carrying objects about 25 to 49 pounds"),
  *     		MET(6.5,"11830","walking or walk downstairs or standing, carrying objects about 50 to 74 pounds"),             # <<<<<<<<<<<<<<
@@ -6796,7 +6805,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_460.code = ((char *)"11830");
   __pyx_t_460.description = ((char *)"walking or walk downstairs or standing, carrying objects about 50 to 74 pounds");
 
-  /* "pyfit/mets.pyx":467
+  /* "pyfit/mets.pyx":469
  *     		MET(5.0,"11820","walking or walk downstairs or standing, carrying objects about 25 to 49 pounds"),
  *     		MET(6.5,"11830","walking or walk downstairs or standing, carrying objects about 50 to 74 pounds"),
  *     		MET(7.5,"11840","walking or walk downstairs or standing, carrying objects about 75 to 99 pounds"),             # <<<<<<<<<<<<<<
@@ -6807,7 +6816,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_461.code = ((char *)"11840");
   __pyx_t_461.description = ((char *)"walking or walk downstairs or standing, carrying objects about 75 to 99 pounds");
 
-  /* "pyfit/mets.pyx":468
+  /* "pyfit/mets.pyx":470
  *     		MET(6.5,"11830","walking or walk downstairs or standing, carrying objects about 50 to 74 pounds"),
  *     		MET(7.5,"11840","walking or walk downstairs or standing, carrying objects about 75 to 99 pounds"),
  *     		MET(8.5,"11850","walking or walk downstairs or standing, carrying objects about 100 pounds or over"),             # <<<<<<<<<<<<<<
@@ -6818,7 +6827,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_462.code = ((char *)"11850");
   __pyx_t_462.description = ((char *)"walking or walk downstairs or standing, carrying objects about 100 pounds or over");
 
-  /* "pyfit/mets.pyx":469
+  /* "pyfit/mets.pyx":471
  *     		MET(7.5,"11840","walking or walk downstairs or standing, carrying objects about 75 to 99 pounds"),
  *     		MET(8.5,"11850","walking or walk downstairs or standing, carrying objects about 100 pounds or over"),
  *     		MET(3.0,"11870","working in scene shop, theater actor, backstage employee"),             # <<<<<<<<<<<<<<
@@ -6829,7 +6838,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_463.code = ((char *)"11870");
   __pyx_t_463.description = ((char *)"working in scene shop, theater actor, backstage employee");
 
-  /* "pyfit/mets.pyx":470
+  /* "pyfit/mets.pyx":472
  *     		MET(8.5,"11850","walking or walk downstairs or standing, carrying objects about 100 pounds or over"),
  *     		MET(3.0,"11870","working in scene shop, theater actor, backstage employee"),
  *     		MET(6.0,"12010","jog/walk combination (jogging component of less than 10 minutes) (Taylor Code 180)"),             # <<<<<<<<<<<<<<
@@ -6840,7 +6849,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_464.code = ((char *)"12010");
   __pyx_t_464.description = ((char *)"jog/walk combination (jogging component of less than 10 minutes) (Taylor Code 180)");
 
-  /* "pyfit/mets.pyx":471
+  /* "pyfit/mets.pyx":473
  *     		MET(3.0,"11870","working in scene shop, theater actor, backstage employee"),
  *     		MET(6.0,"12010","jog/walk combination (jogging component of less than 10 minutes) (Taylor Code 180)"),
  *     		MET(7.0,"12020","jogging, general"),             # <<<<<<<<<<<<<<
@@ -6851,7 +6860,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_465.code = ((char *)"12020");
   __pyx_t_465.description = ((char *)"jogging, general");
 
-  /* "pyfit/mets.pyx":472
+  /* "pyfit/mets.pyx":474
  *     		MET(6.0,"12010","jog/walk combination (jogging component of less than 10 minutes) (Taylor Code 180)"),
  *     		MET(7.0,"12020","jogging, general"),
  *     		MET(8.0,"12025","jogging, in place"),             # <<<<<<<<<<<<<<
@@ -6862,7 +6871,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_466.code = ((char *)"12025");
   __pyx_t_466.description = ((char *)"jogging, in place");
 
-  /* "pyfit/mets.pyx":473
+  /* "pyfit/mets.pyx":475
  *     		MET(7.0,"12020","jogging, general"),
  *     		MET(8.0,"12025","jogging, in place"),
  *     		MET(4.5,"12027","jogging, on a mini-tramp"),             # <<<<<<<<<<<<<<
@@ -6873,7 +6882,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_467.code = ((char *)"12027");
   __pyx_t_467.description = ((char *)"jogging, on a mini-tramp");
 
-  /* "pyfit/mets.pyx":474
+  /* "pyfit/mets.pyx":476
  *     		MET(8.0,"12025","jogging, in place"),
  *     		MET(4.5,"12027","jogging, on a mini-tramp"),
  *     		MET(6.0,"12029","running, 4 mph (15 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6884,7 +6893,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_468.code = ((char *)"12029");
   __pyx_t_468.description = ((char *)"running, 4 mph (15 min/mile)");
 
-  /* "pyfit/mets.pyx":475
+  /* "pyfit/mets.pyx":477
  *     		MET(4.5,"12027","jogging, on a mini-tramp"),
  *     		MET(6.0,"12029","running, 4 mph (15 min/mile)"),
  *     		MET(8.3,"12030","running, 5 mph (12 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6895,7 +6904,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_469.code = ((char *)"12030");
   __pyx_t_469.description = ((char *)"running, 5 mph (12 min/mile)");
 
-  /* "pyfit/mets.pyx":476
+  /* "pyfit/mets.pyx":478
  *     		MET(6.0,"12029","running, 4 mph (15 min/mile)"),
  *     		MET(8.3,"12030","running, 5 mph (12 min/mile)"),
  *     		MET(9.0,"12040","running, 5.2 mph (11.5 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6906,7 +6915,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_470.code = ((char *)"12040");
   __pyx_t_470.description = ((char *)"running, 5.2 mph (11.5 min/mile)");
 
-  /* "pyfit/mets.pyx":477
+  /* "pyfit/mets.pyx":479
  *     		MET(8.3,"12030","running, 5 mph (12 min/mile)"),
  *     		MET(9.0,"12040","running, 5.2 mph (11.5 min/mile)"),
  *     		MET(9.8,"12050","running, 6 mph (10 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6917,7 +6926,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_471.code = ((char *)"12050");
   __pyx_t_471.description = ((char *)"running, 6 mph (10 min/mile)");
 
-  /* "pyfit/mets.pyx":478
+  /* "pyfit/mets.pyx":480
  *     		MET(9.0,"12040","running, 5.2 mph (11.5 min/mile)"),
  *     		MET(9.8,"12050","running, 6 mph (10 min/mile)"),
  *     		MET(10.5,"12060","running, 6.7 mph (9 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6928,7 +6937,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_472.code = ((char *)"12060");
   __pyx_t_472.description = ((char *)"running, 6.7 mph (9 min/mile)");
 
-  /* "pyfit/mets.pyx":479
+  /* "pyfit/mets.pyx":481
  *     		MET(9.8,"12050","running, 6 mph (10 min/mile)"),
  *     		MET(10.5,"12060","running, 6.7 mph (9 min/mile)"),
  *     		MET(11.0,"12070","running, 7 mph (8.5 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6939,7 +6948,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_473.code = ((char *)"12070");
   __pyx_t_473.description = ((char *)"running, 7 mph (8.5 min/mile)");
 
-  /* "pyfit/mets.pyx":480
+  /* "pyfit/mets.pyx":482
  *     		MET(10.5,"12060","running, 6.7 mph (9 min/mile)"),
  *     		MET(11.0,"12070","running, 7 mph (8.5 min/mile)"),
  *     		MET(11.8,"12080","running, 7.5 mph (8 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6950,7 +6959,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_474.code = ((char *)"12080");
   __pyx_t_474.description = ((char *)"running, 7.5 mph (8 min/mile)");
 
-  /* "pyfit/mets.pyx":481
+  /* "pyfit/mets.pyx":483
  *     		MET(11.0,"12070","running, 7 mph (8.5 min/mile)"),
  *     		MET(11.8,"12080","running, 7.5 mph (8 min/mile)"),
  *     		MET(11.8,"12090","running, 8 mph (7.5 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6961,7 +6970,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_475.code = ((char *)"12090");
   __pyx_t_475.description = ((char *)"running, 8 mph (7.5 min/mile)");
 
-  /* "pyfit/mets.pyx":482
+  /* "pyfit/mets.pyx":484
  *     		MET(11.8,"12080","running, 7.5 mph (8 min/mile)"),
  *     		MET(11.8,"12090","running, 8 mph (7.5 min/mile)"),
  *     		MET(12.3,"12100","running, 8.6 mph (7 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6972,7 +6981,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_476.code = ((char *)"12100");
   __pyx_t_476.description = ((char *)"running, 8.6 mph (7 min/mile)");
 
-  /* "pyfit/mets.pyx":483
+  /* "pyfit/mets.pyx":485
  *     		MET(11.8,"12090","running, 8 mph (7.5 min/mile)"),
  *     		MET(12.3,"12100","running, 8.6 mph (7 min/mile)"),
  *     		MET(12.8,"12110","running, 9 mph (6.5 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6983,7 +6992,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_477.code = ((char *)"12110");
   __pyx_t_477.description = ((char *)"running, 9 mph (6.5 min/mile)");
 
-  /* "pyfit/mets.pyx":484
+  /* "pyfit/mets.pyx":486
  *     		MET(12.3,"12100","running, 8.6 mph (7 min/mile)"),
  *     		MET(12.8,"12110","running, 9 mph (6.5 min/mile)"),
  *     		MET(14.5,"12120","running, 10 mph (6 min/mile)"),             # <<<<<<<<<<<<<<
@@ -6994,7 +7003,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_478.code = ((char *)"12120");
   __pyx_t_478.description = ((char *)"running, 10 mph (6 min/mile)");
 
-  /* "pyfit/mets.pyx":485
+  /* "pyfit/mets.pyx":487
  *     		MET(12.8,"12110","running, 9 mph (6.5 min/mile)"),
  *     		MET(14.5,"12120","running, 10 mph (6 min/mile)"),
  *     		MET(16.0,"12130","running, 11 mph (5.5 min/mile)"),             # <<<<<<<<<<<<<<
@@ -7005,7 +7014,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_479.code = ((char *)"12130");
   __pyx_t_479.description = ((char *)"running, 11 mph (5.5 min/mile)");
 
-  /* "pyfit/mets.pyx":486
+  /* "pyfit/mets.pyx":488
  *     		MET(14.5,"12120","running, 10 mph (6 min/mile)"),
  *     		MET(16.0,"12130","running, 11 mph (5.5 min/mile)"),
  *     		MET(19.0,"12132","running, 12 mph (5 min/mile)"),             # <<<<<<<<<<<<<<
@@ -7016,7 +7025,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_480.code = ((char *)"12132");
   __pyx_t_480.description = ((char *)"running, 12 mph (5 min/mile)");
 
-  /* "pyfit/mets.pyx":487
+  /* "pyfit/mets.pyx":489
  *     		MET(16.0,"12130","running, 11 mph (5.5 min/mile)"),
  *     		MET(19.0,"12132","running, 12 mph (5 min/mile)"),
  *     		MET(19.8,"12134","running, 13 mph (4.6 min/mile)"),             # <<<<<<<<<<<<<<
@@ -7027,7 +7036,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_481.code = ((char *)"12134");
   __pyx_t_481.description = ((char *)"running, 13 mph (4.6 min/mile)");
 
-  /* "pyfit/mets.pyx":488
+  /* "pyfit/mets.pyx":490
  *     		MET(19.0,"12132","running, 12 mph (5 min/mile)"),
  *     		MET(19.8,"12134","running, 13 mph (4.6 min/mile)"),
  *     		MET(23.0,"12135","running, 14 mph (4.3 min/mile)"),             # <<<<<<<<<<<<<<
@@ -7038,7 +7047,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_482.code = ((char *)"12135");
   __pyx_t_482.description = ((char *)"running, 14 mph (4.3 min/mile)");
 
-  /* "pyfit/mets.pyx":489
+  /* "pyfit/mets.pyx":491
  *     		MET(19.8,"12134","running, 13 mph (4.6 min/mile)"),
  *     		MET(23.0,"12135","running, 14 mph (4.3 min/mile)"),
  *     		MET(9.0,"12140","running, cross country"),             # <<<<<<<<<<<<<<
@@ -7049,7 +7058,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_483.code = ((char *)"12140");
   __pyx_t_483.description = ((char *)"running, cross country");
 
-  /* "pyfit/mets.pyx":490
+  /* "pyfit/mets.pyx":492
  *     		MET(23.0,"12135","running, 14 mph (4.3 min/mile)"),
  *     		MET(9.0,"12140","running, cross country"),
  *     		MET(8.0,"12150","running, (Taylor code 200)"),             # <<<<<<<<<<<<<<
@@ -7060,7 +7069,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_484.code = ((char *)"12150");
   __pyx_t_484.description = ((char *)"running, (Taylor code 200)");
 
-  /* "pyfit/mets.pyx":491
+  /* "pyfit/mets.pyx":493
  *     		MET(9.0,"12140","running, cross country"),
  *     		MET(8.0,"12150","running, (Taylor code 200)"),
  *     		MET(15.0,"12170","running, stairs, up"),             # <<<<<<<<<<<<<<
@@ -7071,7 +7080,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_485.code = ((char *)"12170");
   __pyx_t_485.description = ((char *)"running, stairs, up");
 
-  /* "pyfit/mets.pyx":492
+  /* "pyfit/mets.pyx":494
  *     		MET(8.0,"12150","running, (Taylor code 200)"),
  *     		MET(15.0,"12170","running, stairs, up"),
  *     		MET(10.0,"12180","running, on a track, team practice"),             # <<<<<<<<<<<<<<
@@ -7082,7 +7091,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_486.code = ((char *)"12180");
   __pyx_t_486.description = ((char *)"running, on a track, team practice");
 
-  /* "pyfit/mets.pyx":493
+  /* "pyfit/mets.pyx":495
  *     		MET(15.0,"12170","running, stairs, up"),
  *     		MET(10.0,"12180","running, on a track, team practice"),
  *     		MET(8.0,"12190","running, training, pushing a wheelchair or baby carrier"),             # <<<<<<<<<<<<<<
@@ -7093,7 +7102,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_487.code = ((char *)"12190");
   __pyx_t_487.description = ((char *)"running, training, pushing a wheelchair or baby carrier");
 
-  /* "pyfit/mets.pyx":494
+  /* "pyfit/mets.pyx":496
  *     		MET(10.0,"12180","running, on a track, team practice"),
  *     		MET(8.0,"12190","running, training, pushing a wheelchair or baby carrier"),
  *     		MET(13.3,"12200","running, marathon"),             # <<<<<<<<<<<<<<
@@ -7104,7 +7113,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_488.code = ((char *)"12200");
   __pyx_t_488.description = ((char *)"running, marathon");
 
-  /* "pyfit/mets.pyx":495
+  /* "pyfit/mets.pyx":497
  *     		MET(8.0,"12190","running, training, pushing a wheelchair or baby carrier"),
  *     		MET(13.3,"12200","running, marathon"),
  *     		MET(2.3,"13000","getting ready for bed, general, standing"),             # <<<<<<<<<<<<<<
@@ -7115,7 +7124,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_489.code = ((char *)"13000");
   __pyx_t_489.description = ((char *)"getting ready for bed, general, standing");
 
-  /* "pyfit/mets.pyx":496
+  /* "pyfit/mets.pyx":498
  *     		MET(13.3,"12200","running, marathon"),
  *     		MET(2.3,"13000","getting ready for bed, general, standing"),
  *     		MET(1.8,"13009","sitting on toilet, eliminating while standing or squating"),             # <<<<<<<<<<<<<<
@@ -7126,7 +7135,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_490.code = ((char *)"13009");
   __pyx_t_490.description = ((char *)"sitting on toilet, eliminating while standing or squating");
 
-  /* "pyfit/mets.pyx":497
+  /* "pyfit/mets.pyx":499
  *     		MET(2.3,"13000","getting ready for bed, general, standing"),
  *     		MET(1.8,"13009","sitting on toilet, eliminating while standing or squating"),
  *     		MET(1.5,"13010","bathing, sitting"),             # <<<<<<<<<<<<<<
@@ -7137,7 +7146,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_491.code = ((char *)"13010");
   __pyx_t_491.description = ((char *)"bathing, sitting");
 
-  /* "pyfit/mets.pyx":498
+  /* "pyfit/mets.pyx":500
  *     		MET(1.8,"13009","sitting on toilet, eliminating while standing or squating"),
  *     		MET(1.5,"13010","bathing, sitting"),
  *     		MET(2.5,"13020","dressing, undressing, standing or sitting"),             # <<<<<<<<<<<<<<
@@ -7148,7 +7157,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_492.code = ((char *)"13020");
   __pyx_t_492.description = ((char *)"dressing, undressing, standing or sitting");
 
-  /* "pyfit/mets.pyx":499
+  /* "pyfit/mets.pyx":501
  *     		MET(1.5,"13010","bathing, sitting"),
  *     		MET(2.5,"13020","dressing, undressing, standing or sitting"),
  *     		MET(1.5,"13030","eating, sitting"),             # <<<<<<<<<<<<<<
@@ -7159,7 +7168,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_493.code = ((char *)"13030");
   __pyx_t_493.description = ((char *)"eating, sitting");
 
-  /* "pyfit/mets.pyx":500
+  /* "pyfit/mets.pyx":502
  *     		MET(2.5,"13020","dressing, undressing, standing or sitting"),
  *     		MET(1.5,"13030","eating, sitting"),
  *     		MET(2.0,"13035","talking and eating or eating only, standing"),             # <<<<<<<<<<<<<<
@@ -7170,7 +7179,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_494.code = ((char *)"13035");
   __pyx_t_494.description = ((char *)"talking and eating or eating only, standing");
 
-  /* "pyfit/mets.pyx":501
+  /* "pyfit/mets.pyx":503
  *     		MET(1.5,"13030","eating, sitting"),
  *     		MET(2.0,"13035","talking and eating or eating only, standing"),
  *     		MET(1.5,"13036","taking medication, sitting or standing"),             # <<<<<<<<<<<<<<
@@ -7181,7 +7190,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_495.code = ((char *)"13036");
   __pyx_t_495.description = ((char *)"taking medication, sitting or standing");
 
-  /* "pyfit/mets.pyx":502
+  /* "pyfit/mets.pyx":504
  *     		MET(2.0,"13035","talking and eating or eating only, standing"),
  *     		MET(1.5,"13036","taking medication, sitting or standing"),
  *     		MET(2.0,"13040","grooming, washing hands, shaving, brushing teeth, putting on make-up, sitting or standing"),             # <<<<<<<<<<<<<<
@@ -7192,7 +7201,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_496.code = ((char *)"13040");
   __pyx_t_496.description = ((char *)"grooming, washing hands, shaving, brushing teeth, putting on make-up, sitting or standing");
 
-  /* "pyfit/mets.pyx":503
+  /* "pyfit/mets.pyx":505
  *     		MET(1.5,"13036","taking medication, sitting or standing"),
  *     		MET(2.0,"13040","grooming, washing hands, shaving, brushing teeth, putting on make-up, sitting or standing"),
  *     		MET(2.5,"13045","hairstyling, standing"),             # <<<<<<<<<<<<<<
@@ -7203,7 +7212,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_497.code = ((char *)"13045");
   __pyx_t_497.description = ((char *)"hairstyling, standing");
 
-  /* "pyfit/mets.pyx":504
+  /* "pyfit/mets.pyx":506
  *     		MET(2.0,"13040","grooming, washing hands, shaving, brushing teeth, putting on make-up, sitting or standing"),
  *     		MET(2.5,"13045","hairstyling, standing"),
  *     		MET(1.3,"13046","having hair or nails done by someone else, sitting"),             # <<<<<<<<<<<<<<
@@ -7214,7 +7223,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_498.code = ((char *)"13046");
   __pyx_t_498.description = ((char *)"having hair or nails done by someone else, sitting");
 
-  /* "pyfit/mets.pyx":505
+  /* "pyfit/mets.pyx":507
  *     		MET(2.5,"13045","hairstyling, standing"),
  *     		MET(1.3,"13046","having hair or nails done by someone else, sitting"),
  *     		MET(2.0,"13050","showering, toweling off, standing"),             # <<<<<<<<<<<<<<
@@ -7225,7 +7234,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_499.code = ((char *)"13050");
   __pyx_t_499.description = ((char *)"showering, toweling off, standing");
 
-  /* "pyfit/mets.pyx":506
+  /* "pyfit/mets.pyx":508
  *     		MET(1.3,"13046","having hair or nails done by someone else, sitting"),
  *     		MET(2.0,"13050","showering, toweling off, standing"),
  *     		MET(2.8,"14010","active, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -7236,7 +7245,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_500.code = ((char *)"14010");
   __pyx_t_500.description = ((char *)"active, vigorous effort");
 
-  /* "pyfit/mets.pyx":507
+  /* "pyfit/mets.pyx":509
  *     		MET(2.0,"13050","showering, toweling off, standing"),
  *     		MET(2.8,"14010","active, vigorous effort"),
  *     		MET(1.8,"14020","general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -7247,7 +7256,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_501.code = ((char *)"14020");
   __pyx_t_501.description = ((char *)"general, moderate effort");
 
-  /* "pyfit/mets.pyx":508
+  /* "pyfit/mets.pyx":510
  *     		MET(2.8,"14010","active, vigorous effort"),
  *     		MET(1.8,"14020","general, moderate effort"),
  *     		MET(1.3,"14030","passive, light effort, kissing, hugging"),             # <<<<<<<<<<<<<<
@@ -7258,7 +7267,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_502.code = ((char *)"14030");
   __pyx_t_502.description = ((char *)"passive, light effort, kissing, hugging");
 
-  /* "pyfit/mets.pyx":509
+  /* "pyfit/mets.pyx":511
  *     		MET(1.8,"14020","general, moderate effort"),
  *     		MET(1.3,"14030","passive, light effort, kissing, hugging"),
  *     		MET(5.5,"15000","Alaska Native Games, Eskimo Olympics, general"),             # <<<<<<<<<<<<<<
@@ -7269,7 +7278,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_503.code = ((char *)"15000");
   __pyx_t_503.description = ((char *)"Alaska Native Games, Eskimo Olympics, general");
 
-  /* "pyfit/mets.pyx":510
+  /* "pyfit/mets.pyx":512
  *     		MET(1.3,"14030","passive, light effort, kissing, hugging"),
  *     		MET(5.5,"15000","Alaska Native Games, Eskimo Olympics, general"),
  *     		MET(4.3,"15010","archery, non-hunting"),             # <<<<<<<<<<<<<<
@@ -7280,7 +7289,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_504.code = ((char *)"15010");
   __pyx_t_504.description = ((char *)"archery, non-hunting");
 
-  /* "pyfit/mets.pyx":511
+  /* "pyfit/mets.pyx":513
  *     		MET(5.5,"15000","Alaska Native Games, Eskimo Olympics, general"),
  *     		MET(4.3,"15010","archery, non-hunting"),
  *     		MET(7.0,"15020","badminton, competitive (Taylor Code 450)"),             # <<<<<<<<<<<<<<
@@ -7291,7 +7300,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_505.code = ((char *)"15020");
   __pyx_t_505.description = ((char *)"badminton, competitive (Taylor Code 450)");
 
-  /* "pyfit/mets.pyx":512
+  /* "pyfit/mets.pyx":514
  *     		MET(4.3,"15010","archery, non-hunting"),
  *     		MET(7.0,"15020","badminton, competitive (Taylor Code 450)"),
  *     		MET(5.5,"15030","badminton, social singles and doubles, general"),             # <<<<<<<<<<<<<<
@@ -7302,7 +7311,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_506.code = ((char *)"15030");
   __pyx_t_506.description = ((char *)"badminton, social singles and doubles, general");
 
-  /* "pyfit/mets.pyx":513
+  /* "pyfit/mets.pyx":515
  *     		MET(7.0,"15020","badminton, competitive (Taylor Code 450)"),
  *     		MET(5.5,"15030","badminton, social singles and doubles, general"),
  *     		MET(8.0,"15040","basketball, game (Taylor Code 490)"),             # <<<<<<<<<<<<<<
@@ -7313,7 +7322,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_507.code = ((char *)"15040");
   __pyx_t_507.description = ((char *)"basketball, game (Taylor Code 490)");
 
-  /* "pyfit/mets.pyx":514
+  /* "pyfit/mets.pyx":516
  *     		MET(5.5,"15030","badminton, social singles and doubles, general"),
  *     		MET(8.0,"15040","basketball, game (Taylor Code 490)"),
  *     		MET(6.0,"15050","basketball, non-game, general (Taylor Code 480)"),             # <<<<<<<<<<<<<<
@@ -7324,7 +7333,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_508.code = ((char *)"15050");
   __pyx_t_508.description = ((char *)"basketball, non-game, general (Taylor Code 480)");
 
-  /* "pyfit/mets.pyx":515
+  /* "pyfit/mets.pyx":517
  *     		MET(8.0,"15040","basketball, game (Taylor Code 490)"),
  *     		MET(6.0,"15050","basketball, non-game, general (Taylor Code 480)"),
  *     		MET(6.5,"15055","basketball, general"),             # <<<<<<<<<<<<<<
@@ -7335,7 +7344,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_509.code = ((char *)"15055");
   __pyx_t_509.description = ((char *)"basketball, general");
 
-  /* "pyfit/mets.pyx":516
+  /* "pyfit/mets.pyx":518
  *     		MET(6.0,"15050","basketball, non-game, general (Taylor Code 480)"),
  *     		MET(6.5,"15055","basketball, general"),
  *     		MET(7.0,"15060","basketball, officiating (Taylor Code 500)"),             # <<<<<<<<<<<<<<
@@ -7346,7 +7355,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_510.code = ((char *)"15060");
   __pyx_t_510.description = ((char *)"basketball, officiating (Taylor Code 500)");
 
-  /* "pyfit/mets.pyx":517
+  /* "pyfit/mets.pyx":519
  *     		MET(6.5,"15055","basketball, general"),
  *     		MET(7.0,"15060","basketball, officiating (Taylor Code 500)"),
  *     		MET(4.5,"15070","basketball, shooting baskets"),             # <<<<<<<<<<<<<<
@@ -7357,7 +7366,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_511.code = ((char *)"15070");
   __pyx_t_511.description = ((char *)"basketball, shooting baskets");
 
-  /* "pyfit/mets.pyx":518
+  /* "pyfit/mets.pyx":520
  *     		MET(7.0,"15060","basketball, officiating (Taylor Code 500)"),
  *     		MET(4.5,"15070","basketball, shooting baskets"),
  *     		MET(9.3,"15072","basketball, drills, practice"),             # <<<<<<<<<<<<<<
@@ -7368,7 +7377,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_512.code = ((char *)"15072");
   __pyx_t_512.description = ((char *)"basketball, drills, practice");
 
-  /* "pyfit/mets.pyx":519
+  /* "pyfit/mets.pyx":521
  *     		MET(4.5,"15070","basketball, shooting baskets"),
  *     		MET(9.3,"15072","basketball, drills, practice"),
  *     		MET(7.8,"15075","basketball, wheelchair"),             # <<<<<<<<<<<<<<
@@ -7379,7 +7388,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_513.code = ((char *)"15075");
   __pyx_t_513.description = ((char *)"basketball, wheelchair");
 
-  /* "pyfit/mets.pyx":520
+  /* "pyfit/mets.pyx":522
  *     		MET(9.3,"15072","basketball, drills, practice"),
  *     		MET(7.8,"15075","basketball, wheelchair"),
  *     		MET(2.5,"15080","billiards"),             # <<<<<<<<<<<<<<
@@ -7390,7 +7399,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_514.code = ((char *)"15080");
   __pyx_t_514.description = ((char *)"billiards");
 
-  /* "pyfit/mets.pyx":521
+  /* "pyfit/mets.pyx":523
  *     		MET(7.8,"15075","basketball, wheelchair"),
  *     		MET(2.5,"15080","billiards"),
  *     		MET(3.0,"15090","bowling (Taylor Code 390)"),             # <<<<<<<<<<<<<<
@@ -7401,7 +7410,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_515.code = ((char *)"15090");
   __pyx_t_515.description = ((char *)"bowling (Taylor Code 390)");
 
-  /* "pyfit/mets.pyx":522
+  /* "pyfit/mets.pyx":524
  *     		MET(2.5,"15080","billiards"),
  *     		MET(3.0,"15090","bowling (Taylor Code 390)"),
  *     		MET(3.8,"15092","bowling, indoor, bowling alley"),             # <<<<<<<<<<<<<<
@@ -7412,7 +7421,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_516.code = ((char *)"15092");
   __pyx_t_516.description = ((char *)"bowling, indoor, bowling alley");
 
-  /* "pyfit/mets.pyx":523
+  /* "pyfit/mets.pyx":525
  *     		MET(3.0,"15090","bowling (Taylor Code 390)"),
  *     		MET(3.8,"15092","bowling, indoor, bowling alley"),
  *     		MET(12.8,"15100","boxing, in ring, general"),             # <<<<<<<<<<<<<<
@@ -7423,7 +7432,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_517.code = ((char *)"15100");
   __pyx_t_517.description = ((char *)"boxing, in ring, general");
 
-  /* "pyfit/mets.pyx":524
+  /* "pyfit/mets.pyx":526
  *     		MET(3.8,"15092","bowling, indoor, bowling alley"),
  *     		MET(12.8,"15100","boxing, in ring, general"),
  *     		MET(5.5,"15110","boxing, punching bag"),             # <<<<<<<<<<<<<<
@@ -7434,7 +7443,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_518.code = ((char *)"15110");
   __pyx_t_518.description = ((char *)"boxing, punching bag");
 
-  /* "pyfit/mets.pyx":525
+  /* "pyfit/mets.pyx":527
  *     		MET(12.8,"15100","boxing, in ring, general"),
  *     		MET(5.5,"15110","boxing, punching bag"),
  *     		MET(7.8,"15120","boxing, sparring"),             # <<<<<<<<<<<<<<
@@ -7445,7 +7454,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_519.code = ((char *)"15120");
   __pyx_t_519.description = ((char *)"boxing, sparring");
 
-  /* "pyfit/mets.pyx":526
+  /* "pyfit/mets.pyx":528
  *     		MET(5.5,"15110","boxing, punching bag"),
  *     		MET(7.8,"15120","boxing, sparring"),
  *     		MET(7.0,"15130","broomball"),             # <<<<<<<<<<<<<<
@@ -7456,7 +7465,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_520.code = ((char *)"15130");
   __pyx_t_520.description = ((char *)"broomball");
 
-  /* "pyfit/mets.pyx":527
+  /* "pyfit/mets.pyx":529
  *     		MET(7.8,"15120","boxing, sparring"),
  *     		MET(7.0,"15130","broomball"),
  *     		MET(5.8,"15135","children\\u2019s games, adults playing (e.g., hopscotch, 4-square, dodge ball, playground apparatus, t-ball, tetherball, marbles, jacks, arcade games), moderate effort"),             # <<<<<<<<<<<<<<
@@ -7467,7 +7476,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_521.code = ((char *)"15135");
   __pyx_t_521.description = ((char *)"children\\u2019s games, adults playing (e.g., hopscotch, 4-square, dodge ball, playground apparatus, t-ball, tetherball, marbles, jacks, arcade games), moderate effort");
 
-  /* "pyfit/mets.pyx":528
+  /* "pyfit/mets.pyx":530
  *     		MET(7.0,"15130","broomball"),
  *     		MET(5.8,"15135","children\\u2019s games, adults playing (e.g., hopscotch, 4-square, dodge ball, playground apparatus, t-ball, tetherball, marbles, jacks, arcade games), moderate effort"),
  *     		MET(6.0,"15138","cheerleading, gymnastic moves, competitive"),             # <<<<<<<<<<<<<<
@@ -7478,7 +7487,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_522.code = ((char *)"15138");
   __pyx_t_522.description = ((char *)"cheerleading, gymnastic moves, competitive");
 
-  /* "pyfit/mets.pyx":529
+  /* "pyfit/mets.pyx":531
  *     		MET(5.8,"15135","children\\u2019s games, adults playing (e.g., hopscotch, 4-square, dodge ball, playground apparatus, t-ball, tetherball, marbles, jacks, arcade games), moderate effort"),
  *     		MET(6.0,"15138","cheerleading, gymnastic moves, competitive"),
  *     		MET(4.0,"15140","coaching, football, soccer, basketball, baseball, swimming, etc."),             # <<<<<<<<<<<<<<
@@ -7489,7 +7498,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_523.code = ((char *)"15140");
   __pyx_t_523.description = ((char *)"coaching, football, soccer, basketball, baseball, swimming, etc.");
 
-  /* "pyfit/mets.pyx":530
+  /* "pyfit/mets.pyx":532
  *     		MET(6.0,"15138","cheerleading, gymnastic moves, competitive"),
  *     		MET(4.0,"15140","coaching, football, soccer, basketball, baseball, swimming, etc."),
  *     		MET(8.0,"15142","coaching, actively playing sport with players"),             # <<<<<<<<<<<<<<
@@ -7500,7 +7509,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_524.code = ((char *)"15142");
   __pyx_t_524.description = ((char *)"coaching, actively playing sport with players");
 
-  /* "pyfit/mets.pyx":531
+  /* "pyfit/mets.pyx":533
  *     		MET(4.0,"15140","coaching, football, soccer, basketball, baseball, swimming, etc."),
  *     		MET(8.0,"15142","coaching, actively playing sport with players"),
  *     		MET(4.8,"15150","cricket, batting, bowling, fielding"),             # <<<<<<<<<<<<<<
@@ -7511,7 +7520,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_525.code = ((char *)"15150");
   __pyx_t_525.description = ((char *)"cricket, batting, bowling, fielding");
 
-  /* "pyfit/mets.pyx":532
+  /* "pyfit/mets.pyx":534
  *     		MET(8.0,"15142","coaching, actively playing sport with players"),
  *     		MET(4.8,"15150","cricket, batting, bowling, fielding"),
  *     		MET(3.3,"15160","croquet"),             # <<<<<<<<<<<<<<
@@ -7522,7 +7531,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_526.code = ((char *)"15160");
   __pyx_t_526.description = ((char *)"croquet");
 
-  /* "pyfit/mets.pyx":533
+  /* "pyfit/mets.pyx":535
  *     		MET(4.8,"15150","cricket, batting, bowling, fielding"),
  *     		MET(3.3,"15160","croquet"),
  *     		MET(4.0,"15170","curling"),             # <<<<<<<<<<<<<<
@@ -7533,7 +7542,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_527.code = ((char *)"15170");
   __pyx_t_527.description = ((char *)"curling");
 
-  /* "pyfit/mets.pyx":534
+  /* "pyfit/mets.pyx":536
  *     		MET(3.3,"15160","croquet"),
  *     		MET(4.0,"15170","curling"),
  *     		MET(2.5,"15180","darts, wall or lawn"),             # <<<<<<<<<<<<<<
@@ -7544,7 +7553,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_528.code = ((char *)"15180");
   __pyx_t_528.description = ((char *)"darts, wall or lawn");
 
-  /* "pyfit/mets.pyx":535
+  /* "pyfit/mets.pyx":537
  *     		MET(4.0,"15170","curling"),
  *     		MET(2.5,"15180","darts, wall or lawn"),
  *     		MET(6.0,"15190","drag racing, pushing or driving a car"),             # <<<<<<<<<<<<<<
@@ -7555,7 +7564,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_529.code = ((char *)"15190");
   __pyx_t_529.description = ((char *)"drag racing, pushing or driving a car");
 
-  /* "pyfit/mets.pyx":536
+  /* "pyfit/mets.pyx":538
  *     		MET(2.5,"15180","darts, wall or lawn"),
  *     		MET(6.0,"15190","drag racing, pushing or driving a car"),
  *     		MET(8.5,"15192","auto racing, open wheel"),             # <<<<<<<<<<<<<<
@@ -7566,7 +7575,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_530.code = ((char *)"15192");
   __pyx_t_530.description = ((char *)"auto racing, open wheel");
 
-  /* "pyfit/mets.pyx":537
+  /* "pyfit/mets.pyx":539
  *     		MET(6.0,"15190","drag racing, pushing or driving a car"),
  *     		MET(8.5,"15192","auto racing, open wheel"),
  *     		MET(6.0,"15200","fencing"),             # <<<<<<<<<<<<<<
@@ -7577,7 +7586,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_531.code = ((char *)"15200");
   __pyx_t_531.description = ((char *)"fencing");
 
-  /* "pyfit/mets.pyx":538
+  /* "pyfit/mets.pyx":540
  *     		MET(8.5,"15192","auto racing, open wheel"),
  *     		MET(6.0,"15200","fencing"),
  *     		MET(8.0,"15210","football, competitive"),             # <<<<<<<<<<<<<<
@@ -7588,7 +7597,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_532.code = ((char *)"15210");
   __pyx_t_532.description = ((char *)"football, competitive");
 
-  /* "pyfit/mets.pyx":539
+  /* "pyfit/mets.pyx":541
  *     		MET(6.0,"15200","fencing"),
  *     		MET(8.0,"15210","football, competitive"),
  *     		MET(8.0,"15230","football, touch, flag, general (Taylor Code 510)"),             # <<<<<<<<<<<<<<
@@ -7599,7 +7608,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_533.code = ((char *)"15230");
   __pyx_t_533.description = ((char *)"football, touch, flag, general (Taylor Code 510)");
 
-  /* "pyfit/mets.pyx":540
+  /* "pyfit/mets.pyx":542
  *     		MET(8.0,"15210","football, competitive"),
  *     		MET(8.0,"15230","football, touch, flag, general (Taylor Code 510)"),
  *     		MET(4.0,"15232","football, touch, flag, light effort"),             # <<<<<<<<<<<<<<
@@ -7610,7 +7619,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_534.code = ((char *)"15232");
   __pyx_t_534.description = ((char *)"football, touch, flag, light effort");
 
-  /* "pyfit/mets.pyx":541
+  /* "pyfit/mets.pyx":543
  *     		MET(8.0,"15230","football, touch, flag, general (Taylor Code 510)"),
  *     		MET(4.0,"15232","football, touch, flag, light effort"),
  *     		MET(2.5,"15235","football or baseball, playing catch"),             # <<<<<<<<<<<<<<
@@ -7621,7 +7630,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_535.code = ((char *)"15235");
   __pyx_t_535.description = ((char *)"football or baseball, playing catch");
 
-  /* "pyfit/mets.pyx":542
+  /* "pyfit/mets.pyx":544
  *     		MET(4.0,"15232","football, touch, flag, light effort"),
  *     		MET(2.5,"15235","football or baseball, playing catch"),
  *     		MET(3.0,"15240","frisbee playing, general"),             # <<<<<<<<<<<<<<
@@ -7632,7 +7641,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_536.code = ((char *)"15240");
   __pyx_t_536.description = ((char *)"frisbee playing, general");
 
-  /* "pyfit/mets.pyx":543
+  /* "pyfit/mets.pyx":545
  *     		MET(2.5,"15235","football or baseball, playing catch"),
  *     		MET(3.0,"15240","frisbee playing, general"),
  *     		MET(8.0,"15250","frisbee, ultimate"),             # <<<<<<<<<<<<<<
@@ -7643,7 +7652,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_537.code = ((char *)"15250");
   __pyx_t_537.description = ((char *)"frisbee, ultimate");
 
-  /* "pyfit/mets.pyx":544
+  /* "pyfit/mets.pyx":546
  *     		MET(3.0,"15240","frisbee playing, general"),
  *     		MET(8.0,"15250","frisbee, ultimate"),
  *     		MET(4.8,"15255","golf, general"),             # <<<<<<<<<<<<<<
@@ -7654,7 +7663,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_538.code = ((char *)"15255");
   __pyx_t_538.description = ((char *)"golf, general");
 
-  /* "pyfit/mets.pyx":545
+  /* "pyfit/mets.pyx":547
  *     		MET(8.0,"15250","frisbee, ultimate"),
  *     		MET(4.8,"15255","golf, general"),
  *     		MET(4.3,"15265","golf, walking, carrying clubs"),             # <<<<<<<<<<<<<<
@@ -7665,7 +7674,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_539.code = ((char *)"15265");
   __pyx_t_539.description = ((char *)"golf, walking, carrying clubs");
 
-  /* "pyfit/mets.pyx":546
+  /* "pyfit/mets.pyx":548
  *     		MET(4.8,"15255","golf, general"),
  *     		MET(4.3,"15265","golf, walking, carrying clubs"),
  *     		MET(3.0,"15270","golf, miniature, driving range"),             # <<<<<<<<<<<<<<
@@ -7676,7 +7685,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_540.code = ((char *)"15270");
   __pyx_t_540.description = ((char *)"golf, miniature, driving range");
 
-  /* "pyfit/mets.pyx":547
+  /* "pyfit/mets.pyx":549
  *     		MET(4.3,"15265","golf, walking, carrying clubs"),
  *     		MET(3.0,"15270","golf, miniature, driving range"),
  *     		MET(5.3,"15285","golf, walking, pulling clubs"),             # <<<<<<<<<<<<<<
@@ -7687,7 +7696,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_541.code = ((char *)"15285");
   __pyx_t_541.description = ((char *)"golf, walking, pulling clubs");
 
-  /* "pyfit/mets.pyx":548
+  /* "pyfit/mets.pyx":550
  *     		MET(3.0,"15270","golf, miniature, driving range"),
  *     		MET(5.3,"15285","golf, walking, pulling clubs"),
  *     		MET(3.5,"15290","golf, using power cart (Taylor Code 070)"),             # <<<<<<<<<<<<<<
@@ -7698,7 +7707,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_542.code = ((char *)"15290");
   __pyx_t_542.description = ((char *)"golf, using power cart (Taylor Code 070)");
 
-  /* "pyfit/mets.pyx":549
+  /* "pyfit/mets.pyx":551
  *     		MET(5.3,"15285","golf, walking, pulling clubs"),
  *     		MET(3.5,"15290","golf, using power cart (Taylor Code 070)"),
  *     		MET(3.8,"15300","gymnastics, general"),             # <<<<<<<<<<<<<<
@@ -7709,7 +7718,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_543.code = ((char *)"15300");
   __pyx_t_543.description = ((char *)"gymnastics, general");
 
-  /* "pyfit/mets.pyx":550
+  /* "pyfit/mets.pyx":552
  *     		MET(3.5,"15290","golf, using power cart (Taylor Code 070)"),
  *     		MET(3.8,"15300","gymnastics, general"),
  *     		MET(4.0,"15310","hacky sack"),             # <<<<<<<<<<<<<<
@@ -7720,7 +7729,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_544.code = ((char *)"15310");
   __pyx_t_544.description = ((char *)"hacky sack");
 
-  /* "pyfit/mets.pyx":551
+  /* "pyfit/mets.pyx":553
  *     		MET(3.8,"15300","gymnastics, general"),
  *     		MET(4.0,"15310","hacky sack"),
  *     		MET(12.0,"15320","handball, general (Taylor Code 520)"),             # <<<<<<<<<<<<<<
@@ -7731,7 +7740,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_545.code = ((char *)"15320");
   __pyx_t_545.description = ((char *)"handball, general (Taylor Code 520)");
 
-  /* "pyfit/mets.pyx":552
+  /* "pyfit/mets.pyx":554
  *     		MET(4.0,"15310","hacky sack"),
  *     		MET(12.0,"15320","handball, general (Taylor Code 520)"),
  *     		MET(8.0,"15330","handball, team"),             # <<<<<<<<<<<<<<
@@ -7742,7 +7751,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_546.code = ((char *)"15330");
   __pyx_t_546.description = ((char *)"handball, team");
 
-  /* "pyfit/mets.pyx":553
+  /* "pyfit/mets.pyx":555
  *     		MET(12.0,"15320","handball, general (Taylor Code 520)"),
  *     		MET(8.0,"15330","handball, team"),
  *     		MET(4.0,"15335","high ropes course, multiple elements"),             # <<<<<<<<<<<<<<
@@ -7753,7 +7762,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_547.code = ((char *)"15335");
   __pyx_t_547.description = ((char *)"high ropes course, multiple elements");
 
-  /* "pyfit/mets.pyx":554
+  /* "pyfit/mets.pyx":556
  *     		MET(8.0,"15330","handball, team"),
  *     		MET(4.0,"15335","high ropes course, multiple elements"),
  *     		MET(3.5,"15340","hang gliding"),             # <<<<<<<<<<<<<<
@@ -7764,7 +7773,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_548.code = ((char *)"15340");
   __pyx_t_548.description = ((char *)"hang gliding");
 
-  /* "pyfit/mets.pyx":555
+  /* "pyfit/mets.pyx":557
  *     		MET(4.0,"15335","high ropes course, multiple elements"),
  *     		MET(3.5,"15340","hang gliding"),
  *     		MET(7.8,"15350","hockey, field"),             # <<<<<<<<<<<<<<
@@ -7775,7 +7784,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_549.code = ((char *)"15350");
   __pyx_t_549.description = ((char *)"hockey, field");
 
-  /* "pyfit/mets.pyx":556
+  /* "pyfit/mets.pyx":558
  *     		MET(3.5,"15340","hang gliding"),
  *     		MET(7.8,"15350","hockey, field"),
  *     		MET(8.0,"15360","hockey, ice, general"),             # <<<<<<<<<<<<<<
@@ -7786,7 +7795,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_550.code = ((char *)"15360");
   __pyx_t_550.description = ((char *)"hockey, ice, general");
 
-  /* "pyfit/mets.pyx":557
+  /* "pyfit/mets.pyx":559
  *     		MET(7.8,"15350","hockey, field"),
  *     		MET(8.0,"15360","hockey, ice, general"),
  *     		MET(10.0,"15362","hockey, ice, competitive"),             # <<<<<<<<<<<<<<
@@ -7797,7 +7806,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_551.code = ((char *)"15362");
   __pyx_t_551.description = ((char *)"hockey, ice, competitive");
 
-  /* "pyfit/mets.pyx":558
+  /* "pyfit/mets.pyx":560
  *     		MET(8.0,"15360","hockey, ice, general"),
  *     		MET(10.0,"15362","hockey, ice, competitive"),
  *     		MET(5.5,"15370","horseback riding, general"),             # <<<<<<<<<<<<<<
@@ -7808,7 +7817,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_552.code = ((char *)"15370");
   __pyx_t_552.description = ((char *)"horseback riding, general");
 
-  /* "pyfit/mets.pyx":559
+  /* "pyfit/mets.pyx":561
  *     		MET(10.0,"15362","hockey, ice, competitive"),
  *     		MET(5.5,"15370","horseback riding, general"),
  *     		MET(4.3,"15375","horse chores, feeding, watering, cleaning stalls, implied walking and lifting loads"),             # <<<<<<<<<<<<<<
@@ -7819,7 +7828,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_553.code = ((char *)"15375");
   __pyx_t_553.description = ((char *)"horse chores, feeding, watering, cleaning stalls, implied walking and lifting loads");
 
-  /* "pyfit/mets.pyx":560
+  /* "pyfit/mets.pyx":562
  *     		MET(5.5,"15370","horseback riding, general"),
  *     		MET(4.3,"15375","horse chores, feeding, watering, cleaning stalls, implied walking and lifting loads"),
  *     		MET(4.5,"15380","saddling, cleaning, grooming, harnessing and unharnessing horse"),             # <<<<<<<<<<<<<<
@@ -7830,7 +7839,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_554.code = ((char *)"15380");
   __pyx_t_554.description = ((char *)"saddling, cleaning, grooming, harnessing and unharnessing horse");
 
-  /* "pyfit/mets.pyx":561
+  /* "pyfit/mets.pyx":563
  *     		MET(4.3,"15375","horse chores, feeding, watering, cleaning stalls, implied walking and lifting loads"),
  *     		MET(4.5,"15380","saddling, cleaning, grooming, harnessing and unharnessing horse"),
  *     		MET(5.8,"15390","horseback riding, trotting"),             # <<<<<<<<<<<<<<
@@ -7841,7 +7850,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_555.code = ((char *)"15390");
   __pyx_t_555.description = ((char *)"horseback riding, trotting");
 
-  /* "pyfit/mets.pyx":562
+  /* "pyfit/mets.pyx":564
  *     		MET(4.5,"15380","saddling, cleaning, grooming, harnessing and unharnessing horse"),
  *     		MET(5.8,"15390","horseback riding, trotting"),
  *     		MET(7.3,"15395","horseback riding, canter or gallop"),             # <<<<<<<<<<<<<<
@@ -7852,7 +7861,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_556.code = ((char *)"15395");
   __pyx_t_556.description = ((char *)"horseback riding, canter or gallop");
 
-  /* "pyfit/mets.pyx":563
+  /* "pyfit/mets.pyx":565
  *     		MET(5.8,"15390","horseback riding, trotting"),
  *     		MET(7.3,"15395","horseback riding, canter or gallop"),
  *     		MET(3.8,"15400","horseback riding,walking"),             # <<<<<<<<<<<<<<
@@ -7863,7 +7872,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_557.code = ((char *)"15400");
   __pyx_t_557.description = ((char *)"horseback riding,walking");
 
-  /* "pyfit/mets.pyx":564
+  /* "pyfit/mets.pyx":566
  *     		MET(7.3,"15395","horseback riding, canter or gallop"),
  *     		MET(3.8,"15400","horseback riding,walking"),
  *     		MET(9.0,"15402","horseback riding, jumping"),             # <<<<<<<<<<<<<<
@@ -7874,7 +7883,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_558.code = ((char *)"15402");
   __pyx_t_558.description = ((char *)"horseback riding, jumping");
 
-  /* "pyfit/mets.pyx":565
+  /* "pyfit/mets.pyx":567
  *     		MET(3.8,"15400","horseback riding,walking"),
  *     		MET(9.0,"15402","horseback riding, jumping"),
  *     		MET(1.8,"15408","horse cart, driving, standing or sitting"),             # <<<<<<<<<<<<<<
@@ -7885,7 +7894,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_559.code = ((char *)"15408");
   __pyx_t_559.description = ((char *)"horse cart, driving, standing or sitting");
 
-  /* "pyfit/mets.pyx":566
+  /* "pyfit/mets.pyx":568
  *     		MET(9.0,"15402","horseback riding, jumping"),
  *     		MET(1.8,"15408","horse cart, driving, standing or sitting"),
  *     		MET(3.0,"15410","horseshoe pitching, quoits"),             # <<<<<<<<<<<<<<
@@ -7896,7 +7905,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_560.code = ((char *)"15410");
   __pyx_t_560.description = ((char *)"horseshoe pitching, quoits");
 
-  /* "pyfit/mets.pyx":567
+  /* "pyfit/mets.pyx":569
  *     		MET(1.8,"15408","horse cart, driving, standing or sitting"),
  *     		MET(3.0,"15410","horseshoe pitching, quoits"),
  *     		MET(12.0,"15420","jai alai"),             # <<<<<<<<<<<<<<
@@ -7907,7 +7916,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_561.code = ((char *)"15420");
   __pyx_t_561.description = ((char *)"jai alai");
 
-  /* "pyfit/mets.pyx":568
+  /* "pyfit/mets.pyx":570
  *     		MET(3.0,"15410","horseshoe pitching, quoits"),
  *     		MET(12.0,"15420","jai alai"),
  *     		MET(5.3,"15425","martial arts, different types, slower pace, novice performers, practice"),             # <<<<<<<<<<<<<<
@@ -7918,7 +7927,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_562.code = ((char *)"15425");
   __pyx_t_562.description = ((char *)"martial arts, different types, slower pace, novice performers, practice");
 
-  /* "pyfit/mets.pyx":569
+  /* "pyfit/mets.pyx":571
  *     		MET(12.0,"15420","jai alai"),
  *     		MET(5.3,"15425","martial arts, different types, slower pace, novice performers, practice"),
  *     		MET(10.3,"15430","martial arts, different types, moderate pace (e.g., judo, jujitsu, karate, kick boxing, tae kwan do, tai-bo, Muay Thai boxing)"),             # <<<<<<<<<<<<<<
@@ -7929,7 +7938,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_563.code = ((char *)"15430");
   __pyx_t_563.description = ((char *)"martial arts, different types, moderate pace (e.g., judo, jujitsu, karate, kick boxing, tae kwan do, tai-bo, Muay Thai boxing)");
 
-  /* "pyfit/mets.pyx":570
+  /* "pyfit/mets.pyx":572
  *     		MET(5.3,"15425","martial arts, different types, slower pace, novice performers, practice"),
  *     		MET(10.3,"15430","martial arts, different types, moderate pace (e.g., judo, jujitsu, karate, kick boxing, tae kwan do, tai-bo, Muay Thai boxing)"),
  *     		MET(4.0,"15440","juggling"),             # <<<<<<<<<<<<<<
@@ -7940,7 +7949,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_564.code = ((char *)"15440");
   __pyx_t_564.description = ((char *)"juggling");
 
-  /* "pyfit/mets.pyx":571
+  /* "pyfit/mets.pyx":573
  *     		MET(10.3,"15430","martial arts, different types, moderate pace (e.g., judo, jujitsu, karate, kick boxing, tae kwan do, tai-bo, Muay Thai boxing)"),
  *     		MET(4.0,"15440","juggling"),
  *     		MET(7.0,"15450","kickball"),             # <<<<<<<<<<<<<<
@@ -7951,7 +7960,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_565.code = ((char *)"15450");
   __pyx_t_565.description = ((char *)"kickball");
 
-  /* "pyfit/mets.pyx":572
+  /* "pyfit/mets.pyx":574
  *     		MET(4.0,"15440","juggling"),
  *     		MET(7.0,"15450","kickball"),
  *     		MET(8.0,"15460","lacrosse"),             # <<<<<<<<<<<<<<
@@ -7962,7 +7971,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_566.code = ((char *)"15460");
   __pyx_t_566.description = ((char *)"lacrosse");
 
-  /* "pyfit/mets.pyx":573
+  /* "pyfit/mets.pyx":575
  *     		MET(7.0,"15450","kickball"),
  *     		MET(8.0,"15460","lacrosse"),
  *     		MET(3.3,"15465","lawn bowling, bocce ball, outdoor"),             # <<<<<<<<<<<<<<
@@ -7973,7 +7982,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_567.code = ((char *)"15465");
   __pyx_t_567.description = ((char *)"lawn bowling, bocce ball, outdoor");
 
-  /* "pyfit/mets.pyx":574
+  /* "pyfit/mets.pyx":576
  *     		MET(8.0,"15460","lacrosse"),
  *     		MET(3.3,"15465","lawn bowling, bocce ball, outdoor"),
  *     		MET(4.0,"15470","moto-cross, off-road motor sports, all-terrain vehicle, general"),             # <<<<<<<<<<<<<<
@@ -7984,7 +7993,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_568.code = ((char *)"15470");
   __pyx_t_568.description = ((char *)"moto-cross, off-road motor sports, all-terrain vehicle, general");
 
-  /* "pyfit/mets.pyx":575
+  /* "pyfit/mets.pyx":577
  *     		MET(3.3,"15465","lawn bowling, bocce ball, outdoor"),
  *     		MET(4.0,"15470","moto-cross, off-road motor sports, all-terrain vehicle, general"),
  *     		MET(9.0,"15480","orienteering"),             # <<<<<<<<<<<<<<
@@ -7995,7 +8004,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_569.code = ((char *)"15480");
   __pyx_t_569.description = ((char *)"orienteering");
 
-  /* "pyfit/mets.pyx":576
+  /* "pyfit/mets.pyx":578
  *     		MET(4.0,"15470","moto-cross, off-road motor sports, all-terrain vehicle, general"),
  *     		MET(9.0,"15480","orienteering"),
  *     		MET(10.0,"15490","paddleball, competitive"),             # <<<<<<<<<<<<<<
@@ -8006,7 +8015,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_570.code = ((char *)"15490");
   __pyx_t_570.description = ((char *)"paddleball, competitive");
 
-  /* "pyfit/mets.pyx":577
+  /* "pyfit/mets.pyx":579
  *     		MET(9.0,"15480","orienteering"),
  *     		MET(10.0,"15490","paddleball, competitive"),
  *     		MET(6.0,"15500","paddleball, casual, general (Taylor Code 460)"),             # <<<<<<<<<<<<<<
@@ -8017,7 +8026,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_571.code = ((char *)"15500");
   __pyx_t_571.description = ((char *)"paddleball, casual, general (Taylor Code 460)");
 
-  /* "pyfit/mets.pyx":578
+  /* "pyfit/mets.pyx":580
  *     		MET(10.0,"15490","paddleball, competitive"),
  *     		MET(6.0,"15500","paddleball, casual, general (Taylor Code 460)"),
  *     		MET(8.0,"15510","polo, on horseback"),             # <<<<<<<<<<<<<<
@@ -8028,7 +8037,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_572.code = ((char *)"15510");
   __pyx_t_572.description = ((char *)"polo, on horseback");
 
-  /* "pyfit/mets.pyx":579
+  /* "pyfit/mets.pyx":581
  *     		MET(6.0,"15500","paddleball, casual, general (Taylor Code 460)"),
  *     		MET(8.0,"15510","polo, on horseback"),
  *     		MET(10.0,"15520","racquetball, competitive"),             # <<<<<<<<<<<<<<
@@ -8039,7 +8048,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_573.code = ((char *)"15520");
   __pyx_t_573.description = ((char *)"racquetball, competitive");
 
-  /* "pyfit/mets.pyx":580
+  /* "pyfit/mets.pyx":582
  *     		MET(8.0,"15510","polo, on horseback"),
  *     		MET(10.0,"15520","racquetball, competitive"),
  *     		MET(7.0,"15530","racquetball, general (Taylor Code 470)"),             # <<<<<<<<<<<<<<
@@ -8050,7 +8059,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_574.code = ((char *)"15530");
   __pyx_t_574.description = ((char *)"racquetball, general (Taylor Code 470)");
 
-  /* "pyfit/mets.pyx":581
+  /* "pyfit/mets.pyx":583
  *     		MET(10.0,"15520","racquetball, competitive"),
  *     		MET(7.0,"15530","racquetball, general (Taylor Code 470)"),
  *     		MET(8.0,"15533","rock or mountain climbing (Taylor Code 470) "),             # <<<<<<<<<<<<<<
@@ -8061,7 +8070,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_575.code = ((char *)"15533");
   __pyx_t_575.description = ((char *)"rock or mountain climbing (Taylor Code 470) ");
 
-  /* "pyfit/mets.pyx":582
+  /* "pyfit/mets.pyx":584
  *     		MET(7.0,"15530","racquetball, general (Taylor Code 470)"),
  *     		MET(8.0,"15533","rock or mountain climbing (Taylor Code 470) "),
  *     		MET(7.5,"15535","rock climbing, ascending rock, high difficulty"),             # <<<<<<<<<<<<<<
@@ -8072,7 +8081,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_576.code = ((char *)"15535");
   __pyx_t_576.description = ((char *)"rock climbing, ascending rock, high difficulty");
 
-  /* "pyfit/mets.pyx":583
+  /* "pyfit/mets.pyx":585
  *     		MET(8.0,"15533","rock or mountain climbing (Taylor Code 470) "),
  *     		MET(7.5,"15535","rock climbing, ascending rock, high difficulty"),
  *     		MET(5.8,"15537","rock climbing, ascending or traversing rock, low-to-moderate difficulty"),             # <<<<<<<<<<<<<<
@@ -8083,7 +8092,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_577.code = ((char *)"15537");
   __pyx_t_577.description = ((char *)"rock climbing, ascending or traversing rock, low-to-moderate difficulty");
 
-  /* "pyfit/mets.pyx":584
+  /* "pyfit/mets.pyx":586
  *     		MET(7.5,"15535","rock climbing, ascending rock, high difficulty"),
  *     		MET(5.8,"15537","rock climbing, ascending or traversing rock, low-to-moderate difficulty"),
  *     		MET(5.0,"15540","rock climbing, rappelling"),             # <<<<<<<<<<<<<<
@@ -8094,7 +8103,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_578.code = ((char *)"15540");
   __pyx_t_578.description = ((char *)"rock climbing, rappelling");
 
-  /* "pyfit/mets.pyx":585
+  /* "pyfit/mets.pyx":587
  *     		MET(5.8,"15537","rock climbing, ascending or traversing rock, low-to-moderate difficulty"),
  *     		MET(5.0,"15540","rock climbing, rappelling"),
  *     		MET(4.0,"15542","rodeo sports, general, light effort"),             # <<<<<<<<<<<<<<
@@ -8105,7 +8114,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_579.code = ((char *)"15542");
   __pyx_t_579.description = ((char *)"rodeo sports, general, light effort");
 
-  /* "pyfit/mets.pyx":586
+  /* "pyfit/mets.pyx":588
  *     		MET(5.0,"15540","rock climbing, rappelling"),
  *     		MET(4.0,"15542","rodeo sports, general, light effort"),
  *     		MET(5.5,"15544","rodeo sports, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -8116,7 +8125,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_580.code = ((char *)"15544");
   __pyx_t_580.description = ((char *)"rodeo sports, general, moderate effort");
 
-  /* "pyfit/mets.pyx":587
+  /* "pyfit/mets.pyx":589
  *     		MET(4.0,"15542","rodeo sports, general, light effort"),
  *     		MET(5.5,"15544","rodeo sports, general, moderate effort"),
  *     		MET(7.0,"15546","rodeo sports, general, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -8127,7 +8136,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_581.code = ((char *)"15546");
   __pyx_t_581.description = ((char *)"rodeo sports, general, vigorous effort");
 
-  /* "pyfit/mets.pyx":588
+  /* "pyfit/mets.pyx":590
  *     		MET(5.5,"15544","rodeo sports, general, moderate effort"),
  *     		MET(7.0,"15546","rodeo sports, general, vigorous effort"),
  *     		MET(12.3,"15550","rope jumping, fast pace, 120-160 skips/min"),             # <<<<<<<<<<<<<<
@@ -8138,7 +8147,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_582.code = ((char *)"15550");
   __pyx_t_582.description = ((char *)"rope jumping, fast pace, 120-160 skips/min");
 
-  /* "pyfit/mets.pyx":589
+  /* "pyfit/mets.pyx":591
  *     		MET(7.0,"15546","rodeo sports, general, vigorous effort"),
  *     		MET(12.3,"15550","rope jumping, fast pace, 120-160 skips/min"),
  *     		MET(11.8,"15551","rope jumping, moderate pace, 100-120 skips/min, general,\\u00a0 2 foot skip, plain bounce"),             # <<<<<<<<<<<<<<
@@ -8149,7 +8158,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_583.code = ((char *)"15551");
   __pyx_t_583.description = ((char *)"rope jumping, moderate pace, 100-120 skips/min, general,\\u00a0 2 foot skip, plain bounce");
 
-  /* "pyfit/mets.pyx":590
+  /* "pyfit/mets.pyx":592
  *     		MET(12.3,"15550","rope jumping, fast pace, 120-160 skips/min"),
  *     		MET(11.8,"15551","rope jumping, moderate pace, 100-120 skips/min, general,\\u00a0 2 foot skip, plain bounce"),
  *     		MET(8.8,"15552","rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce"),             # <<<<<<<<<<<<<<
@@ -8160,7 +8169,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_584.code = ((char *)"15552");
   __pyx_t_584.description = ((char *)"rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce");
 
-  /* "pyfit/mets.pyx":591
+  /* "pyfit/mets.pyx":593
  *     		MET(11.8,"15551","rope jumping, moderate pace, 100-120 skips/min, general,\\u00a0 2 foot skip, plain bounce"),
  *     		MET(8.8,"15552","rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce"),
  *     		MET(8.3,"15560","rugby, union, team, competitive"),             # <<<<<<<<<<<<<<
@@ -8171,7 +8180,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_585.code = ((char *)"15560");
   __pyx_t_585.description = ((char *)"rugby, union, team, competitive");
 
-  /* "pyfit/mets.pyx":592
+  /* "pyfit/mets.pyx":594
  *     		MET(8.8,"15552","rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce"),
  *     		MET(8.3,"15560","rugby, union, team, competitive"),
  *     		MET(6.3,"15562","rugby, touch, non-competitive"),             # <<<<<<<<<<<<<<
@@ -8182,7 +8191,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_586.code = ((char *)"15562");
   __pyx_t_586.description = ((char *)"rugby, touch, non-competitive");
 
-  /* "pyfit/mets.pyx":593
+  /* "pyfit/mets.pyx":595
  *     		MET(8.3,"15560","rugby, union, team, competitive"),
  *     		MET(6.3,"15562","rugby, touch, non-competitive"),
  *     		MET(3.0,"15570","shuffleboard"),             # <<<<<<<<<<<<<<
@@ -8193,7 +8202,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_587.code = ((char *)"15570");
   __pyx_t_587.description = ((char *)"shuffleboard");
 
-  /* "pyfit/mets.pyx":594
+  /* "pyfit/mets.pyx":596
  *     		MET(6.3,"15562","rugby, touch, non-competitive"),
  *     		MET(3.0,"15570","shuffleboard"),
  *     		MET(5.0,"15580","skateboarding, general, moderate effort"),             # <<<<<<<<<<<<<<
@@ -8204,7 +8213,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_588.code = ((char *)"15580");
   __pyx_t_588.description = ((char *)"skateboarding, general, moderate effort");
 
-  /* "pyfit/mets.pyx":595
+  /* "pyfit/mets.pyx":597
  *     		MET(3.0,"15570","shuffleboard"),
  *     		MET(5.0,"15580","skateboarding, general, moderate effort"),
  *     		MET(6.0,"15582","skateboarding, competitive, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -8215,7 +8224,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_589.code = ((char *)"15582");
   __pyx_t_589.description = ((char *)"skateboarding, competitive, vigorous effort");
 
-  /* "pyfit/mets.pyx":596
+  /* "pyfit/mets.pyx":598
  *     		MET(5.0,"15580","skateboarding, general, moderate effort"),
  *     		MET(6.0,"15582","skateboarding, competitive, vigorous effort"),
  *     		MET(7.0,"15590","skating, roller (Taylor Code 360)"),             # <<<<<<<<<<<<<<
@@ -8226,7 +8235,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_590.code = ((char *)"15590");
   __pyx_t_590.description = ((char *)"skating, roller (Taylor Code 360)");
 
-  /* "pyfit/mets.pyx":597
+  /* "pyfit/mets.pyx":599
  *     		MET(6.0,"15582","skateboarding, competitive, vigorous effort"),
  *     		MET(7.0,"15590","skating, roller (Taylor Code 360)"),
  *     		MET(7.5,"15591","rollerblading, in-line skating, 14.4 km/h (9.0 mph), recreational pace"),             # <<<<<<<<<<<<<<
@@ -8237,7 +8246,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_591.code = ((char *)"15591");
   __pyx_t_591.description = ((char *)"rollerblading, in-line skating, 14.4 km/h (9.0 mph), recreational pace");
 
-  /* "pyfit/mets.pyx":598
+  /* "pyfit/mets.pyx":600
  *     		MET(7.0,"15590","skating, roller (Taylor Code 360)"),
  *     		MET(7.5,"15591","rollerblading, in-line skating, 14.4 km/h (9.0 mph), recreational pace"),
  *     		MET(9.8,"15592","rollerblading, in-line skating, 17.7 km/h (11.0 mph), moderate pace, exercise training"),             # <<<<<<<<<<<<<<
@@ -8248,7 +8257,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_592.code = ((char *)"15592");
   __pyx_t_592.description = ((char *)"rollerblading, in-line skating, 17.7 km/h (11.0 mph), moderate pace, exercise training");
 
-  /* "pyfit/mets.pyx":599
+  /* "pyfit/mets.pyx":601
  *     		MET(7.5,"15591","rollerblading, in-line skating, 14.4 km/h (9.0 mph), recreational pace"),
  *     		MET(9.8,"15592","rollerblading, in-line skating, 17.7 km/h (11.0 mph), moderate pace, exercise training"),
  *     		MET(12.3,"15593","rollerblading, in-line skating, 21.0 to 21.7 km/h (13.0 to 13.6 mph), fast pace, exercise training"),             # <<<<<<<<<<<<<<
@@ -8259,7 +8268,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_593.code = ((char *)"15593");
   __pyx_t_593.description = ((char *)"rollerblading, in-line skating, 21.0 to 21.7 km/h (13.0 to 13.6 mph), fast pace, exercise training");
 
-  /* "pyfit/mets.pyx":600
+  /* "pyfit/mets.pyx":602
  *     		MET(9.8,"15592","rollerblading, in-line skating, 17.7 km/h (11.0 mph), moderate pace, exercise training"),
  *     		MET(12.3,"15593","rollerblading, in-line skating, 21.0 to 21.7 km/h (13.0 to 13.6 mph), fast pace, exercise training"),
  *     		MET(14.0,"15594","rollerblading, in-line skating, 24.0 km/h (15.0 mph), maximal effort"),             # <<<<<<<<<<<<<<
@@ -8270,7 +8279,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_594.code = ((char *)"15594");
   __pyx_t_594.description = ((char *)"rollerblading, in-line skating, 24.0 km/h (15.0 mph), maximal effort");
 
-  /* "pyfit/mets.pyx":601
+  /* "pyfit/mets.pyx":603
  *     		MET(12.3,"15593","rollerblading, in-line skating, 21.0 to 21.7 km/h (13.0 to 13.6 mph), fast pace, exercise training"),
  *     		MET(14.0,"15594","rollerblading, in-line skating, 24.0 km/h (15.0 mph), maximal effort"),
  *     		MET(3.5,"15600","skydiving, base jumping, bungee jumping"),             # <<<<<<<<<<<<<<
@@ -8281,7 +8290,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_595.code = ((char *)"15600");
   __pyx_t_595.description = ((char *)"skydiving, base jumping, bungee jumping");
 
-  /* "pyfit/mets.pyx":602
+  /* "pyfit/mets.pyx":604
  *     		MET(14.0,"15594","rollerblading, in-line skating, 24.0 km/h (15.0 mph), maximal effort"),
  *     		MET(3.5,"15600","skydiving, base jumping, bungee jumping"),
  *     		MET(10.0,"15605","soccer, competitive"),             # <<<<<<<<<<<<<<
@@ -8292,7 +8301,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_596.code = ((char *)"15605");
   __pyx_t_596.description = ((char *)"soccer, competitive");
 
-  /* "pyfit/mets.pyx":603
+  /* "pyfit/mets.pyx":605
  *     		MET(3.5,"15600","skydiving, base jumping, bungee jumping"),
  *     		MET(10.0,"15605","soccer, competitive"),
  *     		MET(7.0,"15610","soccer, casual, general (Taylor Code 540)"),             # <<<<<<<<<<<<<<
@@ -8303,7 +8312,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_597.code = ((char *)"15610");
   __pyx_t_597.description = ((char *)"soccer, casual, general (Taylor Code 540)");
 
-  /* "pyfit/mets.pyx":604
+  /* "pyfit/mets.pyx":606
  *     		MET(10.0,"15605","soccer, competitive"),
  *     		MET(7.0,"15610","soccer, casual, general (Taylor Code 540)"),
  *     		MET(5.0,"15620","softball or baseball, fast or slow pitch, general (Taylor Code 440)"),             # <<<<<<<<<<<<<<
@@ -8314,7 +8323,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_598.code = ((char *)"15620");
   __pyx_t_598.description = ((char *)"softball or baseball, fast or slow pitch, general (Taylor Code 440)");
 
-  /* "pyfit/mets.pyx":605
+  /* "pyfit/mets.pyx":607
  *     		MET(7.0,"15610","soccer, casual, general (Taylor Code 540)"),
  *     		MET(5.0,"15620","softball or baseball, fast or slow pitch, general (Taylor Code 440)"),
  *     		MET(4.0,"15625","softball, practice"),             # <<<<<<<<<<<<<<
@@ -8325,7 +8334,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_599.code = ((char *)"15625");
   __pyx_t_599.description = ((char *)"softball, practice");
 
-  /* "pyfit/mets.pyx":606
+  /* "pyfit/mets.pyx":608
  *     		MET(5.0,"15620","softball or baseball, fast or slow pitch, general (Taylor Code 440)"),
  *     		MET(4.0,"15625","softball, practice"),
  *     		MET(4.0,"15630","softball, officiating"),             # <<<<<<<<<<<<<<
@@ -8336,7 +8345,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_600.code = ((char *)"15630");
   __pyx_t_600.description = ((char *)"softball, officiating");
 
-  /* "pyfit/mets.pyx":607
+  /* "pyfit/mets.pyx":609
  *     		MET(4.0,"15625","softball, practice"),
  *     		MET(4.0,"15630","softball, officiating"),
  *     		MET(6.0,"15640","softball,pitching"),             # <<<<<<<<<<<<<<
@@ -8347,7 +8356,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_601.code = ((char *)"15640");
   __pyx_t_601.description = ((char *)"softball,pitching");
 
-  /* "pyfit/mets.pyx":608
+  /* "pyfit/mets.pyx":610
  *     		MET(4.0,"15630","softball, officiating"),
  *     		MET(6.0,"15640","softball,pitching"),
  *     		MET(3.3,"15645","sports spectator, very excited, emotional, physically moving\\u00a0"),             # <<<<<<<<<<<<<<
@@ -8358,7 +8367,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_602.code = ((char *)"15645");
   __pyx_t_602.description = ((char *)"sports spectator, very excited, emotional, physically moving\\u00a0");
 
-  /* "pyfit/mets.pyx":609
+  /* "pyfit/mets.pyx":611
  *     		MET(6.0,"15640","softball,pitching"),
  *     		MET(3.3,"15645","sports spectator, very excited, emotional, physically moving\\u00a0"),
  *     		MET(12.0,"15650","squash (Taylor Code 530)"),             # <<<<<<<<<<<<<<
@@ -8369,7 +8378,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_603.code = ((char *)"15650");
   __pyx_t_603.description = ((char *)"squash (Taylor Code 530)");
 
-  /* "pyfit/mets.pyx":610
+  /* "pyfit/mets.pyx":612
  *     		MET(3.3,"15645","sports spectator, very excited, emotional, physically moving\\u00a0"),
  *     		MET(12.0,"15650","squash (Taylor Code 530)"),
  *     		MET(7.3,"15652","squash, general"),             # <<<<<<<<<<<<<<
@@ -8380,7 +8389,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_604.code = ((char *)"15652");
   __pyx_t_604.description = ((char *)"squash, general");
 
-  /* "pyfit/mets.pyx":611
+  /* "pyfit/mets.pyx":613
  *     		MET(12.0,"15650","squash (Taylor Code 530)"),
  *     		MET(7.3,"15652","squash, general"),
  *     		MET(4.0,"15660","table tennis, ping pong (Taylor Code 410)"),             # <<<<<<<<<<<<<<
@@ -8391,7 +8400,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_605.code = ((char *)"15660");
   __pyx_t_605.description = ((char *)"table tennis, ping pong (Taylor Code 410)");
 
-  /* "pyfit/mets.pyx":612
+  /* "pyfit/mets.pyx":614
  *     		MET(7.3,"15652","squash, general"),
  *     		MET(4.0,"15660","table tennis, ping pong (Taylor Code 410)"),
  *     		MET(3.0,"15670","tai chi, qi gong, general"),             # <<<<<<<<<<<<<<
@@ -8402,7 +8411,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_606.code = ((char *)"15670");
   __pyx_t_606.description = ((char *)"tai chi, qi gong, general");
 
-  /* "pyfit/mets.pyx":613
+  /* "pyfit/mets.pyx":615
  *     		MET(4.0,"15660","table tennis, ping pong (Taylor Code 410)"),
  *     		MET(3.0,"15670","tai chi, qi gong, general"),
  *     		MET(1.5,"15672","tai chi, qi gong, sitting, light effort"),             # <<<<<<<<<<<<<<
@@ -8413,7 +8422,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_607.code = ((char *)"15672");
   __pyx_t_607.description = ((char *)"tai chi, qi gong, sitting, light effort");
 
-  /* "pyfit/mets.pyx":614
+  /* "pyfit/mets.pyx":616
  *     		MET(3.0,"15670","tai chi, qi gong, general"),
  *     		MET(1.5,"15672","tai chi, qi gong, sitting, light effort"),
  *     		MET(7.3,"15675","tennis, general"),             # <<<<<<<<<<<<<<
@@ -8424,7 +8433,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_608.code = ((char *)"15675");
   __pyx_t_608.description = ((char *)"tennis, general");
 
-  /* "pyfit/mets.pyx":615
+  /* "pyfit/mets.pyx":617
  *     		MET(1.5,"15672","tai chi, qi gong, sitting, light effort"),
  *     		MET(7.3,"15675","tennis, general"),
  *     		MET(6.0,"15680","tennis, doubles (Taylor Code 430)"),             # <<<<<<<<<<<<<<
@@ -8435,7 +8444,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_609.code = ((char *)"15680");
   __pyx_t_609.description = ((char *)"tennis, doubles (Taylor Code 430)");
 
-  /* "pyfit/mets.pyx":616
+  /* "pyfit/mets.pyx":618
  *     		MET(7.3,"15675","tennis, general"),
  *     		MET(6.0,"15680","tennis, doubles (Taylor Code 430)"),
  *     		MET(4.5,"15685","tennis, doubles"),             # <<<<<<<<<<<<<<
@@ -8446,7 +8455,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_610.code = ((char *)"15685");
   __pyx_t_610.description = ((char *)"tennis, doubles");
 
-  /* "pyfit/mets.pyx":617
+  /* "pyfit/mets.pyx":619
  *     		MET(6.0,"15680","tennis, doubles (Taylor Code 430)"),
  *     		MET(4.5,"15685","tennis, doubles"),
  *     		MET(8.0,"15690","tennis, singles (Taylor Code 420)"),             # <<<<<<<<<<<<<<
@@ -8457,7 +8466,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_611.code = ((char *)"15690");
   __pyx_t_611.description = ((char *)"tennis, singles (Taylor Code 420)");
 
-  /* "pyfit/mets.pyx":618
+  /* "pyfit/mets.pyx":620
  *     		MET(4.5,"15685","tennis, doubles"),
  *     		MET(8.0,"15690","tennis, singles (Taylor Code 420)"),
  *     		MET(5.0,"15695","tennis, hitting balls, non-game play, moderate effort"),             # <<<<<<<<<<<<<<
@@ -8468,7 +8477,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_612.code = ((char *)"15695");
   __pyx_t_612.description = ((char *)"tennis, hitting balls, non-game play, moderate effort");
 
-  /* "pyfit/mets.pyx":619
+  /* "pyfit/mets.pyx":621
  *     		MET(8.0,"15690","tennis, singles (Taylor Code 420)"),
  *     		MET(5.0,"15695","tennis, hitting balls, non-game play, moderate effort"),
  *     		MET(3.5,"15700","trampoline, recreational"),             # <<<<<<<<<<<<<<
@@ -8479,7 +8488,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_613.code = ((char *)"15700");
   __pyx_t_613.description = ((char *)"trampoline, recreational");
 
-  /* "pyfit/mets.pyx":620
+  /* "pyfit/mets.pyx":622
  *     		MET(5.0,"15695","tennis, hitting balls, non-game play, moderate effort"),
  *     		MET(3.5,"15700","trampoline, recreational"),
  *     		MET(4.5,"15702","trampoline, competitive"),             # <<<<<<<<<<<<<<
@@ -8490,7 +8499,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_614.code = ((char *)"15702");
   __pyx_t_614.description = ((char *)"trampoline, competitive");
 
-  /* "pyfit/mets.pyx":621
+  /* "pyfit/mets.pyx":623
  *     		MET(3.5,"15700","trampoline, recreational"),
  *     		MET(4.5,"15702","trampoline, competitive"),
  *     		MET(4.0,"15710","volleyball (Taylor Code 400)"),             # <<<<<<<<<<<<<<
@@ -8501,7 +8510,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_615.code = ((char *)"15710");
   __pyx_t_615.description = ((char *)"volleyball (Taylor Code 400)");
 
-  /* "pyfit/mets.pyx":622
+  /* "pyfit/mets.pyx":624
  *     		MET(4.5,"15702","trampoline, competitive"),
  *     		MET(4.0,"15710","volleyball (Taylor Code 400)"),
  *     		MET(6.0,"15711","volleyball, competitive, in gymnasium"),             # <<<<<<<<<<<<<<
@@ -8512,7 +8521,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_616.code = ((char *)"15711");
   __pyx_t_616.description = ((char *)"volleyball, competitive, in gymnasium");
 
-  /* "pyfit/mets.pyx":623
+  /* "pyfit/mets.pyx":625
  *     		MET(4.0,"15710","volleyball (Taylor Code 400)"),
  *     		MET(6.0,"15711","volleyball, competitive, in gymnasium"),
  *     		MET(3.0,"15720","volleyball, non-competitive, 6 - 9 member team, general"),             # <<<<<<<<<<<<<<
@@ -8523,7 +8532,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_617.code = ((char *)"15720");
   __pyx_t_617.description = ((char *)"volleyball, non-competitive, 6 - 9 member team, general");
 
-  /* "pyfit/mets.pyx":624
+  /* "pyfit/mets.pyx":626
  *     		MET(6.0,"15711","volleyball, competitive, in gymnasium"),
  *     		MET(3.0,"15720","volleyball, non-competitive, 6 - 9 member team, general"),
  *     		MET(8.0,"15725","volleyball, beach, in sand"),             # <<<<<<<<<<<<<<
@@ -8534,7 +8543,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_618.code = ((char *)"15725");
   __pyx_t_618.description = ((char *)"volleyball, beach, in sand");
 
-  /* "pyfit/mets.pyx":625
+  /* "pyfit/mets.pyx":627
  *     		MET(3.0,"15720","volleyball, non-competitive, 6 - 9 member team, general"),
  *     		MET(8.0,"15725","volleyball, beach, in sand"),
  *     		MET(6.0,"15730","wrestling (one match = 5 minutes)"),             # <<<<<<<<<<<<<<
@@ -8545,7 +8554,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_619.code = ((char *)"15730");
   __pyx_t_619.description = ((char *)"wrestling (one match = 5 minutes)");
 
-  /* "pyfit/mets.pyx":626
+  /* "pyfit/mets.pyx":628
  *     		MET(8.0,"15725","volleyball, beach, in sand"),
  *     		MET(6.0,"15730","wrestling (one match = 5 minutes)"),
  *     		MET(7.0,"15731","wallyball, general"),             # <<<<<<<<<<<<<<
@@ -8556,7 +8565,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_620.code = ((char *)"15731");
   __pyx_t_620.description = ((char *)"wallyball, general");
 
-  /* "pyfit/mets.pyx":627
+  /* "pyfit/mets.pyx":629
  *     		MET(6.0,"15730","wrestling (one match = 5 minutes)"),
  *     		MET(7.0,"15731","wallyball, general"),
  *     		MET(4.0,"15732","track and field (e.g., shot, discus, hammer throw)"),             # <<<<<<<<<<<<<<
@@ -8567,7 +8576,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_621.code = ((char *)"15732");
   __pyx_t_621.description = ((char *)"track and field (e.g., shot, discus, hammer throw)");
 
-  /* "pyfit/mets.pyx":628
+  /* "pyfit/mets.pyx":630
  *     		MET(7.0,"15731","wallyball, general"),
  *     		MET(4.0,"15732","track and field (e.g., shot, discus, hammer throw)"),
  *     		MET(6.0,"15733","track and field (e.g., high jump, long jump, triple jump, javelin, pole vault)"),             # <<<<<<<<<<<<<<
@@ -8578,7 +8587,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_622.code = ((char *)"15733");
   __pyx_t_622.description = ((char *)"track and field (e.g., high jump, long jump, triple jump, javelin, pole vault)");
 
-  /* "pyfit/mets.pyx":629
+  /* "pyfit/mets.pyx":631
  *     		MET(4.0,"15732","track and field (e.g., shot, discus, hammer throw)"),
  *     		MET(6.0,"15733","track and field (e.g., high jump, long jump, triple jump, javelin, pole vault)"),
  *     		MET(10.0,"15734","track and field (e.g., steeplechase, hurdles)"),             # <<<<<<<<<<<<<<
@@ -8589,7 +8598,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_623.code = ((char *)"15734");
   __pyx_t_623.description = ((char *)"track and field (e.g., steeplechase, hurdles)");
 
-  /* "pyfit/mets.pyx":630
+  /* "pyfit/mets.pyx":632
  *     		MET(6.0,"15733","track and field (e.g., high jump, long jump, triple jump, javelin, pole vault)"),
  *     		MET(10.0,"15734","track and field (e.g., steeplechase, hurdles)"),
  *     		MET(2.5,"16010","automobile or light truck (not a semi) driving"),             # <<<<<<<<<<<<<<
@@ -8600,7 +8609,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_624.code = ((char *)"16010");
   __pyx_t_624.description = ((char *)"automobile or light truck (not a semi) driving");
 
-  /* "pyfit/mets.pyx":631
+  /* "pyfit/mets.pyx":633
  *     		MET(10.0,"15734","track and field (e.g., steeplechase, hurdles)"),
  *     		MET(2.5,"16010","automobile or light truck (not a semi) driving"),
  *     		MET(1.3,"16015","riding in a car or truck"),             # <<<<<<<<<<<<<<
@@ -8611,7 +8620,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_625.code = ((char *)"16015");
   __pyx_t_625.description = ((char *)"riding in a car or truck");
 
-  /* "pyfit/mets.pyx":632
+  /* "pyfit/mets.pyx":634
  *     		MET(2.5,"16010","automobile or light truck (not a semi) driving"),
  *     		MET(1.3,"16015","riding in a car or truck"),
  *     		MET(1.3,"16016","riding in a bus or train"),             # <<<<<<<<<<<<<<
@@ -8622,7 +8631,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_626.code = ((char *)"16016");
   __pyx_t_626.description = ((char *)"riding in a bus or train");
 
-  /* "pyfit/mets.pyx":633
+  /* "pyfit/mets.pyx":635
  *     		MET(1.3,"16015","riding in a car or truck"),
  *     		MET(1.3,"16016","riding in a bus or train"),
  *     		MET(1.8,"16020","flying airplane or helicopter"),             # <<<<<<<<<<<<<<
@@ -8633,7 +8642,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_627.code = ((char *)"16020");
   __pyx_t_627.description = ((char *)"flying airplane or helicopter");
 
-  /* "pyfit/mets.pyx":634
+  /* "pyfit/mets.pyx":636
  *     		MET(1.3,"16016","riding in a bus or train"),
  *     		MET(1.8,"16020","flying airplane or helicopter"),
  *     		MET(3.5,"16030","motor scooter, motorcycle"),             # <<<<<<<<<<<<<<
@@ -8644,7 +8653,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_628.code = ((char *)"16030");
   __pyx_t_628.description = ((char *)"motor scooter, motorcycle");
 
-  /* "pyfit/mets.pyx":635
+  /* "pyfit/mets.pyx":637
  *     		MET(1.8,"16020","flying airplane or helicopter"),
  *     		MET(3.5,"16030","motor scooter, motorcycle"),
  *     		MET(6.3,"16035","pulling rickshaw"),             # <<<<<<<<<<<<<<
@@ -8655,7 +8664,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_629.code = ((char *)"16035");
   __pyx_t_629.description = ((char *)"pulling rickshaw");
 
-  /* "pyfit/mets.pyx":636
+  /* "pyfit/mets.pyx":638
  *     		MET(3.5,"16030","motor scooter, motorcycle"),
  *     		MET(6.3,"16035","pulling rickshaw"),
  *     		MET(6.0,"16040","pushing plane in and out of hangar"),             # <<<<<<<<<<<<<<
@@ -8666,7 +8675,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_630.code = ((char *)"16040");
   __pyx_t_630.description = ((char *)"pushing plane in and out of hangar");
 
-  /* "pyfit/mets.pyx":637
+  /* "pyfit/mets.pyx":639
  *     		MET(6.3,"16035","pulling rickshaw"),
  *     		MET(6.0,"16040","pushing plane in and out of hangar"),
  *     		MET(2.5,"16050","truck, semi, tractor, > 1 ton, or bus, driving"),             # <<<<<<<<<<<<<<
@@ -8677,7 +8686,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_631.code = ((char *)"16050");
   __pyx_t_631.description = ((char *)"truck, semi, tractor, > 1 ton, or bus, driving");
 
-  /* "pyfit/mets.pyx":638
+  /* "pyfit/mets.pyx":640
  *     		MET(6.0,"16040","pushing plane in and out of hangar"),
  *     		MET(2.5,"16050","truck, semi, tractor, > 1 ton, or bus, driving"),
  *     		MET(3.5,"16060","walking for transportation, 2.8-3.2 mph, level, moderate pace, firm surface"),             # <<<<<<<<<<<<<<
@@ -8688,7 +8697,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_632.code = ((char *)"16060");
   __pyx_t_632.description = ((char *)"walking for transportation, 2.8-3.2 mph, level, moderate pace, firm surface");
 
-  /* "pyfit/mets.pyx":639
+  /* "pyfit/mets.pyx":641
  *     		MET(2.5,"16050","truck, semi, tractor, > 1 ton, or bus, driving"),
  *     		MET(3.5,"16060","walking for transportation, 2.8-3.2 mph, level, moderate pace, firm surface"),
  *     		MET(7.0,"17010","backpacking (Taylor Code 050)"),             # <<<<<<<<<<<<<<
@@ -8699,7 +8708,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_633.code = ((char *)"17010");
   __pyx_t_633.description = ((char *)"backpacking (Taylor Code 050)");
 
-  /* "pyfit/mets.pyx":640
+  /* "pyfit/mets.pyx":642
  *     		MET(3.5,"16060","walking for transportation, 2.8-3.2 mph, level, moderate pace, firm surface"),
  *     		MET(7.0,"17010","backpacking (Taylor Code 050)"),
  *     		MET(7.8,"17012","backpacking, hiking or organized walking with a daypack"),             # <<<<<<<<<<<<<<
@@ -8710,7 +8719,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_634.code = ((char *)"17012");
   __pyx_t_634.description = ((char *)"backpacking, hiking or organized walking with a daypack");
 
-  /* "pyfit/mets.pyx":641
+  /* "pyfit/mets.pyx":643
  *     		MET(7.0,"17010","backpacking (Taylor Code 050)"),
  *     		MET(7.8,"17012","backpacking, hiking or organized walking with a daypack"),
  *     		MET(5.0,"17020","carrying 15 pound load (e.g. suitcase), level ground or downstairs"),             # <<<<<<<<<<<<<<
@@ -8721,7 +8730,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_635.code = ((char *)"17020");
   __pyx_t_635.description = ((char *)"carrying 15 pound load (e.g. suitcase), level ground or downstairs");
 
-  /* "pyfit/mets.pyx":642
+  /* "pyfit/mets.pyx":644
  *     		MET(7.8,"17012","backpacking, hiking or organized walking with a daypack"),
  *     		MET(5.0,"17020","carrying 15 pound load (e.g. suitcase), level ground or downstairs"),
  *     		MET(2.3,"17021","carrying 15 lb child, slow walking"),             # <<<<<<<<<<<<<<
@@ -8732,7 +8741,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_636.code = ((char *)"17021");
   __pyx_t_636.description = ((char *)"carrying 15 lb child, slow walking");
 
-  /* "pyfit/mets.pyx":643
+  /* "pyfit/mets.pyx":645
  *     		MET(5.0,"17020","carrying 15 pound load (e.g. suitcase), level ground or downstairs"),
  *     		MET(2.3,"17021","carrying 15 lb child, slow walking"),
  *     		MET(8.3,"17025","carrying load upstairs, general"),             # <<<<<<<<<<<<<<
@@ -8743,7 +8752,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_637.code = ((char *)"17025");
   __pyx_t_637.description = ((char *)"carrying load upstairs, general");
 
-  /* "pyfit/mets.pyx":644
+  /* "pyfit/mets.pyx":646
  *     		MET(2.3,"17021","carrying 15 lb child, slow walking"),
  *     		MET(8.3,"17025","carrying load upstairs, general"),
  *     		MET(5.0,"17026","carrying 1 to 15 lb load, upstairs"),             # <<<<<<<<<<<<<<
@@ -8754,7 +8763,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_638.code = ((char *)"17026");
   __pyx_t_638.description = ((char *)"carrying 1 to 15 lb load, upstairs");
 
-  /* "pyfit/mets.pyx":645
+  /* "pyfit/mets.pyx":647
  *     		MET(8.3,"17025","carrying load upstairs, general"),
  *     		MET(5.0,"17026","carrying 1 to 15 lb load, upstairs"),
  *     		MET(6.0,"17027","carrying 16 to 24 lb load, upstairs"),             # <<<<<<<<<<<<<<
@@ -8765,7 +8774,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_639.code = ((char *)"17027");
   __pyx_t_639.description = ((char *)"carrying 16 to 24 lb load, upstairs");
 
-  /* "pyfit/mets.pyx":646
+  /* "pyfit/mets.pyx":648
  *     		MET(5.0,"17026","carrying 1 to 15 lb load, upstairs"),
  *     		MET(6.0,"17027","carrying 16 to 24 lb load, upstairs"),
  *     		MET(8.0,"17028","carrying 25 to 49 lb load, upstairs"),             # <<<<<<<<<<<<<<
@@ -8776,7 +8785,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_640.code = ((char *)"17028");
   __pyx_t_640.description = ((char *)"carrying 25 to 49 lb load, upstairs");
 
-  /* "pyfit/mets.pyx":647
+  /* "pyfit/mets.pyx":649
  *     		MET(6.0,"17027","carrying 16 to 24 lb load, upstairs"),
  *     		MET(8.0,"17028","carrying 25 to 49 lb load, upstairs"),
  *     		MET(10.0,"17029","carrying 50 to 74 lb load, upstairs"),             # <<<<<<<<<<<<<<
@@ -8787,7 +8796,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_641.code = ((char *)"17029");
   __pyx_t_641.description = ((char *)"carrying 50 to 74 lb load, upstairs");
 
-  /* "pyfit/mets.pyx":648
+  /* "pyfit/mets.pyx":650
  *     		MET(8.0,"17028","carrying 25 to 49 lb load, upstairs"),
  *     		MET(10.0,"17029","carrying 50 to 74 lb load, upstairs"),
  *     		MET(12.0,"17030","carrying > 74 lb load, upstairs"),             # <<<<<<<<<<<<<<
@@ -8798,7 +8807,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_642.code = ((char *)"17030");
   __pyx_t_642.description = ((char *)"carrying > 74 lb load, upstairs");
 
-  /* "pyfit/mets.pyx":649
+  /* "pyfit/mets.pyx":651
  *     		MET(10.0,"17029","carrying 50 to 74 lb load, upstairs"),
  *     		MET(12.0,"17030","carrying > 74 lb load, upstairs"),
  *     		MET(3.5,"17031","loading /unloading a car, implied walking"),             # <<<<<<<<<<<<<<
@@ -8809,7 +8818,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_643.code = ((char *)"17031");
   __pyx_t_643.description = ((char *)"loading /unloading a car, implied walking");
 
-  /* "pyfit/mets.pyx":650
+  /* "pyfit/mets.pyx":652
  *     		MET(12.0,"17030","carrying > 74 lb load, upstairs"),
  *     		MET(3.5,"17031","loading /unloading a car, implied walking"),
  *     		MET(6.3,"17033","climbing hills, no load"),             # <<<<<<<<<<<<<<
@@ -8820,7 +8829,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_644.code = ((char *)"17033");
   __pyx_t_644.description = ((char *)"climbing hills, no load");
 
-  /* "pyfit/mets.pyx":651
+  /* "pyfit/mets.pyx":653
  *     		MET(3.5,"17031","loading /unloading a car, implied walking"),
  *     		MET(6.3,"17033","climbing hills, no load"),
  *     		MET(6.5,"17035","climbing hills with 0 to 9 lb load"),             # <<<<<<<<<<<<<<
@@ -8831,7 +8840,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_645.code = ((char *)"17035");
   __pyx_t_645.description = ((char *)"climbing hills with 0 to 9 lb load");
 
-  /* "pyfit/mets.pyx":652
+  /* "pyfit/mets.pyx":654
  *     		MET(6.3,"17033","climbing hills, no load"),
  *     		MET(6.5,"17035","climbing hills with 0 to 9 lb load"),
  *     		MET(7.3,"17040","climbing hills with 10 to 20 lb load"),             # <<<<<<<<<<<<<<
@@ -8842,7 +8851,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_646.code = ((char *)"17040");
   __pyx_t_646.description = ((char *)"climbing hills with 10 to 20 lb load");
 
-  /* "pyfit/mets.pyx":653
+  /* "pyfit/mets.pyx":655
  *     		MET(6.5,"17035","climbing hills with 0 to 9 lb load"),
  *     		MET(7.3,"17040","climbing hills with 10 to 20 lb load"),
  *     		MET(8.3,"17050","climbing hills with 21 to 42 lb load"),             # <<<<<<<<<<<<<<
@@ -8853,7 +8862,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_647.code = ((char *)"17050");
   __pyx_t_647.description = ((char *)"climbing hills with 21 to 42 lb load");
 
-  /* "pyfit/mets.pyx":654
+  /* "pyfit/mets.pyx":656
  *     		MET(7.3,"17040","climbing hills with 10 to 20 lb load"),
  *     		MET(8.3,"17050","climbing hills with 21 to 42 lb load"),
  *     		MET(9.0,"17060","climbing hills with 42+ lb load"),             # <<<<<<<<<<<<<<
@@ -8864,7 +8873,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_648.code = ((char *)"17060");
   __pyx_t_648.description = ((char *)"climbing hills with 42+ lb load");
 
-  /* "pyfit/mets.pyx":655
+  /* "pyfit/mets.pyx":657
  *     		MET(8.3,"17050","climbing hills with 21 to 42 lb load"),
  *     		MET(9.0,"17060","climbing hills with 42+ lb load"),
  *     		MET(3.5,"17070","descending stairs"),             # <<<<<<<<<<<<<<
@@ -8875,7 +8884,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_649.code = ((char *)"17070");
   __pyx_t_649.description = ((char *)"descending stairs");
 
-  /* "pyfit/mets.pyx":656
+  /* "pyfit/mets.pyx":658
  *     		MET(9.0,"17060","climbing hills with 42+ lb load"),
  *     		MET(3.5,"17070","descending stairs"),
  *     		MET(6.0,"17080","hiking, cross country (Taylor Code 040)"),             # <<<<<<<<<<<<<<
@@ -8886,7 +8895,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_650.code = ((char *)"17080");
   __pyx_t_650.description = ((char *)"hiking, cross country (Taylor Code 040)");
 
-  /* "pyfit/mets.pyx":657
+  /* "pyfit/mets.pyx":659
  *     		MET(3.5,"17070","descending stairs"),
  *     		MET(6.0,"17080","hiking, cross country (Taylor Code 040)"),
  *     		MET(5.3,"17082","hiking or walking at a normal pace through fields and hillsides"),             # <<<<<<<<<<<<<<
@@ -8897,7 +8906,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_651.code = ((char *)"17082");
   __pyx_t_651.description = ((char *)"hiking or walking at a normal pace through fields and hillsides");
 
-  /* "pyfit/mets.pyx":658
+  /* "pyfit/mets.pyx":660
  *     		MET(6.0,"17080","hiking, cross country (Taylor Code 040)"),
  *     		MET(5.3,"17082","hiking or walking at a normal pace through fields and hillsides"),
  *     		MET(2.5,"17085","bird watching, slow walk"),             # <<<<<<<<<<<<<<
@@ -8908,7 +8917,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_652.code = ((char *)"17085");
   __pyx_t_652.description = ((char *)"bird watching, slow walk");
 
-  /* "pyfit/mets.pyx":659
+  /* "pyfit/mets.pyx":661
  *     		MET(5.3,"17082","hiking or walking at a normal pace through fields and hillsides"),
  *     		MET(2.5,"17085","bird watching, slow walk"),
  *     		MET(4.5,"17088","marching, moderate speed, military, no pack"),             # <<<<<<<<<<<<<<
@@ -8919,7 +8928,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_653.code = ((char *)"17088");
   __pyx_t_653.description = ((char *)"marching, moderate speed, military, no pack");
 
-  /* "pyfit/mets.pyx":660
+  /* "pyfit/mets.pyx":662
  *     		MET(2.5,"17085","bird watching, slow walk"),
  *     		MET(4.5,"17088","marching, moderate speed, military, no pack"),
  *     		MET(8.0,"17090","marching rapidly, military, no pack"),             # <<<<<<<<<<<<<<
@@ -8930,7 +8939,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_654.code = ((char *)"17090");
   __pyx_t_654.description = ((char *)"marching rapidly, military, no pack");
 
-  /* "pyfit/mets.pyx":661
+  /* "pyfit/mets.pyx":663
  *     		MET(4.5,"17088","marching, moderate speed, military, no pack"),
  *     		MET(8.0,"17090","marching rapidly, military, no pack"),
  *     		MET(4.0,"17100","pushing or pulling stroller with child or walking with children, 2.5 to 3.1 mph"),             # <<<<<<<<<<<<<<
@@ -8941,7 +8950,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_655.code = ((char *)"17100");
   __pyx_t_655.description = ((char *)"pushing or pulling stroller with child or walking with children, 2.5 to 3.1 mph");
 
-  /* "pyfit/mets.pyx":662
+  /* "pyfit/mets.pyx":664
  *     		MET(8.0,"17090","marching rapidly, military, no pack"),
  *     		MET(4.0,"17100","pushing or pulling stroller with child or walking with children, 2.5 to 3.1 mph"),
  *     		MET(3.8,"17105","pushing a wheelchair, non-occupational\\u00a0"),             # <<<<<<<<<<<<<<
@@ -8952,7 +8961,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_656.code = ((char *)"17105");
   __pyx_t_656.description = ((char *)"pushing a wheelchair, non-occupational\\u00a0");
 
-  /* "pyfit/mets.pyx":663
+  /* "pyfit/mets.pyx":665
  *     		MET(4.0,"17100","pushing or pulling stroller with child or walking with children, 2.5 to 3.1 mph"),
  *     		MET(3.8,"17105","pushing a wheelchair, non-occupational\\u00a0"),
  *     		MET(6.5,"17110","race walking"),             # <<<<<<<<<<<<<<
@@ -8963,7 +8972,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_657.code = ((char *)"17110");
   __pyx_t_657.description = ((char *)"race walking");
 
-  /* "pyfit/mets.pyx":664
+  /* "pyfit/mets.pyx":666
  *     		MET(3.8,"17105","pushing a wheelchair, non-occupational\\u00a0"),
  *     		MET(6.5,"17110","race walking"),
  *     		MET(8.0,"17130","stair climbing, using or climbing up ladder (Taylor Code 030)"),             # <<<<<<<<<<<<<<
@@ -8974,7 +8983,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_658.code = ((char *)"17130");
   __pyx_t_658.description = ((char *)"stair climbing, using or climbing up ladder (Taylor Code 030)");
 
-  /* "pyfit/mets.pyx":665
+  /* "pyfit/mets.pyx":667
  *     		MET(6.5,"17110","race walking"),
  *     		MET(8.0,"17130","stair climbing, using or climbing up ladder (Taylor Code 030)"),
  *     		MET(4.0,"17133","stair climbing, slow pace"),             # <<<<<<<<<<<<<<
@@ -8985,7 +8994,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_659.code = ((char *)"17133");
   __pyx_t_659.description = ((char *)"stair climbing, slow pace");
 
-  /* "pyfit/mets.pyx":666
+  /* "pyfit/mets.pyx":668
  *     		MET(8.0,"17130","stair climbing, using or climbing up ladder (Taylor Code 030)"),
  *     		MET(4.0,"17133","stair climbing, slow pace"),
  *     		MET(8.8,"17134","stair climbing, fast pace"),             # <<<<<<<<<<<<<<
@@ -8996,7 +9005,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_660.code = ((char *)"17134");
   __pyx_t_660.description = ((char *)"stair climbing, fast pace");
 
-  /* "pyfit/mets.pyx":667
+  /* "pyfit/mets.pyx":669
  *     		MET(4.0,"17133","stair climbing, slow pace"),
  *     		MET(8.8,"17134","stair climbing, fast pace"),
  *     		MET(5.0,"17140","using crutches"),             # <<<<<<<<<<<<<<
@@ -9007,7 +9016,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_661.code = ((char *)"17140");
   __pyx_t_661.description = ((char *)"using crutches");
 
-  /* "pyfit/mets.pyx":668
+  /* "pyfit/mets.pyx":670
  *     		MET(8.8,"17134","stair climbing, fast pace"),
  *     		MET(5.0,"17140","using crutches"),
  *     		MET(2.0,"17150","walking, household"),             # <<<<<<<<<<<<<<
@@ -9018,7 +9027,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_662.code = ((char *)"17150");
   __pyx_t_662.description = ((char *)"walking, household");
 
-  /* "pyfit/mets.pyx":669
+  /* "pyfit/mets.pyx":671
  *     		MET(5.0,"17140","using crutches"),
  *     		MET(2.0,"17150","walking, household"),
  *     		MET(2.0,"17151","walking, less than 2.0 mph, level, strolling, very slow"),             # <<<<<<<<<<<<<<
@@ -9029,7 +9038,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_663.code = ((char *)"17151");
   __pyx_t_663.description = ((char *)"walking, less than 2.0 mph, level, strolling, very slow");
 
-  /* "pyfit/mets.pyx":670
+  /* "pyfit/mets.pyx":672
  *     		MET(2.0,"17150","walking, household"),
  *     		MET(2.0,"17151","walking, less than 2.0 mph, level, strolling, very slow"),
  *     		MET(2.8,"17152","walking, 2.0 mph, level, slow pace, firm surface"),             # <<<<<<<<<<<<<<
@@ -9040,7 +9049,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_664.code = ((char *)"17152");
   __pyx_t_664.description = ((char *)"walking, 2.0 mph, level, slow pace, firm surface");
 
-  /* "pyfit/mets.pyx":671
+  /* "pyfit/mets.pyx":673
  *     		MET(2.0,"17151","walking, less than 2.0 mph, level, strolling, very slow"),
  *     		MET(2.8,"17152","walking, 2.0 mph, level, slow pace, firm surface"),
  *     		MET(3.5,"17160","walking for pleasure (Taylor Code 010)"),             # <<<<<<<<<<<<<<
@@ -9051,7 +9060,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_665.code = ((char *)"17160");
   __pyx_t_665.description = ((char *)"walking for pleasure (Taylor Code 010)");
 
-  /* "pyfit/mets.pyx":672
+  /* "pyfit/mets.pyx":674
  *     		MET(2.8,"17152","walking, 2.0 mph, level, slow pace, firm surface"),
  *     		MET(3.5,"17160","walking for pleasure (Taylor Code 010)"),
  *     		MET(2.5,"17161","walking from house to car or bus, from car or bus to go places, from car or bus to and from the worksite"),             # <<<<<<<<<<<<<<
@@ -9062,7 +9071,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_666.code = ((char *)"17161");
   __pyx_t_666.description = ((char *)"walking from house to car or bus, from car or bus to go places, from car or bus to and from the worksite");
 
-  /* "pyfit/mets.pyx":673
+  /* "pyfit/mets.pyx":675
  *     		MET(3.5,"17160","walking for pleasure (Taylor Code 010)"),
  *     		MET(2.5,"17161","walking from house to car or bus, from car or bus to go places, from car or bus to and from the worksite"),
  *     		MET(2.5,"17162","walking to neighbor\\u2019s house or family\\u2019s house for social reasons"),             # <<<<<<<<<<<<<<
@@ -9073,7 +9082,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_667.code = ((char *)"17162");
   __pyx_t_667.description = ((char *)"walking to neighbor\\u2019s house or family\\u2019s house for social reasons");
 
-  /* "pyfit/mets.pyx":674
+  /* "pyfit/mets.pyx":676
  *     		MET(2.5,"17161","walking from house to car or bus, from car or bus to go places, from car or bus to and from the worksite"),
  *     		MET(2.5,"17162","walking to neighbor\\u2019s house or family\\u2019s house for social reasons"),
  *     		MET(3.0,"17165","walking the dog"),             # <<<<<<<<<<<<<<
@@ -9084,7 +9093,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_668.code = ((char *)"17165");
   __pyx_t_668.description = ((char *)"walking the dog");
 
-  /* "pyfit/mets.pyx":675
+  /* "pyfit/mets.pyx":677
  *     		MET(2.5,"17162","walking to neighbor\\u2019s house or family\\u2019s house for social reasons"),
  *     		MET(3.0,"17165","walking the dog"),
  *     		MET(3.0,"17170","walking, 2.5 mph, level, firm surface"),             # <<<<<<<<<<<<<<
@@ -9095,7 +9104,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_669.code = ((char *)"17170");
   __pyx_t_669.description = ((char *)"walking, 2.5 mph, level, firm surface");
 
-  /* "pyfit/mets.pyx":676
+  /* "pyfit/mets.pyx":678
  *     		MET(3.0,"17165","walking the dog"),
  *     		MET(3.0,"17170","walking, 2.5 mph, level, firm surface"),
  *     		MET(3.3,"17180","walking, 2.5 mph, downhill"),             # <<<<<<<<<<<<<<
@@ -9106,7 +9115,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_670.code = ((char *)"17180");
   __pyx_t_670.description = ((char *)"walking, 2.5 mph, downhill");
 
-  /* "pyfit/mets.pyx":677
+  /* "pyfit/mets.pyx":679
  *     		MET(3.0,"17170","walking, 2.5 mph, level, firm surface"),
  *     		MET(3.3,"17180","walking, 2.5 mph, downhill"),
  *     		MET(3.5,"17190","walking, 2.8 to 3.2 mph, level, moderate pace, firm surface"),             # <<<<<<<<<<<<<<
@@ -9117,7 +9126,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_671.code = ((char *)"17190");
   __pyx_t_671.description = ((char *)"walking, 2.8 to 3.2 mph, level, moderate pace, firm surface");
 
-  /* "pyfit/mets.pyx":678
+  /* "pyfit/mets.pyx":680
  *     		MET(3.3,"17180","walking, 2.5 mph, downhill"),
  *     		MET(3.5,"17190","walking, 2.8 to 3.2 mph, level, moderate pace, firm surface"),
  *     		MET(4.3,"17200","walking, 3.5 mph, level, brisk, firm surface, walking for exercise"),             # <<<<<<<<<<<<<<
@@ -9128,7 +9137,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_672.code = ((char *)"17200");
   __pyx_t_672.description = ((char *)"walking, 3.5 mph, level, brisk, firm surface, walking for exercise");
 
-  /* "pyfit/mets.pyx":679
+  /* "pyfit/mets.pyx":681
  *     		MET(3.5,"17190","walking, 2.8 to 3.2 mph, level, moderate pace, firm surface"),
  *     		MET(4.3,"17200","walking, 3.5 mph, level, brisk, firm surface, walking for exercise"),
  *     		MET(5.3,"17210","walking, 2.9 to 3.5 mph, uphill, 1 to 5% grade"),             # <<<<<<<<<<<<<<
@@ -9139,7 +9148,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_673.code = ((char *)"17210");
   __pyx_t_673.description = ((char *)"walking, 2.9 to 3.5 mph, uphill, 1 to 5% grade");
 
-  /* "pyfit/mets.pyx":680
+  /* "pyfit/mets.pyx":682
  *     		MET(4.3,"17200","walking, 3.5 mph, level, brisk, firm surface, walking for exercise"),
  *     		MET(5.3,"17210","walking, 2.9 to 3.5 mph, uphill, 1 to 5% grade"),
  *     		MET(8.0,"17211","walking, 2.9 to 3.5 mph, uphill, 6% to 15% grade"),             # <<<<<<<<<<<<<<
@@ -9150,7 +9159,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_674.code = ((char *)"17211");
   __pyx_t_674.description = ((char *)"walking, 2.9 to 3.5 mph, uphill, 6% to 15% grade");
 
-  /* "pyfit/mets.pyx":681
+  /* "pyfit/mets.pyx":683
  *     		MET(5.3,"17210","walking, 2.9 to 3.5 mph, uphill, 1 to 5% grade"),
  *     		MET(8.0,"17211","walking, 2.9 to 3.5 mph, uphill, 6% to 15% grade"),
  *     		MET(5.0,"17220","walking, 4.0 mph, level, firm surface, very brisk pace"),             # <<<<<<<<<<<<<<
@@ -9161,7 +9170,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_675.code = ((char *)"17220");
   __pyx_t_675.description = ((char *)"walking, 4.0 mph, level, firm surface, very brisk pace");
 
-  /* "pyfit/mets.pyx":682
+  /* "pyfit/mets.pyx":684
  *     		MET(8.0,"17211","walking, 2.9 to 3.5 mph, uphill, 6% to 15% grade"),
  *     		MET(5.0,"17220","walking, 4.0 mph, level, firm surface, very brisk pace"),
  *     		MET(7.0,"17230","walking, 4.5 mph, level, firm surface, very, very brisk"),             # <<<<<<<<<<<<<<
@@ -9172,7 +9181,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_676.code = ((char *)"17230");
   __pyx_t_676.description = ((char *)"walking, 4.5 mph, level, firm surface, very, very brisk");
 
-  /* "pyfit/mets.pyx":683
+  /* "pyfit/mets.pyx":685
  *     		MET(5.0,"17220","walking, 4.0 mph, level, firm surface, very brisk pace"),
  *     		MET(7.0,"17230","walking, 4.5 mph, level, firm surface, very, very brisk"),
  *     		MET(8.3,"17231","walking, 5.0 mph, level, firm surface"),             # <<<<<<<<<<<<<<
@@ -9183,7 +9192,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_677.code = ((char *)"17231");
   __pyx_t_677.description = ((char *)"walking, 5.0 mph, level, firm surface");
 
-  /* "pyfit/mets.pyx":684
+  /* "pyfit/mets.pyx":686
  *     		MET(7.0,"17230","walking, 4.5 mph, level, firm surface, very, very brisk"),
  *     		MET(8.3,"17231","walking, 5.0 mph, level, firm surface"),
  *     		MET(9.8,"17235","walking, 5.0 mph, uphill, 3% grade"),             # <<<<<<<<<<<<<<
@@ -9194,7 +9203,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_678.code = ((char *)"17235");
   __pyx_t_678.description = ((char *)"walking, 5.0 mph, uphill, 3% grade");
 
-  /* "pyfit/mets.pyx":685
+  /* "pyfit/mets.pyx":687
  *     		MET(8.3,"17231","walking, 5.0 mph, level, firm surface"),
  *     		MET(9.8,"17235","walking, 5.0 mph, uphill, 3% grade"),
  *     		MET(3.5,"17250","walking, for pleasure, work break"),             # <<<<<<<<<<<<<<
@@ -9205,7 +9214,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_679.code = ((char *)"17250");
   __pyx_t_679.description = ((char *)"walking, for pleasure, work break");
 
-  /* "pyfit/mets.pyx":686
+  /* "pyfit/mets.pyx":688
  *     		MET(9.8,"17235","walking, 5.0 mph, uphill, 3% grade"),
  *     		MET(3.5,"17250","walking, for pleasure, work break"),
  *     		MET(4.8,"17260","walking, grass track"),             # <<<<<<<<<<<<<<
@@ -9216,7 +9225,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_680.code = ((char *)"17260");
   __pyx_t_680.description = ((char *)"walking, grass track");
 
-  /* "pyfit/mets.pyx":687
+  /* "pyfit/mets.pyx":689
  *     		MET(3.5,"17250","walking, for pleasure, work break"),
  *     		MET(4.8,"17260","walking, grass track"),
  *     		MET(4.5,"17262","walking, normal pace, plowed field or sand"),             # <<<<<<<<<<<<<<
@@ -9227,7 +9236,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_681.code = ((char *)"17262");
   __pyx_t_681.description = ((char *)"walking, normal pace, plowed field or sand");
 
-  /* "pyfit/mets.pyx":688
+  /* "pyfit/mets.pyx":690
  *     		MET(4.8,"17260","walking, grass track"),
  *     		MET(4.5,"17262","walking, normal pace, plowed field or sand"),
  *     		MET(4.0,"17270","walking, to work or class (Taylor Code 015)"),             # <<<<<<<<<<<<<<
@@ -9238,7 +9247,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_682.code = ((char *)"17270");
   __pyx_t_682.description = ((char *)"walking, to work or class (Taylor Code 015)");
 
-  /* "pyfit/mets.pyx":689
+  /* "pyfit/mets.pyx":691
  *     		MET(4.5,"17262","walking, normal pace, plowed field or sand"),
  *     		MET(4.0,"17270","walking, to work or class (Taylor Code 015)"),
  *     		MET(2.5,"17280","walking, to and from an outhouse"),             # <<<<<<<<<<<<<<
@@ -9249,7 +9258,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_683.code = ((char *)"17280");
   __pyx_t_683.description = ((char *)"walking, to and from an outhouse");
 
-  /* "pyfit/mets.pyx":690
+  /* "pyfit/mets.pyx":692
  *     		MET(4.0,"17270","walking, to work or class (Taylor Code 015)"),
  *     		MET(2.5,"17280","walking, to and from an outhouse"),
  *     		MET(4.8,"17302","walking, for exercise, 3.5 to 4 mph, with ski poles, Nordic walking, level, moderate pace"),             # <<<<<<<<<<<<<<
@@ -9260,7 +9269,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_684.code = ((char *)"17302");
   __pyx_t_684.description = ((char *)"walking, for exercise, 3.5 to 4 mph, with ski poles, Nordic walking, level, moderate pace");
 
-  /* "pyfit/mets.pyx":691
+  /* "pyfit/mets.pyx":693
  *     		MET(2.5,"17280","walking, to and from an outhouse"),
  *     		MET(4.8,"17302","walking, for exercise, 3.5 to 4 mph, with ski poles, Nordic walking, level, moderate pace"),
  *     		MET(9.5,"17305","walking, for exercise, 5.0 mph, with ski poles, Nordic walking, level, fast pace"),             # <<<<<<<<<<<<<<
@@ -9271,7 +9280,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_685.code = ((char *)"17305");
   __pyx_t_685.description = ((char *)"walking, for exercise, 5.0 mph, with ski poles, Nordic walking, level, fast pace");
 
-  /* "pyfit/mets.pyx":692
+  /* "pyfit/mets.pyx":694
  *     		MET(4.8,"17302","walking, for exercise, 3.5 to 4 mph, with ski poles, Nordic walking, level, moderate pace"),
  *     		MET(9.5,"17305","walking, for exercise, 5.0 mph, with ski poles, Nordic walking, level, fast pace"),
  *     		MET(6.8,"17310","walking, for exercise, with ski poles, Nordic walking, uphill"),             # <<<<<<<<<<<<<<
@@ -9282,7 +9291,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_686.code = ((char *)"17310");
   __pyx_t_686.description = ((char *)"walking, for exercise, with ski poles, Nordic walking, uphill");
 
-  /* "pyfit/mets.pyx":693
+  /* "pyfit/mets.pyx":695
  *     		MET(9.5,"17305","walking, for exercise, 5.0 mph, with ski poles, Nordic walking, level, fast pace"),
  *     		MET(6.8,"17310","walking, for exercise, with ski poles, Nordic walking, uphill"),
  *     		MET(6.0,"17320","walking, backwards, 3.5 mph, level"),             # <<<<<<<<<<<<<<
@@ -9293,7 +9302,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_687.code = ((char *)"17320");
   __pyx_t_687.description = ((char *)"walking, backwards, 3.5 mph, level");
 
-  /* "pyfit/mets.pyx":694
+  /* "pyfit/mets.pyx":696
  *     		MET(6.8,"17310","walking, for exercise, with ski poles, Nordic walking, uphill"),
  *     		MET(6.0,"17320","walking, backwards, 3.5 mph, level"),
  *     		MET(8.0,"17325","walking, backwards, 3.5 mph, uphill, 5% grade"),             # <<<<<<<<<<<<<<
@@ -9304,7 +9313,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_688.code = ((char *)"17325");
   __pyx_t_688.description = ((char *)"walking, backwards, 3.5 mph, uphill, 5% grade");
 
-  /* "pyfit/mets.pyx":695
+  /* "pyfit/mets.pyx":697
  *     		MET(6.0,"17320","walking, backwards, 3.5 mph, level"),
  *     		MET(8.0,"17325","walking, backwards, 3.5 mph, uphill, 5% grade"),
  *     		MET(2.5,"18010","boating, power, driving"),             # <<<<<<<<<<<<<<
@@ -9315,7 +9324,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_689.code = ((char *)"18010");
   __pyx_t_689.description = ((char *)"boating, power, driving");
 
-  /* "pyfit/mets.pyx":696
+  /* "pyfit/mets.pyx":698
  *     		MET(8.0,"17325","walking, backwards, 3.5 mph, uphill, 5% grade"),
  *     		MET(2.5,"18010","boating, power, driving"),
  *     		MET(1.3,"18012","boating, power, passenger, light"),             # <<<<<<<<<<<<<<
@@ -9326,7 +9335,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_690.code = ((char *)"18012");
   __pyx_t_690.description = ((char *)"boating, power, passenger, light");
 
-  /* "pyfit/mets.pyx":697
+  /* "pyfit/mets.pyx":699
  *     		MET(2.5,"18010","boating, power, driving"),
  *     		MET(1.3,"18012","boating, power, passenger, light"),
  *     		MET(4.0,"18020","canoeing, on camping trip (Taylor Code 270)"),             # <<<<<<<<<<<<<<
@@ -9337,7 +9346,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_691.code = ((char *)"18020");
   __pyx_t_691.description = ((char *)"canoeing, on camping trip (Taylor Code 270)");
 
-  /* "pyfit/mets.pyx":698
+  /* "pyfit/mets.pyx":700
  *     		MET(1.3,"18012","boating, power, passenger, light"),
  *     		MET(4.0,"18020","canoeing, on camping trip (Taylor Code 270)"),
  *     		MET(3.3,"18025","canoeing, harvesting wild rice, knocking rice off the stalks"),             # <<<<<<<<<<<<<<
@@ -9348,7 +9357,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_692.code = ((char *)"18025");
   __pyx_t_692.description = ((char *)"canoeing, harvesting wild rice, knocking rice off the stalks");
 
-  /* "pyfit/mets.pyx":699
+  /* "pyfit/mets.pyx":701
  *     		MET(4.0,"18020","canoeing, on camping trip (Taylor Code 270)"),
  *     		MET(3.3,"18025","canoeing, harvesting wild rice, knocking rice off the stalks"),
  *     		MET(7.0,"18030","canoeing, portaging"),             # <<<<<<<<<<<<<<
@@ -9359,7 +9368,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_693.code = ((char *)"18030");
   __pyx_t_693.description = ((char *)"canoeing, portaging");
 
-  /* "pyfit/mets.pyx":700
+  /* "pyfit/mets.pyx":702
  *     		MET(3.3,"18025","canoeing, harvesting wild rice, knocking rice off the stalks"),
  *     		MET(7.0,"18030","canoeing, portaging"),
  *     		MET(2.8,"18040","canoeing, rowing, 2.0-3.9 mph, light effort"),             # <<<<<<<<<<<<<<
@@ -9370,7 +9379,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_694.code = ((char *)"18040");
   __pyx_t_694.description = ((char *)"canoeing, rowing, 2.0-3.9 mph, light effort");
 
-  /* "pyfit/mets.pyx":701
+  /* "pyfit/mets.pyx":703
  *     		MET(7.0,"18030","canoeing, portaging"),
  *     		MET(2.8,"18040","canoeing, rowing, 2.0-3.9 mph, light effort"),
  *     		MET(5.8,"18050","canoeing, rowing, 4.0-5.9 mph, moderate effort"),             # <<<<<<<<<<<<<<
@@ -9381,7 +9390,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_695.code = ((char *)"18050");
   __pyx_t_695.description = ((char *)"canoeing, rowing, 4.0-5.9 mph, moderate effort");
 
-  /* "pyfit/mets.pyx":702
+  /* "pyfit/mets.pyx":704
  *     		MET(2.8,"18040","canoeing, rowing, 2.0-3.9 mph, light effort"),
  *     		MET(5.8,"18050","canoeing, rowing, 4.0-5.9 mph, moderate effort"),
  *     		MET(12.5,"18060","canoeing, rowing, kayaking, competition, >6 mph, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -9392,7 +9401,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_696.code = ((char *)"18060");
   __pyx_t_696.description = ((char *)"canoeing, rowing, kayaking, competition, >6 mph, vigorous effort");
 
-  /* "pyfit/mets.pyx":703
+  /* "pyfit/mets.pyx":705
  *     		MET(5.8,"18050","canoeing, rowing, 4.0-5.9 mph, moderate effort"),
  *     		MET(12.5,"18060","canoeing, rowing, kayaking, competition, >6 mph, vigorous effort"),
  *     		MET(3.5,"18070","canoeing, rowing, for pleasure, general (Taylor Code 250)"),             # <<<<<<<<<<<<<<
@@ -9403,7 +9412,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_697.code = ((char *)"18070");
   __pyx_t_697.description = ((char *)"canoeing, rowing, for pleasure, general (Taylor Code 250)");
 
-  /* "pyfit/mets.pyx":704
+  /* "pyfit/mets.pyx":706
  *     		MET(12.5,"18060","canoeing, rowing, kayaking, competition, >6 mph, vigorous effort"),
  *     		MET(3.5,"18070","canoeing, rowing, for pleasure, general (Taylor Code 250)"),
  *     		MET(12.0,"18080","canoeing, rowing, in competition, or crew or sculling (Taylor Code 260)"),             # <<<<<<<<<<<<<<
@@ -9414,7 +9423,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_698.code = ((char *)"18080");
   __pyx_t_698.description = ((char *)"canoeing, rowing, in competition, or crew or sculling (Taylor Code 260)");
 
-  /* "pyfit/mets.pyx":705
+  /* "pyfit/mets.pyx":707
  *     		MET(3.5,"18070","canoeing, rowing, for pleasure, general (Taylor Code 250)"),
  *     		MET(12.0,"18080","canoeing, rowing, in competition, or crew or sculling (Taylor Code 260)"),
  *     		MET(3.0,"18090","diving, springboard or platform"),             # <<<<<<<<<<<<<<
@@ -9425,7 +9434,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_699.code = ((char *)"18090");
   __pyx_t_699.description = ((char *)"diving, springboard or platform");
 
-  /* "pyfit/mets.pyx":706
+  /* "pyfit/mets.pyx":708
  *     		MET(12.0,"18080","canoeing, rowing, in competition, or crew or sculling (Taylor Code 260)"),
  *     		MET(3.0,"18090","diving, springboard or platform"),
  *     		MET(5.0,"18100","kayaking, moderate effort"),             # <<<<<<<<<<<<<<
@@ -9436,7 +9445,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_700.code = ((char *)"18100");
   __pyx_t_700.description = ((char *)"kayaking, moderate effort");
 
-  /* "pyfit/mets.pyx":707
+  /* "pyfit/mets.pyx":709
  *     		MET(3.0,"18090","diving, springboard or platform"),
  *     		MET(5.0,"18100","kayaking, moderate effort"),
  *     		MET(4.0,"18110","paddle boat"),             # <<<<<<<<<<<<<<
@@ -9447,7 +9456,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_701.code = ((char *)"18110");
   __pyx_t_701.description = ((char *)"paddle boat");
 
-  /* "pyfit/mets.pyx":708
+  /* "pyfit/mets.pyx":710
  *     		MET(5.0,"18100","kayaking, moderate effort"),
  *     		MET(4.0,"18110","paddle boat"),
  *     		MET(3.0,"18120","sailing, boat and board sailing, windsurfing, ice sailing, general (Taylor Code 235)"),             # <<<<<<<<<<<<<<
@@ -9458,7 +9467,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_702.code = ((char *)"18120");
   __pyx_t_702.description = ((char *)"sailing, boat and board sailing, windsurfing, ice sailing, general (Taylor Code 235)");
 
-  /* "pyfit/mets.pyx":709
+  /* "pyfit/mets.pyx":711
  *     		MET(4.0,"18110","paddle boat"),
  *     		MET(3.0,"18120","sailing, boat and board sailing, windsurfing, ice sailing, general (Taylor Code 235)"),
  *     		MET(4.5,"18130","sailing, in competition"),             # <<<<<<<<<<<<<<
@@ -9469,7 +9478,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_703.code = ((char *)"18130");
   __pyx_t_703.description = ((char *)"sailing, in competition");
 
-  /* "pyfit/mets.pyx":710
+  /* "pyfit/mets.pyx":712
  *     		MET(3.0,"18120","sailing, boat and board sailing, windsurfing, ice sailing, general (Taylor Code 235)"),
  *     		MET(4.5,"18130","sailing, in competition"),
  *     		MET(3.3,"18140","sailing, Sunfish/Laser/Hobby Cat, Keel boats, ocean sailing, yachting, leisure"),             # <<<<<<<<<<<<<<
@@ -9480,7 +9489,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_704.code = ((char *)"18140");
   __pyx_t_704.description = ((char *)"sailing, Sunfish/Laser/Hobby Cat, Keel boats, ocean sailing, yachting, leisure");
 
-  /* "pyfit/mets.pyx":711
+  /* "pyfit/mets.pyx":713
  *     		MET(4.5,"18130","sailing, in competition"),
  *     		MET(3.3,"18140","sailing, Sunfish/Laser/Hobby Cat, Keel boats, ocean sailing, yachting, leisure"),
  *     		MET(6.0,"18150","skiing, water or wakeboarding (Taylor Code 220)"),             # <<<<<<<<<<<<<<
@@ -9491,7 +9500,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_705.code = ((char *)"18150");
   __pyx_t_705.description = ((char *)"skiing, water or wakeboarding (Taylor Code 220)");
 
-  /* "pyfit/mets.pyx":712
+  /* "pyfit/mets.pyx":714
  *     		MET(3.3,"18140","sailing, Sunfish/Laser/Hobby Cat, Keel boats, ocean sailing, yachting, leisure"),
  *     		MET(6.0,"18150","skiing, water or wakeboarding (Taylor Code 220)"),
  *     		MET(7.0,"18160","jet skiing, driving, in water"),             # <<<<<<<<<<<<<<
@@ -9502,7 +9511,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_706.code = ((char *)"18160");
   __pyx_t_706.description = ((char *)"jet skiing, driving, in water");
 
-  /* "pyfit/mets.pyx":713
+  /* "pyfit/mets.pyx":715
  *     		MET(6.0,"18150","skiing, water or wakeboarding (Taylor Code 220)"),
  *     		MET(7.0,"18160","jet skiing, driving, in water"),
  *     		MET(15.8,"18180","skindiving, fast"),             # <<<<<<<<<<<<<<
@@ -9513,7 +9522,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_707.code = ((char *)"18180");
   __pyx_t_707.description = ((char *)"skindiving, fast");
 
-  /* "pyfit/mets.pyx":714
+  /* "pyfit/mets.pyx":716
  *     		MET(7.0,"18160","jet skiing, driving, in water"),
  *     		MET(15.8,"18180","skindiving, fast"),
  *     		MET(11.8,"18190","skindiving, moderate"),             # <<<<<<<<<<<<<<
@@ -9524,7 +9533,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_708.code = ((char *)"18190");
   __pyx_t_708.description = ((char *)"skindiving, moderate");
 
-  /* "pyfit/mets.pyx":715
+  /* "pyfit/mets.pyx":717
  *     		MET(15.8,"18180","skindiving, fast"),
  *     		MET(11.8,"18190","skindiving, moderate"),
  *     		MET(7.0,"18200","skindiving, scuba diving, general (Taylor Code 310)"),             # <<<<<<<<<<<<<<
@@ -9535,7 +9544,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_709.code = ((char *)"18200");
   __pyx_t_709.description = ((char *)"skindiving, scuba diving, general (Taylor Code 310)");
 
-  /* "pyfit/mets.pyx":716
+  /* "pyfit/mets.pyx":718
  *     		MET(11.8,"18190","skindiving, moderate"),
  *     		MET(7.0,"18200","skindiving, scuba diving, general (Taylor Code 310)"),
  *     		MET(5.0,"18210","snorkeling (Taylor Code 310)"),             # <<<<<<<<<<<<<<
@@ -9546,7 +9555,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_710.code = ((char *)"18210");
   __pyx_t_710.description = ((char *)"snorkeling (Taylor Code 310)");
 
-  /* "pyfit/mets.pyx":717
+  /* "pyfit/mets.pyx":719
  *     		MET(7.0,"18200","skindiving, scuba diving, general (Taylor Code 310)"),
  *     		MET(5.0,"18210","snorkeling (Taylor Code 310)"),
  *     		MET(3.0,"18220","surfing, body or board, general"),             # <<<<<<<<<<<<<<
@@ -9557,7 +9566,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_711.code = ((char *)"18220");
   __pyx_t_711.description = ((char *)"surfing, body or board, general");
 
-  /* "pyfit/mets.pyx":718
+  /* "pyfit/mets.pyx":720
  *     		MET(5.0,"18210","snorkeling (Taylor Code 310)"),
  *     		MET(3.0,"18220","surfing, body or board, general"),
  *     		MET(5.0,"18222","surfing, body or board, competitive"),             # <<<<<<<<<<<<<<
@@ -9568,7 +9577,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_712.code = ((char *)"18222");
   __pyx_t_712.description = ((char *)"surfing, body or board, competitive");
 
-  /* "pyfit/mets.pyx":719
+  /* "pyfit/mets.pyx":721
  *     		MET(3.0,"18220","surfing, body or board, general"),
  *     		MET(5.0,"18222","surfing, body or board, competitive"),
  *     		MET(6.0,"18225","paddle boarding, standing"),             # <<<<<<<<<<<<<<
@@ -9579,7 +9588,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_713.code = ((char *)"18225");
   __pyx_t_713.description = ((char *)"paddle boarding, standing");
 
-  /* "pyfit/mets.pyx":720
+  /* "pyfit/mets.pyx":722
  *     		MET(5.0,"18222","surfing, body or board, competitive"),
  *     		MET(6.0,"18225","paddle boarding, standing"),
  *     		MET(9.8,"18230","swimming laps, freestyle, fast, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -9590,7 +9599,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_714.code = ((char *)"18230");
   __pyx_t_714.description = ((char *)"swimming laps, freestyle, fast, vigorous effort");
 
-  /* "pyfit/mets.pyx":721
+  /* "pyfit/mets.pyx":723
  *     		MET(6.0,"18225","paddle boarding, standing"),
  *     		MET(9.8,"18230","swimming laps, freestyle, fast, vigorous effort"),
  *     		MET(5.8,"18240","swimming laps, freestyle, front crawl, slow, light or moderate effort"),             # <<<<<<<<<<<<<<
@@ -9601,7 +9610,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_715.code = ((char *)"18240");
   __pyx_t_715.description = ((char *)"swimming laps, freestyle, front crawl, slow, light or moderate effort");
 
-  /* "pyfit/mets.pyx":722
+  /* "pyfit/mets.pyx":724
  *     		MET(9.8,"18230","swimming laps, freestyle, fast, vigorous effort"),
  *     		MET(5.8,"18240","swimming laps, freestyle, front crawl, slow, light or moderate effort"),
  *     		MET(9.5,"18250","swimming, backstroke, general, training or competition"),             # <<<<<<<<<<<<<<
@@ -9612,7 +9621,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_716.code = ((char *)"18250");
   __pyx_t_716.description = ((char *)"swimming, backstroke, general, training or competition");
 
-  /* "pyfit/mets.pyx":723
+  /* "pyfit/mets.pyx":725
  *     		MET(5.8,"18240","swimming laps, freestyle, front crawl, slow, light or moderate effort"),
  *     		MET(9.5,"18250","swimming, backstroke, general, training or competition"),
  *     		MET(4.8,"18255","swimming, backstroke, recreational"),             # <<<<<<<<<<<<<<
@@ -9623,7 +9632,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_717.code = ((char *)"18255");
   __pyx_t_717.description = ((char *)"swimming, backstroke, recreational");
 
-  /* "pyfit/mets.pyx":724
+  /* "pyfit/mets.pyx":726
  *     		MET(9.5,"18250","swimming, backstroke, general, training or competition"),
  *     		MET(4.8,"18255","swimming, backstroke, recreational"),
  *     		MET(10.3,"18260","swimming, breaststroke, general, training or competition"),             # <<<<<<<<<<<<<<
@@ -9634,7 +9643,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_718.code = ((char *)"18260");
   __pyx_t_718.description = ((char *)"swimming, breaststroke, general, training or competition");
 
-  /* "pyfit/mets.pyx":725
+  /* "pyfit/mets.pyx":727
  *     		MET(4.8,"18255","swimming, backstroke, recreational"),
  *     		MET(10.3,"18260","swimming, breaststroke, general, training or competition"),
  *     		MET(5.3,"18265","swimming, breaststroke, recreational"),             # <<<<<<<<<<<<<<
@@ -9645,7 +9654,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_719.code = ((char *)"18265");
   __pyx_t_719.description = ((char *)"swimming, breaststroke, recreational");
 
-  /* "pyfit/mets.pyx":726
+  /* "pyfit/mets.pyx":728
  *     		MET(10.3,"18260","swimming, breaststroke, general, training or competition"),
  *     		MET(5.3,"18265","swimming, breaststroke, recreational"),
  *     		MET(13.8,"18270","swimming, butterfly, general"),             # <<<<<<<<<<<<<<
@@ -9656,7 +9665,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_720.code = ((char *)"18270");
   __pyx_t_720.description = ((char *)"swimming, butterfly, general");
 
-  /* "pyfit/mets.pyx":727
+  /* "pyfit/mets.pyx":729
  *     		MET(5.3,"18265","swimming, breaststroke, recreational"),
  *     		MET(13.8,"18270","swimming, butterfly, general"),
  *     		MET(10.0,"18280","swimming, crawl, fast speed, ~75 yards/minute, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -9667,7 +9676,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_721.code = ((char *)"18280");
   __pyx_t_721.description = ((char *)"swimming, crawl, fast speed, ~75 yards/minute, vigorous effort");
 
-  /* "pyfit/mets.pyx":728
+  /* "pyfit/mets.pyx":730
  *     		MET(13.8,"18270","swimming, butterfly, general"),
  *     		MET(10.0,"18280","swimming, crawl, fast speed, ~75 yards/minute, vigorous effort"),
  *     		MET(8.3,"18290","swimming, crawl, medium speed, ~50 yards/minute, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -9678,7 +9687,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_722.code = ((char *)"18290");
   __pyx_t_722.description = ((char *)"swimming, crawl, medium speed, ~50 yards/minute, vigorous effort");
 
-  /* "pyfit/mets.pyx":729
+  /* "pyfit/mets.pyx":731
  *     		MET(10.0,"18280","swimming, crawl, fast speed, ~75 yards/minute, vigorous effort"),
  *     		MET(8.3,"18290","swimming, crawl, medium speed, ~50 yards/minute, vigorous effort"),
  *     		MET(6.0,"18300","swimming, lake, ocean, river (Taylor Codes 280, 295)"),             # <<<<<<<<<<<<<<
@@ -9689,7 +9698,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_723.code = ((char *)"18300");
   __pyx_t_723.description = ((char *)"swimming, lake, ocean, river (Taylor Codes 280, 295)");
 
-  /* "pyfit/mets.pyx":730
+  /* "pyfit/mets.pyx":732
  *     		MET(8.3,"18290","swimming, crawl, medium speed, ~50 yards/minute, vigorous effort"),
  *     		MET(6.0,"18300","swimming, lake, ocean, river (Taylor Codes 280, 295)"),
  *     		MET(6.0,"18310","swimming, leisurely, not lap swimming, general"),             # <<<<<<<<<<<<<<
@@ -9700,7 +9709,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_724.code = ((char *)"18310");
   __pyx_t_724.description = ((char *)"swimming, leisurely, not lap swimming, general");
 
-  /* "pyfit/mets.pyx":731
+  /* "pyfit/mets.pyx":733
  *     		MET(6.0,"18300","swimming, lake, ocean, river (Taylor Codes 280, 295)"),
  *     		MET(6.0,"18310","swimming, leisurely, not lap swimming, general"),
  *     		MET(7.0,"18320","swimming, sidestroke, general"),             # <<<<<<<<<<<<<<
@@ -9711,7 +9720,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_725.code = ((char *)"18320");
   __pyx_t_725.description = ((char *)"swimming, sidestroke, general");
 
-  /* "pyfit/mets.pyx":732
+  /* "pyfit/mets.pyx":734
  *     		MET(6.0,"18310","swimming, leisurely, not lap swimming, general"),
  *     		MET(7.0,"18320","swimming, sidestroke, general"),
  *     		MET(8.0,"18330","swimming, synchronized"),             # <<<<<<<<<<<<<<
@@ -9722,7 +9731,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_726.code = ((char *)"18330");
   __pyx_t_726.description = ((char *)"swimming, synchronized");
 
-  /* "pyfit/mets.pyx":733
+  /* "pyfit/mets.pyx":735
  *     		MET(7.0,"18320","swimming, sidestroke, general"),
  *     		MET(8.0,"18330","swimming, synchronized"),
  *     		MET(9.8,"18340","swimming, treading water, fast, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -9733,7 +9742,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_727.code = ((char *)"18340");
   __pyx_t_727.description = ((char *)"swimming, treading water, fast, vigorous effort");
 
-  /* "pyfit/mets.pyx":734
+  /* "pyfit/mets.pyx":736
  *     		MET(8.0,"18330","swimming, synchronized"),
  *     		MET(9.8,"18340","swimming, treading water, fast, vigorous effort"),
  *     		MET(3.5,"18350","swimming, treading water, moderate effort, general"),             # <<<<<<<<<<<<<<
@@ -9744,7 +9753,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_728.code = ((char *)"18350");
   __pyx_t_728.description = ((char *)"swimming, treading water, moderate effort, general");
 
-  /* "pyfit/mets.pyx":735
+  /* "pyfit/mets.pyx":737
  *     		MET(9.8,"18340","swimming, treading water, fast, vigorous effort"),
  *     		MET(3.5,"18350","swimming, treading water, moderate effort, general"),
  *     		MET(2.3,"18352","tubing, floating on a river, general"),             # <<<<<<<<<<<<<<
@@ -9755,7 +9764,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_729.code = ((char *)"18352");
   __pyx_t_729.description = ((char *)"tubing, floating on a river, general");
 
-  /* "pyfit/mets.pyx":736
+  /* "pyfit/mets.pyx":738
  *     		MET(3.5,"18350","swimming, treading water, moderate effort, general"),
  *     		MET(2.3,"18352","tubing, floating on a river, general"),
  *     		MET(5.5,"18355","water aerobics, water calisthenics"),             # <<<<<<<<<<<<<<
@@ -9766,7 +9775,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_730.code = ((char *)"18355");
   __pyx_t_730.description = ((char *)"water aerobics, water calisthenics");
 
-  /* "pyfit/mets.pyx":737
+  /* "pyfit/mets.pyx":739
  *     		MET(2.3,"18352","tubing, floating on a river, general"),
  *     		MET(5.5,"18355","water aerobics, water calisthenics"),
  *     		MET(10.0,"18360","water polo"),             # <<<<<<<<<<<<<<
@@ -9777,7 +9786,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_731.code = ((char *)"18360");
   __pyx_t_731.description = ((char *)"water polo");
 
-  /* "pyfit/mets.pyx":738
+  /* "pyfit/mets.pyx":740
  *     		MET(5.5,"18355","water aerobics, water calisthenics"),
  *     		MET(10.0,"18360","water polo"),
  *     		MET(3.0,"18365","water volleyball"),             # <<<<<<<<<<<<<<
@@ -9788,7 +9797,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_732.code = ((char *)"18365");
   __pyx_t_732.description = ((char *)"water volleyball");
 
-  /* "pyfit/mets.pyx":739
+  /* "pyfit/mets.pyx":741
  *     		MET(10.0,"18360","water polo"),
  *     		MET(3.0,"18365","water volleyball"),
  *     		MET(2.5,"18367","water walking, light effort, slow pace"),             # <<<<<<<<<<<<<<
@@ -9799,7 +9808,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_733.code = ((char *)"18367");
   __pyx_t_733.description = ((char *)"water walking, light effort, slow pace");
 
-  /* "pyfit/mets.pyx":740
+  /* "pyfit/mets.pyx":742
  *     		MET(3.0,"18365","water volleyball"),
  *     		MET(2.5,"18367","water walking, light effort, slow pace"),
  *     		MET(4.5,"18368","water walking, moderate effort, moderate pace"),             # <<<<<<<<<<<<<<
@@ -9810,7 +9819,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_734.code = ((char *)"18368");
   __pyx_t_734.description = ((char *)"water walking, moderate effort, moderate pace");
 
-  /* "pyfit/mets.pyx":741
+  /* "pyfit/mets.pyx":743
  *     		MET(2.5,"18367","water walking, light effort, slow pace"),
  *     		MET(4.5,"18368","water walking, moderate effort, moderate pace"),
  *     		MET(6.8,"18369","water walking, vigorous effort, brisk pace"),             # <<<<<<<<<<<<<<
@@ -9821,7 +9830,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_735.code = ((char *)"18369");
   __pyx_t_735.description = ((char *)"water walking, vigorous effort, brisk pace");
 
-  /* "pyfit/mets.pyx":742
+  /* "pyfit/mets.pyx":744
  *     		MET(4.5,"18368","water walking, moderate effort, moderate pace"),
  *     		MET(6.8,"18369","water walking, vigorous effort, brisk pace"),
  *     		MET(5.0,"18370","whitewater rafting, kayaking, or canoeing"),             # <<<<<<<<<<<<<<
@@ -9832,7 +9841,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_736.code = ((char *)"18370");
   __pyx_t_736.description = ((char *)"whitewater rafting, kayaking, or canoeing");
 
-  /* "pyfit/mets.pyx":743
+  /* "pyfit/mets.pyx":745
  *     		MET(6.8,"18369","water walking, vigorous effort, brisk pace"),
  *     		MET(5.0,"18370","whitewater rafting, kayaking, or canoeing"),
  *     		MET(5.0,"18380","windsurfing, not pumping for speed"),             # <<<<<<<<<<<<<<
@@ -9843,7 +9852,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_737.code = ((char *)"18380");
   __pyx_t_737.description = ((char *)"windsurfing, not pumping for speed");
 
-  /* "pyfit/mets.pyx":744
+  /* "pyfit/mets.pyx":746
  *     		MET(5.0,"18370","whitewater rafting, kayaking, or canoeing"),
  *     		MET(5.0,"18380","windsurfing, not pumping for speed"),
  *     		MET(11.0,"18385","windsurfing or kitesurfing, crossing trial"),             # <<<<<<<<<<<<<<
@@ -9854,7 +9863,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_738.code = ((char *)"18385");
   __pyx_t_738.description = ((char *)"windsurfing or kitesurfing, crossing trial");
 
-  /* "pyfit/mets.pyx":745
+  /* "pyfit/mets.pyx":747
  *     		MET(5.0,"18380","windsurfing, not pumping for speed"),
  *     		MET(11.0,"18385","windsurfing or kitesurfing, crossing trial"),
  *     		MET(13.5,"18390","windsurfing, competition, pumping for speed"),             # <<<<<<<<<<<<<<
@@ -9865,7 +9874,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_739.code = ((char *)"18390");
   __pyx_t_739.description = ((char *)"windsurfing, competition, pumping for speed");
 
-  /* "pyfit/mets.pyx":746
+  /* "pyfit/mets.pyx":748
  *     		MET(11.0,"18385","windsurfing or kitesurfing, crossing trial"),
  *     		MET(13.5,"18390","windsurfing, competition, pumping for speed"),
  *     		MET(7.5,"19005","dog sledding, mushing"),             # <<<<<<<<<<<<<<
@@ -9876,7 +9885,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_740.code = ((char *)"19005");
   __pyx_t_740.description = ((char *)"dog sledding, mushing");
 
-  /* "pyfit/mets.pyx":747
+  /* "pyfit/mets.pyx":749
  *     		MET(13.5,"18390","windsurfing, competition, pumping for speed"),
  *     		MET(7.5,"19005","dog sledding, mushing"),
  *     		MET(2.5,"19006","dog sledding, passenger"),             # <<<<<<<<<<<<<<
@@ -9887,7 +9896,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_741.code = ((char *)"19006");
   __pyx_t_741.description = ((char *)"dog sledding, passenger");
 
-  /* "pyfit/mets.pyx":748
+  /* "pyfit/mets.pyx":750
  *     		MET(7.5,"19005","dog sledding, mushing"),
  *     		MET(2.5,"19006","dog sledding, passenger"),
  *     		MET(6.0,"19010","moving ice house, set up/drill holes"),             # <<<<<<<<<<<<<<
@@ -9898,7 +9907,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_742.code = ((char *)"19010");
   __pyx_t_742.description = ((char *)"moving ice house, set up/drill holes");
 
-  /* "pyfit/mets.pyx":749
+  /* "pyfit/mets.pyx":751
  *     		MET(2.5,"19006","dog sledding, passenger"),
  *     		MET(6.0,"19010","moving ice house, set up/drill holes"),
  *     		MET(2.0,"19011","ice fishing, sitting"),             # <<<<<<<<<<<<<<
@@ -9909,7 +9918,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_743.code = ((char *)"19011");
   __pyx_t_743.description = ((char *)"ice fishing, sitting");
 
-  /* "pyfit/mets.pyx":750
+  /* "pyfit/mets.pyx":752
  *     		MET(6.0,"19010","moving ice house, set up/drill holes"),
  *     		MET(2.0,"19011","ice fishing, sitting"),
  *     		MET(14.0,"19018","skating, ice dancing"),             # <<<<<<<<<<<<<<
@@ -9920,7 +9929,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_744.code = ((char *)"19018");
   __pyx_t_744.description = ((char *)"skating, ice dancing");
 
-  /* "pyfit/mets.pyx":751
+  /* "pyfit/mets.pyx":753
  *     		MET(2.0,"19011","ice fishing, sitting"),
  *     		MET(14.0,"19018","skating, ice dancing"),
  *     		MET(5.5,"19020","skating, ice, 9 mph or less"),             # <<<<<<<<<<<<<<
@@ -9931,7 +9940,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_745.code = ((char *)"19020");
   __pyx_t_745.description = ((char *)"skating, ice, 9 mph or less");
 
-  /* "pyfit/mets.pyx":752
+  /* "pyfit/mets.pyx":754
  *     		MET(14.0,"19018","skating, ice dancing"),
  *     		MET(5.5,"19020","skating, ice, 9 mph or less"),
  *     		MET(7.0,"19030","skating, ice, general (Taylor Code 360)"),             # <<<<<<<<<<<<<<
@@ -9942,7 +9951,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_746.code = ((char *)"19030");
   __pyx_t_746.description = ((char *)"skating, ice, general (Taylor Code 360)");
 
-  /* "pyfit/mets.pyx":753
+  /* "pyfit/mets.pyx":755
  *     		MET(5.5,"19020","skating, ice, 9 mph or less"),
  *     		MET(7.0,"19030","skating, ice, general (Taylor Code 360)"),
  *     		MET(9.0,"19040","skating, ice, rapidly, more than 9 mph, not competitive"),             # <<<<<<<<<<<<<<
@@ -9953,7 +9962,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_747.code = ((char *)"19040");
   __pyx_t_747.description = ((char *)"skating, ice, rapidly, more than 9 mph, not competitive");
 
-  /* "pyfit/mets.pyx":754
+  /* "pyfit/mets.pyx":756
  *     		MET(7.0,"19030","skating, ice, general (Taylor Code 360)"),
  *     		MET(9.0,"19040","skating, ice, rapidly, more than 9 mph, not competitive"),
  *     		MET(13.3,"19050","skating, speed, competitive"),             # <<<<<<<<<<<<<<
@@ -9964,7 +9973,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_748.code = ((char *)"19050");
   __pyx_t_748.description = ((char *)"skating, speed, competitive");
 
-  /* "pyfit/mets.pyx":755
+  /* "pyfit/mets.pyx":757
  *     		MET(9.0,"19040","skating, ice, rapidly, more than 9 mph, not competitive"),
  *     		MET(13.3,"19050","skating, speed, competitive"),
  *     		MET(7.0,"19060","ski jumping, climb up carrying skis"),             # <<<<<<<<<<<<<<
@@ -9975,7 +9984,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_749.code = ((char *)"19060");
   __pyx_t_749.description = ((char *)"ski jumping, climb up carrying skis");
 
-  /* "pyfit/mets.pyx":756
+  /* "pyfit/mets.pyx":758
  *     		MET(13.3,"19050","skating, speed, competitive"),
  *     		MET(7.0,"19060","ski jumping, climb up carrying skis"),
  *     		MET(7.0,"19075","skiing, general"),             # <<<<<<<<<<<<<<
@@ -9986,7 +9995,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_750.code = ((char *)"19075");
   __pyx_t_750.description = ((char *)"skiing, general");
 
-  /* "pyfit/mets.pyx":757
+  /* "pyfit/mets.pyx":759
  *     		MET(7.0,"19060","ski jumping, climb up carrying skis"),
  *     		MET(7.0,"19075","skiing, general"),
  *     		MET(6.8,"19080","skiing, cross country, 2.5 mph, slow or light effort, ski walking"),             # <<<<<<<<<<<<<<
@@ -9997,7 +10006,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_751.code = ((char *)"19080");
   __pyx_t_751.description = ((char *)"skiing, cross country, 2.5 mph, slow or light effort, ski walking");
 
-  /* "pyfit/mets.pyx":758
+  /* "pyfit/mets.pyx":760
  *     		MET(7.0,"19075","skiing, general"),
  *     		MET(6.8,"19080","skiing, cross country, 2.5 mph, slow or light effort, ski walking"),
  *     		MET(9.0,"19090","skiing, cross country, 4.0-4.9 mph, moderate speed and effort, general"),             # <<<<<<<<<<<<<<
@@ -10008,7 +10017,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_752.code = ((char *)"19090");
   __pyx_t_752.description = ((char *)"skiing, cross country, 4.0-4.9 mph, moderate speed and effort, general");
 
-  /* "pyfit/mets.pyx":759
+  /* "pyfit/mets.pyx":761
  *     		MET(6.8,"19080","skiing, cross country, 2.5 mph, slow or light effort, ski walking"),
  *     		MET(9.0,"19090","skiing, cross country, 4.0-4.9 mph, moderate speed and effort, general"),
  *     		MET(12.5,"19100","skiing, cross country, 5.0-7.9 mph, brisk speed, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -10019,7 +10028,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_753.code = ((char *)"19100");
   __pyx_t_753.description = ((char *)"skiing, cross country, 5.0-7.9 mph, brisk speed, vigorous effort");
 
-  /* "pyfit/mets.pyx":760
+  /* "pyfit/mets.pyx":762
  *     		MET(9.0,"19090","skiing, cross country, 4.0-4.9 mph, moderate speed and effort, general"),
  *     		MET(12.5,"19100","skiing, cross country, 5.0-7.9 mph, brisk speed, vigorous effort"),
  *     		MET(15.0,"19110","skiing, cross country, >8.0 mph, elite skier, racing"),             # <<<<<<<<<<<<<<
@@ -10030,7 +10039,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_754.code = ((char *)"19110");
   __pyx_t_754.description = ((char *)"skiing, cross country, >8.0 mph, elite skier, racing");
 
-  /* "pyfit/mets.pyx":761
+  /* "pyfit/mets.pyx":763
  *     		MET(12.5,"19100","skiing, cross country, 5.0-7.9 mph, brisk speed, vigorous effort"),
  *     		MET(15.0,"19110","skiing, cross country, >8.0 mph, elite skier, racing"),
  *     		MET(15.5,"19130","skiing, cross country, hard snow, uphill, maximum, snow mountaineering"),             # <<<<<<<<<<<<<<
@@ -10041,7 +10050,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_755.code = ((char *)"19130");
   __pyx_t_755.description = ((char *)"skiing, cross country, hard snow, uphill, maximum, snow mountaineering");
 
-  /* "pyfit/mets.pyx":762
+  /* "pyfit/mets.pyx":764
  *     		MET(15.0,"19110","skiing, cross country, >8.0 mph, elite skier, racing"),
  *     		MET(15.5,"19130","skiing, cross country, hard snow, uphill, maximum, snow mountaineering"),
  *     		MET(13.3,"19135","skiing, cross-country, skating"),             # <<<<<<<<<<<<<<
@@ -10052,7 +10061,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_756.code = ((char *)"19135");
   __pyx_t_756.description = ((char *)"skiing, cross-country, skating");
 
-  /* "pyfit/mets.pyx":763
+  /* "pyfit/mets.pyx":765
  *     		MET(15.5,"19130","skiing, cross country, hard snow, uphill, maximum, snow mountaineering"),
  *     		MET(13.3,"19135","skiing, cross-country, skating"),
  *     		MET(13.5,"19140","skiing, cross-country, biathlon, skating technique"),             # <<<<<<<<<<<<<<
@@ -10063,7 +10072,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_757.code = ((char *)"19140");
   __pyx_t_757.description = ((char *)"skiing, cross-country, biathlon, skating technique");
 
-  /* "pyfit/mets.pyx":764
+  /* "pyfit/mets.pyx":766
  *     		MET(13.3,"19135","skiing, cross-country, skating"),
  *     		MET(13.5,"19140","skiing, cross-country, biathlon, skating technique"),
  *     		MET(4.3,"19150","skiing, downhill, alpine or snowboarding, light effort, active time only"),             # <<<<<<<<<<<<<<
@@ -10074,7 +10083,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_758.code = ((char *)"19150");
   __pyx_t_758.description = ((char *)"skiing, downhill, alpine or snowboarding, light effort, active time only");
 
-  /* "pyfit/mets.pyx":765
+  /* "pyfit/mets.pyx":767
  *     		MET(13.5,"19140","skiing, cross-country, biathlon, skating technique"),
  *     		MET(4.3,"19150","skiing, downhill, alpine or snowboarding, light effort, active time only"),
  *     		MET(5.3,"19160","skiing, downhill, alpine or snowboarding, moderate effort, general, active time only"),             # <<<<<<<<<<<<<<
@@ -10085,7 +10094,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_759.code = ((char *)"19160");
   __pyx_t_759.description = ((char *)"skiing, downhill, alpine or snowboarding, moderate effort, general, active time only");
 
-  /* "pyfit/mets.pyx":766
+  /* "pyfit/mets.pyx":768
  *     		MET(4.3,"19150","skiing, downhill, alpine or snowboarding, light effort, active time only"),
  *     		MET(5.3,"19160","skiing, downhill, alpine or snowboarding, moderate effort, general, active time only"),
  *     		MET(8.0,"19170","skiing, downhill, vigorous effort, racing"),             # <<<<<<<<<<<<<<
@@ -10096,7 +10105,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_760.code = ((char *)"19170");
   __pyx_t_760.description = ((char *)"skiing, downhill, vigorous effort, racing");
 
-  /* "pyfit/mets.pyx":767
+  /* "pyfit/mets.pyx":769
  *     		MET(5.3,"19160","skiing, downhill, alpine or snowboarding, moderate effort, general, active time only"),
  *     		MET(8.0,"19170","skiing, downhill, vigorous effort, racing"),
  *     		MET(12.5,"19175","skiing, roller, elite racers"),             # <<<<<<<<<<<<<<
@@ -10107,7 +10116,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_761.code = ((char *)"19175");
   __pyx_t_761.description = ((char *)"skiing, roller, elite racers");
 
-  /* "pyfit/mets.pyx":768
+  /* "pyfit/mets.pyx":770
  *     		MET(8.0,"19170","skiing, downhill, vigorous effort, racing"),
  *     		MET(12.5,"19175","skiing, roller, elite racers"),
  *     		MET(7.0,"19180","sledding, tobogganing, bobsledding, luge (Taylor Code 370)"),             # <<<<<<<<<<<<<<
@@ -10118,7 +10127,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_762.code = ((char *)"19180");
   __pyx_t_762.description = ((char *)"sledding, tobogganing, bobsledding, luge (Taylor Code 370)");
 
-  /* "pyfit/mets.pyx":769
+  /* "pyfit/mets.pyx":771
  *     		MET(12.5,"19175","skiing, roller, elite racers"),
  *     		MET(7.0,"19180","sledding, tobogganing, bobsledding, luge (Taylor Code 370)"),
  *     		MET(5.3,"19190","snow shoeing, moderate effort"),             # <<<<<<<<<<<<<<
@@ -10129,7 +10138,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_763.code = ((char *)"19190");
   __pyx_t_763.description = ((char *)"snow shoeing, moderate effort");
 
-  /* "pyfit/mets.pyx":770
+  /* "pyfit/mets.pyx":772
  *     		MET(7.0,"19180","sledding, tobogganing, bobsledding, luge (Taylor Code 370)"),
  *     		MET(5.3,"19190","snow shoeing, moderate effort"),
  *     		MET(10.0,"19192","snow shoeing, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -10140,7 +10149,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_764.code = ((char *)"19192");
   __pyx_t_764.description = ((char *)"snow shoeing, vigorous effort");
 
-  /* "pyfit/mets.pyx":771
+  /* "pyfit/mets.pyx":773
  *     		MET(5.3,"19190","snow shoeing, moderate effort"),
  *     		MET(10.0,"19192","snow shoeing, vigorous effort"),
  *     		MET(3.5,"19200","snowmobiling, driving, moderate"),             # <<<<<<<<<<<<<<
@@ -10151,7 +10160,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_765.code = ((char *)"19200");
   __pyx_t_765.description = ((char *)"snowmobiling, driving, moderate");
 
-  /* "pyfit/mets.pyx":772
+  /* "pyfit/mets.pyx":774
  *     		MET(10.0,"19192","snow shoeing, vigorous effort"),
  *     		MET(3.5,"19200","snowmobiling, driving, moderate"),
  *     		MET(2.0,"19202","snowmobiling, passenger"),             # <<<<<<<<<<<<<<
@@ -10162,7 +10171,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_766.code = ((char *)"19202");
   __pyx_t_766.description = ((char *)"snowmobiling, passenger");
 
-  /* "pyfit/mets.pyx":773
+  /* "pyfit/mets.pyx":775
  *     		MET(3.5,"19200","snowmobiling, driving, moderate"),
  *     		MET(2.0,"19202","snowmobiling, passenger"),
  *     		MET(5.3,"19252","snow shoveling, by hand, moderate effort"),             # <<<<<<<<<<<<<<
@@ -10173,7 +10182,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_767.code = ((char *)"19252");
   __pyx_t_767.description = ((char *)"snow shoveling, by hand, moderate effort");
 
-  /* "pyfit/mets.pyx":774
+  /* "pyfit/mets.pyx":776
  *     		MET(2.0,"19202","snowmobiling, passenger"),
  *     		MET(5.3,"19252","snow shoveling, by hand, moderate effort"),
  *     		MET(7.5,"19254","snow shoveling, by hand, vigorous effort"),             # <<<<<<<<<<<<<<
@@ -10184,7 +10193,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_768.code = ((char *)"19254");
   __pyx_t_768.description = ((char *)"snow shoveling, by hand, vigorous effort");
 
-  /* "pyfit/mets.pyx":775
+  /* "pyfit/mets.pyx":777
  *     		MET(5.3,"19252","snow shoveling, by hand, moderate effort"),
  *     		MET(7.5,"19254","snow shoveling, by hand, vigorous effort"),
  *     		MET(2.5,"19260","snow blower, walking and pushing"),             # <<<<<<<<<<<<<<
@@ -10195,7 +10204,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_769.code = ((char *)"19260");
   __pyx_t_769.description = ((char *)"snow blower, walking and pushing");
 
-  /* "pyfit/mets.pyx":776
+  /* "pyfit/mets.pyx":778
  *     		MET(7.5,"19254","snow shoveling, by hand, vigorous effort"),
  *     		MET(2.5,"19260","snow blower, walking and pushing"),
  *     		MET(1.3,"20000","sitting in church, in service, attending a ceremony, sitting quietly"),             # <<<<<<<<<<<<<<
@@ -10206,7 +10215,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_770.code = ((char *)"20000");
   __pyx_t_770.description = ((char *)"sitting in church, in service, attending a ceremony, sitting quietly");
 
-  /* "pyfit/mets.pyx":777
+  /* "pyfit/mets.pyx":779
  *     		MET(2.5,"19260","snow blower, walking and pushing"),
  *     		MET(1.3,"20000","sitting in church, in service, attending a ceremony, sitting quietly"),
  *     		MET(2.0,"20001","sitting, playing an instrument at church"),             # <<<<<<<<<<<<<<
@@ -10217,7 +10226,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_771.code = ((char *)"20001");
   __pyx_t_771.description = ((char *)"sitting, playing an instrument at church");
 
-  /* "pyfit/mets.pyx":778
+  /* "pyfit/mets.pyx":780
  *     		MET(1.3,"20000","sitting in church, in service, attending a ceremony, sitting quietly"),
  *     		MET(2.0,"20001","sitting, playing an instrument at church"),
  *     		MET(1.8,"20005","sitting in church, talking or singing, attending a ceremony, sitting, active participation"),             # <<<<<<<<<<<<<<
@@ -10228,7 +10237,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_772.code = ((char *)"20005");
   __pyx_t_772.description = ((char *)"sitting in church, talking or singing, attending a ceremony, sitting, active participation");
 
-  /* "pyfit/mets.pyx":779
+  /* "pyfit/mets.pyx":781
  *     		MET(2.0,"20001","sitting, playing an instrument at church"),
  *     		MET(1.8,"20005","sitting in church, talking or singing, attending a ceremony, sitting, active participation"),
  *     		MET(1.3,"20010","sitting, reading religious materials at home"),             # <<<<<<<<<<<<<<
@@ -10239,7 +10248,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_773.code = ((char *)"20010");
   __pyx_t_773.description = ((char *)"sitting, reading religious materials at home");
 
-  /* "pyfit/mets.pyx":780
+  /* "pyfit/mets.pyx":782
  *     		MET(1.8,"20005","sitting in church, talking or singing, attending a ceremony, sitting, active participation"),
  *     		MET(1.3,"20010","sitting, reading religious materials at home"),
  *     		MET(1.3,"20015","standing quietly in church, attending a ceremony"),             # <<<<<<<<<<<<<<
@@ -10250,7 +10259,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_774.code = ((char *)"20015");
   __pyx_t_774.description = ((char *)"standing quietly in church, attending a ceremony");
 
-  /* "pyfit/mets.pyx":781
+  /* "pyfit/mets.pyx":783
  *     		MET(1.3,"20010","sitting, reading religious materials at home"),
  *     		MET(1.3,"20015","standing quietly in church, attending a ceremony"),
  *     		MET(2.0,"20020","standing, singing in church, attending a ceremony, standing, active participation"),             # <<<<<<<<<<<<<<
@@ -10261,7 +10270,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_775.code = ((char *)"20020");
   __pyx_t_775.description = ((char *)"standing, singing in church, attending a ceremony, standing, active participation");
 
-  /* "pyfit/mets.pyx":782
+  /* "pyfit/mets.pyx":784
  *     		MET(1.3,"20015","standing quietly in church, attending a ceremony"),
  *     		MET(2.0,"20020","standing, singing in church, attending a ceremony, standing, active participation"),
  *     		MET(1.3,"20025","kneeling in church or at home, praying"),             # <<<<<<<<<<<<<<
@@ -10272,7 +10281,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_776.code = ((char *)"20025");
   __pyx_t_776.description = ((char *)"kneeling in church or at home, praying");
 
-  /* "pyfit/mets.pyx":783
+  /* "pyfit/mets.pyx":785
  *     		MET(2.0,"20020","standing, singing in church, attending a ceremony, standing, active participation"),
  *     		MET(1.3,"20025","kneeling in church or at home, praying"),
  *     		MET(1.8,"20030","standing, talking in church"),             # <<<<<<<<<<<<<<
@@ -10283,7 +10292,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_777.code = ((char *)"20030");
   __pyx_t_777.description = ((char *)"standing, talking in church");
 
-  /* "pyfit/mets.pyx":784
+  /* "pyfit/mets.pyx":786
  *     		MET(1.3,"20025","kneeling in church or at home, praying"),
  *     		MET(1.8,"20030","standing, talking in church"),
  *     		MET(2.0,"20035","walking in church"),             # <<<<<<<<<<<<<<
@@ -10294,7 +10303,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_778.code = ((char *)"20035");
   __pyx_t_778.description = ((char *)"walking in church");
 
-  /* "pyfit/mets.pyx":785
+  /* "pyfit/mets.pyx":787
  *     		MET(1.8,"20030","standing, talking in church"),
  *     		MET(2.0,"20035","walking in church"),
  *     		MET(2.0,"20036","walking, less than 2.0 mph, very slow"),             # <<<<<<<<<<<<<<
@@ -10305,7 +10314,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_779.code = ((char *)"20036");
   __pyx_t_779.description = ((char *)"walking, less than 2.0 mph, very slow");
 
-  /* "pyfit/mets.pyx":786
+  /* "pyfit/mets.pyx":788
  *     		MET(2.0,"20035","walking in church"),
  *     		MET(2.0,"20036","walking, less than 2.0 mph, very slow"),
  *     		MET(3.5,"20037","walking, 3.0 mph, moderate speed, not carrying anything"),             # <<<<<<<<<<<<<<
@@ -10316,7 +10325,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_780.code = ((char *)"20037");
   __pyx_t_780.description = ((char *)"walking, 3.0 mph, moderate speed, not carrying anything");
 
-  /* "pyfit/mets.pyx":787
+  /* "pyfit/mets.pyx":789
  *     		MET(2.0,"20036","walking, less than 2.0 mph, very slow"),
  *     		MET(3.5,"20037","walking, 3.0 mph, moderate speed, not carrying anything"),
  *     		MET(4.3,"20038","walking, 3.5 mph, brisk speed, not carrying anything"),             # <<<<<<<<<<<<<<
@@ -10327,7 +10336,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_781.code = ((char *)"20038");
   __pyx_t_781.description = ((char *)"walking, 3.5 mph, brisk speed, not carrying anything");
 
-  /* "pyfit/mets.pyx":788
+  /* "pyfit/mets.pyx":790
  *     		MET(3.5,"20037","walking, 3.0 mph, moderate speed, not carrying anything"),
  *     		MET(4.3,"20038","walking, 3.5 mph, brisk speed, not carrying anything"),
  *     		MET(2.0,"20039","walk/stand combination for religious purposes, usher"),             # <<<<<<<<<<<<<<
@@ -10338,7 +10347,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_782.code = ((char *)"20039");
   __pyx_t_782.description = ((char *)"walk/stand combination for religious purposes, usher");
 
-  /* "pyfit/mets.pyx":789
+  /* "pyfit/mets.pyx":791
  *     		MET(4.3,"20038","walking, 3.5 mph, brisk speed, not carrying anything"),
  *     		MET(2.0,"20039","walk/stand combination for religious purposes, usher"),
  *     		MET(5.0,"20040","praise with dance or run, spiritual dancing in church"),             # <<<<<<<<<<<<<<
@@ -10349,7 +10358,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_783.code = ((char *)"20040");
   __pyx_t_783.description = ((char *)"praise with dance or run, spiritual dancing in church");
 
-  /* "pyfit/mets.pyx":790
+  /* "pyfit/mets.pyx":792
  *     		MET(2.0,"20039","walk/stand combination for religious purposes, usher"),
  *     		MET(5.0,"20040","praise with dance or run, spiritual dancing in church"),
  *     		MET(2.5,"20045","serving food at church"),             # <<<<<<<<<<<<<<
@@ -10360,7 +10369,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_784.code = ((char *)"20045");
   __pyx_t_784.description = ((char *)"serving food at church");
 
-  /* "pyfit/mets.pyx":791
+  /* "pyfit/mets.pyx":793
  *     		MET(5.0,"20040","praise with dance or run, spiritual dancing in church"),
  *     		MET(2.5,"20045","serving food at church"),
  *     		MET(2.0,"20046","preparing food at church"),             # <<<<<<<<<<<<<<
@@ -10371,7 +10380,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_785.code = ((char *)"20046");
   __pyx_t_785.description = ((char *)"preparing food at church");
 
-  /* "pyfit/mets.pyx":792
+  /* "pyfit/mets.pyx":794
  *     		MET(2.5,"20045","serving food at church"),
  *     		MET(2.0,"20046","preparing food at church"),
  *     		MET(3.3,"20047","washing dishes, cleaning kitchen at church"),             # <<<<<<<<<<<<<<
@@ -10382,7 +10391,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_786.code = ((char *)"20047");
   __pyx_t_786.description = ((char *)"washing dishes, cleaning kitchen at church");
 
-  /* "pyfit/mets.pyx":793
+  /* "pyfit/mets.pyx":795
  *     		MET(2.0,"20046","preparing food at church"),
  *     		MET(3.3,"20047","washing dishes, cleaning kitchen at church"),
  *     		MET(1.5,"20050","eating at church"),             # <<<<<<<<<<<<<<
@@ -10393,7 +10402,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_787.code = ((char *)"20050");
   __pyx_t_787.description = ((char *)"eating at church");
 
-  /* "pyfit/mets.pyx":794
+  /* "pyfit/mets.pyx":796
  *     		MET(3.3,"20047","washing dishes, cleaning kitchen at church"),
  *     		MET(1.5,"20050","eating at church"),
  *     		MET(2.0,"20055","eating/talking at church or standing eating, American Indian Feast days"),             # <<<<<<<<<<<<<<
@@ -10404,7 +10413,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_788.code = ((char *)"20055");
   __pyx_t_788.description = ((char *)"eating/talking at church or standing eating, American Indian Feast days");
 
-  /* "pyfit/mets.pyx":795
+  /* "pyfit/mets.pyx":797
  *     		MET(1.5,"20050","eating at church"),
  *     		MET(2.0,"20055","eating/talking at church or standing eating, American Indian Feast days"),
  *     		MET(3.3,"20060","cleaning church"),             # <<<<<<<<<<<<<<
@@ -10415,7 +10424,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_789.code = ((char *)"20060");
   __pyx_t_789.description = ((char *)"cleaning church");
 
-  /* "pyfit/mets.pyx":796
+  /* "pyfit/mets.pyx":798
  *     		MET(2.0,"20055","eating/talking at church or standing eating, American Indian Feast days"),
  *     		MET(3.3,"20060","cleaning church"),
  *     		MET(4.0,"20061","general yard work at church"),             # <<<<<<<<<<<<<<
@@ -10426,7 +10435,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_790.code = ((char *)"20061");
   __pyx_t_790.description = ((char *)"general yard work at church");
 
-  /* "pyfit/mets.pyx":797
+  /* "pyfit/mets.pyx":799
  *     		MET(3.3,"20060","cleaning church"),
  *     		MET(4.0,"20061","general yard work at church"),
  *     		MET(3.5,"20065","standing, moderate effort (e.g., lifting heavy objects, assembling at fast rate)"),             # <<<<<<<<<<<<<<
@@ -10437,7 +10446,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_791.code = ((char *)"20065");
   __pyx_t_791.description = ((char *)"standing, moderate effort (e.g., lifting heavy objects, assembling at fast rate)");
 
-  /* "pyfit/mets.pyx":798
+  /* "pyfit/mets.pyx":800
  *     		MET(4.0,"20061","general yard work at church"),
  *     		MET(3.5,"20065","standing, moderate effort (e.g., lifting heavy objects, assembling at fast rate)"),
  *     		MET(4.5,"20095","standing, moderate-to-heavy effort, manual labor, lifting \\u2265 50 lbs, heavy maintenance"),             # <<<<<<<<<<<<<<
@@ -10448,7 +10457,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_792.code = ((char *)"20095");
   __pyx_t_792.description = ((char *)"standing, moderate-to-heavy effort, manual labor, lifting \\u2265 50 lbs, heavy maintenance");
 
-  /* "pyfit/mets.pyx":799
+  /* "pyfit/mets.pyx":801
  *     		MET(3.5,"20065","standing, moderate effort (e.g., lifting heavy objects, assembling at fast rate)"),
  *     		MET(4.5,"20095","standing, moderate-to-heavy effort, manual labor, lifting \\u2265 50 lbs, heavy maintenance"),
  *     		MET(1.3,"20100","typing, electric, manual, or computer"),             # <<<<<<<<<<<<<<
@@ -10459,7 +10468,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_793.code = ((char *)"20100");
   __pyx_t_793.description = ((char *)"typing, electric, manual, or computer");
 
-  /* "pyfit/mets.pyx":800
+  /* "pyfit/mets.pyx":802
  *     		MET(4.5,"20095","standing, moderate-to-heavy effort, manual labor, lifting \\u2265 50 lbs, heavy maintenance"),
  *     		MET(1.3,"20100","typing, electric, manual, or computer"),
  *     		MET(1.5,"21000","sitting, meeting, general, and/or with talking involved"),             # <<<<<<<<<<<<<<
@@ -10470,7 +10479,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_794.code = ((char *)"21000");
   __pyx_t_794.description = ((char *)"sitting, meeting, general, and/or with talking involved");
 
-  /* "pyfit/mets.pyx":801
+  /* "pyfit/mets.pyx":803
  *     		MET(1.3,"20100","typing, electric, manual, or computer"),
  *     		MET(1.5,"21000","sitting, meeting, general, and/or with talking involved"),
  *     		MET(1.5,"21005","sitting, light office work, in general"),             # <<<<<<<<<<<<<<
@@ -10481,7 +10490,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_795.code = ((char *)"21005");
   __pyx_t_795.description = ((char *)"sitting, light office work, in general");
 
-  /* "pyfit/mets.pyx":802
+  /* "pyfit/mets.pyx":804
  *     		MET(1.5,"21000","sitting, meeting, general, and/or with talking involved"),
  *     		MET(1.5,"21005","sitting, light office work, in general"),
  *     		MET(2.5,"21010","sitting, moderate work"),             # <<<<<<<<<<<<<<
@@ -10492,7 +10501,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_796.code = ((char *)"21010");
   __pyx_t_796.description = ((char *)"sitting, moderate work");
 
-  /* "pyfit/mets.pyx":803
+  /* "pyfit/mets.pyx":805
  *     		MET(1.5,"21005","sitting, light office work, in general"),
  *     		MET(2.5,"21010","sitting, moderate work"),
  *     		MET(2.3,"21015","standing, light work (filing, talking, assembling)"),             # <<<<<<<<<<<<<<
@@ -10503,7 +10512,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_797.code = ((char *)"21015");
   __pyx_t_797.description = ((char *)"standing, light work (filing, talking, assembling)");
 
-  /* "pyfit/mets.pyx":804
+  /* "pyfit/mets.pyx":806
  *     		MET(2.5,"21010","sitting, moderate work"),
  *     		MET(2.3,"21015","standing, light work (filing, talking, assembling)"),
  *     		MET(2.0,"21016","sitting, child care, only active periods"),             # <<<<<<<<<<<<<<
@@ -10514,7 +10523,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_798.code = ((char *)"21016");
   __pyx_t_798.description = ((char *)"sitting, child care, only active periods");
 
-  /* "pyfit/mets.pyx":805
+  /* "pyfit/mets.pyx":807
  *     		MET(2.3,"21015","standing, light work (filing, talking, assembling)"),
  *     		MET(2.0,"21016","sitting, child care, only active periods"),
  *     		MET(3.0,"21017","standing, child care, only active periods"),             # <<<<<<<<<<<<<<
@@ -10525,7 +10534,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_799.code = ((char *)"21017");
   __pyx_t_799.description = ((char *)"standing, child care, only active periods");
 
-  /* "pyfit/mets.pyx":806
+  /* "pyfit/mets.pyx":808
  *     		MET(2.0,"21016","sitting, child care, only active periods"),
  *     		MET(3.0,"21017","standing, child care, only active periods"),
  *     		MET(3.5,"21018","walk/run play with children, moderate, only active periods"),             # <<<<<<<<<<<<<<
@@ -10536,7 +10545,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_800.code = ((char *)"21018");
   __pyx_t_800.description = ((char *)"walk/run play with children, moderate, only active periods");
 
-  /* "pyfit/mets.pyx":807
+  /* "pyfit/mets.pyx":809
  *     		MET(3.0,"21017","standing, child care, only active periods"),
  *     		MET(3.5,"21018","walk/run play with children, moderate, only active periods"),
  *     		MET(5.8,"21019","walk/run play with children, vigorous, only active periods"),             # <<<<<<<<<<<<<<
@@ -10547,7 +10556,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_801.code = ((char *)"21019");
   __pyx_t_801.description = ((char *)"walk/run play with children, vigorous, only active periods");
 
-  /* "pyfit/mets.pyx":808
+  /* "pyfit/mets.pyx":810
  *     		MET(3.5,"21018","walk/run play with children, moderate, only active periods"),
  *     		MET(5.8,"21019","walk/run play with children, vigorous, only active periods"),
  *     		MET(3.0,"21020","standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)"),             # <<<<<<<<<<<<<<
@@ -10558,7 +10567,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_802.code = ((char *)"21020");
   __pyx_t_802.description = ((char *)"standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)");
 
-  /* "pyfit/mets.pyx":809
+  /* "pyfit/mets.pyx":811
  *     		MET(5.8,"21019","walk/run play with children, vigorous, only active periods"),
  *     		MET(3.0,"21020","standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)"),
  *     		MET(3.5,"21025","standing, moderate (lifting 50 lbs., assembling at fast rate)"),             # <<<<<<<<<<<<<<
@@ -10569,7 +10578,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_803.code = ((char *)"21025");
   __pyx_t_803.description = ((char *)"standing, moderate (lifting 50 lbs., assembling at fast rate)");
 
-  /* "pyfit/mets.pyx":810
+  /* "pyfit/mets.pyx":812
  *     		MET(3.0,"21020","standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)"),
  *     		MET(3.5,"21025","standing, moderate (lifting 50 lbs., assembling at fast rate)"),
  *     		MET(4.5,"21030","standing, moderate/heavy work"),             # <<<<<<<<<<<<<<
@@ -10580,7 +10589,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_804.code = ((char *)"21030");
   __pyx_t_804.description = ((char *)"standing, moderate/heavy work");
 
-  /* "pyfit/mets.pyx":811
+  /* "pyfit/mets.pyx":813
  *     		MET(3.5,"21025","standing, moderate (lifting 50 lbs., assembling at fast rate)"),
  *     		MET(4.5,"21030","standing, moderate/heavy work"),
  *     		MET(1.3,"21035","typing, electric, manual, or computer"),             # <<<<<<<<<<<<<<
@@ -10591,7 +10600,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_805.code = ((char *)"21035");
   __pyx_t_805.description = ((char *)"typing, electric, manual, or computer");
 
-  /* "pyfit/mets.pyx":812
+  /* "pyfit/mets.pyx":814
  *     		MET(4.5,"21030","standing, moderate/heavy work"),
  *     		MET(1.3,"21035","typing, electric, manual, or computer"),
  *     		MET(2.0,"21040","walking, less than 2.0 mph, very slow"),             # <<<<<<<<<<<<<<
@@ -10602,7 +10611,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_806.code = ((char *)"21040");
   __pyx_t_806.description = ((char *)"walking, less than 2.0 mph, very slow");
 
-  /* "pyfit/mets.pyx":813
+  /* "pyfit/mets.pyx":815
  *     		MET(1.3,"21035","typing, electric, manual, or computer"),
  *     		MET(2.0,"21040","walking, less than 2.0 mph, very slow"),
  *     		MET(3.5,"21045","walking, 3.0 mph, moderate speed, not carrying anything"),             # <<<<<<<<<<<<<<
@@ -10613,7 +10622,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_807.code = ((char *)"21045");
   __pyx_t_807.description = ((char *)"walking, 3.0 mph, moderate speed, not carrying anything");
 
-  /* "pyfit/mets.pyx":814
+  /* "pyfit/mets.pyx":816
  *     		MET(2.0,"21040","walking, less than 2.0 mph, very slow"),
  *     		MET(3.5,"21045","walking, 3.0 mph, moderate speed, not carrying anything"),
  *     		MET(4.3,"21050","walking, 3.5 mph, brisk speed, not carrying anything"),             # <<<<<<<<<<<<<<
@@ -10624,7 +10633,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_808.code = ((char *)"21050");
   __pyx_t_808.description = ((char *)"walking, 3.5 mph, brisk speed, not carrying anything");
 
-  /* "pyfit/mets.pyx":815
+  /* "pyfit/mets.pyx":817
  *     		MET(3.5,"21045","walking, 3.0 mph, moderate speed, not carrying anything"),
  *     		MET(4.3,"21050","walking, 3.5 mph, brisk speed, not carrying anything"),
  *     		MET(3.5,"21055","walking, 2.5 mph slowly and carrying objects less than 25 pounds"),             # <<<<<<<<<<<<<<
@@ -10635,7 +10644,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_809.code = ((char *)"21055");
   __pyx_t_809.description = ((char *)"walking, 2.5 mph slowly and carrying objects less than 25 pounds");
 
-  /* "pyfit/mets.pyx":816
+  /* "pyfit/mets.pyx":818
  *     		MET(4.3,"21050","walking, 3.5 mph, brisk speed, not carrying anything"),
  *     		MET(3.5,"21055","walking, 2.5 mph slowly and carrying objects less than 25 pounds"),
  *     		MET(4.5,"21060","walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something"),             # <<<<<<<<<<<<<<
@@ -10646,7 +10655,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_810.code = ((char *)"21060");
   __pyx_t_810.description = ((char *)"walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something");
 
-  /* "pyfit/mets.pyx":817
+  /* "pyfit/mets.pyx":819
  *     		MET(3.5,"21055","walking, 2.5 mph slowly and carrying objects less than 25 pounds"),
  *     		MET(4.5,"21060","walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something"),
  *     		MET(4.8,"21065","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),             # <<<<<<<<<<<<<<
@@ -10657,7 +10666,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_811.code = ((char *)"21065");
   __pyx_t_811.description = ((char *)"walking, 3.5 mph, briskly and carrying objects less than 25 pounds");
 
-  /* "pyfit/mets.pyx":818
+  /* "pyfit/mets.pyx":820
  *     		MET(4.5,"21060","walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something"),
  *     		MET(4.8,"21065","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),
  *     		MET(3.0,"21070","walk/stand combination, for volunteer purposes"),             # <<<<<<<<<<<<<<
@@ -10668,7 +10677,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_812.code = ((char *)"21070");
   __pyx_t_812.description = ((char *)"walk/stand combination, for volunteer purposes");
 
-  /* "pyfit/mets.pyx":819
+  /* "pyfit/mets.pyx":821
  *     		MET(4.8,"21065","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),
  *     		MET(3.0,"21070","walk/stand combination, for volunteer purposes"),
  *     		MET(1.5,"21000","sitting, meeting, general, and/or with talking involved"),             # <<<<<<<<<<<<<<
@@ -10679,7 +10688,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_813.code = ((char *)"21000");
   __pyx_t_813.description = ((char *)"sitting, meeting, general, and/or with talking involved");
 
-  /* "pyfit/mets.pyx":820
+  /* "pyfit/mets.pyx":822
  *     		MET(3.0,"21070","walk/stand combination, for volunteer purposes"),
  *     		MET(1.5,"21000","sitting, meeting, general, and/or with talking involved"),
  *     		MET(1.5,"21005","sitting, light office work, in general"),             # <<<<<<<<<<<<<<
@@ -10690,7 +10699,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_814.code = ((char *)"21005");
   __pyx_t_814.description = ((char *)"sitting, light office work, in general");
 
-  /* "pyfit/mets.pyx":821
+  /* "pyfit/mets.pyx":823
  *     		MET(1.5,"21000","sitting, meeting, general, and/or with talking involved"),
  *     		MET(1.5,"21005","sitting, light office work, in general"),
  *     		MET(2.5,"21010","sitting, moderate work"),             # <<<<<<<<<<<<<<
@@ -10701,7 +10710,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_815.code = ((char *)"21010");
   __pyx_t_815.description = ((char *)"sitting, moderate work");
 
-  /* "pyfit/mets.pyx":822
+  /* "pyfit/mets.pyx":824
  *     		MET(1.5,"21005","sitting, light office work, in general"),
  *     		MET(2.5,"21010","sitting, moderate work"),
  *     		MET(2.3,"21015","standing, light work (filing, talking, assembling)"),             # <<<<<<<<<<<<<<
@@ -10712,7 +10721,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_816.code = ((char *)"21015");
   __pyx_t_816.description = ((char *)"standing, light work (filing, talking, assembling)");
 
-  /* "pyfit/mets.pyx":823
+  /* "pyfit/mets.pyx":825
  *     		MET(2.5,"21010","sitting, moderate work"),
  *     		MET(2.3,"21015","standing, light work (filing, talking, assembling)"),
  *     		MET(2.0,"21016","sitting, child care, only active periods"),             # <<<<<<<<<<<<<<
@@ -10723,7 +10732,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_817.code = ((char *)"21016");
   __pyx_t_817.description = ((char *)"sitting, child care, only active periods");
 
-  /* "pyfit/mets.pyx":824
+  /* "pyfit/mets.pyx":826
  *     		MET(2.3,"21015","standing, light work (filing, talking, assembling)"),
  *     		MET(2.0,"21016","sitting, child care, only active periods"),
  *     		MET(3.0,"21017","standing, child care, only active periods"),             # <<<<<<<<<<<<<<
@@ -10734,7 +10743,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_818.code = ((char *)"21017");
   __pyx_t_818.description = ((char *)"standing, child care, only active periods");
 
-  /* "pyfit/mets.pyx":825
+  /* "pyfit/mets.pyx":827
  *     		MET(2.0,"21016","sitting, child care, only active periods"),
  *     		MET(3.0,"21017","standing, child care, only active periods"),
  *     		MET(3.5,"21018","walk/run play with children, moderate, only active periods"),             # <<<<<<<<<<<<<<
@@ -10745,7 +10754,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_819.code = ((char *)"21018");
   __pyx_t_819.description = ((char *)"walk/run play with children, moderate, only active periods");
 
-  /* "pyfit/mets.pyx":826
+  /* "pyfit/mets.pyx":828
  *     		MET(3.0,"21017","standing, child care, only active periods"),
  *     		MET(3.5,"21018","walk/run play with children, moderate, only active periods"),
  *     		MET(5.8,"21019","walk/run play with children, vigorous, only active periods"),             # <<<<<<<<<<<<<<
@@ -10756,7 +10765,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_820.code = ((char *)"21019");
   __pyx_t_820.description = ((char *)"walk/run play with children, vigorous, only active periods");
 
-  /* "pyfit/mets.pyx":827
+  /* "pyfit/mets.pyx":829
  *     		MET(3.5,"21018","walk/run play with children, moderate, only active periods"),
  *     		MET(5.8,"21019","walk/run play with children, vigorous, only active periods"),
  *     		MET(3.0,"21020","standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)"),             # <<<<<<<<<<<<<<
@@ -10767,7 +10776,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_821.code = ((char *)"21020");
   __pyx_t_821.description = ((char *)"standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)");
 
-  /* "pyfit/mets.pyx":828
+  /* "pyfit/mets.pyx":830
  *     		MET(5.8,"21019","walk/run play with children, vigorous, only active periods"),
  *     		MET(3.0,"21020","standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)"),
  *     		MET(3.5,"21025","standing, moderate (lifting 50 lbs., assembling at fast rate)"),             # <<<<<<<<<<<<<<
@@ -10778,7 +10787,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_822.code = ((char *)"21025");
   __pyx_t_822.description = ((char *)"standing, moderate (lifting 50 lbs., assembling at fast rate)");
 
-  /* "pyfit/mets.pyx":829
+  /* "pyfit/mets.pyx":831
  *     		MET(3.0,"21020","standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)"),
  *     		MET(3.5,"21025","standing, moderate (lifting 50 lbs., assembling at fast rate)"),
  *     		MET(4.5,"21030","standing, moderate/heavy work"),             # <<<<<<<<<<<<<<
@@ -10789,7 +10798,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_823.code = ((char *)"21030");
   __pyx_t_823.description = ((char *)"standing, moderate/heavy work");
 
-  /* "pyfit/mets.pyx":830
+  /* "pyfit/mets.pyx":832
  *     		MET(3.5,"21025","standing, moderate (lifting 50 lbs., assembling at fast rate)"),
  *     		MET(4.5,"21030","standing, moderate/heavy work"),
  *     		MET(1.3,"21035","typing, electric, manual, or computer"),             # <<<<<<<<<<<<<<
@@ -10800,7 +10809,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_824.code = ((char *)"21035");
   __pyx_t_824.description = ((char *)"typing, electric, manual, or computer");
 
-  /* "pyfit/mets.pyx":831
+  /* "pyfit/mets.pyx":833
  *     		MET(4.5,"21030","standing, moderate/heavy work"),
  *     		MET(1.3,"21035","typing, electric, manual, or computer"),
  *     		MET(2.0,"21040","walking, less than 2.0 mph, very slow"),             # <<<<<<<<<<<<<<
@@ -10811,7 +10820,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_825.code = ((char *)"21040");
   __pyx_t_825.description = ((char *)"walking, less than 2.0 mph, very slow");
 
-  /* "pyfit/mets.pyx":832
+  /* "pyfit/mets.pyx":834
  *     		MET(1.3,"21035","typing, electric, manual, or computer"),
  *     		MET(2.0,"21040","walking, less than 2.0 mph, very slow"),
  *     		MET(3.5,"21045","walking, 3.0 mph, moderate speed, not carrying anything"),             # <<<<<<<<<<<<<<
@@ -10822,7 +10831,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_826.code = ((char *)"21045");
   __pyx_t_826.description = ((char *)"walking, 3.0 mph, moderate speed, not carrying anything");
 
-  /* "pyfit/mets.pyx":833
+  /* "pyfit/mets.pyx":835
  *     		MET(2.0,"21040","walking, less than 2.0 mph, very slow"),
  *     		MET(3.5,"21045","walking, 3.0 mph, moderate speed, not carrying anything"),
  *     		MET(4.3,"21050","walking, 3.5 mph, brisk speed, not carrying anything"),             # <<<<<<<<<<<<<<
@@ -10833,7 +10842,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_827.code = ((char *)"21050");
   __pyx_t_827.description = ((char *)"walking, 3.5 mph, brisk speed, not carrying anything");
 
-  /* "pyfit/mets.pyx":834
+  /* "pyfit/mets.pyx":836
  *     		MET(3.5,"21045","walking, 3.0 mph, moderate speed, not carrying anything"),
  *     		MET(4.3,"21050","walking, 3.5 mph, brisk speed, not carrying anything"),
  *     		MET(3.5,"21055","walking, 2.5 mph slowly and carrying objects less than 25 pounds"),             # <<<<<<<<<<<<<<
@@ -10844,7 +10853,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_828.code = ((char *)"21055");
   __pyx_t_828.description = ((char *)"walking, 2.5 mph slowly and carrying objects less than 25 pounds");
 
-  /* "pyfit/mets.pyx":835
+  /* "pyfit/mets.pyx":837
  *     		MET(4.3,"21050","walking, 3.5 mph, brisk speed, not carrying anything"),
  *     		MET(3.5,"21055","walking, 2.5 mph slowly and carrying objects less than 25 pounds"),
  *     		MET(4.5,"21060","walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something"),             # <<<<<<<<<<<<<<
@@ -10855,7 +10864,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_829.code = ((char *)"21060");
   __pyx_t_829.description = ((char *)"walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something");
 
-  /* "pyfit/mets.pyx":836
+  /* "pyfit/mets.pyx":838
  *     		MET(3.5,"21055","walking, 2.5 mph slowly and carrying objects less than 25 pounds"),
  *     		MET(4.5,"21060","walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something"),
  *     		MET(4.8,"21065","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),             # <<<<<<<<<<<<<<
@@ -10866,7 +10875,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_830.code = ((char *)"21065");
   __pyx_t_830.description = ((char *)"walking, 3.5 mph, briskly and carrying objects less than 25 pounds");
 
-  /* "pyfit/mets.pyx":837
+  /* "pyfit/mets.pyx":839
  *     		MET(4.5,"21060","walking, 3.0 mph moderately and carrying objects less than 25 pounds, pushing something"),
  *     		MET(4.8,"21065","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),
  *     		MET(3.0,"21070","walk/stand combination, for volunteer purposes")             # <<<<<<<<<<<<<<
@@ -10877,7 +10886,7 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_831.code = ((char *)"21070");
   __pyx_t_831.description = ((char *)"walk/stand combination, for volunteer purposes");
 
-  /* "pyfit/mets.pyx":6
+  /* "pyfit/mets.pyx":8
  * 
  *     def __cinit__(self):
  *         self.mets = [             # <<<<<<<<<<<<<<
@@ -11717,11 +11726,11 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_t_832[830] = __pyx_t_831;
   if (unlikely((0x33F) != (831))) {
     PyErr_Format(PyExc_ValueError, "Assignment to slice of wrong length, expected %" CYTHON_FORMAT_SSIZE_T "d, got %" CYTHON_FORMAT_SSIZE_T "d", (Py_ssize_t)(831), (Py_ssize_t)(0x33F));
-    __PYX_ERR(0, 6, __pyx_L1_error)
+    __PYX_ERR(0, 8, __pyx_L1_error)
   }
   memcpy(&(__pyx_v_self->mets[0]), __pyx_t_832, sizeof(__pyx_v_self->mets[0]) * (831));
 
-  /* "pyfit/mets.pyx":5
+  /* "pyfit/mets.pyx":7
  * cdef class METs(object):
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11738,6 +11747,50 @@ static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_M
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
+}
+
+/* "pyfit/mets.pyx":842
+ *         ]
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         free(self.mets)
+ * 
+ */
+
+/* Python wrapper */
+static void __pyx_pw_5pyfit_4mets_4METs_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_5pyfit_4mets_4METs_3__dealloc__(PyObject *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_pf_5pyfit_4mets_4METs_2__dealloc__(((struct __pyx_obj_5pyfit_4mets_METs *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_5pyfit_4mets_4METs_2__dealloc__(struct __pyx_obj_5pyfit_4mets_METs *__pyx_v_self) {
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__", 0);
+
+  /* "pyfit/mets.pyx":843
+ * 
+ *     def __dealloc__(self):
+ *         free(self.mets)             # <<<<<<<<<<<<<<
+ * 
+ * cpdef double karvonen(double mets, double intensity):
+ */
+  free(__pyx_v_self->mets);
+
+  /* "pyfit/mets.pyx":842
+ *         ]
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         free(self.mets)
+ * 
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
 }
 
 /* "pyfit/mets.pxd":7
@@ -11784,8 +11837,8 @@ static PyObject *__pyx_pf_5pyfit_4mets_4METs_4mets___get__(struct __pyx_obj_5pyf
   return __pyx_r;
 }
 
-/* "pyfit/mets.pyx":840
- *         ]
+/* "pyfit/mets.pyx":845
+ *         free(self.mets)
  * 
  * cpdef double karvonen(double mets, double intensity):             # <<<<<<<<<<<<<<
  *     return intensity * (mets -1) + 1
@@ -11798,7 +11851,7 @@ static double __pyx_f_5pyfit_4mets_karvonen(double __pyx_v_mets, double __pyx_v_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("karvonen", 0);
 
-  /* "pyfit/mets.pyx":841
+  /* "pyfit/mets.pyx":846
  * 
  * cpdef double karvonen(double mets, double intensity):
  *     return intensity * (mets -1) + 1             # <<<<<<<<<<<<<<
@@ -11808,8 +11861,8 @@ static double __pyx_f_5pyfit_4mets_karvonen(double __pyx_v_mets, double __pyx_v_
   __pyx_r = ((__pyx_v_intensity * (__pyx_v_mets - 1.0)) + 1.0);
   goto __pyx_L0;
 
-  /* "pyfit/mets.pyx":840
- *         ]
+  /* "pyfit/mets.pyx":845
+ *         free(self.mets)
  * 
  * cpdef double karvonen(double mets, double intensity):             # <<<<<<<<<<<<<<
  *     return intensity * (mets -1) + 1
@@ -11850,11 +11903,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_1karvonen(PyObject *__pyx_self, PyObject 
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_intensity)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("karvonen", 1, 2, 2, 1); __PYX_ERR(0, 840, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("karvonen", 1, 2, 2, 1); __PYX_ERR(0, 845, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "karvonen") < 0)) __PYX_ERR(0, 840, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "karvonen") < 0)) __PYX_ERR(0, 845, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -11862,12 +11915,12 @@ static PyObject *__pyx_pw_5pyfit_4mets_1karvonen(PyObject *__pyx_self, PyObject 
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_mets = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mets == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 840, __pyx_L3_error)
-    __pyx_v_intensity = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_intensity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 840, __pyx_L3_error)
+    __pyx_v_mets = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mets == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 845, __pyx_L3_error)
+    __pyx_v_intensity = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_intensity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 845, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("karvonen", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 840, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("karvonen", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 845, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.mets.karvonen", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -11886,7 +11939,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_se
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("karvonen", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_karvonen(__pyx_v_mets, __pyx_v_intensity, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 840, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_karvonen(__pyx_v_mets, __pyx_v_intensity, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 845, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11903,7 +11956,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "pyfit/mets.pyx":843
+/* "pyfit/mets.pyx":848
  *     return intensity * (mets -1) + 1
  * 
  * cpdef double fromVO2(double vO2):             # <<<<<<<<<<<<<<
@@ -11917,7 +11970,7 @@ static double __pyx_f_5pyfit_4mets_fromVO2(double __pyx_v_vO2, CYTHON_UNUSED int
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("fromVO2", 0);
 
-  /* "pyfit/mets.pyx":844
+  /* "pyfit/mets.pyx":849
  * 
  * cpdef double fromVO2(double vO2):
  *     return vO2 / 3.5             # <<<<<<<<<<<<<<
@@ -11927,7 +11980,7 @@ static double __pyx_f_5pyfit_4mets_fromVO2(double __pyx_v_vO2, CYTHON_UNUSED int
   __pyx_r = (__pyx_v_vO2 / 3.5);
   goto __pyx_L0;
 
-  /* "pyfit/mets.pyx":843
+  /* "pyfit/mets.pyx":848
  *     return intensity * (mets -1) + 1
  * 
  * cpdef double fromVO2(double vO2):             # <<<<<<<<<<<<<<
@@ -11949,7 +12002,7 @@ static PyObject *__pyx_pw_5pyfit_4mets_3fromVO2(PyObject *__pyx_self, PyObject *
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("fromVO2 (wrapper)", 0);
   assert(__pyx_arg_vO2); {
-    __pyx_v_vO2 = __pyx_PyFloat_AsDouble(__pyx_arg_vO2); if (unlikely((__pyx_v_vO2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 843, __pyx_L3_error)
+    __pyx_v_vO2 = __pyx_PyFloat_AsDouble(__pyx_arg_vO2); if (unlikely((__pyx_v_vO2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 848, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11970,7 +12023,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_se
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("fromVO2", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_fromVO2(__pyx_v_vO2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 843, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_fromVO2(__pyx_v_vO2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11987,7 +12040,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "pyfit/mets.pyx":846
+/* "pyfit/mets.pyx":851
  *     return vO2 / 3.5
  * 
  * cpdef double stairmasterMets(self, int setting):             # <<<<<<<<<<<<<<
@@ -12001,7 +12054,7 @@ static double __pyx_f_5pyfit_4mets_stairmasterMets(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("stairmasterMets", 0);
 
-  /* "pyfit/mets.pyx":847
+  /* "pyfit/mets.pyx":852
  * 
  * cpdef double stairmasterMets(self, int setting):
  *     return 0.556 * 7.45 * setting             # <<<<<<<<<<<<<<
@@ -12011,7 +12064,7 @@ static double __pyx_f_5pyfit_4mets_stairmasterMets(CYTHON_UNUSED PyObject *__pyx
   __pyx_r = ((0.556 * 7.45) * __pyx_v_setting);
   goto __pyx_L0;
 
-  /* "pyfit/mets.pyx":846
+  /* "pyfit/mets.pyx":851
  *     return vO2 / 3.5
  * 
  * cpdef double stairmasterMets(self, int setting):             # <<<<<<<<<<<<<<
@@ -12053,11 +12106,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_setting)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("stairmasterMets", 1, 2, 2, 1); __PYX_ERR(0, 846, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("stairmasterMets", 1, 2, 2, 1); __PYX_ERR(0, 851, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "stairmasterMets") < 0)) __PYX_ERR(0, 846, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "stairmasterMets") < 0)) __PYX_ERR(0, 851, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -12066,11 +12119,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, Py
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_self = values[0];
-    __pyx_v_setting = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_setting == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 846, __pyx_L3_error)
+    __pyx_v_setting = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_setting == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 851, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("stairmasterMets", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 846, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("stairmasterMets", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 851, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.mets.stairmasterMets", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -12089,7 +12142,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_4stairmasterMets(CYTHON_UNUSED PyObject *
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("stairmasterMets", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_stairmasterMets(__pyx_v_self, __pyx_v_setting, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 846, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_stairmasterMets(__pyx_v_self, __pyx_v_setting, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 851, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12106,7 +12159,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_4stairmasterMets(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "pyfit/mets.pyx":849
+/* "pyfit/mets.pyx":854
  *     return 0.556 * 7.45 * setting
  * 
  * cpdef double toKCal(double mets, double weight):             # <<<<<<<<<<<<<<
@@ -12120,7 +12173,7 @@ static double __pyx_f_5pyfit_4mets_toKCal(double __pyx_v_mets, double __pyx_v_we
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("toKCal", 0);
 
-  /* "pyfit/mets.pyx":850
+  /* "pyfit/mets.pyx":855
  * 
  * cpdef double toKCal(double mets, double weight):
  *     return (mets * 3.5 * weight)/200             # <<<<<<<<<<<<<<
@@ -12130,7 +12183,7 @@ static double __pyx_f_5pyfit_4mets_toKCal(double __pyx_v_mets, double __pyx_v_we
   __pyx_r = (((__pyx_v_mets * 3.5) * __pyx_v_weight) / 200.0);
   goto __pyx_L0;
 
-  /* "pyfit/mets.pyx":849
+  /* "pyfit/mets.pyx":854
  *     return 0.556 * 7.45 * setting
  * 
  * cpdef double toKCal(double mets, double weight):             # <<<<<<<<<<<<<<
@@ -12172,11 +12225,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_weight)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, 1); __PYX_ERR(0, 849, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, 1); __PYX_ERR(0, 854, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toKCal") < 0)) __PYX_ERR(0, 849, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toKCal") < 0)) __PYX_ERR(0, 854, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -12184,12 +12237,12 @@ static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_mets = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mets == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 849, __pyx_L3_error)
-    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 849, __pyx_L3_error)
+    __pyx_v_mets = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mets == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 854, __pyx_L3_error)
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 854, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 849, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 854, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.mets.toKCal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -12208,7 +12261,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_sel
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("toKCal", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_toKCal(__pyx_v_mets, __pyx_v_weight, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 849, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_toKCal(__pyx_v_mets, __pyx_v_weight, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 854, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12225,7 +12278,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "pyfit/mets.pyx":852
+/* "pyfit/mets.pyx":857
  *     return (mets * 3.5 * weight)/200
  * 
  * cpdef double target(double vO2Max, intensity):             # <<<<<<<<<<<<<<
@@ -12242,7 +12295,7 @@ static double __pyx_f_5pyfit_4mets_target(double __pyx_v_vO2Max, PyObject *__pyx
   double __pyx_t_1;
   __Pyx_RefNannySetupContext("target", 0);
 
-  /* "pyfit/mets.pyx":853
+  /* "pyfit/mets.pyx":858
  * 
  * cpdef double target(double vO2Max, intensity):
  *     cdef double mets = fromVO2(vO2Max)             # <<<<<<<<<<<<<<
@@ -12251,16 +12304,16 @@ static double __pyx_f_5pyfit_4mets_target(double __pyx_v_vO2Max, PyObject *__pyx
  */
   __pyx_v_mets = __pyx_f_5pyfit_4mets_fromVO2(__pyx_v_vO2Max, 0);
 
-  /* "pyfit/mets.pyx":854
+  /* "pyfit/mets.pyx":859
  * cpdef double target(double vO2Max, intensity):
  *     cdef double mets = fromVO2(vO2Max)
  *     cdef double targetMets = karvonen(mets, intensity)             # <<<<<<<<<<<<<<
  *     return targetMets
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_intensity); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 854, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_intensity); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 859, __pyx_L1_error)
   __pyx_v_targetMets = __pyx_f_5pyfit_4mets_karvonen(__pyx_v_mets, __pyx_t_1, 0);
 
-  /* "pyfit/mets.pyx":855
+  /* "pyfit/mets.pyx":860
  *     cdef double mets = fromVO2(vO2Max)
  *     cdef double targetMets = karvonen(mets, intensity)
  *     return targetMets             # <<<<<<<<<<<<<<
@@ -12268,7 +12321,7 @@ static double __pyx_f_5pyfit_4mets_target(double __pyx_v_vO2Max, PyObject *__pyx
   __pyx_r = __pyx_v_targetMets;
   goto __pyx_L0;
 
-  /* "pyfit/mets.pyx":852
+  /* "pyfit/mets.pyx":857
  *     return (mets * 3.5 * weight)/200
  * 
  * cpdef double target(double vO2Max, intensity):             # <<<<<<<<<<<<<<
@@ -12313,11 +12366,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_intensity)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("target", 1, 2, 2, 1); __PYX_ERR(0, 852, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("target", 1, 2, 2, 1); __PYX_ERR(0, 857, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "target") < 0)) __PYX_ERR(0, 852, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "target") < 0)) __PYX_ERR(0, 857, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -12325,12 +12378,12 @@ static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_vO2Max = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vO2Max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 852, __pyx_L3_error)
+    __pyx_v_vO2Max = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vO2Max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 857, __pyx_L3_error)
     __pyx_v_intensity = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("target", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 852, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("target", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 857, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pyfit.mets.target", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -12349,7 +12402,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_8target(CYTHON_UNUSED PyObject *__pyx_sel
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("target", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_target(__pyx_v_vO2Max, __pyx_v_intensity, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 852, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_target(__pyx_v_vO2Max, __pyx_v_intensity, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 857, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12596,6 +12649,14 @@ static void __pyx_tp_dealloc_5pyfit_4mets_METs(PyObject *o) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
   }
   #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    ++Py_REFCNT(o);
+    __pyx_pw_5pyfit_4mets_4METs_3__dealloc__(o);
+    --Py_REFCNT(o);
+    PyErr_Restore(etype, eval, etb);
+  }
   (*Py_TYPE(o)->tp_free)(o);
 }
 
@@ -12822,9 +12883,9 @@ PyMODINIT_FUNC PyInit_mets(void)
   if (__Pyx_ExportFunction("toKCal", (void (*)(void))__pyx_f_5pyfit_4mets_toKCal, "double (double, double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   if (__Pyx_ExportFunction("target", (void (*)(void))__pyx_f_5pyfit_4mets_target, "double (double, PyObject *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_5pyfit_4mets_METs) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pyfit_4mets_METs) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
   __pyx_type_5pyfit_4mets_METs.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "METs", (PyObject *)&__pyx_type_5pyfit_4mets_METs) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "METs", (PyObject *)&__pyx_type_5pyfit_4mets_METs) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
   __pyx_ptype_5pyfit_4mets_METs = &__pyx_type_5pyfit_4mets_METs;
   /*--- Type import code ---*/
   /*--- Variable import code ---*/
@@ -12835,9 +12896,9 @@ PyMODINIT_FUNC PyInit_mets(void)
   #endif
 
   /* "pyfit/mets.pyx":1
- * cdef MET *mets             # <<<<<<<<<<<<<<
+ * from libc.stdlib cimport free             # <<<<<<<<<<<<<<
  * 
- * cdef class METs(object):
+ * cdef MET *mets
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

@@ -1,3 +1,5 @@
+from libc.stdlib cimport free
+
 cdef MET *mets
 
 cdef class METs(object):
@@ -836,6 +838,9 @@ cdef class METs(object):
     		MET(4.8,"21065","walking, 3.5 mph, briskly and carrying objects less than 25 pounds"),
     		MET(3.0,"21070","walk/stand combination, for volunteer purposes")
         ]
+
+    def __dealloc__(self):
+        free(self.mets)
 
 cpdef double karvonen(double mets, double intensity):
     return intensity * (mets -1) + 1
