@@ -8,7 +8,7 @@ cdef MET *mets
 cdef class METs(object):
     cdef readonly MET mets[831]
 
-    def __init__(self):
+    def __cinit__(self):
         self.mets = [
     		MET(14.0,"01003","bicycling, mountain, uphill, vigorous"),
     		MET(16.0,"01004","bicycling, mountain, competitive, racing"),
