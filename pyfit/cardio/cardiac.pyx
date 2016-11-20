@@ -7,6 +7,9 @@ cdef class HREstimator(object):
     cdef double predict(self, double age):
         raise NotImplementedError("The prediction method is not implemented")
 
+    cdef double age(self, double hr):
+        raise NotImplementedError("The age method is not implemented")
+
 cdef class Astrand(HREstimator):
     """
     Astrand (1952)
