@@ -5,8 +5,6 @@ cpdef double dailyWaterNeed(double weight):
     return 0.033 * weight
 
 cdef class Index(object):
-    cdef readonly double weight
-    cdef readonly double height
 
     def __cinit__(self, double weight, double height):
         self.weight = weight
@@ -39,10 +37,6 @@ cdef class Index(object):
         return waistCircumference/self.height
 
 cdef class Mass(object):
-    cdef readonly int gender
-    cdef readonly double age
-    cdef readonly double weight
-    cdef readonly double height
 
     def __cinit__(self, int gender, double age, double weight, double height):
         self.gender = gender
@@ -89,10 +83,6 @@ cdef class BodyFat(object):
         self.age = age
 
 cdef class SurfaceArea(object):
-    cdef readonly int gender
-    cdef readonly double age
-    cdef readonly double weight
-    cdef readonly double height
 
     def __cinit__(self, int gender, double age, double weight, double height):
         self.gender = gender
@@ -142,9 +132,6 @@ cdef class SurfaceArea(object):
         return 0.007241 * pow(self.weight, 0.425) * pow(cm, 0.725)
 
 cdef class Stature(object):
-    cdef readonly int gender
-    cdef readonly double age
-    cdef readonly double height
 
     def __cinit__(self, int gender, double age, double height):
         self.gender = gender

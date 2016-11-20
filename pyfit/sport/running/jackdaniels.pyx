@@ -34,7 +34,6 @@ cpdef double hrPace(double percentHR, vO2Max):
     return 60 / kph
 
 cdef class Pace(object):
-    cdef readonly double vO2Max
 
     def __cinit__(self, double vO2Max):
         self.vO2Max = vO2Max

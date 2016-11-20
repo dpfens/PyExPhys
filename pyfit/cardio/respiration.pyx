@@ -2,10 +2,6 @@ from libc.math cimport exp, pow
 from pyfit.enums import Gender
 
 cdef class ResidualVolume(object):
-    cdef readonly int gender
-    cdef readonly double height # meters
-    cdef readonly double age # years
-    cdef readonly double weight # kg
 
     def __cinit__(self, int gender,  double age, double weight, double height):
         self.gender = gender
@@ -47,10 +43,6 @@ cdef class ResidualVolume(object):
         return (0.03*self.age) + (0.0387*heightCm) - (0.73*bsa) - 4.78
 
 cdef class VO2(object):
-    cdef readonly int gender
-    cdef readonly double age
-    cdef readonly double weight
-    cdef readonly double height
 
     def __cinit__(self, int gender, double age, double weight, double height):
         self.gender = gender

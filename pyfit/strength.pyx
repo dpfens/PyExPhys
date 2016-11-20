@@ -4,9 +4,6 @@ from libcpp cimport bool
 from enums import Gender
 
 cdef class Compare(object):
-    cdef readonly int gender
-    cdef readonly double age
-    cdef readonly double weight
 
     def __cinit__(self, int gender, double weight):
         self.gender = gender
@@ -70,8 +67,6 @@ cdef class Compare(object):
         return coefficient * weightLifted
 
 cdef class Jump(object):
-    cdef readonly double weight
-    cdef readonly double height
 
     def __cinit__(self, double weight, double height):
         self.weight = weight
@@ -104,7 +99,6 @@ cdef class Jump(object):
         return (self.weight * (vJumpHeight/time)) * 9.81
 
 cdef class RMEstimator:
-    cdef readonly int reps
 
     def __cinit__(self, int reps):
         self.reps = reps
@@ -217,8 +211,6 @@ cdef class Wathan(RMEstimator):
         return (rm*(48.8+(53.8*exp(-0.075 * self.reps) ) ) )/100
 
 cdef class RM(object):
-    cdef readonly int gender
-    cdef readonly double age
 
     def __cinit__(self, int gender, double age):
         self.gender = gender

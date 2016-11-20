@@ -1,8 +1,6 @@
 from libc.math cimport pow
 
 cdef class Riegel(object):
-    cdef readonly double d1
-    cdef readonly double t1
 
     def __cinit__(self, double d1, double t1):
         self.d1 = d1
@@ -19,8 +17,6 @@ cdef class Riegel(object):
         return self.t1 * pow( (d2/self.d1), 1.06)
 
 cdef class Cameron(object):
-    cdef readonly double d1
-    cdef readonly double t1
 
     def __cinit__(self, double d1, double t1):
         self.d1 = d1

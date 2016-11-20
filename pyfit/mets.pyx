@@ -1,12 +1,6 @@
-cdef struct MET:
-    double value
-    char *code
-    char *description
-
 cdef MET *mets
 
 cdef class METs(object):
-    cdef readonly MET mets[831]
 
     def __cinit__(self):
         self.mets = [

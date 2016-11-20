@@ -3,7 +3,7 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {}, 
-    "module_name": "enums"
+    "module_name": "pyfit.enums"
 }
 END: Cython Metadata */
 
@@ -273,8 +273,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__enums
-#define __PYX_HAVE_API__enums
+#define __PYX_HAVE__pyfit__enums
+#define __PYX_HAVE_API__pyfit__enums
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -491,47 +491,47 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "stringsource",
-  "src/enums.pyx",
+  "pyfit/enums.pyx",
 };
 
 /*--- Type declarations ---*/
 struct __pyx_obj___Pyx_EnumMeta;
 
-/* "enums.pyx":1
+/* "pyfit/enums.pxd":1
  * cpdef enum Gender:             # <<<<<<<<<<<<<<
  *     Female, Male
  * 
  */
-enum __pyx_t_5enums_Gender {
-  __pyx_e_5enums_Female,
-  __pyx_e_5enums_Male
+enum __pyx_t_5pyfit_5enums_Gender {
+  __pyx_e_5pyfit_5enums_Female,
+  __pyx_e_5pyfit_5enums_Male
 };
 
-/* "enums.pyx":4
+/* "pyfit/enums.pxd":4
  *     Female, Male
  * 
  * cpdef enum Race:             # <<<<<<<<<<<<<<
  *     White, Black, NativeAmerican, PacificIslander
  * 
  */
-enum __pyx_t_5enums_Race {
-  __pyx_e_5enums_White,
-  __pyx_e_5enums_Black,
-  __pyx_e_5enums_NativeAmerican,
-  __pyx_e_5enums_PacificIslander
+enum __pyx_t_5pyfit_5enums_Race {
+  __pyx_e_5pyfit_5enums_White,
+  __pyx_e_5pyfit_5enums_Black,
+  __pyx_e_5pyfit_5enums_NativeAmerican,
+  __pyx_e_5pyfit_5enums_PacificIslander
 };
 
-/* "enums.pyx":7
+/* "pyfit/enums.pxd":7
  *     White, Black, NativeAmerican, PacificIslander
  * 
  * cpdef enum PAL:             # <<<<<<<<<<<<<<
  *     Sedentary, Low, Active, VeryActive
  */
-enum __pyx_t_5enums_PAL {
-  __pyx_e_5enums_Sedentary,
-  __pyx_e_5enums_Low,
-  __pyx_e_5enums_Active,
-  __pyx_e_5enums_VeryActive
+enum __pyx_t_5pyfit_5enums_PAL {
+  __pyx_e_5pyfit_5enums_Sedentary,
+  __pyx_e_5pyfit_5enums_Low,
+  __pyx_e_5pyfit_5enums_Active,
+  __pyx_e_5pyfit_5enums_VeryActive
 };
 
 /* "EnumBase":15
@@ -809,13 +809,13 @@ static void __Pyx_AddTraceback(const char *funcname, int c_line,
                                int py_line, const char *filename);
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_Gender(enum __pyx_t_5enums_Gender value);
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Gender(enum __pyx_t_5pyfit_5enums_Gender value);
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_Race(enum __pyx_t_5enums_Race value);
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(enum __pyx_t_5pyfit_5enums_Race value);
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(enum __pyx_t_5enums_PAL value);
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(enum __pyx_t_5pyfit_5enums_PAL value);
 
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
@@ -833,15 +833,15 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'enums' */
+/* Module declarations from 'pyfit.enums' */
 static PyTypeObject *__pyx_ptype___Pyx_EnumMeta = 0;
 static PyObject *__Pyx_OrderedDict = 0;
 static PyObject *__Pyx_EnumBase = 0;
 static PyObject *__Pyx_globals = 0;
-#define __Pyx_MODULE_NAME "enums"
-int __pyx_module_is_main_enums = 0;
+#define __Pyx_MODULE_NAME "pyfit.enums"
+int __pyx_module_is_main_pyfit__enums = 0;
 
-/* Implementation of 'enums' */
+/* Implementation of 'pyfit.enums' */
 static PyObject *__pyx_builtin_ValueError;
 static const char __pyx_k_v[] = "v";
 static const char __pyx_k_Low[] = "Low";
@@ -1855,7 +1855,7 @@ static PyMappingMethods __pyx_tp_as_mapping___Pyx_EnumMeta = {
 
 static PyTypeObject __Pyx_EnumMeta = {
   PyVarObject_HEAD_INIT(0, 0)
-  "enums.__Pyx_EnumMeta", /*tp_name*/
+  "pyfit.enums.__Pyx_EnumMeta", /*tp_name*/
   sizeof(struct __pyx_obj___Pyx_EnumMeta), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc___Pyx_EnumMeta, /*tp_dealloc*/
@@ -2124,14 +2124,14 @@ PyMODINIT_FUNC PyInit_enums(void)
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_enums) {
+  if (__pyx_module_is_main_pyfit__enums) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(1, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "enums")) {
-      if (unlikely(PyDict_SetItemString(modules, "enums", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "pyfit.enums")) {
+      if (unlikely(PyDict_SetItemString(modules, "pyfit.enums", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2158,10 +2158,8 @@ PyMODINIT_FUNC PyInit_enums(void)
   if (__Pyx_patch_abc() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
 
-  /* "enums.pyx":1
- * cpdef enum Gender:             # <<<<<<<<<<<<<<
- *     Female, Male
- * 
+  /* "pyfit/enums.pyx":1
+ * from enums cimport Gender, Race, PAL             # <<<<<<<<<<<<<<
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2381,7 +2379,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('Male', Male),
  *     ]))
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Gender(__pyx_e_5enums_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Gender(__pyx_e_5pyfit_5enums_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -2399,7 +2397,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *     ]))
  *     __Pyx_globals['Female'] = Gender.Female
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Gender(__pyx_e_5enums_Male); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 55, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Gender(__pyx_e_5pyfit_5enums_Male); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -2565,7 +2563,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Gender(__pyx_e_5enums_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 62, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Gender(__pyx_e_5pyfit_5enums_Female); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_3 = NULL;
     __pyx_t_8 = 0;
@@ -2609,7 +2607,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_Gender); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 63, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyInt_From_enum____pyx_t_5enums_Gender(__pyx_e_5enums_Male); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Gender(__pyx_e_5pyfit_5enums_Male); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 63, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_4 = NULL;
     __pyx_t_8 = 0;
@@ -2679,7 +2677,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('Black', Black),
  *         ('NativeAmerican', NativeAmerican),
  */
-    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5enums_Race(__pyx_e_5enums_White); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(__pyx_e_5pyfit_5enums_White); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -2697,7 +2695,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('NativeAmerican', NativeAmerican),
  *         ('PacificIslander', PacificIslander),
  */
-    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5enums_Race(__pyx_e_5enums_Black); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(__pyx_e_5pyfit_5enums_Black); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
@@ -2715,7 +2713,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('PacificIslander', PacificIslander),
  *     ]))
  */
-    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5enums_Race(__pyx_e_5enums_NativeAmerican); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(__pyx_e_5pyfit_5enums_NativeAmerican); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -2733,7 +2731,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *     ]))
  *     __Pyx_globals['White'] = Race.White
  */
-    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5enums_Race(__pyx_e_5enums_PacificIslander); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(__pyx_e_5pyfit_5enums_PacificIslander); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
@@ -2943,7 +2941,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_Race); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5enums_Race(__pyx_e_5enums_White); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(__pyx_e_5pyfit_5enums_White); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_6 = NULL;
     __pyx_t_8 = 0;
@@ -2988,7 +2986,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_Race); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_Race(__pyx_e_5enums_Black); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(__pyx_e_5pyfit_5enums_Black); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_3 = NULL;
     __pyx_t_8 = 0;
@@ -3033,7 +3031,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_Race); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_6 = __Pyx_PyInt_From_enum____pyx_t_5enums_Race(__pyx_e_5enums_NativeAmerican); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(__pyx_e_5pyfit_5enums_NativeAmerican); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_4 = NULL;
     __pyx_t_8 = 0;
@@ -3077,7 +3075,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_9 = __Pyx_GetModuleGlobalName(__pyx_n_s_Race); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 69, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5enums_Race(__pyx_e_5enums_PacificIslander); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(__pyx_e_5pyfit_5enums_PacificIslander); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_6 = NULL;
     __pyx_t_8 = 0;
@@ -3147,7 +3145,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('Low', Low),
  *         ('Active', Active),
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Sedentary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(__pyx_e_5pyfit_5enums_Sedentary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -3165,7 +3163,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('Active', Active),
  *         ('VeryActive', VeryActive),
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Low); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 55, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(__pyx_e_5pyfit_5enums_Low); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 55, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -3183,7 +3181,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *         ('VeryActive', VeryActive),
  *     ]))
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Active); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 56, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(__pyx_e_5pyfit_5enums_Active); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -3201,7 +3199,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  *     ]))
  *     __Pyx_globals['Sedentary'] = PAL.Sedentary
  */
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_VeryActive); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 57, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(__pyx_e_5pyfit_5enums_VeryActive); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -3411,7 +3409,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Sedentary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(__pyx_e_5pyfit_5enums_Sedentary); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_9 = NULL;
     __pyx_t_8 = 0;
@@ -3456,7 +3454,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Low); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(__pyx_e_5pyfit_5enums_Low); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_4 = NULL;
     __pyx_t_8 = 0;
@@ -3501,7 +3499,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_Active); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(__pyx_e_5pyfit_5enums_Active); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_6 = NULL;
     __pyx_t_8 = 0;
@@ -3545,7 +3543,7 @@ PyMODINIT_FUNC PyInit_enums(void)
  */
     __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_PAL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 69, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(__pyx_e_5enums_VeryActive); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 69, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(__pyx_e_5pyfit_5enums_VeryActive); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 69, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_9 = NULL;
     __pyx_t_8 = 0;
@@ -3596,11 +3594,11 @@ PyMODINIT_FUNC PyInit_enums(void)
   __Pyx_XDECREF(__pyx_t_9);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init enums", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init pyfit.enums", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init enums");
+    PyErr_SetString(PyExc_ImportError, "init pyfit.enums");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -5101,82 +5099,82 @@ bad:
 }
 
 /* CIntToPy */
-            static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_Gender(enum __pyx_t_5enums_Gender value) {
-    const enum __pyx_t_5enums_Gender neg_one = (enum __pyx_t_5enums_Gender) -1, const_zero = (enum __pyx_t_5enums_Gender) 0;
+            static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Gender(enum __pyx_t_5pyfit_5enums_Gender value) {
+    const enum __pyx_t_5pyfit_5enums_Gender neg_one = (enum __pyx_t_5pyfit_5enums_Gender) -1, const_zero = (enum __pyx_t_5pyfit_5enums_Gender) 0;
     const int is_unsigned = neg_one > const_zero;
     if (is_unsigned) {
-        if (sizeof(enum __pyx_t_5enums_Gender) < sizeof(long)) {
+        if (sizeof(enum __pyx_t_5pyfit_5enums_Gender) < sizeof(long)) {
             return PyInt_FromLong((long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Gender) <= sizeof(unsigned long)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_Gender) <= sizeof(unsigned long)) {
             return PyLong_FromUnsignedLong((unsigned long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Gender) <= sizeof(unsigned PY_LONG_LONG)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_Gender) <= sizeof(unsigned PY_LONG_LONG)) {
             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
         }
     } else {
-        if (sizeof(enum __pyx_t_5enums_Gender) <= sizeof(long)) {
+        if (sizeof(enum __pyx_t_5pyfit_5enums_Gender) <= sizeof(long)) {
             return PyInt_FromLong((long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Gender) <= sizeof(PY_LONG_LONG)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_Gender) <= sizeof(PY_LONG_LONG)) {
             return PyLong_FromLongLong((PY_LONG_LONG) value);
         }
     }
     {
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(enum __pyx_t_5enums_Gender),
+        return _PyLong_FromByteArray(bytes, sizeof(enum __pyx_t_5pyfit_5enums_Gender),
                                      little, !is_unsigned);
     }
 }
 
 /* CIntToPy */
-            static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_Race(enum __pyx_t_5enums_Race value) {
-    const enum __pyx_t_5enums_Race neg_one = (enum __pyx_t_5enums_Race) -1, const_zero = (enum __pyx_t_5enums_Race) 0;
+            static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_Race(enum __pyx_t_5pyfit_5enums_Race value) {
+    const enum __pyx_t_5pyfit_5enums_Race neg_one = (enum __pyx_t_5pyfit_5enums_Race) -1, const_zero = (enum __pyx_t_5pyfit_5enums_Race) 0;
     const int is_unsigned = neg_one > const_zero;
     if (is_unsigned) {
-        if (sizeof(enum __pyx_t_5enums_Race) < sizeof(long)) {
+        if (sizeof(enum __pyx_t_5pyfit_5enums_Race) < sizeof(long)) {
             return PyInt_FromLong((long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Race) <= sizeof(unsigned long)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_Race) <= sizeof(unsigned long)) {
             return PyLong_FromUnsignedLong((unsigned long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Race) <= sizeof(unsigned PY_LONG_LONG)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_Race) <= sizeof(unsigned PY_LONG_LONG)) {
             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
         }
     } else {
-        if (sizeof(enum __pyx_t_5enums_Race) <= sizeof(long)) {
+        if (sizeof(enum __pyx_t_5pyfit_5enums_Race) <= sizeof(long)) {
             return PyInt_FromLong((long) value);
-        } else if (sizeof(enum __pyx_t_5enums_Race) <= sizeof(PY_LONG_LONG)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_Race) <= sizeof(PY_LONG_LONG)) {
             return PyLong_FromLongLong((PY_LONG_LONG) value);
         }
     }
     {
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(enum __pyx_t_5enums_Race),
+        return _PyLong_FromByteArray(bytes, sizeof(enum __pyx_t_5pyfit_5enums_Race),
                                      little, !is_unsigned);
     }
 }
 
 /* CIntToPy */
-            static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5enums_PAL(enum __pyx_t_5enums_PAL value) {
-    const enum __pyx_t_5enums_PAL neg_one = (enum __pyx_t_5enums_PAL) -1, const_zero = (enum __pyx_t_5enums_PAL) 0;
+            static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum____pyx_t_5pyfit_5enums_PAL(enum __pyx_t_5pyfit_5enums_PAL value) {
+    const enum __pyx_t_5pyfit_5enums_PAL neg_one = (enum __pyx_t_5pyfit_5enums_PAL) -1, const_zero = (enum __pyx_t_5pyfit_5enums_PAL) 0;
     const int is_unsigned = neg_one > const_zero;
     if (is_unsigned) {
-        if (sizeof(enum __pyx_t_5enums_PAL) < sizeof(long)) {
+        if (sizeof(enum __pyx_t_5pyfit_5enums_PAL) < sizeof(long)) {
             return PyInt_FromLong((long) value);
-        } else if (sizeof(enum __pyx_t_5enums_PAL) <= sizeof(unsigned long)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_PAL) <= sizeof(unsigned long)) {
             return PyLong_FromUnsignedLong((unsigned long) value);
-        } else if (sizeof(enum __pyx_t_5enums_PAL) <= sizeof(unsigned PY_LONG_LONG)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_PAL) <= sizeof(unsigned PY_LONG_LONG)) {
             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
         }
     } else {
-        if (sizeof(enum __pyx_t_5enums_PAL) <= sizeof(long)) {
+        if (sizeof(enum __pyx_t_5pyfit_5enums_PAL) <= sizeof(long)) {
             return PyInt_FromLong((long) value);
-        } else if (sizeof(enum __pyx_t_5enums_PAL) <= sizeof(PY_LONG_LONG)) {
+        } else if (sizeof(enum __pyx_t_5pyfit_5enums_PAL) <= sizeof(PY_LONG_LONG)) {
             return PyLong_FromLongLong((PY_LONG_LONG) value);
         }
     }
     {
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(enum __pyx_t_5enums_PAL),
+        return _PyLong_FromByteArray(bytes, sizeof(enum __pyx_t_5pyfit_5enums_PAL),
                                      little, !is_unsigned);
     }
 }

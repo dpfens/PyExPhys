@@ -1,8 +1,6 @@
 from pyfit.enums import PAL, Gender
 
-
 cdef class BMREstimator(object):
-    cdef readonly int gender
 
     def __cinit__(self, int gender):
         self.gender = gender
@@ -32,10 +30,6 @@ cdef class MSJ(BMREstimator):
         return (9.99 * weight + 6.25 * height - 4.92 * age + 5)
 
 cdef class RMR(object):
-    cdef readonly int gender
-    cdef readonly double age
-    cdef readonly double weight
-    cdef readonly double height
 
     def __cinit__(self, int gender, double age, double weight, double height):
         self.gender = gender
@@ -61,8 +55,6 @@ cpdef double cunningham(double lbm):
     return 500 + (22 * lbm)
 
 cdef class TEEEstimator(object):
-    cdef readonly int gender
-    cdef readonly int pal
 
     def __cinit__(self, int gender, int pal):
         self.gender = gender
