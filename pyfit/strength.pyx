@@ -83,13 +83,13 @@ cdef class Jump(object):
     cpdef double lewis(self, double vJumpHeight):
         return sqrt(4.9 * self.weight) * sqrt(vJumpHeight) * 9.81
 
-    cpdef double harman(self, double vJumpHeight, peak=False):
+    cpdef double harman(self, double vJumpHeight, bint peak=False):
         cdef double vJumpHeightCm = vJumpHeight * 100
         if peak:
             return 61.9*vJumpHeightCm + 36*self.weight + 1822
         return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393
 
-    cpdef double jb(self, double vJumpHeight, peak=False):
+    cpdef double jb(self, double vJumpHeight, bint peak=False):
         cdef double bodyHeightCm = self.height * 100
         cdef double vJumpHeightCm = vJumpHeight * 100
         if peak:
