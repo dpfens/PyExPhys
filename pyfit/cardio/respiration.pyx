@@ -101,7 +101,7 @@ cdef class VO2(object):
     cpdef double larsen(self, double time, double hr):
         if self.gender == Gender.Female:
             return 100.16 + (7.30*0.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr)
-        return 100.16 + (7.30*1.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr);
+        return 100.16 + (7.30*1.0) - (0.164*self.weight) - (1.273 * time) - (0.1563 * hr)
 
     cpdef double astrandStep(self, double hr):
         if self.gender == Gender.Female:
