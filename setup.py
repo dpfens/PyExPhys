@@ -3,11 +3,13 @@ from distutils.core import setup
 from distutils.extension import Extension
 import os
 import io
+import numpy
 
 def readfile(fname):
     path = os.path.join(os.path.dirname(__file__), fname)
     return io.open(path, encoding='utf8').read()
 
+include_dirs = [numpy.get_include()]
 source = "pyfit/"
 directories = {
     "cardio": source+"cardio/",
@@ -71,6 +73,7 @@ if use_cython:
             source+"composition.pyx",
             source+"strength.pyx"
         ]),
+        include_dirs = include_dirs,
         test_suite='test',
         author=u'Doug Fenstermacher',
         author_email='douglas.fenstermacher@gmail.com',
@@ -89,28 +92,28 @@ if use_cython:
             'Topic :: Scientific/Engineering :: Medical Science Apps.'
         ]
     )
-else:
-    setup(
-        name="pyfit",
-        version='2.0',
-        description='Python framework for fast health-care calculations',
-        long_description=readfile('README.md'),
-        packages= find_packages(),
-        ext_modules=ext_modules,
-        author=u'Doug Fenstermacher',
-        author_email='douglas.fenstermacher@gmail.com',
-        url='dpfens.github.io/PyFit',
-        keywords='health, physical fitness, cardio, heart rate, VO2Max, energy expenditure, resting metabolic rate, respiration, residual volume, body composition, metabolic equivalents, body surface area, strength, 1-rm, jack daniels',
-        platforms='any',
-        classifiers=[
-            'Development Status :: 3 - Alpha',
-            'License :: OSI Approved :: MIT License',
-            'Natural Language :: English',
-            'Programming Language :: Python',
-            'Intended Audience :: Science/Research',
-            'Intended Audience :: Healthcare Industry',
-            'Intended Audience :: Developers',
-            'Topic :: Scientific/Engineering :: Mathematics',
-            'Topic :: Scientific/Engineering :: Medical Science Apps.'
-        ]
-    )
+setup(
+    name="pyfit",
+    version='2.0',
+    description='Python framework for fast health-care calculations',
+    long_description=readfile('README.md'),
+    packages= find_packages(),
+    ext_modules=ext_modules,
+    include_dirs = include_dirs,
+    author=u'Doug Fenstermacher',
+    author_email='douglas.fenstermacher@gmail.com',
+    url='dpfens.github.io/PyFit',
+    keywords='health, physical fitness, cardio, heart rate, VO2Max, energy expenditure, resting metabolic rate, respiration, residual volume, body composition, metabolic equivalents, body surface area, strength, 1-rm, jack daniels',
+    platforms='any',
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python',
+        'Intended Audience :: Science/Research',
+        'Intended Audience :: Healthcare Industry',
+        'Intended Audience :: Developers',
+        'Topic :: Scientific/Engineering :: Mathematics',
+        'Topic :: Scientific/Engineering :: Medical Science Apps.'
+    ]
+)
