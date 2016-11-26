@@ -9,6 +9,10 @@ def readfile(fname):
     path = os.path.join(os.path.dirname(__file__), fname)
     return io.open(path, encoding='utf8').read()
 
+package_data = {
+    'pyfit': ['*/*.pxd'],
+}
+
 include_dirs = [numpy.get_include()]
 source = "pyfit/"
 directories = {
@@ -54,6 +58,7 @@ if use_cython:
         description='Python framework for fast health-care calculations',
         long_description=readfile('README.md'),
         packages= find_packages(),
+        package_data=package_data,
         ext_modules = cythonize([
             source+"balance.pyx",
             source+"enums.pyx",
@@ -98,6 +103,7 @@ setup(
     description='Python framework for fast health-care calculations',
     long_description=readfile('README.md'),
     packages= find_packages(),
+    package_data=package_data,
     ext_modules=ext_modules,
     include_dirs = include_dirs,
     author=u'Doug Fenstermacher',
