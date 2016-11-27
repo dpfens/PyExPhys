@@ -3,7 +3,6 @@ from distutils.core import setup
 from distutils.extension import Extension
 import os
 import io
-import numpy
 
 def readfile(fname):
     path = os.path.join(os.path.dirname(__file__), fname)
@@ -13,7 +12,6 @@ package_data = {
     'pyfit': ['*/*.pxd'],
 }
 
-include_dirs = [numpy.get_include()]
 source = "pyfit/"
 directories = {
     "cardio": source+"cardio/",
@@ -78,7 +76,6 @@ if use_cython:
             source+"composition.pyx",
             source+"strength.pyx"
         ]),
-        include_dirs = include_dirs,
         test_suite='test',
         author=u'Doug Fenstermacher',
         author_email='douglas.fenstermacher@gmail.com',
@@ -105,7 +102,6 @@ setup(
     packages= find_packages(),
     package_data=package_data,
     ext_modules=ext_modules,
-    include_dirs = include_dirs,
     author=u'Doug Fenstermacher',
     author_email='douglas.fenstermacher@gmail.com',
     url='dpfens.github.io/PyFit',
