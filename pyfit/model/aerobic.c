@@ -634,15 +634,28 @@ struct __pyx_obj_5pyfit_5model_7aerobic_Riegel;
 struct __pyx_obj_5pyfit_5model_7aerobic_Cameron;
 struct __pyx_obj_5pyfit_5model_7aerobic_VV;
 struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time;
+struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time2;
 
 /* "pyfit/model/aerobic.pxd":25
  *     cdef double riegel_velocity(self, double distance)
  * 
  *     cpdef double time(self, double mileage, double d2=*)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double time2(self, double mileage, double t2, double d2, double distance=*)
  */
 struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time {
   int __pyx_n;
   double d2;
+};
+
+/* "pyfit/model/aerobic.pxd":27
+ *     cpdef double time(self, double mileage, double d2=*)
+ * 
+ *     cpdef double time2(self, double mileage, double t2, double d2, double distance=*)             # <<<<<<<<<<<<<<
+ */
+struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time2 {
+  int __pyx_n;
+  double distance;
 };
 
 /* "pyfit/model/aerobic.pxd":1
@@ -690,7 +703,7 @@ struct __pyx_obj_5pyfit_5model_7aerobic_VV {
 
 
 /* "pyfit/model/aerobic.pyx":3
- * from libc.math cimport pow
+ * from libc.math cimport log, pow
  * 
  * cdef class Riegel:             # <<<<<<<<<<<<<<
  * 
@@ -731,6 +744,7 @@ struct __pyx_vtabstruct_5pyfit_5model_7aerobic_VV {
   double (*adj_timer)(struct __pyx_obj_5pyfit_5model_7aerobic_VV *, double, double);
   double (*riegel_velocity)(struct __pyx_obj_5pyfit_5model_7aerobic_VV *, double);
   double (*time)(struct __pyx_obj_5pyfit_5model_7aerobic_VV *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time *__pyx_optional_args);
+  double (*time2)(struct __pyx_obj_5pyfit_5model_7aerobic_VV *, double, double, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time2 *__pyx_optional_args);
 };
 static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_VV *__pyx_vtabptr_5pyfit_5model_7aerobic_VV;
 
@@ -888,6 +902,14 @@ static void __Pyx_WriteUnraisable(const char *name, int clineno,
                                   int lineno, const char *filename,
                                   int full_traceback, int nogil);
 
+/* PyFloatBinop.proto */
+#if !CYTHON_COMPILING_IN_PYPY
+static PyObject* __Pyx_PyFloat_AddCObj(PyObject *op1, PyObject *op2, double floatval, int inplace);
+#else
+#define __Pyx_PyFloat_AddCObj(op1, op2, floatval, inplace)\
+    (inplace ? PyNumber_InPlaceAdd(op1, op2) : PyNumber_Add(op1, op2))
+#endif
+
 /* SetVTable.proto */
 static int __Pyx_SetVtable(PyObject *dict, void *vtable);
 
@@ -932,6 +954,7 @@ static double __pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyf
 static double __pyx_f_5pyfit_5model_7aerobic_2VV_adj_timer(CYTHON_UNUSED struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_d1, double __pyx_v_t1); /* proto*/
 static double __pyx_f_5pyfit_5model_7aerobic_2VV_riegel_velocity(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_distance); /* proto*/
 static double __pyx_f_5pyfit_5model_7aerobic_2VV_time(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_mileage, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time *__pyx_optional_args); /* proto*/
+static double __pyx_f_5pyfit_5model_7aerobic_2VV_time2(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_mileage, double __pyx_v_t2, double __pyx_v_d2, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time2 *__pyx_optional_args); /* proto*/
 
 /* Module declarations from 'libc.math' */
 
@@ -946,9 +969,11 @@ int __pyx_module_is_main_pyfit__model__aerobic = 0;
 static const char __pyx_k_d1[] = "d1";
 static const char __pyx_k_d2[] = "d2";
 static const char __pyx_k_t1[] = "t1";
+static const char __pyx_k_t2[] = "t2";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_time[] = "time";
+static const char __pyx_k_time2[] = "time2";
 static const char __pyx_k_mileage[] = "mileage";
 static const char __pyx_k_distance[] = "distance";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
@@ -959,8 +984,10 @@ static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_mileage;
 static PyObject *__pyx_n_s_pyx_vtable;
 static PyObject *__pyx_n_s_t1;
+static PyObject *__pyx_n_s_t2;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_time;
+static PyObject *__pyx_n_s_time2;
 static int __pyx_pf_5pyfit_5model_7aerobic_6Riegel___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_d1, double __pyx_v_t1); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_2distance(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_t2); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_6Riegel_4time(struct __pyx_obj_5pyfit_5model_7aerobic_Riegel *__pyx_v_self, double __pyx_v_d2); /* proto */
@@ -972,11 +999,14 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2d1___get__(struct __p
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_7Cameron_2t1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self); /* proto */
 static int __pyx_pf_5pyfit_5model_7aerobic_2VV___cinit__(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_d1, double __pyx_v_t1); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_2VV_2time(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_mileage, double __pyx_v_d2); /* proto */
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_2VV_4time2(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_mileage, double __pyx_v_t2, double __pyx_v_d2, double __pyx_v_distance); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_2VV_2d1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_5model_7aerobic_2VV_2t1___get__(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_Riegel(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_Cameron(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_5model_7aerobic_VV(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_float_1_4510756;
+static PyObject *__pyx_float_neg_0_23797948;
 
 /* "pyfit/model/aerobic.pyx":5
  * cdef class Riegel:
@@ -2256,6 +2286,7 @@ static double __pyx_f_5pyfit_5model_7aerobic_2VV_time(struct __pyx_obj_5pyfit_5m
   double __pyx_v_riegel_velocity;
   double __pyx_v_velocity;
   double __pyx_v_minutes;
+  double __pyx_v_seconds;
   double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2357,7 +2388,7 @@ static double __pyx_f_5pyfit_5model_7aerobic_2VV_time(struct __pyx_obj_5pyfit_5m
  *         cdef double riegel_velocity = self.riegel_velocity(d2)
  *         cdef double velocity = 0.16018617+(0.83076202*riegel_velocity)+(0.6423826*(mileage/10) )             # <<<<<<<<<<<<<<
  *         cdef double minutes = (d2/60)/velocity
- *         return minutes
+ *         cdef double seconds = minutes * 60
  */
   __pyx_v_velocity = ((0.16018617 + (0.83076202 * __pyx_v_riegel_velocity)) + (0.6423826 * (__pyx_v_mileage / 10.0)));
 
@@ -2365,7 +2396,8 @@ static double __pyx_f_5pyfit_5model_7aerobic_2VV_time(struct __pyx_obj_5pyfit_5m
  *         cdef double riegel_velocity = self.riegel_velocity(d2)
  *         cdef double velocity = 0.16018617+(0.83076202*riegel_velocity)+(0.6423826*(mileage/10) )
  *         cdef double minutes = (d2/60)/velocity             # <<<<<<<<<<<<<<
- *         return minutes
+ *         cdef double seconds = minutes * 60
+ *         return seconds
  */
   __pyx_t_9 = (__pyx_v_d2 / 60.0);
   if (unlikely(__pyx_v_velocity == 0)) {
@@ -2377,9 +2409,20 @@ static double __pyx_f_5pyfit_5model_7aerobic_2VV_time(struct __pyx_obj_5pyfit_5m
   /* "pyfit/model/aerobic.pyx":53
  *         cdef double velocity = 0.16018617+(0.83076202*riegel_velocity)+(0.6423826*(mileage/10) )
  *         cdef double minutes = (d2/60)/velocity
- *         return minutes             # <<<<<<<<<<<<<<
+ *         cdef double seconds = minutes * 60             # <<<<<<<<<<<<<<
+ *         return seconds
+ * 
  */
-  __pyx_r = __pyx_v_minutes;
+  __pyx_v_seconds = (__pyx_v_minutes * 60.0);
+
+  /* "pyfit/model/aerobic.pyx":54
+ *         cdef double minutes = (d2/60)/velocity
+ *         cdef double seconds = minutes * 60
+ *         return seconds             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double time2(self, double mileage, double t2, double d2, double distance=42195.0):
+ */
+  __pyx_r = __pyx_v_seconds;
   goto __pyx_L0;
 
   /* "pyfit/model/aerobic.pyx":49
@@ -2491,6 +2534,354 @@ static PyObject *__pyx_pf_5pyfit_5model_7aerobic_2VV_2time(struct __pyx_obj_5pyf
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_AddTraceback("pyfit.model.aerobic.VV.time", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/model/aerobic.pyx":56
+ *         return seconds
+ * 
+ *     cpdef double time2(self, double mileage, double t2, double d2, double distance=42195.0):             # <<<<<<<<<<<<<<
+ *         cdef double adj_timer_r1 = self.adj_timer(self.d1, self.t1)
+ *         cdef double adj_timer_r2 = self.adj_timer(d2, t2)
+ */
+
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_2VV_5time2(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_5model_7aerobic_2VV_time2(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_mileage, double __pyx_v_t2, double __pyx_v_d2, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time2 *__pyx_optional_args) {
+  double __pyx_v_distance = ((double)42195.0);
+  double __pyx_v_adj_timer_r1;
+  double __pyx_v_adj_timer_r2;
+  PyObject *__pyx_v_k_r2_r1 = 0;
+  double __pyx_v_k_marathon;
+  double __pyx_v_seconds;
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  int __pyx_t_9;
+  PyObject *__pyx_t_10 = NULL;
+  double __pyx_t_11;
+  double __pyx_t_12;
+  __Pyx_RefNannySetupContext("time2", 0);
+  if (__pyx_optional_args) {
+    if (__pyx_optional_args->__pyx_n > 0) {
+      __pyx_v_distance = __pyx_optional_args->distance;
+    }
+  }
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_time2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_2VV_5time2)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_mileage); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_t2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 56, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_v_d2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_6 = PyFloat_FromDouble(__pyx_v_distance); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 56, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_7 = __pyx_t_1; __pyx_t_8 = NULL;
+      __pyx_t_9 = 0;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
+        __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_7);
+        if (likely(__pyx_t_8)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+          __Pyx_INCREF(__pyx_t_8);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_7, function);
+          __pyx_t_9 = 1;
+        }
+      }
+      #if CYTHON_FAST_PYCALL
+      if (PyFunction_Check(__pyx_t_7)) {
+        PyObject *__pyx_temp[5] = {__pyx_t_8, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6};
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      } else
+      #endif
+      #if CYTHON_FAST_PYCCALL
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
+        PyObject *__pyx_temp[5] = {__pyx_t_8, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6};
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      } else
+      #endif
+      {
+        __pyx_t_10 = PyTuple_New(4+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 56, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_10);
+        if (__pyx_t_8) {
+          __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
+        }
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_10, 0+__pyx_t_9, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_4);
+        PyTuple_SET_ITEM(__pyx_t_10, 1+__pyx_t_9, __pyx_t_4);
+        __Pyx_GIVEREF(__pyx_t_5);
+        PyTuple_SET_ITEM(__pyx_t_10, 2+__pyx_t_9, __pyx_t_5);
+        __Pyx_GIVEREF(__pyx_t_6);
+        PyTuple_SET_ITEM(__pyx_t_10, 3+__pyx_t_9, __pyx_t_6);
+        __pyx_t_3 = 0;
+        __pyx_t_4 = 0;
+        __pyx_t_5 = 0;
+        __pyx_t_6 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_11;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/model/aerobic.pyx":57
+ * 
+ *     cpdef double time2(self, double mileage, double t2, double d2, double distance=42195.0):
+ *         cdef double adj_timer_r1 = self.adj_timer(self.d1, self.t1)             # <<<<<<<<<<<<<<
+ *         cdef double adj_timer_r2 = self.adj_timer(d2, t2)
+ *         cdef k_r2_r1 = log(adj_timer_r2/adj_timer_r1)/log(d2/self.d1)
+ */
+  __pyx_v_adj_timer_r1 = ((struct __pyx_vtabstruct_5pyfit_5model_7aerobic_VV *)__pyx_v_self->__pyx_vtab)->adj_timer(__pyx_v_self, __pyx_v_self->d1, __pyx_v_self->t1);
+
+  /* "pyfit/model/aerobic.pyx":58
+ *     cpdef double time2(self, double mileage, double t2, double d2, double distance=42195.0):
+ *         cdef double adj_timer_r1 = self.adj_timer(self.d1, self.t1)
+ *         cdef double adj_timer_r2 = self.adj_timer(d2, t2)             # <<<<<<<<<<<<<<
+ *         cdef k_r2_r1 = log(adj_timer_r2/adj_timer_r1)/log(d2/self.d1)
+ *         cdef double k_marathon = 1.4510756+(-0.23797948*k_r2_r1)+(-0.01410023*(mileage/10) )
+ */
+  __pyx_v_adj_timer_r2 = ((struct __pyx_vtabstruct_5pyfit_5model_7aerobic_VV *)__pyx_v_self->__pyx_vtab)->adj_timer(__pyx_v_self, __pyx_v_d2, __pyx_v_t2);
+
+  /* "pyfit/model/aerobic.pyx":59
+ *         cdef double adj_timer_r1 = self.adj_timer(self.d1, self.t1)
+ *         cdef double adj_timer_r2 = self.adj_timer(d2, t2)
+ *         cdef k_r2_r1 = log(adj_timer_r2/adj_timer_r1)/log(d2/self.d1)             # <<<<<<<<<<<<<<
+ *         cdef double k_marathon = 1.4510756+(-0.23797948*k_r2_r1)+(-0.01410023*(mileage/10) )
+ *         cdef double seconds = (adj_timer_r2*pow(distance/d2, k_marathon) ) / seconds
+ */
+  if (unlikely(__pyx_v_adj_timer_r1 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 59, __pyx_L1_error)
+  }
+  __pyx_t_11 = log((__pyx_v_adj_timer_r2 / __pyx_v_adj_timer_r1));
+  if (unlikely(__pyx_v_self->d1 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 59, __pyx_L1_error)
+  }
+  __pyx_t_12 = log((__pyx_v_d2 / __pyx_v_self->d1));
+  if (unlikely(__pyx_t_12 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 59, __pyx_L1_error)
+  }
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_t_11 / __pyx_t_12)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_v_k_r2_r1 = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "pyfit/model/aerobic.pyx":60
+ *         cdef double adj_timer_r2 = self.adj_timer(d2, t2)
+ *         cdef k_r2_r1 = log(adj_timer_r2/adj_timer_r1)/log(d2/self.d1)
+ *         cdef double k_marathon = 1.4510756+(-0.23797948*k_r2_r1)+(-0.01410023*(mileage/10) )             # <<<<<<<<<<<<<<
+ *         cdef double seconds = (adj_timer_r2*pow(distance/d2, k_marathon) ) / seconds
+ *         return seconds
+ */
+  __pyx_t_1 = PyNumber_Multiply(__pyx_float_neg_0_23797948, __pyx_v_k_r2_r1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyFloat_AddCObj(__pyx_float_1_4510756, __pyx_t_1, 1.4510756, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = PyFloat_FromDouble((-0.01410023 * (__pyx_v_mileage / 10.0))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_7 = PyNumber_Add(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_12 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_12 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 60, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_v_k_marathon = __pyx_t_12;
+
+  /* "pyfit/model/aerobic.pyx":61
+ *         cdef k_r2_r1 = log(adj_timer_r2/adj_timer_r1)/log(d2/self.d1)
+ *         cdef double k_marathon = 1.4510756+(-0.23797948*k_r2_r1)+(-0.01410023*(mileage/10) )
+ *         cdef double seconds = (adj_timer_r2*pow(distance/d2, k_marathon) ) / seconds             # <<<<<<<<<<<<<<
+ *         return seconds
+ */
+  if (unlikely(__pyx_v_d2 == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 61, __pyx_L1_error)
+  }
+  __pyx_t_12 = (__pyx_v_adj_timer_r2 * pow((__pyx_v_distance / __pyx_v_d2), __pyx_v_k_marathon));
+  if (unlikely(__pyx_v_seconds == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 61, __pyx_L1_error)
+  }
+  __pyx_v_seconds = (__pyx_t_12 / __pyx_v_seconds);
+
+  /* "pyfit/model/aerobic.pyx":62
+ *         cdef double k_marathon = 1.4510756+(-0.23797948*k_r2_r1)+(-0.01410023*(mileage/10) )
+ *         cdef double seconds = (adj_timer_r2*pow(distance/d2, k_marathon) ) / seconds
+ *         return seconds             # <<<<<<<<<<<<<<
+ */
+  __pyx_r = __pyx_v_seconds;
+  goto __pyx_L0;
+
+  /* "pyfit/model/aerobic.pyx":56
+ *         return seconds
+ * 
+ *     cpdef double time2(self, double mileage, double t2, double d2, double distance=42195.0):             # <<<<<<<<<<<<<<
+ *         cdef double adj_timer_r1 = self.adj_timer(self.d1, self.t1)
+ *         cdef double adj_timer_r2 = self.adj_timer(d2, t2)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_WriteUnraisable("pyfit.model.aerobic.VV.time2", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_k_r2_r1);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_2VV_5time2(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_5model_7aerobic_2VV_5time2(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_mileage;
+  double __pyx_v_t2;
+  double __pyx_v_d2;
+  double __pyx_v_distance;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("time2 (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_mileage,&__pyx_n_s_t2,&__pyx_n_s_d2,&__pyx_n_s_distance,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mileage)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_t2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("time2", 0, 3, 4, 1); __PYX_ERR(0, 56, __pyx_L3_error)
+        }
+        case  2:
+        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_d2)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("time2", 0, 3, 4, 2); __PYX_ERR(0, 56, __pyx_L3_error)
+        }
+        case  3:
+        if (kw_args > 0) {
+          PyObject* value = PyDict_GetItem(__pyx_kwds, __pyx_n_s_distance);
+          if (value) { values[3] = value; kw_args--; }
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "time2") < 0)) __PYX_ERR(0, 56, __pyx_L3_error)
+      }
+    } else {
+      switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+    }
+    __pyx_v_mileage = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mileage == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
+    __pyx_v_t2 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_t2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
+    __pyx_v_d2 = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_d2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
+    if (values[3]) {
+      __pyx_v_distance = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_distance == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
+    } else {
+      __pyx_v_distance = ((double)42195.0);
+    }
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("time2", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 56, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.model.aerobic.VV.time2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_5model_7aerobic_2VV_4time2(((struct __pyx_obj_5pyfit_5model_7aerobic_VV *)__pyx_v_self), __pyx_v_mileage, __pyx_v_t2, __pyx_v_d2, __pyx_v_distance);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_5model_7aerobic_2VV_4time2(struct __pyx_obj_5pyfit_5model_7aerobic_VV *__pyx_v_self, double __pyx_v_mileage, double __pyx_v_t2, double __pyx_v_d2, double __pyx_v_distance) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  double __pyx_t_1;
+  struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time2 __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  __Pyx_RefNannySetupContext("time2", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_2.__pyx_n = 1;
+  __pyx_t_2.distance = __pyx_v_distance;
+  __pyx_t_1 = __pyx_vtabptr_5pyfit_5model_7aerobic_VV->time2(__pyx_v_self, __pyx_v_mileage, __pyx_v_t2, __pyx_v_d2, 1, &__pyx_t_2); 
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_r = __pyx_t_3;
+  __pyx_t_3 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("pyfit.model.aerobic.VV.time2", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2835,6 +3226,7 @@ static PyObject *__pyx_getprop_5pyfit_5model_7aerobic_2VV_t1(PyObject *o, CYTHON
 
 static PyMethodDef __pyx_methods_5pyfit_5model_7aerobic_VV[] = {
   {"time", (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_2VV_3time, METH_VARARGS|METH_KEYWORDS, 0},
+  {"time2", (PyCFunction)__pyx_pw_5pyfit_5model_7aerobic_2VV_5time2, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -2932,8 +3324,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_mileage, __pyx_k_mileage, sizeof(__pyx_k_mileage), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_vtable, __pyx_k_pyx_vtable, sizeof(__pyx_k_pyx_vtable), 0, 0, 1, 1},
   {&__pyx_n_s_t1, __pyx_k_t1, sizeof(__pyx_k_t1), 0, 0, 1, 1},
+  {&__pyx_n_s_t2, __pyx_k_t2, sizeof(__pyx_k_t2), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_time, __pyx_k_time, sizeof(__pyx_k_time), 0, 0, 1, 1},
+  {&__pyx_n_s_time2, __pyx_k_time2, sizeof(__pyx_k_time2), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
@@ -2949,6 +3343,8 @@ static int __Pyx_InitCachedConstants(void) {
 
 static int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
+  __pyx_float_1_4510756 = PyFloat_FromDouble(1.4510756); if (unlikely(!__pyx_float_1_4510756)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_float_neg_0_23797948 = PyFloat_FromDouble(-0.23797948); if (unlikely(!__pyx_float_neg_0_23797948)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -3058,6 +3454,7 @@ PyMODINIT_FUNC PyInit_aerobic(void)
   __pyx_vtable_5pyfit_5model_7aerobic_VV.adj_timer = (double (*)(struct __pyx_obj_5pyfit_5model_7aerobic_VV *, double, double))__pyx_f_5pyfit_5model_7aerobic_2VV_adj_timer;
   __pyx_vtable_5pyfit_5model_7aerobic_VV.riegel_velocity = (double (*)(struct __pyx_obj_5pyfit_5model_7aerobic_VV *, double))__pyx_f_5pyfit_5model_7aerobic_2VV_riegel_velocity;
   __pyx_vtable_5pyfit_5model_7aerobic_VV.time = (double (*)(struct __pyx_obj_5pyfit_5model_7aerobic_VV *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time *__pyx_optional_args))__pyx_f_5pyfit_5model_7aerobic_2VV_time;
+  __pyx_vtable_5pyfit_5model_7aerobic_VV.time2 = (double (*)(struct __pyx_obj_5pyfit_5model_7aerobic_VV *, double, double, double, int __pyx_skip_dispatch, struct __pyx_opt_args_5pyfit_5model_7aerobic_2VV_time2 *__pyx_optional_args))__pyx_f_5pyfit_5model_7aerobic_2VV_time2;
   if (PyType_Ready(&__pyx_type_5pyfit_5model_7aerobic_VV) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
   __pyx_type_5pyfit_5model_7aerobic_VV.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_5pyfit_5model_7aerobic_VV.tp_dict, __pyx_vtabptr_5pyfit_5model_7aerobic_VV) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
@@ -3072,7 +3469,7 @@ PyMODINIT_FUNC PyInit_aerobic(void)
   #endif
 
   /* "pyfit/model/aerobic.pyx":1
- * from libc.math cimport pow             # <<<<<<<<<<<<<<
+ * from libc.math cimport log, pow             # <<<<<<<<<<<<<<
  * 
  * cdef class Riegel:
  */
@@ -3553,8 +3950,76 @@ static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject 
 #endif
 }
 
+/* PyFloatBinop */
+  #if !CYTHON_COMPILING_IN_PYPY
+static PyObject* __Pyx_PyFloat_AddCObj(PyObject *op1, PyObject *op2, double floatval, CYTHON_UNUSED int inplace) {
+    const double a = floatval;
+    double b, result;
+    if (likely(PyFloat_CheckExact(op2))) {
+        b = PyFloat_AS_DOUBLE(op2);
+    } else
+    #if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_CheckExact(op2))) {
+        b = (double) PyInt_AS_LONG(op2);
+    } else
+    #endif
+    if (likely(PyLong_CheckExact(op2))) {
+        #if CYTHON_USE_PYLONG_INTERNALS
+        const digit* digits = ((PyLongObject*)op2)->ob_digit;
+        const Py_ssize_t size = Py_SIZE(op2);
+        switch (size) {
+            case  0: b = 0.0; break;
+            case -1: b = -(double) digits[0]; break;
+            case  1: b = (double) digits[0]; break;
+            case -2:
+            case 2:
+                if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT && ((8 * sizeof(unsigned long) < 53) || (1 * PyLong_SHIFT < 53))) {
+                    b = (double) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    if ((8 * sizeof(unsigned long) < 53) || (2 * PyLong_SHIFT < 53) || (b < (double) (1L<<53))) {
+                        if (size == -2)
+                            b = -b;
+                        break;
+                    }
+                }
+            case -3:
+            case 3:
+                if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT && ((8 * sizeof(unsigned long) < 53) || (2 * PyLong_SHIFT < 53))) {
+                    b = (double) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    if ((8 * sizeof(unsigned long) < 53) || (3 * PyLong_SHIFT < 53) || (b < (double) (1L<<53))) {
+                        if (size == -3)
+                            b = -b;
+                        break;
+                    }
+                }
+            case -4:
+            case 4:
+                if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT && ((8 * sizeof(unsigned long) < 53) || (3 * PyLong_SHIFT < 53))) {
+                    b = (double) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    if ((8 * sizeof(unsigned long) < 53) || (4 * PyLong_SHIFT < 53) || (b < (double) (1L<<53))) {
+                        if (size == -4)
+                            b = -b;
+                        break;
+                    }
+                }
+            default:
+        #else
+        {
+        #endif
+            b = PyLong_AsDouble(op2);
+            if (unlikely(b == -1.0 && PyErr_Occurred())) return NULL;
+        }
+    } else {
+        return (inplace ? PyNumber_InPlaceAdd : PyNumber_Add)(op1, op2);
+    }
+        PyFPE_START_PROTECT("add", return NULL)
+        result = a + b;
+        PyFPE_END_PROTECT(result)
+        return PyFloat_FromDouble(result);
+}
+#endif
+
 /* SetVTable */
-  static int __Pyx_SetVtable(PyObject *dict, void *vtable) {
+    static int __Pyx_SetVtable(PyObject *dict, void *vtable) {
 #if PY_VERSION_HEX >= 0x02070000
     PyObject *ob = PyCapsule_New(vtable, 0, 0);
 #else
@@ -3572,7 +4037,7 @@ bad:
 }
 
 /* CodeObjectCache */
-  static int __pyx_bisect_code_objects(__Pyx_CodeObjectCacheEntry* entries, int count, int code_line) {
+    static int __pyx_bisect_code_objects(__Pyx_CodeObjectCacheEntry* entries, int count, int code_line) {
     int start = 0, mid = 0, end = count - 1;
     if (end >= 0 && code_line > entries[end].code_line) {
         return count;
@@ -3652,7 +4117,7 @@ static void __pyx_insert_code_object(int code_line, PyCodeObject* code_object) {
 }
 
 /* AddTraceback */
-  #include "compile.h"
+    #include "compile.h"
 #include "frameobject.h"
 #include "traceback.h"
 static PyCodeObject* __Pyx_CreateCodeObjectForTraceback(
@@ -3733,7 +4198,7 @@ bad:
 }
 
 /* CIntToPy */
-  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
+    static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
     const long neg_one = (long) -1, const_zero = (long) 0;
     const int is_unsigned = neg_one > const_zero;
     if (is_unsigned) {
@@ -3764,7 +4229,7 @@ bad:
 }
 
 /* CIntFromPyVerify */
-  #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
+    #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
 #define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
@@ -3786,7 +4251,7 @@ bad:
     }
 
 /* CIntFromPy */
-  static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
+    static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
     const long neg_one = (long) -1, const_zero = (long) 0;
     const int is_unsigned = neg_one > const_zero;
 #if PY_MAJOR_VERSION < 3
@@ -3975,7 +4440,7 @@ raise_neg_overflow:
 }
 
 /* CIntFromPy */
-  static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
+    static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
     const int neg_one = (int) -1, const_zero = (int) 0;
     const int is_unsigned = neg_one > const_zero;
 #if PY_MAJOR_VERSION < 3
@@ -4164,7 +4629,7 @@ raise_neg_overflow:
 }
 
 /* CheckBinaryVersion */
-  static int __Pyx_check_binary_version(void) {
+    static int __Pyx_check_binary_version(void) {
     char ctversion[4], rtversion[4];
     PyOS_snprintf(ctversion, 4, "%d.%d", PY_MAJOR_VERSION, PY_MINOR_VERSION);
     PyOS_snprintf(rtversion, 4, "%s", Py_GetVersion());
@@ -4180,7 +4645,7 @@ raise_neg_overflow:
 }
 
 /* InitStrings */
-  static int __Pyx_InitStrings(__Pyx_StringTabEntry *t) {
+    static int __Pyx_InitStrings(__Pyx_StringTabEntry *t) {
     while (t->p) {
         #if PY_MAJOR_VERSION < 3
         if (t->is_unicode) {

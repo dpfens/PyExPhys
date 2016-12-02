@@ -1,4 +1,4 @@
-from libc.math cimport pow
+from libc.math cimport log, pow
 
 cdef class Riegel:
 
@@ -50,4 +50,13 @@ cdef class VV:
         cdef double riegel_velocity = self.riegel_velocity(d2)
         cdef double velocity = 0.16018617+(0.83076202*riegel_velocity)+(0.6423826*(mileage/10) )
         cdef double minutes = (d2/60)/velocity
-        return minutes
+        cdef double seconds = minutes * 60
+        return seconds
+
+    cpdef double time2(self, double mileage, double t2, double d2, double distance=42195.0):
+        cdef double adj_timer_r1 = self.adj_timer(self.d1, self.t1)
+        cdef double adj_timer_r2 = self.adj_timer(d2, t2)
+        cdef k_r2_r1 = log(adj_timer_r2/adj_timer_r1)/log(d2/self.d1)
+        cdef double k_marathon = 1.4510756+(-0.23797948*k_r2_r1)+(-0.01410023*(mileage/10) )
+        cdef double seconds = (adj_timer_r2*pow(distance/d2, k_marathon) ) / seconds
+        return seconds

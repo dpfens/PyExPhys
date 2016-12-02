@@ -23,3 +23,5 @@ cdef class VV:
     cdef double riegel_velocity(self, double distance)
 
     cpdef double time(self, double mileage, double d2=*)
+
+    cpdef double time2(self, double mileage, double t2, double d2, double distance=*)
