@@ -12,4 +12,14 @@ cdef class Cameron:
 
     cdef double __f__(self, double x)
 
-    cpdef time(self, double d2)
+    cpdef double time(self, double d2)
+
+cdef class VV:
+    cdef readonly double d1
+    cdef readonly double t1
+
+    cdef double adj_timer(self, double d1, double t1)
+
+    cdef double riegel_velocity(self, double distance)
+
+    cpdef double time(self, double mileage, double d2=*)
