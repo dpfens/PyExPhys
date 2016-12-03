@@ -107,3 +107,29 @@ cdef class AdultTEE(TEEEstimator):
         elif self.pal == PAL.VeryActive and self.gender == Gender.Female:
             return 662 - (9.53 * age) + 1.45*((15.9*weight)+(540*height))
         return 0
+
+cdef class Terrain:
+
+    def __cinit__(self, double weight, double speed, double load):
+        self.weight = weight
+        self.speed = speed
+        self.load = load
+
+
+    cpdef double pandolf(self, double terrain, double slope):
+        cdef double total_weight = self.weight + self.load
+        cdef double part_1 = (1.5*self.weight) + 2.0*(total_weight)*pow(self.load/self.weight,2)
+        cdef double part_2 = terrain*total_weight*(1.5*pow(self.speed,2)+0.25*self.speed*slope)
+        return part_1+ part_2
+
+    cpdef double santee(self, double terrain, double slope):
+        cdef double total_weight = self.weight + self.load
+        cdef double energy = self.speed * slope
+        cdef double speed_squared = pow(self.speed,2)
+
+        cdef double part1 = 1.5*self.weight+2*pow(self.load/self.weight,2)
+        cdef double part2 = terrain*total_weight*(1.5*speed_squared+0.35*energy)
+        cdef double part3_1 = (energy*total_weight) / 3.5
+        cdef double part3_2 = (total_weight* pow(slope+6,2) ) / self.weight
+        cdef double part3_3 = 25-speed_squared
+        return part1 + part2-terrain*(part3_1-part3_2+part3_3)

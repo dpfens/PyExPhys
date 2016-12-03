@@ -44,3 +44,12 @@ cdef class ChildTEE(TEEEstimator):
 cdef class AdultTEE(TEEEstimator):
 
     cpdef double predict(self, double age, double weight, double height)
+
+cdef class Terrain:
+    cdef readonly double weight
+    cdef readonly double speed
+    cdef readonly double load
+
+    cpdef double pandolf(self, double terrain, double slope)
+
+    cpdef double santee(self, double terrain, double slope)

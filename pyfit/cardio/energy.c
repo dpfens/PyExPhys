@@ -635,6 +635,7 @@ struct __pyx_obj_5pyfit_6cardio_6energy_RMR;
 struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator;
 struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE;
 struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE;
+struct __pyx_obj_5pyfit_6cardio_6energy_Terrain;
 
 /* "pyfit/cardio/energy.pxd":1
  * cdef class BMREstimator:             # <<<<<<<<<<<<<<
@@ -737,6 +738,22 @@ struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE {
  */
 struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE {
   struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator __pyx_base;
+};
+
+
+/* "pyfit/cardio/energy.pxd":48
+ *     cpdef double predict(self, double age, double weight, double height)
+ * 
+ * cdef class Terrain:             # <<<<<<<<<<<<<<
+ *     cdef readonly double weight
+ *     cdef readonly double speed
+ */
+struct __pyx_obj_5pyfit_6cardio_6energy_Terrain {
+  PyObject_HEAD
+  struct __pyx_vtabstruct_5pyfit_6cardio_6energy_Terrain *__pyx_vtab;
+  double weight;
+  double speed;
+  double load;
 };
 
 
@@ -858,6 +875,21 @@ struct __pyx_vtabstruct_5pyfit_6cardio_6energy_AdultTEE {
   double (*predict)(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *, double, double, double, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_AdultTEE *__pyx_vtabptr_5pyfit_6cardio_6energy_AdultTEE;
+
+
+/* "pyfit/cardio/energy.pyx":111
+ *         return 0
+ * 
+ * cdef class Terrain:             # <<<<<<<<<<<<<<
+ * 
+ *     def __cinit__(self, double weight, double speed, double load):
+ */
+
+struct __pyx_vtabstruct_5pyfit_6cardio_6energy_Terrain {
+  double (*pandolf)(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *, double, double, int __pyx_skip_dispatch);
+  double (*santee)(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *, double, double, int __pyx_skip_dispatch);
+};
+static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_Terrain *__pyx_vtabptr_5pyfit_6cardio_6energy_Terrain;
 
 /* --- Runtime support code (head) --- */
 /* Refnanny.proto */
@@ -1029,6 +1061,9 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
 #define __Pyx_PyObject_CallNoArg(func) __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL)
 #endif
 
+/* pow2.proto */
+#define __Pyx_PyNumber_Power2(a, b) PyNumber_Power(a, b, Py_None)
+
 /* SetVTable.proto */
 static int __Pyx_SetVtable(PyObject *dict, void *vtable);
 
@@ -1093,6 +1128,8 @@ double __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_
 double __pyx_f_5pyfit_6cardio_6energy_8ChildTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto*/
 double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height, int __pyx_skip_dispatch); /* proto*/
 double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_7Terrain_pandolf(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_terrain, double __pyx_v_slope, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_7Terrain_santee(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_terrain, double __pyx_v_slope, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from 'pyfit.cardio.energy' */
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_BMREstimator = 0;
@@ -1103,6 +1140,7 @@ static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_RMR = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_TEEEstimator = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_ChildTEE = 0;
 static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_AdultTEE = 0;
+static PyTypeObject *__pyx_ptype_5pyfit_6cardio_6energy_Terrain = 0;
 static double __pyx_f_5pyfit_6cardio_6energy_kma(double, int __pyx_skip_dispatch); /*proto*/
 static double __pyx_f_5pyfit_6cardio_6energy_cunningham(double, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "pyfit.cardio.energy"
@@ -1116,18 +1154,24 @@ static const char __pyx_k_age[] = "age";
 static const char __pyx_k_bsa[] = "bsa";
 static const char __pyx_k_pal[] = "pal";
 static const char __pyx_k_Male[] = "Male";
+static const char __pyx_k_load[] = "load";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_mets[] = "mets";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_quick[] = "quick";
+static const char __pyx_k_slope[] = "slope";
+static const char __pyx_k_speed[] = "speed";
 static const char __pyx_k_Active[] = "Active";
 static const char __pyx_k_Female[] = "Female";
 static const char __pyx_k_Gender[] = "Gender";
 static const char __pyx_k_gender[] = "gender";
 static const char __pyx_k_height[] = "height";
 static const char __pyx_k_import[] = "__import__";
+static const char __pyx_k_santee[] = "santee";
 static const char __pyx_k_weight[] = "weight";
+static const char __pyx_k_pandolf[] = "pandolf";
 static const char __pyx_k_predict[] = "predict";
+static const char __pyx_k_terrain[] = "terrain";
 static const char __pyx_k_Sedentary[] = "Sedentary";
 static const char __pyx_k_VeryActive[] = "VeryActive";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
@@ -1151,13 +1195,19 @@ static PyObject *__pyx_n_s_fromActivity;
 static PyObject *__pyx_n_s_gender;
 static PyObject *__pyx_n_s_height;
 static PyObject *__pyx_n_s_import;
+static PyObject *__pyx_n_s_load;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_mets;
 static PyObject *__pyx_n_s_pal;
+static PyObject *__pyx_n_s_pandolf;
 static PyObject *__pyx_n_s_predict;
 static PyObject *__pyx_n_s_pyfit_enums;
 static PyObject *__pyx_n_s_pyx_vtable;
 static PyObject *__pyx_n_s_quick;
+static PyObject *__pyx_n_s_santee;
+static PyObject *__pyx_n_s_slope;
+static PyObject *__pyx_n_s_speed;
+static PyObject *__pyx_n_s_terrain;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_weight;
 static int __pyx_pf_5pyfit_6cardio_6energy_12BMREstimator___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_BMREstimator *__pyx_v_self, int __pyx_v_gender); /* proto */
@@ -1180,6 +1230,12 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_6gender___get__(
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_12TEEEstimator_3pal___get__(struct __pyx_obj_5pyfit_6cardio_6energy_TEEEstimator *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8ChildTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_ChildTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
 static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height); /* proto */
+static int __pyx_pf_5pyfit_6cardio_6energy_7Terrain___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_weight, double __pyx_v_speed, double __pyx_v_load); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_2pandolf(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_terrain, double __pyx_v_slope); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_4santee(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_terrain, double __pyx_v_slope); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_6weight___get__(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_5speed___get__(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_4load___get__(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_BMREstimator(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_HB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_RevisedHB(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -1188,6 +1244,9 @@ static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_RMR(PyTypeObject *t, PyObje
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_TEEEstimator(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_ChildTEE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_AdultTEE(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_Terrain(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_float_1_5;
+static PyObject *__pyx_int_2;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 
@@ -4727,6 +4786,7 @@ double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_
  *         elif self.pal == PAL.VeryActive and self.gender == Gender.Female:
  *             return 662 - (9.53 * age) + 1.45*((15.9*weight)+(540*height))             # <<<<<<<<<<<<<<
  *         return 0
+ * 
  */
     __pyx_r = ((662.0 - (9.53 * __pyx_v_age)) + (1.45 * ((15.9 * __pyx_v_weight) + (540.0 * __pyx_v_height))));
     goto __pyx_L0;
@@ -4744,6 +4804,8 @@ double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_obj_5pyfit_
  *         elif self.pal == PAL.VeryActive and self.gender == Gender.Female:
  *             return 662 - (9.53 * age) + 1.45*((15.9*weight)+(540*height))
  *         return 0             # <<<<<<<<<<<<<<
+ * 
+ * cdef class Terrain:
  */
   __pyx_r = 0.0;
   goto __pyx_L0;
@@ -4865,6 +4927,871 @@ static PyObject *__pyx_pf_5pyfit_6cardio_6energy_8AdultTEE_predict(struct __pyx_
 
 double __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict__pyx_wrap_1(struct __pyx_obj_5pyfit_6cardio_6energy_AdultTEE *__pyx_v_self, double __pyx_v_age, double __pyx_v_weight, double __pyx_v_height) {
   return __pyx_f_5pyfit_6cardio_6energy_8AdultTEE_predict(__pyx_v_self, __pyx_v_age, __pyx_v_weight, __pyx_v_height, 0);
+}
+
+/* "pyfit/cardio/energy.pyx":113
+ * cdef class Terrain:
+ * 
+ *     def __cinit__(self, double weight, double speed, double load):             # <<<<<<<<<<<<<<
+ *         self.weight = weight
+ *         self.speed = speed
+ */
+
+/* Python wrapper */
+static int __pyx_pw_5pyfit_6cardio_6energy_7Terrain_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_5pyfit_6cardio_6energy_7Terrain_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_weight;
+  double __pyx_v_speed;
+  double __pyx_v_load;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_weight,&__pyx_n_s_speed,&__pyx_n_s_load,0};
+    PyObject* values[3] = {0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_weight)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_speed)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, 1); __PYX_ERR(0, 113, __pyx_L3_error)
+        }
+        case  2:
+        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_load)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, 2); __PYX_ERR(0, 113, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 113, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+    }
+    __pyx_v_weight = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_weight == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 113, __pyx_L3_error)
+    __pyx_v_speed = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_speed == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 113, __pyx_L3_error)
+    __pyx_v_load = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_load == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 113, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 113, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.energy.Terrain.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_7Terrain___cinit__(((struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *)__pyx_v_self), __pyx_v_weight, __pyx_v_speed, __pyx_v_load);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5pyfit_6cardio_6energy_7Terrain___cinit__(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_weight, double __pyx_v_speed, double __pyx_v_load) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__", 0);
+
+  /* "pyfit/cardio/energy.pyx":114
+ * 
+ *     def __cinit__(self, double weight, double speed, double load):
+ *         self.weight = weight             # <<<<<<<<<<<<<<
+ *         self.speed = speed
+ *         self.load = load
+ */
+  __pyx_v_self->weight = __pyx_v_weight;
+
+  /* "pyfit/cardio/energy.pyx":115
+ *     def __cinit__(self, double weight, double speed, double load):
+ *         self.weight = weight
+ *         self.speed = speed             # <<<<<<<<<<<<<<
+ *         self.load = load
+ * 
+ */
+  __pyx_v_self->speed = __pyx_v_speed;
+
+  /* "pyfit/cardio/energy.pyx":116
+ *         self.weight = weight
+ *         self.speed = speed
+ *         self.load = load             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_v_self->load = __pyx_v_load;
+
+  /* "pyfit/cardio/energy.pyx":113
+ * cdef class Terrain:
+ * 
+ *     def __cinit__(self, double weight, double speed, double load):             # <<<<<<<<<<<<<<
+ *         self.weight = weight
+ *         self.speed = speed
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/energy.pyx":119
+ * 
+ * 
+ *     cpdef double pandolf(self, double terrain, double slope):             # <<<<<<<<<<<<<<
+ *         cdef double total_weight = self.weight + self.load
+ *         cdef double part_1 = (1.5*self.weight) + 2.0*(total_weight)*pow(self.load/self.weight,2)
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_3pandolf(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_7Terrain_pandolf(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_terrain, double __pyx_v_slope, int __pyx_skip_dispatch) {
+  double __pyx_v_total_weight;
+  double __pyx_v_part_1;
+  double __pyx_v_part_2;
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  PyObject *__pyx_t_8 = NULL;
+  double __pyx_t_9;
+  __Pyx_RefNannySetupContext("pandolf", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_pandolf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_6energy_7Terrain_3pandolf)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_terrain); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_slope); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 119, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
+      __pyx_t_7 = 0;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_5, function);
+          __pyx_t_7 = 1;
+        }
+      }
+      #if CYTHON_FAST_PYCALL
+      if (PyFunction_Check(__pyx_t_5)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else
+      #endif
+      #if CYTHON_FAST_PYCCALL
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else
+      #endif
+      {
+        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 119, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        if (__pyx_t_6) {
+          __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
+        }
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_7, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_4);
+        PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
+        __pyx_t_3 = 0;
+        __pyx_t_4 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_9;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/energy.pyx":120
+ * 
+ *     cpdef double pandolf(self, double terrain, double slope):
+ *         cdef double total_weight = self.weight + self.load             # <<<<<<<<<<<<<<
+ *         cdef double part_1 = (1.5*self.weight) + 2.0*(total_weight)*pow(self.load/self.weight,2)
+ *         cdef double part_2 = terrain*total_weight*(1.5*pow(self.speed,2)+0.25*self.speed*slope)
+ */
+  __pyx_v_total_weight = (__pyx_v_self->weight + __pyx_v_self->load);
+
+  /* "pyfit/cardio/energy.pyx":121
+ *     cpdef double pandolf(self, double terrain, double slope):
+ *         cdef double total_weight = self.weight + self.load
+ *         cdef double part_1 = (1.5*self.weight) + 2.0*(total_weight)*pow(self.load/self.weight,2)             # <<<<<<<<<<<<<<
+ *         cdef double part_2 = terrain*total_weight*(1.5*pow(self.speed,2)+0.25*self.speed*slope)
+ *         return part_1+ part_2
+ */
+  __pyx_t_1 = PyFloat_FromDouble((1.5 * __pyx_v_self->weight)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyFloat_FromDouble((2.0 * __pyx_v_total_weight)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (unlikely(__pyx_v_self->weight == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 121, __pyx_L1_error)
+  }
+  __pyx_t_5 = PyFloat_FromDouble((__pyx_v_self->load / __pyx_v_self->weight)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_8 = __Pyx_PyNumber_Power2(__pyx_t_5, __pyx_int_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = PyNumber_Multiply(__pyx_t_2, __pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __pyx_t_8 = PyNumber_Add(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_8); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 121, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __pyx_v_part_1 = __pyx_t_9;
+
+  /* "pyfit/cardio/energy.pyx":122
+ *         cdef double total_weight = self.weight + self.load
+ *         cdef double part_1 = (1.5*self.weight) + 2.0*(total_weight)*pow(self.load/self.weight,2)
+ *         cdef double part_2 = terrain*total_weight*(1.5*pow(self.speed,2)+0.25*self.speed*slope)             # <<<<<<<<<<<<<<
+ *         return part_1+ part_2
+ * 
+ */
+  __pyx_t_8 = PyFloat_FromDouble((__pyx_v_terrain * __pyx_v_total_weight)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->speed); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_1 = __Pyx_PyNumber_Power2(__pyx_t_5, __pyx_int_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = PyNumber_Multiply(__pyx_float_1_5, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = PyFloat_FromDouble(((0.25 * __pyx_v_self->speed) * __pyx_v_slope)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyNumber_Add(__pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = PyNumber_Multiply(__pyx_t_8, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_part_2 = __pyx_t_9;
+
+  /* "pyfit/cardio/energy.pyx":123
+ *         cdef double part_1 = (1.5*self.weight) + 2.0*(total_weight)*pow(self.load/self.weight,2)
+ *         cdef double part_2 = terrain*total_weight*(1.5*pow(self.speed,2)+0.25*self.speed*slope)
+ *         return part_1+ part_2             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double santee(self, double terrain, double slope):
+ */
+  __pyx_r = (__pyx_v_part_1 + __pyx_v_part_2);
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/energy.pyx":119
+ * 
+ * 
+ *     cpdef double pandolf(self, double terrain, double slope):             # <<<<<<<<<<<<<<
+ *         cdef double total_weight = self.weight + self.load
+ *         cdef double part_1 = (1.5*self.weight) + 2.0*(total_weight)*pow(self.load/self.weight,2)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_WriteUnraisable("pyfit.cardio.energy.Terrain.pandolf", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_3pandolf(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_3pandolf(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_terrain;
+  double __pyx_v_slope;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("pandolf (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_terrain,&__pyx_n_s_slope,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_terrain)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_slope)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("pandolf", 1, 2, 2, 1); __PYX_ERR(0, 119, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pandolf") < 0)) __PYX_ERR(0, 119, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_terrain = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_terrain == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L3_error)
+    __pyx_v_slope = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_slope == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("pandolf", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 119, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.energy.Terrain.pandolf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_7Terrain_2pandolf(((struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *)__pyx_v_self), __pyx_v_terrain, __pyx_v_slope);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_2pandolf(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_terrain, double __pyx_v_slope) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("pandolf", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_6energy_7Terrain_pandolf(__pyx_v_self, __pyx_v_terrain, __pyx_v_slope, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.energy.Terrain.pandolf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/energy.pyx":125
+ *         return part_1+ part_2
+ * 
+ *     cpdef double santee(self, double terrain, double slope):             # <<<<<<<<<<<<<<
+ *         cdef double total_weight = self.weight + self.load
+ *         cdef double energy = self.speed * slope
+ */
+
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_5santee(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_6cardio_6energy_7Terrain_santee(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_terrain, double __pyx_v_slope, int __pyx_skip_dispatch) {
+  double __pyx_v_total_weight;
+  double __pyx_v_energy;
+  double __pyx_v_speed_squared;
+  double __pyx_v_part1;
+  double __pyx_v_part2;
+  double __pyx_v_part3_1;
+  double __pyx_v_part3_2;
+  double __pyx_v_part3_3;
+  double __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  PyObject *__pyx_t_8 = NULL;
+  double __pyx_t_9;
+  __Pyx_RefNannySetupContext("santee", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_santee); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_5pyfit_6cardio_6energy_7Terrain_5santee)) {
+      __pyx_t_3 = PyFloat_FromDouble(__pyx_v_terrain); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_4 = PyFloat_FromDouble(__pyx_v_slope); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
+      __pyx_t_7 = 0;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_5, function);
+          __pyx_t_7 = 1;
+        }
+      }
+      #if CYTHON_FAST_PYCALL
+      if (PyFunction_Check(__pyx_t_5)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else
+      #endif
+      #if CYTHON_FAST_PYCCALL
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_4};
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else
+      #endif
+      {
+        __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 125, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        if (__pyx_t_6) {
+          __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
+        }
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_7, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_4);
+        PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_4);
+        __pyx_t_3 = 0;
+        __pyx_t_4 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 125, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_r = __pyx_t_9;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "pyfit/cardio/energy.pyx":126
+ * 
+ *     cpdef double santee(self, double terrain, double slope):
+ *         cdef double total_weight = self.weight + self.load             # <<<<<<<<<<<<<<
+ *         cdef double energy = self.speed * slope
+ *         cdef double speed_squared = pow(self.speed,2)
+ */
+  __pyx_v_total_weight = (__pyx_v_self->weight + __pyx_v_self->load);
+
+  /* "pyfit/cardio/energy.pyx":127
+ *     cpdef double santee(self, double terrain, double slope):
+ *         cdef double total_weight = self.weight + self.load
+ *         cdef double energy = self.speed * slope             # <<<<<<<<<<<<<<
+ *         cdef double speed_squared = pow(self.speed,2)
+ * 
+ */
+  __pyx_v_energy = (__pyx_v_self->speed * __pyx_v_slope);
+
+  /* "pyfit/cardio/energy.pyx":128
+ *         cdef double total_weight = self.weight + self.load
+ *         cdef double energy = self.speed * slope
+ *         cdef double speed_squared = pow(self.speed,2)             # <<<<<<<<<<<<<<
+ * 
+ *         cdef double part1 = 1.5*self.weight+2*pow(self.load/self.weight,2)
+ */
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->speed); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyNumber_Power2(__pyx_t_1, __pyx_int_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 128, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_speed_squared = __pyx_t_9;
+
+  /* "pyfit/cardio/energy.pyx":130
+ *         cdef double speed_squared = pow(self.speed,2)
+ * 
+ *         cdef double part1 = 1.5*self.weight+2*pow(self.load/self.weight,2)             # <<<<<<<<<<<<<<
+ *         cdef double part2 = terrain*total_weight*(1.5*speed_squared+0.35*energy)
+ *         cdef double part3_1 = (energy*total_weight) / 3.5
+ */
+  __pyx_t_2 = PyFloat_FromDouble((1.5 * __pyx_v_self->weight)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (unlikely(__pyx_v_self->weight == 0)) {
+    PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+    __PYX_ERR(0, 130, __pyx_L1_error)
+  }
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_self->load / __pyx_v_self->weight)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5 = __Pyx_PyNumber_Power2(__pyx_t_1, __pyx_int_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = PyNumber_Multiply(__pyx_int_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = PyNumber_Add(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 130, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_v_part1 = __pyx_t_9;
+
+  /* "pyfit/cardio/energy.pyx":131
+ * 
+ *         cdef double part1 = 1.5*self.weight+2*pow(self.load/self.weight,2)
+ *         cdef double part2 = terrain*total_weight*(1.5*speed_squared+0.35*energy)             # <<<<<<<<<<<<<<
+ *         cdef double part3_1 = (energy*total_weight) / 3.5
+ *         cdef double part3_2 = (total_weight* pow(slope+6,2) ) / self.weight
+ */
+  __pyx_v_part2 = ((__pyx_v_terrain * __pyx_v_total_weight) * ((1.5 * __pyx_v_speed_squared) + (0.35 * __pyx_v_energy)));
+
+  /* "pyfit/cardio/energy.pyx":132
+ *         cdef double part1 = 1.5*self.weight+2*pow(self.load/self.weight,2)
+ *         cdef double part2 = terrain*total_weight*(1.5*speed_squared+0.35*energy)
+ *         cdef double part3_1 = (energy*total_weight) / 3.5             # <<<<<<<<<<<<<<
+ *         cdef double part3_2 = (total_weight* pow(slope+6,2) ) / self.weight
+ *         cdef double part3_3 = 25-speed_squared
+ */
+  __pyx_v_part3_1 = ((__pyx_v_energy * __pyx_v_total_weight) / 3.5);
+
+  /* "pyfit/cardio/energy.pyx":133
+ *         cdef double part2 = terrain*total_weight*(1.5*speed_squared+0.35*energy)
+ *         cdef double part3_1 = (energy*total_weight) / 3.5
+ *         cdef double part3_2 = (total_weight* pow(slope+6,2) ) / self.weight             # <<<<<<<<<<<<<<
+ *         cdef double part3_3 = 25-speed_squared
+ *         return part1 + part2-terrain*(part3_1-part3_2+part3_3)
+ */
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_total_weight); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_1 = PyFloat_FromDouble((__pyx_v_slope + 6.0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyNumber_Power2(__pyx_t_1, __pyx_int_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = PyNumber_Multiply(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->weight); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_5 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_v_part3_2 = __pyx_t_9;
+
+  /* "pyfit/cardio/energy.pyx":134
+ *         cdef double part3_1 = (energy*total_weight) / 3.5
+ *         cdef double part3_2 = (total_weight* pow(slope+6,2) ) / self.weight
+ *         cdef double part3_3 = 25-speed_squared             # <<<<<<<<<<<<<<
+ *         return part1 + part2-terrain*(part3_1-part3_2+part3_3)
+ */
+  __pyx_v_part3_3 = (25.0 - __pyx_v_speed_squared);
+
+  /* "pyfit/cardio/energy.pyx":135
+ *         cdef double part3_2 = (total_weight* pow(slope+6,2) ) / self.weight
+ *         cdef double part3_3 = 25-speed_squared
+ *         return part1 + part2-terrain*(part3_1-part3_2+part3_3)             # <<<<<<<<<<<<<<
+ */
+  __pyx_r = ((__pyx_v_part1 + __pyx_v_part2) - (__pyx_v_terrain * ((__pyx_v_part3_1 - __pyx_v_part3_2) + __pyx_v_part3_3)));
+  goto __pyx_L0;
+
+  /* "pyfit/cardio/energy.pyx":125
+ *         return part_1+ part_2
+ * 
+ *     cpdef double santee(self, double terrain, double slope):             # <<<<<<<<<<<<<<
+ *         cdef double total_weight = self.weight + self.load
+ *         cdef double energy = self.speed * slope
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_WriteUnraisable("pyfit.cardio.energy.Terrain.santee", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_5santee(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_5santee(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  double __pyx_v_terrain;
+  double __pyx_v_slope;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("santee (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_terrain,&__pyx_n_s_slope,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_terrain)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_slope)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("santee", 1, 2, 2, 1); __PYX_ERR(0, 125, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "santee") < 0)) __PYX_ERR(0, 125, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_terrain = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_terrain == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L3_error)
+    __pyx_v_slope = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_slope == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 125, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("santee", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 125, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pyfit.cardio.energy.Terrain.santee", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_7Terrain_4santee(((struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *)__pyx_v_self), __pyx_v_terrain, __pyx_v_slope);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_4santee(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self, double __pyx_v_terrain, double __pyx_v_slope) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("santee", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_6cardio_6energy_7Terrain_santee(__pyx_v_self, __pyx_v_terrain, __pyx_v_slope, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.energy.Terrain.santee", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/energy.pxd":49
+ * 
+ * cdef class Terrain:
+ *     cdef readonly double weight             # <<<<<<<<<<<<<<
+ *     cdef readonly double speed
+ *     cdef readonly double load
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_6weight_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_6weight_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_7Terrain_6weight___get__(((struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_6weight___get__(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.energy.Terrain.weight.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/energy.pxd":50
+ * cdef class Terrain:
+ *     cdef readonly double weight
+ *     cdef readonly double speed             # <<<<<<<<<<<<<<
+ *     cdef readonly double load
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_5speed_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_5speed_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_7Terrain_5speed___get__(((struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_5speed___get__(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->speed); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 50, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.energy.Terrain.speed.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "pyfit/cardio/energy.pxd":51
+ *     cdef readonly double weight
+ *     cdef readonly double speed
+ *     cdef readonly double load             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef double pandolf(self, double terrain, double slope)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_4load_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5pyfit_6cardio_6energy_7Terrain_4load_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5pyfit_6cardio_6energy_7Terrain_4load___get__(((struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5pyfit_6cardio_6energy_7Terrain_4load___get__(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->load); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 51, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("pyfit.cardio.energy.Terrain.load.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
 }
 static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_BMREstimator __pyx_vtable_5pyfit_6cardio_6energy_BMREstimator;
 
@@ -5551,6 +6478,117 @@ static PyTypeObject __pyx_type_5pyfit_6cardio_6energy_AdultTEE = {
   0, /*tp_finalize*/
   #endif
 };
+static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_Terrain __pyx_vtable_5pyfit_6cardio_6energy_Terrain;
+
+static PyObject *__pyx_tp_new_5pyfit_6cardio_6energy_Terrain(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *p;
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  p = ((struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *)o);
+  p->__pyx_vtab = __pyx_vtabptr_5pyfit_6cardio_6energy_Terrain;
+  if (unlikely(__pyx_pw_5pyfit_6cardio_6energy_7Terrain_1__cinit__(o, a, k) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_5pyfit_6cardio_6energy_Terrain(PyObject *o) {
+  #if PY_VERSION_HEX >= 0x030400a1
+  if (unlikely(Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyObject *__pyx_getprop_5pyfit_6cardio_6energy_7Terrain_weight(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5pyfit_6cardio_6energy_7Terrain_6weight_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_5pyfit_6cardio_6energy_7Terrain_speed(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5pyfit_6cardio_6energy_7Terrain_5speed_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_5pyfit_6cardio_6energy_7Terrain_load(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5pyfit_6cardio_6energy_7Terrain_4load_1__get__(o);
+}
+
+static PyMethodDef __pyx_methods_5pyfit_6cardio_6energy_Terrain[] = {
+  {"pandolf", (PyCFunction)__pyx_pw_5pyfit_6cardio_6energy_7Terrain_3pandolf, METH_VARARGS|METH_KEYWORDS, 0},
+  {"santee", (PyCFunction)__pyx_pw_5pyfit_6cardio_6energy_7Terrain_5santee, METH_VARARGS|METH_KEYWORDS, 0},
+  {0, 0, 0, 0}
+};
+
+static struct PyGetSetDef __pyx_getsets_5pyfit_6cardio_6energy_Terrain[] = {
+  {(char *)"weight", __pyx_getprop_5pyfit_6cardio_6energy_7Terrain_weight, 0, (char *)0, 0},
+  {(char *)"speed", __pyx_getprop_5pyfit_6cardio_6energy_7Terrain_speed, 0, (char *)0, 0},
+  {(char *)"load", __pyx_getprop_5pyfit_6cardio_6energy_7Terrain_load, 0, (char *)0, 0},
+  {0, 0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_5pyfit_6cardio_6energy_Terrain = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "pyfit.cardio.energy.Terrain", /*tp_name*/
+  sizeof(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_5pyfit_6cardio_6energy_Terrain, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_5pyfit_6cardio_6energy_Terrain, /*tp_methods*/
+  0, /*tp_members*/
+  __pyx_getsets_5pyfit_6cardio_6energy_Terrain, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_5pyfit_6cardio_6energy_Terrain, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
 
 static PyMethodDef __pyx_methods[] = {
   {"kma", (PyCFunction)__pyx_pw_5pyfit_6cardio_6energy_1kma, METH_O, 0},
@@ -5593,13 +6631,19 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_gender, __pyx_k_gender, sizeof(__pyx_k_gender), 0, 0, 1, 1},
   {&__pyx_n_s_height, __pyx_k_height, sizeof(__pyx_k_height), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
+  {&__pyx_n_s_load, __pyx_k_load, sizeof(__pyx_k_load), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_mets, __pyx_k_mets, sizeof(__pyx_k_mets), 0, 0, 1, 1},
   {&__pyx_n_s_pal, __pyx_k_pal, sizeof(__pyx_k_pal), 0, 0, 1, 1},
+  {&__pyx_n_s_pandolf, __pyx_k_pandolf, sizeof(__pyx_k_pandolf), 0, 0, 1, 1},
   {&__pyx_n_s_predict, __pyx_k_predict, sizeof(__pyx_k_predict), 0, 0, 1, 1},
   {&__pyx_n_s_pyfit_enums, __pyx_k_pyfit_enums, sizeof(__pyx_k_pyfit_enums), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_vtable, __pyx_k_pyx_vtable, sizeof(__pyx_k_pyx_vtable), 0, 0, 1, 1},
   {&__pyx_n_s_quick, __pyx_k_quick, sizeof(__pyx_k_quick), 0, 0, 1, 1},
+  {&__pyx_n_s_santee, __pyx_k_santee, sizeof(__pyx_k_santee), 0, 0, 1, 1},
+  {&__pyx_n_s_slope, __pyx_k_slope, sizeof(__pyx_k_slope), 0, 0, 1, 1},
+  {&__pyx_n_s_speed, __pyx_k_speed, sizeof(__pyx_k_speed), 0, 0, 1, 1},
+  {&__pyx_n_s_terrain, __pyx_k_terrain, sizeof(__pyx_k_terrain), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_weight, __pyx_k_weight, sizeof(__pyx_k_weight), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
@@ -5645,6 +6689,8 @@ static int __Pyx_InitCachedConstants(void) {
 
 static int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
+  __pyx_float_1_5 = PyFloat_FromDouble(1.5); if (unlikely(!__pyx_float_1_5)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_2 = PyInt_FromLong(2); if (unlikely(!__pyx_int_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -5810,6 +6856,14 @@ PyMODINIT_FUNC PyInit_energy(void)
   if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_6energy_AdultTEE.tp_dict, __pyx_vtabptr_5pyfit_6cardio_6energy_AdultTEE) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "AdultTEE", (PyObject *)&__pyx_type_5pyfit_6cardio_6energy_AdultTEE) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
   __pyx_ptype_5pyfit_6cardio_6energy_AdultTEE = &__pyx_type_5pyfit_6cardio_6energy_AdultTEE;
+  __pyx_vtabptr_5pyfit_6cardio_6energy_Terrain = &__pyx_vtable_5pyfit_6cardio_6energy_Terrain;
+  __pyx_vtable_5pyfit_6cardio_6energy_Terrain.pandolf = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_7Terrain_pandolf;
+  __pyx_vtable_5pyfit_6cardio_6energy_Terrain.santee = (double (*)(struct __pyx_obj_5pyfit_6cardio_6energy_Terrain *, double, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_6cardio_6energy_7Terrain_santee;
+  if (PyType_Ready(&__pyx_type_5pyfit_6cardio_6energy_Terrain) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_type_5pyfit_6cardio_6energy_Terrain.tp_print = 0;
+  if (__Pyx_SetVtable(__pyx_type_5pyfit_6cardio_6energy_Terrain.tp_dict, __pyx_vtabptr_5pyfit_6cardio_6energy_Terrain) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "Terrain", (PyObject *)&__pyx_type_5pyfit_6cardio_6energy_Terrain) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_ptype_5pyfit_6cardio_6energy_Terrain = &__pyx_type_5pyfit_6cardio_6energy_Terrain;
   /*--- Type import code ---*/
   /*--- Variable import code ---*/
   /*--- Function import code ---*/
@@ -5844,12 +6898,12 @@ PyMODINIT_FUNC PyInit_energy(void)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "pyfit/cardio/energy.pyx":92
- * cdef class AdultTEE(TEEEstimator):
+  /* "pyfit/cardio/energy.pxd":51
+ *     cdef readonly double weight
+ *     cdef readonly double speed
+ *     cdef readonly double load             # <<<<<<<<<<<<<<
  * 
- *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
- *         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
- *             return 662 - (9.53 * age) + 1*((15.9 * weight) + (540 * height))
+ *     cpdef double pandolf(self, double terrain, double slope)
  */
   __pyx_t_2 = PyDict_New(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);

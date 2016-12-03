@@ -156,11 +156,25 @@ class TEE(unittest.TestCase):
         self.assertEquals(self.child.fromActivity(weight, 8.0), 9.207799999999999)
 
 class Energy(unittest.TestCase):
+
+    def setUp(self):
+        self.terrain = energy.Terrain(65.2, 1.38582, 40.0)
+
+    def tearDown(self):
+        del self.terrain
+
     def test_cunningham(self):
         self.assertEquals(energy.cunningham(lean_body_mass), 1477.9462)
 
     def test_kma(self):
         self.assertEquals(energy.kma(lean_body_mass), 1330.16536)
+
+    def test_terrain(self):
+        grade = 1.3
+        self.assertEquals(self.terrain.pandolf(1.0,grade), 527.4256573224053 )
+        self.assertEquals(self.terrain.santee(1.0,grade), 476.69467709470246)
+
+
 
 # Composition Module tests
 class Composition(unittest.TestCase):
