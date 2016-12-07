@@ -58,5 +58,5 @@ cdef class VV:
         cdef double adj_timer_r2 = self.adj_timer(d2, t2)
         cdef k_r2_r1 = log(adj_timer_r2/adj_timer_r1)/log(d2/self.d1)
         cdef double k_marathon = 1.4510756+(-0.23797948*k_r2_r1)+(-0.01410023*(mileage/10) )
-        cdef double seconds = (adj_timer_r2*pow(distance/d2, k_marathon) ) / seconds
+        cdef double seconds = (adj_timer_r2*pow(distance/d2, k_marathon) )
         return seconds
