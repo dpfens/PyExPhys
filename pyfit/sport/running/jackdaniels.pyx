@@ -29,7 +29,7 @@ cpdef double hrSpeed(double percentHR, double vO2Max):
     cdef double vO2Speed = vVO2Max(vO2Max)
     return vO2MaxPercent * vO2Speed
 
-cpdef double hrPace(double percentHR, vO2Max):
+cpdef double hrPace(double percentHR, double vO2Max):
     cdef double kph =  hrSpeed(percentHR, vO2Max)
     return 60 / kph
 

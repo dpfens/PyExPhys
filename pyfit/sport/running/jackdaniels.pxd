@@ -12,7 +12,7 @@ cpdef double vO2Percentage(double time)
 
 cpdef double hrSpeed(double percentHR, double vO2Max)
 
-cpdef double hrPace(double percentHR, vO2Max)
+cpdef double hrPace(double percentHR, double vO2Max)
 
 cdef class Pace:
     cdef readonly double vO2Max

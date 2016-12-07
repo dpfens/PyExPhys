@@ -746,7 +746,7 @@ struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
 
 /* "pyfit/sport/running/jackdaniels.pxd":17
- * cpdef double hrPace(double percentHR, vO2Max)
+ * cpdef double hrPace(double percentHR, double vO2Max)
  * 
  * cdef class Pace:             # <<<<<<<<<<<<<<
  *     cdef readonly double vO2Max
@@ -1646,7 +1646,7 @@ static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_velocity(double, int 
 static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_vO2(double, int __pyx_skip_dispatch); /*proto*/
 static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_vO2Percentage(double, int __pyx_skip_dispatch); /*proto*/
 static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrSpeed(double, double, int __pyx_skip_dispatch); /*proto*/
-static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(double, PyObject *, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(double, double, int __pyx_skip_dispatch); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char *, char *); /*proto*/
 static void *__pyx_align_pointer(void *, size_t); /*proto*/
 static PyObject *__pyx_memoryview_new(PyObject *, int, int, __Pyx_TypeInfo *); /*proto*/
@@ -1836,7 +1836,7 @@ static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_velocity(CYTHON_U
 static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_2vO2(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_velocity); /* proto */
 static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_4vO2Percentage(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_time); /* proto */
 static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_6hrSpeed(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_percentHR, double __pyx_v_vO2Max); /* proto */
-static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_8hrPace(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_percentHR, PyObject *__pyx_v_vO2Max); /* proto */
+static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_8hrPace(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_percentHR, double __pyx_v_vO2Max); /* proto */
 static int __pyx_pf_5pyfit_5sport_7running_11jackdaniels_4Pace___cinit__(struct __pyx_obj_5pyfit_5sport_7running_11jackdaniels_Pace *__pyx_v_self, double __pyx_v_vO2Max); /* proto */
 static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_4Pace_2percent(struct __pyx_obj_5pyfit_5sport_7running_11jackdaniels_Pace *__pyx_v_self, double __pyx_v_percentage); /* proto */
 static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_4Pace_4easy(struct __pyx_obj_5pyfit_5sport_7running_11jackdaniels_Pace *__pyx_v_self); /* proto */
@@ -2347,7 +2347,7 @@ static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrSpeed(double __pyx_
  *     cdef double vO2Speed = vVO2Max(vO2Max)
  *     return vO2MaxPercent * vO2Speed             # <<<<<<<<<<<<<<
  * 
- * cpdef double hrPace(double percentHR, vO2Max):
+ * cpdef double hrPace(double percentHR, double vO2Max):
  */
   __pyx_r = (__pyx_v_vO2MaxPercent * __pyx_v_vO2Speed);
   goto __pyx_L0;
@@ -2450,31 +2450,29 @@ static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_6hrSpeed(CYTHON_U
 /* "pyfit/sport/running/jackdaniels.pyx":32
  *     return vO2MaxPercent * vO2Speed
  * 
- * cpdef double hrPace(double percentHR, vO2Max):             # <<<<<<<<<<<<<<
+ * cpdef double hrPace(double percentHR, double vO2Max):             # <<<<<<<<<<<<<<
  *     cdef double kph =  hrSpeed(percentHR, vO2Max)
  *     return 60 / kph
  */
 
 static PyObject *__pyx_pw_5pyfit_5sport_7running_11jackdaniels_9hrPace(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(double __pyx_v_percentHR, PyObject *__pyx_v_vO2Max, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(double __pyx_v_percentHR, double __pyx_v_vO2Max, CYTHON_UNUSED int __pyx_skip_dispatch) {
   double __pyx_v_kph;
   double __pyx_r;
   __Pyx_RefNannyDeclarations
-  double __pyx_t_1;
   __Pyx_RefNannySetupContext("hrPace", 0);
 
   /* "pyfit/sport/running/jackdaniels.pyx":33
  * 
- * cpdef double hrPace(double percentHR, vO2Max):
+ * cpdef double hrPace(double percentHR, double vO2Max):
  *     cdef double kph =  hrSpeed(percentHR, vO2Max)             # <<<<<<<<<<<<<<
  *     return 60 / kph
  * 
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_vO2Max); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 33, __pyx_L1_error)
-  __pyx_v_kph = __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrSpeed(__pyx_v_percentHR, __pyx_t_1, 0);
+  __pyx_v_kph = __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrSpeed(__pyx_v_percentHR, __pyx_v_vO2Max, 0);
 
   /* "pyfit/sport/running/jackdaniels.pyx":34
- * cpdef double hrPace(double percentHR, vO2Max):
+ * cpdef double hrPace(double percentHR, double vO2Max):
  *     cdef double kph =  hrSpeed(percentHR, vO2Max)
  *     return 60 / kph             # <<<<<<<<<<<<<<
  * 
@@ -2490,7 +2488,7 @@ static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(double __pyx_v
   /* "pyfit/sport/running/jackdaniels.pyx":32
  *     return vO2MaxPercent * vO2Speed
  * 
- * cpdef double hrPace(double percentHR, vO2Max):             # <<<<<<<<<<<<<<
+ * cpdef double hrPace(double percentHR, double vO2Max):             # <<<<<<<<<<<<<<
  *     cdef double kph =  hrSpeed(percentHR, vO2Max)
  *     return 60 / kph
  */
@@ -2508,7 +2506,7 @@ static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(double __pyx_v
 static PyObject *__pyx_pw_5pyfit_5sport_7running_11jackdaniels_9hrPace(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_5sport_7running_11jackdaniels_9hrPace(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_percentHR;
-  PyObject *__pyx_v_vO2Max = 0;
+  double __pyx_v_vO2Max;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("hrPace (wrapper)", 0);
@@ -2545,7 +2543,7 @@ static PyObject *__pyx_pw_5pyfit_5sport_7running_11jackdaniels_9hrPace(PyObject 
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_percentHR = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_percentHR == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
-    __pyx_v_vO2Max = values[1];
+    __pyx_v_vO2Max = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_vO2Max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -2562,7 +2560,7 @@ static PyObject *__pyx_pw_5pyfit_5sport_7running_11jackdaniels_9hrPace(PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_8hrPace(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_percentHR, PyObject *__pyx_v_vO2Max) {
+static PyObject *__pyx_pf_5pyfit_5sport_7running_11jackdaniels_8hrPace(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_percentHR, double __pyx_v_vO2Max) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2762,10 +2760,7 @@ static double __pyx_f_5pyfit_5sport_7running_11jackdaniels_4Pace_percent(struct 
  * 
  *     cpdef float[:] easy(self):
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(__pyx_v_percentage, __pyx_t_1, 0);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = __pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(__pyx_v_percentage, __pyx_v_self->vO2Max, 0);
   goto __pyx_L0;
 
   /* "pyfit/sport/running/jackdaniels.pyx":41
@@ -2901,37 +2896,31 @@ static __Pyx_memviewslice __pyx_f_5pyfit_5sport_7running_11jackdaniels_4Pace_eas
  *         return paces
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.6, __pyx_v_self->vO2Max, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.6, __pyx_t_1, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.79, __pyx_v_self->vO2Max, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.79, __pyx_t_1, 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyList_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_t_3);
+  PyList_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_f);
   __Pyx_GIVEREF(__pyx_n_s_f);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_f);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_paces = ((arrayobject *)__pyx_t_1);
-  __pyx_t_1 = 0;
+  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_f);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_paces = ((arrayobject *)__pyx_t_3);
+  __pyx_t_3 = 0;
 
   /* "pyfit/sport/running/jackdaniels.pyx":46
  *     cpdef float[:] easy(self):
@@ -3083,37 +3072,31 @@ static __Pyx_memviewslice __pyx_f_5pyfit_5sport_7running_11jackdaniels_4Pace_mar
  *         return paces
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.8, __pyx_v_self->vO2Max, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.8, __pyx_t_1, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.85, __pyx_v_self->vO2Max, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.85, __pyx_t_1, 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyList_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_t_3);
+  PyList_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_f);
   __Pyx_GIVEREF(__pyx_n_s_f);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_f);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_paces = ((arrayobject *)__pyx_t_1);
-  __pyx_t_1 = 0;
+  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_f);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_paces = ((arrayobject *)__pyx_t_3);
+  __pyx_t_3 = 0;
 
   /* "pyfit/sport/running/jackdaniels.pyx":50
  *     cpdef float[:] marathon(self):
@@ -3265,37 +3248,31 @@ static __Pyx_memviewslice __pyx_f_5pyfit_5sport_7running_11jackdaniels_4Pace_thr
  *         return paces
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.82, __pyx_v_self->vO2Max, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.82, __pyx_t_1, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.88, __pyx_v_self->vO2Max, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.88, __pyx_t_1, 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyList_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_t_3);
+  PyList_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_f);
   __Pyx_GIVEREF(__pyx_n_s_f);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_f);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_paces = ((arrayobject *)__pyx_t_1);
-  __pyx_t_1 = 0;
+  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_f);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_paces = ((arrayobject *)__pyx_t_3);
+  __pyx_t_3 = 0;
 
   /* "pyfit/sport/running/jackdaniels.pyx":54
  *     cpdef float[:] threshold(self):
@@ -3446,37 +3423,31 @@ static __Pyx_memviewslice __pyx_f_5pyfit_5sport_7running_11jackdaniels_4Pace_int
  *         cdef array.array paces = array.array('f', [hrPace(0.97, self.vO2Max), hrPace(1, self.vO2Max)] )             # <<<<<<<<<<<<<<
  *         return paces
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.97, __pyx_v_self->vO2Max, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(0.97, __pyx_t_1, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(1.0, __pyx_v_self->vO2Max, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vO2Max); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace(1.0, __pyx_t_1, 0)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyList_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
-  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_t_3);
+  PyList_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_f);
   __Pyx_GIVEREF(__pyx_n_s_f);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_f);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_paces = ((arrayobject *)__pyx_t_1);
-  __pyx_t_1 = 0;
+  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_f);
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7cpython_5array_array), __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_paces = ((arrayobject *)__pyx_t_3);
+  __pyx_t_3 = 0;
 
   /* "pyfit/sport/running/jackdaniels.pyx":58
  *     cpdef float[:] interval(self):
@@ -17095,7 +17066,7 @@ PyMODINIT_FUNC PyInit_jackdaniels(void)
   if (__Pyx_ExportFunction("vO2", (void (*)(void))__pyx_f_5pyfit_5sport_7running_11jackdaniels_vO2, "double (double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   if (__Pyx_ExportFunction("vO2Percentage", (void (*)(void))__pyx_f_5pyfit_5sport_7running_11jackdaniels_vO2Percentage, "double (double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   if (__Pyx_ExportFunction("hrSpeed", (void (*)(void))__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrSpeed, "double (double, double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__Pyx_ExportFunction("hrPace", (void (*)(void))__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace, "double (double, PyObject *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("hrPace", (void (*)(void))__pyx_f_5pyfit_5sport_7running_11jackdaniels_hrPace, "double (double, double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   /*--- Type init code ---*/
   __pyx_vtabptr_5pyfit_5sport_7running_11jackdaniels_Pace = &__pyx_vtable_5pyfit_5sport_7running_11jackdaniels_Pace;
   __pyx_vtable_5pyfit_5sport_7running_11jackdaniels_Pace.percent = (double (*)(struct __pyx_obj_5pyfit_5sport_7running_11jackdaniels_Pace *, double, int __pyx_skip_dispatch))__pyx_f_5pyfit_5sport_7running_11jackdaniels_4Pace_percent;
