@@ -53,7 +53,7 @@ cdef class VV:
         cdef double seconds = minutes * 60
         return seconds
 
-    cpdef double time2(self, double mileage, double t2, double d2, double distance=42195.0):
+    cpdef double time2(self, double mileage, double d2, double t2, double distance=42195.0):
         cdef double adj_timer_r1 = self.adj_timer(self.d1, self.t1)
         cdef double adj_timer_r2 = self.adj_timer(d2, t2)
         cdef k_r2_r1 = log(adj_timer_r2/adj_timer_r1)/log(d2/self.d1)
