@@ -839,9 +839,6 @@ cdef class METs(object):
     		MET(3.0,"21070","walk/stand combination, for volunteer purposes")
         ]
 
-    def __dealloc__(self):
-        free(self.mets)
-
 cpdef double karvonen(double mets, double intensity):
     return intensity * (mets -1) + 1
 
