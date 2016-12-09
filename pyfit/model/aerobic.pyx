@@ -27,11 +27,11 @@ cdef class Cameron:
         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
 
     cpdef double time(self, double d2):
-        cdef double d1Miles = self.d1 / 1609.34
-        cdef double d2Miles = d2 / 1609.34
+        cdef double d1_miles = self.d1 / 1609.34
+        cdef double d2_miles = d2 / 1609.34
         if d2 <= 0:
             return 0
-        return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
+        return (self.t1/d1_miles) * (self.__f__(d1_miles)/self.__f__(d2_miles)) * d2_miles
 
 cdef class VV:
 

@@ -8,10 +8,10 @@ cdef class METs(object):
 
 cpdef double karvonen(double mets, double intensity)
 
-cpdef double fromVO2(double vO2)
+cpdef double from_vo2(double vo2)
 
-cpdef double stairmasterMets(self, int setting)
+cpdef double stairmaster_mets(self, int setting)
 
-cpdef double toKCal(double mets, double weight)
+cpdef double to_kcal(double mets, double weight)
 
-cpdef double target(double vO2Max, intensity)
+cpdef double target(double vo2max, double intensity)

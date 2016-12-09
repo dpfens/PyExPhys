@@ -9,10 +9,10 @@ cdef class Compare(object):
         self.gender = gender
         self.weight = weight
 
-    cpdef double oCarroll(self, double weightLifted):
-        return weightLifted/pow(self.weight-35, 1/3)
+    cpdef double ocarroll(self, double weight_lifted):
+        return weight_lifted/pow(self.weight-35, 1/3)
 
-    cpdef double siffWeight(self):
+    cpdef double siff_weight(self):
         cdef double a = 512.245
         cdef double b = 146230
         cdef double c = 1.605
@@ -23,7 +23,7 @@ cdef class Compare(object):
             return c-a*exp(-b*self.weight)
         return a-b*pow(self.weight, -c)
 
-    cpdef double siffPower(self):
+    cpdef double siff_power(self):
         cdef double a = 512.245
         cdef double b = 172970
         cdef double c = 1.3925
@@ -33,22 +33,22 @@ cdef class Compare(object):
 
     cpdef double siff(self, bint power=False):
         if power:
-            return self.siffPower()
-        return self.siffWeight()
+            return self.siff_power()
+        return self.siff_weight()
 
-    cpdef double sinclair(self, double obtainedTotal):
-        cdef double coefficientA = 0.794358141
-        cdef double coefficientB = 174.393
+    cpdef double sinclair(self, double obtained_total):
+        cdef double coefficient_a = 0.794358141
+        cdef double coefficient_b = 174.393
         if self.gender == Gender.Female:
-            coefficientA = 0.897260740
-            coefficientB = 148.026
-        if self.weight > coefficientB:
+            coefficient_a = 0.897260740
+            coefficient_b = 148.026
+        if self.weight > coefficient_b:
              return 1
-        cdef double exponent = pow( coefficientA * log10(self.weight/coefficientB), 2 )
+        cdef double exponent = pow( coefficient_a * log10(self.weight/coefficient_b), 2 )
         cdef double multiplier = pow(10, exponent)
-        return multiplier * obtainedTotal
+        return multiplier * obtained_total
 
-    cpdef double wilks(self, double weightLifted):
+    cpdef double wilks(self, double weight_lifted):
         cdef double a = -216.0475144
         cdef double b = 16.2606339
         cdef double c = -0.002388645
@@ -64,7 +64,7 @@ cdef class Compare(object):
             e = 4.731582E-05
             f = -9.054E-08
         cdef double coefficient = 500/(a + b*self.weight + c * pow(self.weight, 2) + d * pow(self.weight, 3) + e * pow(self.weight, 4) + f * pow(self.weight, 5) )
-        return coefficient * weightLifted
+        return coefficient * weight_lifted
 
 cdef class Jump(object):
 
@@ -75,28 +75,28 @@ cdef class Jump(object):
     cpdef double bosco(self, double duration, double jump_count, double total_flight_time):
         return (total_flight_time * duration * pow(9.81,2)) / (4 * jump_count * (duration - total_flight_time) )
 
-    cpdef double lewis(self, double vJumpHeight):
-        return sqrt(4.9 * self.weight) * sqrt(vJumpHeight) * 9.81
+    cpdef double lewis(self, double jump_reach_score):
+        return sqrt(4.9 * self.weight) * sqrt(jump_reach_score) * 9.81
 
-    cpdef double harman(self, double vJumpHeight, bint peak=False):
-        cdef double vJumpHeightCm = vJumpHeight * 100
+    cpdef double harman(self, double v_jump_height, bint peak=False):
+        cdef double v_jump_height_cm = v_jump_height * 100
         if peak:
-            return 61.9*vJumpHeightCm + 36*self.weight + 1822
-        return 21.1 *vJumpHeightCm + 2.3*self.weight + 1393
+            return 61.9*v_jump_height_cm + 36*self.weight + 1822
+        return 21.1 *v_jump_height_cm + 2.3*self.weight + 1393
 
-    cpdef double jb(self, double vJumpHeight, bint peak=False):
-        cdef double bodyHeightCm = self.height * 100
-        cdef double vJumpHeightCm = vJumpHeight * 100
+    cpdef double jb(self, double v_jump_height, bint peak=False):
+        cdef double body_height_cm = self.height * 100
+        cdef double v_jump_height_cm = v_jump_height * 100
         if peak:
-            return 78.6*vJumpHeightCm +60.3*self.weight + 15.3*bodyHeightCm + 1308
-        return 43.8*vJumpHeightCm + 32.7*self.weight - 16.8*bodyHeightCm + 431
+            return 78.6*v_jump_height_cm +60.3*self.weight + 15.3*body_height_cm + 1308
+        return 43.8*v_jump_height_cm + 32.7*self.weight - 16.8*body_height_cm + 431
 
-    cpdef double sayer(self, double vJumpHeight):
-        cdef double vJumpHeightCm = vJumpHeight * 100
-        return 60.7*vJumpHeightCm + 45.3*self.weight - 2055
+    cpdef double sayer(self, double v_jump_height):
+        cdef double v_jump_height_cm = v_jump_height * 100
+        return 60.7*v_jump_height_cm + 45.3*self.weight - 2055
 
-    cpdef double mk(self, double vJumpHeight, double time):
-        return (self.weight * (vJumpHeight/time)) * 9.81
+    cpdef double mk(self, double v_jump_height, double time):
+        return (self.weight * (v_jump_height/time)) * 9.81
 
 cdef class RMEstimator:
 
@@ -216,15 +216,15 @@ cdef class RM(object):
         self.gender = gender
         self.age = age
 
-    cpdef double ymcaUpperBody(self, int reps):
+    cpdef double ymca_upper_body(self, int reps):
         if self.gender == Gender.Female:
             return (0.31 * reps) + 19.2
         return (1.55 * reps) + 37.9
 
-    cpdef double femaleMiddleAge(self, int reps, double weight):
+    cpdef double female_middle_age(self, int reps, double weight):
         return  (1.06 * weight) + (0.58 * reps) - (0.20 * self.age) - 3.41
 
-    cpdef double femaleOlder(self, int reps, double weight):
+    cpdef double female_older(self, int reps, double weight):
         return (0.92 * weight) + (0.79 * reps) - (0.20 * self.age) - 3.73
 
 cpdef double relative(double weight, double rm):

@@ -1,28 +1,28 @@
-cdef double percentVO2(double hrPercentage)
+cdef double percent_vo2(double hr_percentage)
 
-cdef double percentHrMax(double vO2MaxPercentage)
+cdef double percent_hrmax(double vo2max_percentage)
 
-cdef double vVO2Max(double vO2Max)
+cdef double vvo2max(double vo2max)
 
-cpdef double velocity(double vO2)
+cpdef double velocity(double vo2)
 
-cpdef double vO2(double velocity)
+cpdef double vo2(double velocity)
 
-cpdef double vO2Percentage(double time)
+cpdef double vo2_percentage(double time)
 
-cpdef double hrSpeed(double percentHR, double vO2Max)
+cpdef double hr_speed(double percent_hr, double vo2max)
 
-cpdef double hrPace(double percentHR, double vO2Max)
+cpdef double hr_pace(double percent_hr, double vo2max)
 
 cdef class Pace:
-    cdef readonly double vO2Max
+    cdef readonly double vo2max
 
     cpdef double percent(self, double percentage)
 
-    cpdef float[:] easy(self)
+    cpdef double[:] easy(self)
 
-    cpdef float[:] marathon(self)
+    cpdef double[:] marathon(self)
 
-    cpdef float[:] threshold(self)
+    cpdef double[:] threshold(self)
 
-    cpdef float[:] interval(self)
+    cpdef double[:] interval(self)

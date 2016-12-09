@@ -741,35 +741,6 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
     PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
     const char* function_name);
 
-/* PyThreadStateGet.proto */
-#if CYTHON_FAST_THREAD_STATE
-#define __Pyx_PyThreadState_declare  PyThreadState *__pyx_tstate;
-#define __Pyx_PyThreadState_assign  __pyx_tstate = PyThreadState_GET();
-#else
-#define __Pyx_PyThreadState_declare
-#define __Pyx_PyThreadState_assign
-#endif
-
-/* PyErrFetchRestore.proto */
-#if CYTHON_FAST_THREAD_STATE
-#define __Pyx_ErrRestoreWithState(type, value, tb)  __Pyx_ErrRestoreInState(PyThreadState_GET(), type, value, tb)
-#define __Pyx_ErrFetchWithState(type, value, tb)    __Pyx_ErrFetchInState(PyThreadState_GET(), type, value, tb)
-#define __Pyx_ErrRestore(type, value, tb)  __Pyx_ErrRestoreInState(__pyx_tstate, type, value, tb)
-#define __Pyx_ErrFetch(type, value, tb)    __Pyx_ErrFetchInState(__pyx_tstate, type, value, tb)
-static CYTHON_INLINE void __Pyx_ErrRestoreInState(PyThreadState *tstate, PyObject *type, PyObject *value, PyObject *tb);
-static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb);
-#else
-#define __Pyx_ErrRestoreWithState(type, value, tb)  PyErr_Restore(type, value, tb)
-#define __Pyx_ErrFetchWithState(type, value, tb)  PyErr_Fetch(type, value, tb)
-#define __Pyx_ErrRestore(type, value, tb)  PyErr_Restore(type, value, tb)
-#define __Pyx_ErrFetch(type, value, tb)  PyErr_Fetch(type, value, tb)
-#endif
-
-/* WriteUnraisableException.proto */
-static void __Pyx_WriteUnraisable(const char *name, int clineno,
-                                  int lineno, const char *filename,
-                                  int full_traceback, int nogil);
-
 /* PyObjectGetAttrStr.proto */
 #if CYTHON_USE_TYPE_SLOTS
 static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject* attr_name) {
@@ -839,10 +810,10 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 /* Module declarations from 'pyfit.mets' */
 static PyTypeObject *__pyx_ptype_5pyfit_4mets_METs = 0;
 static double __pyx_f_5pyfit_4mets_karvonen(double, double, int __pyx_skip_dispatch); /*proto*/
-static double __pyx_f_5pyfit_4mets_fromVO2(double, int __pyx_skip_dispatch); /*proto*/
-static double __pyx_f_5pyfit_4mets_stairmasterMets(PyObject *, int, int __pyx_skip_dispatch); /*proto*/
-static double __pyx_f_5pyfit_4mets_toKCal(double, double, int __pyx_skip_dispatch); /*proto*/
-static double __pyx_f_5pyfit_4mets_target(double, PyObject *, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_from_vo2(double, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_stairmaster_mets(PyObject *, int, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_to_kcal(double, double, int __pyx_skip_dispatch); /*proto*/
+static double __pyx_f_5pyfit_4mets_target(double, double, int __pyx_skip_dispatch); /*proto*/
 static CYTHON_INLINE PyObject *__Pyx_carray_to_py_MET(struct __pyx_t_5pyfit_4mets_MET *, Py_ssize_t); /*proto*/
 static CYTHON_INLINE PyObject *__Pyx_carray_to_tuple_MET(struct __pyx_t_5pyfit_4mets_MET *, Py_ssize_t); /*proto*/
 #define __Pyx_MODULE_NAME "pyfit.mets"
@@ -857,7 +828,7 @@ static const char __pyx_k_self[] = "self";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_value[] = "value";
-static const char __pyx_k_vO2Max[] = "vO2Max";
+static const char __pyx_k_vo2max[] = "vo2max";
 static const char __pyx_k_weight[] = "weight";
 static const char __pyx_k_setting[] = "setting";
 static const char __pyx_k_intensity[] = "intensity";
@@ -871,16 +842,16 @@ static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_self;
 static PyObject *__pyx_n_s_setting;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_n_s_vO2Max;
 static PyObject *__pyx_n_s_value;
+static PyObject *__pyx_n_s_vo2max;
 static PyObject *__pyx_n_s_weight;
 static int __pyx_pf_5pyfit_4mets_4METs___cinit__(struct __pyx_obj_5pyfit_4mets_METs *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_4mets_4METs_4mets___get__(struct __pyx_obj_5pyfit_4mets_METs *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_intensity); /* proto */
-static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2); /* proto */
-static PyObject *__pyx_pf_5pyfit_4mets_4stairmasterMets(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_setting); /* proto */
-static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_weight); /* proto */
-static PyObject *__pyx_pf_5pyfit_4mets_8target(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2Max, PyObject *__pyx_v_intensity); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_2from_vo2(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vo2); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_4stairmaster_mets(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_setting); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_6to_kcal(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_weight); /* proto */
+static PyObject *__pyx_pf_5pyfit_4mets_8target(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vo2max, double __pyx_v_intensity); /* proto */
 static PyObject *__pyx_tp_new_5pyfit_4mets_METs(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 
 /* "pyfit/mets.pyx":7
@@ -11811,7 +11782,7 @@ static double __pyx_f_5pyfit_4mets_karvonen(double __pyx_v_mets, double __pyx_v_
  * cpdef double karvonen(double mets, double intensity):
  *     return intensity * (mets -1) + 1             # <<<<<<<<<<<<<<
  * 
- * cpdef double fromVO2(double vO2):
+ * cpdef double from_vo2(double vo2):
  */
   __pyx_r = ((__pyx_v_intensity * (__pyx_v_mets - 1.0)) + 1.0);
   goto __pyx_L0;
@@ -11914,32 +11885,32 @@ static PyObject *__pyx_pf_5pyfit_4mets_karvonen(CYTHON_UNUSED PyObject *__pyx_se
 /* "pyfit/mets.pyx":845
  *     return intensity * (mets -1) + 1
  * 
- * cpdef double fromVO2(double vO2):             # <<<<<<<<<<<<<<
- *     return vO2 / 3.5
+ * cpdef double from_vo2(double vo2):             # <<<<<<<<<<<<<<
+ *     return vo2 / 3.5
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_4mets_3fromVO2(PyObject *__pyx_self, PyObject *__pyx_arg_vO2); /*proto*/
-static double __pyx_f_5pyfit_4mets_fromVO2(double __pyx_v_vO2, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_5pyfit_4mets_3from_vo2(PyObject *__pyx_self, PyObject *__pyx_arg_vo2); /*proto*/
+static double __pyx_f_5pyfit_4mets_from_vo2(double __pyx_v_vo2, CYTHON_UNUSED int __pyx_skip_dispatch) {
   double __pyx_r;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("fromVO2", 0);
+  __Pyx_RefNannySetupContext("from_vo2", 0);
 
   /* "pyfit/mets.pyx":846
  * 
- * cpdef double fromVO2(double vO2):
- *     return vO2 / 3.5             # <<<<<<<<<<<<<<
+ * cpdef double from_vo2(double vo2):
+ *     return vo2 / 3.5             # <<<<<<<<<<<<<<
  * 
- * cpdef double stairmasterMets(self, int setting):
+ * cpdef double stairmaster_mets(self, int setting):
  */
-  __pyx_r = (__pyx_v_vO2 / 3.5);
+  __pyx_r = (__pyx_v_vo2 / 3.5);
   goto __pyx_L0;
 
   /* "pyfit/mets.pyx":845
  *     return intensity * (mets -1) + 1
  * 
- * cpdef double fromVO2(double vO2):             # <<<<<<<<<<<<<<
- *     return vO2 / 3.5
+ * cpdef double from_vo2(double vo2):             # <<<<<<<<<<<<<<
+ *     return vo2 / 3.5
  * 
  */
 
@@ -11950,35 +11921,35 @@ static double __pyx_f_5pyfit_4mets_fromVO2(double __pyx_v_vO2, CYTHON_UNUSED int
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_4mets_3fromVO2(PyObject *__pyx_self, PyObject *__pyx_arg_vO2); /*proto*/
-static PyObject *__pyx_pw_5pyfit_4mets_3fromVO2(PyObject *__pyx_self, PyObject *__pyx_arg_vO2) {
-  double __pyx_v_vO2;
+static PyObject *__pyx_pw_5pyfit_4mets_3from_vo2(PyObject *__pyx_self, PyObject *__pyx_arg_vo2); /*proto*/
+static PyObject *__pyx_pw_5pyfit_4mets_3from_vo2(PyObject *__pyx_self, PyObject *__pyx_arg_vo2) {
+  double __pyx_v_vo2;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("fromVO2 (wrapper)", 0);
-  assert(__pyx_arg_vO2); {
-    __pyx_v_vO2 = __pyx_PyFloat_AsDouble(__pyx_arg_vO2); if (unlikely((__pyx_v_vO2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 845, __pyx_L3_error)
+  __Pyx_RefNannySetupContext("from_vo2 (wrapper)", 0);
+  assert(__pyx_arg_vo2); {
+    __pyx_v_vo2 = __pyx_PyFloat_AsDouble(__pyx_arg_vo2); if (unlikely((__pyx_v_vo2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 845, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.mets.fromVO2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.mets.from_vo2", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_4mets_2fromVO2(__pyx_self, ((double)__pyx_v_vO2));
+  __pyx_r = __pyx_pf_5pyfit_4mets_2from_vo2(__pyx_self, ((double)__pyx_v_vo2));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2) {
+static PyObject *__pyx_pf_5pyfit_4mets_2from_vo2(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vo2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("fromVO2", 0);
+  __Pyx_RefNannySetupContext("from_vo2", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_fromVO2(__pyx_v_vO2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 845, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_from_vo2(__pyx_v_vo2, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 845, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11987,7 +11958,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_se
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.mets.fromVO2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.mets.from_vo2", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11996,33 +11967,33 @@ static PyObject *__pyx_pf_5pyfit_4mets_2fromVO2(CYTHON_UNUSED PyObject *__pyx_se
 }
 
 /* "pyfit/mets.pyx":848
- *     return vO2 / 3.5
+ *     return vo2 / 3.5
  * 
- * cpdef double stairmasterMets(self, int setting):             # <<<<<<<<<<<<<<
+ * cpdef double stairmaster_mets(self, int setting):             # <<<<<<<<<<<<<<
  *     return 0.556 * 7.45 * setting
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static double __pyx_f_5pyfit_4mets_stairmasterMets(CYTHON_UNUSED PyObject *__pyx_v_self, int __pyx_v_setting, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_5pyfit_4mets_5stairmaster_mets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_4mets_stairmaster_mets(CYTHON_UNUSED PyObject *__pyx_v_self, int __pyx_v_setting, CYTHON_UNUSED int __pyx_skip_dispatch) {
   double __pyx_r;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("stairmasterMets", 0);
+  __Pyx_RefNannySetupContext("stairmaster_mets", 0);
 
   /* "pyfit/mets.pyx":849
  * 
- * cpdef double stairmasterMets(self, int setting):
+ * cpdef double stairmaster_mets(self, int setting):
  *     return 0.556 * 7.45 * setting             # <<<<<<<<<<<<<<
  * 
- * cpdef double toKCal(double mets, double weight):
+ * cpdef double to_kcal(double mets, double weight):
  */
   __pyx_r = ((0.556 * 7.45) * __pyx_v_setting);
   goto __pyx_L0;
 
   /* "pyfit/mets.pyx":848
- *     return vO2 / 3.5
+ *     return vo2 / 3.5
  * 
- * cpdef double stairmasterMets(self, int setting):             # <<<<<<<<<<<<<<
+ * cpdef double stairmaster_mets(self, int setting):             # <<<<<<<<<<<<<<
  *     return 0.556 * 7.45 * setting
  * 
  */
@@ -12034,13 +12005,13 @@ static double __pyx_f_5pyfit_4mets_stairmasterMets(CYTHON_UNUSED PyObject *__pyx
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_5pyfit_4mets_5stairmaster_mets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_4mets_5stairmaster_mets(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   int __pyx_v_setting;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("stairmasterMets (wrapper)", 0);
+  __Pyx_RefNannySetupContext("stairmaster_mets (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_setting,0};
     PyObject* values[2] = {0,0};
@@ -12061,11 +12032,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_setting)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("stairmasterMets", 1, 2, 2, 1); __PYX_ERR(0, 848, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("stairmaster_mets", 1, 2, 2, 1); __PYX_ERR(0, 848, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "stairmasterMets") < 0)) __PYX_ERR(0, 848, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "stairmaster_mets") < 0)) __PYX_ERR(0, 848, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -12078,26 +12049,26 @@ static PyObject *__pyx_pw_5pyfit_4mets_5stairmasterMets(PyObject *__pyx_self, Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("stairmasterMets", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 848, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("stairmaster_mets", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 848, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.mets.stairmasterMets", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.mets.stairmaster_mets", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_4mets_4stairmasterMets(__pyx_self, __pyx_v_self, __pyx_v_setting);
+  __pyx_r = __pyx_pf_5pyfit_4mets_4stairmaster_mets(__pyx_self, __pyx_v_self, __pyx_v_setting);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_4mets_4stairmasterMets(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_setting) {
+static PyObject *__pyx_pf_5pyfit_4mets_4stairmaster_mets(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_setting) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("stairmasterMets", 0);
+  __Pyx_RefNannySetupContext("stairmaster_mets", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_stairmasterMets(__pyx_v_self, __pyx_v_setting, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 848, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_stairmaster_mets(__pyx_v_self, __pyx_v_setting, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12106,7 +12077,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_4stairmasterMets(CYTHON_UNUSED PyObject *
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.mets.stairmasterMets", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.mets.stairmaster_mets", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12117,23 +12088,23 @@ static PyObject *__pyx_pf_5pyfit_4mets_4stairmasterMets(CYTHON_UNUSED PyObject *
 /* "pyfit/mets.pyx":851
  *     return 0.556 * 7.45 * setting
  * 
- * cpdef double toKCal(double mets, double weight):             # <<<<<<<<<<<<<<
+ * cpdef double to_kcal(double mets, double weight):             # <<<<<<<<<<<<<<
  *     return (mets * 3.5 * weight)/200
  * 
  */
 
-static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static double __pyx_f_5pyfit_4mets_toKCal(double __pyx_v_mets, double __pyx_v_weight, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_5pyfit_4mets_7to_kcal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static double __pyx_f_5pyfit_4mets_to_kcal(double __pyx_v_mets, double __pyx_v_weight, CYTHON_UNUSED int __pyx_skip_dispatch) {
   double __pyx_r;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("toKCal", 0);
+  __Pyx_RefNannySetupContext("to_kcal", 0);
 
   /* "pyfit/mets.pyx":852
  * 
- * cpdef double toKCal(double mets, double weight):
+ * cpdef double to_kcal(double mets, double weight):
  *     return (mets * 3.5 * weight)/200             # <<<<<<<<<<<<<<
  * 
- * cpdef double target(double vO2Max, intensity):
+ * cpdef double target(double vo2max, double intensity):
  */
   __pyx_r = (((__pyx_v_mets * 3.5) * __pyx_v_weight) / 200.0);
   goto __pyx_L0;
@@ -12141,7 +12112,7 @@ static double __pyx_f_5pyfit_4mets_toKCal(double __pyx_v_mets, double __pyx_v_we
   /* "pyfit/mets.pyx":851
  *     return 0.556 * 7.45 * setting
  * 
- * cpdef double toKCal(double mets, double weight):             # <<<<<<<<<<<<<<
+ * cpdef double to_kcal(double mets, double weight):             # <<<<<<<<<<<<<<
  *     return (mets * 3.5 * weight)/200
  * 
  */
@@ -12153,13 +12124,13 @@ static double __pyx_f_5pyfit_4mets_toKCal(double __pyx_v_mets, double __pyx_v_we
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_5pyfit_4mets_7to_kcal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_5pyfit_4mets_7to_kcal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_mets;
   double __pyx_v_weight;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("toKCal (wrapper)", 0);
+  __Pyx_RefNannySetupContext("to_kcal (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_mets,&__pyx_n_s_weight,0};
     PyObject* values[2] = {0,0};
@@ -12180,11 +12151,11 @@ static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_weight)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, 1); __PYX_ERR(0, 851, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("to_kcal", 1, 2, 2, 1); __PYX_ERR(0, 851, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "toKCal") < 0)) __PYX_ERR(0, 851, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "to_kcal") < 0)) __PYX_ERR(0, 851, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -12197,26 +12168,26 @@ static PyObject *__pyx_pw_5pyfit_4mets_7toKCal(PyObject *__pyx_self, PyObject *_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("toKCal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 851, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("to_kcal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 851, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("pyfit.mets.toKCal", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.mets.to_kcal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_4mets_6toKCal(__pyx_self, __pyx_v_mets, __pyx_v_weight);
+  __pyx_r = __pyx_pf_5pyfit_4mets_6to_kcal(__pyx_self, __pyx_v_mets, __pyx_v_weight);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_weight) {
+static PyObject *__pyx_pf_5pyfit_4mets_6to_kcal(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_mets, double __pyx_v_weight) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("toKCal", 0);
+  __Pyx_RefNannySetupContext("to_kcal", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_toKCal(__pyx_v_mets, __pyx_v_weight, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 851, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_to_kcal(__pyx_v_mets, __pyx_v_weight, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 851, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12225,7 +12196,7 @@ static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_sel
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyfit.mets.toKCal", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfit.mets.to_kcal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12236,40 +12207,38 @@ static PyObject *__pyx_pf_5pyfit_4mets_6toKCal(CYTHON_UNUSED PyObject *__pyx_sel
 /* "pyfit/mets.pyx":854
  *     return (mets * 3.5 * weight)/200
  * 
- * cpdef double target(double vO2Max, intensity):             # <<<<<<<<<<<<<<
- *     cdef double mets = fromVO2(vO2Max)
+ * cpdef double target(double vo2max, double intensity):             # <<<<<<<<<<<<<<
+ *     cdef double mets = from_vo2(vo2max)
  *     cdef double targetMets = karvonen(mets, intensity)
  */
 
 static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static double __pyx_f_5pyfit_4mets_target(double __pyx_v_vO2Max, PyObject *__pyx_v_intensity, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static double __pyx_f_5pyfit_4mets_target(double __pyx_v_vo2max, double __pyx_v_intensity, CYTHON_UNUSED int __pyx_skip_dispatch) {
   double __pyx_v_mets;
   double __pyx_v_targetMets;
   double __pyx_r;
   __Pyx_RefNannyDeclarations
-  double __pyx_t_1;
   __Pyx_RefNannySetupContext("target", 0);
 
   /* "pyfit/mets.pyx":855
  * 
- * cpdef double target(double vO2Max, intensity):
- *     cdef double mets = fromVO2(vO2Max)             # <<<<<<<<<<<<<<
+ * cpdef double target(double vo2max, double intensity):
+ *     cdef double mets = from_vo2(vo2max)             # <<<<<<<<<<<<<<
  *     cdef double targetMets = karvonen(mets, intensity)
  *     return targetMets
  */
-  __pyx_v_mets = __pyx_f_5pyfit_4mets_fromVO2(__pyx_v_vO2Max, 0);
+  __pyx_v_mets = __pyx_f_5pyfit_4mets_from_vo2(__pyx_v_vo2max, 0);
 
   /* "pyfit/mets.pyx":856
- * cpdef double target(double vO2Max, intensity):
- *     cdef double mets = fromVO2(vO2Max)
+ * cpdef double target(double vo2max, double intensity):
+ *     cdef double mets = from_vo2(vo2max)
  *     cdef double targetMets = karvonen(mets, intensity)             # <<<<<<<<<<<<<<
  *     return targetMets
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_intensity); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 856, __pyx_L1_error)
-  __pyx_v_targetMets = __pyx_f_5pyfit_4mets_karvonen(__pyx_v_mets, __pyx_t_1, 0);
+  __pyx_v_targetMets = __pyx_f_5pyfit_4mets_karvonen(__pyx_v_mets, __pyx_v_intensity, 0);
 
   /* "pyfit/mets.pyx":857
- *     cdef double mets = fromVO2(vO2Max)
+ *     cdef double mets = from_vo2(vo2max)
  *     cdef double targetMets = karvonen(mets, intensity)
  *     return targetMets             # <<<<<<<<<<<<<<
  */
@@ -12279,15 +12248,12 @@ static double __pyx_f_5pyfit_4mets_target(double __pyx_v_vO2Max, PyObject *__pyx
   /* "pyfit/mets.pyx":854
  *     return (mets * 3.5 * weight)/200
  * 
- * cpdef double target(double vO2Max, intensity):             # <<<<<<<<<<<<<<
- *     cdef double mets = fromVO2(vO2Max)
+ * cpdef double target(double vo2max, double intensity):             # <<<<<<<<<<<<<<
+ *     cdef double mets = from_vo2(vo2max)
  *     cdef double targetMets = karvonen(mets, intensity)
  */
 
   /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_WriteUnraisable("pyfit.mets.target", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
-  __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -12296,13 +12262,13 @@ static double __pyx_f_5pyfit_4mets_target(double __pyx_v_vO2Max, PyObject *__pyx
 /* Python wrapper */
 static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  double __pyx_v_vO2Max;
-  PyObject *__pyx_v_intensity = 0;
+  double __pyx_v_vo2max;
+  double __pyx_v_intensity;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("target (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_vO2Max,&__pyx_n_s_intensity,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_vo2max,&__pyx_n_s_intensity,0};
     PyObject* values[2] = {0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -12316,7 +12282,7 @@ static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *_
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
-        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_vO2Max)) != 0)) kw_args--;
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_vo2max)) != 0)) kw_args--;
         else goto __pyx_L5_argtuple_error;
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_intensity)) != 0)) kw_args--;
@@ -12333,8 +12299,8 @@ static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_vO2Max = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vO2Max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 854, __pyx_L3_error)
-    __pyx_v_intensity = values[1];
+    __pyx_v_vo2max = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_vo2max == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 854, __pyx_L3_error)
+    __pyx_v_intensity = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_intensity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 854, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -12344,20 +12310,20 @@ static PyObject *__pyx_pw_5pyfit_4mets_9target(PyObject *__pyx_self, PyObject *_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5pyfit_4mets_8target(__pyx_self, __pyx_v_vO2Max, __pyx_v_intensity);
+  __pyx_r = __pyx_pf_5pyfit_4mets_8target(__pyx_self, __pyx_v_vo2max, __pyx_v_intensity);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pyfit_4mets_8target(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vO2Max, PyObject *__pyx_v_intensity) {
+static PyObject *__pyx_pf_5pyfit_4mets_8target(CYTHON_UNUSED PyObject *__pyx_self, double __pyx_v_vo2max, double __pyx_v_intensity) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("target", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_target(__pyx_v_vO2Max, __pyx_v_intensity, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 854, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5pyfit_4mets_target(__pyx_v_vo2max, __pyx_v_intensity, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 854, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12680,9 +12646,9 @@ static PyTypeObject __pyx_type_5pyfit_4mets_METs = {
 
 static PyMethodDef __pyx_methods[] = {
   {"karvonen", (PyCFunction)__pyx_pw_5pyfit_4mets_1karvonen, METH_VARARGS|METH_KEYWORDS, 0},
-  {"fromVO2", (PyCFunction)__pyx_pw_5pyfit_4mets_3fromVO2, METH_O, 0},
-  {"stairmasterMets", (PyCFunction)__pyx_pw_5pyfit_4mets_5stairmasterMets, METH_VARARGS|METH_KEYWORDS, 0},
-  {"toKCal", (PyCFunction)__pyx_pw_5pyfit_4mets_7toKCal, METH_VARARGS|METH_KEYWORDS, 0},
+  {"from_vo2", (PyCFunction)__pyx_pw_5pyfit_4mets_3from_vo2, METH_O, 0},
+  {"stairmaster_mets", (PyCFunction)__pyx_pw_5pyfit_4mets_5stairmaster_mets, METH_VARARGS|METH_KEYWORDS, 0},
+  {"to_kcal", (PyCFunction)__pyx_pw_5pyfit_4mets_7to_kcal, METH_VARARGS|METH_KEYWORDS, 0},
   {"target", (PyCFunction)__pyx_pw_5pyfit_4mets_9target, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
@@ -12715,8 +12681,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
   {&__pyx_n_s_setting, __pyx_k_setting, sizeof(__pyx_k_setting), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
-  {&__pyx_n_s_vO2Max, __pyx_k_vO2Max, sizeof(__pyx_k_vO2Max), 0, 0, 1, 1},
   {&__pyx_n_s_value, __pyx_k_value, sizeof(__pyx_k_value), 0, 0, 1, 1},
+  {&__pyx_n_s_vo2max, __pyx_k_vo2max, sizeof(__pyx_k_vo2max), 0, 0, 1, 1},
   {&__pyx_n_s_weight, __pyx_k_weight, sizeof(__pyx_k_weight), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
@@ -12825,10 +12791,10 @@ PyMODINIT_FUNC PyInit_mets(void)
   /*--- Variable export code ---*/
   /*--- Function export code ---*/
   if (__Pyx_ExportFunction("karvonen", (void (*)(void))__pyx_f_5pyfit_4mets_karvonen, "double (double, double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__Pyx_ExportFunction("fromVO2", (void (*)(void))__pyx_f_5pyfit_4mets_fromVO2, "double (double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__Pyx_ExportFunction("stairmasterMets", (void (*)(void))__pyx_f_5pyfit_4mets_stairmasterMets, "double (PyObject *, int, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__Pyx_ExportFunction("toKCal", (void (*)(void))__pyx_f_5pyfit_4mets_toKCal, "double (double, double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__Pyx_ExportFunction("target", (void (*)(void))__pyx_f_5pyfit_4mets_target, "double (double, PyObject *, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("from_vo2", (void (*)(void))__pyx_f_5pyfit_4mets_from_vo2, "double (double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("stairmaster_mets", (void (*)(void))__pyx_f_5pyfit_4mets_stairmaster_mets, "double (PyObject *, int, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("to_kcal", (void (*)(void))__pyx_f_5pyfit_4mets_to_kcal, "double (double, double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ExportFunction("target", (void (*)(void))__pyx_f_5pyfit_4mets_target, "double (double, double, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   /*--- Type init code ---*/
   if (PyType_Ready(&__pyx_type_5pyfit_4mets_METs) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
   __pyx_type_5pyfit_4mets_METs.tp_print = 0;
@@ -13080,72 +13046,6 @@ invalid_keyword:
     #endif
 bad:
     return -1;
-}
-
-/* PyErrFetchRestore */
-#if CYTHON_FAST_THREAD_STATE
-static CYTHON_INLINE void __Pyx_ErrRestoreInState(PyThreadState *tstate, PyObject *type, PyObject *value, PyObject *tb) {
-    PyObject *tmp_type, *tmp_value, *tmp_tb;
-    tmp_type = tstate->curexc_type;
-    tmp_value = tstate->curexc_value;
-    tmp_tb = tstate->curexc_traceback;
-    tstate->curexc_type = type;
-    tstate->curexc_value = value;
-    tstate->curexc_traceback = tb;
-    Py_XDECREF(tmp_type);
-    Py_XDECREF(tmp_value);
-    Py_XDECREF(tmp_tb);
-}
-static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb) {
-    *type = tstate->curexc_type;
-    *value = tstate->curexc_value;
-    *tb = tstate->curexc_traceback;
-    tstate->curexc_type = 0;
-    tstate->curexc_value = 0;
-    tstate->curexc_traceback = 0;
-}
-#endif
-
-/* WriteUnraisableException */
-static void __Pyx_WriteUnraisable(const char *name, CYTHON_UNUSED int clineno,
-                                  CYTHON_UNUSED int lineno, CYTHON_UNUSED const char *filename,
-                                  int full_traceback, CYTHON_UNUSED int nogil) {
-    PyObject *old_exc, *old_val, *old_tb;
-    PyObject *ctx;
-    __Pyx_PyThreadState_declare
-#ifdef WITH_THREAD
-    PyGILState_STATE state;
-    if (nogil)
-        state = PyGILState_Ensure();
-#ifdef _MSC_VER
-    else state = (PyGILState_STATE)-1;
-#endif
-#endif
-    __Pyx_PyThreadState_assign
-    __Pyx_ErrFetch(&old_exc, &old_val, &old_tb);
-    if (full_traceback) {
-        Py_XINCREF(old_exc);
-        Py_XINCREF(old_val);
-        Py_XINCREF(old_tb);
-        __Pyx_ErrRestore(old_exc, old_val, old_tb);
-        PyErr_PrintEx(1);
-    }
-    #if PY_MAJOR_VERSION < 3
-    ctx = PyString_FromString(name);
-    #else
-    ctx = PyUnicode_FromString(name);
-    #endif
-    __Pyx_ErrRestore(old_exc, old_val, old_tb);
-    if (!ctx) {
-        PyErr_WriteUnraisable(Py_None);
-    } else {
-        PyErr_WriteUnraisable(ctx);
-        Py_DECREF(ctx);
-    }
-#ifdef WITH_THREAD
-    if (nogil)
-        PyGILState_Release(state);
-#endif
 }
 
 /* GetBuiltinName */

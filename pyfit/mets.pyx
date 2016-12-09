@@ -842,16 +842,16 @@ cdef class METs(object):
 cpdef double karvonen(double mets, double intensity):
     return intensity * (mets -1) + 1
 
-cpdef double fromVO2(double vO2):
-    return vO2 / 3.5
+cpdef double from_vo2(double vo2):
+    return vo2 / 3.5
 
-cpdef double stairmasterMets(self, int setting):
+cpdef double stairmaster_mets(self, int setting):
     return 0.556 * 7.45 * setting
 
-cpdef double toKCal(double mets, double weight):
+cpdef double to_kcal(double mets, double weight):
     return (mets * 3.5 * weight)/200
 
-cpdef double target(double vO2Max, intensity):
-    cdef double mets = fromVO2(vO2Max)
+cpdef double target(double vo2max, double intensity):
+    cdef double mets = from_vo2(vo2max)
     cdef double targetMets = karvonen(mets, intensity)
     return targetMets

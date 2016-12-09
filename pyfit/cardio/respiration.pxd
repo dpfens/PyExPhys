@@ -30,52 +30,52 @@ cdef class VO2:
 
     cpdef double cooper(self, double distance)
 
-    cpdef double walkingGross(self, double speed, double grade)
+    cpdef double walking_gross(self, double speed, double grade)
 
-    cpdef double runningGross(self, double speed, double grade)
+    cpdef double running_gross(self, double speed, double grade)
 
-    cpdef double legErgometryGross(self, double mass, double work)
+    cpdef double leg_ergometry_gross(self, double mass, double work)
 
-    cpdef double armErgometryGross(self, double mass, double work)
+    cpdef double arm_ergometry_gross(self, double mass, double work)
 
-    cpdef double steppingGross(self, double height, double frequency)
+    cpdef double stepping_gross(self, double height, double frequency)
 
     cpdef double usop(self, double hrMax, double restingHR)
 
-    cpdef double foxErgometry(self, double hr5)
+    cpdef double fox_ergometry(self, double hr5)
 
-    cpdef double ebbelingTreadmill(self, double speed, double hr)
+    cpdef double ebbeling_treadmill(self, double speed, double hr)
 
     cpdef double kline(self, double time, double hrPeak)
 
     cpdef double larsen(self, double time, double hr)
 
-    cpdef double astrandStep(self, double hr)
+    cpdef double astrand_step(self, double hr)
 
-    cpdef double qcStep(self, double hr)
+    cpdef double qc_step(self, double hr)
 
-    cpdef double georgeRW(self, double time)
+    cpdef double george_rw(self, double time)
 
-    cpdef double georgeSteady(self, double time, double hr)
+    cpdef double george_steady(self, double time, double hr)
 
-    cpdef double georgeTreadmill(self, double speed, double hr)
+    cpdef double george_treadmill(self, double speed, double hr)
 
-    cpdef double treadmillSubmaxSingleStage(self, double sm1, double hr1, double hrmax)
+    cpdef double treadmill_submax_single_stage(self, double sm1, double hr1, double hrmax)
 
-    cpdef double treadmillSubmaxVO2Multistage(self, double sm1, double hr1, double sm2, double hr2, double hrMax)
+    cpdef double treadmill_submax_vo2_multistage(self, double sm1, double hr1, double sm2, double hr2, double hrmax)
 
-    cpdef double curetonChild(self, double time)
+    cpdef double cureton_child(self, double time)
 
     cpdef double balke(self, double time)
 
-    cpdef double balke15MinRun(self, double distance)
+    cpdef double balke_15min_run(self, double distance)
 
-    cpdef double bruceMale(self, double time, double time2, double time3)
+    cpdef double bruce_male(self, double time, double time2, double time3)
 
-    cpdef double bruceFemale(self, double time)
+    cpdef double bruce_female(self, double time)
 
-    cpdef double bruceEC(self, double time)
+    cpdef double bruce_ec(self, double time)
 
     cpdef double leger(self, double speed)
 
-    cpdef double gilbertDaniels(self, double velocity, double time)
+    cpdef double gilbert_daniels(self, double velocity, double time)

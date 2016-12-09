@@ -733,7 +733,7 @@ static struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *__pyx_vtabptr_5py
 
 
 /* "pyfit/model/aerobic.pyx":36
- *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
+ *         return (self.t1/d1_miles) * (self.__f__(d1_miles)/self.__f__(d2_miles)) * d2_miles
  * 
  * cdef class VV:             # <<<<<<<<<<<<<<
  * 
@@ -1750,14 +1750,14 @@ static double __pyx_f_5pyfit_5model_7aerobic_7Cameron___f__(CYTHON_UNUSED struct
  *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
  * 
  *     cpdef double time(self, double d2):             # <<<<<<<<<<<<<<
- *         cdef double d1Miles = self.d1 / 1609.34
- *         cdef double d2Miles = d2 / 1609.34
+ *         cdef double d1_miles = self.d1 / 1609.34
+ *         cdef double d2_miles = d2 / 1609.34
  */
 
 static PyObject *__pyx_pw_5pyfit_5model_7aerobic_7Cameron_3time(PyObject *__pyx_v_self, PyObject *__pyx_arg_d2); /*proto*/
 static double __pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyfit_5model_7aerobic_Cameron *__pyx_v_self, double __pyx_v_d2, int __pyx_skip_dispatch) {
-  double __pyx_v_d1Miles;
-  double __pyx_v_d2Miles;
+  double __pyx_v_d1_miles;
+  double __pyx_v_d2_miles;
   double __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1838,76 +1838,76 @@ static double __pyx_f_5pyfit_5model_7aerobic_7Cameron_time(struct __pyx_obj_5pyf
   /* "pyfit/model/aerobic.pyx":30
  * 
  *     cpdef double time(self, double d2):
- *         cdef double d1Miles = self.d1 / 1609.34             # <<<<<<<<<<<<<<
- *         cdef double d2Miles = d2 / 1609.34
+ *         cdef double d1_miles = self.d1 / 1609.34             # <<<<<<<<<<<<<<
+ *         cdef double d2_miles = d2 / 1609.34
  *         if d2 <= 0:
  */
-  __pyx_v_d1Miles = (__pyx_v_self->d1 / 1609.34);
+  __pyx_v_d1_miles = (__pyx_v_self->d1 / 1609.34);
 
   /* "pyfit/model/aerobic.pyx":31
  *     cpdef double time(self, double d2):
- *         cdef double d1Miles = self.d1 / 1609.34
- *         cdef double d2Miles = d2 / 1609.34             # <<<<<<<<<<<<<<
+ *         cdef double d1_miles = self.d1 / 1609.34
+ *         cdef double d2_miles = d2 / 1609.34             # <<<<<<<<<<<<<<
  *         if d2 <= 0:
  *             return 0
  */
-  __pyx_v_d2Miles = (__pyx_v_d2 / 1609.34);
+  __pyx_v_d2_miles = (__pyx_v_d2 / 1609.34);
 
   /* "pyfit/model/aerobic.pyx":32
- *         cdef double d1Miles = self.d1 / 1609.34
- *         cdef double d2Miles = d2 / 1609.34
+ *         cdef double d1_miles = self.d1 / 1609.34
+ *         cdef double d2_miles = d2 / 1609.34
  *         if d2 <= 0:             # <<<<<<<<<<<<<<
  *             return 0
- *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
+ *         return (self.t1/d1_miles) * (self.__f__(d1_miles)/self.__f__(d2_miles)) * d2_miles
  */
   __pyx_t_8 = ((__pyx_v_d2 <= 0.0) != 0);
   if (__pyx_t_8) {
 
     /* "pyfit/model/aerobic.pyx":33
- *         cdef double d2Miles = d2 / 1609.34
+ *         cdef double d2_miles = d2 / 1609.34
  *         if d2 <= 0:
  *             return 0             # <<<<<<<<<<<<<<
- *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
+ *         return (self.t1/d1_miles) * (self.__f__(d1_miles)/self.__f__(d2_miles)) * d2_miles
  * 
  */
     __pyx_r = 0.0;
     goto __pyx_L0;
 
     /* "pyfit/model/aerobic.pyx":32
- *         cdef double d1Miles = self.d1 / 1609.34
- *         cdef double d2Miles = d2 / 1609.34
+ *         cdef double d1_miles = self.d1 / 1609.34
+ *         cdef double d2_miles = d2 / 1609.34
  *         if d2 <= 0:             # <<<<<<<<<<<<<<
  *             return 0
- *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles
+ *         return (self.t1/d1_miles) * (self.__f__(d1_miles)/self.__f__(d2_miles)) * d2_miles
  */
   }
 
   /* "pyfit/model/aerobic.pyx":34
  *         if d2 <= 0:
  *             return 0
- *         return (self.t1/d1Miles) * (self.__f__(d1Miles)/self.__f__(d2Miles)) * d2Miles             # <<<<<<<<<<<<<<
+ *         return (self.t1/d1_miles) * (self.__f__(d1_miles)/self.__f__(d2_miles)) * d2_miles             # <<<<<<<<<<<<<<
  * 
  * cdef class VV:
  */
-  if (unlikely(__pyx_v_d1Miles == 0)) {
+  if (unlikely(__pyx_v_d1_miles == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 34, __pyx_L1_error)
   }
-  __pyx_t_7 = ((struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self->__pyx_vtab)->__pyx___f__(__pyx_v_self, __pyx_v_d1Miles);
-  __pyx_t_9 = ((struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self->__pyx_vtab)->__pyx___f__(__pyx_v_self, __pyx_v_d2Miles);
+  __pyx_t_7 = ((struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self->__pyx_vtab)->__pyx___f__(__pyx_v_self, __pyx_v_d1_miles);
+  __pyx_t_9 = ((struct __pyx_vtabstruct_5pyfit_5model_7aerobic_Cameron *)__pyx_v_self->__pyx_vtab)->__pyx___f__(__pyx_v_self, __pyx_v_d2_miles);
   if (unlikely(__pyx_t_9 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 34, __pyx_L1_error)
   }
-  __pyx_r = (((__pyx_v_self->t1 / __pyx_v_d1Miles) * (__pyx_t_7 / __pyx_t_9)) * __pyx_v_d2Miles);
+  __pyx_r = (((__pyx_v_self->t1 / __pyx_v_d1_miles) * (__pyx_t_7 / __pyx_t_9)) * __pyx_v_d2_miles);
   goto __pyx_L0;
 
   /* "pyfit/model/aerobic.pyx":29
  *         return 13.49681 - 0.048865*x + 2.438936/pow(x,0.7905)
  * 
  *     cpdef double time(self, double d2):             # <<<<<<<<<<<<<<
- *         cdef double d1Miles = self.d1 / 1609.34
- *         cdef double d2Miles = d2 / 1609.34
+ *         cdef double d1_miles = self.d1 / 1609.34
+ *         cdef double d2_miles = d2 / 1609.34
  */
 
   /* function exit code */
