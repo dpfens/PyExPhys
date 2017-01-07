@@ -803,7 +803,7 @@ static struct __pyx_vtabstruct_5pyfit_6cardio_6energy_RevisedHB *__pyx_vtabptr_5
 
 
 /* "pyfit/cardio/energy.pyx":25
- *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
+ *         return (13.397*weight)+(4.799*height)-(5.677*age)+88.362
  * 
  * cdef class MSJ(BMREstimator):             # <<<<<<<<<<<<<<
  * 
@@ -1697,7 +1697,7 @@ double __pyx_f_5pyfit_6cardio_6energy_2HB_predict__pyx_wrap_1(struct __pyx_obj_5
  * 
  *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
- *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
+ *             return (9.247*weight)+(3.098*height)-(4.330*age)+447.593
  */
 
 static PyObject *__pyx_pw_5pyfit_6cardio_6energy_9RevisedHB_1predict(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
@@ -1797,8 +1797,8 @@ double __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit
  * 
  *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
- *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
- *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
+ *             return (9.247*weight)+(3.098*height)-(4.330*age)+447.593
+ *         return (13.397*weight)+(4.799*height)-(5.677*age)+88.362
  */
   __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->__pyx_base.gender); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -1817,30 +1817,30 @@ double __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit
     /* "pyfit/cardio/energy.pyx":22
  *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:
- *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955             # <<<<<<<<<<<<<<
- *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
+ *             return (9.247*weight)+(3.098*height)-(4.330*age)+447.593             # <<<<<<<<<<<<<<
+ *         return (13.397*weight)+(4.799*height)-(5.677*age)+88.362
  * 
  */
-    __pyx_r = ((((9.5634 * __pyx_v_weight) + (1.8496 * __pyx_v_height)) - (4.6756 * __pyx_v_age)) + 655.0955);
+    __pyx_r = ((((9.247 * __pyx_v_weight) + (3.098 * __pyx_v_height)) - (4.330 * __pyx_v_age)) + 447.593);
     goto __pyx_L0;
 
     /* "pyfit/cardio/energy.pyx":21
  * 
  *     cpdef double predict(self, double age, double weight, double height):
  *         if self.gender == Gender.Female:             # <<<<<<<<<<<<<<
- *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
- *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730
+ *             return (9.247*weight)+(3.098*height)-(4.330*age)+447.593
+ *         return (13.397*weight)+(4.799*height)-(5.677*age)+88.362
  */
   }
 
   /* "pyfit/cardio/energy.pyx":23
  *         if self.gender == Gender.Female:
- *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
- *         return (13.7516*weight)+(5.0033*height)-(6.7550*age)+66.4730             # <<<<<<<<<<<<<<
+ *             return (9.247*weight)+(3.098*height)-(4.330*age)+447.593
+ *         return (13.397*weight)+(4.799*height)-(5.677*age)+88.362             # <<<<<<<<<<<<<<
  * 
  * cdef class MSJ(BMREstimator):
  */
-  __pyx_r = ((((13.7516 * __pyx_v_weight) + (5.0033 * __pyx_v_height)) - (6.7550 * __pyx_v_age)) + 66.4730);
+  __pyx_r = ((((13.397 * __pyx_v_weight) + (4.799 * __pyx_v_height)) - (5.677 * __pyx_v_age)) + 88.362);
   goto __pyx_L0;
 
   /* "pyfit/cardio/energy.pyx":20
@@ -1848,7 +1848,7 @@ double __pyx_f_5pyfit_6cardio_6energy_9RevisedHB_predict(struct __pyx_obj_5pyfit
  * 
  *     cpdef double predict(self, double age, double weight, double height):             # <<<<<<<<<<<<<<
  *         if self.gender == Gender.Female:
- *             return (9.5634*weight)+(1.8496*height)-(4.6756*age)+655.0955
+ *             return (9.247*weight)+(3.098*height)-(4.330*age)+447.593
  */
 
   /* function exit code */
