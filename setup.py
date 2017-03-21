@@ -20,26 +20,26 @@ directories = {
 }
 
 ext_modules = [
-    Extension("balance", [source+"balance.c"]),
-    Extension("enums", [source+"enums.c"]),
-    Extension("mets", [source+"mets.c"]),
+    Extension("pyfit.balance", [source+"balance.c"]),
+    Extension("pyfit.enums", [source+"enums.c"]),
+    Extension("pyfit.mets", [source+"mets.c"]),
 
-    Extension("cardio.cardiac", [directories["cardio"]+"cardiac.c"]),
-    Extension("cardio.energy", [directories["cardio"]+ "energy.c"]),
-    Extension("cardio.respiration", [directories["cardio"]+ "respiration.c"]),
+    Extension("pyfit.cardio.cardiac", [directories["cardio"]+"cardiac.c"]),
+    Extension("pyfit.cardio.energy", [directories["cardio"]+ "energy.c"]),
+    Extension("pyfit.cardio.respiration", [directories["cardio"]+ "respiration.c"]),
 
-    Extension("composition", [source+"composition.c"]),
+    Extension("pyfit.composition", [source+"composition.c"]),
 
-    Extension("flexibility", [source+"flexibility.c"]),
+    Extension("pyfit.flexibility", [source+"flexibility.c"]),
 
-    Extension("models.aerobic", [directories["model"]+ "aerobic.c"]),
-    Extension("models", [directories["model"]+ "aerobic.c"]),
+    Extension("pyfit.model.aerobic", [directories["model"]+ "aerobic.c"]),
+    Extension("pyfit.model", [directories["model"]+ "aerobic.c"]),
 
-    Extension("sport.running.adjustment", [directories["sport"]+"running/adjustment.c"]),
-    Extension("sport.running.grading", [directories["sport"]+"running/grading.c"]),
-    Extension("sport.running.jackdaniels", [directories["sport"]+"running/jackdaniels.c"]),
+    Extension("pyfit.sport.running.adjustment", [directories["sport"]+"running/adjustment.c"]),
+    Extension("pyfit.sport.running.grading", [directories["sport"]+"running/grading.c"]),
+    Extension("pyfit.sport.running.jackdaniels", [directories["sport"]+"running/jackdaniels.c"]),
 
-    Extension("strength", [ source+"strength.c"]),
+    Extension("pyfit.strength", [ source+"strength.c"]),
 ]
 
 
