@@ -156,7 +156,8 @@ cdef class Stature(object):
         cdef double femur_length_cm = femur_length * 100
         if self.gender == Gender.Female:
             stature = 2.28 * femur_length_cm + 59.76
-        stature = 2.10 * femur_length_cm + 72.22
+        else:
+            stature = 2.10 * femur_length_cm + 72.22
         return stature / 100
 
     cpdef double stride_length(self):
@@ -164,5 +165,6 @@ cdef class Stature(object):
         cdef double length
         if self.gender == Gender.Female:
             length = 0.413 * height_cm
-        length = 0.415 * height_cm
+        else:
+            length = 0.415 * height_cm
         return length / 100
