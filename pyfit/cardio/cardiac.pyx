@@ -19,10 +19,10 @@ cdef class Astrand(HREstimator):
     """
 
     cpdef double predict(self, double age):
-        return 216.6-(0.84*age)
+        return 216.6 - (0.84 * age)
 
     cpdef double age(self, double hr):
-        return (hr-216.6)/-0.84
+        return (hr - 216.6) / -0.84
 
 cdef class HF(HREstimator):
     """
@@ -48,10 +48,10 @@ cdef class Gellish(HREstimator):
     """
 
     cpdef double predict(self, double age):
-        return 207-(0.7 * age)
+        return 207 - (0.7 * age)
 
     cpdef double age(self, double hr):
-        return (hr-207.0)/-0.7
+        return (hr - 207.0) / -0.7
 
 cdef class Gulati(HREstimator):
     """
@@ -62,26 +62,26 @@ cdef class Gulati(HREstimator):
     """
 
     cpdef double predict(self, double age):
-        return 206-(0.88*age)
+        return 206 - (0.88 * age)
 
     cpdef double age(self, double hr):
-        return (hr-206.0)/-0.88
+        return (hr - 206.0) / -0.88
 
 cdef class LM(HREstimator):
 
     cpdef double predict(self, double age):
-        return 206.3-(0.711 * age)
+        return 206.3 - (0.711 * age)
 
     cpdef double age(self, double hr):
-        return (hr-206.3)/-0.711
+        return (hr - 206.3) / -0.711
 
 cdef class Miller(HREstimator):
 
     cpdef double predict(self, double age):
-        return 217-(0.85 * age)
+        return 217 - (0.85 * age)
 
     cpdef double age(self, double hr):
-        return (hr-217)/-0.85
+        return (hr - 217) / -0.85
 
 cdef class Nes(HREstimator):
 
@@ -89,7 +89,7 @@ cdef class Nes(HREstimator):
         return 211 - (0.64 * age)
 
     cpdef double age(self, double hr):
-        return (hr-211)/-0.64
+        return (hr - 211) / -0.64
 
 cdef class OaklandL(HREstimator):
 
@@ -97,15 +97,15 @@ cdef class OaklandL(HREstimator):
         return 206.9 - (0.67 * age)
 
     cpdef double age(self, double hr):
-        return (hr-206.9)/-0.67
+        return (hr - 206.9) / -0.67
 
 cdef class OaklandNL1(HREstimator):
 
     cpdef double predict(self, double age):
-        return 191.5 - (0.002 * pow(age,2) )
+        return 191.5 - (0.002 * pow(age, 2))
 
     cpdef double age(self, double hr):
-        return 5*sqrt(3830-20*hr)
+        return 5 * sqrt(3830 - 20 * hr)
 
 cdef class OaklandNL2(HREstimator):
 
@@ -113,7 +113,7 @@ cdef class OaklandNL2(HREstimator):
         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
 
     cpdef double age(self, double hr):
-        return (-10./9)*(sqrt(8176-45*hr)-29)
+        return (-10. / 9) * (sqrt(8176 - 45 * hr) - 29)
 
 cdef class RL(HREstimator):
 
@@ -121,7 +121,7 @@ cdef class RL(HREstimator):
         return 205.8 - (0.685 * age)
 
     cpdef double age(self, double hr):
-        return (hr-205.8)/-0.685
+        return (hr - 205.8) / -0.685
 
 cdef class TMS(HREstimator):
     """
@@ -132,10 +132,10 @@ cdef class TMS(HREstimator):
     """
 
     cpdef double predict(self, double age):
-        return 208-(0.7*age)
+        return 208 - (0.7 * age)
 
     cpdef double age(self, double hr):
-        return (hr-208)/-0.7
+        return (hr - 208) / -0.7
 
 cpdef double mean_arterial_pressure(int diastolic_bp, int systolic_bp):
     return ((2 * diastolic_bp) + systolic_bp) / 3
@@ -144,4 +144,4 @@ cpdef double karvonen(double intensity, int rest, int maximum):
     return intensity * (maximum - rest) + rest
 
 cpdef double zoladz(double hrMax, double adjuster):
-      return hrMax - adjuster
+    return hrMax - adjuster

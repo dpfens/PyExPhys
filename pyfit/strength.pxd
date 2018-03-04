@@ -90,7 +90,7 @@ cdef class McGlothin(RMEstimator):
 
     cpdef double weight(self, double rm)
 
-cdef class  OConnor(RMEstimator):
+cdef class OConnor(RMEstimator):
 
     cpdef double predict(self, double weight)
 

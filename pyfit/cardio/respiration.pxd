@@ -1,8 +1,8 @@
 cdef class ResidualVolume:
     cdef readonly int gender
-    cdef readonly double height # meters
-    cdef readonly double age # years
-    cdef readonly double weight # kg
+    cdef readonly double height  # meters
+    cdef readonly double age  # years
+    cdef readonly double weight  # kg
 
     cpdef double normal(self)
 

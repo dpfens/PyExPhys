@@ -8,6 +8,6 @@ cpdef double temperature(double seconds, char *farenheit):
         "85": 1.0375,
         "90": 1.045,
         "95": 1.0525,
-        "100" : 1.06
+        "100": 1.06
     }
     return seconds * factors[seconds]

@@ -119,7 +119,7 @@ class BMR(unittest.TestCase):
         self.assertEquals(self.hb.predict(age, weight, height), 800.8040994)
 
     def test_revisedHB(self):
-        self.assertEquals(self.revisedHB.predict(age, weight, height), 800.8040994)
+        self.assertEquals(self.revisedHB.predict(age, weight, height), 827.574812)
 
     def test_msj(self):
         self.assertEquals(self.msj.predict(age, weight, height), 542.7747999999999)
@@ -179,7 +179,7 @@ class Energy(unittest.TestCase):
 # Composition Module tests
 class Composition(unittest.TestCase):
     def test_daily_water_intake(self):
-        self.assertEquals(composition.dailyWaterNeed(weight), 2.17041)
+        self.assertEquals(composition.daily_water_need(weight), 2.17041)
 
 class Index(unittest.TestCase):
     def setUp(self):
@@ -213,11 +213,11 @@ class Index(unittest.TestCase):
         self.assertEquals(value, 1.039766081871345)
 
     def test_WHR(self):
-        value = self.index.WHR(waist_circumference, hip_circumference)
+        value = self.index.whr(waist_circumference, hip_circumference)
         self.assertEquals(value, 0.9676190476190476)
 
-    def test_WHtR(self):
-        value = self.index.WHtR(waist_circumference)
+    def test_whtr(self):
+        value = self.index.whtr(waist_circumference)
         self.assertEquals(value, 0.45714285714285713)
 
 class SurfaceArea(unittest.TestCase):
@@ -243,8 +243,8 @@ class SurfaceArea(unittest.TestCase):
         value = self.sa.fujimoto()
         self.assertEquals(value, 1.7679451154824195)
 
-    def test_gehangeorge(self):
-        value = self.sa.gehangeorge()
+    def test_gehan_george(self):
+        value = self.sa.gehan_george()
         self.assertEquals(value, 1.807417314977944)
 
     def test_haycock(self):
@@ -259,8 +259,8 @@ class SurfaceArea(unittest.TestCase):
         value = self.sa.schlich()
         self.assertEquals(value, 1.753087770492256)
 
-    def test_shuterAslani(self):
-        value = self.sa.shuterAslani()
+    def test_shuter_aslani(self):
+        value = self.sa.shuter_aslani()
         self.assertEquals(value, 1.789459160601124)
 
     def test_takahira(self):
@@ -278,16 +278,16 @@ class Stature(unittest.TestCase):
         value = self.stature.universal()
         self.assertEquals(value, 1.6348217999999997)
 
-    def test_americanWhite(self):
-        value = self.stature.americanWhite(femurLength)
+    def test_american_white(self):
+        value = self.stature.american_white(femurLength)
         self.assertEquals(value, 1.7689)
 
-    def test_americanBlack(self):
-        value = self.stature.americanBlack(femurLength)
+    def test_american_black(self):
+        value = self.stature.american_black(femurLength)
         self.assertEquals(value, 1.7302000000000002)
 
-    def test_strideLength(self):
-        value = self.stature.strideLength()
+    def test_stride_length(self):
+        value = self.stature.stride_length()
         self.assertEquals(value, 0.73787)
 
 # METs module tests
@@ -295,11 +295,11 @@ class METs(unittest.TestCase):
     def test_karvonen(self):
         self.assertEquals(mets.karvonen(8.0, 0.65), 5.55)
 
-    def test_fromVO2(self):
-        self.assertEquals(mets.fromVO2(72.3), 20.657142857142855)
+    def test_from_vo2(self):
+        self.assertEquals(mets.from_vo2(72.3), 20.657142857142855)
 
-    def test_toKCal(self):
-        self.assertEquals(mets.toKCal(8.0, weight), 9.207799999999999)
+    def test_to_kcal(self):
+        self.assertEquals(mets.to_kcal(8.0, weight), 9.207799999999999)
 
     def test_target(self):
         self.assertEquals(mets.target(72.3, 0.65), 13.777142857142856)
@@ -396,14 +396,14 @@ class RM1(unittest.TestCase):
     def test_wathan(self):
         self.assertEquals(self.wathan.predict(weightLifted), 66.97618046223116)
 
-    def test_ymcaUpperBody(self):
-        self.assertEquals(self.rm.ymcaUpperBody(reps), 48.75)
+    def test_ymca_upper_body(self):
+        self.assertEquals(self.rm.ymca_upper_body(reps), 48.75)
 
-    def test_femaleMiddleAge(self):
-        self.assertEquals(self.rm.femaleMiddleAge(reps, weightLifted), 52.59)
+    def test_female_middle_age(self):
+        self.assertEquals(self.rm.female_middle_age(reps, weightLifted), 52.59)
 
-    def test_femaleOlder(self):
-        self.assertEquals(self.rm.femaleOlder(reps, weightLifted), 46.18)
+    def test_female_older(self):
+        self.assertEquals(self.rm.female_older(reps, weightLifted), 46.18)
 
 
 class Strength(unittest.TestCase):
