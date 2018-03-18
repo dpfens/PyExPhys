@@ -11,7 +11,7 @@ cdef class Index(object):
         self.height = height
 
     cpdef double bai(self, double hip_circumference):
-        cdef double  numerator = 100 * hip_circumference
+        cdef double numerator = 100 * hip_circumference
         cdef double denominator = self.height * sqrt(self.height)
         return (numerator / denominator) - 18
 
