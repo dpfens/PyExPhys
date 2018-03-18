@@ -5,6 +5,7 @@ import pyfit.composition as composition
 import pyfit.mets as mets
 import pyfit.model as models
 import pyfit.strength as strength
+import pyfit.anthropometry as anthropometry
 from pyfit.enums import Gender, PAL
 
 gender = Gender.Male
@@ -13,6 +14,7 @@ height = 1.778 # meters
 age = 26.5 # years
 
 # body composition variables
+body_height = 177.8
 femurLength = 0.48 # meters
 lean_body_mass = 44.4521 # kg
 waist_circumference = 0.8128 # meters
@@ -27,6 +29,37 @@ weightLifted = 54 # kg
 
 # aerobic model variables
 performance5k = {"distance": 5000, "time": 920}
+
+class Anthropometry(unittest.TestCase):
+
+    def test_bodyheight(self):
+        segment = anthropometry.Segment(body_height)
+        self.assertEqual(segment.height_eyes(), 166.4208 )
+        self.assertEqual(segment.height_head(), 154.686)
+        self.assertEqual(segment.height_shoulders(), 145.4404)
+        self.assertEqual(segment.height_chest(), 128.016)
+        self.assertEqual(segment.height_elbow(), 112.01400000000001)
+        self.assertEqual(segment.height_wrist(), 86.233)
+        self.assertEqual(segment.height_fingertip(), 67.0306)
+        self.assertEqual(segment.height_hips(), 94.23400000000001)
+        self.assertEqual(segment.height_buttocks(), 86.233)
+        self.assertEqual(segment.height_knee(), 50.673)
+        self.assertEqual(segment.height_ankle(), 6.934200000000001)
+        self.assertEqual(segment.head_height(), 23.114)
+        self.assertEqual(segment.shoulder_distance(), 22.936200000000003)
+        self.assertEqual(segment.shoulder_width(), 46.050200000000004)
+        self.assertEqual(segment.hips_width(), 33.9598)
+        self.assertEqual(segment.nipple_width(), 30.9372)
+        self.assertEqual(segment.foot_width(), 9.779)
+        self.assertEqual(segment.foot_length(), 27.0256)
+        self.assertEqual(segment.humerus_length(), 33.0708)
+        self.assertEqual(segment.forearm_length(), 25.9588)
+        self.assertEqual(segment.hand_length(), 19.2024)
+        self.assertEqual(segment.upperbody_length(), 92.456)
+
+    def test_segment(self):
+        pass
+
 
 # Cardio module tests
 class Cardiac(unittest.TestCase):

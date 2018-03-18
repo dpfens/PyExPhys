@@ -20,6 +20,7 @@ directories = {
 }
 
 ext_modules = [
+    Extension("pyfit.anthropometry", [source+"anthropometry.c"]),
     Extension("pyfit.balance", [source+"balance.c"]),
     Extension("pyfit.enums", [source+"enums.c"]),
     Extension("pyfit.mets", [source+"mets.c"]),
@@ -58,6 +59,7 @@ if use_cython:
         packages= find_packages(),
         package_data=package_data,
         ext_modules = cythonize([
+            source+"anthropometry.pyx",
             source+"balance.pyx",
             source+"enums.pyx",
             source+"mets.pyx",
