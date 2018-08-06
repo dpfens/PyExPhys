@@ -845,7 +845,7 @@ cpdef double karvonen(double mets, double intensity):
 cpdef double from_vo2(double vo2):
     return vo2 / 3.5
 
-cpdef double stairmaster_mets(self, int setting):
+cpdef double stairmaster_mets(int setting):
     return 0.556 * 7.45 * setting
 
 cpdef double to_kcal(double mets, double weight):

@@ -1,18 +1,18 @@
-from pyfit.enums import PAL, Gender
+from pyfit.enums cimport PAL, Gender
 
 
 cdef class BMREstimator(object):
 
-    def __cinit__(self, int gender):
+    def __cinit__(BMREstimator self, int gender):
         self.gender = gender
 
-    cdef double predict(self, double age, double weight, double height):
+    cdef double predict(BMREstimator self, double age, double weight, double height):
         raise NotImplementedError("The prediction method is not implemented")
 
 
 cdef class HB(BMREstimator):
 
-    cpdef double predict(self, double age, double weight, double height):
+    cpdef double predict(HB self, double age, double weight, double height):
         if self.gender == Gender.Female:
             return (9.5634 * weight) + (1.8496 * height) - (4.6756 * age) + 655.0955
         return (13.7516 * weight) + (5.0033 * height) - (6.7550 * age) + 66.4730
@@ -20,7 +20,7 @@ cdef class HB(BMREstimator):
 
 cdef class RevisedHB(BMREstimator):
 
-    cpdef double predict(self, double age, double weight, double height):
+    cpdef double predict(RevisedHB self, double age, double weight, double height):
         if self.gender == Gender.Female:
             return (9.247 * weight) + (3.098 * height) - (4.330 * age) + 447.593
         return (13.397 * weight) + (4.799 * height) - (5.677 * age) + 88.362
@@ -28,7 +28,7 @@ cdef class RevisedHB(BMREstimator):
 
 cdef class MSJ(BMREstimator):
 
-    cpdef double predict(self, double age, double weight, double height):
+    cpdef double predict(MSJ self, double age, double weight, double height):
         if self.gender == Gender.Female:
             return (9.99 * weight + 6.25 * height - 4.92 * age - 161)
         return (9.99 * weight + 6.25 * height - 4.92 * age + 5)
@@ -36,18 +36,18 @@ cdef class MSJ(BMREstimator):
 
 cdef class RMR(object):
 
-    def __cinit__(self, int gender, double age, double weight, double height):
+    def __cinit__(RMR self, int gender, double age, double weight, double height):
         self.gender = gender
         self.age = age
         self.weight = weight
         self.height = height
 
-    cpdef double quick(self):
+    cpdef double quick(RMR self):
         if self.gender == Gender.Female:
             return self.weight * 22
         return self.weight * 24.2
 
-    cpdef double bsa(self, double bsa):
+    cpdef double bsa(RMR self, double bsa):
         if self.gender == Gender.Female:
             return bsa * 840
         return bsa * 912
@@ -63,20 +63,20 @@ cpdef double cunningham(double lbm):
 
 cdef class TEEEstimator(object):
 
-    def __cinit__(self, int gender, int pal):
+    def __cinit__(TEEEstimator self, int gender, int pal):
         self.gender = gender
         self.pal = pal
 
-    cdef double predict(self, double age, double weight, double height):
+    cdef double predict(TEEEstimator self, double age, double weight, double height):
         raise NotImplementedError("The prediction method is not implemented")
 
-    cpdef double fromActivity(self, double weight, double mets):
+    cpdef double fromActivity(TEEEstimator self, double weight, double mets):
         return (mets * 3.5 * weight)/200
 
 
 cdef class ChildTEE(TEEEstimator):
 
-    cpdef double predict(self, double age, double weight, double height):
+    cpdef double predict(ChildTEE self, double age, double weight, double height):
         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
             return 88.5 - (61.9 * age) + 1 * ((26.7 * weight) + (903 * height))
         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -98,7 +98,7 @@ cdef class ChildTEE(TEEEstimator):
 
 cdef class AdultTEE(TEEEstimator):
 
-    cpdef double predict(self, double age, double weight, double height):
+    cpdef double predict(AdultTEE self, double age, double weight, double height):
         if self.pal == PAL.Sedentary and self.gender == Gender.Male:
             return 662 - (9.53 * age) + 1 * ((15.9 * weight) + (540 * height))
         elif self.pal == PAL.Sedentary and self.gender == Gender.Female:
@@ -120,18 +120,18 @@ cdef class AdultTEE(TEEEstimator):
 
 cdef class Terrain:
 
-    def __cinit__(self, double weight, double speed, double load):
+    def __cinit__(Terrain self, double weight, double speed, double load):
         self.weight = weight
         self.speed = speed
         self.load = load
 
-    cpdef double pandolf(self, double terrain, double slope):
+    cpdef double pandolf(Terrain self, double terrain, double slope):
         cdef double total_weight = self.weight + self.load
         cdef double part_1 = (1.5 * self.weight) + 2.0 * (total_weight) * pow(self.load/self.weight, 2)
         cdef double part_2 = terrain * total_weight * (1.5 * pow(self.speed, 2) + 0.25 * self.speed * slope)
         return part_1 + part_2
 
-    cpdef double santee(self, double terrain, double slope):
+    cpdef double santee(Terrain self, double terrain, double slope):
         cdef double total_weight = self.weight + self.load
         cdef double energy = self.speed * slope
         cdef double speed_squared = pow(self.speed, 2)

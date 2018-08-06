@@ -4,10 +4,10 @@ cdef class HREstimator(object):
     def __cinit__(self):
         pass
 
-    cdef double predict(self, double age):
+    cdef double predict(HREstimator self, double age):
         raise NotImplementedError("The prediction method is not implemented")
 
-    cdef double age(self, double hr):
+    cdef double age(HREstimator self, double hr):
         raise NotImplementedError("The age method is not implemented")
 
 cdef class Astrand(HREstimator):
@@ -18,10 +18,10 @@ cdef class Astrand(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef double predict(self, double age):
+    cpdef double predict(Astrand self, double age):
         return 216.6 - (0.84 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(Astrand self, double hr):
         return (hr - 216.6) / -0.84
 
 cdef class HF(HREstimator):
@@ -32,10 +32,10 @@ cdef class HF(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef double predict(self, double age):
+    cpdef double predict(HF self, double age):
         return 220 - age
 
-    cpdef double age(self, double hr):
+    cpdef double age(HF self, double hr):
         return 220 - hr
 
 cdef class Gellish(HREstimator):
@@ -47,10 +47,10 @@ cdef class Gellish(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef double predict(self, double age):
+    cpdef double predict(Gellish self, double age):
         return 207 - (0.7 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(Gellish self, double hr):
         return (hr - 207.0) / -0.7
 
 cdef class Gulati(HREstimator):
@@ -61,66 +61,66 @@ cdef class Gulati(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef double predict(self, double age):
+    cpdef double predict(Gulati self, double age):
         return 206 - (0.88 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(Gulati self, double hr):
         return (hr - 206.0) / -0.88
 
 cdef class LM(HREstimator):
 
-    cpdef double predict(self, double age):
+    cpdef double predict(LM self, double age):
         return 206.3 - (0.711 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(LM self, double hr):
         return (hr - 206.3) / -0.711
 
 cdef class Miller(HREstimator):
 
-    cpdef double predict(self, double age):
+    cpdef double predict(Miller self, double age):
         return 217 - (0.85 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(Millerself, double hr):
         return (hr - 217) / -0.85
 
 cdef class Nes(HREstimator):
 
-    cpdef double predict(self, double age):
+    cpdef double predict(Nes self, double age):
         return 211 - (0.64 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(Nes self, double hr):
         return (hr - 211) / -0.64
 
 cdef class OaklandL(HREstimator):
 
-    cpdef double predict(self, double age):
+    cpdef double predict(OaklandL self, double age):
         return 206.9 - (0.67 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(OaklandL self, double hr):
         return (hr - 206.9) / -0.67
 
 cdef class OaklandNL1(HREstimator):
 
-    cpdef double predict(self, double age):
+    cpdef double predict(OaklandNL1 self, double age):
         return 191.5 - (0.002 * pow(age, 2))
 
-    cpdef double age(self, double hr):
+    cpdef double age(OaklandNL1 self, double hr):
         return 5 * sqrt(3830 - 20 * hr)
 
 cdef class OaklandNL2(HREstimator):
 
-    cpdef double predict(self, double age):
+    cpdef double predict(OaklandNL2 self, double age):
         return 163 + (1.16 * age) - (0.018 * pow(age, 2))
 
-    cpdef double age(self, double hr):
+    cpdef double age(OaklandNL2 self, double hr):
         return (-10. / 9) * (sqrt(8176 - 45 * hr) - 29)
 
 cdef class RL(HREstimator):
 
-    cpdef double predict(self, double age):
+    cpdef double predict(RL self, double age):
         return 205.8 - (0.685 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(RL self, double hr):
         return (hr - 205.8) / -0.685
 
 cdef class TMS(HREstimator):
@@ -131,10 +131,10 @@ cdef class TMS(HREstimator):
     @returns {Number} max heart rate in bpm
     """
 
-    cpdef double predict(self, double age):
+    cpdef double predict(TMS self, double age):
         return 208 - (0.7 * age)
 
-    cpdef double age(self, double hr):
+    cpdef double age(TMS self, double hr):
         return (hr - 208) / -0.7
 
 cpdef double mean_arterial_pressure(int diastolic_bp, int systolic_bp):

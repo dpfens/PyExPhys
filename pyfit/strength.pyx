@@ -5,14 +5,14 @@ from enums import Gender
 
 cdef class Compare(object):
 
-    def __cinit__(self, int gender, double weight):
+    def __cinit__(Compare self, int gender, double weight):
         self.gender = gender
         self.weight = weight
 
-    cpdef double ocarroll(self, double weight_lifted):
+    cpdef double ocarroll(Compare self, double weight_lifted):
         return weight_lifted/pow(self.weight-35, 1/3)
 
-    cpdef double siff_weight(self):
+    cpdef double siff_weight(Compare self):
         cdef double a = 512.245
         cdef double b = 146230
         cdef double c = 1.605
@@ -23,7 +23,7 @@ cdef class Compare(object):
             return c-a*exp(-b*self.weight)
         return a-b*pow(self.weight, -c)
 
-    cpdef double siff_power(self):
+    cpdef double siff_power(Compare self):
         cdef double a = 512.245
         cdef double b = 172970
         cdef double c = 1.3925
@@ -31,12 +31,12 @@ cdef class Compare(object):
             return 0
         return a-b*pow(self.weight, -c)
 
-    cpdef double siff(self, bint power=False):
+    cpdef double siff(Compare self, bint power=False):
         if power:
             return self.siff_power()
         return self.siff_weight()
 
-    cpdef double sinclair(self, double obtained_total):
+    cpdef double sinclair(Compare self, double obtained_total):
         cdef double coefficient_a = 0.794358141
         cdef double coefficient_b = 174.393
         if self.gender == Gender.Female:
@@ -48,7 +48,7 @@ cdef class Compare(object):
         cdef double multiplier = pow(10, exponent)
         return multiplier * obtained_total
 
-    cpdef double wilks(self, double weight_lifted):
+    cpdef double wilks(Compare self, double weight_lifted):
         cdef double a = -216.0475144
         cdef double b = 16.2606339
         cdef double c = -0.002388645
@@ -68,14 +68,14 @@ cdef class Compare(object):
 
 cdef class Jump(object):
 
-    def __cinit__(self, double weight, double height):
+    def __cinit__(Jump self, double weight, double height):
         self.weight = weight
         self.height = height
 
-    cpdef double bosco(self, double duration, double jump_count, double total_flight_time):
+    cpdef double bosco(Jump self, double duration, double jump_count, double total_flight_time):
         return (total_flight_time * duration * pow(9.81, 2)) / (4 * jump_count * (duration - total_flight_time))
 
-    cpdef double lewis(self, double jump_reach_score):
+    cpdef double lewis(Jump self, double jump_reach_score):
         return sqrt(4.9 * self.weight) * sqrt(jump_reach_score) * 9.81
 
     cpdef double harman(self, double v_jump_height, bint peak=False):
@@ -84,18 +84,18 @@ cdef class Jump(object):
             return 61.9*v_jump_height_cm + 36*self.weight + 1822
         return 21.1 *v_jump_height_cm + 2.3*self.weight + 1393
 
-    cpdef double jb(self, double v_jump_height, bint peak=False):
+    cpdef double jb(Jump self, double v_jump_height, bint peak=False):
         cdef double body_height_cm = self.height * 100
         cdef double v_jump_height_cm = v_jump_height * 100
         if peak:
             return 78.6*v_jump_height_cm +60.3*self.weight + 15.3*body_height_cm + 1308
         return 43.8*v_jump_height_cm + 32.7*self.weight - 16.8*body_height_cm + 431
 
-    cpdef double sayer(self, double v_jump_height):
+    cpdef double sayer(Jump self, double v_jump_height):
         cdef double v_jump_height_cm = v_jump_height * 100
         return 60.7*v_jump_height_cm + 45.3*self.weight - 2055
 
-    cpdef double mk(self, double v_jump_height, double time):
+    cpdef double mk(Jump self, double v_jump_height, double time):
         return (self.weight * (v_jump_height/time)) * 9.81
 
 cdef class RMEstimator:
@@ -108,123 +108,123 @@ cdef class RMEstimator:
 
 cdef class Abadie(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(Abadie self, double weight):
         return 7.24 + (1.05* weight)
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(Abadie self, double rm):
         return (4./105)*(25*rm-181)
 
 cdef class Baechle(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(Baechle self, double weight):
         return weight * (1+(0.033* self.reps))
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(Baechle self, double rm):
         return (1000*rm)/(33*self.reps + 1000)
 
 cdef class Brzycki(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(Brzycki self, double weight):
         return weight/(1.0278-(0.0278 * self.reps))
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(Brzycki self, double rm):
         return (1.0278-(0.0278 * self.reps))
 
-    cpdef double twoSet(self, double weight, int rep2, double weight2):
+    cpdef double twoSet(Brzycki self, double weight, int rep2, double weight2):
         return ((weight - weight2)/(rep2 - self.reps)) * (self.reps - 1) + weight
 
 cdef class Epley(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(Epley self, double weight):
         return (weight * self.reps * 0.033)+weight
 
 cdef class Landers(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(Landers self, double weight):
         return weight/(1.013 - (0.0267123 * self.reps))
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(Landers self, double rm):
         return rm*(1.013 - (0.0267123 * self.reps))
 
-    cpdef double percent(self):
+    cpdef double percent(Landers self):
         cdef double value = 101.3 - (2.67123 * self.reps)
         return value / 100
 
 cdef class Lombardi(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(Lombardi self, double weight):
         return weight*pow(self.reps, 0.10)
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(Lombardi self, double rm):
         return rm/pow(self.reps, 0.10)
 
 cdef class Mayhew(RMEstimator):
 
-    cpdef double football(self):
+    cpdef double football(Mayhew self):
         return 226.7 + 7.1*(self.reps)
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(Mayhew self, double weight):
         return (100*weight)/(52.2 + 41.9 * exp(-0.055 * self.reps))
 
-    cpdef double percent(self):
+    cpdef double percent(Mayhew self):
         cdef double value = 52.2 + 41.9* exp(-0.055* self.reps)
         return value / 100
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(Mayhew self, double rm):
         return (rm*(52.2 + 41.9 * exp(-0.055 * self.reps)))/100
 
 cdef class McGlothin(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(McGlothin self, double weight):
         return (100 * weight)/(101.3 - 2.67123 * self.reps)
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(McGlothin self, double rm):
         return (rm*(101.3 - 2.67123 * self.reps))/100
 
 cdef class OConnor(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(OConnor self, double weight):
         return weight * (1+0.025*self.reps)
 
-    cpdef double percent(self, double weight):
+    cpdef double percent(OConnor self, double weight):
         return (0.025 * (weight * self.reps)+ weight)
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(OConnor self, double rm):
         return (40.*rm)/(self.reps+40)
 
 cdef class ReynoldsCP(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(ReynoldsCP self, double weight):
         return (1.1307 * weight) + 0.6998
 
 cdef class ReynoldsLP(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(ReynoldsLP self, double weight):
         return (1.09703 * weight) + 14.2546
 
 cdef class Wathan(RMEstimator):
 
-    cpdef double predict(self, double weight):
+    cpdef double predict(Wathan self, double weight):
         return (100*weight) / (48.8+(53.8*exp(-0.075 * self.reps)))
 
-    cpdef double weight(self, double rm):
+    cpdef double weight(Wathan self, double rm):
         return (rm*(48.8+(53.8*exp(-0.075 * self.reps))))/100
 
 cdef class RM(object):
 
-    def __cinit__(self, int gender, double age):
+    def __cinit__(RM self, int gender, double age):
         self.gender = gender
         self.age = age
 
-    cpdef double ymca_upper_body(self, int reps):
+    cpdef double ymca_upper_body(RM self, int reps):
         if self.gender == Gender.Female:
             return (0.31 * reps) + 19.2
         return (1.55 * reps) + 37.9
 
-    cpdef double female_middle_age(self, int reps, double weight):
+    cpdef double female_middle_age(RM self, int reps, double weight):
         return (1.06 * weight) + (0.58 * reps) - (0.20 * self.age) - 3.41
 
-    cpdef double female_older(self, int reps, double weight):
+    cpdef double female_older(RM self, int reps, double weight):
         return (0.92 * weight) + (0.79 * reps) - (0.20 * self.age) - 3.73
 
 cpdef double relative(double weight, double rm):

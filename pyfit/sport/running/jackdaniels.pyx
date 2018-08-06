@@ -35,24 +35,24 @@ cpdef double hr_pace(double percent_hr, double vo2max):
 
 cdef class Pace(object):
 
-    def __cinit__(self, double vo2max):
+    def __cinit__(Pace self, double vo2max):
         self.vo2max = vo2max
 
-    cpdef double percent(self, double percentage):
+    cpdef double percent(Pace self, double percentage):
         return hr_pace(percentage, self.vo2max)
 
-    cpdef double[:] easy(self):
+    cpdef double[:] easy(Pace self):
         cdef array.array paces = array.array('dd', [hr_pace(0.6, self.vo2max), hr_pace(0.79, self.vo2max)])
         return paces
 
-    cpdef double[:] marathon(self):
+    cpdef double[:] marathon(Pace self):
         cdef array.array paces = array.array('dd', [hr_pace(0.8, self.vo2max), hr_pace(0.85, self.vo2max)])
         return paces
 
-    cpdef double[:] threshold(self):
+    cpdef double[:] threshold(Pace self):
         cdef array.array paces = array.array('dd', [hr_pace(0.82, self.vo2max), hr_pace(0.88, self.vo2max)])
         return paces
 
-    cpdef double[:] interval(self):
+    cpdef double[:] interval(Pace self):
         cdef array.array paces = array.array('dd', [hr_pace(0.97, self.vo2max), hr_pace(1, self.vo2max)])
         return paces
