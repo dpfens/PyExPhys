@@ -1,40 +1,41 @@
 import unittest
-import pyfit.cardio.cardiac as cardiac
-import pyfit.cardio.energy as energy
-import pyfit.composition as composition
-import pyfit.mets as mets
-import pyfit.model as models
-import pyfit.strength as strength
-import pyfit.anthropometry as anthropometry
-from pyfit.enums import Gender, PAL
+import pyexphys.cardio.cardiac as cardiac
+import pyexphys.cardio.energy as energy
+import pyexphys.composition as composition
+import pyexphys.mets as mets
+import pyexphys.model as models
+import pyexphys.strength as strength
+import pyexphys.anthropometry as anthropometry
+from pyexphys.enums import Gender, PAL
 
 gender = Gender.Male
-weight = 65.77 # kg
-height = 1.778 # meters
-age = 26.5 # years
+weight = 65.77  # kg
+height = 1.778  # meters
+age = 26.5  # years
 
 # body composition variables
 body_height = 177.8
-femurLength = 0.48 # meters
-lean_body_mass = 44.4521 # kg
-waist_circumference = 0.8128 # meters
-hip_circumference = 0.84 # meters
-vertical_trunk_circumference = 0.9 # meters
-body_surface_area = 1.9 # meters^2
+femurLength = 0.48  # meters
+lean_body_mass = 44.4521  # kg
+waist_circumference = 0.8128  # meters
+hip_circumference = 0.84  # meters
+vertical_trunk_circumference = 0.9  # meters
+body_surface_area = 1.9  # meters^2
 
 
 # 1-RM variables
 reps = 7
-weightLifted = 54 # kg
+weightLifted = 54  # kg
 
 # aerobic model variables
 performance5k = {"distance": 5000, "time": 920}
+
 
 class Anthropometry(unittest.TestCase):
 
     def test_bodyheight(self):
         segment = anthropometry.Segment(body_height)
-        self.assertEqual(segment.height_eyes(), 166.4208 )
+        self.assertEqual(segment.height_eyes(), 166.4208)
         self.assertEqual(segment.height_head(), 154.686)
         self.assertEqual(segment.height_shoulders(), 145.4404)
         self.assertEqual(segment.height_chest(), 128.016)
@@ -61,7 +62,6 @@ class Anthropometry(unittest.TestCase):
         pass
 
 
-# Cardio module tests
 class Cardiac(unittest.TestCase):
     def test_map(self):
         self.assertEquals(cardiac.mean_arterial_pressure(80, 120), 93.0)
@@ -71,6 +71,7 @@ class Cardiac(unittest.TestCase):
 
     def test_zoladz(self):
         self.assertEquals(cardiac.zoladz(180, 50), 130.0)
+
 
 class MaxHR(unittest.TestCase):
     def setUp(self):
@@ -137,6 +138,7 @@ class MaxHR(unittest.TestCase):
     def test_tms(self):
         self.assertEquals(self.tms.predict(age), 189.45)
 
+
 class BMR(unittest.TestCase):
     def setUp(self):
         self.hb = energy.HB(gender)
@@ -157,6 +159,7 @@ class BMR(unittest.TestCase):
     def test_msj(self):
         self.assertEquals(self.msj.predict(age, weight, height), 542.7747999999999)
 
+
 class RMR(unittest.TestCase):
     def setUp(self):
         self.rmr = energy.RMR(gender, age, weight, height)
@@ -169,6 +172,7 @@ class RMR(unittest.TestCase):
 
     def test_bsa(self):
         self.assertEquals(self.rmr.bsa(body_surface_area), 1732.8)
+
 
 class TEE(unittest.TestCase):
     def setUp(self):
@@ -188,6 +192,7 @@ class TEE(unittest.TestCase):
     def test_fromActivity(self):
         self.assertEquals(self.child.fromActivity(weight, 8.0), 9.207799999999999)
 
+
 class Energy(unittest.TestCase):
 
     def setUp(self):
@@ -204,15 +209,14 @@ class Energy(unittest.TestCase):
 
     def test_terrain(self):
         grade = 1.3
-        self.assertEquals(self.terrain.pandolf(1.0,grade), 527.4256573224053 )
-        self.assertEquals(self.terrain.santee(1.0,grade), 476.69467709470246)
+        self.assertEquals(self.terrain.pandolf(1.0, grade), 527.4256573224053)
+        self.assertEquals(self.terrain.santee(1.0, grade), 476.69467709470246)
 
 
-
-# Composition Module tests
 class Composition(unittest.TestCase):
     def test_daily_water_intake(self):
         self.assertEquals(composition.daily_water_need(weight), 2.17041)
+
 
 class Index(unittest.TestCase):
     def setUp(self):
@@ -252,6 +256,7 @@ class Index(unittest.TestCase):
     def test_whtr(self):
         value = self.index.whtr(waist_circumference)
         self.assertEquals(value, 0.45714285714285713)
+
 
 class SurfaceArea(unittest.TestCase):
     def setUp(self):
@@ -300,6 +305,7 @@ class SurfaceArea(unittest.TestCase):
         value = self.sa.takahira()
         self.assertEquals(value, 1.8351049379507)
 
+
 class Stature(unittest.TestCase):
     def setUp(self):
         self.stature = composition.Stature(gender, weight, height)
@@ -323,7 +329,7 @@ class Stature(unittest.TestCase):
         value = self.stature.stride_length()
         self.assertEquals(value, 0.73787)
 
-# METs module tests
+
 class METs(unittest.TestCase):
     def test_karvonen(self):
         self.assertEquals(mets.karvonen(8.0, 0.65), 5.55)
@@ -337,26 +343,24 @@ class METs(unittest.TestCase):
     def test_target(self):
         self.assertEquals(mets.target(72.3, 0.65), 13.777142857142856)
 
-# Models module tests
+
 class Aerobic(unittest.TestCase):
     def setUp(self):
-        self.cameron = models.aerobic.Cameron( performance5k["distance"], performance5k["time"])
-        self.riegel = models.aerobic.Riegel( performance5k["distance"], performance5k["time"])
+        self.cameron = models.aerobic.Cameron(performance5k["distance"], performance5k["time"])
+        self.riegel = models.aerobic.Riegel(performance5k["distance"], performance5k["time"])
 
     def tearDown(self):
         del self.cameron
         del self.riegel
 
     def test_cameron(self):
-        self.assertEquals( self.cameron.time(3200), 569.8930999989254)
+        self.assertEquals(self.cameron.time(3200), 569.8930999989254)
 
     def test_riegel(self):
-        self.assertEquals( self.riegel.time(3200), 573.2427882846001)
-        self.assertEquals( self.riegel.distance(260), 1517.82078410174)
+        self.assertEquals(self.riegel.time(3200), 573.2427882846001)
+        self.assertEquals(self.riegel.distance(260), 1517.82078410174)
 
 
-
-# Strength module tests
 class RM1(unittest.TestCase):
     def setUp(self):
         self.abadie = strength.Abadie(reps)
@@ -442,6 +446,7 @@ class RM1(unittest.TestCase):
 class Strength(unittest.TestCase):
     def test_relative(self):
         self.assertEquals(strength.relative(weight, weightLifted), 0.821043028736506)
+
 
 if __name__ == '__main__':
     unittest.main()
