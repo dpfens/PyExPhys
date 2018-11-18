@@ -71,6 +71,6 @@ strength = Extension("./strength/strength", sources=list_c_files("./strength") )
 sport = Extension("./sport/sport", sources=list_c_files("./sport") )
 sport_running = Extension("./sport/running/running", sources=list_c_files("./sport/running") )
 
-packages = ["pyfitness", "balance", "cardiovascular", "cardiovascular.models", "composition","flexibility", "mets", "strength", "sport", "sport.running"]
+packages = ["pyexphys", "balance", "cardiovascular", "cardiovascular.models", "composition","flexibility", "mets", "strength", "sport", "sport.running"]
 
-setup(name="pyfit_equations", version="0.1", description="A collection of exercise physiology equations", author="Doug Fenstermacher", author_email="douglas.fenstermacher@gmail.com",  packages=packages, ext_package='pyfit.equations', ext_modules=ext_modules )
+setup(name="pyexphys_equations", version="0.1", description="A collection of exercise physiology equations", author="Doug Fenstermacher", author_email="douglas.fenstermacher@gmail.com",  packages=packages, ext_package='pyexphys.equations', ext_modules=ext_modules )
