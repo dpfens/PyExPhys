@@ -1,0 +1,54 @@
+Reference
+================
+
+Submodules
+----------
+
+pyfit.cardio module
+-------------------
+
+.. automodule:: pyfit.cardio
+    :members:
+    :show-inheritance:
+
+pyfit.cardio.cardiac module
+---------------------------
+
+.. automodule:: pyfit.cardio.cardiac
+    :members:
+    :show-inheritance:
+
+pyfit.cardio.energy module
+--------------------------
+
+.. automodule:: pyfit.cardio.energy
+    :members:
+    :show-inheritance:
+
+pyfit.cardio.respiration module
+-------------------------------
+
+.. automodule:: pyfit.cardio.respiration
+    :members:
+    :show-inheritance:
+
+pyfit.composition module
+------------------------
+
+.. automodule:: pyfit.composition
+    :members:
+    :show-inheritance:
+
+pyfit.mets module
+-----------------
+
+.. automodule:: pyfit.mets
+    :members:
+    :show-inheritance:
+
+pyfit.strength module
+---------------------
+
+.. automodule:: pyfit.strength
+    :members:
+    :show-inheritance:

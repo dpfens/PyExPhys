@@ -1,0 +1,639 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyexphys.cardio.respiration &#8212; PyExPhys  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyexphys.cardio.respiration</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The respiration module contains formulas for estimating the capacity of the lungs and for estimating the efficiency of the respiration system using VO2/VO2Max. These equations are used in general health assessments, aerobic performance assessments, and in developing training plans for endurance sports.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">exp</span><span class="p">,</span> <span class="nb">pow</span>
+<span class="kn">from</span> <span class="nn">pyexphys.enums</span> <span class="k">import</span> <span class="n">Gender</span>
+
+
+<div class="viewcode-block" id="ResidualVolume"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.ResidualVolume">[docs]</a><span class="k">class</span> <span class="nc">ResidualVolume</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class for calculating the residual volume of the lungs for men and women across the lifespan.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ResidualVolume.__init__"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.ResidualVolume.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            gender (pyexphys.enums.Gender): The gender of an individual</span>
+<span class="sd">            age (float): The age of a person, given in years</span>
+<span class="sd">            weight (float): Body weight, given in kilograms</span>
+<span class="sd">            height (float): Body height, given in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span></div>
+
+    <span class="k">def</span> <span class="nf">normal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">heightCm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.0275</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mf">0.0189</span> <span class="o">*</span> <span class="n">heightCm</span> <span class="o">-</span> <span class="mf">2.6139</span>
+
+    <span class="k">def</span> <span class="nf">overweight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">heightCm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.0277</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mf">0.0138</span> <span class="o">*</span> <span class="n">heightCm</span> <span class="o">-</span> <span class="mf">2.3967</span>
+
+<div class="viewcode-block" id="ResidualVolume.berglund"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.ResidualVolume.berglund">[docs]</a>    <span class="k">def</span> <span class="nf">berglund</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Berglund, E., Birath, G., Bjure, J., Grimby, G., Kjellmar, I., Sandvist, L., and Soderholm, B. 1963. Spirometric studies in normal subjects. I. Forced expirograms in subjects between 7 and 70 years of age. Acta Medica Scandinavica 173: 185-192.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: residual volume, given in liters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">heightCm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.007</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mf">0.0268</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mf">3.42</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.022</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.0198</span> <span class="o">*</span> <span class="n">heightCm</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.015</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.54</span></div>
+
+<div class="viewcode-block" id="ResidualVolume.black"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.ResidualVolume.black">[docs]</a>    <span class="k">def</span> <span class="nf">black</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Standard Error of the Estimate (SEE) = 0.46 Liters</span>
+
+<span class="sd">        Black, L.F., Offord, K., and Hyatt, R.E. 1974. Variability in the maximum expiratory flow volume curve in asymptomatic smokers and nonsmokers. *American Review of Respiratory Diseases* 110: 282-292.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: residual volume, given in liters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">heightCm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.21</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mf">0.023</span> <span class="o">*</span> <span class="n">heightCm</span> <span class="o">-</span> <span class="mf">2.978</span></div>
+
+<div class="viewcode-block" id="ResidualVolume.boren"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.ResidualVolume.boren">[docs]</a>    <span class="k">def</span> <span class="nf">boren</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Standard Error of the Estimate (SEE) = 0.53</span>
+
+<span class="sd">        Boren, H.G., Kory, R.C., and Syner, J.C. 1966. The Veteran&#39;s Administration-Army cooperative study of pulmonary functionsL II. The lung volume and its subdivisions in normal men. *American Journal of Medicine* 41: 96-114.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: residual volume, given in liters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">heightCm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.0115</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.019</span> <span class="o">*</span> <span class="n">heightCm</span><span class="p">)</span> <span class="o">-</span> <span class="mf">2.24</span></div>
+
+<div class="viewcode-block" id="ResidualVolume.goldman"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.ResidualVolume.goldman">[docs]</a>    <span class="k">def</span> <span class="nf">goldman</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Goldman, H.I., and Becklake, M.R. 1959. Respiratory function tests: Normal values at medium altitudes and the prediction of normal results. *American Review of Tuberculosis and Respiratory Diseases* 79: 457-467.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: residual volume, given in liters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">heightCm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.009</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mf">0.032</span> <span class="o">*</span> <span class="n">heightCm</span> <span class="o">-</span> <span class="mf">3.9</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.017</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.027</span> <span class="o">*</span> <span class="n">heightCm</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.477</span></div>
+
+<div class="viewcode-block" id="ResidualVolume.obrien"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.ResidualVolume.obrien">[docs]</a>    <span class="k">def</span> <span class="nf">obrien</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bsa</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Standard Error of the Estimate (SEE) = 0.49 Liters</span>
+
+<span class="sd">        O&#39;Brien, R.J., and Drizd, T.A. 1983. Roentgenographic determination of total lung capacity: Normal values from a national population survey. *American Review of Respiratory Diseases* 128: 949-952.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: residual volume, given in liters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">heightCm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.03</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.0387</span> <span class="o">*</span> <span class="n">heightCm</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.73</span> <span class="o">*</span> <span class="n">bsa</span><span class="p">)</span> <span class="o">-</span> <span class="mf">4.78</span></div></div>
+
+
+<div class="viewcode-block" id="VO2"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2">[docs]</a><span class="k">class</span> <span class="nc">VO2</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class for calculating VO2 and VO2Max</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+<div class="viewcode-block" id="VO2.reserve"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.reserve">[docs]</a>    <span class="k">def</span> <span class="nf">reserve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vo2Max</span><span class="p">,</span> <span class="n">vo2Rest</span><span class="o">=</span><span class="mf">3.5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        *VO2 Reserve* (VO2R) is the difference between resting VO2 and VO2Max. Percent VO2 Reserve (%VO2R) is considered a more accurate metric for establishing relative exercise intensity than %VO2Max in both low-fit individuals and elite athletes.</span>
+
+<span class="sd">        Ehrman, Jonathan K. *ACSM&#39;s Resource Manual for Guidelines for Exercise Testing and Prescription. 6th ed.* Philadelphia: Wolters Kluwer Health/Lippincott Williams &amp; Wilkins, 2010. Print.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            vo2Max (float): given in mL/kg*min</span>
+<span class="sd">            vo2Rest (float): given in mL/kg*min</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2, given in mL/kg * min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">vo2Max</span> <span class="o">-</span> <span class="n">vo2Rest</span></div>
+
+    <span class="k">def</span> <span class="nf">target</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vo2Max</span><span class="p">,</span> <span class="n">vo2Rest</span><span class="p">,</span> <span class="n">intensity</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">intensity</span> <span class="o">*</span> <span class="p">(</span><span class="n">vo2Max</span> <span class="o">-</span> <span class="n">vo2Rest</span><span class="p">)</span> <span class="o">+</span> <span class="n">vo2Rest</span>
+
+<div class="viewcode-block" id="VO2.cooper"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.cooper">[docs]</a>    <span class="k">def</span> <span class="nf">cooper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Cooper VO2Max test is a submaximal VO2Max test based on a population of healthy adults. Returns VO2Max in mL/kg*min.</span>
+
+<span class="sd">        COOPER, K.H. (1968) A means of assessing maximal oxygen intake. JAMA. 203, p. 135-138</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            distance (float): given in miles</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg*min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">0.0268</span> <span class="o">*</span> <span class="n">distance</span> <span class="o">-</span> <span class="mf">11.3</span></div>
+
+<div class="viewcode-block" id="VO2.walking_gross"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.walking_gross">[docs]</a>    <span class="k">def</span> <span class="nf">walking_gross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">grade</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For speeds between 50-100 minter/min (1.9-3.7mph).</span>
+
+<span class="sd">        Heyward, Vivian H. &quot;Metabolic Equations for Estimating Gross VO2 (ACSM 2010).&quot; 2010. *Advanced Fitness Assessment and Exercise Prescription. 6th ed.* Champaign, IL: Human Kinetics, 2010. N. pag. Print.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            speed (float): given in meters/minute</span>
+<span class="sd">            grade (float): given in decimal form</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">speed</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.8</span> <span class="o">*</span> <span class="n">speed</span> <span class="o">*</span> <span class="n">grade</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.running_gross"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.running_gross">[docs]</a>    <span class="k">def</span> <span class="nf">running_gross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">grade</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For speeds greater than 134 meters/min (5.0 mph). If truly jogging (not walking), this equation can be used for speed of 80-134 meters/min (3-5 mph)</span>
+
+<span class="sd">        Heyward, Vivian H. &quot;Metabolic Equations for Estimating Gross VO2 (ACSM 2010).&quot; 2010. *Advanced Fitness Assessment and Exercise Prescription. 6th ed.* Champaign, IL: Human Kinetics, 2010. N. pag. Print.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            speed (float): given in meters/minute</span>
+<span class="sd">            grade (float): given in decimal form</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">speed</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.9</span> <span class="o">*</span> <span class="n">speed</span> <span class="o">*</span> <span class="n">grade</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.leg_ergometry_gross"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.leg_ergometry_gross">[docs]</a>    <span class="k">def</span> <span class="nf">leg_ergometry_gross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">work</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Heyward, Vivian H. &quot;Metabolic Equations for Estimating Gross VO2 (ACSM 2010).&quot; 2010. *Advanced Fitness Assessment and Exercise Prescription. 6th ed.* Champaign, IL: Human Kinetics, 2010. N. pag. Print.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            mass (float): given in kilograms</span>
+<span class="sd">            work (float): given in Watts</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">3.5</span> <span class="o">+</span> <span class="mf">1.8</span> <span class="o">*</span> <span class="p">(</span><span class="n">work</span> <span class="o">/</span> <span class="n">mass</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.arm_ergometry_gross"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.arm_ergometry_gross">[docs]</a>    <span class="k">def</span> <span class="nf">arm_ergometry_gross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">work</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Heyward, Vivian H. &quot;Metabolic Equations for Estimating Gross VO2 (ACSM 2010).&quot; 2010. *Advanced Fitness Assessment and Exercise Prescription. 6th ed.* Champaign, IL: Human Kinetics, 2010. N. pag. Print.</span>
+
+<span class="sd">        Ehrman, Jonathan K. *ACSM&#39;s Resource Manual for Guidelines for Exercise Testing and Prescription. 6th ed.* Philadelphia: Wolters Kluwer Health/Lippincott Williams &amp; Wilkins, 2010. Print.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            mass (float): given in kilograms</span>
+<span class="sd">            work (float): given in Watts</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">3.0</span> <span class="o">*</span> <span class="n">work</span> <span class="o">/</span> <span class="n">mass</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.stepping_gross"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.stepping_gross">[docs]</a>    <span class="k">def</span> <span class="nf">stepping_gross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">frequency</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Heyward, Vivian H. &quot;Metabolic Equations for Estimating Gross VO2 (ACSM 2010).&quot; 2010. *Advanced Fitness Assessment and Exercise Prescription. 6th ed.* Champaign, IL: Human Kinetics, 2010. N. pag. Print.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            height (float): height of bench, given in meters</span>
+<span class="sd">            frequency (float): steps/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Gross VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">frequency</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">frequency</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">*</span> <span class="mf">1.33</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.usop"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.usop">[docs]</a>    <span class="k">def</span> <span class="nf">usop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hrMax</span><span class="p">,</span> <span class="n">restingHR</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Uth\u2014S\u0216rensen\u2014Overgaard\u2014Pedersen estimation is a VO2Max estimate based on measurements of maximum heart rate and minimum heart rate in well-trained men aged 21 to 51. The formula is most reliable when based on actual measurement of maximum heart rate, rather than an age-related estimates.</span>
+
+<span class="sd">        The estimation uses the ratio of maximum heart rate (HrMax) to resting heart rate (restingHR) to predict VO2max, and returns VO2Max in mL/kg/minute.</span>
+
+<span class="sd">        Uth, Niels; Henrik S\u0216rensen; Kristian Overgaard; Preben K. Pedersen (January 2004). &quot;Estimation of VO2max from the ratio between HRmax and HRrest--the Heart Rate Ratio Method&quot;. *Eur J Appl Physiol.* 91 (1): 111\u20145. doi:10.1007/s00421-003-0988-y. PMID 14624296.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            hrMax (float): maximum heart rate, given in beats/minute</span>
+<span class="sd">            restingHR (float): given in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">15.3</span> <span class="o">*</span> <span class="p">(</span><span class="n">hrMax</span> <span class="o">/</span> <span class="n">restingHR</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.fox_ergometry"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.fox_ergometry">[docs]</a>    <span class="k">def</span> <span class="nf">fox_ergometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hr5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The equation for predicting VO2Max in a population of healthy adults using the sub-maximal Fox test.</span>
+
+<span class="sd">        Fox, E. L. 1973. A simple, accurate technique for predicting maximal aerobic power. *Journal of Applied Physiology*, 35: 914 - 16</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            hr5 (float): heart rate after 5 minutes of cycling, given in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">6300.0</span> <span class="o">-</span> <span class="p">(</span><span class="mf">19.26</span> <span class="o">*</span> <span class="n">hr5</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.ebbeling_treadmill"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.ebbeling_treadmill">[docs]</a>    <span class="k">def</span> <span class="nf">ebbeling_treadmill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">hr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A single-stage treadmill walking test developed by Ebbeling and colleagues for estimating VO2max of low-risk, healthy adults 20-59 years.</span>
+
+<span class="sd">        Ebbeling, Cara B., Ann Ward, Elaine M. Puleo, Jeffrey Widrick, and James M. Rippe. &quot;Development of a Single-stage Submaximal Treadmill Walking Test.&quot; *Medicine &amp; Science in Sports &amp; Exercise* 23.8 (1991): n. pag. NIH. Web. 5 Nov. 2016. https://www.ncbi.nlm.nih.gov/pubmed/1956273.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            speed (float): given in miles/hour</span>
+<span class="sd">            hr (float): given in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">15.1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">21.8</span> <span class="o">*</span> <span class="n">speed</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.327</span> <span class="o">*</span> <span class="n">hr</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.263</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.00504</span> <span class="o">*</span> <span class="p">(</span><span class="n">hr</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">5.48</span> <span class="o">*</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">15.1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">21.8</span> <span class="o">*</span> <span class="n">speed</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.327</span> <span class="o">*</span> <span class="n">hr</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.263</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.00504</span> <span class="o">*</span> <span class="p">(</span><span class="n">hr</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">5.48</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.kline"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.kline">[docs]</a>    <span class="k">def</span> <span class="nf">kline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">hrPeak</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Kline et al. (1987) formula for the 1-mile walk Rockport Test for VO2Max.</span>
+
+<span class="sd">        Kline, Greg M., John P. Porcari, Robert Hintermeister, Patty S. Freedson, Ann Ward, Robert F. Mccarron, Jessica Ross, and James M. Rippe. &quot;Estimation of &amp;OV0312;O2max from a One-mile Track Walk, Gender, dob, and Body Weight.&quot; *Medicine &amp; Science in Sports &amp; Exercise* 19.3 (1987): n. pag. Web.</span>
+
+<span class="sd">        McSwegin P, Plowman S, Wolff G, Guttenberg G. The validity of a one-mile walk test for high school age individuals. Measurement in Physical Education and Exercise Science 1998;2:47-63.</span>
+
+<span class="sd">        George, J. D. et al. VO2max estimation from a submaximal 1-mile track jog for fit college-age individuals. Medicine and Science in Sports and Exercise, 25, 401-406, 1993.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            time (float): given in minutes</span>
+<span class="sd">            hrPeak (float): given in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">132.853</span> <span class="o">-</span> <span class="mf">0.0769</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="mf">0.3877</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mf">6.315</span> <span class="o">*</span> <span class="mf">0.0</span> <span class="o">-</span> <span class="mf">3.2649</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="mf">0.1565</span> <span class="o">*</span> <span class="n">hrPeak</span>
+        <span class="k">return</span> <span class="mf">132.853</span> <span class="o">-</span> <span class="mf">0.0769</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="mf">0.3877</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mf">6.315</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">3.2649</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="mf">0.1565</span> <span class="o">*</span> <span class="n">hrPeak</span></div>
+
+<div class="viewcode-block" id="VO2.larsen"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.larsen">[docs]</a>    <span class="k">def</span> <span class="nf">larsen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">hr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Larsen VO2Max formula for use in the 1.5 mile run/walk test. For use with young adults (18-29 years old).</span>
+
+<span class="sd">        Standard Error of Estimation = 2.5 mL/kgmin TE = 2.68 mL/kg*min</span>
+
+<span class="sd">        LARSEN, G. et al. (2002) Prediction of maximum oxygen consumption from walking, jogging, or running. *Research quarterly for exercise and sport*, 73 (1), p. 66-72.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            time (float): given in minutes</span>
+<span class="sd">            hr (float): given in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg * min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">100.16</span> <span class="o">+</span> <span class="p">(</span><span class="mf">7.30</span> <span class="o">*</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.164</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.273</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.1563</span> <span class="o">*</span> <span class="n">hr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">100.16</span> <span class="o">+</span> <span class="p">(</span><span class="mf">7.30</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.164</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.273</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.1563</span> <span class="o">*</span> <span class="n">hr</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.astrand_step"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.astrand_step">[docs]</a>    <span class="k">def</span> <span class="nf">astrand_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *Astrand Step Test formula* for estimating a participant&#39;s VO2Max.</span>
+
+<span class="sd">        Marley, W. P., and A. C. Linnerud. &quot;Astrand-ryhming Step Test Norms for College Students.&quot; *British Journal of Sports Medicine* 10.2 (1976): 76-79. NIH. Web. 5 Nov. 2016. &lt;http://bjsm.bmj.com/content/10/2/76.long&gt;.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            hr (float): given in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in L/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">3.750</span> <span class="o">*</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">hr</span> <span class="o">-</span> <span class="mi">65</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mf">3.744</span> <span class="o">*</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">hr</span> <span class="o">-</span> <span class="mi">62</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="VO2.qc_step"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.qc_step">[docs]</a>    <span class="k">def</span> <span class="nf">qc_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Queen&#39;s College Step Test formula for estimating a participant&#39;s VO2Max.</span>
+
+<span class="sd">        McArdle, W.D., Katch, F.I., Pechar, G.S., Jacobson, L., and Ruck, S. 1972. Reliability and interrelationships between maximal oxygen intake, physical working capacity and step-test scores in college women. Medicine and Science in Sports 4: 182-186.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            hr (float): given in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">65.81</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.1847</span> <span class="o">*</span> <span class="n">hr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">111.33</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.42</span> <span class="o">*</span> <span class="n">hr</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.george_rw"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.george_rw">[docs]</a>    <span class="k">def</span> <span class="nf">george_rw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The formula for the George single-stage jogging test formula. For use with the George 1 mile jog test.</span>
+
+<span class="sd">        George, J., Vehrs, P., Allsen, P., Fellingham, G., and Fisher, G. 1993. VO2max estimation from a sub-maximal 1-mile track jog for fit college-age individuals. *Medicine &amp; Science in Sports &amp; Exercise* 25: 401-406</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            time (float): given in minutes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">88.02</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.1656</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.76</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">3.716</span> <span class="o">*</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">88.02</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.1656</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.76</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">3.716</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.george_steady"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.george_steady">[docs]</a>    <span class="k">def</span> <span class="nf">george_steady</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">hr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The George formula for the 1 mile steady state jog test. Returns VO2Max in mL/kg/min.</span>
+
+<span class="sd">        George, J., Vehrs, P., Allsen, P., Fellingham, G., and Fisher, G. 1993. VO2max estimation from a sub-maximal 1-mile track jog for fit college-age individuals. *Medicine &amp; Science in Sports &amp; Exercise* 25: 401-406</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            speed (float): given in miles/hour</span>
+<span class="sd">            hr (float): heart rate in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">100.5</span> <span class="o">-</span> <span class="mf">0.1636</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="mf">1.438</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="mf">0.1928</span> <span class="o">*</span> <span class="n">hr</span>
+        <span class="k">return</span> <span class="mf">100.5</span> <span class="o">-</span> <span class="mf">0.1636</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="mf">1.438</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="mf">0.1928</span> <span class="o">*</span> <span class="n">hr</span> <span class="o">+</span> <span class="mf">8.344</span></div>
+
+<div class="viewcode-block" id="VO2.george_treadmill"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.george_treadmill">[docs]</a>    <span class="k">def</span> <span class="nf">george_treadmill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">hr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        George, J., Vehrs, P., Allsen, P., Fellingham, G., and Fisher, G. 1993. VO2max estimation from a sub-maximal 1-mile track jog for fit college-age individuals. *Medicine &amp; Science in Sports &amp; Exercise* 25: 401-406</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            speed (float): given in miles/hour</span>
+<span class="sd">            hr (float): heart rate in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">54.07</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.1938</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">4.47</span> <span class="o">*</span> <span class="n">speed</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.01453</span> <span class="o">*</span> <span class="n">hr</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">7.062</span> <span class="o">*</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">54.07</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.1938</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">4.47</span> <span class="o">*</span> <span class="n">speed</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.01453</span> <span class="o">*</span> <span class="n">hr</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">7.062</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.treadmill_submax_single_stage"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.treadmill_submax_single_stage">[docs]</a>    <span class="k">def</span> <span class="nf">treadmill_submax_single_stage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sm1</span><span class="p">,</span> <span class="n">hr1</span><span class="p">,</span> <span class="n">hrmax</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Heyward, Vivian H. &quot;Treadmill Submaximal Exercise Tests: single-stage Model.&quot; *Advanced Fitness Assessment and Exercise Prescription. 6th ed.* Champaign, IL: Human Kinetics, 2010. 85. Print.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sm1 (float): distance traversed during the test, given in meters</span>
+<span class="sd">            hr1 (float): heart rate in beats/minute</span>
+<span class="sd">            hrmax (float): maximal heart rate in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">sm1</span> <span class="o">*</span> <span class="p">((</span><span class="n">hrmax</span> <span class="o">-</span> <span class="mi">72</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">hr1</span> <span class="o">-</span> <span class="mi">72</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">sm1</span> <span class="o">*</span> <span class="p">((</span><span class="n">hrmax</span> <span class="o">-</span> <span class="mi">61</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">hr1</span> <span class="o">-</span> <span class="mi">61</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="VO2.treadmill_submax_vo2_multistage"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.treadmill_submax_vo2_multistage">[docs]</a>    <span class="k">def</span> <span class="nf">treadmill_submax_vo2_multistage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sm1</span><span class="p">,</span> <span class="n">hr1</span><span class="p">,</span> <span class="n">sm2</span><span class="p">,</span> <span class="n">hr2</span><span class="p">,</span> <span class="n">hrmax</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Heyward, Vivian H. &quot;Treadmill Submaximal Exercise Tests: Multistage Model.&quot; *Advanced Fitness Assessment and Exercise Prescription. 6th ed.* Champaign, IL: Human Kinetics, 2010. 85. Print.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sm1 (float): distance traversed during the test, given in meters</span>
+<span class="sd">            hr1 (float): heart rate in beats/minute</span>
+<span class="sd">            sm2 (float): distance traversed during the test, given in meters</span>
+<span class="sd">            hr2 (float): heart rate in beats/minute</span>
+<span class="sd">            hrmax (float): maximal heart rate in beats/minute</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">sm2</span> <span class="o">-</span> <span class="n">sm1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">hr2</span> <span class="o">-</span> <span class="n">hr1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sm2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="p">(</span><span class="n">hrmax</span> <span class="o">-</span> <span class="n">hr2</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.cureton_child"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.cureton_child">[docs]</a>    <span class="k">def</span> <span class="nf">cureton_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Cureton formula for estimating VO2Peak in the 1.0 mile run/walk in children (8-17 years old).</span>
+
+<span class="sd">        Cureton, K.J., Sloniger, M., O&#39;Bannon, J., Black, D., and McCormack, W. 1995. A generalized equation for prediction of VO2peak from 1-mile run/walk performance. *Medicine &amp; Science in Sports &amp; Exercise* 27: 445-451.</span>
+
+<span class="sd">        Note: For evaluating the fitness of younger children (5-7 years old), the 0.5 mile run/walk test is recommended.</span>
+
+<span class="sd">        Rikli, Roberta E., Clayre Petray, and Ted A. Baumgartner. &quot;The Reliability of Distance Run Tests for Children in Grades K-4.&quot; *Research Quarterly for Exercise and Sport* 63.3 (1992): 270-76. NCBI. Web. 10 Nov. 2016. &lt;https://www.ncbi.nlm.nih.gov/pubmed/1513957&gt;.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            distance (float): distance traversed during the test, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bmi</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mf">108.94</span> <span class="o">-</span> <span class="p">(</span><span class="mf">8.41</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.34</span> <span class="o">*</span> <span class="mf">108.94</span> <span class="o">-</span> <span class="p">(</span><span class="mf">8.41</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.34</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.21</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.84</span> <span class="o">*</span> <span class="n">bmi</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.balke"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.balke">[docs]</a>    <span class="k">def</span> <span class="nf">balke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Balke and Ware (1959) exercise test protocols.</span>
+
+<span class="sd">        Source (Men) Pollock, M.L., Bohannon, R.L., Cooper, K.H., Ayres, J.J., Ward, A., White, S.R., and Linnerud, A.C. 1976 A comparative analysis of four protocols for maximal treadmill strss testing. *American Heart Journal* 92: 39-46.</span>
+
+<span class="sd">        Source (Women) POLLOCK et al. (1982) Comparative analysis of physiologic responses to three different maximal graded exercise test protocols in healthy women. *American Heart Journal*, 103 (3), p. 363-373</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            distance (float): distance traversed during the test, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.38</span> <span class="o">*</span> <span class="n">time</span> <span class="o">+</span> <span class="mf">5.22</span>
+        <span class="k">return</span> <span class="mf">1.444</span> <span class="o">*</span> <span class="n">time</span> <span class="o">+</span> <span class="mf">14.99</span></div>
+
+<div class="viewcode-block" id="VO2.balke_15min_run"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.balke_15min_run">[docs]</a>    <span class="k">def</span> <span class="nf">balke_15min_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Balke formula for the 15 min run test for VO2Max.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            distance (float): distance traversed during the test, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">0.0178</span> <span class="o">*</span> <span class="n">distance</span> <span class="o">+</span> <span class="mf">9.6</span></div>
+
+<div class="viewcode-block" id="VO2.bruce_male"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.bruce_male">[docs]</a>    <span class="k">def</span> <span class="nf">bruce_male</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">time2</span><span class="p">,</span> <span class="n">time3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Bruce protocol equation for use with active and sedentary men. The Bruce protocol is used for estimating VO2Max based on treadmill exercise.</span>
+
+<span class="sd">        Standard Error of Estimate: 3.35 mL/kg/min</span>
+
+<span class="sd">        Note: For use with the standard Bruce protocol, not the Modified Bruce protocol</span>
+
+<span class="sd">        FOSTER et al. (1984) Generalized equations for predicting functional capacity from treadmill performance. *American Heart Journal*, 107 (6), p. 1229-1234</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            time (float): given in minutes</span>
+<span class="sd">            time2 (float): given in minutes</span>
+<span class="sd">            time3 (float): given in minutes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">14.76</span> <span class="o">-</span> <span class="mf">1.379</span> <span class="o">*</span> <span class="n">time</span> <span class="o">+</span> <span class="mf">0.451</span> <span class="o">*</span> <span class="n">time2</span> <span class="o">-</span> <span class="mf">0.012</span> <span class="o">*</span> <span class="n">time3</span></div>
+
+<div class="viewcode-block" id="VO2.bruce_female"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.bruce_female">[docs]</a>    <span class="k">def</span> <span class="nf">bruce_female</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Bruce protocol equation for use with active and sedentary women. The Bruce protocol is used for estimating VO2Max based on multi-stage treadmill exercise. The protocol increases the workload by changing both speed and grade of the treadmill.</span>
+
+<span class="sd">        Note: For use with the standard Bruce protocol, not the Modified Bruce protocol</span>
+
+<span class="sd">        Standard Error of Estimate: 2.7 mL/kg/min</span>
+
+<span class="sd">        POLLOCK et al. (1982) Comparative analysis of physiologic responses to three different maximal graded exercise test protocols in healthy women. *American Heart Journal*, 103 (3), p. 363-373</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            time (float): given in minutes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">4.38</span> <span class="o">*</span> <span class="n">time</span> <span class="o">-</span> <span class="mf">3.90</span></div>
+
+<div class="viewcode-block" id="VO2.bruce_ec"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.bruce_ec">[docs]</a>    <span class="k">def</span> <span class="nf">bruce_ec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A VO2Max prediction equation for use with cardiac patients and elderly patients when using the Bruce Treadmill protocol.</span>
+
+<span class="sd">        Standard Error of Estimation: 4.9 mL/kg/min</span>
+
+<span class="sd">        Note: Used only for treadmill walking while holding the handrails</span>
+
+<span class="sd">        McConnell, Timothy R.;Clark, Bernard A., &quot;Prediction of Maximal Oxygen Consumption During Handrail-Supported Treadmill Exercise&quot;. Journal Of Cardiopulmonary Rehabilitation And Prevention, 1987</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            time (float): given in minutes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">2.282</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="mf">8.545</span></div>
+
+<div class="viewcode-block" id="VO2.leger"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.leger">[docs]</a>    <span class="k">def</span> <span class="nf">leger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A 20m Shuttle run test developed by Leger and colleagues (1988) to test the aerobic fitness of children, dobs 8-19 years</span>
+
+<span class="sd">        Leger, L. A., D. Mercier, C. Gadoury, and J. Lambert. &quot;The Multistage 20 Metre Shuttle Run Test for Aerobic Fitness.&quot; Journal of Sports Sciences 6.2 (1988): 93-101. NCBI. Web. 10 Nov. 2016. &lt;https://www.ncbi.nlm.nih.gov/pubmed/3184250&gt;.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            velocity (float): given in km/hour</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">31.025</span> <span class="o">+</span> <span class="p">(</span><span class="mf">3.238</span> <span class="o">*</span> <span class="n">speed</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">3.248</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1536</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">*</span> <span class="n">speed</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VO2.gilbert_daniels"><a class="viewcode-back" href="../../../pyexphys.html#pyexphys.cardio.respiration.VO2.gilbert_daniels">[docs]</a>    <span class="k">def</span> <span class="nf">gilbert_daniels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Glibert-Daniels formula for VO2Max. This formula is used to calculate VO2Max from race results.</span>
+
+<span class="sd">        DANIELS, J. (2005) Daniels Running Formula. 2nd Ed. Leeds, UK: Human Kinetics. p. 48</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            velocity (float): given in meters/minute</span>
+<span class="sd">            time (float): given in minutes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: VO2Max, given in mL/kg/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">numerator</span> <span class="o">=</span> <span class="mf">0.000104</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">velocity</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.182258</span> <span class="o">*</span> <span class="n">velocity</span> <span class="o">-</span> <span class="mf">4.6</span>
+        <span class="n">denominator</span><span class="o">=</span> <span class="mf">0.2989558</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="mf">0.1932605</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1894393</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="mf">0.012778</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.8</span>
+        <span class="k">return</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">PyExPhys</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyexphys.html">Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Doug Fenstermacher.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

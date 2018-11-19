@@ -1,0 +1,847 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyfit.composition &#8212; PyExPhys  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyfit.composition</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="nb">pow</span><span class="p">,</span> <span class="n">log10</span><span class="p">,</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">pyfit.enums</span> <span class="k">import</span> <span class="n">Gender</span>
+
+
+<span class="k">def</span> <span class="nf">_inches_over_ft</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">):</span>
+    <span class="n">inches</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mf">39.3701</span>
+    <span class="n">upper_bound_inches</span> <span class="o">=</span> <span class="n">upper_bound</span> <span class="o">*</span> <span class="mf">39.3701</span>
+    <span class="k">return</span> <span class="n">inches</span> <span class="o">%</span> <span class="n">upper_bound_inches</span>
+
+
+<div class="viewcode-block" id="daily_water_need"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.daily_water_need">[docs]</a><span class="k">def</span> <span class="nf">daily_water_need</span><span class="p">(</span><span class="n">weight</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The amount of water needed daily by the body based on body weight</span>
+
+<span class="sd">    args:</span>
+<span class="sd">        weight (float): body weight, given in kilograms</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: estimated daily water need (in Liters)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">0.033</span> <span class="o">*</span> <span class="n">weight</span></div>
+
+
+<div class="viewcode-block" id="Index"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index">[docs]</a><span class="k">class</span> <span class="nc">Index</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Index.__init__"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): body weight, given in kilograms</span>
+<span class="sd">            height (float): body height, given in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span></div>
+
+<div class="viewcode-block" id="Index.bai"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.bai">[docs]</a>    <span class="k">def</span> <span class="nf">bai</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hip_circumference</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *body adiposity index* (**BAI**) is a method of measuring the amount of body fat in humans. The BAI uses the hip circumference (in centimeters) and the height of the participant to estimate body fat. BAI is approximately equal to the percentage of body fat for adult men and women of differing ethnicities.</span>
+
+<span class="sd">        &quot;A Better Index of Body Adiposity&quot;. Obesity - A Research Journal. Retrieved 7 March 2011.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            hip_circumference (float): hip circumference, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: The body adiposity index</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">numerator</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">hip_circumference</span>
+        <span class="n">denominator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">)</span> <span class="o">-</span> <span class="mi">18</span></div>
+
+<div class="viewcode-block" id="Index.bmi"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.bmi">[docs]</a>    <span class="k">def</span> <span class="nf">bmi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        According to the CDC:</span>
+<span class="sd">        ..</span>
+<span class="sd">        Body Mass Index (BMI) is a person&#39;s weight in kilograms divided by the square of height in meters. A high BMI can be an indicator of high body fatness. BMI can be used to screen for weight categories that may lead to health problems but it is not diagnostic of the body fatness or health of an individual.</span>
+
+<span class="sd">        Used by the WHO as the standard for recording obesity statistics since the early 1980s, BMI is suitable for recognizing trends within sedentary or overweight individuals because there is a smaller margin of error.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: BMI</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Index.bmi_prime"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.bmi_prime">[docs]</a>    <span class="k">def</span> <span class="nf">bmi_prime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">upper_limit</span><span class="o">=</span><span class="mf">25.9</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        *BMI Prime* is the ratio of actual BMI to upper limit optimal BMI, which is the actual BMI expressed as a proportion of upper limit optimal. The ratio of actual body weight to body weight for upper limit optimal BMI is equal to BMI Prime. BMI Prime is a dimensionless number meaning that it does not have units.</span>
+
+<span class="sd">        Individuals with BMI Prime less than 0.74 are underweight; those with between 0.74 and 1.00 have optimal weight; and those at 1.00 or greater are overweight. BMI Prime is useful clinically because it shows by what ratio a person deviates from the maximum optimal BMI.</span>
+
+<span class="sd">        Gadzik, James (2006). &quot;&#39;How much should I weigh?&#39; Quetelet&#39;s equation, upper weight limits, and BMI prime&quot;. Connecticut Medicine. 70 (2): 81\u201488. PMID 16768059</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            upper_limit (float):  The upper limit of optimal BMI</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: BMI Prime ratio</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bmi</span><span class="p">()</span> <span class="o">/</span> <span class="n">upper_limit</span></div>
+
+<div class="viewcode-block" id="Index.bsi"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.bsi">[docs]</a>    <span class="k">def</span> <span class="nf">bsi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">waist_circumference</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        *Body Shape Index* (**BSI**) is a metric for assessing the health implications of a given human body based on height, mass and waist circumference. Including waist circumference is believed to make the BSI a better indicator of the health risks from excess weight than the standard Body Mass Index.</span>
+
+<span class="sd">        Also called the *aBSI*</span>
+
+<span class="sd">        &quot;Doctors expose BMI shortcomings&quot;. London Evening Standard. Evening Standard Limited. 2006-01-18. Retrieved 2013-09-12.</span>
+
+<span class="sd">        Krakauer, Nir Y.; Jesse C. Krakauer (2012-07-18). &quot;A New Body Shape Index Predicts Mortality Hazard Independently of Body Mass Index&quot;. PLOS ONE. 7: e39504. doi:10.1371/journal.pone.0039504. Retrieved 2013-09-12.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            waist_circumference (float): waist circumference, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: BSI</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">waist_circumference</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bmi</span><span class="p">(),</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Index.corpulence"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.corpulence">[docs]</a>    <span class="k">def</span> <span class="nf">corpulence</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The **Corpulence measure** or **Ponderal Index** is a measure of leanness (corpulence) of a person. Like BMI, the corpulence measure is based on mass and height of an individual. Also called **Rohrer&#39;s Index**.</span>
+
+<span class="sd">        The Corpulence index is known to have a number of benefits over Body Mass Index (BMI):</span>
+<span class="sd">        - yields valid results even for very short and very tall persons</span>
+<span class="sd">        - shown to have a lower false positive rate in athletes</span>
+<span class="sd">        - shown to have higher sensitivity, specificity, positive predictive value, and negative predictive value than BMI</span>
+
+<span class="sd">        Foods and Nutrition Encyclopedia, Audrey H. Ensminger, Marion Eugene Ensminger. p. 1645</span>
+
+<span class="sd">        Babar, Sultan (March 2015). &quot;Evaluating the Performance of 4 Indices in Determining Adiposity&quot;. Clinical Journal of Sports Medicine. Lippincott Williams &amp; Wilkins). 25 (2): 183</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: corpulence</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Index.sbsi"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.sbsi">[docs]</a>    <span class="k">def</span> <span class="nf">sbsi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bsa</span><span class="p">,</span> <span class="n">vertical_trunk_circumference</span><span class="p">,</span> <span class="n">waist_circumference</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *Surface-based Body Shape Index* (**SBSI**) outperforms BMI, waist to height ratio (WHtR), waist-to-hip ratio (WHR) and Body Shape Index (BSI) at mortality hazard prediction. SBSI has a generally linear relationship with age and increases with mortality.</span>
+
+<span class="sd">        &quot;A New Potential Replacement for Body Mass Index | RealClearScience&quot;. www.realclearscience.com. Retrieved 2015-12-31.</span>
+
+<span class="sd">        Rahman, Syed Ashiqur; Adjeroh, Donald (2015). &quot;PLOS ONE: Surface-Based Body Shape Index and Its Relationship with All-Cause Mortality&quot;. PLoS ONE. 10 (12): e0144639. Bibcode:2015PLoSO..1044639R. doi:10.1371/journal.pone.0144639. PMID 26709925.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            bsa (float): body surface area, given in meters:superscript:`2`</span>
+<span class="sd">            vertical_trunk_circumference (float): vertical_trunk_circumference, given in centimeters</span>
+<span class="sd">            waist_circumference (float): waist_circumference, given in centimeters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: SBSI</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">waist_circumference</span><span class="p">,</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">6</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">bsa</span> <span class="o">*</span> <span class="n">vertical_trunk_circumference</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Index.whr"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.whr">[docs]</a>    <span class="k">def</span> <span class="nf">whr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">waist_circumference</span><span class="p">,</span> <span class="n">hip_circumference</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *waist-to-hip ratio* (**WHR**) has been used as an indicator or measure of health, and the risk of developing serious health conditions. WHR correlates with fertility (with different optimal values for males and females).</span>
+
+<span class="sd">        According to the World Health Organization(WHO), abdominal obesity is defined as a waist\u2014hip ratio above 0.90 for males and above 0.85 for females, or a body mass index (BMI) above 30.0.[5] The National Institute of Diabetes, Digestive and Kidney Diseases (NIDDK) states that women with waist\u2014hip ratios of more than 0.8, and men with more than 1.0, are at increased health risk because of their fat distribution.</span>
+
+<span class="sd">        WHR has been found to be a more efficient predictor of mortality in older people (75+ years of age) than waist circumference or BMI.</span>
+
+<span class="sd">        &quot;Waist Circumference and Waist-Hip Ratio, Report of a WHO Expert Consultation&quot; `PDF &lt;http://apps.who.int/iris/bitstream/10665/44583/1/9789241501491_eng.pdf&gt;`__. World Health Organization. 8\u201411 December 2008. Retrieved March 21, 2012.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            waist_circumference (float)</span>
+<span class="sd">            hip_circumference (float)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: waist-to-hip ratio</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">waist_circumference</span> <span class="o">/</span> <span class="n">hip_circumference</span></div>
+
+<div class="viewcode-block" id="Index.whtr"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Index.whtr">[docs]</a>    <span class="k">def</span> <span class="nf">whtr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">waist_circumference</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *waist-to-height ratio* (**WHtR**) is a measure of the distribution of body fat. Higher values of WHtR indicate higher risk of obesity-related cardiovascular diseases; it is correlated with abdominal obesity.</span>
+
+<span class="sd">        A 2010 study that followed 11,000 subjects for up to eight years concluded that WHtR is a much better measure of the risk of heart attack, stroke or death than the more widely used body mass index.</span>
+
+<span class="sd">        CM Lee, Huxley RR, Wildman RP, Woodward M (July 2008). &quot;Indices of abdominal obesity are better discriminators of cardiovascular risk factors than BMI: a meta-analysis&#39;&quot;. Journal of Clinical Epidemiology. 61 (7): 646\u2014653. doi:10.1016/j.jclinepi.2007.08.012. PMID 18359190.</span>
+
+<span class="sd">        Schneider; et al. (2010). &quot;The predictive value of different measures of obesity for incident cardiovascular events and mortality.&quot;. The Journal of Clinical Endocrinology &amp; Metabolism. 95 (4): 1777\u20141785. doi:10.1210/jc.2009-1584. PMID 20130075.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            waist_circumference (float): waist circumference, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: waist-to-height ratio</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">waist_circumference</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">Mass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">ffm_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">reactance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tested white boys and girls 8-15 years of age</span>
+
+<span class="sd">        Lohman, T.G., 1992. Advanced in body composition assessment. Current issues in exercise science series. Monograph no. 3 Champaign, IL: Human Kinetics.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            resistance (float):</span>
+<span class="sd">            reactance (float):</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: fat-free mass, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.62</span> <span class="o">*</span> <span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">resistance</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.21</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">reactance</span><span class="p">)</span> <span class="o">+</span> <span class="mf">4.2</span>
+
+    <span class="k">def</span> <span class="nf">ffm_adolescent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">reactance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tested white boys and girls 10-19 years of age</span>
+
+<span class="sd">        Houtkooper, L.B, Goinng, S.G., Lohman, T.G, Roche, A.F., and VanLoan, M. 1992. Bioelectrical impedance estimation of fat-free body mass in children and youth: A cross-validation study. Journal of Applied Physiology 72: 366-373.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            resistance (float):</span>
+<span class="sd">            reactance (float):</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: fat-free mass, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.61</span> <span class="o">*</span> <span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">resistance</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.25</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.31</span>
+
+    <span class="k">def</span> <span class="nf">ffm_adult_lean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">reactance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tested American Indian, black, Hispanic and white men and women, 17-62 years of age For body fat percentages less than 20% in males, 30% in females. Age group</span>
+
+<span class="sd">        Segal, K.R., Van Loan, M., Fitzgerald, P.I., Hodgdon, J.A., and Van Itallie, T.B. 1988. Lean body mass estimation by bioelectrical impedance analysis: A four-site cross-validation study. *American Journal of Clinical Nutrition* 47: 7-14.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            resistance (float):</span>
+<span class="sd">            reactance (float):</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: fat-free mass, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mf">0.000646</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.014</span> <span class="o">*</span> <span class="n">resistance</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.421</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="mf">10.4</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.00066360</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.02117</span> <span class="o">*</span> <span class="n">resistance</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.62854</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.12380</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">9.33285</span>
+
+    <span class="k">def</span> <span class="nf">ffm_adult_obese</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">reactance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tested American Indian, black, Hispanic and white men and women, 17-62 years of age For body fat percentages greater than 20% in males, 30% in females</span>
+
+<span class="sd">        Segal, K.R., Van Loan, M., Fitzgerald, P.I., Hodgdon, J.A., and Van Itallie, T.B. 1988. Lean body mass estimation by bioelectrical impedance analysis: A four-site cross-validation study. *American Journal of Clinical Nutrition* 47: 7-14.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            resistance (float):</span>
+<span class="sd">            reactance (float):</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: fat-free mass, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mf">0.00091186</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.1466</span> <span class="o">*</span> <span class="n">resistance</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.29990</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.07012</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">9.37938</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.00088580</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.02999</span> <span class="o">*</span> <span class="n">resistance</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.42688</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.07002</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">14.52435</span>
+
+    <span class="k">def</span> <span class="nf">ffm_adult_athlete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">reactance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tested female athletes 18-27 years of age Tested male athletes from 19-40 years of age</span>
+
+<span class="sd">        Female Fornetti, W.C., Pivarnik, J.M., Foley, J.M., and Fiechtner, J.J. 1999. Reliability and validity of composition measures in female athletes. Journal of Applied Physiology 87:1114-1234.</span>
+
+<span class="sd">        Male Oppliger, R.A., Nielsen, D.H., and Vance, C.G. 1991. Wrestlers&#39; minimal weight: Anthropometry, bioimpedance, and hydrostatic weighing compared. *Medicine &amp; Science in Sports and Exercise* 23: 247-253/</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            resistance (float):</span>
+<span class="sd">            reactance (float):</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: fat-free mass, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mf">0.282</span> <span class="o">*</span> <span class="n">cm</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.415</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.037</span> <span class="o">*</span> <span class="n">resistance</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.096</span> <span class="o">*</span> <span class="n">reactance</span><span class="p">)</span> <span class="o">-</span> <span class="mf">9.734</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.186</span> <span class="o">*</span> <span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">resistance</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.701</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.949</span>
+
+
+<div class="viewcode-block" id="Density"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density">[docs]</a><span class="k">class</span> <span class="nc">Density</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Estimations of body density, or body fat percentage based on skinfold measurements</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+
+<div class="viewcode-block" id="Density.db_at_rv"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.db_at_rv">[docs]</a>    <span class="k">def</span> <span class="nf">db_at_rv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">body_density</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Standard Error of Estimation = 0.0067g/cc (males)</span>
+<span class="sd">        Standard Error of Estimation = 0.0061g/cc (females)</span>
+
+<span class="sd">        Donnelly, Joseph E., Thomas E. Brown, Richard G. Israel, Stephanie Smith-Sintek, Kevin F. O??brien, and Bret Caslavka. &quot;Hydrostatic Weighing without Head Submersion: Description of a Method.&quot; Medicine &amp; Science in Sports &amp; Exercise 20.1 (1988): 66-69. NCBI. Web. 24 Nov. 2016. https://www.ncbi.nlm.nih.gov/pubmed/3343920.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Body density, given in g/cc</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.4745</span> <span class="o">*</span> <span class="n">body_density</span> <span class="o">+</span> <span class="mf">0.5173</span>
+        <span class="k">return</span> <span class="mf">0.5829</span> <span class="o">*</span> <span class="n">body_density</span> <span class="o">+</span> <span class="mf">0.4059</span></div>
+
+<div class="viewcode-block" id="Density.skinfold_child"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.skinfold_child">[docs]</a>    <span class="k">def</span> <span class="nf">skinfold_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sum2skf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For use with black/white boys and girls 6-17 years old</span>
+
+<span class="sd">        Slaughter, M.H., Lohman, T.G, Boileau, R.A., Horswill, C.A., Stilman, R.J, Van Loan, M.D., and Bemben, D.A. 1988. Skinfold equation for estimation of body fatness in children and youth. *Human Biology* 60: 709-723.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sum2skf (float): sum of skinfold measurements (triceps + calf)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mf">0.610</span> <span class="o">*</span> <span class="n">sum2skf</span><span class="p">)</span> <span class="o">+</span> <span class="mf">5.1</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.735</span> <span class="o">*</span> <span class="n">sum2skf</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span></div>
+
+<div class="viewcode-block" id="Density.skinfold_bhf"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.skinfold_bhf">[docs]</a>    <span class="k">def</span> <span class="nf">skinfold_bhf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sum7skf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For use with African-American or Hispanic Females</span>
+
+<span class="sd">        Jackson, A.S., Pollock, M.L., and Ward, A. 1980. Generalized equations for predicting body density of women. Medicine &amp; Science in Sports &amp; Exercise 12: 175-182.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sum3skf (float): sum of skinfold measurements (chest + abdomen + thigh + triceps + subscapular + suprailiac + midaxilla)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Body density, given in g/cc</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.0970</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.00046971</span> <span class="o">*</span> <span class="n">sum7skf</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.00000056</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sum7skf</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.00012828</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">1.112</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.00043499</span> <span class="o">*</span> <span class="n">sum7skf</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.00000055</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sum7skf</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.00028826</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Density.skinfold_wm"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.skinfold_wm">[docs]</a>    <span class="k">def</span> <span class="nf">skinfold_wm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sum3skf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For use with white males 18-61 years old</span>
+
+<span class="sd">        Jackson, A.S., and Pollock, M.L. 1978. Generalized equations for predicting body density of men. British Journal of Nutrition 40: 497-504.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sum3skf (float): sum of skinfold measurements (chest + abdomen + thigh)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Body density, given in g/cc</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">1.10938</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.0008267</span> <span class="o">*</span> <span class="n">sum3skf</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.0000016</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sum3skf</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.0002574</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Density.skinfold_fa"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.skinfold_fa">[docs]</a>    <span class="k">def</span> <span class="nf">skinfold_fa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sum3skf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For use with white or anorexic females</span>
+
+<span class="sd">        Jackson, A.S., Pollock, M.L., and Ward, A. 1980. Generalized equations for predicting body density of women. Medicine &amp; Science in Sports &amp; Exercise 12: 175-182.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sum3skf (float): sum of skinfold measurements (triceps + suprailiac + thigh)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Body density, given in g/cc</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">1.0994921</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.0009929</span> <span class="o">*</span> <span class="n">sum3skf</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.0000023</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sum3skf</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.00001392</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Density.skinfolf_athlete"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.skinfolf_athlete">[docs]</a>    <span class="k">def</span> <span class="nf">skinfolf_athlete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sumskf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For use with female athletes 19-29 years old and male athletes 18-61 years old</span>
+
+<span class="sd">        Female Athletes Jackson, A.S., Pollock, M.L., and Ward, A. 1980. Generalized equations for predicting body density of women. Medicine &amp; Science in Sports &amp; Exercise 12: 175-182.</span>
+
+<span class="sd">        Male Athletes Jackson, A.S., and Pollock, M.L. 1978. Generalized equations for predicting body density of men. British Journal of Nutrition 40: 497-504.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sumskf (float): The sum of skinfold measurements, for Males (chest + abdomen + thigh + triceps + subscapular + suprailiac + midaxilla), for Females (triceps + anterior suprailiac + abdomen + thigh)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Body density, given in g/cc</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.096095</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.0006952</span> <span class="o">*</span> <span class="n">sumskf</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.0000011</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sumskf</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.0000714</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">1.112</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.00043499</span> <span class="o">*</span> <span class="n">sumskf</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.00000055</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sumskf</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.00028826</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Density.skinfold_cab"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.skinfold_cab">[docs]</a>    <span class="k">def</span> <span class="nf">skinfold_cab</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sum3skf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For use with African-American collegiate male and female athletes</span>
+
+<span class="sd">        Evans, E.M., Rowe, D.A., Misic, M.M., Prior, B.M., and Arngrimsson, S.A. 2005. Skinfold prediction equation for athletes developed using a four-component model. Medicine &amp; Science in Sports &amp; Exercise 37: 2006-2011.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sumskf (float): sum of skinfold measurements (abdomen + thigh + triceps)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">8.997</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.2468</span><span class="o">*</span><span class="n">sum3skf</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.998</span>
+        <span class="k">return</span> <span class="mf">8.997</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.2468</span><span class="o">*</span><span class="n">sum3skf</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">6.343</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.998</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Density.skinfold_caw"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.skinfold_caw">[docs]</a>    <span class="k">def</span> <span class="nf">skinfold_caw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sum3skf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For use with white collegiate male and female athletes</span>
+
+<span class="sd">        Evans, E.M., Rowe, D.A., Misic, M.M., Prior, B.M., and Arngrimsson, S.A. 2005. Skinfold prediction equation for athletes developed using a four-component model. Medicine &amp; Science in Sports &amp; Exercise 37: 2006-2011.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            sum3skf (float):</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">8.997</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.2468</span><span class="o">*</span><span class="n">sum3skf</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">8.997</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.2468</span><span class="o">*</span><span class="n">sum3skf</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">6.343</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Density.body_volume"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.Density.body_volume">[docs]</a>    <span class="k">def</span> <span class="nf">body_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">underwater_weight</span><span class="p">,</span> <span class="n">residual_volume</span><span class="p">,</span> <span class="n">gastrointestinal_volume</span><span class="p">,</span> <span class="n">water_density</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            underwater_weight (float): body weight underwater, given in kilograms</span>
+<span class="sd">            residual_volume (float): residual volume of the lungs, given in Liters</span>
+<span class="sd">            gastrointestinal_volume (float): volume of the gastrointestines, given in Liters</span>
+<span class="sd">            water_density (float): density of water</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="n">underwater_weight</span><span class="p">)</span><span class="o">/</span> <span class="n">water_density</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">residual_volume</span> <span class="o">-</span> <span class="n">gastrointestinal_volume</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="BodyFat"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.BodyFat">[docs]</a><span class="k">class</span> <span class="nc">BodyFat</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Used to estimate body fat percentages</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+<div class="viewcode-block" id="BodyFat.brozek"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.BodyFat.brozek">[docs]</a>    <span class="k">def</span> <span class="nf">brozek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">body_density</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        estimates body fat percentage</span>
+
+<span class="sd">        Bro\u017ek, Josef; Grande, Francisco; Anderson, Joseph T.; Keys, Ancel (2006). &quot;Densitometric Analysis of Body Composition: Revision of Some Quantitative Assumptions*&quot;. Annals of the New York Academy of Sciences. 110: 113\u201440. doi:10.1111/j.1749-6632.1963.tb17079.x. PMID 14062375.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            body_density (float): body density, given in g/cc</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">4.832</span> <span class="o">/</span> <span class="n">body_density</span><span class="p">)</span> <span class="o">-</span> <span class="mf">4.369</span></div>
+
+<div class="viewcode-block" id="BodyFat.ortiz"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.BodyFat.ortiz">[docs]</a>    <span class="k">def</span> <span class="nf">ortiz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">body_density</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        estimates body fat percentage for African American females</span>
+
+<span class="sd">        Ortiz O, Russell M, Daley TL, Baumgartner RN, Waki M, Lichtman S, et al. Differences in skeletal muscle and bone mineral mass between black and white females and their relevance to estimates of body composition. *American Journal of Clinical Nutrition*. 1992;55:8\u201413.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            body density (float): body density, given in g/cc</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">4.832</span> <span class="o">/</span> <span class="n">body_density</span><span class="p">)</span> <span class="o">-</span> <span class="mf">4.369</span></div>
+
+<div class="viewcode-block" id="BodyFat.schutte"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.BodyFat.schutte">[docs]</a>    <span class="k">def</span> <span class="nf">schutte</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">body_density</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        estimates body fat percentage for African American males</span>
+
+<span class="sd">        Schutte JE, Townsend EJ, Hugg J, Shoup RF, Malina RM, Blomqvist CG. Density of lean body mass is greater in blacks than in whites. Journal of Applied Physiology. 1984;56(6):167\u20141649.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            body density (float): body density, given in g/cc</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">4.374</span> <span class="o">/</span> <span class="n">body_density</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.928</span></div>
+
+<div class="viewcode-block" id="BodyFat.siri"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.BodyFat.siri">[docs]</a>    <span class="k">def</span> <span class="nf">siri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">body_density</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        estimates body fat percentage</span>
+
+<span class="sd">        Siri WE (1961). &quot;Body composition from fluid spaces and density: Analysis of methods&quot;. In Brozek J, Henzchel A. Techniques for Measuring Body Composition. Washington: National Academy of Sciences. pp. 224\u2014244.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            body density (float): body density, given in g/cc</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">4.95</span> <span class="o">/</span> <span class="n">body_density</span><span class="p">)</span> <span class="o">-</span> <span class="mf">4.5</span></div>
+
+<div class="viewcode-block" id="BodyFat.wagner"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.BodyFat.wagner">[docs]</a>    <span class="k">def</span> <span class="nf">wagner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">body_density</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        estimates body fat percentage for African American males</span>
+
+<span class="sd">        Wagner DR, Heyward VH. Validity of two-component models for estimating body fat of black men. Journal of Applied Physiology. 2001;90:649\u201456.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            body density (float): body density, given in g/cc</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">4.86</span> <span class="o">/</span> <span class="n">body_density</span><span class="p">)</span> <span class="o">-</span> <span class="mf">4.39</span></div>
+
+<div class="viewcode-block" id="BodyFat.child_bmi"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.BodyFat.child_bmi">[docs]</a>    <span class="k">def</span> <span class="nf">child_bmi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        BMI to body fat percentage formula, Deurenberg, Paul; Weststrate, Jan A.; Seidell, Jaap C. (2007). &quot;Body mass index as a measure of body fatness: Age- and sex-specific prediction formulas&quot;. British Journal of Nutrition. 65 (2): 105\u201414. doi:10.1079/BJN19910073. PMID 2043597.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): body weight, given in kilograms</span>
+<span class="sd">            height (float): body_height, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">((</span><span class="mf">1.51</span> <span class="o">*</span> <span class="n">bmi</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.70</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mf">1.51</span> <span class="o">*</span> <span class="n">bmi</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.70</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">3.6</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span></div>
+
+<div class="viewcode-block" id="BodyFat.adult_bmi"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.BodyFat.adult_bmi">[docs]</a>    <span class="k">def</span> <span class="nf">adult_bmi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        BMI to body fat percentage formula, Deurenberg, Paul; Weststrate, Jan A.; Seidell, Jaap C. (2007). &quot;Body mass index as a measure of body fatness: Age- and sex-specific prediction formulas&quot;. British Journal of Nutrition. 65 (2): 105\u201414. doi:10.1079/BJN19910073. PMID 2043597.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): body weight, given in kilograms</span>
+<span class="sd">            height (float): body_height, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: body fat percentage</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">((</span><span class="mf">1.20</span> <span class="o">*</span> <span class="n">bmi</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.23</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">-</span> <span class="mf">5.4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mf">1.20</span> <span class="o">*</span> <span class="n">bmi</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.23</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">10.8</span><span class="p">)</span> <span class="o">-</span> <span class="mf">5.4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span></div>
+
+    <span class="k">def</span> <span class="nf">waist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">waist_circumference</span><span class="p">):</span>
+        <span class="n">weightLb</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">*</span> <span class="mf">2.2</span>
+        <span class="n">waistCircumferenceInches</span> <span class="o">=</span> <span class="n">waist_circumference</span> <span class="o">*</span> <span class="mf">39.3701</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">76.76</span> <span class="o">+</span> <span class="mf">4.15</span> <span class="o">*</span> <span class="n">waistCircumferenceInches</span> <span class="o">-</span> <span class="mf">0.082</span> <span class="o">*</span> <span class="n">weightLb</span><span class="p">)</span> <span class="o">/</span> <span class="n">weightLb</span>
+        <span class="k">return</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mf">98.42</span> <span class="o">+</span> <span class="mf">4.15</span> <span class="o">*</span> <span class="n">waistCircumferenceInches</span> <span class="o">-</span> <span class="mf">0.082</span> <span class="o">*</span> <span class="n">weightLb</span><span class="p">)</span> <span class="o">/</span> <span class="n">weightLb</span></div>
+
+
+<span class="k">class</span> <span class="nc">Ideal</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            gender (pyfit.enums.Gender): The gender of an individual</span>
+<span class="sd">            age (float): The age of a person, given in years</span>
+<span class="sd">            weight (float): Body weight, given in kilograms</span>
+<span class="sd">            height (float): Body height, given in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">hamwi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">inches_over_5ft</span> <span class="o">=</span> <span class="n">_inches_over_ft</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mf">1.524</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">45.5</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.3</span> <span class="o">*</span> <span class="n">inches_over_5ft</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">50</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.3</span> <span class="o">*</span> <span class="n">inches_over_5ft</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">devine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">inches_over_5ft</span> <span class="o">=</span> <span class="n">_inches_over_ft</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mf">1.524</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">45.5</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.2</span> <span class="o">*</span> <span class="n">inches_over_5ft</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">48</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.7</span> <span class="o">*</span> <span class="n">inches_over_5ft</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">robinson</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">inches_over_5ft</span> <span class="o">=</span> <span class="n">_inches_over_ft</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mf">1.524</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">49</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.7</span> <span class="o">*</span> <span class="n">inches_over_5ft</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">52</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.9</span> <span class="o">*</span> <span class="n">inches_over_5ft</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">miller</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">inches_over_5ft</span> <span class="o">=</span> <span class="n">_inches_over_ft</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mf">1.524</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">53.1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.36</span> <span class="o">*</span> <span class="n">inches_over_5ft</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">56.2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.41</span> <span class="o">*</span> <span class="n">inches_over_5ft</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">lemmens</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">22</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">willoughby</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">height_inches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mf">39.3701</span>
+        <span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">height_inches</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1906</span>
+
+    <span class="k">def</span> <span class="nf">willoughby_waist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">height_inches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mf">39.3701</span>
+        <span class="k">return</span> <span class="n">height_inches</span> <span class="o">*</span> <span class="mf">0.4584</span>
+
+
+<div class="viewcode-block" id="SurfaceArea"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea">[docs]</a><span class="k">class</span> <span class="nc">SurfaceArea</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Renal clearance is usually divided by the BSA i.e. per 1.73 m:superscript:`2` to gain an appreciation of the true glomerular filtration rate (GFR); The cardiac index is a measure of cardiac output divided by the BSA, giving a better approximation of the effective cardiac output; Chemotherapy is often dosed according to the patient&#39;s BSA. Glucocorticoid dosing is also expressed in terms of BSA for calculating maintenance doses or to compare high dose use with maintenance requirement.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SurfaceArea.__init__"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            gender (pyfit.enums.Gender): The gender of an individual</span>
+<span class="sd">            age (float): The age of a person, given in years</span>
+<span class="sd">            weight (float): Body weight, given in kilograms</span>
+<span class="sd">            height (float): Body height, given in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.boyd"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.boyd">[docs]</a>    <span class="k">def</span> <span class="nf">boyd</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Boyd E. The growth of the surface area of the human body. Minneapolis: University of Minnesota Press, 1935. (From: http://www.ispub.com/journals/IJA/Vol2N2/bsa.htm)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mi">1000</span>
+        <span class="k">return</span> <span class="mf">0.0003330</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.7285</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.0188</span> <span class="o">*</span> <span class="n">log10</span><span class="p">(</span><span class="n">g</span><span class="p">))))</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.costeff"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.costeff">[docs]</a>    <span class="k">def</span> <span class="nf">costeff</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Costeff formula is a weight-based formula proposed in 1966, was recently validated for use in pediatrics.</span>
+
+<span class="sd">        Costeff H, &quot;A simple empirical formula for calculating approximate surface area in children.,&quot; Arch Dis Child, vol. 41, no. 220, pp. 681\u2014683, Dec. 1966.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">90</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.dubois"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.dubois">[docs]</a>    <span class="k">def</span> <span class="nf">dubois</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        DuBois and DuBois&#39;s formula has been shown to be equally as effective in estimating body fat in obese and non-obese patients</span>
+
+<span class="sd">        DuBois D, DuBois EF. A formula to estimate the approximate surface area if height and weight be known. Arch Med 1916 17:863-71.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.007184</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.425</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">0.725</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.fujimoto"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.fujimoto">[docs]</a>    <span class="k">def</span> <span class="nf">fujimoto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fujimoto S, Watanabe T, Sakamoto A, Yukawa K, Morimoto K. Studies on the physical surface area of Japanese. 18. Calculation formulae in three stages over all ages. Nippon Eiseigaku Zasshi 1968;5:443\u201450.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.008883</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.444</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">0.663</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.gehan_george"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.gehan_george">[docs]</a>    <span class="k">def</span> <span class="nf">gehan_george</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gehan EA, George SL. Estimation of human body surface area from height and weight. Cancer Chemother Rep 1970 54:225-35.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.0235</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.51456</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">0.42246</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.haycock"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.haycock">[docs]</a>    <span class="k">def</span> <span class="nf">haycock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Haycock GB, Schwartz GJ, Wisotsky DH. Geometric method for measuring body surface area: A height weight formula validated in infants, children and adults. The Journal of Pediatrics 1978 (93):1:62-66.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.024265</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.5378</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">0.3964</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.mosteller"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.mosteller">[docs]</a>    <span class="k">def</span> <span class="nf">mosteller</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Along with Boyd, considered to be more accurate formula for body surface area than other formulas. Maintained the most clinically acceptable and fairly constant degree of bias as children&#39;s age increases.</span>
+
+<span class="sd">        Mosteller RD. Simplified Calculation of Body Surface Area. N Engl J Med. 1987 Oct 22;317(17):1098. (letter)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.schlich"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.schlich">[docs]</a>    <span class="k">def</span> <span class="nf">schlich</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Schlich, E; Schumm, M; Schlich, M (2010). &quot;3-D-Body-Scan als anthropometrisches Verfahren zur Bestimmung der spezifischen K\xf6rperoberfl\xe4che&quot;. Ern\xe4hrungs Umschau. 57: 178\\u2014183.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.000975482</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.46</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">1.08</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">0.000579479</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">1.24</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.shuter_aslani"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.shuter_aslani">[docs]</a>    <span class="k">def</span> <span class="nf">shuter_aslani</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shuter, B; Aslani, A (2000). &quot;Body surface area: Du bois and Du bois revisited&quot;. European Journal of Applied Physiology. 82 (3): 250\u2014254. doi:10.1007/s004210050679.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.00949</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.441</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">0.655</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SurfaceArea.takahira"><a class="viewcode-back" href="../../pyfit.html#pyfit.composition.SurfaceArea.takahira">[docs]</a>    <span class="k">def</span> <span class="nf">takahira</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fujimoto S, Watanabe T, Sakamoto A, Yukawa K, Morimoto K. Studies on the physical surface area of Japanese. 18. Calculation formulae in three stages over all ages. Nippon Eiseigaku Zasshi 1968;5:443\u201450.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">0.007241</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mf">0.425</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="mf">0.725</span><span class="p">)</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">Stature</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">universal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Standard Error of Estimation = .0222 cm</span>
+
+<span class="sd">        Raxter, Michelle H., Benjamin M. Auerbach, and Christopher B. Ruff. &quot;Revision of the Fully Technique for Estimating Statures.&quot; American Journal of Physical Anthropology 130.3 (2006): 374-84. Web.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            femur_length: femur length, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: living stature, given in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">height_cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="n">stature</span> <span class="o">=</span> <span class="mf">1.009</span> <span class="o">*</span> <span class="n">height_cm</span> <span class="o">-</span> <span class="mf">0.426</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mf">12.1</span>
+        <span class="k">return</span> <span class="n">stature</span> <span class="o">/</span> <span class="mi">100</span>
+
+    <span class="k">def</span> <span class="nf">american_white</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">femur_length</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Trotter, Mildred, and Goldine C. Gleser. &quot;Estimation of Stature from Long Bones of American Whites and Negroes.&quot; Am. J. Phys. Anthropol. American Journal of Physical Anthropology 10.4 (1952): 463-514. Web.</span>
+
+<span class="sd">        Trotter, Mildred, and Goldine C. Gleser. &quot;A Re-evaluation of Estimation of Stature Based on Measurements of Stature Taken during Life and of Long Bones after Death.&quot; Am. J. Phys. Anthropol. American Journal of Physical Anthropology 16.1 (1958): 79-123. Web.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            femur_length: femur length, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: living stature, given in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">femur_length_cm</span> <span class="o">=</span> <span class="n">femur_length</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="n">stature</span> <span class="o">=</span> <span class="mf">2.47</span> <span class="o">*</span> <span class="n">femur_length_cm</span> <span class="o">+</span> <span class="mf">54.10</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stature</span> <span class="o">=</span> <span class="mf">2.32</span> <span class="o">*</span> <span class="n">femur_length_cm</span> <span class="o">+</span> <span class="mf">65.53</span>
+        <span class="k">return</span> <span class="n">stature</span> <span class="o">/</span> <span class="mi">100</span>
+
+    <span class="k">def</span> <span class="nf">american_black</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">femur_length</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Trotter, Mildred, and Goldine C. Gleser. &quot;Estimation of Stature from Long Bones of American Whites and Negroes.&quot; Am. J. Phys. Anthropol. American Journal of Physical Anthropology 10.4 (1952): 463-514. Web.</span>
+
+<span class="sd">        Trotter, Mildred, and Goldine C. Gleser. &quot;A Re-evaluation of Estimation of Stature Based on Measurements of Stature Taken during Life and of Long Bones after Death.&quot; Am. J. Phys. Anthropol. American Journal of Physical Anthropology 16.1 (1958): 79-123. Web.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            femur_length: femur length, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: living stature, given in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">femur_length_cm</span> <span class="o">=</span> <span class="n">femur_length</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="n">stature</span> <span class="o">=</span> <span class="mf">2.28</span> <span class="o">*</span> <span class="n">femur_length_cm</span> <span class="o">+</span> <span class="mf">59.76</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stature</span> <span class="o">=</span> <span class="mf">2.10</span> <span class="o">*</span> <span class="n">femur_length_cm</span> <span class="o">+</span> <span class="mf">72.22</span>
+        <span class="k">return</span> <span class="n">stature</span> <span class="o">/</span> <span class="mi">100</span>
+
+    <span class="k">def</span> <span class="nf">stride_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: stride length, given in feet</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">height_cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="mf">0.413</span> <span class="o">*</span> <span class="n">height_cm</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="mf">0.415</span> <span class="o">*</span> <span class="n">height_cm</span>
+        <span class="k">return</span> <span class="n">length</span> <span class="o">/</span> <span class="mi">100</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">PyExPhys</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pyexphys.html">Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Doug Fenstermacher.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

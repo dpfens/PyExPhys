@@ -1,0 +1,384 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyfit.cardio.energy &#8212; PyExPhys  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyfit.cardio.energy</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The energy module calculates the energy requirements of the human body to maintain stability. These values, such as Basal Metabolic Rate (BMR), Estimated Energy Requirement (EER) are used in estimating the required kilocalories (kcal) required by the human body based on activity level. This value is important in developing lifestyle-based nutrition plans.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">pyfit.enums</span> <span class="k">import</span> <span class="n">PAL</span><span class="p">,</span> <span class="n">Gender</span>
+
+
+<div class="viewcode-block" id="BMREstimator"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.BMREstimator">[docs]</a><span class="k">class</span> <span class="nc">BMREstimator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class for estimating the basal metabolic rate of children, adults, and older adults over a given time period.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+<div class="viewcode-block" id="BMREstimator.__init__"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.BMREstimator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            gender (pyfit.enums.Gender): Gender of the individual</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span></div>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;The prediction method is not implemented&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HB"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.HB">[docs]</a><span class="k">class</span> <span class="nc">HB</span><span class="p">(</span><span class="n">BMREstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The original Harris-Benedict Equation for basal metabolic rate.</span>
+
+<span class="sd">    Harris J, Benedict F (1918). &quot;*A Biometric Study of Human Basal Metabolism*&quot;. PNAS. 4 (12): 370\u20143. Bibcode:1918PNAS....4..370H. doi:10.1073/pnas.4.12.370. PMC 1091498Freely accessible. PMID 16576330. `Article &lt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1091498/&gt;`__ `PDF &lt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1091498/pdf/pnas01945-0018.pdf&gt;`__</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="HB.predict"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.HB.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            age (float): age, given in years</span>
+<span class="sd">            weight (float): body weight, given in kilograms</span>
+<span class="sd">            height (float): body height, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: basal metabolic rate, given as kilocalories/day</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mf">9.5634</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.8496</span> <span class="o">*</span> <span class="n">height</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">4.6756</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">655.0955</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">13.7516</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">5.0033</span> <span class="o">*</span> <span class="n">height</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">6.7550</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">66.4730</span></div></div>
+
+
+<div class="viewcode-block" id="RevisedHB"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.RevisedHB">[docs]</a><span class="k">class</span> <span class="nc">RevisedHB</span><span class="p">(</span><span class="n">BMREstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Revised Harris-Benedict Equation for basal metabolic rate (BMR). Accurately estimates the REE of normal-weight, overweight, and obese individuals but overestimate REE in underweight individuals.</span>
+
+<span class="sd">    Roza, Allan M; Shizgal, Harry M (1984). &quot;*The Harris Benedict equation reevaluated: resting energy requirements and the body cell mass*&quot;. The American Journal of Clinical Nutrition. 40: 168\u2014182.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RevisedHB.predict"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.RevisedHB.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            age (float): age, given in years</span>
+<span class="sd">            weight (float): body weight, given in kilograms</span>
+<span class="sd">            height (float): body height, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: basal metabolic rate, given as kilocalories/day</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mf">9.247</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">3.098</span> <span class="o">*</span> <span class="n">height</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">4.330</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">447.593</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">13.397</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">4.799</span> <span class="o">*</span> <span class="n">height</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">5.677</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">88.362</span></div></div>
+
+
+<div class="viewcode-block" id="MSJ"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.MSJ">[docs]</a><span class="k">class</span> <span class="nc">MSJ</span><span class="p">(</span><span class="n">BMREstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Mifflin St. Jeor Equation for basal metabolic rate (BMR). The American Dietetic Association (2003) recommends using this equation over Harris-Benedict to estimate RMR in healthy individuals.</span>
+
+<span class="sd">    Mifflin, MD; St Jeor, ST; Hill, LA; Scott, BJ; Daugherty, SA; Koh, YO (1990). &quot;*A new predictive equation for resting energy expenditure in healthy individuals*&quot;. The American Journal of Clinical Nutrition. 51 (2): 241\u20147. PMID 2305711.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MSJ.predict"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.MSJ.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            age (float): age, given in years</span>
+<span class="sd">            weight (float): body weight, given in kilograms</span>
+<span class="sd">            height (float): body height, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: basal metabolic rate, given as kilocalories/day</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mf">9.99</span> <span class="o">*</span> <span class="n">weight</span> <span class="o">+</span> <span class="mf">6.25</span> <span class="o">*</span> <span class="n">height</span> <span class="o">-</span> <span class="mf">4.92</span> <span class="o">*</span> <span class="n">age</span> <span class="o">-</span> <span class="mi">161</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">9.99</span> <span class="o">*</span> <span class="n">weight</span> <span class="o">+</span> <span class="mf">6.25</span> <span class="o">*</span> <span class="n">height</span> <span class="o">-</span> <span class="mf">4.92</span> <span class="o">*</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">RMR</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">__slots</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            gender (pyfit.enums.Gender): The gender of an individual</span>
+<span class="sd">            age (float): The age of a person, given in years</span>
+<span class="sd">            weight (float): Body weight, given in kilograms</span>
+<span class="sd">            height (float): Body height, given in meters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">quick</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A quick estimate of resting metabolic rate (RMR) based on body mass</span>
+
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mi">22</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="mf">24.2</span>
+
+    <span class="k">def</span> <span class="nf">bsa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bsa</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimate resting metabolic rate based on body surface area (BSA)</span>
+
+<span class="sd">        Note: every decade after age 40, RMR decreases by 2-5% (Sharkey and Gaskill, 2007), which is not applied in the formula due to high variation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bsa</span> <span class="o">*</span> <span class="mi">840</span>
+        <span class="k">return</span> <span class="n">bsa</span> <span class="o">*</span> <span class="mi">912</span>
+
+
+<div class="viewcode-block" id="kma"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.kma">[docs]</a><span class="k">def</span> <span class="nf">kma</span><span class="p">(</span><span class="n">lbm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Katch-McArdle Formula for resting daily energy expenditure (RDEE). This formula takes lean body mass/fat-free mass (in kilograms) as the only argument.</span>
+
+<span class="sd">    McArdle, W (2006). Essentials of Exercise Physiology. Lippincott Williams &amp; Wilkins. p. 266. ISBN 9780495014836.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">370</span> <span class="o">+</span> <span class="p">(</span><span class="mf">21.6</span> <span class="o">*</span> <span class="n">lbm</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="cunningham"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.cunningham">[docs]</a><span class="k">def</span> <span class="nf">cunningham</span><span class="p">(</span><span class="n">lbm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Cunningham equation for resting metabolic rate (RMR). This formula is similar to Katch-McArdle, but provides a slightly higher estimate.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">500</span> <span class="o">+</span> <span class="p">(</span><span class="mi">22</span> <span class="o">*</span> <span class="n">lbm</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TEEEstimator"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.TEEEstimator">[docs]</a><span class="k">class</span> <span class="nc">TEEEstimator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class for estimating the total energy expenditure (TEE) in individuals of varying levels of physical activity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;pal&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TEEEstimator.__init__"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.TEEEstimator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">pal</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            gender (pyfit.enums.Gender): The gender of an individual</span>
+<span class="sd">            pal (pyfit.enums.PAL): The physical activity level of an individual</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">=</span> <span class="n">pal</span></div>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;The prediction method is not implemented&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TEEEstimator.fromActivity"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.TEEEstimator.fromActivity">[docs]</a>    <span class="k">def</span> <span class="nf">fromActivity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">mets</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Humphrey R, The Exercise Caloric Challenge, Clinical Applications, ACSM\u0027s Health &amp; Fitness Journal, March/April 2006, Vol. 10, No. 2 pp.40-41</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): body weight, given in kilograms</span>
+<span class="sd">            mets (float): METs, given in kcal/kg/hour</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: kcal/min</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">mets</span> <span class="o">*</span> <span class="mf">3.5</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span><span class="o">/</span><span class="mi">200</span></div></div>
+
+
+<div class="viewcode-block" id="ChildTEE"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.ChildTEE">[docs]</a><span class="k">class</span> <span class="nc">ChildTEE</span><span class="p">(</span><span class="n">TEEEstimator</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;pal&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ChildTEE.predict"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.ChildTEE.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            age (float): The age of a person, given in years</span>
+<span class="sd">            weight (float): Body weight, given in kilograms</span>
+<span class="sd">            height (float): Body height, given in meters</span>
+
+<span class="sd">        returns:</span>
+<span class="sd">            float: total energy expenditure, given in kilocalories/day</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Sedentary</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Male</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">88.5</span> <span class="o">-</span> <span class="p">(</span><span class="mf">61.9</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">((</span><span class="mf">26.7</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">903</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Sedentary</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">135.3</span> <span class="o">-</span> <span class="p">(</span><span class="mf">30.8</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">((</span><span class="mi">10</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">934</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Low</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Male</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">88.5</span> <span class="o">-</span> <span class="p">(</span><span class="mf">61.9</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.13</span> <span class="o">*</span> <span class="p">((</span><span class="mf">26.7</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">903</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Low</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">135.3</span> <span class="o">-</span> <span class="p">(</span><span class="mf">30.8</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.16</span> <span class="o">*</span> <span class="p">((</span><span class="mi">10</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">934</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Active</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Male</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">88.5</span> <span class="o">-</span> <span class="p">(</span><span class="mf">61.9</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.26</span> <span class="o">*</span> <span class="p">((</span><span class="mf">26.7</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">903</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Active</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">135.3</span> <span class="o">-</span> <span class="p">(</span><span class="mf">30.8</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.31</span> <span class="o">*</span> <span class="p">((</span><span class="mi">10</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">934</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">VeryActive</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Male</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">88.5</span> <span class="o">-</span> <span class="p">(</span><span class="mf">61.9</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.42</span> <span class="o">*</span> <span class="p">((</span><span class="mf">26.7</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">903</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">VeryActive</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">135.3</span> <span class="o">-</span> <span class="p">(</span><span class="mf">30.8</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.56</span> <span class="o">*</span> <span class="p">((</span><span class="mi">10</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">934</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mi">0</span></div></div>
+
+
+<div class="viewcode-block" id="AdultTEE"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.AdultTEE">[docs]</a><span class="k">class</span> <span class="nc">AdultTEE</span><span class="p">(</span><span class="n">TEEEstimator</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;pal&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="AdultTEE.predict"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.AdultTEE.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            age (float): The age of a person, given in years</span>
+<span class="sd">            weight (float): Body weight, given in kilograms</span>
+<span class="sd">            height (float): Body height, given in meters</span>
+
+<span class="sd">        returns:</span>
+<span class="sd">            float: total energy expenditure, given in kilocalories/day</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Sedentary</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Male</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">662</span> <span class="o">-</span> <span class="p">(</span><span class="mf">9.53</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">((</span><span class="mf">15.9</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">540</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Sedentary</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">354</span> <span class="o">-</span> <span class="p">(</span><span class="mf">6.91</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">((</span><span class="mf">9.36</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">726</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Low</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Male</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">662</span> <span class="o">-</span> <span class="p">(</span><span class="mf">9.53</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.11</span> <span class="o">*</span> <span class="p">((</span><span class="mf">15.9</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">540</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Low</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">662</span> <span class="o">-</span> <span class="p">(</span><span class="mf">9.53</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.12</span> <span class="o">*</span> <span class="p">((</span><span class="mf">15.9</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">540</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Active</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Male</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">662</span> <span class="o">-</span> <span class="p">(</span><span class="mf">9.53</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.25</span> <span class="o">*</span> <span class="p">((</span><span class="mf">15.9</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">540</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">Active</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">662</span> <span class="o">-</span> <span class="p">(</span><span class="mf">9.53</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.27</span> <span class="o">*</span> <span class="p">((</span><span class="mf">15.9</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">540</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">VeryActive</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Male</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">662</span> <span class="o">-</span> <span class="p">(</span><span class="mf">9.53</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.48</span> <span class="o">*</span> <span class="p">((</span><span class="mf">15.9</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">540</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pal</span> <span class="o">==</span> <span class="n">PAL</span><span class="o">.</span><span class="n">VeryActive</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">662</span> <span class="o">-</span> <span class="p">(</span><span class="mf">9.53</span> <span class="o">*</span> <span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.45</span> <span class="o">*</span> <span class="p">((</span><span class="mf">15.9</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">540</span> <span class="o">*</span> <span class="n">height</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mi">0</span></div></div>
+
+
+<div class="viewcode-block" id="Terrain"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.Terrain">[docs]</a><span class="k">class</span> <span class="nc">Terrain</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Formulas for calculating energy expenditure</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span><span class="p">,</span> <span class="s1">&#39;load&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">load</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load</span> <span class="o">=</span> <span class="n">load</span>
+
+<div class="viewcode-block" id="Terrain.pandolf"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.Terrain.pandolf">[docs]</a>    <span class="k">def</span> <span class="nf">pandolf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">terrain</span><span class="p">,</span> <span class="n">slope</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Pandolf, Givoni, and Goldman formula for calculating energy expenditure. Funded by the United States Army Research Institute of Environmental Medicine.</span>
+
+<span class="sd">        Pandolf K.B., Givoni B., Goldman R.F. Predicting energy expenditure with loads while standing or walking very slowly. J Appl Physiol 43: 577\u2014581, 1977</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            terrain (int)</span>
+<span class="sd">            slope (float): slope of the terrain, given as a percentage</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: metabolic rate, given in Watts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total_weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">load</span>
+        <span class="n">part_1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">total_weight</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">part_2</span> <span class="o">=</span> <span class="n">terrain</span> <span class="o">*</span> <span class="n">total_weight</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speed</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">slope</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">part_1</span> <span class="o">+</span> <span class="n">part_2</span></div>
+
+<div class="viewcode-block" id="Terrain.santee"><a class="viewcode-back" href="../../../pyfit.html#pyfit.cardio.energy.Terrain.santee">[docs]</a>    <span class="k">def</span> <span class="nf">santee</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">terrain</span><span class="p">,</span> <span class="n">slope</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Santee formula for calculating energy expenditure. The formula is an updated version of the Pandolf formula that more accurately takes into account downhill travel. The formula is for use with negative (downhill) slopes.</span>
+
+<span class="sd">        Matthew W.T., Santee W.R., Berglund L.G. Solar Load Inputs for USARIEM Thermal Strain Models and the Solar Radiation-Sensitive Components of the WBGT Index (Technical Report T01/13\u2014 01). Natick, MA: U.S. Army Research Institute of Environmental Medicine, 2001.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            terrain (int)</span>
+<span class="sd">            slope (float): slope of the terrain, given as a percentage</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: metabolic rate, given in Watts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total_weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">load</span>
+        <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">slope</span>
+        <span class="n">speed_squared</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">speed</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">part1</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">part2</span> <span class="o">=</span> <span class="n">terrain</span> <span class="o">*</span> <span class="n">total_weight</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">speed_squared</span> <span class="o">+</span> <span class="mf">0.35</span> <span class="o">*</span> <span class="n">energy</span><span class="p">)</span>
+        <span class="n">part3_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">energy</span> <span class="o">*</span> <span class="n">total_weight</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.5</span>
+        <span class="n">part3_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">total_weight</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">slope</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span>
+        <span class="n">part3_3</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">-</span> <span class="n">speed_squared</span>
+        <span class="k">return</span> <span class="n">part1</span> <span class="o">+</span> <span class="n">part2</span> <span class="o">-</span> <span class="n">terrain</span> <span class="o">*</span> <span class="p">(</span><span class="n">part3_1</span> <span class="o">-</span> <span class="n">part3_2</span> <span class="o">+</span> <span class="n">part3_3</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">PyExPhys</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyexphys.html">Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Doug Fenstermacher.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

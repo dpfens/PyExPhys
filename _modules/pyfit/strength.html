@@ -1,0 +1,743 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyfit.strength &#8212; PyExPhys  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyfit.strength</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The strength module contains equations for estimating strength in weightlifting exercises, estimating 1-repetition maximum values, and metrics for comparing weightlifting performances across weight classes, and genders.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="nb">pow</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">log10</span><span class="p">,</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">enums</span> <span class="k">import</span> <span class="n">Gender</span>
+
+
+<span class="k">class</span> <span class="nc">Compare</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            gender (pyfit.enums.Gender): The gender of an individual</span>
+<span class="sd">            weight (float): Body weight, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+
+    <span class="k">def</span> <span class="nf">ocarroll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight_lifted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Normalizes a weightlifting performance by body weight</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            weight_lifted (float): The amount of weight lifted , given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: normalized weightlifting performance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">weight_lifted</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">siff_weight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *Siff Bodymass Adjustment* formula for normalizing weightlifting amount based on body weight</span>
+
+<span class="sd">        http://tsampa.org/training/scripts/siff/ http://dziepak.freeiz.com/training/formulas.htm Siff, Mel C. &amp; Verkhoshansky &quot;Supertraining&quot; 1998, Ch 3.3.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mf">512.245</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">146230</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="mf">1.605</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="mf">943.063</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="mf">0.05142</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="mf">257.314</span>
+            <span class="k">return</span> <span class="n">c</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">siff_power</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        http://dziepak.freeiz.com/training/formulas.htm Siff, Mel C. &amp; Verkhoshansky &quot;Supertraining&quot; 1998, Ch 3.3.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mf">512.245</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">172970</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="mf">1.3925</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">siff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A shortcut formula for using the siffWeight method or the siffPower method</span>
+
+<span class="sd">        http://dziepak.freeiz.com/training/formulas.htm Siff, Mel C. &amp; Verkhoshansky &quot;Supertraining&quot; 1998, Ch 3.3.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">power</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">siff_power</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">siff_weight</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">sinclair</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obtained_total</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Sinclair Coefficients for comparing performances across weight classes in Olympic weightlifting. The formula can also be used to compare male and female performances.</span>
+
+<span class="sd">        - no bias for men&#39;s or women&#39;s benchpress and total</span>
+<span class="sd">        - a favorable bias toward intermediate weight class lifters in the women&#39;s squat with no bias for men&#39;s squat</span>
+<span class="sd">        - a linear unfavorable bias toward heavier men and women in the deadlift</span>
+
+<span class="sd">        Validation of the Wilks power-lifting formula http://europepmc.org/abstract/med/10613442</span>
+<span class="sd">        https://en.wikipedia.org/wiki/Sinclair_Coefficients</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">coefficient_a</span> <span class="o">=</span> <span class="mf">0.794358141</span>
+        <span class="n">coefficient_b</span> <span class="o">=</span> <span class="mf">174.393</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="n">coefficient_a</span> <span class="o">=</span> <span class="mf">0.897260740</span>
+            <span class="n">coefficient_b</span> <span class="o">=</span> <span class="mf">148.026</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">&gt;</span> <span class="n">coefficient_b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="n">exponent</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">coefficient_a</span> <span class="o">*</span> <span class="n">log10</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">/</span> <span class="n">coefficient_b</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">multiplier</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">exponent</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">multiplier</span> <span class="o">*</span> <span class="n">obtained_total</span>
+
+    <span class="k">def</span> <span class="nf">wilks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight_lifted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Wilks Coefficient to measure the strength of a powerlifters while normalizing for the body mass of the lifters. This formula is considered to be the sucessor of the O&#39;Carroll and Schwartz formulas. The formula was written by Robert Wilks,the CEO of Powerlifting Australia.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">216.0475144</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mf">16.2606339</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.002388645</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00113732</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="mf">7.01863E-06</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.291E-08</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="mf">594.31747775582</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">27.23842536447</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="mf">0.82112226871</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00930733913</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="mf">4.731582E-05</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.054E-08</span>
+        <span class="n">coefficient</span> <span class="o">=</span> <span class="mi">500</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">e</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">coefficient</span> <span class="o">*</span> <span class="n">weight_lifted</span>
+
+
+<span class="k">class</span> <span class="nc">Jump</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">bosco</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">jump_count</span><span class="p">,</span> <span class="n">total_flight_time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *Bosco repeated vertical jump test* for average power measurement in Watts:</span>
+
+<span class="sd">        Bosco C, Luhtanen P, Komi PV (1983) A simple method for measurement of mechanical power in jumping. European Journal of Applied Physiology 50:273-282.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            duration (float): test duration, given in seconds</span>
+<span class="sd">            jump_count (int): number of jumps, given in integers</span>
+<span class="sd">            flight_time (float): time in the air, given in seconds</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Power, given in Watts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">total_flight_time</span> <span class="o">*</span> <span class="n">duration</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="mf">9.81</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">jump_count</span> <span class="o">*</span> <span class="p">(</span><span class="n">duration</span> <span class="o">-</span> <span class="n">total_flight_time</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">lewis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jump_reach_score</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Lewis formula for estimating average power in Watts. Jump reach score is measured in meters (m).</span>
+
+<span class="sd">        FOX, E.L. and MATHEWS, D.K. (1974) The interval training: conditioning for sports and general fitness. Philadelphia PA: Saunders. p. 257-258</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            jump_reach_score (float): score, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: estimate of average power, given in Watts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="mf">4.9</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">jump_reach_score</span><span class="p">)</span> <span class="o">*</span> <span class="mf">9.81</span>
+
+    <span class="k">def</span> <span class="nf">harman</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertical_jump_height</span><span class="p">,</span> <span class="n">peak</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *Harman formula* for peak and average power. The original equation uses centimeters for the jump height, but this function is written for meters (m).</span>
+
+<span class="sd">        HARMAN, E.A. et al. (1991) Estimation of Human Power Output From Vertical Jump. Journal of Applied Sport Science Research, 5(3), p. 116-120</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            vertical_jump_height (float): height jumped, given in meters</span>
+<span class="sd">            peak (bool): Determines if desired output should be average power, or peak power</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: power, given in Watts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vertical_jump_height_cm</span> <span class="o">=</span> <span class="n">vertical_jump_height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="n">peak</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">61.9</span> <span class="o">*</span> <span class="n">vertical_jump_height_cm</span> <span class="o">+</span> <span class="mi">36</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="mi">1822</span>
+        <span class="k">return</span> <span class="mf">21.1</span> <span class="o">*</span> <span class="n">vertical_jump_height_cm</span> <span class="o">+</span> <span class="mf">2.3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="mi">1393</span>
+
+    <span class="k">def</span> <span class="nf">jb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertical_jump_height</span><span class="p">,</span> <span class="n">peak</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *Johnson &amp; Bahamonde test* for the calculation of peak and average power.</span>
+
+<span class="sd">        JOHSON, D. L. and Bahamonde, R. (1996) Power Output Estimate in University Athletes. Journal of strength and Conditioning Research, 10(3), p. 161-166</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            vertical_jump_height (float): vertical jump height, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: power output, given in Watts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">body_height_cm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="n">vertical_jump_height_cm</span> <span class="o">=</span> <span class="n">vertical_jump_height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="n">peak</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">78.6</span> <span class="o">*</span> <span class="n">vertical_jump_height_cm</span> <span class="o">+</span> <span class="mf">60.3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">+</span> <span class="mf">15.3</span> <span class="o">*</span> <span class="n">body_height_cm</span> <span class="o">+</span> <span class="mi">1308</span>
+        <span class="k">return</span> <span class="mf">43.8</span> <span class="o">*</span> <span class="n">vertical_jump_height_cm</span> <span class="o">+</span> <span class="mf">32.7</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="mf">16.8</span> <span class="o">*</span> <span class="n">body_height_cm</span> <span class="o">+</span> <span class="mi">431</span>
+
+    <span class="k">def</span> <span class="nf">sayer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertical_jump_height</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *sayers formula* estimates peak power output.</span>
+
+<span class="sd">        SAYERS, S. et al. (1999) Cross-validation of three jump power equations. Med Sci Sports Exerc, 31, p. 572</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            vertical_jump_height (float): vertical jump height, given in meters</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: peak power output, given in Watts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vertical_jump_height_cm</span> <span class="o">=</span> <span class="n">vertical_jump_height</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="mf">60.7</span> <span class="o">*</span> <span class="n">vertical_jump_height_cm</span> <span class="o">+</span> <span class="mf">45.3</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="mi">2055</span>
+
+    <span class="k">def</span> <span class="nf">mk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertical_jump_height</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *Margaria-Kalamen power test* measures peak power in the vertical jump.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            vertical_jump_height (float): Vertical jump height, given in meters</span>
+<span class="sd">            time (float): Time, given in seconds</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">*</span> <span class="p">(</span><span class="n">vertical_jump_height</span> <span class="o">/</span> <span class="n">time</span><span class="p">))</span> <span class="o">*</span> <span class="mf">9.81</span>
+
+
+<div class="viewcode-block" id="RMEstimator"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.RMEstimator">[docs]</a><span class="k">class</span> <span class="nc">RMEstimator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For predicting 1 repetition maximum(1-RM), a number of estimator classes are provided that each use a different equation for predicting 1-RM. Each of these classes are subclasses of RMEstimator and implement the same interface. Developers can change the equation for predicting 1-RM by changing the estimator class in their application rather than changing their application logic. Each class can be constructed by providing the reps parameter and can use the predict method, with a weight argument to return the 1-RM value (in kg).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RMEstimator.__init__"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.RMEstimator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reps</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            reps (int): repetitions performed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reps</span> <span class="o">=</span> <span class="n">reps</span></div>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;The prediction method is not implemented&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Abadie"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Abadie">[docs]</a><span class="k">class</span> <span class="nc">Abadie</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Studied population was 30 college aged females. Performs best when repetitions range from 5 to 10</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Abadie.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Abadie.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">7.24</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.05</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Abadie.weight"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Abadie.weight">[docs]</a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">4.</span><span class="o">/</span><span class="mi">105</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">25</span> <span class="o">*</span> <span class="n">rm</span> <span class="o">-</span> <span class="mi">181</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Baechle"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Baechle">[docs]</a><span class="k">class</span> <span class="nc">Baechle</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    BAECHLE, T.R. and EARLE, R.W. and WATHEN, D. (2000) Resistance training. In: BAECHLE, T.R. and EARLE, R.W., eds. Essentials of Strength Training and Conditioning. 2nd ed. Champaign, IL: Human Kinetics, p. 395-425</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Baechle.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Baechle.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">weight</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span><span class="p">(</span><span class="mf">0.033</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Baechle.weight"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Baechle.weight">[docs]</a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">rm</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">33</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Brzycki"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Brzycki">[docs]</a><span class="k">class</span> <span class="nc">Brzycki</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The *Brzycki formula* for estimating a 1-Repetition Maximum (1-RM). For repetitions less than 10, the Brzycki formula returns slightly higher estimated 1-RM than the Epley formula. The two formulas are identical at 10 repetitions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Brzycki.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Brzycki.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span><span class="p">(</span><span class="mf">1.0278</span> <span class="o">-</span><span class="p">(</span><span class="mf">0.0278</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Brzycki.weight"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Brzycki.weight">[docs]</a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.0278</span> <span class="o">-</span><span class="p">(</span><span class="mf">0.0278</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Brzycki.twoSet"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Brzycki.twoSet">[docs]</a>    <span class="k">def</span> <span class="nf">twoSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">rep2</span><span class="p">,</span> <span class="n">weight2</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The *Brzycki Two Set Max formula* is a 1-RM prediction equation based on the number of repetitions to fatigue obtained two submaximal sets.</span>
+
+<span class="sd">        Brzycki, M. 2000. Assessing strength. Fitness Management 16(7): 34-37</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+<span class="sd">            rep2 (int):  Repetitions in second submaximal set</span>
+<span class="sd">            weight2 (float): weight lifted in second submaximal set, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">((</span><span class="n">weight</span> <span class="o">-</span> <span class="n">weight2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">rep2</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">weight</span></div></div>
+
+
+<div class="viewcode-block" id="Epley"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Epley">[docs]</a><span class="k">class</span> <span class="nc">Epley</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The *Epley formula* for estimating a 1-Repetition Maximum (1-RM). For repetitions less than 10, the Epley formula returns slightly lower estimated 1-RM than the Brzycki formula. The two formulas are identical at 10 repetitions.</span>
+
+<span class="sd">    EPLEY, B. (1985) Poundage Chart. Boyd Epley Workout. Lincoln, NE: Body Enterprises.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Epley.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Epley.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">weight</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span> <span class="o">*</span> <span class="mf">0.033</span><span class="p">)</span> <span class="o">+</span> <span class="n">weight</span></div></div>
+
+
+<div class="viewcode-block" id="Landers"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Landers">[docs]</a><span class="k">class</span> <span class="nc">Landers</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    LANDERS, J. (1985) Maximums Based on Reps. National Strength and Conditioning Association Journal. 6: 60-61.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Landers.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Landers.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span><span class="p">(</span><span class="mf">1.013</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.0267123</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Landers.weight"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Landers.weight">[docs]</a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">rm</span> <span class="o">*</span><span class="p">(</span><span class="mf">1.013</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.0267123</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Landers.percent"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Landers.percent">[docs]</a>    <span class="k">def</span> <span class="nf">percent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: percentage of 1-RM</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mf">101.3</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.67123</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span> <span class="o">/</span> <span class="mi">100</span></div></div>
+
+
+<div class="viewcode-block" id="Lombardi"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Lombardi">[docs]</a><span class="k">class</span> <span class="nc">Lombardi</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For use with less than 11 repetitions</span>
+
+<span class="sd">    LeSuer, Dale A.; McCormick, James H.; Mayhew, Jerry L.; Wasserstein, Ronald L.; Arnold, Michael D. (November 1997). &quot;The Accuracy of Prediction Equations for Estimating 1-RM Performance in the Bench Press, Squat, and Deadlift&quot;. Journal of Strength and Conditioning Research. 11 (4): 211\u2014213. doi:10.1519/00124278-199711000-00001</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Lombardi.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Lombardi.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">weight</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Lombardi.weight"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Lombardi.weight">[docs]</a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">rm</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Mayhew"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Mayhew">[docs]</a><span class="k">class</span> <span class="nc">Mayhew</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For use with less than 15 repetitions. Studied population was 434 (185 college men, 251 college women)</span>
+
+<span class="sd">    LeSuer, Dale A.; McCormick, James H.; Mayhew, Jerry L.; Wasserstein, Ronald L.; Arnold, Michael D. (November 1997). &quot;The Accuracy of Prediction Equations for Estimating 1-RM Performance in the Bench Press, Squat, and Deadlift&quot;. Journal of Strength and Conditioning Research. 11 (4): 211\u2014213. doi:10.1519/00124278-199711000-00001</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Mayhew.football"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Mayhew.football">[docs]</a>    <span class="k">def</span> <span class="nf">football</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimating the maximal 1-RM using results from the NFL-225 Bench Press Test</span>
+
+<span class="sd">        Mayhew, J.L., Ball, T.E., Arnold, M.D., and Bowen, J.C. 1992. Relative muscular endurance performance as a predictor of bench press strength in college men and women. Journal of Applied Sport Science Research 6: 200-206</span>
+
+<span class="sd">        Mayhew, Jerry L., John S. Ware, Michael G. Bemben, Bill Wilt, Tom E. Ward, Bill Farris, Joe Juraszek, and John P. Slovak. &quot;The NFL-225 Test as a Measure of Bench Press Strength in College Football Players.&quot; Journal of Strength and Conditioning Research 13.2 (1999): 130-34. Web.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">226.7</span> <span class="o">+</span> <span class="mf">7.1</span> <span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Mayhew.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Mayhew.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">52.2</span> <span class="o">+</span> <span class="mf">41.9</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.055</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Mayhew.percent"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Mayhew.percent">[docs]</a>    <span class="k">def</span> <span class="nf">percent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: percentage of 1-RM</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mf">52.2</span> <span class="o">+</span> <span class="mf">41.9</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.055</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span> <span class="o">/</span> <span class="mi">100</span></div>
+
+<div class="viewcode-block" id="Mayhew.weight"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Mayhew.weight">[docs]</a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        http://www.unm.edu/~rrobergs/478RMStrengthPrediction.pdf</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">rm</span> <span class="o">*</span> <span class="p">(</span><span class="mf">52.2</span> <span class="o">+</span> <span class="mf">41.9</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.055</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">)))</span><span class="o">/</span><span class="mi">100</span></div></div>
+
+
+<div class="viewcode-block" id="McGlothin"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.McGlothin">[docs]</a><span class="k">class</span> <span class="nc">McGlothin</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="McGlothin.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.McGlothin.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">101.3</span> <span class="o">-</span> <span class="mf">2.67123</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="McGlothin.weight"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.McGlothin.weight">[docs]</a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        LeSuer, Dale A.; McCormick, James H.; Mayhew, Jerry L.; Wasserstein, Ronald L.; Arnold, Michael D. (November 1997). &quot;The Accuracy of Prediction Equations for Estimating 1-RM Performance in the Bench Press, Squat, and Deadlift&quot;. Journal of Strength and Conditioning Research. 11 (4): 211\u2014213. doi:10.1519/00124278-199711000-00001</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">rm</span> <span class="o">*</span> <span class="p">(</span><span class="mf">101.3</span> <span class="o">-</span> <span class="mf">2.67123</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))</span><span class="o">/</span><span class="mi">100</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">OConnor</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">weight</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.025</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">percent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        LeSuer, Dale A.; McCormick, James H.; Mayhew, Jerry L.; Wasserstein, Ronald L.; Arnold, Michael D. (November 1997). &quot;The Accuracy of Prediction Equations for Estimating 1-RM Performance in the Bench Press, Squat, and Deadlift&quot;. Journal of Strength and Conditioning Research. 11 (4): 211\u2014213. doi:10.1519/00124278-199711000-00001</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.025</span> <span class="o">*</span> <span class="p">(</span><span class="n">weight</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">)</span> <span class="o">+</span> <span class="n">weight</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        http://www.unm.edu/~rrobergs/478RMStrengthPrediction.pdf</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">40.</span> <span class="o">*</span> <span class="n">rm</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reps</span> <span class="o">+</span> <span class="mi">40</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ReynoldsCP"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.ReynoldsCP">[docs]</a><span class="k">class</span> <span class="nc">ReynoldsCP</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The *Reynolds formula* for the Chest Press exercise. Weight parameter is the 5 rep maximum (5-RM) in kg.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ReynoldsCP.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.ReynoldsCP.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.1307</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.6998</span></div></div>
+
+
+<div class="viewcode-block" id="ReynoldsLP"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.ReynoldsLP">[docs]</a><span class="k">class</span> <span class="nc">ReynoldsLP</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Reynolds formula for the Leg Press exercise. Weight parameter is the 5 rep maximum (5-RM) in kg.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ReynoldsLP.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.ReynoldsLP.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        http://www.unm.edu/~rrobergs/478RMStrengthPrediction.pdf</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.09703</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="mf">14.2546</span></div></div>
+
+
+<div class="viewcode-block" id="Wathan"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Wathan">[docs]</a><span class="k">class</span> <span class="nc">Wathan</span><span class="p">(</span><span class="n">RMEstimator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The *Wathan equation* for predicted the 1 repetition maximum (1-RM). The Wathan equation most closely estimates 1-RM for all upper body exercises, the leg press, and dorsiflexion exercises, and can be used to determine resistance training intensities for older adults.</span>
+
+<span class="sd">    LeSuer, Dale A.; McCormick, James H.; Mayhew, Jerry L.; Wasserstein, Ronald L.; Arnold, Michael D. (November 1997). &quot;The Accuracy of Prediction Equations for Estimating 1-RM Performance in the Bench Press, Squat, and Deadlift&quot;. Journal of Strength and Conditioning Research. 11 (4): 211\u2014213. doi:10.1519/00124278-199711000-00001</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Wathan.predict"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Wathan.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            weight (float): weight lifted, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">48.8</span> <span class="o">+</span> <span class="p">(</span><span class="mf">53.8</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.075</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="Wathan.weight"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.Wathan.weight">[docs]</a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the weight lifted for the number of reps based on the 1-RM argument</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            rm (float): 1-RM, given in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: weight lifted, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">rm</span> <span class="o">*</span> <span class="p">(</span><span class="mf">48.8</span> <span class="o">+</span> <span class="p">(</span><span class="mf">53.8</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.075</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">reps</span><span class="p">))))</span> <span class="o">/</span> <span class="mi">100</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">RM</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        args:</span>
+<span class="sd">            gender (pyfit.enums.Gender): gender of person</span>
+<span class="sd">            age (float): age, given in years</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="nf">ymca_upper_body</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reps</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The 1 repetition maximum (1-RM) equation for estimating upper body strength from the YMCA bench press test in young men and women (22-36 years old)</span>
+
+<span class="sd">        For men: Total Bar weight = 80lb (36.3kg) Standard Error of Estimation = 17.6lb (8.0kg)</span>
+
+<span class="sd">        For women: Total Bar weight = 35lb (15.8kg) Standard Error of Estimation = 7lb (3.2kg)</span>
+
+<span class="sd">        Kim, Paul S., Jerry L. Mayhew, and D. Fred Peterson. &quot;A Modified YMCA Bench Press Test as a Predictor of 1 Repetition Maximum Bench Press Strength.&quot; J Strength Cond Res The Journal of Strength and Conditioning Research 16.3 (2002): 440. NCBI. Web. 5 Nov. 2016. &lt;https://www.ncbi.nlm.nih.gov/pubmed/12173960&gt;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="n">Gender</span><span class="o">.</span><span class="n">Female</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mf">0.31</span> <span class="o">*</span> <span class="n">reps</span><span class="p">)</span> <span class="o">+</span> <span class="mf">19.2</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.55</span> <span class="o">*</span> <span class="n">reps</span><span class="p">)</span> <span class="o">+</span> <span class="mf">37.9</span>
+
+    <span class="k">def</span> <span class="nf">female_middle_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reps</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A submaximal endurance test for middle-aged women. The participant completes as many repetitions as possible using a weight equivalent to 45% of her mass. For use with women ages 40-50 years old.</span>
+
+<span class="sd">        Standard Error of Estimation = 4lb (1.85kg)</span>
+
+<span class="sd">        Kuramoto, Anna K., and V. Gregory Payne. &quot;Predicting Muscular Strength in Women: A Preliminary Study.&quot; Research Quarterly for Exercise and Sport 66.2 (1995): 168-72. NCBI. Web. 5 Nov. 2016. &lt;https://www.ncbi.nlm.nih.gov/pubmed/12173960&gt;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">1.06</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.58</span> <span class="o">*</span> <span class="n">reps</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.20</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.41</span>
+
+    <span class="k">def</span> <span class="nf">female_older</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reps</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A submaximal endurance test for older women. The participant completes as many repetitions as possible using a weight equivalent to 45% of her mass. For use with women ages 60-70 years old.</span>
+
+<span class="sd">        Standard Error of Estimation = 4.5lb (2.04kg)</span>
+
+<span class="sd">        Kuramoto, Anna K., and V. Gregory Payne. &quot;Predicting Muscular Strength in Women: A Preliminary Study.&quot; Research Quarterly for Exercise and Sport 66.2 (1995): 168-72. NCBI. Web. 5 Nov. 2016. &lt;https://www.ncbi.nlm.nih.gov/pubmed/12173960&gt;.</span>
+
+<span class="sd">        args:</span>
+<span class="sd">            repetitions (int): number of repetitions</span>
+<span class="sd">            weight (float): weight lifted in kilograms</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: 1-RM, given in kilograms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">0.92</span> <span class="o">*</span> <span class="n">weight</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.79</span> <span class="o">*</span> <span class="n">reps</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.20</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.73</span>
+
+
+<div class="viewcode-block" id="relative"><a class="viewcode-back" href="../../pyfit.html#pyfit.strength.relative">[docs]</a><span class="k">def</span> <span class="nf">relative</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    args:</span>
+<span class="sd">        weight (float): weight lifted, given in kilograms</span>
+<span class="sd">        rm (float): 1-RM, given in kilograms</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">rm</span> <span class="o">/</span> <span class="n">weight</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">PyExPhys</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pyexphys.html">Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Doug Fenstermacher.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
